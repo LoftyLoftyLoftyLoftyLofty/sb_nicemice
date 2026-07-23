@@ -155,7 +155,7 @@
                 },
             
                 {
-                 "height":64,
+                 "height":96,
                  "id":1994,
                  "name":"",
                  "properties":[
@@ -169,7 +169,7 @@
                  "visible":true,
                  "width":40,
                  "x":-72,
-                 "y":-136
+                 "y":-168
                 },
             
                 {
@@ -619,24 +619,6 @@
                  "visible":true,
                  "width":72,
                  "x":-24,
-                 "y":-144
-                },
-            
-                {
-                 "height":8,
-                 "id":1989,
-                 "name":"",
-                 "properties":[
-                        {
-                         "name":"back",
-                         "type":"string",
-                         "value":"outpost"
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":40,
-                 "x":-72,
                  "y":-144
                 },
             
@@ -2167,7 +2149,7 @@
          "y":0
         }],
  "nextlayerid":40,
- "nextobjectid":2026,
+ "nextobjectid":2027,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.10.0",
