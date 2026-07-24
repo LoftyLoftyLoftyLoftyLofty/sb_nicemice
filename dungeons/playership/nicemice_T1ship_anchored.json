@@ -351,7 +351,7 @@
                  "name":"",
                  "properties":[
                         {
-                         "name":"material",
+                         "name":"DISABLED_material",
                          "type":"string",
                          "value":"metamaterial:structure"
                         }],
@@ -369,7 +369,7 @@
                  "name":"",
                  "properties":[
                         {
-                         "name":"material",
+                         "name":"DISABLED_material",
                          "type":"string",
                          "value":"metamaterial:structure"
                         }],
@@ -387,7 +387,7 @@
                  "name":"",
                  "properties":[
                         {
-                         "name":"material",
+                         "name":"DISABLED_material",
                          "type":"string",
                          "value":"metamaterial:structure"
                         }],
@@ -405,7 +405,7 @@
                  "name":"",
                  "properties":[
                         {
-                         "name":"material",
+                         "name":"DISABLED_material",
                          "type":"string",
                          "value":"metamaterial:structure"
                         }],
@@ -423,7 +423,7 @@
                  "name":"",
                  "properties":[
                         {
-                         "name":"material",
+                         "name":"DISABLED_material",
                          "type":"string",
                          "value":"metamaterial:structure"
                         }],
@@ -441,7 +441,7 @@
                  "name":"",
                  "properties":[
                         {
-                         "name":"material",
+                         "name":"DISABLED_material",
                          "type":"string",
                          "value":"metamaterial:structure"
                         }],
@@ -459,7 +459,7 @@
                  "name":"",
                  "properties":[
                         {
-                         "name":"material",
+                         "name":"DISABLED_material",
                          "type":"string",
                          "value":"metamaterial:structure"
                         }],
@@ -477,7 +477,7 @@
                  "name":"",
                  "properties":[
                         {
-                         "name":"material",
+                         "name":"DISABLED_material",
                          "type":"string",
                          "value":"metamaterial:structure"
                         }],
@@ -495,7 +495,7 @@
                  "name":"",
                  "properties":[
                         {
-                         "name":"material",
+                         "name":"DISABLED_material",
                          "type":"string",
                          "value":"metamaterial:structure"
                         }],
@@ -513,7 +513,7 @@
                  "name":"",
                  "properties":[
                         {
-                         "name":"material",
+                         "name":"DISABLED_material",
                          "type":"string",
                          "value":"metamaterial:structure"
                         }],
@@ -531,7 +531,7 @@
                  "name":"",
                  "properties":[
                         {
-                         "name":"material",
+                         "name":"DISABLED_material",
                          "type":"string",
                          "value":"metamaterial:structure"
                         }],
@@ -549,7 +549,7 @@
                  "name":"",
                  "properties":[
                         {
-                         "name":"material",
+                         "name":"DISABLED_material",
                          "type":"string",
                          "value":"metamaterial:structure"
                         }],
@@ -567,7 +567,7 @@
                  "name":"",
                  "properties":[
                         {
-                         "name":"material",
+                         "name":"DISABLED_material",
                          "type":"string",
                          "value":"metamaterial:structure"
                         }],
@@ -585,7 +585,7 @@
                  "name":"",
                  "properties":[
                         {
-                         "name":"material",
+                         "name":"DISABLED_material",
                          "type":"string",
                          "value":"metamaterial:structure"
                         }],
@@ -603,7 +603,7 @@
                  "name":"",
                  "properties":[
                         {
-                         "name":"material",
+                         "name":"DISABLED_material",
                          "type":"string",
                          "value":"metamaterial:structure"
                         }],
@@ -621,7 +621,7 @@
                  "name":"",
                  "properties":[
                         {
-                         "name":"material",
+                         "name":"DISABLED_material",
                          "type":"string",
                          "value":"metamaterial:structure"
                         }],
@@ -639,7 +639,7 @@
                  "name":"",
                  "properties":[
                         {
-                         "name":"material",
+                         "name":"DISABLED_material",
                          "type":"string",
                          "value":"metamaterial:structure"
                         }],
@@ -657,7 +657,7 @@
                  "name":"",
                  "properties":[
                         {
-                         "name":"material",
+                         "name":"DISABLED_material",
                          "type":"string",
                          "value":"metamaterial:structure"
                         }],
@@ -675,7 +675,7 @@
                  "name":"",
                  "properties":[
                         {
-                         "name":"material",
+                         "name":"DISABLED_material",
                          "type":"string",
                          "value":"metamaterial:structure"
                         }],
@@ -693,7 +693,7 @@
                  "name":"",
                  "properties":[
                         {
-                         "name":"material",
+                         "name":"DISABLED_material",
                          "type":"string",
                          "value":"metamaterial:structure"
                         }],
@@ -711,7 +711,7 @@
                  "name":"",
                  "properties":[
                         {
-                         "name":"material",
+                         "name":"DISABLED_material",
                          "type":"string",
                          "value":"metamaterial:structure"
                         }],
@@ -951,12 +951,12 @@
         },
     
         {
-         "firstgid":8752,
+         "firstgid":8700,
          "source":"..\/..\/..\/..\/win32\/unpacked_assets\/tilesets\/packed\/huge-objects.json"
         },
     
         {
-         "firstgid":8853,
+         "firstgid":8801,
          "source":"..\/..\/..\/..\/win32\/unpacked_assets\/tilesets\/packed\/objects-by-category\/breakable.json"
         }],
  "tilewidth":8,
