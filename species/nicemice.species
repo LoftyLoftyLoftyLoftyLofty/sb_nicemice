@@ -13,7 +13,23 @@
   "ouchNoises" : [ "/sfx/humanoid/nicemicehurt_male1.ogg", "/sfx/humanoid/nicemicehurt_female1.ogg" ],
   "charGenTextLabels" : [ "Fur pattern", "Ear style", "Shirt", "Legwear", "Eye color", "Hair style", "Shirt color", "Legwear color", "NICEMICE", "Personality" ],
   "skull" : "/humanoid/nicemice/dead.png",
-  "effectDirectives" : "?replace=FEFFFFFF=FFFFFFFF?replace=9bd4ffFF=80f4ffFF?replace=31a6ffFF=39b8e3FF",
+  
+  //EFFECT DIRECTIVES:
+  
+  //TP beam colors:
+  //?replace=FEFFFFFF=FFFFFFFF?replace=9bd4ffFF=ef91a9FF?replace=31a6ffFF=d15c69FF
+  
+  //Vanilla dash tech colors:
+  //?replace=fffefecc=FFFFFFcc?replace=59e8ffcc=ef91a9cc?replace=00a3becc=d15c69cc
+  //?replace=fffefe85=FFFFFF85?replace=59e8ff85=ef91a985?replace=00a3be85=d15c6985
+  //?replace=fffefe29=FFFFFF29?replace=59e8ff29=ef91a929?replace=00a3be29=d15c6929
+  
+  //Sprint tech
+  //?replace=fffefeff=FFFFFFff?replace=59e8ffff=ef91a9ff
+  //?replace=fffefebf=FFFFFFbf?replace=59e8ffbf=ef91a9bf
+  //?replace=59e8ff7f=ef91a97f
+  
+  "effectDirectives" : "?replace=FEFFFFFF=FFFFFFFF?replace=9bd4ffFF=ef91a9FF?replace=31a6ffFF=d15c69FF",
   "defaultBlueprints" : {
     "tier1" : [
 
