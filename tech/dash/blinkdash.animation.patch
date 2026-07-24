@@ -1,0 +1,50 @@
+[
+	{
+		"op" : "add",
+		"path" : "/animatedParts/stateTypes/nicemice_blinking",
+		"value" : 
+		{
+			"default" : "off",
+			"states" : 
+			{
+				"off" : { },
+				"in" : 
+				{
+					"frames" : 5,
+					"cycle" : 0.15,
+					"mode" : "transition",
+					"transition" : "off"
+				},
+				"out" : 
+				{
+					"frames" : 5,
+					"cycle" : 0.15,
+					"mode" : "transition",
+					"transition" : "off"
+				}
+			}
+		}
+	},
+	{
+		"op" : "add",
+		"path" : "/animatedParts/parts/blinkeffect/partStates/nicemice_blinking",
+		"value" : 
+		{
+			"in" : 
+			{
+				"properties" : 
+				{
+					"image" : "nicemice_blinkin.png:<frameIndex>"
+				}
+			},
+
+			"out" : 
+			{
+				"properties" : 
+				{
+					"image" : "nicemice_blinkout.png:<frameIndex>"
+				}
+			}
+		}
+	}
+]

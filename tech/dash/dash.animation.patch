@@ -1,0 +1,17 @@
+[
+	{
+		"op" : "add",
+		"path" : "/particleEmitters/nicemice_dashParticles",
+		"value" : 
+		{
+			"emissionRate" : 40.0,
+			"particles" : 
+			[
+				{
+					"particle" : "nicemice_dash",
+					"flip" : true
+				}
+			]
+		}
+	}
+]
