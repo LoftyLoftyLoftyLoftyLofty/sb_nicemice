@@ -5,6 +5,7 @@
   "link" : "steam://url/CommunityFilePage/3485543399",
   "name" : "lofty_nicemice",
   "steamContentId" : "3485543399",
+  "includes" : ["lofty_modboxes"],
   "tags" : "Crafting and Building|Miscellaneous|Planets and Environments|NPCs and Creatures|Weapons|Quests|Dungeons|Ships|Species|Furniture and Objects|Food and Farming|In-Game Tools|Mechanics|Armor and Clothes",
   "version" : "0.3.7"
 }
