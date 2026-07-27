@@ -98,7 +98,10 @@
 
 // Spinning Wheel
       { "item" : "nicemice_jumpsuitchest" },
-      { "item" : "nicemice_jumpsuitlegs" }
+      { "item" : "nicemice_jumpsuitlegs" },
+	  
+// Rails
+	  { "item" : "nicemice_railtramstop" }
     ]
   },
   

@@ -36,5 +36,7 @@
   "scriptDelta" : 5,
 
   "inputNodes" : [ [0, 0], [0, 1] ],
-  "outputNodes" : [ [0, -1] ]
+  "outputNodes" : [ [0, -1] ],
+  
+  "learnBlueprintsOnPickup" : [ "nicemice_railtramstop" ]
 }
