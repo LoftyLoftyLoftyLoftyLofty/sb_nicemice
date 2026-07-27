@@ -29,9 +29,9 @@
 					{"item" : [ "railcraftingtable", 1 ] },
 					{"item" : [ "compositerail", 100 ] },
 					{"item" : [ "stationtram", 2 ] },
-					{"item" : [ "nicemice_railtramstop", 4 ] },
-					{"item" : [ "outpostplatform", 50 ] },
-					{"item" : [ "tinywallbutton", 4 ] }
+					{"item" : [ "nicemice_railtramstop", 6 ] },
+					{"item" : [ "outpostplatform", 60 ] },
+					{"item" : [ "tinywallbutton", 6 ] }
 				]
 			}
 		]
