@@ -44,5 +44,12 @@
 		"op" : "add",
 		"path" : "/deploymentConfig/scripts/-",
 		"value" : "/scripts/player/nicemice_t8shipspacegenerator.lua"
+	},
+	
+	//Tail manager to apply directives to player-worn tails
+	{
+		"op": "add",
+		"path": "/companionsConfig/scripts/-",
+		"value": "/scripts/nicemice_tail_manager.lua"
 	}
 ]
