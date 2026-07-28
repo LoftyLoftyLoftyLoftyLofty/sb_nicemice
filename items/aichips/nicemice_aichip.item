@@ -54,6 +54,51 @@
 
 		"defaultRecruitDescription": "> No data.",
 		"defaultRecruitName": "Zpezializt"
-	}
+	},
+	"noCrewSpeech": {
+      "animation": "refuse",
+      "text": "^#6f6f6f;$ crew
+^cyan;> You are ze only regiztered crew member of ziz zhip.
+> Recruiting addizional crew memberz may allow for increazed operazional effizienzie.",
+      "speedModifier": 0.7
+    },
+	"noMissionsSpeech": {
+      "animation": "refuse",
+      "text": "^#6f6f6f;$ missions
+^cyan;> No mizzion co-ordinatez currently available.",
+      "speedModifier": 0.7
+    },
+    "shipStatus": {
+      "0" : {
+      "animation" : "unique",
+      "text" : "> Zzz... Zzz... Zzz...",
+      "speedModifier" : 0.1
+		},
+    "1" : {
+      "animation" : "talk",
+      "text" : "^#6f6f6f;$ status
+^cyan;> Zhip thruzterz are currently ^red;offline^cyan;.
+> Zhip teleportazion zyztem funczioning correctlie.
+> ^green;Only ze planet below is aczezzible. Zut.",
+      "speedModifier" : 0.7
+		},
+    "2" : {
+      "animation" : "talk",
+      "text" : "^#6f6f6f;$ status
+^cyan;> Zhip thrusters are ^green;online^cyan;.
+> Zhip teleportazion zyztem funczioning correctlie.
+> ^green;Planetz vithin ziz ztar zyztem are aczezzible.",
+      "speedModifier" : 0.7
+		},
+    "3" : {
+      "animation" : "talk",
+      "text" : "^#6f6f6f;$ status -f
+^cyan;> Zhip thruzterz are online.
+> FTL drive iz online.
+> Zhip teleportazion zyztem funczioning correctlie.
+> ^green;Ze entire univerze is aczezzible.",
+      "speedModifier" : 0.7
+		}
+    }
   }
 }
