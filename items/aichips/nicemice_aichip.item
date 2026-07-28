@@ -1,0 +1,59 @@
+{
+  "itemName" : "nicemice_aichip",
+
+  "shortdescription" : "M.A.U.S. A.I. Chip",
+  "description" : "An A.I. chip from a Nicemice M.A.U.S. cruiser. Can be installed on S.A.I.L.'s terminal.",
+
+  "rarity" : "Legendary",
+  "category" : "A.I. Chip",
+  "price" : 20,
+
+  "tooltipKind" : "mm",
+  "largeImage" : "/ai/portraits/nicemicequestportrait.png",
+  "inventoryIcon" : "/ai/nicemice_ai_item.png",
+
+  "aiData" : {
+    "aiFrames" : "nicemiceai.png",
+    "portraitFrames" : "portraits/nicemiceportrait.png",
+    "staticFrames" : "staticnicemice.png",
+	"title" : "M.A.U.S",
+	"subtitle" : "Mobile Assault Unit System",
+    "titleIcon": "/interface/ai/nicemice_ai_icon.png",
+	"interfaceText" : 
+	{
+		"breadcrumbLeftPadding": 2,
+		"breadcrumbRightPadding": 6,
+		"homeBreadcrumbText": "HOME",
+		"crewBreadcrumbText": "CREW",
+		"configBreadcrumbText": "CONFIG",
+		"missionBreadcrumbText": "MISSION",
+
+		"buttonBackText": "BACK",
+		"buttonOpenCraftingText": "Open A.I. chip crafting",
+		"buttonOpenSlotText": "Open A.I. chip zlot",
+		"buttonCloseSlotText": "Cloze A.I. chip zlot",
+		"buttonFallbackText": "Fallback to vanilla M.A.U.S",
+		"buttonMissionsText": "MISSIONS",
+		"buttonCrewText": "CREW",
+		"buttonCancelText": "CANCEL",
+		"buttonDismissText": "DISMISS",
+		"buttonDeployText": "DEPLOY",
+
+		"overwrittingConfText": ">Overwriting configuration.................",
+		"aiDataText": "^gray;You can inztall an A.I. chip here to cuztomize M.A.U.S.",
+		"fallbackText": "^gray;Uze ziz if you can't find a mizzion or crewmember.",
+		"fallbackActivatedText": "^gray;Ze fallback interfayz vill be loaded upon nekzt interaczion.",
+
+		"craftingTitle": "M.A.U.S. A.I. chip crafting",
+		"craftingSubtitle": "",
+		"craftingSchematicsTxt": "SCHEMATICS",
+		"craftingProductTxt": "RESULT",
+		"buttonCraft": "CRAFT",
+		"buttonStopCraft": "STOP",
+		"craftingMatAvailTxt": "MATERIALS AVAILABLE",
+
+		"defaultRecruitDescription": "> No data.",
+		"defaultRecruitName": "Zpezializt"
+	}
+  }
+}
