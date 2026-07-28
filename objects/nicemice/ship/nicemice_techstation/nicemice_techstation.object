@@ -46,8 +46,8 @@
 				} 
 			],
 			"imagePosition" : [-16, -8],
-			"frames" : 32,
-			"animationCycle" : 3.0,
+			"frames" : 8,
+			"animationCycle" : 0.75,
 			"spaceScan" : 0.1,
 			"anchors" : [ "background" ]
 		}
