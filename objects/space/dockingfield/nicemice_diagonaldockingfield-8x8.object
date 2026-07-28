@@ -34,8 +34,7 @@
   
   "nicemiceDescription" : "A uzeful barrier. Keepz the atmozphere in and the zpaze out.",
 
-  "lightColor" : [31, 186, 0],
-  "lightPosition" : [0, 6],
+  "lightColor" : [255, 183, 183],
 
   "inventoryIcon" : "nicemice_diagonaldockingfield-8x8icon.png",
   "orientations" : [
@@ -58,7 +57,9 @@
       "enableCollision" : "barrierLeft",
 	  
 	  "entityCheckLineStart" : [0, 0.5],
-	  "entityCheckLineEnd" : [-7, 7.5]
+	  "entityCheckLineEnd" : [-7, 7.5],
+	  
+	  "lightPosition" : [-3, 3]
     },
     {
       "image" : "nicemice_diagonaldockingfield-8x8.png:<color>.off",
@@ -78,7 +79,9 @@
       "enableCollision" : "barrierRight",
 	  
 	  "entityCheckLineStart" : [0, 0.5],
-	  "entityCheckLineEnd" : [7, 7.5]
+	  "entityCheckLineEnd" : [7, 7.5],
+	  
+	  "lightPosition" : [3, 3]
     }
   ],
 
