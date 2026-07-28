@@ -926,7 +926,7 @@
                  "visible":true,
                  "width":16,
                  "x":464,
-                 "y":-448
+                 "y":-456
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -947,7 +947,7 @@
                  "polyline":[
                         {
                          "x":0,
-                         "y":0
+                         "y":-8
                         },
                     
                         {
@@ -969,7 +969,7 @@
                  "polyline":[
                         {
                          "x":0,
-                         "y":0
+                         "y":-8
                         },
                     
                         {
@@ -991,7 +991,7 @@
                  "polyline":[
                         {
                          "x":0,
-                         "y":0
+                         "y":-8
                         },
                     
                         {
@@ -3200,15 +3200,21 @@
                 },
             
                 {
-                 "gid":2147487801,
-                 "height":32,
-                 "id":2039,
+                 "gid":8092,
+                 "height":12,
+                 "id":2054,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"parameters",
+                         "type":"string",
+                         "value":"{\"treasurePools\":[\"nicemice_t7ship_wiringkit\"]}"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
-                 "width":32,
-                 "x":416,
+                 "width":13,
+                 "x":464,
                  "y":-432
                 }],
          "opacity":1,
@@ -3231,7 +3237,7 @@
          "y":0
         }],
  "nextlayerid":40,
- "nextobjectid":2054,
+ "nextobjectid":2056,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.10.0",

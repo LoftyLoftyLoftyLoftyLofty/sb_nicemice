@@ -48,6 +48,27 @@
 			}
 		]
 	],
+	"nicemice_t7ship_wiringkit" : 
+	[
+		[
+			0,
+			{
+				"fill" : 
+				[
+					{"item" : [ "wiringstation", 1 ] },
+					
+					{"item" : [ "and", 10 ] },
+					{"item" : [ "not", 10 ] },
+					{"item" : [ "or", 10 ] },
+					{"item" : [ "xor", 10 ] },
+					{"item" : [ "dlatch", 10 ] },
+					{"item" : [ "delay", 10 ] },
+					{"item" : [ "persistentswitch", 10 ] },
+					{"item" : [ "smallwallbutton", 10 ] }
+				]
+			}
+		]
+	],
 	"nicemice_t8ship_mechkit" : 
 	[
 		[
