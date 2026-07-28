@@ -17,6 +17,8 @@
 			"title" : "M.A.U.S",
 			"subtitle" : "Mobile Assault Unit System",
 			
+			"titleIcon": "/interface/ai/nicemice_ai_icon.png",
+			
 			"interfaceText" : 
 			{
 				"breadcrumbLeftPadding": 2,
