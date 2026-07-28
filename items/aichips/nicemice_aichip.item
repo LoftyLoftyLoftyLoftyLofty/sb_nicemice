@@ -71,7 +71,7 @@
     "shipStatus": {
       "0" : {
       "animation" : "unique",
-      "text" : "> Zzz... Zzz... Zzz...",
+      "text" : "> Adjutant, come in! Adjutant!",
       "speedModifier" : 0.1
 		},
     "1" : {
