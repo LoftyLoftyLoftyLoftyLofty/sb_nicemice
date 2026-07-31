@@ -1,0 +1,65 @@
+//THERE ARE FOUR LINES TO CHANGE IN THIS PATCH TEMPLATE
+[
+	{
+		"op" : "add",
+		
+		//1 CHANGE THIS LINE
+		"path" : "/animatedParts/parts/fg/partStates/modbox/icon_nicemice",
+		
+		"value" : 
+		{
+			"properties" : 
+			{
+				"image" : "<partImage>:<color>.<frame>"
+			}
+		}
+	},
+	
+	{
+		"op" : "add",
+		
+		//2 CHANGE THIS LINE
+		"path" : "/animatedParts/stateTypes/modbox/states/icon_nicemice",
+		
+		"value" : 
+		{
+			"properties" : 
+			{
+				"image" : "<partImage>:<color>.<frame>"
+			}
+		}
+	},
+	
+	{
+		"op" : "add",
+		
+		//3 CHANGE THIS LINE
+		"path" : "/animatedParts/parts/icon_nicemice",
+		
+		"value" : 
+		{
+			"properties" : 
+			{
+				"centered" : false,
+				"zLevel" : 2,
+				"offset" : [1.75, 0.5]
+			},
+
+			"partStates" : 
+			{
+				"modbox" : 
+				{
+					//4 CHANGE THIS LINE
+					"icon_nicemice" : 
+					
+					{
+						"properties" : 
+						{
+							"image" : "<partImage>:<color>.<frame>"
+						}
+					}
+				}
+			}
+		}
+	}
+]

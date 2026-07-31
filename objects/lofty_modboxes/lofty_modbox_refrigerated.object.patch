@@ -1,0 +1,24 @@
+[
+	//add the animationPart
+	{
+		//just a heads up to artists the default modbox icons are at 90% opacity using color #25282a
+	
+		"op" : "add",
+		"path" : "/animationParts/icon_nicemice",
+		"value" : "icon_nicemice.png"
+	},
+	
+	//make it available to choose in the UI
+	{
+		"op" : "add",
+		"path" : "/availableIcons/icon_nicemice",
+		"value" : "Nicemice"
+	},
+	
+	//racial description
+	{
+		"op" : "add",
+		"path" : "/nicemiceDescription",
+		"value" : "Ziz refrigerated bokz iz clearly marked to zhow vhat'z inzide."
+	}
+]
