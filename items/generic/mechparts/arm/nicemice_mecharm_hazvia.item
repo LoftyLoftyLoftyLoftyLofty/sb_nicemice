@@ -1,0 +1,15 @@
+{
+  "itemName" : "nicemice_mecharm_hazvia",
+  "price" : 9000,
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "category" : "mechPart",
+  "tooltipKind" : "mecharm",
+  "builder" : "/items/buildscripts/buildmechpart.lua",
+  "inventoryIcon" : "nicemice_mecharm_hazvia.png",
+  "description" : "These battery-devouring railguns are standard for Nicemice mechs.",
+  "shortdescription" : "Hazvia Railgun Mech Arm",
+  "itemTags" : [ ],
+
+  "mechPart" : ["arm", "nicemice_mecharm_hazvia"]
+}

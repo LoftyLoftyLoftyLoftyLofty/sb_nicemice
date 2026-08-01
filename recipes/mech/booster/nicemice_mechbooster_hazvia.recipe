@@ -1,0 +1,15 @@
+{
+  "input" : [
+    { "item" : "durasteelbar", "count" : 30 },
+    { "item" : "solariumstar", "count" : 30 },
+	
+    { "item" : "salvagebooster", "count" : 50 },
+	{ "item" : "salvagetier5", "count" : 25 },
+	{ "item" : "salvagetier6", "count" : 25 },
+	
+	{ "item" : "upgrademodule", "count" : 1 }
+  ],
+  "duration" : 15,
+  "output" : { "item" : "nicemice_mechbooster_hazvia", "count" : 1 },
+  "groups" : [ "craftingmech", "mechbooster" ]
+}

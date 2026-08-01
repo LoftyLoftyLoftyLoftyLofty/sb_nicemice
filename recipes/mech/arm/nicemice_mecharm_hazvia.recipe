@@ -1,0 +1,19 @@
+{
+  "input" : [
+  
+    { "item" : "durasteelbar", "count" : 40 },
+	{ "item" : "solariumstar", "count" : 40 },
+	
+	{ "item" : "staticcell", "count" : 10 },
+    
+    { "item" : "salvagearm", "count" : 50 },
+    { "item" : "salvagetier5", "count" : 25 },
+    { "item" : "salvagetier6", "count" : 25 },
+	
+    { "item" : "doomcannon", "count" : 1 },
+    { "item" : "upgrademodule", "count" : 1 }
+  ],
+  "duration" : 15,
+  "output" : { "item" : "nicemice_mecharm_hazvia", "count" : 1 },
+  "groups" : [ "craftingmech", "mecharm" ]
+}

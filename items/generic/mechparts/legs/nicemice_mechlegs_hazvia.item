@@ -1,0 +1,15 @@
+{
+  "itemName" : "nicemice_mechlegs_hazvia",
+  "price" : 10000,
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "category" : "mechPart",
+  "tooltipKind" : "mechlegs",
+  "builder" : "/items/buildscripts/buildmechpart.lua",
+  "inventoryIcon" : "nicemice_mechlegs_hazvia.png",
+  "description" : "These digitigrade mech legs are fast, durable, and designed for combat.",
+  "shortdescription" : "Hazvia Mech Legs",
+  "itemTags" : [ "nicemice", "mechlegs" ],
+
+  "mechPart" : ["legs", "nicemice_mechlegs_hazvia"]
+}

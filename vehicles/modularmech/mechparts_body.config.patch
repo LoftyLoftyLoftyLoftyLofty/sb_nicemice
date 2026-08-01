@@ -1,0 +1,41 @@
+[
+	{
+		"op" : "add",
+		"path" : "/nicemice_mechbody_hazvia",
+		"value" : 
+		{
+			"stats" : 
+			{
+				"energy" : 7,
+				"protection" : 5
+			},
+			"partParameters" : 
+			{
+				"hazardImmunities" : ["biomeradiation", "biomecold", "biomeheat"]
+			},
+			"partImages" : 
+			{
+				"bodyFront" : "body/nicemice_mechbody_hazvia.png",
+				"bodyFullbright" : "body/nicemice_mechbody_hazvia_fullbright.png"
+			},
+			"defaultPrimaryColors" : ["d9e8e9", "bed0d4", "72808b", "343739"],
+			"defaultSecondaryColors" : ["ef91a9", "d15c69", "af3e4b", "5b1823"],
+			"animationCustom" : 
+			{
+				"animatedParts" : 
+				{ 
+					"parts" : 
+					{ 
+						"bodyFront" : 
+						{ 
+							"properties" : 
+							{
+								"sitPosition" : [0.65, 0.28]
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+]

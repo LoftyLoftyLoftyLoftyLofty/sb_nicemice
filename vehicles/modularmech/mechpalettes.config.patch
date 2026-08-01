@@ -1,0 +1,16 @@
+[
+	//nicemice white
+	{
+		"op" : "add",
+		"path" : "/swapSets/-",
+		"value" : 
+		["d9e8e9", "bed0d4", "72808b", "343739"]
+	},
+	//nicemice red
+	{
+		"op" : "add",
+		"path" : "/swapSets/-",
+		"value" : 
+		["ef91a9", "d15c69", "af3e4b", "5b1823"]
+	}
+]

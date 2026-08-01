@@ -76,7 +76,10 @@
 			{
 				"fill" : 
 				[
-					{"item" : [ "money", 1 ] }
+					{"item" : [ "nicemice_mechbody_hazvia-recipe", 1 ] },
+					{"item" : [ "nicemice_mechbooster_hazvia-recipe", 1 ] },
+					{"item" : [ "nicemice_mechlegs_hazvia-recipe", 1 ] },
+					{"item" : [ "nicemice_mecharm_hazvia-recipe", 1 ] }
 				]
 			}
 		]

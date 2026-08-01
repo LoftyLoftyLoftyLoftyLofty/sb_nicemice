@@ -1,0 +1,7 @@
+[
+	{
+		"op" : "add",
+		"path" : "/recipes/-",
+		"value" : [ "nicemice_mechbody_hazvia", "nicemice_mechbooster_hazvia", "nicemice_mechlegs_hazvia", "nicemice_mecharm_hazvia" ]
+	}
+]

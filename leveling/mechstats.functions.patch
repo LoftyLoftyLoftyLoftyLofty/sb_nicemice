@@ -1,0 +1,7 @@
+[
+	{
+		"op" : "add",
+		"path" : "/mechArmEnergyDrain/-",
+		"value" : [48, 2.4]
+	}
+]

@@ -1,0 +1,52 @@
+[
+	{
+		"op" : "add",
+		"path" : "/nicemice_mechbooster_hazvia",
+		"value" : 
+		{
+			"stats" : 
+			{
+				"speed" : 5,
+				"control" : 7
+			},
+			"partParameters" : {},
+			"partImages" : 
+			{
+				"backBoosterBack" : "booster/hazvia_back_back.png",
+				"backBoosterFullbright" : "boosterflame/hazvia.png",
+				"backBoosterFront" : "booster/hazvia_back_front.png",
+				"frontBoosterBack" : "booster/hazvia_front_back.png",
+				"frontBoosterFullbright" : "boosterflame/hazvia.png",
+				"frontBoosterFront" : "booster/hazvia_front_front.png"
+			},
+			"defaultPrimaryColors" : ["d9e8e9", "bed0d4", "72808b", "343739"],
+			"defaultSecondaryColors" : ["ef91a9", "d15c69", "af3e4b", "5b1823"],
+			"animationCustom" : 
+			{
+				"animatedParts" : 
+				{ 
+					"parts" : 
+					{
+						"frontBoosterFullbright" : 
+						{ 
+							"properties" : 
+							{
+								"zLevel" : 10.5
+							}
+						}
+					}
+				},
+				"lights" : 
+				{
+					"boostLight" : 
+					{
+						"active" : false,
+						"pointLight" : false,
+						"position" : [0, 0],
+						"color" : [255, 183, 183]
+					}
+				}
+			}
+		}
+	}
+]

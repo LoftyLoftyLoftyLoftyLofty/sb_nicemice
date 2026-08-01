@@ -1,0 +1,15 @@
+{
+  "itemName" : "nicemice_mechbody_hazvia",
+  "price" : 12000,
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "category" : "mechPart",
+  "tooltipKind" : "mechbody",
+  "builder" : "/items/buildscripts/buildmechpart.lua",
+  "inventoryIcon" : "nicemice_mechbody_hazvia.png",
+  "description" : "Foot Techbots were reverse-engineered by Nicemice to build this chassis.",
+  "shortdescription" : "Hazvia Mech Body",
+  "itemTags" : [ "nicemice", "mechbody" ],
+
+  "mechPart" : ["body", "nicemice_mechbody_hazvia"]
+}

@@ -1,0 +1,18 @@
+{
+  "projectileName" : "nicemice_hazvia",
+  "image" : "nicemice_hazvia.png",
+  "animationCycle" : 0.3,
+  "lightColor" : [255, 183, 183],
+  "frameNumber" : 2,
+  "damageKindImage" : "icon.png",
+  "physics" : "boomerang",
+  "emitters" : [ "defaultwhite", "defaultnicemicered" ],
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/pulsecannonexplosion/redpulsecannonexplosion.config"
+    }
+  ],
+  "damagePoly" : [ [-9, 0], [-6, -6], [0, -9], [6, -6], [9, 0], [6, 6], [0, 9], [-6, 6] ],
+  "damageKind" : "plasma"
+}

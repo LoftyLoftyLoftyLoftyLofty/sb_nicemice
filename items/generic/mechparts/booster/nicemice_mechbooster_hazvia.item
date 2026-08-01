@@ -1,0 +1,15 @@
+{
+  "itemName" : "nicemice_mechbooster_hazvia",
+  "price" : 8000,
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "category" : "mechPart",
+  "tooltipKind" : "mechbooster",
+  "builder" : "/items/buildscripts/buildmechpart.lua",
+  "inventoryIcon" : "nicemice_mechbooster_hazvia.png",
+  "description" : "Sleek nicemice mech thrusters built for maneuverability on all axes.",
+  "shortdescription" : "Hazvia Mech Boosters",
+  "itemTags" : [ ],
+
+  "mechPart" : ["booster", "nicemice_mechbooster_hazvia"]
+}

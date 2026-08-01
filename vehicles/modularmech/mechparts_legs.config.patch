@@ -1,0 +1,28 @@
+[
+	{
+		"op" : "add",
+		"path" : "/nicemice_mechlegs_hazvia",
+		"value" : 
+		{
+			"stats" : 
+			{
+				"speed" : 5,
+				"jump" : 6
+			},
+			"partParameters" : {},
+			"partImages" : 
+			{
+				"backLeg" : "leg/nicemice_hazvia_back.png",
+				//"backLegFullbright" : "leg/intrepid_fullbright.png",
+				"backLegJoint" : "legjoint/nicemice_hazvia_back.png",
+				"frontLeg" : "leg/nicemice_hazvia.png",
+				//"frontLegFullbright" : "leg/intrepid_fullbright.png",
+				"frontLegJoint" : "legjoint/nicemice_hazvia.png",
+				"hips" : "hips/nicemice_hazvia.png"
+			},
+			"defaultPrimaryColors" : ["d9e8e9", "bed0d4", "72808b", "343739"],
+			"defaultSecondaryColors" : ["ef91a9", "d15c69", "af3e4b", "5b1823"],
+			"animationCustom" : {}
+		}
+	}
+]
