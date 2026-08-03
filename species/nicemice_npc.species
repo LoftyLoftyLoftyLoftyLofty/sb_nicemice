@@ -42,7 +42,7 @@
 		"Personality" 
 	],
 	"skull" : "/humanoid/nicemice/dead.png",
-	"effectDirectives" : "?replace=FEFFFFFF=FFFFFFFF?replace=9bd4ffFF=80f4ffFF?replace=31a6ffFF=39b8e3FF",
+	"effectDirectives" : "?replace=FEFFFFFF=FFFFFFFF?replace=9bd4ffFF=ef91a9FF?replace=31a6ffFF=d15c69FF",
 	"defaultBlueprints" : 
 	{
 		"tier1" : []
