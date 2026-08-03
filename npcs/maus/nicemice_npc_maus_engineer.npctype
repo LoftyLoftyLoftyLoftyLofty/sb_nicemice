@@ -1,0 +1,121 @@
+{
+	"type" : "nicemice_npc_maus_engineer",
+	"baseType" : "nicemice_npc_maus_personnel",
+
+	"levelVariance" : [6, 6],
+	"persistent" : true,
+
+	"damageTeamType" : "friendly",
+
+	"scriptConfig" : 
+	{
+		"behavior" : "nicemice_scriptedGuardBehavior",
+		"behaviorConfig" : 
+		{
+			//we don't want generic greetings here because some of those lines 
+			//are strictly civilian and M.A.U.S. is strictly military
+			
+			"greetingChance" : 0.0,
+			"hostileDamageTeam" : 
+			{ 
+				"type" : "enemy", 
+				"team" : 1 
+			},
+			
+			//hide weapon when not in use
+			"emptyHands" : true
+		},
+		"dialog" : 
+		{
+			"converse" : "/dialog/nicemice_maus_engineer.config:converse",
+			
+			"accuse" : "/dialog/thief.config:accuse",
+			"alert" : "/dialog/thief.config:alert",
+			"attack" : "/dialog/combat.config:attack",
+			"reattack" : "/dialog/combat.config:reattack",
+			"killedTarget" : "/dialog/combat.config:killedTarget",
+			"lostTarget" : "/dialog/combat.config:lostTarget",
+			"outOfSight" : "/dialog/combat.config:outOfSight",
+			"cheerOn" : "/dialog/combat.config:cheerOn",
+			"cantReach" : "/dialog/combat.config:cantReach"
+		},
+		
+		//M.A.U.S. Personnel are intended to stay with their ship, not join the player
+		"questGenerator" : 
+		{
+			"enableParticipation" : false
+		}
+	},
+
+	"matchColorIndices" : true,
+	"items" : 
+	{
+		"nicemice_npc" : 
+		[
+			[
+				0, 
+				[
+					{
+						"head" : 
+						[
+							{ 
+								"name" : "nicemice_invisiblehead"							
+							}
+						],
+						"back" : 
+						[
+							{ 
+								"name" : "nicemice_tail_mouse"							
+							}
+						],
+						
+						// Ship Crew
+						//  Colors 0, 1
+						//  M.A.U.S. Red
+						//  Black
+						
+						// Medic
+						//  Colors 3
+						//  White
+						
+						// Engineering
+						//  Colors 5
+						
+						// Cargo Crew
+						//  Colors 6, 11
+						//  Yellow
+						//  Brown
+						
+						// Quartermaster
+						//  Colors 12
+						//  Copper
+						
+						// Engineering
+						//  Colors 9, 13
+						//  Purple
+						//  Lilac
+						
+						"chest" :
+						[
+							{ 
+								"name" : "nicemice_jumpsuitchest_dyeable",
+								"parameters" : { "colorIndex" : 5 }	 
+							}
+						],
+						"legs" :
+						[
+							{ 
+								"name" : "nicemice_jumpsuitlegs_dyeable",
+								"parameters" : { "colorIndex" : 5 }	 
+							}
+						],
+						"sheathedprimary" : 
+						[ 
+							"npcshotgun" 
+						]
+					}
+				] 
+			]
+		]
+	}
+}
