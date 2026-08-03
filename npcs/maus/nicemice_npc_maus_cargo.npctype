@@ -82,9 +82,12 @@
 						//  Colors 5
 						
 						// Cargo Crew
-						//  Colors 6, 11, 12
+						//  Colors 6, 11
 						//  Yellow
 						//  Brown
+						
+						// Quartermaster
+						//  Colors 12
 						//  Copper
 						
 						// Engineering
@@ -96,14 +99,14 @@
 						[
 							{ 
 								"name" : "nicemice_jumpsuitchest_dyeable",
-								"parameters" : { "colorIndex" : [6, 11, 12] }	 
+								"parameters" : { "colorIndex" : [6, 11] }	 
 							}
 						],
 						"legs" :
 						[
 							{ 
 								"name" : "nicemice_jumpsuitlegs_dyeable",
-								"parameters" : { "colorIndex" : [6, 11, 12] }	 
+								"parameters" : { "colorIndex" : [6, 11] }	 
 							}
 						],
 						"sheathedprimary" : 

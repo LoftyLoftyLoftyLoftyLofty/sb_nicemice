@@ -1,6 +1,6 @@
 {
 	"type" : "nicemice_npc_maus_personnel",
-	"baseType" : "villager",
+	"baseType" : "nicemice_villager",
 
 	"levelVariance" : [6, 6],
 	"persistent" : true,
@@ -43,7 +43,7 @@
 		//M.A.U.S. Personnel are intended to stay with their ship, not join the player
 		"questGenerator" : 
 		{
-			"enableParticipation" : true
+			"enableParticipation" : false
 		}
 	},
 
@@ -78,11 +78,16 @@
 						//  Colors 3
 						//  White
 						
+						// Engineering
+						//  Colors 5
+						
 						// Cargo Crew
-						//  Colors 5, 6, 11, 12
-						//  Orange
+						//  Colors 6, 11
 						//  Yellow
 						//  Brown
+						
+						// Quartermaster
+						//  Colors 12
 						//  Copper
 						
 						// Engineering
