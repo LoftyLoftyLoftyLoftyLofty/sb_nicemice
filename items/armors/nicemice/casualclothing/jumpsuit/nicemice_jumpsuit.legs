@@ -1,12 +1,11 @@
 {
 	"itemName" : "nicemice_jumpsuitlegs",
-
-	//automatically convert compatible nicemice items to their vanilla counterparts for other races
-	//  "nicemice_otherSpeciesConversion" : 
-	//  {
-	//  	"default" : "perfectlygenericitem",
-	//  	"human" : "perfectlygenericitem"
-	//  },
+	
+	// This starter jumpsuit is only available in one color during character creation.
+	// This is mostly just because the randomization of jumpsuit colors looks really bad.
+	// Convert to dyeable version once the player is in-game.
+	
+	"nicemice_convertForNicemice" : "nicemice_jumpsuitlegs_dyeable",
 
 	"price" : 35,
 	"inventoryIcon" : "icons.png:pants",
