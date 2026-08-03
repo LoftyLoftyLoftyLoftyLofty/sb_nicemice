@@ -6,7 +6,8 @@
 	// Convert to dyeable version once the player is in-game.
 	
 	"nicemice_convertForNicemice" : "nicemice_jumpsuitchest_dyeable",
-
+	"nicemice_convertForNicemice_colorIndex" : 0,
+	
 	"price" : 35,
 	"inventoryIcon" : "icons.png:chest",
 	"maxStack" : 1,
@@ -30,6 +31,7 @@
 		"frontSleeve" : "fsleeve.png"
 	},
 
+	"colorIndex" : 0,
 	"colorOptions" : 
 	[
 		//note: values are light to dark

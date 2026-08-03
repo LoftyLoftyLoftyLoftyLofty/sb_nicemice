@@ -6,6 +6,7 @@
 	// Convert to dyeable version once the player is in-game.
 	
 	"nicemice_convertForNicemice" : "nicemice_jumpsuitlegs_dyeable",
+	"nicemice_convertForNicemice_colorIndex" : 0,
 
 	"price" : 35,
 	"inventoryIcon" : "icons.png:pants",
