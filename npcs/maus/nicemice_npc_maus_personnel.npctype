@@ -70,10 +70,12 @@
 						],
 						
 						// Ship Crew
-						//  Colors 0, 1, 2, 3 
+						//  Colors 0, 1
 						//  M.A.U.S. Red
 						//  Black
-						//  Gray
+						
+						// Medic
+						//  Colors 3
 						//  White
 						
 						// Cargo Crew
@@ -92,14 +94,14 @@
 						[
 							{ 
 								"name" : "nicemice_jumpsuitchest_dyeable",
-								"parameters" : { "colorIndex" : [0, 1, 2, 3] }	 
+								"parameters" : { "colorIndex" : [0, 1] }	 
 							}
 						],
 						"legs" :
 						[
 							{ 
 								"name" : "nicemice_jumpsuitlegs_dyeable",
-								"parameters" : { "colorIndex" : [0, 1, 2, 3] }	 
+								"parameters" : { "colorIndex" : [0, 1] }	 
 							}
 						],
 						"sheathedprimary" : 
