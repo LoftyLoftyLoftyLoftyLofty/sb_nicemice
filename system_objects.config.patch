@@ -1,0 +1,28 @@
+[
+  {
+    "op": "add",
+    "path": "/nicemice_cargoship",
+	"value": {
+	  "warpAction" : "InstanceWorld:nicemice_cargoship",
+	  "threatLevel" : 6,
+	  "skyParameters" : {
+		"seed" : 0,
+		"horizonClouds" : false,
+		"horizonImages" : [ { "left": "/celestial/system/ships/shiphorizonleft.png", "right": "/celestial/system/ships/nicemice_cargoship_horizonright.png" } ]
+	  },
+
+	  "moving" : true,
+	  "speed" : 15.0,
+	  "orbitRange" : [1, 1],
+	  "generatedParameters" : {
+		"displayName" : "/celestial/nicemice_maus_fleet_ship_names.config:nameGen"
+	  },
+	  "lifeTime" : [1500, 2100],
+	  "parameters" : {
+		"icon" : "/celestial/system/ships/nicemice_cargoship.png",
+		"displayName" : "M.A.U.S. Cargo Hauler",
+		"description" : "This freighter's transponder status indicates that visitors are welcome aboard for commerce."
+	  }
+	}
+  }
+]

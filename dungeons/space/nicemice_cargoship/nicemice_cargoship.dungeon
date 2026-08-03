@@ -1,0 +1,37 @@
+{
+  "metadata" : {
+    "name" : "nicemice_cargoship",
+    "species" : "nicemice",
+    "rules" : [
+    ],
+    "anchor" : [ "nicemice_cargoship_base" ],
+    "gravity" : 40,
+    "maxRadius" : 1000000,
+    "maxParts" : 1,
+    "protected" : true
+  },
+
+  "parts" : [
+
+    // SAFE ZONE
+    {
+      "name" : "safe-empty",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", "/dungeons/space/hazards/safe-empty.json" ],
+      "chance" : 0,
+      "markDungeonId" : false
+    },
+
+    // COCKPIT
+    {
+      "name" : "nicemice_cargoship_base",
+      "rules" : [
+        [ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", "nicemice_cargoship_base.json" ],
+      "chance" : 0
+    }
+  ]
+}
