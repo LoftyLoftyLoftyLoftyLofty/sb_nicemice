@@ -12,7 +12,7 @@
         "type" : "engineer",
         "name" : "Engineer",
         "field" : "Engineering",
-        //"uniformColorIndex" : 5,
+        "uniformColorIndex" : 5,
 
         "benefits" : [
           {
@@ -25,8 +25,8 @@
 	  
 	  "defaultUniform" : {
 	    "head" : "nicemice_invisiblehead",
-        "chest" : "nicemice_jumpsuitchest",
-        "legs" : "nicemice_jumpsuitlegs",
+        "chest" : "nicemice_jumpsuitchest_dyeable",
+        "legs" : "nicemice_jumpsuitlegs_dyeable",
 		"back" : "nicemice_tail_mouse"
       }
     },
@@ -48,8 +48,8 @@
     "default" : [
       [0, [
           {
-            "chest" : [ { "name" : "nicemice_jumpsuitchest" } ],
-            "legs" : [ { "name" : "nicemice_jumpsuitlegs" } ],
+            "chest" : [ { "name" : "nicemice_jumpsuitchest_dyeable" } ],
+            "legs" : [ { "name" : "nicemice_jumpsuitlegs_dyeable" } ],
 			"back" : [ { "name" : "nicemice_tail_mouse" } ],
             "sheathedprimary" : [ "npcmachinepistol" ]
           }

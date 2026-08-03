@@ -11,8 +11,8 @@
       "role" : {
         "type" : "tailor",
         "name" : "Tailor",
-        "field" : "Fazhion"
-        //"uniformColorIndex" : 9
+        "field" : "Fazhion",
+        "uniformColorIndex" : 9
       },
 
       // This interactActions only happens when in a crew, and only when
@@ -25,8 +25,8 @@
 	  
 	  "defaultUniform" : {
 	    "head" : "nicemice_invisiblehead",
-        "chest" : "nicemice_jumpsuitchest",
-        "legs" : "nicemice_jumpsuitlegs",
+        "chest" : "nicemice_jumpsuitchest_dyeable",
+        "legs" : "nicemice_jumpsuitlegs_dyeable",
 		"back" : "nicemice_tail_mouse"
       }
     },
@@ -59,8 +59,8 @@
     "default" : [
       [0, [
           {
-            "chest" : [ { "name" : "nicemice_jumpsuitchest" } ],
-            "legs" : [ { "name" : "nicemice_jumpsuitlegs" } ],
+            "chest" : [ { "name" : "nicemice_jumpsuitchest_dyeable" } ],
+            "legs" : [ { "name" : "nicemice_jumpsuitlegs_dyeable" } ],
 			"back" : [ { "name" : "nicemice_tail_mouse" } ],
             //"primary" : ["flowerbouquet"]
             "sheathedprimary" : [ "npcmachinepistol" ]
