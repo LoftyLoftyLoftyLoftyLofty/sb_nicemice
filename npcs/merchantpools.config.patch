@@ -1,0 +1,15 @@
+[
+	{
+		"op" : "add",
+		"path" : "/nicemice_maus_quartermaster",
+		"value" : 
+		[
+			[
+				0, 
+				[
+					{ "item" : { "name" : "carbed" }, "rarity" : 1.0, "price" : 10000 }
+				]
+			]
+		]
+	}
+]

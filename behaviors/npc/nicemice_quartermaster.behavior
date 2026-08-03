@@ -1,0 +1,34 @@
+{
+  "name": "nicemice_quartermaster",
+  "description": "",
+  "scripts": [
+    "/scripts/actions/animator.lua",
+    "/scripts/actions/time.lua",
+    "/scripts/actions/movement.lua",
+	"/npcs/nicemice_npcHooks.lua",
+	"/npcs/nicemice_scriptedVillagerBehavior.lua"
+  ],
+  "parameters": {
+    "play": true
+  },
+  "root": {
+    "title": "sequence",
+    "type": "composite",
+    "name": "sequence",
+    "parameters": {},
+    "children": [
+	  {
+	    "title": "nicemice_initHooks",
+		"type": "action",
+		"name": "nicemice_initHooks",
+		"parameters": {}
+	  },
+	  {
+	    "title": "nicemice_scriptedVillagerBehavior",
+		"type": "action",
+		"name": "nicemice_scriptedVillagerBehavior",
+		"parameters": { "behavior" : { "value" : "nicemice_quartermaster_guard"} }
+	  }
+	]
+  }
+}
