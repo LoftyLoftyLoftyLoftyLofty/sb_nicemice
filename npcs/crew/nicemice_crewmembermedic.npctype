@@ -71,7 +71,7 @@
             "chest" : [ { "name" : "nicemice_jumpsuitchest_dyeable" } ],
             "legs" : [ { "name" : "nicemice_jumpsuitlegs_dyeable" } ],
 			"back" : [ { "name" : "nicemice_tail_mouse" } ],
-            "primary" : [ "medkit" ],
+            //"primary" : [ "medkit" ],
 			"sheathedprimary" : [ "npcmachinepistol" ]
           }
         ] ]
