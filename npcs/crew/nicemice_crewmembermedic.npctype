@@ -1,0 +1,80 @@
+{
+  "type" : "nicemice_crewmembermedic",
+  "baseType" : "nicemice_crewmember",
+
+  "scriptConfig" : {
+    "behaviorConfig" : {
+      "emptyHands" : true
+    },
+
+    "crew" : {
+      "role" : {
+        "type" : "medic",
+        "name" : "Medic",
+        "field" : "Medical",
+        "uniformColorIndex" : 3,
+
+        "benefits" : [
+          {
+            "type" : "Regeneration",
+            "value" : 1
+          }
+        ]
+      },
+	  
+	  "defaultUniform" : {
+	    "head" : "nicemice_invisiblehead",
+        "chest" : "nicemice_jumpsuitchest_dyeable",
+        "legs" : "nicemice_jumpsuitlegs_dyeable",
+		"back" : "nicemice_tail_mouse"
+      }
+    },
+
+    "dialog" : {
+      "crewmember" : {
+        "roleDescription" : {
+          "default" : {
+            "default" : [
+              "Healink here! Turn your head and cough, Adjutant."
+            ]
+          }
+        },
+		"fieldBenefit" : {
+          "default" : {
+            "default" : [
+              "Mending!",
+              "Are you vounded? Let me patch you up!",
+              "Ztay ztill vhile I heal you.",
+              "Keep it toget'er, Adjutant. I've got you!"
+            ]
+          }
+        },
+        "combatBenefit" : {
+          "default" : {
+            "default" : [
+              "Hang in zhere, I've got you!",
+              "I'll keep you ztable!",
+              "Healz have arrived!",
+              "Keep your head down vhile I patch you up!",
+              "On me for healz!"
+            ]
+          }
+        }
+      }
+    }
+  },
+
+  "items" : {
+    "default" : [
+      [0, [
+          {
+            "chest" : [ { "name" : "nicemice_jumpsuitchest_dyeable" } ],
+            "legs" : [ { "name" : "nicemice_jumpsuitlegs_dyeable" } ],
+			"back" : [ { "name" : "nicemice_tail_mouse" } ],
+            "primary" : [ "medkit" ],
+			"sheathedprimary" : [ "npcmachinepistol" ]
+          }
+        ] ]
+    ]
+  }
+}
