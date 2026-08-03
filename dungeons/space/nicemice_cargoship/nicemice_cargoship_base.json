@@ -5,7 +5,7 @@
  "layers":[
         {
          "compression":"zlib",
-         "data":"eJzt3U2O00AUhdEsJVN20ytjF8x6FUx6W9CCKFGUdNuO7Xdf+QyO6AGgKv+8T0JJ8XE6nT4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYEPvf51DvTdZZ6rb6wdAls8Z\/TPUfX+r19ON\/gLkSu6a\/uovwKiSu6a\/+gswquSu6a\/+AowquWv6q78Ao0rumv7qL8Cokrumv\/oLMKrkrumv\/gKMKrlr+qu\/AKNK7pr+6i\/AqJK7pr\/6CzCq5K7pr\/4CjCq5a536O+ea6y8AyV3TX\/0FGFVy17r0d8r\/k1ixF\/0FyNWpa9XreWWd+gvArfSuvf3XfZ0Ve9FfgFzdu5ZAfwGYq3vXEugvAHN171oC\/QVgrs8Z\/SPUfbOq1zN1nd\/1d891VT9fALCHKZ9\/BgDWpb8A8zw7NyHB+5OfR9dl30u+\/1u95il7AdhD98\/3jKjLvlPP33h1LwB7SJ+JHTp01H3rL8By6TOxQ4eOum\/9BVgufSZ26NBR962\/AMulz8QOHTrqvlPP31i6l+p3ETiW9JnYYXYfdd\/6C7Bc+kzsMLuPum\/9BVgufSZ2mN1H3bf+AiyXfr7w7c\/VM3rPFjy6BmmW9Ld6zc6MBpjnaP2tvt5r3Z+OewHgSn+z6S\/Acucw9+cgV3exor9zzkze+6zlJf\/+vPWalqh+74Bjq27OlNldvZ6q\/m7957a8P+n3sPq9A47r943qWdhtdm+578v90d\/tVL97AKkNTp7dW+\/7cm\/0dxvV7xzARWKDU2f3Hvu+3Bf9XV\/1uwZwL63BibM7ed97X6+O\/a1+xwCeSWpw2uxO37f+fq363QL4TkqDk2Z3h33r73PV7xTAVAkNTpndXfatv49Vv0sAc9022PnPdf1deh6z85\/r3yGA7o7W3+rrvdb96bgXAK70N5v+AmQ5v8D5z7lnJp9Puec\/Vz\/zACle6VD1Z3cS+lu9nlfuz973sPpZB0iz1Xwfkf4uU\/2MA6TaYr6PSH\/nq362AdKtPd9HpL\/zVD\/TAF2sOd9HpL\/TVT\/LAN2sNd9HpL\/TVD\/DAF3p77T+Vpw9ttZ5W1udf1X97AJ0p79f9\/fe+YHqe\/hxev7dXudvAOTS3+n9fXug+v4B0Jf+Pu5v8vlXe6t+RgFGpb+P+1u9ngTVzybA6PRXf7UXoIb+Xq\/FkfatvQD19PefI+1bewEy3H5f9NXvjv66+\/Wr3\/PK37HW92ofXYMjqX72AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgL38A5h7oMA==",
+         "data":"eJzt3U2O00AUhdEsJVN20ytjF8x6FUx6W4AgShSSbtux\/e4rn8ERDADV8099QkqqP06n0wcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAbOj9t3Oo9ybrTHV7\/QDI8meP\/h7qvr\/V6+lGfwFyJXdNf\/UXYFTJXdNf\/QUYVXLX9Fd\/AUaV3DX91V+AUSV3TX\/1F2BUyV3TX\/0FGFVy1\/RXfwFGldw1\/dVfgFEld01\/9RdgVMld01\/9BRhVctf0V38BRpXctU79nXPN9ReA5K7pr\/4CjCq5a136O+XnJFbMor8AuTp1rXo9r6xTfwG4ld618+n6\/8fq9byyzopZ9BcgV3rX3v7pvs6KWfQXIFf3riXQXwDm6t61BPoLwFx\/9uhvod6f\/D7N\/TqftbBiXdXPFwDsYcrnnwGAdekvwDzPzk1IcP\/dler1mPv\/dd4+R1\/1t8ssAHvo\/vmeEXWZO\/X8jVdnAdhD+p7YoUNHnVt\/AZZL3xM7dOioc+svwHLpe2KHDh11bv0FWC59T+zQoaPOnXr+89JZqt9F4FjS98QOHTrq3KnnXy2dpfpdBI4lfU\/ssHcfdW79BVgufU\/ssHcfdW79BViu+\/nCIxr1\/Of0WarfRYBER+tv9fVe6\/50nAWAK\/3Npr8Ay53DdPnuypb9nXNm8t5nLS\/5\/tHWa1qi+r0Djq26Oc\/27g6f3dm6v1v\/vS3vT\/o9rH7vgOP6eaN6L+y2d2859+X+6O92qt89gNQGJ+\/dW899uTf6u43qdw7gIrHBqXv3HnNf7ov+rq\/6XQO4l9bgxL17r7nPp\/mfO9v782od+1v9jgE8k9TgtL07fe69r1e3\/la\/WwBfSWlw0t7dYW79fa76nQKYKqHBKXt3l7n197HqdwlgrtsGp54vPKKlZybvfdZyh\/Ofq98hgO6O1t\/q673W\/ek4CwBX+ptNfwGynF\/g\/OfcM5PPp2n3p+L85+pnHiDFKx2q\/uxOQn+r1\/PK\/dn7HlY\/6wBpttrfR6S\/y1Q\/4wCpttjfR6S\/81U\/2wDp1t7fR6S\/81Q\/0wBdrLm\/j0h\/p6t+lgG6WWt\/H5H+TlP9DAN0pb\/T+ltx9tha521tdf5V9bML0J3+ft7fe+cHqu\/hx+n5d3udvwGQS3+n9\/ftger7B0Bf+vu4v8nnX+2t+hkFGJX+Pu5v9XoSVD+bAKPTX\/3VXoAa+nu9FkeaW3sB6unvX0eaW3sBMqz53dEfd79+9mde+TfW+l7to2twJNXPHgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA7OUX3J3gtg==",
          "encoding":"base64",
          "height":280,
          "id":1,
@@ -19,7 +19,7 @@
         }, 
         {
          "compression":"zlib",
-         "data":"eJzt3cttG0EQBFA5D2fnAJSJwnJaNgQdLIoizeHOp3rnPaAPurVr4S7AgMYvLwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAKv8xWA0CG1X1g9C\/Ajqrc5Sp7ppIfQJYqd7nKnqnkB5Clyl2usmcq+QFkqXKXq+yZSn4AWarc5Sp7ppIfQJYqd7nKnqnkB5Clyl2usmcq+QFkqXKXq+yZSn4AWarc5Sp7ppIfQJYqd7nKnqnkB6R722yq3OUqe6aSH5DuvZNeNxn9uw\/5Aen0b6Yqe6aSH5BO\/2aqtmfa\/0VUJT9gX\/o3U7U99S9AG\/2b6Ux76l+Aa\/o305n21L8A1\/QvZ+Q7A+n0L2fkOwPp9C9n5DsD6fQvZ+Q7A+lWvwfp\/UlG8J2BVC2\/t2nM\/+bPp3n58vPq3VoHYKTVN86caz77+ePy59W7HfmzAPTm1tBDS\/+mq7InUJtbQw\/6F6CNW0MP+hegjVtDD\/oXoI1bQw\/6F6CNW8MoX\/u3Cn8ngBncGkbRvwC3uTWMon8BbnNrGEX\/Atzm1jCK\/gW4bfUbf94EvG913q3j\/WeAx6y+cW7ifavzPvJ9Kr\/\/DDCaO5Tt2e+Q8P2q\/ftzQmbAXnRvLv07R0JeAOTQv+MlZAVAFv07VkJOAOTRv+MkZAQAvSX3r+4F4KxS+1f3AnBmif2re4Ekv1cvwCml9a\/uBWAHSf2re4GqVr8HuOv9XJ136yS\/\/wxQ1er7ueMNXZ33ke+T9P4zQHXu31yV81v978+VswP4jg6ep3J2K\/u3cm4A9+jgOSrntqp\/K2cG8AgdPF7lzFb0b+W8AFro4LEq5zW7fytnBfAMHTxO5axm9m\/lnACO0MFjVM5pVv9WzgigBx3cX+WMZvRv5XwAetLBfbXk9Wz2PWfF+1cAfHBH+6nWv7MHgEvuaR9yuSYTgPt08HEyuSQPgMfo4GPk8Y8sANro4OfJ4oMcAJ6jg58jBxkAHKWD2+2ewe5\/foBeev\/+iTn\/ANDH6ntu6gwAGd42GwBI8N5Jr5uM\/gUghf4FgPn0LwDMp38BYD79CwDz6V8AmE\/\/AsB8+hcA5tO\/ADCf\/gWA+Va\/B+n9SQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOARfwH+Ec4e",
+         "data":"eJzt3UFOHDEQBdDJPXK7HICbcKxcKxFiAQwZgrvb9i\/7PakWsyvKpr40EuZ2AwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGb4pbYqADLMzgMlfwF2VGUvV+kzlfkBZKmyl6v0mcr8ALJU2ctV+kxlfgBZquzlKn2mMj+ALFX2cpU+U5kfQJYqe7lKn6nMDyBLlb1cpc9U5geQpcpertJnKvMDyFJlL1fpM5X5AWSpsper9JnK\/IB0z5tVlb1cpc9U5geke8mkp01K\/u7D\/IB08jdTlT5TmR+QTv5mqtZn2v8iqjI\/YF\/yN1O1PuUvQBv5m2mlPuUvwGfyN9NKfcpfgM\/kLytyzkA6+cuKnDOQTv6yIucMpJO\/rMg5A+lmvwfp\/Ul6cM5Aqpa\/21Tqf\/XnXd3uPs\/urbUAepq949Ra9d7PHx8\/z+7tzM8CcDW7hiu05G+6Kn0Ctdk1XEH+ArSxa7iC\/AVoY9dwBfkL0Mau4QryF6CNXUMv9\/lbhd8JYAS7hl7kL8Bjdg29yF+Ax+waepG\/AI\/ZNfQifwEem\/3GnzcBvzZ73q3l\/WeA75m94+zEr82e95nz8f4zwGN2ULaj55BwftW+f3bvgdFkby75O4Z7D8B78rc\/2QvAPfnbl+wF4F\/kbz+yF4AVJeev7AVgVan5K3sBWFli\/speIMnv2Q2wpLT8lb0A7CApf2UvUNXstwB33Z2z591a6e8\/A1Q0e3fuuD9nz\/vM+aS9\/wxQmd03VuX5zf7+2f0DViODx6k8u5n5694Bq5LBY1Se26z8dd+A1cng\/irPbEb+umfALmRwX5XnNTp\/3S9gNzK4n8qzGpm\/7hWwKxncR+U5jcpf9wnYnQy+XuUZjchf9wjglQy+Vsu8js7+ypr1\/hUAduiVquXvjALgjV16DXP5zH0B+JoMPs9MPnJPAL5HBp9jHm\/cD4A2Mvg4s3jlXgAcI4OPMQf3AeAsGdxu9xm4BwDXOJrBau8C4LzZu1zVKgDme96sACDBSyY9bVLyF4AU8hcAxpO\/ADCe\/AWA8eQvAIwnfwFgPPkLAOPJXwAYT\/4CwHjyFwDGm\/0epPcnAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgO\/4CzT12hs=",
          "encoding":"base64",
          "height":280,
          "id":2,
@@ -154,7 +154,7 @@
                  "gid":2147489890,
                  "height":8,
                  "id":2036,
-                 "name":"Diagonal Docking Field 8x8",
+                 "name":"Diagonal Docking Field 10x10",
                  "properties":[
                         {
                          "name":"object",
@@ -491,8 +491,8 @@
                  "type":"",
                  "visible":true,
                  "width":8,
-                 "x":664,
-                 "y":1280
+                 "x":648,
+                 "y":1272
                 }, 
                 {
                  "height":8,
@@ -535,7 +535,7 @@
                  "type":"",
                  "visible":true,
                  "width":8,
-                 "x":112,
+                 "x":8,
                  "y":952
                 }, 
                 {
@@ -557,7 +557,7 @@
                  "type":"",
                  "visible":true,
                  "width":8,
-                 "x":136,
+                 "x":160,
                  "y":952
                 }, 
                 {
@@ -579,7 +579,7 @@
                  "type":"",
                  "visible":true,
                  "width":8,
-                 "x":112,
+                 "x":136,
                  "y":920
                 }, 
                 {
@@ -601,7 +601,7 @@
                  "type":"",
                  "visible":true,
                  "width":8,
-                 "x":88,
+                 "x":24,
                  "y":952
                 }, 
                 {
@@ -623,7 +623,7 @@
                  "type":"",
                  "visible":true,
                  "width":8,
-                 "x":64,
+                 "x":88,
                  "y":952
                 }, 
                 {
@@ -711,7 +711,7 @@
                  "type":"",
                  "visible":true,
                  "width":8,
-                 "x":88,
+                 "x":8,
                  "y":936
                 }, 
                 {
@@ -843,8 +843,8 @@
                  "type":"",
                  "visible":true,
                  "width":8,
-                 "x":640,
-                 "y":1264
+                 "x":624,
+                 "y":1248
                 }, 
                 {
                  "height":8,
@@ -865,7 +865,7 @@
                  "type":"",
                  "visible":true,
                  "width":8,
-                 "x":112,
+                 "x":24,
                  "y":936
                 }, 
                 {
@@ -931,8 +931,52 @@
                  "type":"",
                  "visible":true,
                  "width":8,
-                 "x":64,
+                 "x":88,
                  "y":936
+                }, 
+                {
+                 "height":8,
+                 "id":2074,
+                 "name":"Mechanic",
+                 "properties":[
+                        {
+                         "name":"npc",
+                         "type":"string",
+                         "value":"nicemice_npc"
+                        }, 
+                        {
+                         "name":"typeName",
+                         "type":"string",
+                         "value":"nicemice_npc_maus_mechanic"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":8,
+                 "x":24,
+                 "y":968
+                }, 
+                {
+                 "height":8,
+                 "id":2075,
+                 "name":"Mechanic",
+                 "properties":[
+                        {
+                         "name":"npc",
+                         "type":"string",
+                         "value":"nicemice_npc"
+                        }, 
+                        {
+                         "name":"typeName",
+                         "type":"string",
+                         "value":"nicemice_npc_maus_mechanic"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":8,
+                 "x":600,
+                 "y":1224
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -1116,7 +1160,7 @@
          "y":0
         }],
  "nextlayerid":28,
- "nextobjectid":2074,
+ "nextobjectid":2076,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.10.0",
