@@ -228,5 +228,25 @@
 		"category": "nicemice",
 		"behavior": "/behaviors/npc/nicemice_healsupport.behavior",
 		"output": {}
+	},
+	"nicemice_hasWandStaffSheathed" :
+	{
+		"type": "action",
+		"name": "nicemice_hasWandStaffSheathed",
+		"title": "nicemice_hasWandStaffSheathed",
+		"properties": {},
+		"category": "nicemice",
+		"script": "/scripts/actions/nicemice_wandstaff.lua",
+		"output": {}
+	},
+	"nicemice_hasWandStaffPrimary" :
+	{
+		"type": "action",
+		"name": "nicemice_hasWandStaffPrimary",
+		"title": "nicemice_hasWandStaffPrimary",
+		"properties": {},
+		"category": "nicemice",
+		"script": "/scripts/actions/nicemice_wandstaff.lua",
+		"output": {}
 	}
 }

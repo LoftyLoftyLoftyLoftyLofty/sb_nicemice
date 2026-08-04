@@ -25,6 +25,22 @@ function nicemice_resolveAbilityIntent(args, board)
   return true, {intent = ability.npcIntent or "harmful"}
 end
 
+-- Vanilla hasMeleeSheathed/hasRangedSheathed only recognize "melee"/"ranged"
+-- itemTags, so staff/wand items (tagged "weapon","staff") never match either
+-- check, and swapItemSlots never fires. This fills that gap so our gear can
+-- use the same vanilla swapItemSlots action.
+function nicemice_hasWandStaffSheathed(args, board)
+  if self.sheathedPrimary == nil then return false end
+  return root.itemHasTag(self.sheathedPrimary.name, "staff")
+      or root.itemHasTag(self.sheathedPrimary.name, "wand")
+end
+
+function nicemice_hasWandStaffPrimary(args, board)
+  if self.primary == nil then return false end
+  return root.itemHasTag(self.primary.name, "staff")
+      or root.itemHasTag(self.primary.name, "wand")
+end
+
 -- param first
 -- param second
 function nicemice_equals(args, board)

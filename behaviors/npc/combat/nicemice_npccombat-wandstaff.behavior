@@ -23,6 +23,53 @@
     "parameters": {},
     "children": [
       {
+        "title": "succeeder",
+        "type": "decorator",
+        "name": "succeeder",
+        "parameters": {},
+        "child": {
+          "title": "sequence",
+          "type": "composite",
+          "name": "sequence",
+          "parameters": {},
+          "children": [
+            {
+              "title": "inverter",
+              "type": "decorator",
+              "name": "inverter",
+              "parameters": {},
+              "child": { "title": "hasMeleePrimary", "type": "action", "name": "hasMeleePrimary", "parameters": {} }
+            },
+            {
+              "title": "inverter",
+              "type": "decorator",
+              "name": "inverter",
+              "parameters": {},
+              "child": { "title": "hasRangedPrimary", "type": "action", "name": "hasRangedPrimary", "parameters": {} }
+            },
+            {
+              "title": "inverter",
+              "type": "decorator",
+              "name": "inverter",
+              "parameters": {},
+              "child": { "title": "nicemice_hasWandStaffPrimary", "type": "action", "name": "nicemice_hasWandStaffPrimary", "parameters": {} }
+            },
+            {
+              "title": "selector",
+              "type": "composite",
+              "name": "selector",
+              "parameters": {},
+              "children": [
+                { "title": "hasMeleeSheathed", "type": "action", "name": "hasMeleeSheathed", "parameters": {} },
+                { "title": "hasRangedSheathed", "type": "action", "name": "hasRangedSheathed", "parameters": {} },
+                { "title": "nicemice_hasWandStaffSheathed", "type": "action", "name": "nicemice_hasWandStaffSheathed", "parameters": {} }
+              ]
+            },
+            { "title": "swapItemSlots", "type": "action", "name": "swapItemSlots", "parameters": {} }
+          ]
+        }
+      },
+      {
         "title": "setFlag",
         "type": "action",
         "name": "setFlag",
@@ -170,9 +217,9 @@
                 "output": { "usable": "altUsable", "intent": "altIntent" }
               },
               {
-                "title": "randomize",
+                "title": "selector",
                 "type": "composite",
-                "name": "randomize",
+                "name": "selector",
                 "parameters": {},
                 "children": [
                   {
