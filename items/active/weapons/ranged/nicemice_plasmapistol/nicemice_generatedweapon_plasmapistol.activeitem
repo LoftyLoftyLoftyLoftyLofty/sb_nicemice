@@ -71,17 +71,17 @@
     "animationParts" : {
       "butt" : {
         "path" : "/items/active/weapons/ranged/nicemice_plasmapistol/butt/<variant>.png",
-        "variants" : 1,
+        "variants" : 3,
         "paletteSwap" : false
       },
       "middle" : {
         "path" : "/items/active/weapons/ranged/nicemice_plasmapistol/middle/<variant>.png",
-        "variants" : 1,
+        "variants" : 3,
         "paletteSwap" : false
       },
       "barrel" : {
         "path" : "/items/active/weapons/ranged/nicemice_plasmapistol/barrel/<variant>.png",
-        "variants" : 1,
+        "variants" : 3,
         "paletteSwap" : false
       },
       "muzzleFlash" : "/items/active/weapons/ranged/nicemice_plasmapistol/muzzleflash.png"
