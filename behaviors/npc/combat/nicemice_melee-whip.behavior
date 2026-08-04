@@ -209,21 +209,10 @@
                                 }
                               },
                               {
-							    "title": "repeater",
-							    "type": "decorator",
-							    "name": "repeater",
-							    "parameters": 
-								{
-								  "maxLoops": {"value": -1},
-								  "untilSuccess": {"value": false}
-								},
-							    "child": 
-								{
 							  	  "title": "nicemice_meleecombat-aim-whip",
 								  "type": "module",
 								  "name": "nicemice_meleecombat-aim-whip",
 								  "parameters": {}
-							    }
 							  },
                               { "title": "primaryFire", "type": "action", "name": "primaryFire", "parameters": {} },
                               {
