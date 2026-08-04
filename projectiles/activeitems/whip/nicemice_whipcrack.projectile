@@ -1,0 +1,19 @@
+{
+  "projectileName" : "nicemice_whipcrack",
+  "physics" : "illusion",
+  "image" : "nicemice_whipcrack.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 4,
+  "timeToLive" : 0.25,
+  "power" : 77,
+  "speed" : 0,
+  "piercing" : true,
+  "actionOnReap" : [],
+  "fullbright" : true,
+  "lightColor" : [255, 183, 183],
+  "emitters" : [ "energyplasma" ],
+  "damageKind" : "plasma",
+  "damagePoly" : [ [-6, 0], [0, 6], [6, 0], [0, -6] ],
+  "knockback" : 15,
+  "knockbackDirectional" : true
+}

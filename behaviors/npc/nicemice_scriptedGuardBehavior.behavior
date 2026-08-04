@@ -6,7 +6,8 @@
     "/scripts/actions/time.lua",
     "/scripts/actions/movement.lua",
 	"/npcs/nicemice_npcHooks.lua",
-	"/npcs/nicemice_scriptedVillagerBehavior.lua"
+	"/npcs/nicemice_scriptedVillagerBehavior.lua",
+    "/scripts/actions/nicemice_resolveGuardBehavior.lua"
   ],
   "parameters": {
     "play": true
@@ -24,10 +25,20 @@
 		"parameters": {}
 	  },
 	  {
-	    "title": "nicemice_scriptedVillagerBehavior",
-		"type": "action",
-		"name": "nicemice_scriptedVillagerBehavior",
-		"parameters": { "behavior" : { "value" : "guard"} }
+	  	"title": "nicemice_resolveGuardBehavior",
+	  	"type": "action",
+	  	"name": "nicemice_resolveGuardBehavior",
+	  	"parameters": {
+	  	"baseBehavior": {"value": "guard"},
+	  	"whipBehavior": {"value": "nicemice_guard-whip"}
+	  	},
+	  	"output": { "behavior": "resolvedGuardBehavior" }
+	  },
+	  {
+	  	"title": "nicemice_scriptedVillagerBehavior",
+	  	"type": "action",
+	  	"name": "nicemice_scriptedVillagerBehavior",
+	  	"parameters": { "behavior": {"key": "resolvedGuardBehavior"} }
 	  }
 	]
   }

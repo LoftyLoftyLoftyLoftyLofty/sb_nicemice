@@ -1,0 +1,51 @@
+{
+  "name": "nicemice_guard-whip",
+  "description": null,
+  "scripts": [],
+  "parameters": {
+    "play": true,
+    "hostileDamageTeam": {"type": "enemy", "team": 1}
+  },
+  "root": {
+    "title": "Villager",
+    "type": "composite",
+    "name": "dynamic",
+    "parameters": {},
+    "children": [
+      {
+        "title": "Tenant Baseline Behavior",
+        "type": "module",
+        "name": "Tenant Baseline Behavior",
+        "parameters": {}
+      },
+      {
+        "title": "attackthief",
+        "type": "module",
+        "name": "attackthief",
+        "parameters": {}
+      },
+      {
+        "title": "nicemice_friendlynpccombat-whip",
+        "type": "module",
+        "name": "nicemice_friendlynpccombat-whip",
+        "parameters": {
+          "hostileDamageTeam": {"key": "<hostileDamageTeam>"}
+        }
+      },
+      {
+        "title": null,
+        "type": "module",
+        "name": "converse",
+        "parameters": {}
+      },
+      {
+        "title": "NPC Idle",
+        "type": "module",
+        "name": "NPC Idle",
+        "parameters": {
+          "play": {"key": "<play>"}
+        }
+      }
+    ]
+  }
+}

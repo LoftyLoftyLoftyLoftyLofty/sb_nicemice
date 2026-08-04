@@ -1,0 +1,60 @@
+{
+  "itemName" : "nicemice_gentlereminder",
+  "price" : 5500,
+  "level" : 7,
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "description" : "These whips are only issued to the most virtuous and merciful M.A.U.S. officers.",
+  "shortdescription" : "Gentle Reminder",
+  "tooltipKind" : "sword",
+  "category" : "whip",
+  "twoHanded" : true,
+  "itemTags" : ["weapon", "melee", "whip"],
+
+  "inventoryIcon" : "nicemice_gentlereminder.png:idle",
+  "animation" : "whip.animation",
+  "animationParts" : {
+    "weapon" : "nicemice_gentlereminder.png",
+    "weaponFullbright" : "nicemice_gentlereminderfullbright.png"
+  },
+  "animationCustom" : {
+    "lights" : { "glow" : {
+      "active" : true,
+      "position" : [0.75, 0.5],
+      "color" : [255, 183, 183]
+    }},
+    "particleEmitters" : { "crack" : { "particles" : [ ]}},
+    "sounds" : {
+      "swing" : [ "/sfx/melee/energywhip_swing1.ogg", "/sfx/melee/energywhip_swing2.ogg", "/sfx/melee/energywhip_swing3.ogg" ],
+      "crack" : [ "/sfx/melee/energywhip_impact1.ogg", "/sfx/melee/energywhip_impact2.ogg", "/sfx/melee/energywhip_impact3.ogg" ]
+    }
+  },
+
+  "chain" : {
+    "startOffset" : [0.625, 0],
+    "length" : [3, 12],
+    "segmentImage" : "/items/active/weapons/whip/nicemice_energybeam.png",
+    "endSegmentImage" : "/items/active/weapons/whip/nicemice_energybeamend.png",
+    "segmentSize" : 0.375,
+    "fullbright" : true
+  },
+
+  "scripts" : [ "whip.lua" ],
+
+  "primaryAbilityType" : "whipcrack",
+  "primaryAbility" : {
+    "fireTime" : 1.1,
+    "chainDps" : 2.4,
+    "crackDps" : 7.2,
+
+    "damageConfig" : {
+      "damageSourceKind" : "plasma"
+    },
+
+    "projectileType" : "nicemice_whipcrack"
+  },
+
+  "altAbilityType" : "energyorb",
+
+  "builder" : "/items/buildscripts/buildwhip.lua"
+}

@@ -74,5 +74,51 @@
 		"category": "nicemice",
 		"script": "/npcs/nicemice_npcHooks.lua",
 		"output": {}
+	},
+	"nicemice_entityCenterPosition" :
+	{
+		"type": "action",
+		"name": "nicemice_entityCenterPosition",
+		"title": "nicemice_entityCenterPosition",
+		"properties":
+		{
+			"entity": {"type": "entity", "value": null}
+		},
+		"category": "nicemice",
+		"script": "/nicemice/scripts/actions/nicemice_whipaim.lua",
+		"output":
+		{
+			"position": {"type": "vec2", "key": null}
+		}
+	},
+	"nicemice_resolveGuardBehavior" :
+	{
+		"type": "action",
+		"name": "nicemice_resolveGuardBehavior",
+		"title": "nicemice_resolveGuardBehavior",
+		"properties":
+		{
+			"baseBehavior": {"type": "string", "value": "guard"},
+			"whipBehavior": {"type": "string", "value": "guard-whip"}
+		},
+		"category": "nicemice",
+		"script": "/nicemice/scripts/actions/nicemice_resolveGuardBehavior.lua",
+		"output":
+		{
+			"behavior": {"type": "string", "key": null}
+		}
+	},
+	"nicemice_npccombat-whip" :
+	{
+		"type": "module",
+		"name": "nicemice_npccombat-whip",
+		"title": "NPC Combat Whip",
+		"properties":
+		{
+			"meleeStandby": {"type": "bool", "value": true}
+		},
+		"category": "nicemice",
+		"behavior": "/nicemice/behaviors/nicemice_npccombat-whip.behavior",
+		"output": {}
 	}
 }
