@@ -23,5 +23,14 @@
       "maxRange" : 15,
       "forceMoveRange" : 30
     }
+  },
+  {
+    "op": "add",
+    "path": "/npcCombat/rangedWeaponRanges/nicemice_generatedweapon_techstaff",
+    "value": {
+      "minRange" : 3,
+      "maxRange" : 30,
+      "forceMoveRange" : 40
+    }
   }
 ]

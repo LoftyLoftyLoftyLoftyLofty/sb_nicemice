@@ -1,0 +1,62 @@
+{
+  "name": "nicemice_healsupport",
+  "description": "",
+  "scripts": [
+    "/scripts/behavior.lua",
+    "/scripts/actions/nicemice_wandstaff.lua",
+    "/scripts/actions/entity.lua",
+    "/scripts/actions/time.lua",
+    "/scripts/actions/position.lua"
+  ],
+  "parameters": {
+    "healRange": 20,
+    "idleHealCooldown": 3
+  },
+  "root": {
+    "title": "cooldown",
+    "type": "decorator",
+    "name": "cooldown",
+    "parameters": { "cooldown": {"key": "<idleHealCooldown>"}, "onFail": {"value": false}, "onSuccess": {"value": true} },
+    "child": {
+      "title": "sequence",
+      "type": "composite",
+      "name": "sequence",
+      "parameters": {},
+      "children": [
+        {
+          "title": "nicemice_resolveAbilityIntent",
+          "type": "action",
+          "name": "nicemice_resolveAbilityIntent",
+          "parameters": { "hand": {"value": "primary"} },
+          "output": { "usable": "primaryUsable", "intent": "primaryIntent" }
+        },
+        {
+          "title": "nicemice_equals",
+          "type": "action",
+          "name": "nicemice_equals",
+          "parameters": { "first": {"key": "primaryIntent"}, "second": {"value": "healing"} }
+        },
+        {
+          "title": "nicemice_resolveHealTarget",
+          "type": "action",
+          "name": "nicemice_resolveHealTarget",
+          "parameters": { "range": {"key": "<healRange>"} },
+          "output": { "entity": "idleHealTarget", "position": "idleHealTargetPosition" }
+        },
+        {
+          "title": "faceEntity",
+          "type": "action",
+          "name": "faceEntity",
+          "parameters": { "entity": {"key": "idleHealTarget"} }
+        },
+        {
+          "title": "setAimPosition",
+          "type": "action",
+          "name": "setAimPosition",
+          "parameters": { "position": {"key": "idleHealTargetPosition"} }
+        },
+        { "title": "primaryFire", "type": "action", "name": "primaryFire", "parameters": {} }
+      ]
+    }
+  }
+}

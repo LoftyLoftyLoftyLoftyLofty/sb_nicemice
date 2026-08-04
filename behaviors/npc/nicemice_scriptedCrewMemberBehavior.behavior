@@ -27,7 +27,7 @@
 	    "title": "nicemice_scriptedCrewMemberBehavior",
 		"type": "action",
 		"name": "nicemice_scriptedCrewMemberBehavior",
-		"parameters": { "behavior" : { "value" : "crewmember"} }
+		"parameters": { "behavior" : { "value" : "nicemice_crewmember"} }
 	  }
 	]
   }

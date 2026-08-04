@@ -30,7 +30,8 @@
 	  	"name": "nicemice_resolveGuardBehavior",
 	  	"parameters": {
 	  	"baseBehavior": {"value": "guard"},
-	  	"whipBehavior": {"value": "nicemice_guard-whip"}
+	  	"whipBehavior": {"value": "nicemice_guard-whip"},
+	  	"wandstaffBehavior": {"value": "nicemice_guard-wandstaff"}
 	  	},
 	  	"output": { "behavior": "resolvedGuardBehavior" }
 	  },

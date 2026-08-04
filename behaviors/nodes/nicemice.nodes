@@ -136,5 +136,97 @@
 		{
 			"result": {"type": "number", "key": null}
 		}
+	},
+	"nicemice_resolveAbilityIntent" :
+	{
+		"type": "action",
+		"name": "nicemice_resolveAbilityIntent",
+		"title": "nicemice_resolveAbilityIntent",
+		"properties":
+		{
+			"hand": {"type": "string", "value": "primary"}
+		},
+		"category": "nicemice",
+		"script": "/scripts/actions/nicemice_wandstaff.lua",
+		"output":
+		{
+			"intent": {"type": "string", "key": null}
+		}
+	},
+	"nicemice_equals" :
+	{
+		"type": "action",
+		"name": "nicemice_equals",
+		"title": "nicemice_equals",
+		"properties":
+		{
+			"first": {"type": "string", "value": null},
+			"second": {"type": "string", "value": null}
+		},
+		"category": "nicemice",
+		"script": "/scripts/actions/nicemice_wandstaff.lua",
+		"output": {}
+	},
+	"nicemice_resolveHealTarget" :
+	{
+		"type": "action",
+		"name": "nicemice_resolveHealTarget",
+		"title": "nicemice_resolveHealTarget",
+		"properties":
+		{
+			"range": {"type": "number", "value": 20}
+		},
+		"category": "nicemice",
+		"script": "/scripts/actions/nicemice_wandstaff.lua",
+		"output":
+		{
+			"entity": {"type": "entity", "key": null},
+			"position": {"type": "vec2", "key": null}
+		}
+	},
+	"nicemice_resolveBuffTarget" :
+	{
+		"type": "action",
+		"name": "nicemice_resolveBuffTarget",
+		"title": "nicemice_resolveBuffTarget",
+		"properties":
+		{
+			"range": {"type": "number", "value": 15}
+		},
+		"category": "nicemice",
+		"script": "/scripts/actions/nicemice_wandstaff.lua",
+		"output":
+		{
+			"entity": {"type": "entity", "key": null},
+			"position": {"type": "vec2", "key": null}
+		}
+	},
+	"nicemice_npccombat-wandstaff" :
+	{
+		"type": "module",
+		"name": "nicemice_npccombat-wandstaff",
+		"title": "NPC Combat Wand/Staff",
+		"properties":
+		{
+			"healRange": {"type": "number", "value": 20},
+			"buffRange": {"type": "number", "value": 15}
+		},
+		"category": "nicemice",
+		"behavior": "/behaviors/npc/combat/nicemice_npccombat-wandstaff.behavior",
+		"output": {}
+	},
+	"nicemice_healsupport" :
+	{
+		"type": "module",
+		"name": "nicemice_healsupport",
+		"title": "NPC Heal Support",
+		"properties":
+		{
+			"healRange": {"type": "number", "value": 20},
+			"idleHealCooldown": {"type": "number", "value": 3}
+		},
+		"category": "nicemice",
+		"behavior": "/behaviors/npc/nicemice_healsupport.behavior",
+		"output": {}
 	}
 }
