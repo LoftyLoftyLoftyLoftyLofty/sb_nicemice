@@ -1,6 +1,6 @@
 -- param entity
 -- output position
-function entityCenterPosition(args, board)
+function nicemice_entityCenterPosition(args, board)
   if args.entity == nil or not world.entityExists(args.entity) then return false end
 
   local boundBox = world.entityMetaBoundBox(args.entity)

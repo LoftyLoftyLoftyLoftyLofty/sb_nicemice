@@ -85,7 +85,7 @@
 			"entity": {"type": "entity", "value": null}
 		},
 		"category": "nicemice",
-		"script": "/nicemice/scripts/actions/nicemice_whipaim.lua",
+		"script": "/scripts/actions/nicemice_whipaim.lua",
 		"output":
 		{
 			"position": {"type": "vec2", "key": null}
@@ -102,7 +102,7 @@
 			"whipBehavior": {"type": "string", "value": "guard-whip"}
 		},
 		"category": "nicemice",
-		"script": "/nicemice/scripts/actions/nicemice_resolveGuardBehavior.lua",
+		"script": "/scripts/actions/nicemice_resolveGuardBehavior.lua",
 		"output":
 		{
 			"behavior": {"type": "string", "key": null}
@@ -118,7 +118,7 @@
 			"meleeStandby": {"type": "bool", "value": true}
 		},
 		"category": "nicemice",
-		"behavior": "/nicemice/behaviors/nicemice_npccombat-whip.behavior",
+		"behavior": "/behaviors/nicemice_npccombat-whip.behavior",
 		"output": {}
 	}
 }
