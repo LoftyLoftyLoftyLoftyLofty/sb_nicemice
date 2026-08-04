@@ -1,5 +1,5 @@
 {
-  "name": "nicemice_melee-whip-approach",
+  "name": "nicemice_melee-approach-whip",
   "description": "",
   "scripts": [
     "/scripts/behavior.lua",
