@@ -13,8 +13,7 @@
     "switchToRangedCooldown": 8,
     "leapCooldown": 4,
     "leapChance": 0.5,
-    "whipMinRange": 3,
-	"whipIdealRange" : 11
+	"whipMinRange" : 5
   },
   "root": {
     "title": "sequence",
@@ -42,14 +41,11 @@
             "output": { "cooldown": "meleeCooldown", "windup": "meleeWindup" }
           },
           {
-            "title": "nicemice_melee-approach-whip",
+            "title": "meleecombat-approach",
             "type": "module",
-            "name": "nicemice_melee-approach-whip",
+            "name": "meleecombat-approach",
             "parameters": 
-			{
-			  "whipIdealRange": {"key": "<whipIdealRange>"},
-              "whipMinRange": {"key": "<whipMinRange>"}
-			}
+			{}
           },
           {
             "title": "sequence",

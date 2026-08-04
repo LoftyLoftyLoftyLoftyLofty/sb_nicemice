@@ -136,22 +136,5 @@
 		{
 			"result": {"type": "number", "key": null}
 		}
-	},
-	"nicemice_melee-approach-whip" :
-	{
-		"type": "module",
-		"name": "nicemice_melee-approach-whip",
-		"title": "NPC Melee Whip Approach",
-		"properties":
-		{
-			"liquidHesitationTime": {"type": "number", "value": 3},
-			"forceRunRange": {"type": "number", "value": 15},
-			"cantReachDialog": {"type": "bool", "value": true},
-			"whipMinRange": {"type": "number", "value": 3},
-			"whipIdealRange": {"type": "number", "value": 11}
-		},
-		"category": "nicemice",
-		"behavior": "/behaviors/npc/combat/nicemice_melee-approach-whip.behavior",
-		"output": {}
 	}
 }
