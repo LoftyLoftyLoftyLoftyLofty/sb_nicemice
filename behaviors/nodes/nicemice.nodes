@@ -137,7 +137,7 @@
 			"result": {"type": "number", "key": null}
 		}
 	},
-	"nicemice_melee-whip-approach" :
+	"nicemice_melee-approach-whip" :
 	{
 		"type": "module",
 		"name": "nicemice_melee-approach-whip",
