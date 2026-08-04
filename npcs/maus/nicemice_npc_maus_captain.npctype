@@ -111,7 +111,11 @@
 						],
 						"sheathedprimary" : 
 						[ 
-							"nicemice_gentlereminder" 
+							"nicemice_gentlereminder_npc" 
+						],
+						"sheathedsecondary" : 
+						[
+							"nicemice_generatedweapon_plasmapistol"
 						]
 					}
 				] 
