@@ -13,7 +13,8 @@
     "switchToRangedCooldown": 8,
     "leapCooldown": 4,
     "leapChance": 0.5,
-    "whipMinRange": 3
+    "whipMinRange": 3,
+	"whipIdealRange" : 11
   },
   "root": {
     "title": "sequence",
@@ -44,7 +45,11 @@
             "title": "nicemice_melee-approach-whip",
             "type": "module",
             "name": "nicemice_melee-approach-whip",
-            "parameters": {}
+            "parameters": 
+			{
+			  "whipIdealRange": {"key": "<whipIdealRange>"},
+              "whipMinRange": {"key": "<whipMinRange>"}
+			}
           },
           {
             "title": "sequence",

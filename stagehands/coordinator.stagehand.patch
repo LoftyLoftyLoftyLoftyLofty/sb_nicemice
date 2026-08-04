@@ -1,0 +1,10 @@
+[
+  {
+    "op": "add",
+    "path": "/npcCombat/meleeWeaponRanges/nicemice_gentlereminder",
+    "value": {
+      "minRange": 7,
+      "maxRange": 11
+    }
+  }
+]
