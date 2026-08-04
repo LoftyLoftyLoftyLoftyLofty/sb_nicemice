@@ -120,5 +120,21 @@
 		"category": "nicemice",
 		"behavior": "/behaviors/nicemice_npccombat-whip.behavior",
 		"output": {}
+	},
+	"nicemice_signOf" :
+	{
+		"type": "action",
+		"name": "nicemice_signOf",
+		"title": "nicemice_signOf",
+		"properties":
+		{
+			"number": {"type": "number", "value": null}
+		},
+		"category": "nicemice",
+		"script": "/scripts/actions/nicemice_whipaim.lua",
+		"output":
+		{
+			"result": {"type": "number", "key": null}
+		}
 	}
 }
