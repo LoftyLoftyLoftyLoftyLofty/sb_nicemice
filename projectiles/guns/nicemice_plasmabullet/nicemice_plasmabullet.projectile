@@ -1,0 +1,21 @@
+{
+  "projectileName" : "nicemice_plasmabullet",
+  "physics" : "laser",
+  "bounces" : 0,
+  "damageKindImage" : "icon.png",
+  "image" : "nicemice_plasmabullet.png",
+  "animationCycle" : 0.5,
+  "frameNumber" : 3,
+  "power" : 50,
+  "speed" : 75,
+  "emitters" : [ "defaultnicemicered", "defaultwhite"  ],
+  "supportsProcessing" : true,
+  "actionOnReap" : [
+    //{
+    //  "action" : "config",
+    //  "file" : "/projectiles/explosions/pulsecannonexplosion/redpulsecannonexplosion.config"
+    //}
+  ],
+  "lightColor" : [255, 183, 183],
+  "damageKind" : "plasma"
+}
