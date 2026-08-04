@@ -1,0 +1,94 @@
+{
+  "itemName" : "nicemice_generatedweapon_plasmapistol",
+  "price" : 720,
+  "maxStack" : 1,
+  "rarity" : "Rare",
+  "description" : "A Nicemice sidearm.",
+  "shortdescription" : "Nicemice Plasma Pistol",
+  "tooltipKind" : "gun",
+  "category" : "pistol",
+  "twoHanded" : false,
+  "itemTags" : ["weapon","ranged","pistol","nicemice"],
+  "level" : 1,
+
+  "animation" : "/items/active/weapons/ranged/nicemice_gun.animation",
+  "animationParts" : { },
+  "animationCustom" : { },
+  "baseOffset" : [-0.375, 0.125],
+  "muzzleOffset" : [-0.125, 0.375],
+
+  "scripts" : ["/items/active/weapons/ranged/gun.lua"],
+
+  "fireSounds" : ["/sfx/gun/plasma_ar4.ogg"],
+  "primaryAbility" : {
+    "scripts" : ["/items/active/weapons/ranged/gunfire.lua"],
+    "class" : "GunFire",
+
+    "fireTime" : [0.11, 0.33],
+    "baseDps" : [5.75, 6.25],
+    "energyUsage" : [17.25, 18.75],
+    "inaccuracy" : 0.01,
+
+	"projectileType" : "nicemice_plasmabullet",
+    "projectileParameters" : {
+      "knockbackRange" : [4,8]
+    },
+
+    "stances" : {
+      "idle" : {
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : false,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+      "fire" : {
+        "duration" : 0,
+        "armRotation" : 10,
+        "weaponRotation" : 10,
+        "twoHanded" : false,
+
+        "allowRotate" : false,
+        "allowFlip" : true
+      },
+      "cooldown" : {
+        "duration" : 0.15,
+        "armRotation" : 10,
+        "weaponRotation" : 10,
+        "twoHanded" : false,
+
+        "allowRotate" : false,
+        "allowFlip" : true
+      }
+    }
+  },
+
+  "builder" : "/items/buildscripts/buildnicemiceweapon.lua",
+  "builderConfig" : [{
+    "nameGenerator" : "nicemice_generatedweapon_plasmapistol_names.config:nameGen",
+    "elementalType" : "physical",
+    "animationParts" : {
+      "butt" : {
+        "path" : "/items/active/weapons/ranged/nicemice_plasmapistol/butt/<variant>.png",
+        "variants" : 1,
+        "paletteSwap" : false
+      },
+      "middle" : {
+        "path" : "/items/active/weapons/ranged/nicemice_plasmapistol/middle/<variant>.png",
+        "variants" : 1,
+        "paletteSwap" : false
+      },
+      "barrel" : {
+        "path" : "/items/active/weapons/ranged/nicemice_plasmapistol/barrel/<variant>.png",
+        "variants" : 1,
+        "paletteSwap" : false
+      },
+      "muzzleFlash" : "/items/active/weapons/ranged/nicemice_plasmapistol/muzzleflash.png"
+    },
+    "gunParts" : ["butt", "middle", "barrel"],
+    "altAbilities" : [ ],
+    "palette" : "/items/active/weapons/colors/ranged.weaponcolors",
+    "iconDrawables" : ["butt", "middle", "barrel"]
+  }]
+}
