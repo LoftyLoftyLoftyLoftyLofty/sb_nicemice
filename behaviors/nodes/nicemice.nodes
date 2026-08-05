@@ -249,5 +249,41 @@
 		"category": "nicemice",
 		"script": "/scripts/actions/nicemice_wandstaff.lua",
 		"output": {}
+	},
+	"nicemice_entityDistance": 
+	{
+		"type": "action",
+		"name": "nicemice_entityDistance",
+		"title": "nicemice_entityDistance",
+		"properties": 
+		{
+			"fromEntity": {"type": "entity", "key": "self"},
+			"toEntity": {"type": "entity", "key": "target"}
+		},
+		"category": "nicemice",
+		"script": "/scripts/actions/nicemice_whipaim.lua",
+		"output": 
+		{
+			"magnitude": 
+			{
+				"type": "number", 
+				"key": null
+			},
+			"vector": 
+			{
+				"type": "vec2", 
+				"key": null
+			},
+			"x": 
+			{
+				"type": "number", 
+				"key": null
+			},
+			"y": 
+			{
+				"type": "number", 
+				"key": null
+			}
+		}
 	}
 }

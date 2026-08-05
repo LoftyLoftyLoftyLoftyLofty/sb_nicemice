@@ -15,19 +15,13 @@
     "parameters": {},
     "children": [
       {
-        "title": "nicemice_entityCenterPosition",
+        "title": "nicemice_entityDistance",
         "type": "action",
-        "name": "nicemice_entityCenterPosition",
-        "parameters": { "entity": {"key": "target"} },
-        "output": { "position": "targetPosition" }
-      },
-      {
-        "title": "distance",
-        "type": "action",
-        "name": "distance",
-        "parameters": { "from": {"key": "self"}, "to": {"key": "targetPosition"} },
+        "name": "nicemice_entityDistance",
+        "parameters": { "fromEntity": {"key": "self"}, "toEntity": {"key": "target"} },
         "output": { "vector": "aimOffset" }
       },
+	  //{ "title": "sayToEntity", "type": "action", "name": "sayToEntity", "parameters": { "dialogType": {"value": "dialog.debug_combat_leap"}, "entity": {"key": "target"}, "tags": {"value": {}} }},
       {
         "title": "setAimPosition",
         "type": "action",

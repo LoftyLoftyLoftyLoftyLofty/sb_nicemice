@@ -3,7 +3,7 @@
     "op": "add",
     "path": "/npcCombat/meleeWeaponRanges/nicemice_gentlereminder",
     "value": {
-      "minRange": 6,
+      "minRange": 8,
       "maxRange": 11
     }
   },
@@ -11,7 +11,7 @@
     "op": "add",
     "path": "/npcCombat/meleeWeaponRanges/nicemice_gentlereminder_npc",
     "value": {
-      "minRange": 6,
+      "minRange": 8,
       "maxRange": 11
     }
   },
