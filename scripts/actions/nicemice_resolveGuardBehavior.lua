@@ -4,8 +4,8 @@
 -- output behavior
 function nicemice_resolveGuardBehavior(args, board)
   local baseBehavior = args.baseBehavior or "guard"
-  local whipBehavior = args.whipBehavior or (baseBehavior .. "-whip")
-  local wandstaffBehavior = args.wandstaffBehavior or (baseBehavior .. "-wandstaff")
+  local whipBehavior = args.whipBehavior or baseBehavior
+  local wandstaffBehavior = args.wandstaffBehavior or baseBehavior 
 
   if self.primary and root.itemHasTag(self.primary.name, "whip") then
     return true, {behavior = whipBehavior}

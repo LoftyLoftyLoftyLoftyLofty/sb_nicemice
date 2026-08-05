@@ -140,7 +140,7 @@
                 "name": "sequence",
                 "parameters": {},
                 "children": [
-                  { "title": "hasFlag", "type": "action", "name": "hasFlag", "parameters": { "name": {"key": "target"} } },
+                  { "title": "isValidTarget", "type": "action", "name": "isValidTarget", "parameters": { "entity": {"key": "target"} } },
                   {
                     "title": "nicemice_resolveAbilityIntent",
                     "type": "action",
@@ -182,7 +182,7 @@
                 "name": "sequence",
                 "parameters": {},
                 "children": [
-                  { "title": "hasFlag", "type": "action", "name": "hasFlag", "parameters": { "name": {"key": "target"} } },
+                  { "title": "isValidTarget", "type": "action", "name": "isValidTarget", "parameters": { "entity": {"key": "target"} } },
                   {
                     "title": "entityPosition",
                     "type": "action",
@@ -268,7 +268,7 @@
                         "name": "nicemice_equals",
                         "parameters": { "first": {"key": "altIntent"}, "second": {"value": "buff"} }
                       },
-                      { "title": "hasFlag", "type": "action", "name": "hasFlag", "parameters": { "name": {"key": "target"} } },
+                      { "title": "isValidTarget", "type": "action", "name": "isValidTarget", "parameters": { "entity": {"key": "target"} } },
                       {
                         "title": "nicemice_resolveBuffTarget",
                         "type": "action",
@@ -303,7 +303,7 @@
                         "name": "nicemice_equals",
                         "parameters": { "first": {"key": "altIntent"}, "second": {"value": "harmful"} }
                       },
-                      { "title": "hasFlag", "type": "action", "name": "hasFlag", "parameters": { "name": {"key": "target"} } },
+                      { "title": "isValidTarget", "type": "action", "name": "isValidTarget", "parameters": { "entity": {"key": "target"} } },
                       {
                         "title": "entityPosition",
                         "type": "action",

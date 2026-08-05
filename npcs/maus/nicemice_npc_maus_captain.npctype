@@ -109,7 +109,7 @@
 								"parameters" : { "colorIndex" : 8 }	 
 							}
 						],
-						"sheathedprimary" : 
+						"primary" : 
 						[ 
 							"nicemice_gentlereminder_npc" 
 						],

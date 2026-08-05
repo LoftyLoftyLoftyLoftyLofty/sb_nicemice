@@ -131,3 +131,34 @@ function nicemice_resolveBuffTarget(args, board)
   if best == nil then return false end
   return true, {entity = best, position = world.entityPosition(best)}
 end
+
+-- Player input naturally releases fire when the mouse button is let go; the
+-- charge/charged/discharge ability state machine relies on that release edge
+-- to leave "charged" (it will otherwise hold in charged{} forever). NPCs have
+-- no such input edge -- primaryFire()/altFire() just latch true permanently.
+-- This holds the trigger for a short duration (long enough to pass through
+-- the ability's charge stance) then explicitly releases once.
+function nicemice_chargedFire(args, board, nodeId, dt)
+  if args.hand == nil then return false end
+  local isAlt = args.hand == "alt"
+
+  local itemName = world.entityHandItem(entity.id(), isAlt and "alt" or "primary")
+  if itemName == nil or itemName == "" then return false end
+
+  local itemConfig = root.itemConfig(itemName)
+  local abilityKey = isAlt and "altAbility" or "primaryAbility"
+  local ability = itemConfig and itemConfig.config and itemConfig.config[abilityKey]
+  local chargeTime = (ability and ability.stances and ability.stances.charge and ability.stances.charge.duration) or 1.0
+
+  -- hold slightly past full charge, then release once
+  local holdTime = chargeTime + 0.1
+  local elapsed = 0
+  while elapsed < holdTime do
+    if isAlt then altFire() else primaryFire() end
+    elapsed = elapsed + dt
+    dt = coroutine.yield(nil, {})
+  end
+
+  if isAlt then npc.endAltFire() else endPrimaryFire() end
+  return true
+end

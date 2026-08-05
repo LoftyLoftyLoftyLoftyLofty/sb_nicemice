@@ -99,7 +99,8 @@
 		"properties":
 		{
 			"baseBehavior": {"type": "string", "value": "guard"},
-			"whipBehavior": {"type": "string", "value": "guard-whip"}
+			"whipBehavior": {"type": "string", "value": "nicemice_guard-whip"},
+			"wandstaffBehavior": {"type": "string", "value": "nicemice_guard-wandstaff"}
 		},
 		"category": "nicemice",
 		"script": "/scripts/actions/nicemice_resolveGuardBehavior.lua",
