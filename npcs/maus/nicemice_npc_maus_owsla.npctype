@@ -109,7 +109,7 @@
 								"parameters" : { "colorIndex" : 7 }	 
 							}
 						],
-						"primary" : 
+						"sheathedprimary" : 
 						[ 
 							"nicemice_generatedweapon_techstaff" 
 						]
