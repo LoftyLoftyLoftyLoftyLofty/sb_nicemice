@@ -128,12 +128,6 @@
                     "parameters": { "position": {"key": "healTargetPosition"} }
                   },
 				  {
-                    "title": "nicemice_clampAimPosition",
-                    "type": "action",
-                    "name": "nicemice_clampAimPosition",
-                    "parameters": { "range" : {"key" : "<castRange>"} }
-                  },
-				  {
 				    "title": "selector",
 					"type": "composite",
 					"name": "selector",
@@ -163,9 +157,15 @@
 							"title": "parallel",
 							"type": "composite",
 							"name": "parallel",
-							"parameters": { "fail": {"value": 1}, "success": {"value": 1} },
+							"parameters": { "fail": {"value": 1}, "success": {"value": 2} },
 							"children": 
 							[
+							  {
+								"title": "nicemice_clampAimPosition",
+								"type": "action",
+								"name": "nicemice_clampAimPosition",
+								"parameters": { "range" : {"key" : "<castRange>"} }
+							  },
 							  { "title": "primaryFire", "type": "action", "name": "primaryFire", "parameters": {} },
 							  {
 								"title": "timer",
@@ -221,12 +221,6 @@
                     "parameters": { "position": {"key": "buffTargetPosition"} }
                   },
 				  {
-                    "title": "nicemice_clampAimPosition",
-                    "type": "action",
-                    "name": "nicemice_clampAimPosition",
-                    "parameters": { "range" : {"key" : "<castRange>"} }
-                  },
-				  {
 				    "title": "selector",
 					"type": "composite",
 					"name": "selector",
@@ -256,9 +250,15 @@
 							"title": "parallel",
 							"type": "composite",
 							"name": "parallel",
-							"parameters": { "fail": {"value": 1}, "success": {"value": 1} },
+							"parameters": { "fail": {"value": 1}, "success": {"value": 2} },
 							"children": 
 							[
+							  {
+								"title": "nicemice_clampAimPosition",
+								"type": "action",
+								"name": "nicemice_clampAimPosition",
+								"parameters": { "range" : {"key" : "<castRange>"} }
+							  },
 							  { "title": "primaryFire", "type": "action", "name": "primaryFire", "parameters": {} },
 							  {
 								"title": "timer",
@@ -297,12 +297,6 @@
                     "parameters": { "position": {"key": "targetPosition"} }
                   },
 				  {
-                    "title": "nicemice_clampAimPosition",
-                    "type": "action",
-                    "name": "nicemice_clampAimPosition",
-                    "parameters": { "range" : {"key" : "<castRange>"} }
-                  },
-				  {
 				    "title": "selector",
 					"type": "composite",
 					"name": "selector",
@@ -332,9 +326,15 @@
 							"title": "parallel",
 							"type": "composite",
 							"name": "parallel",
-							"parameters": { "fail": {"value": 1}, "success": {"value": 1} },
+							"parameters": { "fail": {"value": 1}, "success": {"value": 2} },
 							"children": 
 							[
+							  {
+								"title": "nicemice_clampAimPosition",
+								"type": "action",
+								"name": "nicemice_clampAimPosition",
+								"parameters": { "range" : {"key" : "<castRange>"} }
+							  },
 							  { "title": "primaryFire", "type": "action", "name": "primaryFire", "parameters": {} },
 							  {
 								"title": "timer",
@@ -403,12 +403,6 @@
                         "name": "setAimPosition",
                         "parameters": { "position": {"key": "altHealTargetPosition"} }
                       },
-					  {
-						"title": "nicemice_clampAimPosition",
-						"type": "action",
-						"name": "nicemice_clampAimPosition",
-						"parameters": { "range" : {"key" : "<castRange>"} }
-					  },
                       {
 				    "title": "selector",
 					"type": "composite",
@@ -439,9 +433,15 @@
 							"title": "parallel",
 							"type": "composite",
 							"name": "parallel",
-							"parameters": { "fail": {"value": 1}, "success": {"value": 1} },
+							"parameters": { "fail": {"value": 1}, "success": {"value": 2} },
 							"children": 
 							[
+							  {
+								"title": "nicemice_clampAimPosition",
+								"type": "action",
+								"name": "nicemice_clampAimPosition",
+								"parameters": { "range" : {"key" : "<castRange>"} }
+							  },
 							  { "title": "altFire", "type": "action", "name": "altFire", "parameters": {} },
 							  {
 								"title": "timer",
@@ -489,12 +489,6 @@
                         "name": "setAimPosition",
                         "parameters": { "position": {"key": "altBuffTargetPosition"} }
                       },
-					  {
-						"title": "nicemice_clampAimPosition",
-						"type": "action",
-						"name": "nicemice_clampAimPosition",
-						"parameters": { "range" : {"key" : "<castRange>"} }
-					  },
                       {
 				    "title": "selector",
 					"type": "composite",
@@ -525,9 +519,15 @@
 							"title": "parallel",
 							"type": "composite",
 							"name": "parallel",
-							"parameters": { "fail": {"value": 1}, "success": {"value": 1} },
+							"parameters": { "fail": {"value": 1}, "success": {"value": 2} },
 							"children": 
 							[
+							  {
+								"title": "nicemice_clampAimPosition",
+								"type": "action",
+								"name": "nicemice_clampAimPosition",
+								"parameters": { "range" : {"key" : "<castRange>"} }
+							  },
 							  { "title": "altFire", "type": "action", "name": "altFire", "parameters": {} },
 							  {
 								"title": "timer",
@@ -570,12 +570,6 @@
                         "name": "setAimPosition",
                         "parameters": { "position": {"key": "altTargetPosition"} }
                       },
-					  {
-						"title": "nicemice_clampAimPosition",
-						"type": "action",
-						"name": "nicemice_clampAimPosition",
-						"parameters": { "range" : {"key" : "<castRange>"} }
-					  },
                       {
 				    "title": "selector",
 					"type": "composite",
@@ -606,9 +600,15 @@
 							"title": "parallel",
 							"type": "composite",
 							"name": "parallel",
-							"parameters": { "fail": {"value": 1}, "success": {"value": 1} },
+							"parameters": { "fail": {"value": 1}, "success": {"value": 2} },
 							"children": 
 							[
+							  {
+								"title": "nicemice_clampAimPosition",
+								"type": "action",
+								"name": "nicemice_clampAimPosition",
+								"parameters": { "range" : {"key" : "<castRange>"} }
+							  },
 							  { "title": "altFire", "type": "action", "name": "altFire", "parameters": {} },
 							  {
 								"title": "timer",

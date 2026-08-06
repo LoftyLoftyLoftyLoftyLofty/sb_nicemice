@@ -165,7 +165,7 @@ end
 
 -- param range
 function nicemice_clampAimPosition(args, board)
-  sb.logInfo("clamping: " .. sb.printJson(args.range))
+  -- sb.logInfo("clamping: " .. sb.printJson(args.range))
   if args.range == nil then return true end
 
   local aimPos = npc.aimPosition()
