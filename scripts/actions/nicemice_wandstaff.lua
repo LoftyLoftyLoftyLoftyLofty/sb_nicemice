@@ -162,3 +162,20 @@ function nicemice_chargedFire(args, board, nodeId, dt)
   if isAlt then npc.endAltFire() else endPrimaryFire() end
   return true
 end
+
+-- param range
+function nicemice_clampAimPosition(args, board)
+  if args.range == nil then return false end
+
+  local aimPos = npc.aimPosition()
+  local myPos = entity.position()
+  local dist = world.distance(myPos, aimPos)
+  if dist > args.range then
+	local delta = vec2.sub(aimPos, myPos)
+	delta = vec2.norm(delta)
+	delta = vec2.mul(delta, args.range)
+	npc.setAimPosition( vec2.add( myPos, delta ) )
+  end
+  
+  return true
+end

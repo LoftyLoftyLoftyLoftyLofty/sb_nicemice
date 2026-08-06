@@ -13,8 +13,8 @@
     "/scripts/actions/nicemice_wandstaff.lua"
   ],
   "parameters": {
-    "healRange": 20,
-    "buffRange": 15,
+	//TODO this should be inherited from the ability being used then we subtract 5 tiles from that value
+    "castRange" : 20,
 	"wizardryCooldown": 2
   },
   "root": {
@@ -112,7 +112,7 @@
                     "title": "nicemice_resolveHealTarget",
                     "type": "action",
                     "name": "nicemice_resolveHealTarget",
-                    "parameters": { "range": {"key": "<healRange>"} },
+                    "parameters": { "range": {"key": "<castRange>"} },
                     "output": { "entity": "healTarget", "position": "healTargetPosition" }
                   },
                   {
@@ -126,6 +126,12 @@
                     "type": "action",
                     "name": "setAimPosition",
                     "parameters": { "position": {"key": "healTargetPosition"} }
+                  },
+				  {
+                    "title": "nicemice_clampAimPosition",
+                    "type": "action",
+                    "name": "nicemice_clampAimPosition",
+                    "parameters": { "range": {"key": "castRange"} }
                   },
 				  {
 				    "title": "selector",
@@ -166,7 +172,7 @@
 								"type": "action",
 								"name": "timer",
 								"parameters": {
-								  "time": {"value": 2.0}
+								  "time": {"value": 2.5}
 								}
 							  }
 							]
@@ -199,7 +205,7 @@
                     "title": "nicemice_resolveBuffTarget",
                     "type": "action",
                     "name": "nicemice_resolveBuffTarget",
-                    "parameters": { "range": {"key": "<buffRange>"} },
+                    "parameters": { "range": {"key": "<castRange>"} },
                     "output": { "entity": "buffTarget", "position": "buffTargetPosition" }
                   },
                   {
@@ -213,6 +219,12 @@
                     "type": "action",
                     "name": "setAimPosition",
                     "parameters": { "position": {"key": "buffTargetPosition"} }
+                  },
+				  {
+                    "title": "nicemice_clampAimPosition",
+                    "type": "action",
+                    "name": "nicemice_clampAimPosition",
+                    "parameters": { "range": {"key": "castRange"} }
                   },
 				  {
 				    "title": "selector",
@@ -253,7 +265,7 @@
 								"type": "action",
 								"name": "timer",
 								"parameters": {
-								  "time": {"value": 2.0}
+								  "time": {"value": 2.5}
 								}
 							  }
 							]
@@ -285,6 +297,12 @@
                     "parameters": { "position": {"key": "targetPosition"} }
                   },
 				  {
+                    "title": "nicemice_clampAimPosition",
+                    "type": "action",
+                    "name": "nicemice_clampAimPosition",
+                    "parameters": { "range": {"key": "castRange"} }
+                  },
+				  {
 				    "title": "selector",
 					"type": "composite",
 					"name": "selector",
@@ -323,7 +341,7 @@
 								"type": "action",
 								"name": "timer",
 								"parameters": {
-								  "time": {"value": 2.0}
+								  "time": {"value": 2.5}
 								}
 							  }
 							]
@@ -370,7 +388,7 @@
                         "title": "nicemice_resolveHealTarget",
                         "type": "action",
                         "name": "nicemice_resolveHealTarget",
-                        "parameters": { "range": {"key": "<healRange>"} },
+                        "parameters": { "range": {"key": "<castRange>"} },
                         "output": { "entity": "altHealTarget", "position": "altHealTargetPosition" }
                       },
                       {
@@ -385,6 +403,12 @@
                         "name": "setAimPosition",
                         "parameters": { "position": {"key": "altHealTargetPosition"} }
                       },
+					  {
+						"title": "nicemice_clampAimPosition",
+						"type": "action",
+						"name": "nicemice_clampAimPosition",
+						"parameters": { "range": {"key": "castRange"} }
+					  },
                       {
 				    "title": "selector",
 					"type": "composite",
@@ -450,7 +474,7 @@
                         "title": "nicemice_resolveBuffTarget",
                         "type": "action",
                         "name": "nicemice_resolveBuffTarget",
-                        "parameters": { "range": {"key": "<buffRange>"} },
+                        "parameters": { "range": {"key": "<castRange>"} },
                         "output": { "entity": "altBuffTarget", "position": "altBuffTargetPosition" }
                       },
                       {
@@ -465,6 +489,12 @@
                         "name": "setAimPosition",
                         "parameters": { "position": {"key": "altBuffTargetPosition"} }
                       },
+					  {
+						"title": "nicemice_clampAimPosition",
+						"type": "action",
+						"name": "nicemice_clampAimPosition",
+						"parameters": { "range": {"key": "castRange"} }
+					  },
                       {
 				    "title": "selector",
 					"type": "composite",
@@ -540,6 +570,12 @@
                         "name": "setAimPosition",
                         "parameters": { "position": {"key": "altTargetPosition"} }
                       },
+					  {
+						"title": "nicemice_clampAimPosition",
+						"type": "action",
+						"name": "nicemice_clampAimPosition",
+						"parameters": { "range": {"key": "castRange"} }
+					  },
                       {
 				    "title": "selector",
 					"type": "composite",

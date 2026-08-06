@@ -297,5 +297,18 @@
 			"forceRunRange": {"type": "number", "value": 15},
 			"cantReachDialog": {"type": "bool", "value": true}
 		}
-	}
+	},
+	"nicemice_clampAimPosition": 
+	{
+		"type": "action",
+		"name": "nicemice_clampAimPosition",
+		"title": "nicemice_clampAimPosition",
+		"properties": 
+		{
+			"range": {"type": "number", "value" : 20}
+		},
+		"category": "npc",
+		"script": "/scripts/actions/nicemice_wandstaff.lua",
+		"output": {}
+  }
 }
