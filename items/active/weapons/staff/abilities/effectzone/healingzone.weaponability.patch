@@ -1,7 +1,7 @@
 [
 	{
 		"op" : "add",
-		"path" : "/npcIntent",
+		"path" : "/ability/npcIntent",
 		"value" : "healing"
 	}
 ]
