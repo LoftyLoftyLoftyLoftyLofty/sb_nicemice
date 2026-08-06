@@ -135,12 +135,6 @@
 						"parameters": { "entity": {"key": "healTarget"} }
 					  },
 					  {
-                          "title": "sayToEntity",
-                          "type": "action",
-                          "name": "sayToEntity",
-                          "parameters": { "dialogType": {"value": "dialog.reattack"}, "entity": {"key": "target"}, "tags": {"value": {}} }
-                      },
-					  {
 						"title": "setAimPosition",
 						"type": "action",
 						"name": "setAimPosition",
