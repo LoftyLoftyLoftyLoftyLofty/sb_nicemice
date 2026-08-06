@@ -107,8 +107,8 @@
         "variants" : 1
       }
     },
-    "primaryAbilities" : ["healingzone"],
-	//["elementrain", "elementswarm", "elementbouncer", "elementorb", "elementportal"],
+    "primaryAbilities" : //["healingzone"],
+	["elementrain", "elementswarm", "elementbouncer", "elementorb", "elementportal"],
     
 	"altAbilities" : ["healingzone"], 
 	//["healingzone", "lowgravzone", "slowzone", "pushzone", "pullzone", "energyzone"],
