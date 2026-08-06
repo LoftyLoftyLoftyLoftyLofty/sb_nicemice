@@ -285,5 +285,17 @@
 				"key": null
 			}
 		}
+	},
+	"nicemice_wandstaff-approach": 
+	{
+		"type": "module",
+		"name": "nicemice_wandstaff-approach",
+		"title": "",
+		"properties": 
+		{
+			"liquidHesitationTime": {"type": "number", "value": 3},
+			"forceRunRange": {"type": "number", "value": 15},
+			"cantReachDialog": {"type": "bool", "value": true}
+		}
 	}
 }

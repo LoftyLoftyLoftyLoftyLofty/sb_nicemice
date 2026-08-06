@@ -14,7 +14,8 @@
   ],
   "parameters": {
     "healRange": 20,
-    "buffRange": 15
+    "buffRange": 15,
+	"wizardryCooldown": 2
   },
   "root": {
     "title": "sequence",
@@ -81,12 +82,22 @@
         "name": "parallel",
         "parameters": { "fail": {"value": -1}, "success": {"value": -1} },
         "children": [
-          {
-            "title": "rangedcombat",
+          //set ranged combat stuff
+		  //{
+          //  "title": "rangedcombat",
+          //  "type": "module",
+          //  "name": "rangedcombat",
+          //  "parameters": {}
+          //},
+		  
+		  {
+            "title": "nicemice_wandstaff-approach",
             "type": "module",
-            "name": "rangedcombat",
+            "name": "nicemice_wandstaff-approach",
             "parameters": {}
           },
+		  
+		  //handle primary fire
           {
             "title": "selector",
             "type": "composite",
@@ -131,7 +142,52 @@
                     "name": "setAimPosition",
                     "parameters": { "position": {"key": "healTargetPosition"} }
                   },
-                  { "title": "primaryFire", "type": "action", "name": "primaryFire", "parameters": {} }
+				  {
+				    "title": "selector",
+					"type": "composite",
+					"name": "selector",
+					"parameters": {},
+					"children": [ 
+					  {
+						"title": "cooldown",
+						"type": "decorator",
+						"name": "cooldown",
+						"parameters": 
+						{
+						  "cooldown": {"key": "<wizardryCooldown>"},
+						  "onFail": {"value": false},
+						  "onSuccess": {"value": true}
+						},
+						"child": 
+						{
+								"title": "timer",
+								"type": "action",
+								"name": "timer",
+								"parameters": {
+								  "time": {"value": 0.1}
+								}
+							  }
+					  },
+					  {
+							"title": "parallel",
+							"type": "composite",
+							"name": "parallel",
+							"parameters": { "fail": {"value": 1}, "success": {"value": 1} },
+							"children": 
+							[
+							  { "title": "primaryFire", "type": "action", "name": "primaryFire", "parameters": {} },
+							  {
+								"title": "timer",
+								"type": "action",
+								"name": "timer",
+								"parameters": {
+								  "time": {"value": 2.0}
+								}
+							  }
+							]
+						}
+					]
+					}
                 ]
               },
               {
@@ -173,7 +229,52 @@
                     "name": "setAimPosition",
                     "parameters": { "position": {"key": "buffTargetPosition"} }
                   },
-                  { "title": "primaryFire", "type": "action", "name": "primaryFire", "parameters": {} }
+				  {
+				    "title": "selector",
+					"type": "composite",
+					"name": "selector",
+					"parameters": {},
+					"children": [ 
+					  {
+						"title": "cooldown",
+						"type": "decorator",
+						"name": "cooldown",
+						"parameters": 
+						{
+						  "cooldown": {"key": "<wizardryCooldown>"},
+						  "onFail": {"value": false},
+						  "onSuccess": {"value": true}
+						},
+						"child": 
+						{
+								"title": "timer",
+								"type": "action",
+								"name": "timer",
+								"parameters": {
+								  "time": {"value": 0.1}
+								}
+							  }
+					  },
+					  {
+							"title": "parallel",
+							"type": "composite",
+							"name": "parallel",
+							"parameters": { "fail": {"value": 1}, "success": {"value": 1} },
+							"children": 
+							[
+							  { "title": "primaryFire", "type": "action", "name": "primaryFire", "parameters": {} },
+							  {
+								"title": "timer",
+								"type": "action",
+								"name": "timer",
+								"parameters": {
+								  "time": {"value": 2.0}
+								}
+							  }
+							]
+						}
+					]
+					}
                 ]
               },
               {
@@ -198,12 +299,58 @@
                     "name": "setAimPosition",
                     "parameters": { "position": {"key": "targetPosition"} }
                   },
-                  { "title": "primaryFire", "type": "action", "name": "primaryFire", "parameters": {} }
+				  {
+				    "title": "selector",
+					"type": "composite",
+					"name": "selector",
+					"parameters": {},
+					"children": [ 
+					  {
+						"title": "cooldown",
+						"type": "decorator",
+						"name": "cooldown",
+						"parameters": 
+						{
+						  "cooldown": {"key": "<wizardryCooldown>"},
+						  "onFail": {"value": false},
+						  "onSuccess": {"value": true}
+						},
+						"child": 
+						{
+								"title": "timer",
+								"type": "action",
+								"name": "timer",
+								"parameters": {
+								  "time": {"value": 0.1}
+								}
+							  }
+					  },
+					  {
+							"title": "parallel",
+							"type": "composite",
+							"name": "parallel",
+							"parameters": { "fail": {"value": 1}, "success": {"value": 1} },
+							"children": 
+							[
+							  { "title": "primaryFire", "type": "action", "name": "primaryFire", "parameters": {} },
+							  {
+								"title": "timer",
+								"type": "action",
+								"name": "timer",
+								"parameters": {
+								  "time": {"value": 2.0}
+								}
+							  }
+							]
+						}
+					]
+					}
                 ]
               }
             ]
           },
-          {
+          //handle alt fire
+		  {
             "title": "sequence",
             "type": "composite",
             "name": "sequence",
@@ -253,7 +400,52 @@
                         "name": "setAimPosition",
                         "parameters": { "position": {"key": "altHealTargetPosition"} }
                       },
-                      { "title": "altFire", "type": "action", "name": "altFire", "parameters": {} }
+                      {
+				    "title": "selector",
+					"type": "composite",
+					"name": "selector",
+					"parameters": {},
+					"children": [ 
+					  {
+						"title": "cooldown",
+						"type": "decorator",
+						"name": "cooldown",
+						"parameters": 
+						{
+						  "cooldown": {"key": "<wizardryCooldown>"},
+						  "onFail": {"value": false},
+						  "onSuccess": {"value": true}
+						},
+						"child": 
+						{
+								"title": "timer",
+								"type": "action",
+								"name": "timer",
+								"parameters": {
+								  "time": {"value": 0.1}
+								}
+							  }
+					  },
+					  {
+							"title": "parallel",
+							"type": "composite",
+							"name": "parallel",
+							"parameters": { "fail": {"value": 1}, "success": {"value": 1} },
+							"children": 
+							[
+							  { "title": "altFire", "type": "action", "name": "altFire", "parameters": {} },
+							  {
+								"title": "timer",
+								"type": "action",
+								"name": "timer",
+								"parameters": {
+								  "time": {"value": 1.0}
+								}
+							  }
+							]
+						}
+					]
+					}
                     ]
                   },
                   {
@@ -288,7 +480,52 @@
                         "name": "setAimPosition",
                         "parameters": { "position": {"key": "altBuffTargetPosition"} }
                       },
-                      { "title": "altFire", "type": "action", "name": "altFire", "parameters": {} }
+                      {
+				    "title": "selector",
+					"type": "composite",
+					"name": "selector",
+					"parameters": {},
+					"children": [ 
+					  {
+						"title": "cooldown",
+						"type": "decorator",
+						"name": "cooldown",
+						"parameters": 
+						{
+						  "cooldown": {"key": "<wizardryCooldown>"},
+						  "onFail": {"value": false},
+						  "onSuccess": {"value": true}
+						},
+						"child": 
+						{
+								"title": "timer",
+								"type": "action",
+								"name": "timer",
+								"parameters": {
+								  "time": {"value": 0.1}
+								}
+							  }
+					  },
+					  {
+							"title": "parallel",
+							"type": "composite",
+							"name": "parallel",
+							"parameters": { "fail": {"value": 1}, "success": {"value": 1} },
+							"children": 
+							[
+							  { "title": "altFire", "type": "action", "name": "altFire", "parameters": {} },
+							  {
+								"title": "timer",
+								"type": "action",
+								"name": "timer",
+								"parameters": {
+								  "time": {"value": 1.0}
+								}
+							  }
+							]
+						}
+					]
+					}
                     ]
                   },
                   {
@@ -318,7 +555,52 @@
                         "name": "setAimPosition",
                         "parameters": { "position": {"key": "altTargetPosition"} }
                       },
-                      { "title": "altFire", "type": "action", "name": "altFire", "parameters": {} }
+                      {
+				    "title": "selector",
+					"type": "composite",
+					"name": "selector",
+					"parameters": {},
+					"children": [ 
+					  {
+						"title": "cooldown",
+						"type": "decorator",
+						"name": "cooldown",
+						"parameters": 
+						{
+						  "cooldown": {"key": "<wizardryCooldown>"},
+						  "onFail": {"value": false},
+						  "onSuccess": {"value": true}
+						},
+						"child": 
+						{
+								"title": "timer",
+								"type": "action",
+								"name": "timer",
+								"parameters": {
+								  "time": {"value": 0.1}
+								}
+							  }
+					  },
+					  {
+							"title": "parallel",
+							"type": "composite",
+							"name": "parallel",
+							"parameters": { "fail": {"value": 1}, "success": {"value": 1} },
+							"children": 
+							[
+							  { "title": "altFire", "type": "action", "name": "altFire", "parameters": {} },
+							  {
+								"title": "timer",
+								"type": "action",
+								"name": "timer",
+								"parameters": {
+								  "time": {"value": 1.0}
+								}
+							  }
+							]
+						}
+					]
+					}
                     ]
                   }
                 ]
