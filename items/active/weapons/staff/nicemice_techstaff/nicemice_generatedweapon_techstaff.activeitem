@@ -107,10 +107,11 @@
         "variants" : 1
       }
     },
-    "primaryAbilities" : ["elementrain", "elementswarm", "elementbouncer", "elementorb", "elementportal"],
+    "primaryAbilities" : ["healingzone"],
+	//["elementrain", "elementswarm", "elementbouncer", "elementorb", "elementportal"],
     
 	"altAbilities" : ["healingzone"], 
-	//"lowgravzone", "slowzone", "pushzone", "pullzone", "energyzone"],
+	//["healingzone", "lowgravzone", "slowzone", "pushzone", "pullzone", "energyzone"],
 	
     "iconDrawables" : ["handle", "crown", "stone"]
   }]

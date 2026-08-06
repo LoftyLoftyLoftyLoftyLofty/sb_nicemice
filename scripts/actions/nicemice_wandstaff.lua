@@ -66,9 +66,13 @@ end
 -- output entity
 -- output position
 function nicemice_resolveHealTarget(args, board)
+
+  sb.logInfo("resolving heal targets...")
   if args.range == nil then return false end
 
-  local selfPosition = mcontroller.position()
+  sb.logInfo("range = " .. sb.printJson(args.range))
+  
+  local selfPosition = entity.position()
   local candidates = world.entityQuery(
     vec2.sub(selfPosition, {args.range, args.range}),
     vec2.add(selfPosition, {args.range, args.range}),
@@ -94,6 +98,8 @@ function nicemice_resolveHealTarget(args, board)
     end
   end
 
+  sb.logInfo("chosen heal target: " .. sb.printJson(best))
+
   if best == nil then return false end
   return true, {entity = best, position = world.entityPosition(best)}
 end
@@ -108,7 +114,7 @@ end
 function nicemice_resolveBuffTarget(args, board)
   if args.range == nil then return false end
 
-  local selfPosition = mcontroller.position()
+  local selfPosition = entity.position()
   local candidates = world.entityQuery(
     vec2.sub(selfPosition, {args.range, args.range}),
     vec2.add(selfPosition, {args.range, args.range}),
