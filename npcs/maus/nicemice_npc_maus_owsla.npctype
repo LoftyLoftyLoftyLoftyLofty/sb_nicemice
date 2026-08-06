@@ -37,7 +37,9 @@
 			"lostTarget" : "/dialog/combat.config:lostTarget",
 			"outOfSight" : "/dialog/combat.config:outOfSight",
 			"cheerOn" : "/dialog/combat.config:cheerOn",
-			"cantReach" : "/dialog/combat.config:cantReach"
+			"cantReach" : "/dialog/combat.config:cantReach",
+			
+			"debug" : "/dialog/nicemice_maus_captain.config:debug"
 		},
 		
 		//M.A.U.S. Personnel are intended to stay with their ship, not join the player

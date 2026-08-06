@@ -39,17 +39,7 @@
 			"cheerOn" : "/dialog/combat.config:cheerOn",
 			"cantReach" : "/dialog/combat.config:cantReach",
 			
-			"debug" : "/dialog/nicemice_maus_captain.config:debug",
-			"debug_combat_leap" : "/dialog/nicemice_maus_captain.config:debug_combat_leap",
-			"debug_combat_atk" : "/dialog/nicemice_maus_captain.config:debug_combat_atk",
-			"debug_combat_atk_resource" : "/dialog/nicemice_maus_captain.config:debug_combat_atk_resource",
-			"debug_combat_atk_range" : "/dialog/nicemice_maus_captain.config:debug_combat_atk_range",
-			"debug_combat_atk_parallel" : "/dialog/nicemice_maus_captain.config:debug_combat_atk_parallel",
-			"debug_combat_atk_complete" : "/dialog/nicemice_maus_captain.config:debug_combat_atk_complete",
-			"debug_combat_atk_ongroundfail" : "/dialog/nicemice_maus_captain.config:debug_combat_atk_ongroundfail",
-			"debug_combat_atk_whipfail" : "/dialog/nicemice_maus_captain.config:debug_combat_atk_whipfail",
-			"debug_combat_atk_timerfail" : "/dialog/nicemice_maus_captain.config:debug_combat_atk_timerfail",
-			"debug_combat_atk_rangefail" : "/dialog/nicemice_maus_captain.config:debug_combat_atk_rangefail"
+			"debug" : "/dialog/nicemice_maus_captain.config:debug"
 		},
 		
 		//M.A.U.S. Personnel are intended to stay with their ship, not join the player

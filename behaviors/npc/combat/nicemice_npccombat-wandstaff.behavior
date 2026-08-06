@@ -191,7 +191,14 @@
 								]
 							}
 						]
-						}
+						},
+						{
+                        "title": "sayToEntity",
+                        "type": "action",
+                        "name": "sayToEntity",
+                        "parameters": { "dialogType": {"value": "dialog.debug"}, "entity": {"key": "target"}, "tags": {"value": {}} }
+                      }
+						
 					]
 				  },
 				  {
