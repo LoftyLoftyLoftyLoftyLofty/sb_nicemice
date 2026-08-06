@@ -90,7 +90,7 @@
 						//  Colors 12
 						//  Copper
 						
-						// Engineering
+						// Mechanic
 						//  Colors 9, 13
 						//  Purple
 						//  Lilac
@@ -106,6 +106,43 @@
 						[
 							{ 
 								"name" : "nicemice_jumpsuitlegs_dyeable",
+								"parameters" : { "colorIndex" : 3 }	 
+							}
+						],
+						"sheathedprimary" : 
+						[ 
+							"nicemice_generatedweapon_plasmapistol" 
+						]
+					},
+					{
+						"head" : 
+						[
+							{ 
+								"name" : "nicemice_invisiblehead"							
+							}
+						],
+						"back" : 
+						[
+							{ 
+								"name" : "nicemice_tail_mouse"							
+							}
+						],
+						
+						// Officer
+						//  Colors 3
+						//  White
+						
+						"chest" :
+						[
+							{ 
+								"name" : "nicemice_maus_officerchest",
+								"parameters" : { "colorIndex" : 3 }	 
+							}
+						],
+						"legs" :
+						[
+							{ 
+								"name" : "nicemice_maus_officerlegs",
 								"parameters" : { "colorIndex" : 3 }	 
 							}
 						],

@@ -102,7 +102,7 @@
 						//  Colors 12
 						//  Copper
 						
-						// Engineering
+						// Mechanic
 						//  Colors 9, 13
 						//  Purple
 						//  Lilac
@@ -110,14 +110,14 @@
 						"chest" :
 						[
 							{ 
-								"name" : "nicemice_jumpsuitchest_dyeable",
+								"name" : "nicemice_maus_officerchest",
 								"parameters" : { "colorIndex" : 8 }	 
 							}
 						],
 						"legs" :
 						[
 							{ 
-								"name" : "nicemice_jumpsuitlegs_dyeable",
+								"name" : "nicemice_maus_officerlegs",
 								"parameters" : { "colorIndex" : 8 }	 
 							}
 						],
