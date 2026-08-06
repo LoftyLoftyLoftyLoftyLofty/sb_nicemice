@@ -23,7 +23,7 @@
     "name": "sequence",
     "parameters": {},
     "children": [
-      {
+	  {
         "title": "succeeder",
         "type": "decorator",
         "name": "succeeder",
@@ -82,21 +82,6 @@
         "name": "parallel",
         "parameters": { "fail": {"value": -1}, "success": {"value": -1} },
         "children": [
-          //set ranged combat stuff
-		  //{
-          //  "title": "rangedcombat",
-          //  "type": "module",
-          //  "name": "rangedcombat",
-          //  "parameters": {}
-          //},
-		  
-		  {
-            "title": "nicemice_wandstaff-approach",
-            "type": "module",
-            "name": "nicemice_wandstaff-approach",
-            "parameters": {}
-          },
-		  
 		  //handle primary fire
           {
             "title": "selector",
