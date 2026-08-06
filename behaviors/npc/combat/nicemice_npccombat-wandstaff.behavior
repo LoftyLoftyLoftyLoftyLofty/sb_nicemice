@@ -14,7 +14,9 @@
   ],
   "parameters": {
 	//TODO this should be inherited from the ability being used then we subtract 5 tiles from that value
-    "castRange" : 24,
+	//for now we use 20 because all vanilla staff abilities have a cast range of 25
+	//but there is some weirdness with "focus position" vs "entity position" and that distance is likely to be up to like 2 tiles
+    "castRange" : 20,
 	"wizardryCooldown": 2.5
   },
   "root": {
