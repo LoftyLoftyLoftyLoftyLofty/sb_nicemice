@@ -15,7 +15,7 @@
   "parameters": {
 	//TODO this should be inherited from the ability being used then we subtract 5 tiles from that value
     "castRange" : 24,
-	"wizardryCooldown": 4
+	"wizardryCooldown": 2.5
   },
   "root": {
     "title": "sequence",
@@ -172,7 +172,7 @@
 								"type": "action",
 								"name": "timer",
 								"parameters": {
-								  "time": {"value": 2.5}
+								  "time": {"value": 4.5}
 								}
 							  }
 							]
@@ -265,7 +265,7 @@
 								"type": "action",
 								"name": "timer",
 								"parameters": {
-								  "time": {"value": 2.5}
+								  "time": {"value": 4.5}
 								}
 							  }
 							]
@@ -341,7 +341,7 @@
 								"type": "action",
 								"name": "timer",
 								"parameters": {
-								  "time": {"value": 2.5}
+								  "time": {"value": 4.5}
 								}
 							  }
 							]
@@ -448,7 +448,7 @@
 								"type": "action",
 								"name": "timer",
 								"parameters": {
-								  "time": {"value": 1.0}
+								  "time": {"value": 4.5}
 								}
 							  }
 							]
@@ -534,7 +534,7 @@
 								"type": "action",
 								"name": "timer",
 								"parameters": {
-								  "time": {"value": 1.0}
+								  "time": {"value": 4.5}
 								}
 							  }
 							]
@@ -615,7 +615,7 @@
 								"type": "action",
 								"name": "timer",
 								"parameters": {
-								  "time": {"value": 1.0}
+								  "time": {"value": 4.5}
 								}
 							  }
 							]
