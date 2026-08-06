@@ -14,8 +14,8 @@
   ],
   "parameters": {
 	//TODO this should be inherited from the ability being used then we subtract 5 tiles from that value
-    "castRange" : 20,
-	"wizardryCooldown": 2
+    "castRange" : 24,
+	"wizardryCooldown": 4
   },
   "root": {
     "title": "sequence",
