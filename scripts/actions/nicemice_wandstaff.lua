@@ -18,6 +18,9 @@ function nicemice_resolveAbilityIntent(args, board)
 
   local abilityKey = (args.hand == "alt") and "altAbility" or "primaryAbility"
   local ability = itemConfig.config[abilityKey]
+  
+  --sb.logInfo("ability dump: " .. sb.printJson(ability))
+  
   if ability == nil then return false end
 
   if ability.npcDoNotUse then return false end
@@ -67,10 +70,10 @@ end
 -- output position
 function nicemice_resolveHealTarget(args, board)
 
-  sb.logInfo("resolving heal targets...")
+  -- sb.logInfo("resolving heal targets...")
   if args.range == nil then return false end
 
-  sb.logInfo("range = " .. sb.printJson(args.range))
+  -- sb.logInfo("range = " .. sb.printJson(args.range))
   
   local selfPosition = entity.position()
   local candidates = world.entityQuery(
@@ -98,7 +101,7 @@ function nicemice_resolveHealTarget(args, board)
     end
   end
 
-  sb.logInfo("chosen heal target: " .. sb.printJson(best))
+  -- sb.logInfo("chosen heal target: " .. sb.printJson(best))
 
   if best == nil then return false end
   return true, {entity = best, position = world.entityPosition(best)}
