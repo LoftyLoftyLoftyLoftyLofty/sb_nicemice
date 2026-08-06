@@ -131,7 +131,7 @@
                     "title": "nicemice_clampAimPosition",
                     "type": "action",
                     "name": "nicemice_clampAimPosition",
-                    "parameters": { "range": {"key": "castRange"} }
+                    "parameters": { "range" : {"key" : "<castRange>"} }
                   },
 				  {
 				    "title": "selector",
@@ -224,7 +224,7 @@
                     "title": "nicemice_clampAimPosition",
                     "type": "action",
                     "name": "nicemice_clampAimPosition",
-                    "parameters": { "range": {"key": "castRange"} }
+                    "parameters": { "range" : {"key" : "<castRange>"} }
                   },
 				  {
 				    "title": "selector",
@@ -300,7 +300,7 @@
                     "title": "nicemice_clampAimPosition",
                     "type": "action",
                     "name": "nicemice_clampAimPosition",
-                    "parameters": { "range": {"key": "castRange"} }
+                    "parameters": { "range" : {"key" : "<castRange>"} }
                   },
 				  {
 				    "title": "selector",
@@ -407,7 +407,7 @@
 						"title": "nicemice_clampAimPosition",
 						"type": "action",
 						"name": "nicemice_clampAimPosition",
-						"parameters": { "range": {"key": "castRange"} }
+						"parameters": { "range" : {"key" : "<castRange>"} }
 					  },
                       {
 				    "title": "selector",
@@ -493,7 +493,7 @@
 						"title": "nicemice_clampAimPosition",
 						"type": "action",
 						"name": "nicemice_clampAimPosition",
-						"parameters": { "range": {"key": "castRange"} }
+						"parameters": { "range" : {"key" : "<castRange>"} }
 					  },
                       {
 				    "title": "selector",
@@ -574,7 +574,7 @@
 						"title": "nicemice_clampAimPosition",
 						"type": "action",
 						"name": "nicemice_clampAimPosition",
-						"parameters": { "range": {"key": "castRange"} }
+						"parameters": { "range" : {"key" : "<castRange>"} }
 					  },
                       {
 				    "title": "selector",

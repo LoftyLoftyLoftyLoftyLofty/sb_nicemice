@@ -165,11 +165,12 @@ end
 
 -- param range
 function nicemice_clampAimPosition(args, board)
-  if args.range == nil then return false end
+  sb.logInfo("clamping: " .. sb.printJson(args.range))
+  if args.range == nil then return true end
 
   local aimPos = npc.aimPosition()
   local myPos = entity.position()
-  local dist = world.distance(myPos, aimPos)
+  local dist = vec2.mag(world.distance(myPos, aimPos))
   if dist > args.range then
 	local delta = vec2.sub(aimPos, myPos)
 	delta = vec2.norm(delta)
