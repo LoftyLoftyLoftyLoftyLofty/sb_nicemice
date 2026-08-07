@@ -64,15 +64,43 @@
 			[
 				0, 
 				[
+					// Ship Crew
+					//  Colors 0, 1
+					//  M.A.U.S. Red
+					//  Black
+					
+					// Medic
+					//  Colors 3
+					//  White
+					
+					// Engineering
+					//  Colors 5
+					
+					// Cargo Crew
+					//  Colors 6, 11
+					//  Yellow
+					//  Brown
+					
+					// Quartermaster
+					//  Colors 12
+					//  Copper
+					
+					// Mechanic
+					//  Colors 9, 13
+					//  Purple
+					//  Lilac
+					
+					// Officer
+					//  Colors 0, 1
+					//  MAUS Red
+					//  Black
+				
+					//ensign uniform
 					{
 						"head" : 
 						[
 							{ 
 								"name" : "nicemice_invisiblehead"							
-							},
-							{
-								"name" : "nicemicetier1head",
-								"parameters" : { "colorIndex" : 0 }
 							}
 						],
 						"back" : 
@@ -81,74 +109,6 @@
 								"name" : "nicemice_tail_mouse"							
 							}
 						],
-						
-						// Ship Crew
-						//  Colors 0, 1
-						//  M.A.U.S. Red
-						//  Black
-						
-						// Medic
-						//  Colors 3
-						//  White
-						
-						// Engineering
-						//  Colors 5
-						
-						// Cargo Crew
-						//  Colors 6, 11
-						//  Yellow
-						//  Brown
-						
-						// Quartermaster
-						//  Colors 12
-						//  Copper
-						
-						// Mechanic
-						//  Colors 9, 13
-						//  Purple
-						//  Lilac
-						
-						"chest" :
-						[
-							{ 
-								"name" : "nicemice_jumpsuitchest_dyeable",
-								"parameters" : { "colorIndex" : [0, 1] }	 
-							}
-						],
-						"legs" :
-						[
-							{ 
-								"name" : "nicemice_jumpsuitlegs_dyeable",
-								"parameters" : { "colorIndex" : [0, 1] }	 
-							}
-						],
-						"sheathedprimary" : 
-						[ 
-							"nicemice_generatedweapon_plasmapistol" 
-						]
-					},
-					{
-						"head" : 
-						[
-							{ 
-								"name" : "nicemice_invisiblehead"							
-							},
-							{
-								"name" : "nicemicetier1head",
-								"parameters" : { "colorIndex" : [0, 1] }
-							}
-						],
-						"back" : 
-						[
-							{ 
-								"name" : "nicemice_tail_mouse"							
-							}
-						],
-						
-						// Officer
-						//  Colors 0, 1
-						//  MAUS Red
-						//  Black
 						
 						"chest" :
 						[
@@ -161,6 +121,40 @@
 						[
 							{ 
 								"name" : "nicemice_maus_officerlegs",
+								"parameters" : { "colorIndex" : [0, 1] }	 
+							}
+						],
+						"sheathedprimary" : 
+						[ 
+							"nicemice_generatedweapon_plasmapistol" 
+						]
+					},
+					//jumpsuit
+					{
+						"head" : 
+						[
+							{ 
+								"name" : "nicemice_invisiblehead"							
+							}
+						],
+						"back" : 
+						[
+							{ 
+								"name" : "nicemice_tail_mouse"							
+							}
+						],
+						
+						"chest" :
+						[
+							{ 
+								"name" : "nicemice_jumpsuitchest_dyeable",
+								"parameters" : { "colorIndex" : [0, 1] }	 
+							}
+						],
+						"legs" :
+						[
+							{ 
+								"name" : "nicemice_jumpsuitlegs_dyeable",
 								"parameters" : { "colorIndex" : [0, 1] }	 
 							}
 						],
