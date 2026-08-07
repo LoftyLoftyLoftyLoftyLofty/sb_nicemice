@@ -1,0 +1,28 @@
+{
+  "itemName" : "nicemice_mechblueprint",
+  "level" : 1,
+  "price" : 800,
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "description" : "A blueprint for classified M.A.U.S. mech components.",
+  "shortdescription" : "M.A.U.S. Mech Blueprint",
+  "tooltipKind" : "base",
+  "category" : "Blueprint",
+  "twoHanded" : true,
+
+  "inventoryIcon" : "nicemice_mechblueprint.png",
+
+  "animation" : "randomblueprint.animation",
+
+  "scripts" : ["randomblueprint.lua"],
+
+  "swingTime" : 0.15,
+
+  "allowDuplicateChance" : 0.1,
+  "recipes" : [
+    ["nicemice_mechbody_hazvia"],
+    ["nicemice_mechbooster_hazvia"],
+    ["nicemice_mechlegs_hazvia"],
+    ["nicemice_mecharm_hazvia"]
+  ]
+}
