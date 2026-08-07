@@ -1,4 +1,6 @@
 {
+	//Items found inside the Nicemice starter locker
+	//It's worth noting that we insert the starterTreasure pool to make sure that players get starting gear from mods like Frackin
 	"nicemiceStarterShipLockerTreasure" : 
 	[
 		[
@@ -19,6 +21,8 @@
 			}
 		]
 	],
+	
+	//When the player upgrades their ship to T4, the shape of the ship requires some kind of elevator kit
 	"nicemice_t4ship_railkit" : 
 	[
 		[
@@ -36,6 +40,8 @@
 			}
 		]
 	],
+	
+	//When the player upgrades their ship to T6, they gain access to the ship pets system
 	"nicemice_t6ship_shippetkit" : 
 	[
 		[
@@ -48,6 +54,8 @@
 			}
 		]
 	],
+	
+	//When the player upgrades their ship to T7, they receive a wiring kit with some logic gates
 	"nicemice_t7ship_wiringkit" : 
 	[
 		[
@@ -69,6 +77,9 @@
 			}
 		]
 	],
+	
+	//When the player upgrades their ship to T8, they can explore outside their ship in their mech
+	//These blueprints are in a chest near the tip of the ship's tail
 	"nicemice_t8ship_mechkit" : 
 	[
 		[
@@ -80,6 +91,122 @@
 					{"item" : [ "nicemice_mechbooster_hazvia-recipe", 1 ] },
 					{"item" : [ "nicemice_mechlegs_hazvia-recipe", 1 ] },
 					{"item" : [ "nicemice_mecharm_hazvia-recipe", 1 ] }
+				]
+			}
+		]
+	],
+	
+	//The M.A.U.S. cargo ship's locker is intended to have Nicemice gear first and other incidental loot second
+	"nicemice_cargoship_shiplocker_treasure" : 
+	[
+		[
+			0,
+			{
+				"fill" : 
+				[
+					{"item" : [ "nicemice_flag", 1 ] },
+					{"pool" : "nicemice_cargoship_shiplocker_treasure_subcategory_uniforms" },
+					{"pool" : "nicemice_cargoship_shiplocker_treasure_subcategory_npcspawners" },
+					{"pool" : "nicemice_cargoship_shiplocker_treasure_subcategory_treasureweapons" },
+					{"item" : [ "nicemice_mechblueprint", 1 ] },
+					{"pool" : "spaceChestTreasure" }
+				]
+			}
+		]
+	],
+	
+	"nicemice_cargoship_shiplocker_treasure_subcategory_uniforms" : 
+	[
+		[
+			0,
+			{
+				"pool" :
+				[
+					{ "weight" : 0.25, "pool" : "nicemice_uniform_jumpsuit" },
+					{ "weight" : 0.25, "pool" : "nicemice_uniform_officer" }
+				]
+			}
+		]
+	],
+	
+	"nicemice_uniform_jumpsuit" : 
+	[
+		[
+			0,
+			{
+				"fill" :
+				[
+					{"item" : [ "nicemice_jumpsuitchest_dyeable", 1 ] },
+					{"item" : [ "nicemice_jumpsuitlegs_dyeable", 1 ] }
+				]
+			}
+		]
+	],
+	
+	"nicemice_uniform_officer" : 
+	[
+		[
+			0,
+			{
+				"fill" :
+				[
+					{"item" : [ "nicemice_maus_officerchest", 1 ] },
+					{"item" : [ "nicemice_maus_officerlegs", 1 ] }
+				]
+			}
+		]
+	],
+	
+	"nicemice_cargoship_shiplocker_treasure_subcategory_npcspawners" : 
+	[
+		[
+			0,
+			{
+				"pool" :
+				[
+					{"weight" : 0.1, "item" : [ "nicemice_npcspawner_maus_personnel", 1 ]},
+					{"weight" : 0.1, "item" : [ "nicemice_npcspawner_maus_cargo", 1 ]},
+					{"weight" : 0.1, "item" : [ "nicemice_npcspawner_maus_engineer", 1 ]},
+					{"weight" : 0.1, "item" : [ "nicemice_npcspawner_maus_medic", 1 ]},
+					{"weight" : 0.1, "item" : [ "nicemice_npcspawner_maus_mechanic", 1 ]},
+					{"weight" : 0.1, "item" : [ "nicemice_npcspawner_maus_quartermaster", 1 ]},
+					{"weight" : 0.1, "item" : [ "nicemice_npcspawner_maus_owsla", 1 ]},
+					{"weight" : 0.1, "item" : [ "nicemice_npcspawner_maus_captain", 1 ]}
+				],
+				"poolRounds" : 
+				[
+					[0.30, 2],
+					[0.20, 3],
+					[0.10, 4]
+				],
+				"allowDuplication" : false
+			}
+		]
+	],
+	
+	"nicemice_cargoship_shiplocker_treasure_subcategory_treasureweapons" : 
+	[
+		[
+			0,
+			{
+				"pool" :
+				[
+					{ "weight" : 0.25, "item" : [ "nicemice_generatedweapon_plasmapistol", 1 ] },
+					{ "weight" : 0.25, "item" : [ "nicemice_generatedweapon_techstaff", 1 ] },
+					{ "weight" : 0.25, "item" : [ "nicemice_gentlereminder", 1 ] }
+				]
+			}
+		]
+	],
+	
+	"nicemice_fill_er_up" : 
+	[
+		[
+			0,
+			{
+				"fill" :
+				[
+					{"item" : [ "liquidfuel", 100 ] }
 				]
 			}
 		]

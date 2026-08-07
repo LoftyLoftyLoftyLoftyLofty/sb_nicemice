@@ -5,7 +5,7 @@
  "layers":[
         {
          "compression":"zlib",
-         "data":"eJzt3EGO00AQhtEcJVtuMyfjFuzmFGzmWjASEVEmGSV22\/WX+y2eYAGoy65PSEnDx+l0+gAAAAAAAAAAACj2\/tc51HuTc6a6fn7M7XMXfoa67bz6PN3onIvkfnSuc8ZI7kfnOmeM5H50rnPGSO5H5zpnjOR+dK5zxkjuR+c6Z4zkfnSuc8ZI7kfnOmeM5H50rnPGSO5H5zpnjOR+dK5zxkjup1PnrzxznbO35H50rnPGSO6nS+fP\/PvZill0zkWnfqrPs+acOqdSej\/n0\/+\/D6vPs+acFbPonIv0ft7+6X7Oill0zkX3fhLonHTd+0mgc9J97sKPUO8Pfp7m9pyPmqs4V\/V+wRE983k70JvOsyX\/\/+C338lUn8fcX8\/5SuddZjmi7p\/zHFGXuVPvyayd5YjSn32HfZ91bp33kf7sO+z7rHPrvI\/0Z99h32edW+d9pD\/7Dvs+69yp99uXzlLdos6zzznr3Kn34ZbOUt2izrPPOevcOu8j\/dl32JFZ59Z5H93vTx\/RUe+3p89S3SLzdV79vEe9n46zUEfn2XTexzlMl+9ktuz8lTvhe98lX\/K92tZnWqK6uz1V7\/ajHenwGc7WnW\/9+7Z8P+nvsLq7vfy+Uv3Mu+3IlnPrfHvV7Wk9f0e2nlvn26puTuv5O7LH3DrfTnVr1dJaT9yRveY+n17\/\/HHvzy07dl7dWIqk1tN2JH3uvZ9Xt86r20qT0nrSjnSYW+ePVTeVKqH1lB3pMrfO76tuKd1166n3p49o6Z3wve+Sd7jfXt0Qr5mt8+rnPer9dJyFOjrPpvO5nVdwvz33Tvj59Nz7qbjfXr3zs1qz79Wf4SR0Xn2eNe9n73dYveuz22qPjkjny1TvOMta13n23EmdV+82y1vXefbcKZ1X7zTrWtd59twJnVfvMutb13n23NWdV+8wY1rXec0dspH377a6D1e9u4xrXedfne+ofocfp8ffjbsnw4XOn+\/87Y7q9wfP0vn9zpPvw+2tekfZpnWdzzX3d6p3k+1a1\/lcc2t8LjrXucbnoHOdV+8g+xj53euvmx+\/+zVr\/oxR30vfewYzqd49AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAj+QPgOJva",
+         "data":"eJzt3EFuE0EQhlEfxRsW3CaXZJcVR2CTa0EkrESOHdkzPVN\/Tb\/FEywAdc3UJyS74e10Or0BAAAAAAAAAAAUe\/3nHOq1yTlTfX5+zO19F37\/yHTdefV5utE5F8n96FznjJHcj851zhjJ\/ehc54yR3I\/Odc4Yyf3oXOeMkdyPznXOGMn96FznjJHcj851zhjJ\/ehc54yR3I\/Odc4Yyf3oXOeMkdxPp86feeY6Z2\/J\/ehc54yR3E+Xzh\/597MVs+ici079VJ9nzTl1TqX0fs6nj78Pq8+z5pwVs+ici\/R+Xv7rfs6KWXTORfd+EuicdN37SaBz0r3vws9Qr3d+nub6nPeaqzhX9X7BET3yeTvQm86zJf\/\/4NffyVSfx9xfz\/lM511mOaLun\/McUZe5U+\/JrJ3liNKffYd9n3VunfeR\/uw77Pusc+u8j\/Rn32HfZ51b532kP\/sO+z7r3Kn325fOUt2izrPPOevcqffhls5S3aLOs88569w67yP92XfYkVnn1nkf3e9PH9FR77enz1LdIvN1Xv28R72fjrNQR+fZdN7HOUyX72S27PyZO+F73yVf8r3a1mdaorq7PVXv9r0d6fAZztadb\/37tnw\/6e+wuru9\/Pmk+pl325Et59b59qrb03r+jmw9t863Vd2c1vN3ZI+5db6d6taqpbWeuCN7zX0+Pf\/5496fW3bsvLqxFEmtp+1I+tx7P69unVe3lSal9aQd6TC3zu+rbipVQuspO9Jlbp3fVt1Sus+tp96fPqKld8L3vkve4X57dUM8Z7bOq5\/3qPfTcRbq6Dybzud2XsH99tw74Y++n4r77dU7P6s1+179GU5C59XnWfN+9n6H1bs+u6326Ih0vkz1jrOsdZ1nz53UefVus7x1nWfPndJ59U6zrnWdZ8+d0Hn1LrO+dZ1nz13defUOM6Z1ndfcIRt5\/26r+3DVu8u41nX+1fmG6nf4drr\/3bh7Mlzo\/PHOX26ofn\/wKJ3f7jz5PtzeqneUbVrX+Vxzf6d6N9mudZ3PNbfG56JznWt8DjrXefUOso+R373+uvrxu1+z5s8Y9b30rWcwk+rdAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4kr\/XiGpp",
          "encoding":"base64",
          "height":100,
          "id":1,
@@ -19,7 +19,7 @@
         }, 
         {
          "compression":"zlib",
-         "data":"eJzt29tpHEEQBVA5D2fnAJSJwnISCsZGyIs1Mlg7OzNdr3OgPpb96a6qCwtqPT0BAAAAAAAA1PVDjSpmit47Jedcr8r8q5wzK\/2brcr8q5wzK\/2brcr8q5wzK\/2brcr8q5wzK\/2brcr8q5wzK\/2brcr8q5wzK\/2brcr8q5wzK\/2brcr8q5wzK\/2brcr8q5wzK\/2brcr8q5wzK\/3behlWVeZf5ZxZ6d\/W2+4\/Dyk5n0P\/tuQ8pyrnzEr\/tuQ8p2rnzPa\/Y1X6t4qc51TtnHKem5zn1Omcch5PznPqdE45jyfndGTOW3JOR+a8Jed0ZM5bck5H5rwV\/Q7Vu1euYM7v9vzdU6mv6teHevr0Ofpse6uT6F6qXvXR92\/bz9FnO3KX6jreifX25Dy7Kufco+OdWE\/Oc+t4J9aT89w63on15Dy3jndiPTnPreOdyOFzzqvomImOdyIHOc+j453IQc7z6HgncpDzPDreiRzkPI\/ot4WT3yLeI7rfe8v79pyiezm59\/eI7veR+Xjfnseku1b06BwyzK\/a7\/buey\/jecn5GlP2\/vVPkYucX29Kxm9kPR85v9a0jN\/Iei5yfp2pGb+Rdc6QOefTM34j6xyVNecyviXrHJEx55Mz\/vM\/38k6j8qW88kZv4es84hMOZfx+0S\/QZw6o+h+763s79v5WvSMJs4put9H5pPtfTv30+O1Kvcv+ne7\/TtG1tep3LvInNu7c8j6GpX7FpVz+3YuWb9e5Z5F5NyeXUPWr1W5X6tzbr+uJevXqdyrlTm3V2vI+jUq92lVzu3TWrJ+vso9WpFzexRD1s+1p1+P9v7MinoPx3pmdZ5qOY8o4pjZOfTlX\/YlF1k\/Tk+27ElOsn6MfvxlP3KT9cfpxTt7UYOsP0Yf7EM1sr7f9B7Yg5oezbqaXdQTvTOqVjHPy7CCid52\/3lIyTlTyTn0J+fQn5xDf3IO\/ck59Cfn0J+cQ39yDv3JOfQX\/Q7Vu1cAAAAAAAAAAAAAAAAgwm872efL",
+         "data":"eJzt29tpHEEQBVA5D2fnAJSJwnISCsZGyIs1Mlg7OzNdr3OgPpb96a6qCwtqPT0BAAAAAAAA1PVDjSpmit47Jedcr8r8q5wzK\/2brcr8q5wzK\/2brcr8q5wzK\/2brcr8q5wzK\/2brcr8q5wzK\/2brcr8q5wzK\/2brcr8q5wzK\/2brcr8q5wzK\/2brcr8q5wzK\/3behlWVeZf5ZxZ6d\/W2+4\/Dyk5n0P\/tuQ8pyrnzEr\/tuQ8pyrnzEr\/tuQ8p2rnzPa\/Y1X6t4qc51TtnHKem5zn1Omcch5PznPqdE45jyfndGTOW3JOR+a8Jed0ZM5bck5H5rwV\/d7c+3auYM7v9vzdU6mv6teHevr0Ofpse6uT6F6qXvXR92\/bz9FnO3KX6jreifX25Dy7Kufco+OdWE\/Oc+t4J9aT89w63on15Dy3jndiPTnPreOdyOFzzqvomImOdyIHOc+j453IQc7z6HgncpDzPDreiRzkPI\/ot4WT3yLeI7rfe8v79pyiezm59\/eI7veR+Xjfnseku1b06BwyzK\/a7\/buey\/jecn5GlP2\/vVPkYucX29Kxm9kPR85v9a0jN\/Iei5yfp2pGb+Rdc6QOefTM34j6xyVNecyviXrHJEx55Mz\/vM\/38k6j8qW88kZv4es84hMOZfx+0S\/QZw6o+h+763s79v5WvSMJs4put9H5pPtfTv30+O1Kvcv+ne7\/TtG1tep3LvInNu7c8j6GpX7FpVz+3YuWb9e5Z5F5NyeXUPWr1W5X6tzbr+uJevXqdyrlTm3V2vI+jUq92lVzu3TWrJ+vso9WpFzexRD1s+1p1+P9v7MinoPx3pmdZ5qOY8o4pjZOfTlX\/YlF1k\/Tk+27ElOsn6MfvxlP3KT9cfpxTt7UYOsP0Yf7EM1sr7f9B7Yg5oezbqaXdQTvTOqVjHPy7CCid52\/3lIyTlTyTn0J+fQn5xDf3IO\/ck59Cfn0J+cQ39yDv3JOfQn59Bf9Htz79sBAAAAAAAAAAAAAICMfgPVvBxe",
          "encoding":"base64",
          "height":100,
          "id":2,
@@ -365,6 +365,114 @@
                  "width":120,
                  "x":920,
                  "y":488
+                }, 
+                {
+                 "gid":9338,
+                 "height":24,
+                 "id":2087,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"parameters",
+                         "type":"string",
+                         "value":"{\"treasurePools\":[\"nicemice_cargoship_shiplocker_treasure\"]}"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":1304,
+                 "y":432
+                }, 
+                {
+                 "gid":9335,
+                 "height":24,
+                 "id":2088,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"parameters",
+                         "type":"string",
+                         "value":"{\"treasurePools\":[\"nicemice_fill_er_up\"]}"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":16,
+                 "x":1472,
+                 "y":512
+                }, 
+                {
+                 "gid":9339,
+                 "height":24,
+                 "id":2089,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":24,
+                 "x":1184,
+                 "y":512
+                }, 
+                {
+                 "gid":9336,
+                 "height":24,
+                 "id":2090,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":24,
+                 "x":1736,
+                 "y":440
+                }, 
+                {
+                 "gid":9333,
+                 "height":28,
+                 "id":2091,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":28,
+                 "x":1240,
+                 "y":648
+                }, 
+                {
+                 "gid":9333,
+                 "height":28,
+                 "id":2092,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":28,
+                 "x":1600,
+                 "y":648
+                }, 
+                {
+                 "gid":9332,
+                 "height":69,
+                 "id":2093,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":40,
+                 "x":640,
+                 "y":688
+                }, 
+                {
+                 "gid":9332,
+                 "height":69,
+                 "id":2094,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":40,
+                 "x":304,
+                 "y":232
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -425,7 +533,7 @@
                  "type":"",
                  "visible":true,
                  "width":8,
-                 "x":1200,
+                 "x":1416,
                  "y":496
                 }, 
                 {
@@ -557,7 +665,7 @@
                  "type":"",
                  "visible":true,
                  "width":8,
-                 "x":1248,
+                 "x":1392,
                  "y":496
                 }, 
                 {
@@ -689,7 +797,7 @@
                  "type":"",
                  "visible":true,
                  "width":8,
-                 "x":1464,
+                 "x":1440,
                  "y":496
                 }, 
                 {
@@ -940,7 +1048,7 @@
          "y":0
         }],
  "nextlayerid":28,
- "nextobjectid":2076,
+ "nextobjectid":2095,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.10.0",
@@ -1105,6 +1213,14 @@
         {
          "firstgid":9327,
          "source":"..\/..\/..\/..\/..\/win32\/unpacked_assets\/tilesets\/packed\/objects-by-category\/rail.json"
+        }, 
+        {
+         "firstgid":9331,
+         "source":"..\/..\/..\/tilesets\/nicemice_objects.json"
+        }, 
+        {
+         "firstgid":9650,
+         "source":"..\/..\/..\/tilesets\/nicemice_tiles.json"
         }],
  "tilewidth":8,
  "type":"map",
