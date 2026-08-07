@@ -351,19 +351,19 @@
                       }
                     }
                   },
-                  {
-                    "title": "nicemice_debugLog",
-                    "type": "action",
-                    "name": "nicemice_debugLog",
-                    "parameters": {
-                      "text": {
-                        "value": "casting healing on primary at"
-                      },
-                      "entity": {
-                        "key": "primaryTarget"
-                      }
-                    }
-                  },
+                  //{
+                  //  "title": "nicemice_debugLog",
+                  //  "type": "action",
+                  //  "name": "nicemice_debugLog",
+                  //  "parameters": {
+                  //    "text": {
+                  //      "value": "casting healing on primary at"
+                  //    },
+                  //    "entity": {
+                  //      "key": "primaryTarget"
+                  //    }
+                  //  }
+                  //},
                   {
                     "title": "charge -- hold fire, aim clamped into range",
                     "type": "composite",
@@ -632,19 +632,19 @@
                       }
                     }
                   },
-                  {
-                    "title": "nicemice_debugLog",
-                    "type": "action",
-                    "name": "nicemice_debugLog",
-                    "parameters": {
-                      "text": {
-                        "value": "casting healing on alt at"
-                      },
-                      "entity": {
-                        "key": "altTarget"
-                      }
-                    }
-                  },
+                  //{
+                  //  "title": "nicemice_debugLog",
+                  //  "type": "action",
+                  //  "name": "nicemice_debugLog",
+                  //  "parameters": {
+                  //    "text": {
+                  //      "value": "casting healing on alt at"
+                  //    },
+                  //    "entity": {
+                  //      "key": "altTarget"
+                  //    }
+                  //  }
+                  //},
                   {
                     "title": "charge -- hold fire, aim clamped into range",
                     "type": "composite",
@@ -923,19 +923,19 @@
                       }
                     }
                   },
-                  {
-                    "title": "nicemice_debugLog",
-                    "type": "action",
-                    "name": "nicemice_debugLog",
-                    "parameters": {
-                      "text": {
-                        "value": "casting buff on primary at"
-                      },
-                      "entity": {
-                        "key": "primaryTarget"
-                      }
-                    }
-                  },
+                  //{
+                  //  "title": "nicemice_debugLog",
+                  //  "type": "action",
+                  //  "name": "nicemice_debugLog",
+                  //  "parameters": {
+                  //    "text": {
+                  //      "value": "casting buff on primary at"
+                  //    },
+                  //    "entity": {
+                  //      "key": "primaryTarget"
+                  //    }
+                  //  }
+                  //},
                   {
                     "title": "charge -- hold fire, aim clamped into range",
                     "type": "composite",
@@ -1214,19 +1214,19 @@
                       }
                     }
                   },
-                  {
-                    "title": "nicemice_debugLog",
-                    "type": "action",
-                    "name": "nicemice_debugLog",
-                    "parameters": {
-                      "text": {
-                        "value": "casting buff on alt at"
-                      },
-                      "entity": {
-                        "key": "altTarget"
-                      }
-                    }
-                  },
+                  //{
+                  //  "title": "nicemice_debugLog",
+                  //  "type": "action",
+                  //  "name": "nicemice_debugLog",
+                  //  "parameters": {
+                  //    "text": {
+                  //      "value": "casting buff on alt at"
+                  //    },
+                  //    "entity": {
+                  //      "key": "altTarget"
+                  //    }
+                  //  }
+                  //},
                   {
                     "title": "charge -- hold fire, aim clamped into range",
                     "type": "composite",
@@ -1479,19 +1479,19 @@
                       }
                     }
                   },
-                  {
-                    "title": "nicemice_debugLog",
-                    "type": "action",
-                    "name": "nicemice_debugLog",
-                    "parameters": {
-                      "text": {
-                        "value": "casting harmful on primary at"
-                      },
-                      "entity": {
-                        "key": "target"
-                      }
-                    }
-                  },
+                  //{
+                  //  "title": "nicemice_debugLog",
+                  //  "type": "action",
+                  //  "name": "nicemice_debugLog",
+                  //  "parameters": {
+                  //    "text": {
+                  //      "value": "casting harmful on primary at"
+                  //    },
+                  //    "entity": {
+                  //      "key": "target"
+                  //    }
+                  //  }
+                  //},
                   {
                     "title": "charge -- hold fire, aim clamped into range",
                     "type": "composite",
@@ -1744,19 +1744,19 @@
                       }
                     }
                   },
-                  {
-                    "title": "nicemice_debugLog",
-                    "type": "action",
-                    "name": "nicemice_debugLog",
-                    "parameters": {
-                      "text": {
-                        "value": "casting harmful on alt at"
-                      },
-                      "entity": {
-                        "key": "target"
-                      }
-                    }
-                  },
+                  //{
+                  //  "title": "nicemice_debugLog",
+                  //  "type": "action",
+                  //  "name": "nicemice_debugLog",
+                  //  "parameters": {
+                  //    "text": {
+                  //      "value": "casting harmful on alt at"
+                  //    },
+                  //    "entity": {
+                  //      "key": "target"
+                  //    }
+                  //  }
+                  //},
                   {
                     "title": "charge -- hold fire, aim clamped into range",
                     "type": "composite",
@@ -1986,19 +1986,19 @@
                     "position": "coordinatorSlot"
                   }
                 },
-                {
-                  "title": "nicemice_debugLog",
-                  "type": "action",
-                  "name": "nicemice_debugLog",
-                  "parameters": {
-                    "text": {
-                      "value": "meleePosition"
-                    },
-                    "position": {
-                      "key": "coordinatorSlot"
-                    }
-                  }
-                },
+                //{
+                //  "title": "nicemice_debugLog",
+                //  "type": "action",
+                //  "name": "nicemice_debugLog",
+                //  "parameters": {
+                //    "text": {
+                //      "value": "meleePosition"
+                //    },
+                //    "position": {
+                //      "key": "coordinatorSlot"
+                //    }
+                //  }
+                //},
                 {
                   "title": "groupResource",
                   "type": "action",
@@ -2014,20 +2014,20 @@
                   "output": {
                     "number": "coordinatorMaxRange"
                   }
-                },
-                {
-                  "title": "nicemice_debugLog",
-                  "type": "action",
-                  "name": "nicemice_debugLog",
-                  "parameters": {
-                    "text": {
-                      "value": "maxRange"
-                    },
-                    "number": {
-                      "key": "coordinatorMaxRange"
-                    }
-                  }
                 }
+                //{
+                //  "title": "nicemice_debugLog",
+                //  "type": "action",
+                //  "name": "nicemice_debugLog",
+                //  "parameters": {
+                //    "text": {
+                //      "value": "maxRange"
+                //    },
+                //    "number": {
+                //      "key": "coordinatorMaxRange"
+                //    }
+                //  }
+                //}
               ]
             }
           },

@@ -5,7 +5,7 @@
   "parameters": {
     "play": true,
     "hostileDamageTeam": {"type": "enemy", "team": 1},
-	"debugTargeting" : { "value" : true },
+	"debugTargeting" : { "value" : false },
 	"requireLineOfSight" : { "value" : false }
   },
   "root": {
