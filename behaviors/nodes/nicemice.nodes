@@ -145,14 +145,48 @@
 		"title": "nicemice_resolveAbilityIntent",
 		"properties":
 		{
-			"hand": {"type": "string", "value": "primary"}
+			"hand": {"type": "string", "value": "primary"},
+			"margin": {"type": "number", "value": 5},
+			"fallbackRange": {"type": "number", "value": 25}
 		},
 		"category": "nicemice",
 		"script": "/scripts/actions/nicemice_wandstaff.lua",
 		"output":
 		{
-			"intent": {"type": "string", "key": null}
+			"intent": {"type": "string", "key": null},
+			"range": {"type": "number", "key": null}
 		}
+	},
+	"nicemice_debugLog" :
+	{
+		"type": "action",
+		"name": "nicemice_debugLog",
+		"title": "nicemice_debugLog",
+		"properties":
+		{
+			"text": {"type": "string", "value": ""},
+			"entity": {"type": "entity", "value": null},
+			"number": {"type": "number", "value": null},
+			"position": {"type": "position", "value": null},
+			"string": {"type": "string", "value": null},
+			"bool": {"type": "bool", "value": null}
+		},
+		"category": "nicemice",
+		"script": "/scripts/actions/nicemice_wandstaff.lua",
+		"output": {}
+	},
+	"nicemice_chargedFire" :
+	{
+		"type": "action",
+		"name": "nicemice_chargedFire",
+		"title": "nicemice_chargedFire",
+		"properties":
+		{
+			"hand": {"type": "string", "value": "primary"}
+		},
+		"category": "nicemice",
+		"script": "/scripts/actions/nicemice_wandstaff.lua",
+		"output": {}
 	},
 	"nicemice_equals" :
 	{
@@ -175,14 +209,16 @@
 		"title": "nicemice_resolveHealTarget",
 		"properties":
 		{
-			"range": {"type": "number", "value": 20}
+			"range": {"type": "number", "value": 20},
+			"requireSight": {"type": "bool", "value": true},
+			"debug": {"type": "bool", "value": false}
 		},
 		"category": "nicemice",
 		"script": "/scripts/actions/nicemice_wandstaff.lua",
 		"output":
 		{
 			"entity": {"type": "entity", "key": null},
-			"position": {"type": "vec2", "key": null}
+			"position": {"type": "position", "key": null}
 		}
 	},
 	"nicemice_resolveBuffTarget" :
@@ -192,14 +228,16 @@
 		"title": "nicemice_resolveBuffTarget",
 		"properties":
 		{
-			"range": {"type": "number", "value": 15}
+			"range": {"type": "number", "value": 15},
+			"requireSight": {"type": "bool", "value": true},
+			"debug": {"type": "bool", "value": false}
 		},
 		"category": "nicemice",
 		"script": "/scripts/actions/nicemice_wandstaff.lua",
 		"output":
 		{
 			"entity": {"type": "entity", "key": null},
-			"position": {"type": "vec2", "key": null}
+			"position": {"type": "position", "key": null}
 		}
 	},
 	"nicemice_npccombat-wandstaff" :
@@ -209,8 +247,14 @@
 		"title": "NPC Combat Wand/Staff",
 		"properties":
 		{
-			"healRange": {"type": "number", "value": 20},
-			"buffRange": {"type": "number", "value": 15}
+			"castRangeFallback": {"type": "number", "value": 25},
+			"castRangeMargin": {"type": "number", "value": 5},
+			"validHealingTargetRange": {"type": "number", "value": 30},
+			"validBuffTargetRange": {"type": "number", "value": 30},
+			"requireLineOfSight": {"type": "bool", "value": true},
+			"debugTargeting": {"type": "bool", "value": false},
+			"wizardryCooldown_primary": {"type": "number", "value": 2.5},
+			"wizardryCooldown_alt": {"type": "number", "value": 2.5}
 		},
 		"category": "nicemice",
 		"behavior": "/behaviors/npc/combat/nicemice_npccombat-wandstaff.behavior",
@@ -224,7 +268,11 @@
 		"properties":
 		{
 			"healRange": {"type": "number", "value": 20},
-			"idleHealCooldown": {"type": "number", "value": 3}
+			"idleHealCooldown": {"type": "number", "value": 3},
+			"castRangeFallback": {"type": "number", "value": 25},
+			"castRangeMargin": {"type": "number", "value": 5},
+			"requireLineOfSight": {"type": "bool", "value": true},
+			"debugTargeting": {"type": "bool", "value": false}
 		},
 		"category": "nicemice",
 		"behavior": "/behaviors/npc/nicemice_healsupport.behavior",
@@ -307,7 +355,7 @@
 		{
 			"range": {"type": "number", "value" : 20}
 		},
-		"category": "npc",
+		"category": "nicemice",
 		"script": "/scripts/actions/nicemice_wandstaff.lua",
 		"output": {}
   }

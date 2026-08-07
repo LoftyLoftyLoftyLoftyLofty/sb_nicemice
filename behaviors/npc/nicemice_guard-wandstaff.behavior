@@ -4,7 +4,9 @@
   "scripts": [],
   "parameters": {
     "play": true,
-    "hostileDamageTeam": {"type": "enemy", "team": 1}
+    "hostileDamageTeam": {"type": "enemy", "team": 1},
+	"debugTargeting" : { "value" : true },
+	"requireLineOfSight" : { "value" : false }
   },
   "root": {
     "title": "Villager",

@@ -1,3 +1,23 @@
+//  PRIMARY HAND ONLY. Alt-hand casting is deliberately removed for now: every
+//  generated staff rolls a random altAbility, and an ability with no npcIntent
+//  patch falls back to "harmful", so the alt branch was aiming at the combat
+//  target and overwriting the primary branch's aim in the same tick. Aim
+//  position is a single shared resource -- whichever branch writes it last
+//  wins. Re-add alt only under this same one-cast-per-tick selector.
+//
+//  Order below is intent priority: heal, then buff, then attack. Only one leaf
+//  may own the aim on any given tick.
+//
+//  castRangeFallback / castRangeMargin: cast range is read off the equipped
+//  ability (vanilla staff abilities declare maxCastRange, all of them 25 tiles).
+//  The fallback only applies when an ability declares none; the margin covers
+//  the gap between the ability's "focus position" and our entity position.
+//
+//  requireLineOfSight: heal/buff ally scans reject targets we cannot see. Turn
+//  off in walled test arenas where allies sit behind pillars.
+//
+//  debugTargeting: log every ally candidate with its damage team and each
+//  filter result, so you can see which filter rejected whom.
 {
   "name": "nicemice_npccombat-wandstaff",
   "description": "",
@@ -13,14 +33,13 @@
     "/scripts/actions/nicemice_wandstaff.lua"
   ],
   "parameters": {
-	//TODO this should be inherited from the ability being used then we subtract 5 tiles from that value
-	//for now we use 20 because all vanilla staff abilities have a cast range of 25
-	//but there is some weirdness with "focus position" vs "entity position" and that distance is likely to be up to like 2 tiles
-    "castRange" : 20,
-	"validHealingTargetRange" : 30,
-	"validBuffTargetRange" : 30,
-	"wizardryCooldown_primary": 2.5,
-	"wizardryCooldown_alt": 2.5
+    "castRangeFallback": 25,
+    "castRangeMargin": 5,
+    "validHealingTargetRange": 30,
+    "validBuffTargetRange": 30,
+    "requireLineOfSight": true,
+    "debugTargeting": true,
+    "wizardryCooldown_primary": 2.5
   },
   "root": {
     "title": "sequence",
@@ -28,13 +47,13 @@
     "name": "sequence",
     "parameters": {},
     "children": [
-	  {
+      {
         "title": "succeeder",
         "type": "decorator",
         "name": "succeeder",
         "parameters": {},
         "child": {
-          "title": "sequence",
+          "title": "draw a staff if one is sheathed",
           "type": "composite",
           "name": "sequence",
           "parameters": {},
@@ -44,34 +63,69 @@
               "type": "decorator",
               "name": "inverter",
               "parameters": {},
-              "child": { "title": "hasMeleePrimary", "type": "action", "name": "hasMeleePrimary", "parameters": {} }
+              "child": {
+                "title": "hasMeleePrimary",
+                "type": "action",
+                "name": "hasMeleePrimary",
+                "parameters": {}
+              }
             },
             {
               "title": "inverter",
               "type": "decorator",
               "name": "inverter",
               "parameters": {},
-              "child": { "title": "hasRangedPrimary", "type": "action", "name": "hasRangedPrimary", "parameters": {} }
+              "child": {
+                "title": "hasRangedPrimary",
+                "type": "action",
+                "name": "hasRangedPrimary",
+                "parameters": {}
+              }
             },
             {
               "title": "inverter",
               "type": "decorator",
               "name": "inverter",
               "parameters": {},
-              "child": { "title": "nicemice_hasWandStaffPrimary", "type": "action", "name": "nicemice_hasWandStaffPrimary", "parameters": {} }
+              "child": {
+                "title": "nicemice_hasWandStaffPrimary",
+                "type": "action",
+                "name": "nicemice_hasWandStaffPrimary",
+                "parameters": {}
+              }
             },
             {
-              "title": "selector",
+              "title": "anything usable sheathed?",
               "type": "composite",
               "name": "selector",
               "parameters": {},
               "children": [
-                { "title": "hasMeleeSheathed", "type": "action", "name": "hasMeleeSheathed", "parameters": {} },
-                { "title": "hasRangedSheathed", "type": "action", "name": "hasRangedSheathed", "parameters": {} },
-                { "title": "nicemice_hasWandStaffSheathed", "type": "action", "name": "nicemice_hasWandStaffSheathed", "parameters": {} }
+                {
+                  "title": "hasMeleeSheathed",
+                  "type": "action",
+                  "name": "hasMeleeSheathed",
+                  "parameters": {}
+                },
+                {
+                  "title": "hasRangedSheathed",
+                  "type": "action",
+                  "name": "hasRangedSheathed",
+                  "parameters": {}
+                },
+                {
+                  "title": "nicemice_hasWandStaffSheathed",
+                  "type": "action",
+                  "name": "nicemice_hasWandStaffSheathed",
+                  "parameters": {}
+                }
               ]
             },
-            { "title": "swapItemSlots", "type": "action", "name": "swapItemSlots", "parameters": {} }
+            {
+              "title": "swapItemSlots",
+              "type": "action",
+              "name": "swapItemSlots",
+              "parameters": {}
+            }
           ]
         }
       },
@@ -79,575 +133,577 @@
         "title": "setFlag",
         "type": "action",
         "name": "setFlag",
-        "parameters": { "name": {"value": "avoidLiquid"} }
+        "parameters": {
+          "name": {
+            "value": "avoidLiquid"
+          }
+        }
       },
       {
-        "title": "parallel",
+        "title": "stay resident",
         "type": "composite",
         "name": "parallel",
-        "parameters": { "fail": {"value": -1}, "success": {"value": -1} },
-        "children": 
-		[
-		  //handle primary fire
-		  {
-            "title": "sequence",
+        "parameters": {
+          "fail": {
+            "value": -1
+          },
+          "success": {
+            "value": -1
+          }
+        },
+        "children": [
+          {
+            "title": "one cast at a time, most useful first",
             "type": "composite",
-            "name": "sequence",
-            "parameters": {},
-            "children": 
-			[
-			  {
-				"title": "nicemice_resolveAbilityIntent",
-				"type": "action",
-				"name": "nicemice_resolveAbilityIntent",
-				"parameters": { "hand": {"value": "primary"} },
-				"output": { "usable": "primaryUsable", "intent": "primaryIntent" }
-			  },
-			  {
-				"title": "selector",
-				"type": "composite",
-				"name": "selector",
-				"parameters": {},
-				"children": [
-				  {
-					"title": "sequence",
-					"type": "composite",
-					"name": "sequence",
-					"parameters": {},
-					"children": [
-					  {
-						"title": "nicemice_equals",
-						"type": "action",
-						"name": "nicemice_equals",
-						"parameters": { "first": {"key": "primaryIntent"}, "second": {"value": "healing"} }
-					  },
-					  {
-						"title": "nicemice_resolveHealTarget",
-						"type": "action",
-						"name": "nicemice_resolveHealTarget",
-						"parameters": { "range": {"key": "<validHealingTargetRange>"} },
-						"output": { "entity": "healTarget", "position": "healTargetPosition" }
-					  },
-					  {
-						"title": "faceEntity",
-						"type": "action",
-						"name": "faceEntity",
-						"parameters": { "entity": {"key": "healTarget"} }
-					  },
-					  {
-						"title": "setAimPosition",
-						"type": "action",
-						"name": "setAimPosition",
-						"parameters": { "position": {"key": "healTargetPosition"} }
-					  },
-					  {
-						"title": "selector",
-						"type": "composite",
-						"name": "selector",
-						"parameters": {},
-						"children": [ 
-						  {
-							"title": "cooldown",
-							"type": "decorator",
-							"name": "cooldown",
-							"parameters": 
-							{
-							  "cooldown": {"key": "<wizardryCooldown_primary>"},
-							  "onFail": {"value": false},
-							  "onSuccess": {"value": true}
-							},
-							"child": 
-							{
-									"title": "timer",
-									"type": "action",
-									"name": "timer",
-									"parameters": {
-									  "time": {"value": 0.1}
-									}
-								  }
-						  },
-						  {
-								"title": "parallel",
-								"type": "composite",
-								"name": "parallel",
-								"parameters": { "fail": {"value": 1}, "success": {"value": 2} },
-								"children": 
-								[
-								  {
-									"title": "nicemice_clampAimPosition",
-									"type": "action",
-									"name": "nicemice_clampAimPosition",
-									"parameters": { "range" : {"key" : "<castRange>"} }
-								  },
-								  { "title": "primaryFire", "type": "action", "name": "primaryFire", "parameters": {} },
-								  {
-									"title": "timer",
-									"type": "action",
-									"name": "timer",
-									"parameters": {
-									  "time": {"value": 4.5}
-									}
-								  }
-								]
-							}
-						]
-						},
-						{
-                        "title": "sayToEntity",
-                        "type": "action",
-                        "name": "sayToEntity",
-                        "parameters": { "dialogType": {"value": "dialog.debug"}, "entity": {"key": "target"}, "tags": {"value": {}} }
-                      }
-						
-					]
-				  },
-				  {
-					"title": "sequence",
-					"type": "composite",
-					"name": "sequence",
-					"parameters": {},
-					"children": [
-					  { "title": "isValidTarget", "type": "action", "name": "isValidTarget", "parameters": { "entity": {"key": "target"} } },
-					  {
-						"title": "nicemice_equals",
-						"type": "action",
-						"name": "nicemice_equals",
-						"parameters": { "first": {"key": "primaryIntent"}, "second": {"value": "buff"} }
-					  },
-					  {
-						"title": "nicemice_resolveBuffTarget",
-						"type": "action",
-						"name": "nicemice_resolveBuffTarget",
-						"parameters": { "range": {"key": "<validBuffTargetRange>"} },
-						"output": { "entity": "buffTarget", "position": "buffTargetPosition" }
-					  },
-					  {
-						"title": "faceEntity",
-						"type": "action",
-						"name": "faceEntity",
-						"parameters": { "entity": {"key": "buffTarget"} }
-					  },
-					  {
-						"title": "setAimPosition",
-						"type": "action",
-						"name": "setAimPosition",
-						"parameters": { "position": {"key": "buffTargetPosition"} }
-					  },
-					  {
-						"title": "selector",
-						"type": "composite",
-						"name": "selector",
-						"parameters": {},
-						"children": [ 
-						  {
-							"title": "cooldown",
-							"type": "decorator",
-							"name": "cooldown",
-							"parameters": 
-							{
-							  "cooldown": {"key": "<wizardryCooldown_primary>"},
-							  "onFail": {"value": false},
-							  "onSuccess": {"value": true}
-							},
-							"child": 
-							{
-									"title": "timer",
-									"type": "action",
-									"name": "timer",
-									"parameters": {
-									  "time": {"value": 0.1}
-									}
-								  }
-						  },
-						  {
-								"title": "parallel",
-								"type": "composite",
-								"name": "parallel",
-								"parameters": { "fail": {"value": 1}, "success": {"value": 2} },
-								"children": 
-								[
-								  {
-									"title": "nicemice_clampAimPosition",
-									"type": "action",
-									"name": "nicemice_clampAimPosition",
-									"parameters": { "range" : {"key" : "<castRange>"} }
-								  },
-								  { "title": "primaryFire", "type": "action", "name": "primaryFire", "parameters": {} },
-								  {
-									"title": "timer",
-									"type": "action",
-									"name": "timer",
-									"parameters": {
-									  "time": {"value": 4.5}
-									}
-								  }
-								]
-							}
-						]
-						}
-					]
-				  },
-				  {
-					"title": "sequence",
-					"type": "composite",
-					"name": "sequence",
-					"parameters": {},
-					"children": [
-					  { "title": "isValidTarget", "type": "action", "name": "isValidTarget", "parameters": { "entity": {"key": "target"} } },
-					  {
-						"title": "nicemice_equals",
-						"type": "action",
-						"name": "nicemice_equals",
-						"parameters": { "first": {"key": "primaryIntent"}, "second": {"value": "harmful"} }
-					  },
-					  {
-						"title": "entityPosition",
-						"type": "action",
-						"name": "entityPosition",
-						"parameters": { "entity": {"key": "target"} },
-						"output": { "position": "targetPosition" }
-					  },
-					  { "title": "faceEntity", "type": "action", "name": "faceEntity", "parameters": { "entity": {"key": "target"} } },
-					  { "title": "entityInSight", "type": "action", "name": "entityInSight", "parameters": { "entity": {"key": "target"} } },
-					  {
-						"title": "setAimPosition",
-						"type": "action",
-						"name": "setAimPosition",
-						"parameters": { "position": {"key": "targetPosition"} }
-					  },
-					  {
-						"title": "selector",
-						"type": "composite",
-						"name": "selector",
-						"parameters": {},
-						"children": [ 
-						  {
-							"title": "cooldown",
-							"type": "decorator",
-							"name": "cooldown",
-							"parameters": 
-							{
-							  "cooldown": {"key": "<wizardryCooldown_primary>"},
-							  "onFail": {"value": false},
-							  "onSuccess": {"value": true}
-							},
-							"child": 
-							{
-									"title": "timer",
-									"type": "action",
-									"name": "timer",
-									"parameters": {
-									  "time": {"value": 0.1}
-									}
-								  }
-						  },
-						  {
-								"title": "parallel",
-								"type": "composite",
-								"name": "parallel",
-								"parameters": { "fail": {"value": 1}, "success": {"value": 2} },
-								"children": 
-								[
-								  {
-									"title": "nicemice_clampAimPosition",
-									"type": "action",
-									"name": "nicemice_clampAimPosition",
-									"parameters": { "range" : {"key" : "<castRange>"} }
-								  },
-								  { "title": "primaryFire", "type": "action", "name": "primaryFire", "parameters": {} },
-								  {
-									"title": "timer",
-									"type": "action",
-									"name": "timer",
-									"parameters": {
-									  "time": {"value": 4.5}
-									}
-								  }
-								]
-							}
-						]
-						}
-					]
-				  }
-				]
-			  }
-			]
-		  },
-          //handle alt fire
-		  {
-            "title": "sequence",
-            "type": "composite",
-            "name": "sequence",
+            "name": "selector",
             "parameters": {},
             "children": [
               {
-                "title": "nicemice_resolveAbilityIntent",
-                "type": "action",
-                "name": "nicemice_resolveAbilityIntent",
-                "parameters": { "hand": {"value": "alt"} },
-                "output": { "usable": "altUsable", "intent": "altIntent" }
-              },
-              {
-                "title": "selector",
+                "title": "heal",
                 "type": "composite",
-                "name": "selector",
+                "name": "sequence",
                 "parameters": {},
                 "children": [
                   {
-                    "title": "sequence",
-                    "type": "composite",
-                    "name": "sequence",
-                    "parameters": {},
-                    "children": [
-                      {
-                        "title": "nicemice_equals",
-                        "type": "action",
-                        "name": "nicemice_equals",
-                        "parameters": { "first": {"key": "altIntent"}, "second": {"value": "healing"} }
+                    "title": "nicemice_resolveAbilityIntent",
+                    "type": "action",
+                    "name": "nicemice_resolveAbilityIntent",
+                    "parameters": {
+                      "hand": {
+                        "value": "primary"
                       },
-                      {
-                        "title": "nicemice_resolveHealTarget",
-                        "type": "action",
-                        "name": "nicemice_resolveHealTarget",
-                        "parameters": { "range": {"key": "<validHealingTargetRange>"} },
-                        "output": { "entity": "altHealTarget", "position": "altHealTargetPosition" }
+                      "margin": {
+                        "key": "<castRangeMargin>"
                       },
-                      {
-                        "title": "faceEntity",
-                        "type": "action",
-                        "name": "faceEntity",
-                        "parameters": { "entity": {"key": "altHealTarget"} }
-                      },
-                      {
-                        "title": "setAimPosition",
-                        "type": "action",
-                        "name": "setAimPosition",
-                        "parameters": { "position": {"key": "altHealTargetPosition"} }
-                      },
-                      {
-				    "title": "selector",
-					"type": "composite",
-					"name": "selector",
-					"parameters": {},
-					"children": [ 
-					  {
-						"title": "cooldown",
-						"type": "decorator",
-						"name": "cooldown",
-						"parameters": 
-						{
-						  "cooldown": {"key": "<wizardryCooldown_alt>"},
-						  "onFail": {"value": false},
-						  "onSuccess": {"value": true}
-						},
-						"child": 
-						{
-								"title": "timer",
-								"type": "action",
-								"name": "timer",
-								"parameters": {
-								  "time": {"value": 0.1}
-								}
-							  }
-					  },
-					  {
-							"title": "parallel",
-							"type": "composite",
-							"name": "parallel",
-							"parameters": { "fail": {"value": 1}, "success": {"value": 2} },
-							"children": 
-							[
-							  {
-								"title": "nicemice_clampAimPosition",
-								"type": "action",
-								"name": "nicemice_clampAimPosition",
-								"parameters": { "range" : {"key" : "<castRange>"} }
-							  },
-							  { "title": "altFire", "type": "action", "name": "altFire", "parameters": {} },
-							  {
-								"title": "timer",
-								"type": "action",
-								"name": "timer",
-								"parameters": {
-								  "time": {"value": 4.5}
-								}
-							  }
-							]
-						}
-					]
-					}
-                    ]
+                      "fallbackRange": {
+                        "key": "<castRangeFallback>"
+                      }
+                    },
+                    "output": {
+                      "intent": "primaryIntent",
+                      "range": "primaryCastRange"
+                    }
                   },
                   {
-                    "title": "sequence",
-                    "type": "composite",
-                    "name": "sequence",
-                    "parameters": {},
-                    "children": [
-                      {
-                        "title": "nicemice_equals",
-                        "type": "action",
-                        "name": "nicemice_equals",
-                        "parameters": { "first": {"key": "altIntent"}, "second": {"value": "buff"} }
+                    "title": "nicemice_equals",
+                    "type": "action",
+                    "name": "nicemice_equals",
+                    "parameters": {
+                      "first": {
+                        "key": "primaryIntent"
                       },
-                      { "title": "isValidTarget", "type": "action", "name": "isValidTarget", "parameters": { "entity": {"key": "target"} } },
-                      {
-                        "title": "nicemice_resolveBuffTarget",
-                        "type": "action",
-                        "name": "nicemice_resolveBuffTarget",
-                        "parameters": { "range": {"key": "<validBuffTargetRange>"} },
-                        "output": { "entity": "altBuffTarget", "position": "altBuffTargetPosition" }
-                      },
-                      {
-                        "title": "faceEntity",
-                        "type": "action",
-                        "name": "faceEntity",
-                        "parameters": { "entity": {"key": "altBuffTarget"} }
-                      },
-                      {
-                        "title": "setAimPosition",
-                        "type": "action",
-                        "name": "setAimPosition",
-                        "parameters": { "position": {"key": "altBuffTargetPosition"} }
-                      },
-                      {
-				    "title": "selector",
-					"type": "composite",
-					"name": "selector",
-					"parameters": {},
-					"children": [ 
-					  {
-						"title": "cooldown",
-						"type": "decorator",
-						"name": "cooldown",
-						"parameters": 
-						{
-						  "cooldown": {"key": "<wizardryCooldown_alt>"},
-						  "onFail": {"value": false},
-						  "onSuccess": {"value": true}
-						},
-						"child": 
-						{
-								"title": "timer",
-								"type": "action",
-								"name": "timer",
-								"parameters": {
-								  "time": {"value": 0.1}
-								}
-							  }
-					  },
-					  {
-							"title": "parallel",
-							"type": "composite",
-							"name": "parallel",
-							"parameters": { "fail": {"value": 1}, "success": {"value": 2} },
-							"children": 
-							[
-							  {
-								"title": "nicemice_clampAimPosition",
-								"type": "action",
-								"name": "nicemice_clampAimPosition",
-								"parameters": { "range" : {"key" : "<castRange>"} }
-							  },
-							  { "title": "altFire", "type": "action", "name": "altFire", "parameters": {} },
-							  {
-								"title": "timer",
-								"type": "action",
-								"name": "timer",
-								"parameters": {
-								  "time": {"value": 4.5}
-								}
-							  }
-							]
-						}
-					]
-					}
-                    ]
+                      "second": {
+                        "value": "healing"
+                      }
+                    }
                   },
                   {
-                    "title": "sequence",
+                    "title": "nicemice_resolveHealTarget",
+                    "type": "action",
+                    "name": "nicemice_resolveHealTarget",
+                    "parameters": {
+                      "range": {
+                        "key": "<validHealingTargetRange>"
+                      },
+                      "requireSight": {
+                        "key": "<requireLineOfSight>"
+                      },
+                      "debug": {
+                        "key": "<debugTargeting>"
+                      }
+                    },
+                    "output": {
+                      "entity": "healTarget",
+                      "position": "healTargetPosition"
+                    }
+                  },
+                  {
+                    "title": "nicemice_debugLog",
+                    "type": "action",
+                    "name": "nicemice_debugLog",
+                    "parameters": {
+                      "text": {
+                        "value": "casting heal at"
+                      },
+                      "entity": {
+                        "key": "healTarget"
+                      },
+                      "position": {
+                        "key": "healTargetPosition"
+                      }
+                    }
+                  },
+                  {
+                    "title": "faceEntity",
+                    "type": "action",
+                    "name": "faceEntity",
+                    "parameters": {
+                      "entity": {
+                        "key": "healTarget"
+                      }
+                    }
+                  },
+                  {
+                    "title": "setAimPosition",
+                    "type": "action",
+                    "name": "setAimPosition",
+                    "parameters": {
+                      "position": {
+                        "key": "healTargetPosition"
+                      }
+                    }
+                  },
+                  {
+                    "title": "cast then release",
                     "type": "composite",
-                    "name": "sequence",
+                    "name": "selector",
                     "parameters": {},
                     "children": [
                       {
-                        "title": "nicemice_equals",
-                        "type": "action",
-                        "name": "nicemice_equals",
-                        "parameters": { "first": {"key": "altIntent"}, "second": {"value": "harmful"} }
+                        "title": "cooldown",
+                        "type": "decorator",
+                        "name": "cooldown",
+                        "parameters": {
+                          "cooldown": {
+                            "key": "<wizardryCooldown_primary>"
+                          },
+                          "onFail": {
+                            "value": false
+                          },
+                          "onSuccess": {
+                            "value": true
+                          }
+                        },
+                        "child": {
+                          "title": "timer",
+                          "type": "action",
+                          "name": "timer",
+                          "parameters": {
+                            "time": {
+                              "value": 0.1
+                            }
+                          }
+                        }
                       },
-                      { "title": "isValidTarget", "type": "action", "name": "isValidTarget", "parameters": { "entity": {"key": "target"} } },
                       {
-                        "title": "entityPosition",
-                        "type": "action",
-                        "name": "entityPosition",
-                        "parameters": { "entity": {"key": "target"} },
-                        "output": { "position": "altTargetPosition" }
+                        "title": "hold cast",
+                        "type": "composite",
+                        "name": "parallel",
+                        "parameters": {
+                          "fail": {
+                            "value": 1
+                          },
+                          "success": {
+                            "value": 2
+                          }
+                        },
+                        "children": [
+                          {
+                            "title": "nicemice_clampAimPosition",
+                            "type": "action",
+                            "name": "nicemice_clampAimPosition",
+                            "parameters": {
+                              "range": {
+                                "key": "primaryCastRange"
+                              }
+                            }
+                          },
+                          {
+                            "title": "primaryFire",
+                            "type": "action",
+                            "name": "primaryFire",
+                            "parameters": {}
+                          },
+                          {
+                            "title": "timer",
+                            "type": "action",
+                            "name": "timer",
+                            "parameters": {
+                              "time": {
+                                "value": 4.5
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "buff",
+                "type": "composite",
+                "name": "sequence",
+                "parameters": {},
+                "children": [
+                  {
+                    "title": "nicemice_resolveAbilityIntent",
+                    "type": "action",
+                    "name": "nicemice_resolveAbilityIntent",
+                    "parameters": {
+                      "hand": {
+                        "value": "primary"
                       },
-                      { "title": "entityInSight", "type": "action", "name": "entityInSight", "parameters": { "entity": {"key": "target"} } },
+                      "margin": {
+                        "key": "<castRangeMargin>"
+                      },
+                      "fallbackRange": {
+                        "key": "<castRangeFallback>"
+                      }
+                    },
+                    "output": {
+                      "intent": "primaryIntent",
+                      "range": "primaryCastRange"
+                    }
+                  },
+                  {
+                    "title": "nicemice_equals",
+                    "type": "action",
+                    "name": "nicemice_equals",
+                    "parameters": {
+                      "first": {
+                        "key": "primaryIntent"
+                      },
+                      "second": {
+                        "value": "buff"
+                      }
+                    }
+                  },
+                  {
+                    "title": "isValidTarget",
+                    "type": "action",
+                    "name": "isValidTarget",
+                    "parameters": {
+                      "entity": {
+                        "key": "target"
+                      }
+                    }
+                  },
+                  {
+                    "title": "nicemice_resolveBuffTarget",
+                    "type": "action",
+                    "name": "nicemice_resolveBuffTarget",
+                    "parameters": {
+                      "range": {
+                        "key": "<validBuffTargetRange>"
+                      },
+                      "requireSight": {
+                        "key": "<requireLineOfSight>"
+                      },
+                      "debug": {
+                        "key": "<debugTargeting>"
+                      }
+                    },
+                    "output": {
+                      "entity": "buffTarget",
+                      "position": "buffTargetPosition"
+                    }
+                  },
+                  {
+                    "title": "nicemice_debugLog",
+                    "type": "action",
+                    "name": "nicemice_debugLog",
+                    "parameters": {
+                      "text": {
+                        "value": "casting buff at"
+                      },
+                      "entity": {
+                        "key": "buffTarget"
+                      },
+                      "position": {
+                        "key": "buffTargetPosition"
+                      }
+                    }
+                  },
+                  {
+                    "title": "faceEntity",
+                    "type": "action",
+                    "name": "faceEntity",
+                    "parameters": {
+                      "entity": {
+                        "key": "buffTarget"
+                      }
+                    }
+                  },
+                  {
+                    "title": "setAimPosition",
+                    "type": "action",
+                    "name": "setAimPosition",
+                    "parameters": {
+                      "position": {
+                        "key": "buffTargetPosition"
+                      }
+                    }
+                  },
+                  {
+                    "title": "cast then release",
+                    "type": "composite",
+                    "name": "selector",
+                    "parameters": {},
+                    "children": [
                       {
-                        "title": "setAimPosition",
-                        "type": "action",
-                        "name": "setAimPosition",
-                        "parameters": { "position": {"key": "altTargetPosition"} }
+                        "title": "cooldown",
+                        "type": "decorator",
+                        "name": "cooldown",
+                        "parameters": {
+                          "cooldown": {
+                            "key": "<wizardryCooldown_primary>"
+                          },
+                          "onFail": {
+                            "value": false
+                          },
+                          "onSuccess": {
+                            "value": true
+                          }
+                        },
+                        "child": {
+                          "title": "timer",
+                          "type": "action",
+                          "name": "timer",
+                          "parameters": {
+                            "time": {
+                              "value": 0.1
+                            }
+                          }
+                        }
                       },
                       {
-				    "title": "selector",
-					"type": "composite",
-					"name": "selector",
-					"parameters": {},
-					"children": [ 
-					  {
-						"title": "cooldown",
-						"type": "decorator",
-						"name": "cooldown",
-						"parameters": 
-						{
-						  "cooldown": {"key": "<wizardryCooldown_alt>"},
-						  "onFail": {"value": false},
-						  "onSuccess": {"value": true}
-						},
-						"child": 
-						{
-								"title": "timer",
-								"type": "action",
-								"name": "timer",
-								"parameters": {
-								  "time": {"value": 0.1}
-								}
-							  }
-					  },
-					  {
-							"title": "parallel",
-							"type": "composite",
-							"name": "parallel",
-							"parameters": { "fail": {"value": 1}, "success": {"value": 2} },
-							"children": 
-							[
-							  {
-								"title": "nicemice_clampAimPosition",
-								"type": "action",
-								"name": "nicemice_clampAimPosition",
-								"parameters": { "range" : {"key" : "<castRange>"} }
-							  },
-							  { "title": "altFire", "type": "action", "name": "altFire", "parameters": {} },
-							  {
-								"title": "timer",
-								"type": "action",
-								"name": "timer",
-								"parameters": {
-								  "time": {"value": 4.5}
-								}
-							  }
-							]
-						}
-					]
-					}
+                        "title": "hold cast",
+                        "type": "composite",
+                        "name": "parallel",
+                        "parameters": {
+                          "fail": {
+                            "value": 1
+                          },
+                          "success": {
+                            "value": 2
+                          }
+                        },
+                        "children": [
+                          {
+                            "title": "nicemice_clampAimPosition",
+                            "type": "action",
+                            "name": "nicemice_clampAimPosition",
+                            "parameters": {
+                              "range": {
+                                "key": "primaryCastRange"
+                              }
+                            }
+                          },
+                          {
+                            "title": "primaryFire",
+                            "type": "action",
+                            "name": "primaryFire",
+                            "parameters": {}
+                          },
+                          {
+                            "title": "timer",
+                            "type": "action",
+                            "name": "timer",
+                            "parameters": {
+                              "time": {
+                                "value": 4.5
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "attack",
+                "type": "composite",
+                "name": "sequence",
+                "parameters": {},
+                "children": [
+                  {
+                    "title": "nicemice_resolveAbilityIntent",
+                    "type": "action",
+                    "name": "nicemice_resolveAbilityIntent",
+                    "parameters": {
+                      "hand": {
+                        "value": "primary"
+                      },
+                      "margin": {
+                        "key": "<castRangeMargin>"
+                      },
+                      "fallbackRange": {
+                        "key": "<castRangeFallback>"
+                      }
+                    },
+                    "output": {
+                      "intent": "primaryIntent",
+                      "range": "primaryCastRange"
+                    }
+                  },
+                  {
+                    "title": "nicemice_equals",
+                    "type": "action",
+                    "name": "nicemice_equals",
+                    "parameters": {
+                      "first": {
+                        "key": "primaryIntent"
+                      },
+                      "second": {
+                        "value": "harmful"
+                      }
+                    }
+                  },
+                  {
+                    "title": "isValidTarget",
+                    "type": "action",
+                    "name": "isValidTarget",
+                    "parameters": {
+                      "entity": {
+                        "key": "target"
+                      }
+                    }
+                  },
+                  {
+                    "title": "entityPosition",
+                    "type": "action",
+                    "name": "entityPosition",
+                    "parameters": {
+                      "entity": {
+                        "key": "target"
+                      }
+                    },
+                    "output": {
+                      "position": "targetPosition"
+                    }
+                  },
+                  {
+                    "title": "faceEntity",
+                    "type": "action",
+                    "name": "faceEntity",
+                    "parameters": {
+                      "entity": {
+                        "key": "target"
+                      }
+                    }
+                  },
+                  {
+                    "title": "entityInSight",
+                    "type": "action",
+                    "name": "entityInSight",
+                    "parameters": {
+                      "entity": {
+                        "key": "target"
+                      }
+                    }
+                  },
+                  {
+                    "title": "nicemice_debugLog",
+                    "type": "action",
+                    "name": "nicemice_debugLog",
+                    "parameters": {
+                      "text": {
+                        "value": "casting attack at"
+                      },
+                      "entity": {
+                        "key": "target"
+                      },
+                      "position": {
+                        "key": "targetPosition"
+                      }
+                    }
+                  },
+                  {
+                    "title": "setAimPosition",
+                    "type": "action",
+                    "name": "setAimPosition",
+                    "parameters": {
+                      "position": {
+                        "key": "targetPosition"
+                      }
+                    }
+                  },
+                  {
+                    "title": "cast then release",
+                    "type": "composite",
+                    "name": "selector",
+                    "parameters": {},
+                    "children": [
+                      {
+                        "title": "cooldown",
+                        "type": "decorator",
+                        "name": "cooldown",
+                        "parameters": {
+                          "cooldown": {
+                            "key": "<wizardryCooldown_primary>"
+                          },
+                          "onFail": {
+                            "value": false
+                          },
+                          "onSuccess": {
+                            "value": true
+                          }
+                        },
+                        "child": {
+                          "title": "timer",
+                          "type": "action",
+                          "name": "timer",
+                          "parameters": {
+                            "time": {
+                              "value": 0.1
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "title": "hold cast",
+                        "type": "composite",
+                        "name": "parallel",
+                        "parameters": {
+                          "fail": {
+                            "value": 1
+                          },
+                          "success": {
+                            "value": 2
+                          }
+                        },
+                        "children": [
+                          {
+                            "title": "nicemice_clampAimPosition",
+                            "type": "action",
+                            "name": "nicemice_clampAimPosition",
+                            "parameters": {
+                              "range": {
+                                "key": "primaryCastRange"
+                              }
+                            }
+                          },
+                          {
+                            "title": "primaryFire",
+                            "type": "action",
+                            "name": "primaryFire",
+                            "parameters": {}
+                          },
+                          {
+                            "title": "timer",
+                            "type": "action",
+                            "name": "timer",
+                            "parameters": {
+                              "time": {
+                                "value": 4.5
+                              }
+                            }
+                          }
+                        ]
+                      }
                     ]
                   }
                 ]
               }
             ]
+          },
+          {
+            "title": "runner",
+            "type": "action",
+            "name": "runner",
+            "parameters": {}
           }
         ]
       }

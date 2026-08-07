@@ -110,8 +110,8 @@
     "primaryAbilities" : //["healingzone"],
 	["elementrain", "elementswarm", "elementbouncer", "elementorb", "elementportal"],
     
-	"altAbilities" : ["healingzone"], 
-	//["healingzone", "lowgravzone", "slowzone", "pushzone", "pullzone", "energyzone"],
+	"altAbilities" : //["healingzone"], 
+	["healingzone", "lowgravzone", "slowzone", "pushzone", "pullzone", "energyzone"],
 	
     "iconDrawables" : ["handle", "crown", "stone"]
   }]

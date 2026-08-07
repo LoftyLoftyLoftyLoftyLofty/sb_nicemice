@@ -1,24 +1,45 @@
+//  PRIMARY HAND ONLY for now -- see nicemice_npccombat-wandstaff for why the
+//  alt hand is disabled.
+//
+//  requireLineOfSight: turn off in walled test arenas where allies sit behind
+//  pillars. debugTargeting: log every ally candidate and filter result.
 {
   "name": "nicemice_healsupport",
   "description": "",
   "scripts": [
     "/scripts/behavior.lua",
     "/scripts/actions/nicemice_wandstaff.lua",
+    "/scripts/actions/npc.lua",
+    "/scripts/actions/movement.lua",
     "/scripts/actions/entity.lua",
     "/scripts/actions/time.lua",
     "/scripts/actions/position.lua"
   ],
   "parameters": {
     "healRange": 20,
-    "idleHealCooldown": 3
+    "idleHealCooldown": 3,
+    "castRangeMargin": 5,
+    "requireLineOfSight": true,
+    "debugTargeting": false,
+    "castRangeFallback": 25
   },
   "root": {
     "title": "cooldown",
     "type": "decorator",
     "name": "cooldown",
-    "parameters": { "cooldown": {"key": "<idleHealCooldown>"}, "onFail": {"value": false}, "onSuccess": {"value": true} },
+    "parameters": {
+      "cooldown": {
+        "key": "<idleHealCooldown>"
+      },
+      "onFail": {
+        "value": false
+      },
+      "onSuccess": {
+        "value": true
+      }
+    },
     "child": {
-      "title": "sequence",
+      "title": "heal on primary",
       "type": "composite",
       "name": "sequence",
       "parameters": {},
@@ -27,35 +48,110 @@
           "title": "nicemice_resolveAbilityIntent",
           "type": "action",
           "name": "nicemice_resolveAbilityIntent",
-          "parameters": { "hand": {"value": "primary"} },
-          "output": { "usable": "primaryUsable", "intent": "primaryIntent" }
+          "parameters": {
+            "hand": {
+              "value": "primary"
+            },
+            "margin": {
+              "key": "<castRangeMargin>"
+            },
+            "fallbackRange": {
+              "key": "<castRangeFallback>"
+            }
+          },
+          "output": {
+            "intent": "primaryIntent",
+            "range": "primaryCastRange"
+          }
         },
         {
           "title": "nicemice_equals",
           "type": "action",
           "name": "nicemice_equals",
-          "parameters": { "first": {"key": "primaryIntent"}, "second": {"value": "healing"} }
+          "parameters": {
+            "first": {
+              "key": "primaryIntent"
+            },
+            "second": {
+              "value": "healing"
+            }
+          }
         },
         {
-          "title": "nicemice_resolveHealTarget",
-          "type": "action",
-          "name": "nicemice_resolveHealTarget",
-          "parameters": { "range": {"key": "<healRange>"} },
-          "output": { "entity": "idleHealTarget", "position": "idleHealTargetPosition" }
-        },
-        {
-          "title": "faceEntity",
-          "type": "action",
-          "name": "faceEntity",
-          "parameters": { "entity": {"key": "idleHealTarget"} }
-        },
-        {
-          "title": "setAimPosition",
-          "type": "action",
-          "name": "setAimPosition",
-          "parameters": { "position": {"key": "idleHealTargetPosition"} }
-        },
-        { "title": "primaryFire", "type": "action", "name": "primaryFire", "parameters": {} }
+          "title": "parallel",
+          "type": "composite",
+          "name": "parallel",
+          "parameters": {
+            "fail": {
+              "value": 1
+            },
+            "success": {
+              "value": -1
+            }
+          },
+          "children": [
+            {
+              "title": "nicemice_resolveHealTarget",
+              "type": "action",
+              "name": "nicemice_resolveHealTarget",
+              "parameters": {
+                "range": {
+                  "key": "<healRange>"
+                },
+                "requireSight": {
+                  "key": "<requireLineOfSight>"
+                },
+                "debug": {
+                  "key": "<debugTargeting>"
+                }
+              },
+              "output": {
+                "entity": "idleHealTarget",
+                "position": "idleHealTargetPosition"
+              }
+            },
+            {
+              "title": "faceEntity",
+              "type": "action",
+              "name": "faceEntity",
+              "parameters": {
+                "entity": {
+                  "key": "idleHealTarget"
+                }
+              }
+            },
+            {
+              "title": "setAimPosition",
+              "type": "action",
+              "name": "setAimPosition",
+              "parameters": {
+                "position": {
+                  "key": "idleHealTargetPosition"
+                }
+              }
+            },
+            {
+              "title": "nicemice_clampAimPosition",
+              "type": "action",
+              "name": "nicemice_clampAimPosition",
+              "parameters": {
+                "range": {
+                  "key": "primaryCastRange"
+                }
+              }
+            },
+            {
+              "title": "nicemice_chargedFire",
+              "type": "action",
+              "name": "nicemice_chargedFire",
+              "parameters": {
+                "hand": {
+                  "value": "primary"
+                }
+              }
+            }
+          ]
+        }
       ]
     }
   }
