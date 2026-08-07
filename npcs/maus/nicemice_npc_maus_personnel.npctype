@@ -72,7 +72,7 @@
 							},
 							{
 								"name" : "nicemicetier1head",
-								"parameters" : { "colorIndex" : [0, 1] }
+								"parameters" : { "colorIndex" : 0 }
 							}
 						],
 						"back" : 
