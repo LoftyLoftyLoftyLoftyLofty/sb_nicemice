@@ -43,7 +43,7 @@
 						"active" : false,
 						"pointLight" : false,
 						"position" : [0, 0],
-						"color" : [255, 183, 183]
+						"color" : [100, 71, 71]
 					}
 				}
 			}
