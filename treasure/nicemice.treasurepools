@@ -124,6 +124,10 @@
 				[
 					{ "weight" : 0.25, "pool" : "nicemice_uniform_jumpsuit" },
 					{ "weight" : 0.25, "pool" : "nicemice_uniform_officer" }
+				],
+				"poolRounds" : 
+				[
+					[1.0, 1]
 				]
 			}
 		]
