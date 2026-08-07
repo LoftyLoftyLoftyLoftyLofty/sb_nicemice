@@ -1,0 +1,57 @@
+{
+  "objectName" : "nicemice_npcspawner_maus_engineer",
+  "rarity" : "Uncommon",
+  "description" : "This beacon will summon a M.A.U.S. Engineer.",
+  "shortdescription" : "M.A.U.S. Spawner - Engineer",
+  "race" : "nicemice",
+  "printable" : false,
+  "category" : "spawner",
+  "price" : 100,
+  "smashDropOptions" : [],
+  "apexDescription" : "This beacon will summon a nouse. Is this legal?",
+  "avianDescription" : "Do we really need more Nicemice around here?",
+  "floranDescription" : "Floran doess not like mousesss.",
+  "glitchDescription" : "Hesitant. Do Nicemice chew on wires?",
+  "humanDescription" : "Back on Earth, having mice in your house was considered a bad thing.",
+  "hylotlDescription" : "This spawner does not instill a sense of harmony.",
+  "novakidDescription" : "Varmint spawner? Whole galaxy's gone sideways.",
+  "nicemiceDescription" : "Ziz beacon vill zummon anot'er Nouzemouze. Very uzeful!",
+  
+  "inventoryIcon" : "nicemice_npcspawner_maus_engineericon.png",
+  "orientations" : [
+    {
+      "image" : "nicemice_npcspawner_maus_engineer.png",
+      "imagePosition" : [-8, 0],
+      "direction" : "right",
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ],
+  "scripts" : [ "/objects/spawner/spawners/nicemice_villagerspawner/spawner.lua" ],
+  "scriptDelta" : 1,
+  //6000,
+  "animation" : "/objects/spawner/spawners/nicemice_villagerspawner/nicemice_villagerspawner.animation",
+  "animationParts" : {
+    "switch" : "nicemice_npcspawner_maus_engineer.png"
+  },
+  "animationPosition" : [-8, 0],
+  "inboundNodes" : [ ],
+  "outboundNodes" : [ ],
+  "spawner" : {
+    "searchRadius" : 32.0,
+    "npcSpeciesOptions" : [ "nicemice_npc" ],
+    "npcTypeOptions" : [ "nicemice_npc_maus_engineer" ],
+    "npcParameterOptions" : [
+      {
+        "dropPools" : [ ],
+		"scriptConfig" : 
+		{
+			"questGenerator" : 
+			{
+				"enableParticipation" : true
+			}
+		}
+      }
+    ]
+  }
+}
