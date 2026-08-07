@@ -156,6 +156,8 @@
 								"parameters" : { "colorIndex" : [6, 11] }	 
 							}
 						],
+						
+						//cargo crew knows where the fun guns live
 						"sheathedprimary" : 
 						[ 
 							"npcrocketlauncher" 

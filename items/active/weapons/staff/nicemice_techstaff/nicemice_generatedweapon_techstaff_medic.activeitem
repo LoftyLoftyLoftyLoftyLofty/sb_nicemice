@@ -1,5 +1,5 @@
 {
-  "itemName" : "nicemice_generatedweapon_techstaff",
+  "itemName" : "nicemice_generatedweapon_techstaff_medic",
   "price" : 1440,
   "maxStack" : 1,
   "rarity" : "Rare",
@@ -110,8 +110,8 @@
     "primaryAbilities" : 
 	["elementrain", "elementswarm", "elementbouncer", "elementorb", "elementportal"],
     
-	"altAbilities" : 
-	["healingzone", "lowgravzone", "slowzone", "pushzone", "pullzone", "energyzone"],
+	//medic stick always has healing available
+	"altAbilities" : ["healingzone"], 
 	
     "iconDrawables" : ["handle", "crown", "stone"]
   }]

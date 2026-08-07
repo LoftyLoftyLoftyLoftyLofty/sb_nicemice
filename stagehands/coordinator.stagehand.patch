@@ -11,7 +11,7 @@
     "op": "add",
     "path": "/npcCombat/rangedWeaponRanges/nicemice_generatedweapon_plasmapistol",
     "value": {
-      "minRange" : 1,
+      "minRange" : 12,
       "maxRange" : 25,
       "forceMoveRange" : 20
     }
