@@ -19,7 +19,7 @@
 	"description" : "Mobile Assault Unit System, or M.A.U.S for short.",
 	"shortdescription" : "M.A.U.S",
 	"race" : "nicemice",
-	"lightColor" : [128, 32, 32],
+	"lightColor" : [100, 71, 71],
 	"lightPosition" : [-1, 0],
 	
 	"apexDescription" : "I can talk to MAUS through this console.",
