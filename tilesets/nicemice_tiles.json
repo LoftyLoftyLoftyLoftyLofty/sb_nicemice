@@ -1,0 +1,23 @@
+{
+    "margin" : 0,
+    "name" : "nicemice_tiles",
+    "properties" : {
+    },
+    "spacing" : 0,
+    "tilecount" : 1,
+    "tileheight" : 16,
+    "tileproperties" : {
+        "0" : {
+            "//description" : "Nicemice Sloped Ship Panel",
+            "//name" : "nicemice_slopedapexshipwall",
+            "//shortdescription" : "Sloped Wall Panel",
+            "material" : "nicemice_slopedapexshipwall"
+        }
+    },
+    "tiles" : {
+        "0" : {
+            "image" : "./../tiles/materials/nicemice_slopedapexshipwall_tiled.png"
+        }
+    },
+    "tilewidth" : 16
+}

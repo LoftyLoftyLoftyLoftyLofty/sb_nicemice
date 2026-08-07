@@ -1,0 +1,154 @@
+{
+  "margin" : 0,
+  "name" : "nicemice_objects",
+  "properties" : {
+  },
+  "spacing" : 0,
+  "tilecount" : 14,
+  "tileheight" : 80,
+  "tileproperties" : {
+    "0" : {
+      "//description" : "Nicemice Boosterflame M",
+      "imagePositionX" : "-34",
+      "imagePositionY" : "-31",
+      "object" : "nicemice_boosterflamemedium",
+      "tilesetDirection" : "right"
+    },
+    "1" : {
+      "//description" : "Nicemice Boosterflame L",
+      "imagePositionX" : "-32",
+      "imagePositionY" : "-30",
+      "object" : "nicemice_boosterflamelarge",
+      "tilesetDirection" : "right"
+    },
+    "2" : {
+      "//description" : "Nicemice Boosterflame S",
+      "imagePositionX" : "-14",
+      "imagePositionY" : "-14",
+      "object" : "nicemice_boosterflamesmall",
+      "tilesetDirection" : "right"
+    },
+    "3" : {
+      "//description" : "Nicemice Broken Fuel Hatch",
+      "imagePositionX" : "-8",
+      "imagePositionY" : "-16",
+      "object" : "nicemice_brokenfuelhatch",
+      "tilesetDirection" : "right"
+    },
+    "4" : {
+      "//description" : "Nicemice Fuel Hatch",
+      "imagePositionX" : "-8",
+      "imagePositionY" : "-16",
+      "object" : "nicemice_fuelhatch",
+      "tilesetDirection" : "right"
+    },
+    "5" : {
+      "//description" : "Nicemice Captains Chair",
+      "imagePositionX" : "-12",
+      "imagePositionY" : "0",
+      "object" : "nicemice_captainschair",
+      "tilesetDirection" : "right"
+    },
+    "6" : {
+      "//description" : "Nicemice Broken Ship Locker",
+      "imagePositionX" : "-16",
+      "imagePositionY" : "-8",
+      "object" : "nicemice_shiplockerTier0",
+      "tilesetDirection" : "right"
+    },
+    "7" : {
+      "//description" : "Nicemice Ship Locker",
+      "imagePositionX" : "-16",
+      "imagePositionY" : "-8",
+      "object" : "nicemice_shiplocker",
+      "tilesetDirection" : "right"
+    },
+    "8" : {
+      "//description" : "Nicemice M.A.U.S.",
+      "imagePositionX" : "-16",
+      "imagePositionY" : "-8",
+      "object" : "nicemice_techstation",
+      "tilesetDirection" : "right"
+    },
+    "9" : {
+      "//description" : "Nicemice Broken Teleporter",
+      "imagePositionX" : "-32",
+      "imagePositionY" : "0",
+      "object" : "nicemice_teleporterTier0",
+      "tilesetDirection" : "right"
+    },
+    "10" : {
+      "//description" : "Nicemice Teleporter",
+      "imagePositionX" : "-32",
+      "imagePositionY" : "0",
+      "object" : "nicemice_teleporter",
+      "tilesetDirection" : "right"
+    },
+    "11" : {
+      "//description" : "Nicemice Flag",
+      "imagePositionX" : "-17",
+      "imagePositionY" : "0",
+      "object" : "nicemice_flag",
+      "tilesetDirection" : "right"
+    },
+    "12" : {
+      "//description" : "Nicemice Pinup / Laying / Jumpsuit",
+      "imagePositionX" : "-40",
+      "imagePositionY" : "-24",
+      "object" : "nicemice_pinup_laying_jumpsuit",
+      "tilesetDirection" : "right"
+    },
+    "13" : {
+      "//description" : "Nicemice Pinup / Laying / Nude",
+      "imagePositionX" : "-40",
+      "imagePositionY" : "-24",
+      "object" : "nicemice_pinup_laying",
+      "tilesetDirection" : "right"
+    }
+  },
+  "tiles" : {
+    "0" : {
+      "image" : "../objects/nicemice/ship/nicemice_boosterflamemedium/tiled.png"
+    },
+    "1" : {
+      "image" : "../objects/nicemice/ship/nicemice_boosterflamelarge/tiled.png"
+    },
+    "2" : {
+      "image" : "../objects/nicemice/ship/nicemice_boosterflamesmall/tiled.png"
+    },
+    "3" : {
+      "image" : "../objects/nicemice/ship/nicemice_brokenfuelhatch/tiled.png"
+    },
+    "4" : {
+      "image" : "../objects/nicemice/ship/nicemice_fuelhatch/tiled.png"
+    },
+    "5" : {
+      "image" : "../objects/nicemice/ship/nicemice_captainschair/tiled.png"
+    },
+    "6" : {
+      "image" : "../objects/nicemice/ship/nicemice_shiplockerTier0/tiled.png"
+    },
+    "7" : {
+      "image" : "../objects/nicemice/ship/nicemice_shiplocker/tiled.png"
+    },
+    "8" : {
+      "image" : "../objects/nicemice/ship/nicemice_techstation/tiled.png"
+    },
+    "9" : {
+      "image" : "../objects/nicemice/ship/nicemice_teleporterTier0/tiled.png"
+    },
+    "10" : {
+      "image" : "../objects/nicemice/ship/nicemice_teleporter/tiled.png"
+    },
+    "11" : {
+      "image" : "../objects/nicemice/nicemice_flag/tiled.png"
+    },
+    "12" : {
+      "image" : "../objects/nicemice/decorative/pinups/laying/nicemice_pinup_laying_jumpsuit.png"
+    },
+    "13" : {
+      "image" : "../objects/nicemice/decorative/pinups/laying/nicemice_pinup_laying.png"
+    }
+  },
+  "tilewidth" : 88
+}
