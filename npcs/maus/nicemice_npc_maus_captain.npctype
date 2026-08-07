@@ -45,7 +45,16 @@
 		//M.A.U.S. Personnel are intended to stay with their ship, not join the player
 		"questGenerator" : 
 		{
-			"enableParticipation" : false
+			"enableParticipation" : false,
+			
+			//The player can find M.A.U.S. spawners in space encounters though, and spawned M.A.U.S. npcs can be recruited
+			"graduation" : 
+			{
+				"nextNpcType" : 
+				[
+					[1, "nicemice_crewmember_maus_captain"]
+				]
+			}
 		}
 	},
 
@@ -113,11 +122,7 @@
 						],
 						"sheathedprimary" : 
 						[ 
-							"nicemice_gentlereminder_npc" 
-						],
-						"sheathedsecondary" : 
-						[
-							"nicemice_generatedweapon_plasmapistol"
+							"nicemice_gentlereminder" 
 						]
 					}
 				] 
