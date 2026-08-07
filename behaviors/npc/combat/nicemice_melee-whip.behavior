@@ -1,286 +1,510 @@
+//  The leap branch is replaced by an alt fire. Same slot in the dynamic: it is
+//  tried before the normal whip attack, and falls through to it whenever the
+//  cooldown, the chance roll, the ability check or the range check says no.
+//
+//  nicemice_resolveAbilityIntent gates it. On a two-handed whip the alt SLOT is
+//  unusable -- the engine routes alt fire to the primary item's altAbility -- so
+//  this reads nicemice_gentlereminder's altAbilityType (energyorb). It also
+//  fails cleanly if a whip has no alt ability or it is flagged npcDoNotUse.
+//
+//  energyorb is an instant ability: it throws a gravityless projectile the
+//  moment it activates. So altFireTime is a trigger, not a charge hold -- long
+//  enough to register one activation and then release. Lengthening it re-fires
+//  the ability rather than charging it. (Staves are the opposite: they need a
+//  hold past the charge stance and then a release, which is what
+//  nicemice_chargedFire and the wandstaff tree's three phases are for.)
+//
+//  The projectile has no gravity, so aiming straight at the target is correct
+//  and no arc solution is needed -- but it does travel in a line, hence the
+//  entityInSight gate.
+//
+//    altFireCooldown  seconds between alt casts
+//    altFireChance    roll each time the cooldown is up
+//    altFireRange     radial range gate, and the fallback cast range
+//    altFireTime      how long alt fire is held; one activation, then release
 {
-	"name": "nicemice_melee-whip",
-	"description": "",
-	"scripts": [
-		"/scripts/behavior.lua",
-		"/scripts/actions/npc.lua",
-		"/scripts/actions/math.lua",
-		"/scripts/actions/world.lua",
-		"/scripts/actions/movement.lua",
-		"/scripts/actions/time.lua"
-	],
-	"parameters": {
-		"switchToRangedCooldown": 8,
-		"leapCooldown": 4,
-		"leapChance": 0.5,
-	"whipMinRange" : 3
-	},
-	"root": {
-		"title": "sequence",
-		"type": "composite",
-		"name": "sequence",
-		"parameters": {},
-		"children": [
-			{
-				"title": "setFlag",
-				"type": "action",
-				"name": "setFlag",
-				"parameters": { "name": {"value": "avoidLiquid"} }
-			},
-			{
-				"title": "parallel",
-				"type": "composite",
-				"name": "parallel",
-				"parameters": { "fail": {"value": -1}, "success": {"value": -1} },
-				"children":
-				[
-					{
-						"title": "primaryWeaponTiming",
-						"type": "action",
-						"name": "primaryWeaponTiming",
-						"parameters": {},
-						"output": { "cooldown": "meleeCooldown", "windup": "meleeWindup" }
-					},
-			
-					{
-						"title": "meleecombat-approach",
-						"type": "module",
-						"name": "meleecombat-approach",
-						"parameters": {}
-					},			
-			
-					{
-						"title": "sequence",
-						"type": "composite",
-						"name": "sequence",
-						"parameters": {},
-						"children": [
-							{
-								"title": "cooldown",
-								"type": "decorator",
-								"name": "cooldown",
-								"parameters": {
-									"cooldown": {"key": "<switchToRangedCooldown>"},
-									"onFail": {"value": false},
-									"onSuccess": {"value": true}
-								},
-								"child": {
-									"title": "sequence",
-									"type": "composite",
-									"name": "sequence",
-									"parameters": {},
-									"children": [
-										{ "title": "canFire", "type": "action", "name": "canFire", "parameters": {} },
-										{ "title": "hasRangedSheathed", "type": "action", "name": "hasRangedSheathed", "parameters": {} },
-										{ "title": "swapItemSlots", "type": "action", "name": "swapItemSlots", "parameters": {} }
-									]
-								}
-							},
-							{ "title": "halt", "type": "action", "name": "halt", "parameters": {} }
-						]
-					},
-					{
-						"title": "dynamic",
-						"type": "composite",
-						"name": "dynamic",
-						"parameters": {},
-						"children": 
-						[
-							{
-								"title": "cooldown",
-								"type": "decorator",
-								"name": "cooldown",
-								"parameters": {
-									"cooldown": {"key": "meleeCooldown"},
-									"onFail": {"value": false},
-									"onSuccess": {"value": true}
-								},
-								"child": 
-								{
-									"title": "selector",
-									"type": "composite",
-									"name": "selector",
-									"parameters": {},
-									"children": 
-									[
-										{
-											"title": "sequence",
-											"type": "composite",
-											"name": "sequence",
-											"parameters": {},
-											"children": 
-											[
-												{
-													"title": "cooldown",
-													"type": "decorator",
-													"name": "cooldown",
-													"parameters": {
-													"cooldown": {"key": "<leapCooldown>"},
-													"onFail": {"value": false},
-													"onSuccess": {"value": true}
-													},
-													"child": 
-													{
-														"title": "cooldown",
-														"type": "decorator",
-														"name": "cooldown",
-														"parameters": 
-														{
-															"cooldown": {"value": 0.5},
-															"onFail": {"value": true},
-															"onSuccess": {"value": true}
-														},
-														"child": 
-														{
-															"title": "sequence",
-															"type": "composite",
-															"name": "sequence",
-															"parameters": {},
-															"children": 
-															[
-																{
-																	"title": "chance",
-																	"type": "action",
-																	"name": "chance",
-																	"parameters": { "chance": {"key": "<leapChance>"} }
-																},
-																{
-																	"title": "meleecombat-leap",
-																	"type": "module",
-																	"name": "meleecombat-leap",
-																	"parameters": {}
-																}
-															]
-														}
-													}
-												}
-												//{ "title": "sayToEntity", "type": "action", "name": "sayToEntity", "parameters": { "dialogType": {"value": "dialog.debug_combat_leap"}, "entity": {"key": "target"}, "tags": {"value": {}} }}
-											]
-										},
-										{
-											"title": "sequence",
-											"type": "composite",
-											"name": "sequence",
-											"parameters": {},
-											"children": 
-											[
-												{
-													"title": "groupResource",
-													"type": "action",
-													"name": "groupResource",
-													"parameters": { "groupId": {"value": "combat"}, "name": {"value": "maxRange"} },
-													"output": { "number": "maxRange" }
-												},												
-												{
-													"title": "entityInRange",
-													"type": "action",
-													"name": "entityInRange",
-													"parameters": {
-														"entity": {"key": "target"},
-														"position": {"key": "self"},
-														"range": {"key": "maxRange"}
-													}
-												},
-												{
-													"title": "succeeder",
-													"type": "decorator",
-													"name": "succeeder",
-													"parameters": {},
-													"child": 
-													{
-														"title": "parallel",
-														"type": "composite",
-														"name": "parallel",
-														"parameters": { "fail": {"value": 1}, "success": {"value": -1} },
-														"children": 
-														[
-															{
-																"title": "selector",
-																"type": "composite",
-																"name": "selector",
-																"parameters": {},
-																"children": 
-																[
-																	{ "title": "onGround", "type": "action", "name": "onGround", "parameters": {} }
-																	//{ "title": "sayToEntity", "type": "action", "name": "sayToEntity", "parameters": { "dialogType": {"value": "dialog.debug_combat_atk_ongroundfail"}, "entity": {"key": "target"}, "tags": {"value": {}} }}
-																]
-															},
-															{
-																"title": "selector",
-																"type": "composite",
-																"name": "selector",
-																"parameters": {},
-																"children": 
-																[
-																	{
-																		"title": "entityInRange",
-																		"type": "action",
-																		"name": "entityInRange",
-																		"parameters": 
-																		{
-																			"entity": {"key": "target"},
-																			"position": {"key": "self"},
-																			"range": {"key": "maxRange"}
-																		}
-																	}
-																	//{ "title": "sayToEntity", "type": "action", "name": "sayToEntity", "parameters": { "dialogType": {"value": "dialog.debug_combat_atk_rangefail"}, "entity": {"key": "target"}, "tags": {"value": {}} }}
-																]
-															},
-															{
-																"title": "selector",
-																"type": "composite",
-																"name": "selector",
-																"parameters": {},
-																"children": 
-																[
-																	{
-																		"title": "nicemice_meleecombat-aim-whip",
-																		"type": "module",
-																		"name": "nicemice_meleecombat-aim-whip",
-																		"parameters": {}
-																	}
-																	//{ "title": "sayToEntity", "type": "action", "name": "sayToEntity", "parameters": { "dialogType": {"value": "dialog.debug_combat_atk_whipfail"}, "entity": {"key": "target"}, "tags": {"value": {}} }}
-																]
-															},
-															{ "title": "primaryFire", "type": "action", "name": "primaryFire", "parameters": {} },
-															{
-																"title": "selector",
-																"type": "composite",
-																"name": "selector",
-																"parameters": {},
-																"children": 
-																[
-																	{
-																		"title": "timer",
-																		"type": "action",
-																		"name": "timer",
-																		"parameters": 
-																		{ 
-																			"time": {"key": "meleeWindup"} 
-																		}
-																	}
-																	//{ "title": "sayToEntity", "type": "action", "name": "sayToEntity", "parameters": { "dialogType": {"value": "dialog.debug_combat_atk_timerfail"}, "entity": {"key": "target"}, "tags": {"value": {}} }}
-																]
-															}
-														]
-													}
-												}
-											]
-										}
-									]
-								}
-							},
-							{
-								"title": "faceEntity",
-								"type": "action",
-								"name": "faceEntity",
-								"parameters": { "entity": {"key": "target"} }
-							}
-						]
-					},
-					{ "title": "runner", "type": "action", "name": "runner", "parameters": {} }
-				]
-			}
-		]
-	}
+  "name": "nicemice_melee-whip",
+  "description": "",
+  "scripts": [
+    "/scripts/behavior.lua",
+    "/scripts/actions/npc.lua",
+    "/scripts/actions/math.lua",
+    "/scripts/actions/world.lua",
+    "/scripts/actions/movement.lua",
+    "/scripts/actions/time.lua",
+    "/scripts/actions/entity.lua",
+    "/scripts/actions/nicemice_whipaim.lua",
+    "/scripts/actions/nicemice_wandstaff.lua"
+  ],
+  "parameters": {
+    "switchToRangedCooldown": 8,
+    "whipMinRange": 3,
+    "altFireCooldown": 5,
+    "altFireChance": 0.25,
+    "altFireRange": 18,
+    "altFireTime": 0.1
+  },
+  "root": {
+    "title": "sequence",
+    "type": "composite",
+    "name": "sequence",
+    "parameters": {},
+    "children": [
+      {
+        "title": "setFlag",
+        "type": "action",
+        "name": "setFlag",
+        "parameters": {
+          "name": {
+            "value": "avoidLiquid"
+          }
+        }
+      },
+      {
+        "title": "parallel",
+        "type": "composite",
+        "name": "parallel",
+        "parameters": {
+          "fail": {
+            "value": -1
+          },
+          "success": {
+            "value": -1
+          }
+        },
+        "children": [
+          {
+            "title": "primaryWeaponTiming",
+            "type": "action",
+            "name": "primaryWeaponTiming",
+            "parameters": {},
+            "output": {
+              "cooldown": "meleeCooldown",
+              "windup": "meleeWindup"
+            }
+          },
+          {
+            "title": "meleecombat-approach",
+            "type": "module",
+            "name": "meleecombat-approach",
+            "parameters": {}
+          },
+          {
+            "title": "sequence",
+            "type": "composite",
+            "name": "sequence",
+            "parameters": {},
+            "children": [
+              {
+                "title": "cooldown",
+                "type": "decorator",
+                "name": "cooldown",
+                "parameters": {
+                  "cooldown": {
+                    "key": "<switchToRangedCooldown>"
+                  },
+                  "onFail": {
+                    "value": false
+                  },
+                  "onSuccess": {
+                    "value": true
+                  }
+                },
+                "child": {
+                  "title": "sequence",
+                  "type": "composite",
+                  "name": "sequence",
+                  "parameters": {},
+                  "children": [
+                    {
+                      "title": "canFire",
+                      "type": "action",
+                      "name": "canFire",
+                      "parameters": {}
+                    },
+                    {
+                      "title": "hasRangedSheathed",
+                      "type": "action",
+                      "name": "hasRangedSheathed",
+                      "parameters": {}
+                    },
+                    {
+                      "title": "swapItemSlots",
+                      "type": "action",
+                      "name": "swapItemSlots",
+                      "parameters": {}
+                    }
+                  ]
+                }
+              },
+              {
+                "title": "halt",
+                "type": "action",
+                "name": "halt",
+                "parameters": {}
+              }
+            ]
+          },
+          {
+            "title": "dynamic",
+            "type": "composite",
+            "name": "dynamic",
+            "parameters": {},
+            "children": [
+              {
+                "title": "cooldown",
+                "type": "decorator",
+                "name": "cooldown",
+                "parameters": {
+                  "cooldown": {
+                    "key": "meleeCooldown"
+                  },
+                  "onFail": {
+                    "value": false
+                  },
+                  "onSuccess": {
+                    "value": true
+                  }
+                },
+                "child": {
+                  "title": "selector",
+                  "type": "composite",
+                  "name": "selector",
+                  "parameters": {},
+                  "children": [
+                    {
+                      "title": "alt fire",
+                      "type": "composite",
+                      "name": "sequence",
+                      "parameters": {},
+                      "children": [
+                        {
+                          "title": "cooldown",
+                          "type": "decorator",
+                          "name": "cooldown",
+                          "parameters": {
+                            "cooldown": {
+                              "key": "<altFireCooldown>"
+                            },
+                            "onFail": {
+                              "value": false
+                            },
+                            "onSuccess": {
+                              "value": true
+                            }
+                          },
+                          "child": {
+                            "title": "cooldown",
+                            "type": "decorator",
+                            "name": "cooldown",
+                            "parameters": {
+                              "cooldown": {
+                                "value": 0.5
+                              },
+                              "onFail": {
+                                "value": true
+                              },
+                              "onSuccess": {
+                                "value": true
+                              }
+                            },
+                            "child": {
+                              "title": "sequence",
+                              "type": "composite",
+                              "name": "sequence",
+                              "parameters": {},
+                              "children": [
+                                {
+                                  "title": "chance",
+                                  "type": "action",
+                                  "name": "chance",
+                                  "parameters": {
+                                    "chance": {
+                                      "key": "<altFireChance>"
+                                    }
+                                  }
+                                },
+                                {
+                                  "title": "nicemice_resolveAbilityIntent",
+                                  "type": "action",
+                                  "name": "nicemice_resolveAbilityIntent",
+                                  "parameters": {
+                                    "hand": {
+                                      "value": "alt"
+                                    },
+                                    "fallbackRange": {
+                                      "key": "<altFireRange>"
+                                    }
+                                  },
+                                  "output": {
+                                    "intent": "altIntent"
+                                  }
+                                },
+                                {
+                                  "title": "nicemice_equals",
+                                  "type": "action",
+                                  "name": "nicemice_equals",
+                                  "parameters": {
+                                    "first": {
+                                      "key": "altIntent"
+                                    },
+                                    "second": {
+                                      "value": "harmful"
+                                    }
+                                  }
+                                },
+                                {
+                                  "title": "entityInSight",
+                                  "type": "action",
+                                  "name": "entityInSight",
+                                  "parameters": {
+                                    "entity": {
+                                      "key": "target"
+                                    }
+                                  }
+                                },
+                                {
+                                  "title": "entityInRange",
+                                  "type": "action",
+                                  "name": "entityInRange",
+                                  "parameters": {
+                                    "entity": {
+                                      "key": "target"
+                                    },
+                                    "position": {
+                                      "key": "self"
+                                    },
+                                    "range": {
+                                      "key": "<altFireRange>"
+                                    }
+                                  }
+                                },
+                                {
+                                  "title": "hold alt fire, then release",
+                                  "type": "composite",
+                                  "name": "parallel",
+                                  "parameters": {
+                                    "fail": {
+                                      "value": 1
+                                    },
+                                    "success": {
+                                      "value": -1
+                                    }
+                                  },
+                                  "children": [
+                                    {
+                                      "title": "nicemice_entityDistance",
+                                      "type": "action",
+                                      "name": "nicemice_entityDistance",
+                                      "parameters": {
+                                        "fromEntity": {
+                                          "key": "self"
+                                        },
+                                        "toEntity": {
+                                          "key": "target"
+                                        }
+                                      },
+                                      "output": {
+                                        "vector": "altAimOffset"
+                                      }
+                                    },
+                                    {
+                                      "title": "setAimPosition",
+                                      "type": "action",
+                                      "name": "setAimPosition",
+                                      "parameters": {
+                                        "offset": {
+                                          "key": "altAimOffset"
+                                        },
+                                        "position": {
+                                          "key": "self"
+                                        }
+                                      }
+                                    },
+                                    {
+                                      "title": "altFire",
+                                      "type": "action",
+                                      "name": "altFire",
+                                      "parameters": {}
+                                    },
+                                    {
+                                      "title": "timer",
+                                      "type": "action",
+                                      "name": "timer",
+                                      "parameters": {
+                                        "time": {
+                                          "key": "<altFireTime>"
+                                        }
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "title": "sequence",
+                      "type": "composite",
+                      "name": "sequence",
+                      "parameters": {},
+                      "children": [
+                        {
+                          "title": "groupResource",
+                          "type": "action",
+                          "name": "groupResource",
+                          "parameters": {
+                            "groupId": {
+                              "value": "combat"
+                            },
+                            "name": {
+                              "value": "maxRange"
+                            }
+                          },
+                          "output": {
+                            "number": "maxRange"
+                          }
+                        },
+                        {
+                          "title": "entityInRange",
+                          "type": "action",
+                          "name": "entityInRange",
+                          "parameters": {
+                            "entity": {
+                              "key": "target"
+                            },
+                            "position": {
+                              "key": "self"
+                            },
+                            "range": {
+                              "key": "maxRange"
+                            }
+                          }
+                        },
+                        {
+                          "title": "succeeder",
+                          "type": "decorator",
+                          "name": "succeeder",
+                          "parameters": {},
+                          "child": {
+                            "title": "parallel",
+                            "type": "composite",
+                            "name": "parallel",
+                            "parameters": {
+                              "fail": {
+                                "value": 1
+                              },
+                              "success": {
+                                "value": -1
+                              }
+                            },
+                            "children": [
+                              {
+                                "title": "selector",
+                                "type": "composite",
+                                "name": "selector",
+                                "parameters": {},
+                                "children": [
+                                  {
+                                    "title": "onGround",
+                                    "type": "action",
+                                    "name": "onGround",
+                                    "parameters": {}
+                                  }
+                                ]
+                              },
+                              {
+                                "title": "selector",
+                                "type": "composite",
+                                "name": "selector",
+                                "parameters": {},
+                                "children": [
+                                  {
+                                    "title": "entityInRange",
+                                    "type": "action",
+                                    "name": "entityInRange",
+                                    "parameters": {
+                                      "entity": {
+                                        "key": "target"
+                                      },
+                                      "position": {
+                                        "key": "self"
+                                      },
+                                      "range": {
+                                        "key": "maxRange"
+                                      }
+                                    }
+                                  }
+                                ]
+                              },
+                              {
+                                "title": "selector",
+                                "type": "composite",
+                                "name": "selector",
+                                "parameters": {},
+                                "children": [
+                                  {
+                                    "title": "nicemice_meleecombat-aim-whip",
+                                    "type": "module",
+                                    "name": "nicemice_meleecombat-aim-whip",
+                                    "parameters": {}
+                                  }
+                                ]
+                              },
+                              {
+                                "title": "primaryFire",
+                                "type": "action",
+                                "name": "primaryFire",
+                                "parameters": {}
+                              },
+                              {
+                                "title": "selector",
+                                "type": "composite",
+                                "name": "selector",
+                                "parameters": {},
+                                "children": [
+                                  {
+                                    "title": "timer",
+                                    "type": "action",
+                                    "name": "timer",
+                                    "parameters": {
+                                      "time": {
+                                        "key": "meleeWindup"
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "title": "faceEntity",
+                "type": "action",
+                "name": "faceEntity",
+                "parameters": {
+                  "entity": {
+                    "key": "target"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "title": "runner",
+            "type": "action",
+            "name": "runner",
+            "parameters": {}
+          }
+        ]
+      }
+    ]
+  }
 }
