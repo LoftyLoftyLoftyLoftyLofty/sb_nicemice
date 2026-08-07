@@ -9,13 +9,13 @@
   "price" : 100,
   "smashDropOptions" : [],
   "apexDescription" : "This beacon will summon a nouse. Is this legal?",
-  "avianDescription" : "Do we really need more nicemice around here?",
+  "avianDescription" : "Do we really need more Nicemice around here?",
   "floranDescription" : "Floran doess not like mousesss.",
-  "glitchDescription" : "Hesitant. Do nicemice chew on wires?",
+  "glitchDescription" : "Hesitant. Do Nicemice chew on wires?",
   "humanDescription" : "Back on Earth, having mice in your house was considered a bad thing.",
   "hylotlDescription" : "This spawner does not instill a sense of harmony.",
   "novakidDescription" : "Varmint spawner? Whole galaxy's gone sideways.",
-  "nicemiceDescription" : "Ziz beacon vill zummon anot'er nouzemouze. Very uzeful!",
+  "nicemiceDescription" : "Ziz beacon vill zummon anot'er Nouzemouze. Very uzeful!",
   
   "inventoryIcon" : "nicemice_villagerspawnericon.png",
   "orientations" : [

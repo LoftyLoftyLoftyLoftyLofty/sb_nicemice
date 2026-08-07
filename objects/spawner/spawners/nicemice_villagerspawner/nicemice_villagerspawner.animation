@@ -24,12 +24,12 @@
           "switchState" : {
             "off" : {
               "properties" : {
-                "image" : "nicemice_villagerspawner.png"
+                "image" : "<partImage>"
               }
             },
             "on" : {
               "properties" : {
-                "image" : "nicemice_villagerspawner.png"
+                "image" : "<partImage>"
               }
             }
           }
