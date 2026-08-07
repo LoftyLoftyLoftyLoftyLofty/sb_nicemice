@@ -303,7 +303,7 @@
                         {
                          "name":"parameters",
                          "type":"string",
-                         "value":"{\"treasurePools\":[\"basicSpaceTreasure\"]}"
+                         "value":"{\"treasurePools\":[\"nicemice_cargoship_shippingcontainer_treasure\"]}"
                         }],
                  "rotation":0,
                  "type":"",

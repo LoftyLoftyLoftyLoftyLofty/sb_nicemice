@@ -96,7 +96,57 @@
 		]
 	],
 	
-	//The M.A.U.S. cargo ship's locker is intended to have Nicemice gear first and other incidental loot second
+	//Cargo containers in the M.A.U.S. cargo ship's hangar are intended to be mostly junk and salvage with one or two good crates
+	"nicemice_cargoship_shippingcontainer_junk" : 
+	[
+		[
+			0,
+			{
+				"fill" : 
+				[
+					{"pool" : "spaceTrash" }
+				],
+				"pool" : 
+				[
+					{ "weight" : 0.75, "pool" : "spaceTrash" },
+					{ "weight" : 0.25, "pool" : "basicSpaceTreasure" }
+				],
+				"poolRounds" : 
+				[
+					[0.375, 1],
+					[0.25, 2],
+					[0.25, 3],
+					[0.125, 4]
+				]
+			}
+		]
+	],
+	
+	"nicemice_cargoship_shippingcontainer_treasure" : 
+	[
+		[
+			0,
+			{
+				"fill" : 
+				[
+					{ "pool" : "spaceTrash" },
+					{ "pool" : "spaceWeapon" },
+					{ "pool" : "nicemice_cargoship_shippingcontainer_junk" }
+				],
+				"pool" : 
+				[
+					{ "weight" : 0.5, "pool" : "spaceChestTreasure" }
+				],
+				"poolRounds" : 
+				[
+					[0.5, 1],
+					[0.5, 2]
+				]
+			}
+		]
+	],
+	
+	//The M.A.U.S. cargo ship's locker is intended to be a loot pinata full of weird exotic M.A.U.S. gear
 	"nicemice_cargoship_shiplocker_treasure" : 
 	[
 		[
@@ -108,8 +158,7 @@
 					{"pool" : "nicemice_cargoship_shiplocker_treasure_subcategory_uniforms" },
 					{"pool" : "nicemice_cargoship_shiplocker_treasure_subcategory_npcspawners" },
 					{"pool" : "nicemice_cargoship_shiplocker_treasure_subcategory_treasureweapons" },
-					{"item" : [ "nicemice_mechblueprint", 1 ] },
-					{"pool" : "spaceChestTreasure" }
+					{"item" : [ "nicemice_mechblueprint", 1 ] }
 				]
 			}
 		]
