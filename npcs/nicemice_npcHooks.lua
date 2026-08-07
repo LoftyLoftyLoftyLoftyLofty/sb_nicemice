@@ -56,7 +56,7 @@ end
 function nicemice_npc_move(args, board, node)
 	local bounds = mcontroller.boundBox()
 
-	startTime = os.clock()
+	local startTime = os.clock()
 	while true do
 
 		--  exit movement if we hit our timeout

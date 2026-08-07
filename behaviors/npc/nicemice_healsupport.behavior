@@ -1,5 +1,15 @@
-//  PRIMARY HAND ONLY for now -- see nicemice_npccombat-wandstaff for why the
-//  alt hand is disabled.
+//  Out-of-combat healing. Both hands are offered a turn: on our two-handed
+//  staves the healing ability is the primary item's altAbility, not anything in
+//  the alt slot, and nicemice_resolveAbilityIntent resolves that.
+//
+//  A selector, not a parallel -- only one hand may own the aim per tick.
+//
+//  nicemice_chargedFire reads the item's charge stance, holds for its duration
+//  and then releases once. NPCs have no input release edge of their own, and
+//  without one the ability sits in charged{} forever and never discharges.
+//
+//  Effect zones are placed at the aim point and never steer, so entityInRange
+//  gates on the real radial distance rather than casting short of the ally.
 //
 //  requireLineOfSight: turn off in walled test arenas where allies sit behind
 //  pillars. debugTargeting: log every ally candidate and filter result.
@@ -13,7 +23,8 @@
     "/scripts/actions/movement.lua",
     "/scripts/actions/entity.lua",
     "/scripts/actions/time.lua",
-    "/scripts/actions/position.lua"
+    "/scripts/actions/position.lua",
+	"/scripts/actions/nicemice_whipaim.lua"
   ],
   "parameters": {
     "healRange": 20,
@@ -39,116 +50,296 @@
       }
     },
     "child": {
-      "title": "heal on primary",
+      "title": "either hand may carry the healing ability",
       "type": "composite",
-      "name": "sequence",
+      "name": "selector",
       "parameters": {},
       "children": [
         {
-          "title": "nicemice_resolveAbilityIntent",
-          "type": "action",
-          "name": "nicemice_resolveAbilityIntent",
-          "parameters": {
-            "hand": {
-              "value": "primary"
-            },
-            "margin": {
-              "key": "<castRangeMargin>"
-            },
-            "fallbackRange": {
-              "key": "<castRangeFallback>"
-            }
-          },
-          "output": {
-            "intent": "primaryIntent",
-            "range": "primaryCastRange"
-          }
-        },
-        {
-          "title": "nicemice_equals",
-          "type": "action",
-          "name": "nicemice_equals",
-          "parameters": {
-            "first": {
-              "key": "primaryIntent"
-            },
-            "second": {
-              "value": "healing"
-            }
-          }
-        },
-        {
-          "title": "parallel",
+          "title": "heal on primary",
           "type": "composite",
-          "name": "parallel",
-          "parameters": {
-            "fail": {
-              "value": 1
-            },
-            "success": {
-              "value": -1
-            }
-          },
+          "name": "sequence",
+          "parameters": {},
           "children": [
             {
-              "title": "nicemice_resolveHealTarget",
+              "title": "nicemice_resolveAbilityIntent",
               "type": "action",
-              "name": "nicemice_resolveHealTarget",
+              "name": "nicemice_resolveAbilityIntent",
               "parameters": {
-                "range": {
-                  "key": "<healRange>"
+                "hand": {
+                  "value": "primary"
                 },
-                "requireSight": {
-                  "key": "<requireLineOfSight>"
+                "margin": {
+                  "key": "<castRangeMargin>"
+                },
+                "fallbackRange": {
+                  "key": "<castRangeFallback>"
                 },
                 "debug": {
                   "key": "<debugTargeting>"
                 }
               },
               "output": {
-                "entity": "idleHealTarget",
-                "position": "idleHealTargetPosition"
+                "intent": "primaryIntent",
+                "range": "primaryCastRange"
               }
             },
             {
-              "title": "faceEntity",
+              "title": "nicemice_equals",
               "type": "action",
-              "name": "faceEntity",
+              "name": "nicemice_equals",
               "parameters": {
-                "entity": {
-                  "key": "idleHealTarget"
+                "first": {
+                  "key": "primaryIntent"
+                },
+                "second": {
+                  "value": "healing"
                 }
               }
             },
             {
-              "title": "setAimPosition",
-              "type": "action",
-              "name": "setAimPosition",
+              "title": "parallel",
+              "type": "composite",
+              "name": "parallel",
               "parameters": {
-                "position": {
-                  "key": "idleHealTargetPosition"
+                "fail": {
+                  "value": 1
+                },
+                "success": {
+                  "value": -1
                 }
-              }
-            },
-            {
-              "title": "nicemice_clampAimPosition",
-              "type": "action",
-              "name": "nicemice_clampAimPosition",
-              "parameters": {
-                "range": {
-                  "key": "primaryCastRange"
+              },
+              "children": [
+                {
+                  "title": "nicemice_resolveHealTarget",
+                  "type": "action",
+                  "name": "nicemice_resolveHealTarget",
+                  "parameters": {
+                    "range": {
+                      "key": "<healRange>"
+                    },
+                    "requireSight": {
+                      "key": "<requireLineOfSight>"
+                    },
+                    "debug": {
+                      "key": "<debugTargeting>"
+                    }
+                  },
+                  "output": {
+                    "entity": "primaryTarget",
+                    "position": "primaryTargetPosition"
+                  }
+                },
+                {
+                  "title": "entityInRange",
+                  "type": "action",
+                  "name": "entityInRange",
+                  "parameters": {
+                    "entity": {
+                      "key": "primaryTarget"
+                    },
+                    "position": {
+                      "key": "self"
+                    },
+                    "range": {
+                      "key": "primaryCastRange"
+                    }
+                  }
+                },
+                {
+                  "title": "nicemice_entityDistance",
+                  "type": "action",
+                  "name": "nicemice_entityDistance",
+                  "parameters": {
+                    "fromEntity": {
+                      "key": "self"
+                    },
+                    "toEntity": {
+                      "key": "primaryTarget"
+                    }
+                  },
+                  "output": {
+                    "vector": "primaryAimOffset"
+                  }
+                },
+                {
+                  "title": "setAimPosition",
+                  "type": "action",
+                  "name": "setAimPosition",
+                  "parameters": {
+                    "offset": {
+                      "key": "primaryAimOffset"
+                    },
+                    "position": {
+                      "key": "self"
+                    }
+                  }
+                },
+                {
+                  "title": "nicemice_clampAimPosition",
+                  "type": "action",
+                  "name": "nicemice_clampAimPosition",
+                  "parameters": {
+                    "range": {
+                      "key": "primaryCastRange"
+                    }
+                  }
+                },
+                {
+                  "title": "nicemice_chargedFire",
+                  "type": "action",
+                  "name": "nicemice_chargedFire",
+                  "parameters": {
+                    "hand": {
+                      "value": "primary"
+                    }
+                  }
                 }
-              }
-            },
+              ]
+            }
+          ]
+        },
+        {
+          "title": "heal on alt",
+          "type": "composite",
+          "name": "sequence",
+          "parameters": {},
+          "children": [
             {
-              "title": "nicemice_chargedFire",
+              "title": "nicemice_resolveAbilityIntent",
               "type": "action",
-              "name": "nicemice_chargedFire",
+              "name": "nicemice_resolveAbilityIntent",
               "parameters": {
                 "hand": {
-                  "value": "primary"
+                  "value": "alt"
+                },
+                "margin": {
+                  "key": "<castRangeMargin>"
+                },
+                "fallbackRange": {
+                  "key": "<castRangeFallback>"
+                },
+                "debug": {
+                  "key": "<debugTargeting>"
+                }
+              },
+              "output": {
+                "intent": "altIntent",
+                "range": "altCastRange"
+              }
+            },
+            {
+              "title": "nicemice_equals",
+              "type": "action",
+              "name": "nicemice_equals",
+              "parameters": {
+                "first": {
+                  "key": "altIntent"
+                },
+                "second": {
+                  "value": "healing"
                 }
               }
+            },
+            {
+              "title": "parallel",
+              "type": "composite",
+              "name": "parallel",
+              "parameters": {
+                "fail": {
+                  "value": 1
+                },
+                "success": {
+                  "value": -1
+                }
+              },
+              "children": [
+                {
+                  "title": "nicemice_resolveHealTarget",
+                  "type": "action",
+                  "name": "nicemice_resolveHealTarget",
+                  "parameters": {
+                    "range": {
+                      "key": "<healRange>"
+                    },
+                    "requireSight": {
+                      "key": "<requireLineOfSight>"
+                    },
+                    "debug": {
+                      "key": "<debugTargeting>"
+                    }
+                  },
+                  "output": {
+                    "entity": "altTarget",
+                    "position": "altTargetPosition"
+                  }
+                },
+                {
+                  "title": "entityInRange",
+                  "type": "action",
+                  "name": "entityInRange",
+                  "parameters": {
+                    "entity": {
+                      "key": "altTarget"
+                    },
+                    "position": {
+                      "key": "self"
+                    },
+                    "range": {
+                      "key": "altCastRange"
+                    }
+                  }
+                },
+                {
+                  "title": "nicemice_entityDistance",
+                  "type": "action",
+                  "name": "nicemice_entityDistance",
+                  "parameters": {
+                    "fromEntity": {
+                      "key": "self"
+                    },
+                    "toEntity": {
+                      "key": "altTarget"
+                    }
+                  },
+                  "output": {
+                    "vector": "altAimOffset"
+                  }
+                },
+                {
+                  "title": "setAimPosition",
+                  "type": "action",
+                  "name": "setAimPosition",
+                  "parameters": {
+                    "offset": {
+                      "key": "altAimOffset"
+                    },
+                    "position": {
+                      "key": "self"
+                    }
+                  }
+                },
+                {
+                  "title": "nicemice_clampAimPosition",
+                  "type": "action",
+                  "name": "nicemice_clampAimPosition",
+                  "parameters": {
+                    "range": {
+                      "key": "altCastRange"
+                    }
+                  }
+                },
+                {
+                  "title": "nicemice_chargedFire",
+                  "type": "action",
+                  "name": "nicemice_chargedFire",
+                  "parameters": {
+                    "hand": {
+                      "value": "alt"
+                    }
+                  }
+                }
+              ]
             }
           ]
         }

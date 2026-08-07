@@ -147,7 +147,8 @@
 		{
 			"hand": {"type": "string", "value": "primary"},
 			"margin": {"type": "number", "value": 5},
-			"fallbackRange": {"type": "number", "value": 25}
+			"fallbackRange": {"type": "number", "value": 25},
+			"debug": {"type": "bool", "value": false}
 		},
 		"category": "nicemice",
 		"script": "/scripts/actions/nicemice_wandstaff.lua",
@@ -253,6 +254,10 @@
 			"validBuffTargetRange": {"type": "number", "value": 30},
 			"requireLineOfSight": {"type": "bool", "value": true},
 			"debugTargeting": {"type": "bool", "value": false},
+			"kiteStandoffFactor": {"type": "number", "value": 1.0},
+			"kiteBandFactor": {"type": "number", "value": 0.25},
+			"kiteRunThreshold": {"type": "number", "value": 6},
+			"kiteStepTime": {"type": "number", "value": 0.25},
 			"wizardryCooldown_primary": {"type": "number", "value": 2.5},
 			"wizardryCooldown_alt": {"type": "number", "value": 2.5}
 		},

@@ -1,23 +1,71 @@
-//  PRIMARY HAND ONLY. Alt-hand casting is deliberately removed for now: every
-//  generated staff rolls a random altAbility, and an ability with no npcIntent
-//  patch falls back to "harmful", so the alt branch was aiming at the combat
-//  target and overwriting the primary branch's aim in the same tick. Aim
-//  position is a single shared resource -- whichever branch writes it last
-//  wins. Re-add alt only under this same one-cast-per-tick selector.
+//  BOTH HANDS, but only ONE leaf may run per tick. Aim position is a single
+//  shared resource: when the two hands ran as siblings in a parallel, whichever
+//  wrote setAimPosition last silently won, and a buff staff ended up dropping
+//  its zone on the combat target. The selector below is the arbitration -- keep
+//  any future hand or ability under it.
 //
-//  Order below is intent priority: heal, then buff, then attack. Only one leaf
-//  may own the aim on any given tick.
+//  Order is intent priority first, hand priority second:
+//      healing primary, healing alt, buff primary, buff alt, attack primary, attack alt
+//  A hand only gets a turn when every leaf above it fails. On the generated
+//  tech staff (harmful primary, healingzone alt) that reads as: heal a hurt
+//  ally if there is one, otherwise attack.
+//
+//  Alt on a two-handed staff is not the alt SLOT. The engine leaves that slot
+//  unusable and routes alt fire to the primary item's altAbility, which is what
+//  nicemice_resolveAbilityIntent resolves. An ability with no npcIntent patch
+//  falls back to "harmful"; that is safe here only because attack-alt sits last
+//  in the order and so cannot outrank a real heal or buff.
+//
+//  Every board key is hand-scoped (primaryTarget / altCastRange / ...) so the
+//  two hands cannot read each other's target or cast range.
+//
+//  CAST CYCLE -- three phases, because every staff ability checks targetValid()
+//  exactly once, at discharge:
+//      magnitude(focusPos, aimPos) <= maxCastRange
+//      and no lineTileCollision(position, focusPos)
+//      and no lineTileCollision(focusPos, aimPos)
+//  Fail it and discharge drops straight to cooldown; the charge is wasted.
+//
+//    charge  (wizardryCooldown_<hand>) hold fire, aim clamped into range
+//    release (releaseHoldTime)         stop firing so discharge fires while the
+//                                      aim is still a valid cast point
+//    steer   (steerTime)               aim the REAL target, unclamped
+//
+//  Phase 3 is the point: controlprojectile:updateProjectiles() pushes
+//  activeItem.ownerAimPosition() to every live projectile each tick with no
+//  range limit, so an unclamped aim drags the projectile well past the cast
+//  range. steerTime must also outlast the projectile's flight: firing again
+//  while projectiles are alive makes controlprojectile call killProjectiles().
+//  Effect zones (heal/buff) are placed once and do not steer, so for those
+//  phase 3 is just spacing between casts.
+//
+//  AIMING uses nicemice_entityDistance + setAimPosition{offset, position:self},
+//  the same shape as nicemice_meleecombat-aim-whip: it reads the real vector on
+//  both axes and world.distance is wrap-safe. Range checks use entityInRange's
+//  radial "range", not vanilla's xRange plus a hardcoded yRange of 5.
+//
+//  MOVEMENT is the stock meleecombat-approach module against the stock melee
+//  task, so standoff is tuned wherever the melee coordinator config already
+//  lives. moveToPosition both closes and retreats.
+//
+//  The group and task joins MUST run every tick. BGroup:updateGroups() drops
+//  any group or task not re-joined during the current update, and without a
+//  joined task the coordinator allocates no slot, so every groupResource lookup
+//  comes back empty and the approach has no destination.
+//
+//  Casting is listed before movement because setAimPosition sets
+//  self.setFacingDirection, and moveToPosition only takes over facing when that
+//  flag is clear -- so an NPC that is aiming walks its slot facing its target.
 //
 //  castRangeFallback / castRangeMargin: cast range is read off the equipped
 //  ability (vanilla staff abilities declare maxCastRange, all of them 25 tiles).
 //  The fallback only applies when an ability declares none; the margin covers
-//  the gap between the ability's "focus position" and our entity position.
+//  the gap between the ability's focusPos and our entity position.
 //
 //  requireLineOfSight: heal/buff ally scans reject targets we cannot see. Turn
 //  off in walled test arenas where allies sit behind pillars.
 //
-//  debugTargeting: log every ally candidate with its damage team and each
-//  filter result, so you can see which filter rejected whom.
+//  debugTargeting / debugMovement: per-candidate and per-slot tracing.
 {
   "name": "nicemice_npccombat-wandstaff",
   "description": "",
@@ -30,7 +78,8 @@
     "/scripts/actions/time.lua",
     "/scripts/actions/position.lua",
     "/scripts/actions/entity.lua",
-    "/scripts/actions/nicemice_wandstaff.lua"
+    "/scripts/actions/nicemice_wandstaff.lua",
+	"/scripts/actions/nicemice_whipaim.lua"
   ],
   "parameters": {
     "castRangeFallback": 25,
@@ -38,8 +87,12 @@
     "validHealingTargetRange": 30,
     "validBuffTargetRange": 30,
     "requireLineOfSight": true,
-    "debugTargeting": true,
-    "wizardryCooldown_primary": 2.5
+    "debugTargeting": false,
+    "wizardryCooldown_primary": 2.5,
+    "debugMovement": false,
+    "releaseHoldTime": 0.3,
+    "steerTime": 2.0,
+    "wizardryCooldown_alt": 2.5
   },
   "root": {
     "title": "sequence",
@@ -153,13 +206,75 @@
         },
         "children": [
           {
+            "title": "join the combat coordinator",
+            "type": "composite",
+            "name": "sequence",
+            "parameters": {},
+            "children": [
+              {
+                "title": "isValidTarget",
+                "type": "action",
+                "name": "isValidTarget",
+                "parameters": {
+                  "entity": {
+                    "key": "target"
+                  }
+                }
+              },
+              {
+                "title": "group",
+                "type": "action",
+                "name": "group",
+                "parameters": {
+                  "groupId": {
+                    "value": "combat"
+                  },
+                  "goalType": {
+                    "value": "entity"
+                  },
+                  "goal": {
+                    "value": "target"
+                  },
+                  "behavior": {
+                    "value": "combatcoordinator"
+                  },
+                  "minMembers": {
+                    "value": 1
+                  },
+                  "maxMembers": {
+                    "value": 8
+                  }
+                }
+              },
+              {
+                "title": "task",
+                "type": "action",
+                "name": "task",
+                "parameters": {
+                  "groupId": {
+                    "value": "combat"
+                  },
+                  "taskId": {
+                    "value": "melee"
+                  },
+                  "minMembers": {
+                    "value": 1
+                  },
+                  "maxMembers": {
+                    "value": 8
+                  }
+                }
+              }
+            ]
+          },
+          {
             "title": "one cast at a time, most useful first",
             "type": "composite",
             "name": "selector",
             "parameters": {},
             "children": [
               {
-                "title": "heal",
+                "title": "healing on primary",
                 "type": "composite",
                 "name": "sequence",
                 "parameters": {},
@@ -177,6 +292,9 @@
                       },
                       "fallbackRange": {
                         "key": "<castRangeFallback>"
+                      },
+                      "debug": {
+                        "key": "<debugTargeting>"
                       }
                     },
                     "output": {
@@ -213,8 +331,24 @@
                       }
                     },
                     "output": {
-                      "entity": "healTarget",
-                      "position": "healTargetPosition"
+                      "entity": "primaryTarget",
+                      "position": "primaryTargetPosition"
+                    }
+                  },
+                  {
+                    "title": "entityInRange",
+                    "type": "action",
+                    "name": "entityInRange",
+                    "parameters": {
+                      "entity": {
+                        "key": "primaryTarget"
+                      },
+                      "position": {
+                        "key": "self"
+                      },
+                      "range": {
+                        "key": "primaryCastRange"
+                      }
                     }
                   },
                   {
@@ -223,115 +357,486 @@
                     "name": "nicemice_debugLog",
                     "parameters": {
                       "text": {
-                        "value": "casting heal at"
+                        "value": "casting healing on primary at"
                       },
                       "entity": {
-                        "key": "healTarget"
-                      },
-                      "position": {
-                        "key": "healTargetPosition"
+                        "key": "primaryTarget"
                       }
                     }
                   },
                   {
-                    "title": "faceEntity",
-                    "type": "action",
-                    "name": "faceEntity",
-                    "parameters": {
-                      "entity": {
-                        "key": "healTarget"
-                      }
-                    }
-                  },
-                  {
-                    "title": "setAimPosition",
-                    "type": "action",
-                    "name": "setAimPosition",
-                    "parameters": {
-                      "position": {
-                        "key": "healTargetPosition"
-                      }
-                    }
-                  },
-                  {
-                    "title": "cast then release",
+                    "title": "charge -- hold fire, aim clamped into range",
                     "type": "composite",
-                    "name": "selector",
-                    "parameters": {},
+                    "name": "parallel",
+                    "parameters": {
+                      "fail": {
+                        "value": 1
+                      },
+                      "success": {
+                        "value": -1
+                      }
+                    },
                     "children": [
                       {
-                        "title": "cooldown",
-                        "type": "decorator",
-                        "name": "cooldown",
+                        "title": "nicemice_entityDistance",
+                        "type": "action",
+                        "name": "nicemice_entityDistance",
                         "parameters": {
-                          "cooldown": {
-                            "key": "<wizardryCooldown_primary>"
+                          "fromEntity": {
+                            "key": "self"
                           },
-                          "onFail": {
-                            "value": false
-                          },
-                          "onSuccess": {
-                            "value": true
+                          "toEntity": {
+                            "key": "primaryTarget"
                           }
                         },
-                        "child": {
-                          "title": "timer",
-                          "type": "action",
-                          "name": "timer",
-                          "parameters": {
-                            "time": {
-                              "value": 0.1
-                            }
+                        "output": {
+                          "vector": "primaryAimOffset"
+                        }
+                      },
+                      {
+                        "title": "setAimPosition",
+                        "type": "action",
+                        "name": "setAimPosition",
+                        "parameters": {
+                          "offset": {
+                            "key": "primaryAimOffset"
+                          },
+                          "position": {
+                            "key": "self"
                           }
                         }
                       },
                       {
-                        "title": "hold cast",
-                        "type": "composite",
-                        "name": "parallel",
+                        "title": "nicemice_clampAimPosition",
+                        "type": "action",
+                        "name": "nicemice_clampAimPosition",
                         "parameters": {
-                          "fail": {
-                            "value": 1
+                          "range": {
+                            "key": "primaryCastRange"
+                          }
+                        }
+                      },
+                      {
+                        "title": "primaryFire",
+                        "type": "action",
+                        "name": "primaryFire",
+                        "parameters": {}
+                      },
+                      {
+                        "title": "timer",
+                        "type": "action",
+                        "name": "timer",
+                        "parameters": {
+                          "time": {
+                            "key": "<wizardryCooldown_primary>"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "title": "release -- stop firing so discharge happens, aim still valid",
+                    "type": "composite",
+                    "name": "parallel",
+                    "parameters": {
+                      "fail": {
+                        "value": 1
+                      },
+                      "success": {
+                        "value": -1
+                      }
+                    },
+                    "children": [
+                      {
+                        "title": "nicemice_entityDistance",
+                        "type": "action",
+                        "name": "nicemice_entityDistance",
+                        "parameters": {
+                          "fromEntity": {
+                            "key": "self"
                           },
-                          "success": {
-                            "value": 2
+                          "toEntity": {
+                            "key": "primaryTarget"
                           }
                         },
-                        "children": [
-                          {
-                            "title": "nicemice_clampAimPosition",
-                            "type": "action",
-                            "name": "nicemice_clampAimPosition",
-                            "parameters": {
-                              "range": {
-                                "key": "primaryCastRange"
-                              }
-                            }
+                        "output": {
+                          "vector": "primaryAimOffset"
+                        }
+                      },
+                      {
+                        "title": "setAimPosition",
+                        "type": "action",
+                        "name": "setAimPosition",
+                        "parameters": {
+                          "offset": {
+                            "key": "primaryAimOffset"
                           },
-                          {
-                            "title": "primaryFire",
-                            "type": "action",
-                            "name": "primaryFire",
-                            "parameters": {}
-                          },
-                          {
-                            "title": "timer",
-                            "type": "action",
-                            "name": "timer",
-                            "parameters": {
-                              "time": {
-                                "value": 4.5
-                              }
-                            }
+                          "position": {
+                            "key": "self"
                           }
-                        ]
+                        }
+                      },
+                      {
+                        "title": "nicemice_clampAimPosition",
+                        "type": "action",
+                        "name": "nicemice_clampAimPosition",
+                        "parameters": {
+                          "range": {
+                            "key": "primaryCastRange"
+                          }
+                        }
+                      },
+                      {
+                        "title": "timer",
+                        "type": "action",
+                        "name": "timer",
+                        "parameters": {
+                          "time": {
+                            "key": "<releaseHoldTime>"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "title": "steer -- aim the real target so the projectile follows it out",
+                    "type": "composite",
+                    "name": "parallel",
+                    "parameters": {
+                      "fail": {
+                        "value": 1
+                      },
+                      "success": {
+                        "value": -1
+                      }
+                    },
+                    "children": [
+                      {
+                        "title": "nicemice_entityDistance",
+                        "type": "action",
+                        "name": "nicemice_entityDistance",
+                        "parameters": {
+                          "fromEntity": {
+                            "key": "self"
+                          },
+                          "toEntity": {
+                            "key": "primaryTarget"
+                          }
+                        },
+                        "output": {
+                          "vector": "primaryAimOffset"
+                        }
+                      },
+                      {
+                        "title": "setAimPosition",
+                        "type": "action",
+                        "name": "setAimPosition",
+                        "parameters": {
+                          "offset": {
+                            "key": "primaryAimOffset"
+                          },
+                          "position": {
+                            "key": "self"
+                          }
+                        }
+                      },
+                      {
+                        "title": "timer",
+                        "type": "action",
+                        "name": "timer",
+                        "parameters": {
+                          "time": {
+                            "key": "<steerTime>"
+                          }
+                        }
                       }
                     ]
                   }
                 ]
               },
               {
-                "title": "buff",
+                "title": "healing on alt",
+                "type": "composite",
+                "name": "sequence",
+                "parameters": {},
+                "children": [
+                  {
+                    "title": "nicemice_resolveAbilityIntent",
+                    "type": "action",
+                    "name": "nicemice_resolveAbilityIntent",
+                    "parameters": {
+                      "hand": {
+                        "value": "alt"
+                      },
+                      "margin": {
+                        "key": "<castRangeMargin>"
+                      },
+                      "fallbackRange": {
+                        "key": "<castRangeFallback>"
+                      },
+                      "debug": {
+                        "key": "<debugTargeting>"
+                      }
+                    },
+                    "output": {
+                      "intent": "altIntent",
+                      "range": "altCastRange"
+                    }
+                  },
+                  {
+                    "title": "nicemice_equals",
+                    "type": "action",
+                    "name": "nicemice_equals",
+                    "parameters": {
+                      "first": {
+                        "key": "altIntent"
+                      },
+                      "second": {
+                        "value": "healing"
+                      }
+                    }
+                  },
+                  {
+                    "title": "nicemice_resolveHealTarget",
+                    "type": "action",
+                    "name": "nicemice_resolveHealTarget",
+                    "parameters": {
+                      "range": {
+                        "key": "<validHealingTargetRange>"
+                      },
+                      "requireSight": {
+                        "key": "<requireLineOfSight>"
+                      },
+                      "debug": {
+                        "key": "<debugTargeting>"
+                      }
+                    },
+                    "output": {
+                      "entity": "altTarget",
+                      "position": "altTargetPosition"
+                    }
+                  },
+                  {
+                    "title": "entityInRange",
+                    "type": "action",
+                    "name": "entityInRange",
+                    "parameters": {
+                      "entity": {
+                        "key": "altTarget"
+                      },
+                      "position": {
+                        "key": "self"
+                      },
+                      "range": {
+                        "key": "altCastRange"
+                      }
+                    }
+                  },
+                  {
+                    "title": "nicemice_debugLog",
+                    "type": "action",
+                    "name": "nicemice_debugLog",
+                    "parameters": {
+                      "text": {
+                        "value": "casting healing on alt at"
+                      },
+                      "entity": {
+                        "key": "altTarget"
+                      }
+                    }
+                  },
+                  {
+                    "title": "charge -- hold fire, aim clamped into range",
+                    "type": "composite",
+                    "name": "parallel",
+                    "parameters": {
+                      "fail": {
+                        "value": 1
+                      },
+                      "success": {
+                        "value": -1
+                      }
+                    },
+                    "children": [
+                      {
+                        "title": "nicemice_entityDistance",
+                        "type": "action",
+                        "name": "nicemice_entityDistance",
+                        "parameters": {
+                          "fromEntity": {
+                            "key": "self"
+                          },
+                          "toEntity": {
+                            "key": "altTarget"
+                          }
+                        },
+                        "output": {
+                          "vector": "altAimOffset"
+                        }
+                      },
+                      {
+                        "title": "setAimPosition",
+                        "type": "action",
+                        "name": "setAimPosition",
+                        "parameters": {
+                          "offset": {
+                            "key": "altAimOffset"
+                          },
+                          "position": {
+                            "key": "self"
+                          }
+                        }
+                      },
+                      {
+                        "title": "nicemice_clampAimPosition",
+                        "type": "action",
+                        "name": "nicemice_clampAimPosition",
+                        "parameters": {
+                          "range": {
+                            "key": "altCastRange"
+                          }
+                        }
+                      },
+                      {
+                        "title": "altFire",
+                        "type": "action",
+                        "name": "altFire",
+                        "parameters": {}
+                      },
+                      {
+                        "title": "timer",
+                        "type": "action",
+                        "name": "timer",
+                        "parameters": {
+                          "time": {
+                            "key": "<wizardryCooldown_alt>"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "title": "release -- stop firing so discharge happens, aim still valid",
+                    "type": "composite",
+                    "name": "parallel",
+                    "parameters": {
+                      "fail": {
+                        "value": 1
+                      },
+                      "success": {
+                        "value": -1
+                      }
+                    },
+                    "children": [
+                      {
+                        "title": "nicemice_entityDistance",
+                        "type": "action",
+                        "name": "nicemice_entityDistance",
+                        "parameters": {
+                          "fromEntity": {
+                            "key": "self"
+                          },
+                          "toEntity": {
+                            "key": "altTarget"
+                          }
+                        },
+                        "output": {
+                          "vector": "altAimOffset"
+                        }
+                      },
+                      {
+                        "title": "setAimPosition",
+                        "type": "action",
+                        "name": "setAimPosition",
+                        "parameters": {
+                          "offset": {
+                            "key": "altAimOffset"
+                          },
+                          "position": {
+                            "key": "self"
+                          }
+                        }
+                      },
+                      {
+                        "title": "nicemice_clampAimPosition",
+                        "type": "action",
+                        "name": "nicemice_clampAimPosition",
+                        "parameters": {
+                          "range": {
+                            "key": "altCastRange"
+                          }
+                        }
+                      },
+                      {
+                        "title": "timer",
+                        "type": "action",
+                        "name": "timer",
+                        "parameters": {
+                          "time": {
+                            "key": "<releaseHoldTime>"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "title": "steer -- aim the real target so the projectile follows it out",
+                    "type": "composite",
+                    "name": "parallel",
+                    "parameters": {
+                      "fail": {
+                        "value": 1
+                      },
+                      "success": {
+                        "value": -1
+                      }
+                    },
+                    "children": [
+                      {
+                        "title": "nicemice_entityDistance",
+                        "type": "action",
+                        "name": "nicemice_entityDistance",
+                        "parameters": {
+                          "fromEntity": {
+                            "key": "self"
+                          },
+                          "toEntity": {
+                            "key": "altTarget"
+                          }
+                        },
+                        "output": {
+                          "vector": "altAimOffset"
+                        }
+                      },
+                      {
+                        "title": "setAimPosition",
+                        "type": "action",
+                        "name": "setAimPosition",
+                        "parameters": {
+                          "offset": {
+                            "key": "altAimOffset"
+                          },
+                          "position": {
+                            "key": "self"
+                          }
+                        }
+                      },
+                      {
+                        "title": "timer",
+                        "type": "action",
+                        "name": "timer",
+                        "parameters": {
+                          "time": {
+                            "key": "<steerTime>"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "buff on primary",
                 "type": "composite",
                 "name": "sequence",
                 "parameters": {},
@@ -349,6 +854,9 @@
                       },
                       "fallbackRange": {
                         "key": "<castRangeFallback>"
+                      },
+                      "debug": {
+                        "key": "<debugTargeting>"
                       }
                     },
                     "output": {
@@ -395,8 +903,24 @@
                       }
                     },
                     "output": {
-                      "entity": "buffTarget",
-                      "position": "buffTargetPosition"
+                      "entity": "primaryTarget",
+                      "position": "primaryTargetPosition"
+                    }
+                  },
+                  {
+                    "title": "entityInRange",
+                    "type": "action",
+                    "name": "entityInRange",
+                    "parameters": {
+                      "entity": {
+                        "key": "primaryTarget"
+                      },
+                      "position": {
+                        "key": "self"
+                      },
+                      "range": {
+                        "key": "primaryCastRange"
+                      }
                     }
                   },
                   {
@@ -405,115 +929,496 @@
                     "name": "nicemice_debugLog",
                     "parameters": {
                       "text": {
-                        "value": "casting buff at"
+                        "value": "casting buff on primary at"
                       },
                       "entity": {
-                        "key": "buffTarget"
-                      },
-                      "position": {
-                        "key": "buffTargetPosition"
+                        "key": "primaryTarget"
                       }
                     }
                   },
                   {
-                    "title": "faceEntity",
-                    "type": "action",
-                    "name": "faceEntity",
-                    "parameters": {
-                      "entity": {
-                        "key": "buffTarget"
-                      }
-                    }
-                  },
-                  {
-                    "title": "setAimPosition",
-                    "type": "action",
-                    "name": "setAimPosition",
-                    "parameters": {
-                      "position": {
-                        "key": "buffTargetPosition"
-                      }
-                    }
-                  },
-                  {
-                    "title": "cast then release",
+                    "title": "charge -- hold fire, aim clamped into range",
                     "type": "composite",
-                    "name": "selector",
-                    "parameters": {},
+                    "name": "parallel",
+                    "parameters": {
+                      "fail": {
+                        "value": 1
+                      },
+                      "success": {
+                        "value": -1
+                      }
+                    },
                     "children": [
                       {
-                        "title": "cooldown",
-                        "type": "decorator",
-                        "name": "cooldown",
+                        "title": "nicemice_entityDistance",
+                        "type": "action",
+                        "name": "nicemice_entityDistance",
                         "parameters": {
-                          "cooldown": {
-                            "key": "<wizardryCooldown_primary>"
+                          "fromEntity": {
+                            "key": "self"
                           },
-                          "onFail": {
-                            "value": false
-                          },
-                          "onSuccess": {
-                            "value": true
+                          "toEntity": {
+                            "key": "primaryTarget"
                           }
                         },
-                        "child": {
-                          "title": "timer",
-                          "type": "action",
-                          "name": "timer",
-                          "parameters": {
-                            "time": {
-                              "value": 0.1
-                            }
+                        "output": {
+                          "vector": "primaryAimOffset"
+                        }
+                      },
+                      {
+                        "title": "setAimPosition",
+                        "type": "action",
+                        "name": "setAimPosition",
+                        "parameters": {
+                          "offset": {
+                            "key": "primaryAimOffset"
+                          },
+                          "position": {
+                            "key": "self"
                           }
                         }
                       },
                       {
-                        "title": "hold cast",
-                        "type": "composite",
-                        "name": "parallel",
+                        "title": "nicemice_clampAimPosition",
+                        "type": "action",
+                        "name": "nicemice_clampAimPosition",
                         "parameters": {
-                          "fail": {
-                            "value": 1
+                          "range": {
+                            "key": "primaryCastRange"
+                          }
+                        }
+                      },
+                      {
+                        "title": "primaryFire",
+                        "type": "action",
+                        "name": "primaryFire",
+                        "parameters": {}
+                      },
+                      {
+                        "title": "timer",
+                        "type": "action",
+                        "name": "timer",
+                        "parameters": {
+                          "time": {
+                            "key": "<wizardryCooldown_primary>"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "title": "release -- stop firing so discharge happens, aim still valid",
+                    "type": "composite",
+                    "name": "parallel",
+                    "parameters": {
+                      "fail": {
+                        "value": 1
+                      },
+                      "success": {
+                        "value": -1
+                      }
+                    },
+                    "children": [
+                      {
+                        "title": "nicemice_entityDistance",
+                        "type": "action",
+                        "name": "nicemice_entityDistance",
+                        "parameters": {
+                          "fromEntity": {
+                            "key": "self"
                           },
-                          "success": {
-                            "value": 2
+                          "toEntity": {
+                            "key": "primaryTarget"
                           }
                         },
-                        "children": [
-                          {
-                            "title": "nicemice_clampAimPosition",
-                            "type": "action",
-                            "name": "nicemice_clampAimPosition",
-                            "parameters": {
-                              "range": {
-                                "key": "primaryCastRange"
-                              }
-                            }
+                        "output": {
+                          "vector": "primaryAimOffset"
+                        }
+                      },
+                      {
+                        "title": "setAimPosition",
+                        "type": "action",
+                        "name": "setAimPosition",
+                        "parameters": {
+                          "offset": {
+                            "key": "primaryAimOffset"
                           },
-                          {
-                            "title": "primaryFire",
-                            "type": "action",
-                            "name": "primaryFire",
-                            "parameters": {}
-                          },
-                          {
-                            "title": "timer",
-                            "type": "action",
-                            "name": "timer",
-                            "parameters": {
-                              "time": {
-                                "value": 4.5
-                              }
-                            }
+                          "position": {
+                            "key": "self"
                           }
-                        ]
+                        }
+                      },
+                      {
+                        "title": "nicemice_clampAimPosition",
+                        "type": "action",
+                        "name": "nicemice_clampAimPosition",
+                        "parameters": {
+                          "range": {
+                            "key": "primaryCastRange"
+                          }
+                        }
+                      },
+                      {
+                        "title": "timer",
+                        "type": "action",
+                        "name": "timer",
+                        "parameters": {
+                          "time": {
+                            "key": "<releaseHoldTime>"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "title": "steer -- aim the real target so the projectile follows it out",
+                    "type": "composite",
+                    "name": "parallel",
+                    "parameters": {
+                      "fail": {
+                        "value": 1
+                      },
+                      "success": {
+                        "value": -1
+                      }
+                    },
+                    "children": [
+                      {
+                        "title": "nicemice_entityDistance",
+                        "type": "action",
+                        "name": "nicemice_entityDistance",
+                        "parameters": {
+                          "fromEntity": {
+                            "key": "self"
+                          },
+                          "toEntity": {
+                            "key": "primaryTarget"
+                          }
+                        },
+                        "output": {
+                          "vector": "primaryAimOffset"
+                        }
+                      },
+                      {
+                        "title": "setAimPosition",
+                        "type": "action",
+                        "name": "setAimPosition",
+                        "parameters": {
+                          "offset": {
+                            "key": "primaryAimOffset"
+                          },
+                          "position": {
+                            "key": "self"
+                          }
+                        }
+                      },
+                      {
+                        "title": "timer",
+                        "type": "action",
+                        "name": "timer",
+                        "parameters": {
+                          "time": {
+                            "key": "<steerTime>"
+                          }
+                        }
                       }
                     ]
                   }
                 ]
               },
               {
-                "title": "attack",
+                "title": "buff on alt",
+                "type": "composite",
+                "name": "sequence",
+                "parameters": {},
+                "children": [
+                  {
+                    "title": "nicemice_resolveAbilityIntent",
+                    "type": "action",
+                    "name": "nicemice_resolveAbilityIntent",
+                    "parameters": {
+                      "hand": {
+                        "value": "alt"
+                      },
+                      "margin": {
+                        "key": "<castRangeMargin>"
+                      },
+                      "fallbackRange": {
+                        "key": "<castRangeFallback>"
+                      },
+                      "debug": {
+                        "key": "<debugTargeting>"
+                      }
+                    },
+                    "output": {
+                      "intent": "altIntent",
+                      "range": "altCastRange"
+                    }
+                  },
+                  {
+                    "title": "nicemice_equals",
+                    "type": "action",
+                    "name": "nicemice_equals",
+                    "parameters": {
+                      "first": {
+                        "key": "altIntent"
+                      },
+                      "second": {
+                        "value": "buff"
+                      }
+                    }
+                  },
+                  {
+                    "title": "isValidTarget",
+                    "type": "action",
+                    "name": "isValidTarget",
+                    "parameters": {
+                      "entity": {
+                        "key": "target"
+                      }
+                    }
+                  },
+                  {
+                    "title": "nicemice_resolveBuffTarget",
+                    "type": "action",
+                    "name": "nicemice_resolveBuffTarget",
+                    "parameters": {
+                      "range": {
+                        "key": "<validBuffTargetRange>"
+                      },
+                      "requireSight": {
+                        "key": "<requireLineOfSight>"
+                      },
+                      "debug": {
+                        "key": "<debugTargeting>"
+                      }
+                    },
+                    "output": {
+                      "entity": "altTarget",
+                      "position": "altTargetPosition"
+                    }
+                  },
+                  {
+                    "title": "entityInRange",
+                    "type": "action",
+                    "name": "entityInRange",
+                    "parameters": {
+                      "entity": {
+                        "key": "altTarget"
+                      },
+                      "position": {
+                        "key": "self"
+                      },
+                      "range": {
+                        "key": "altCastRange"
+                      }
+                    }
+                  },
+                  {
+                    "title": "nicemice_debugLog",
+                    "type": "action",
+                    "name": "nicemice_debugLog",
+                    "parameters": {
+                      "text": {
+                        "value": "casting buff on alt at"
+                      },
+                      "entity": {
+                        "key": "altTarget"
+                      }
+                    }
+                  },
+                  {
+                    "title": "charge -- hold fire, aim clamped into range",
+                    "type": "composite",
+                    "name": "parallel",
+                    "parameters": {
+                      "fail": {
+                        "value": 1
+                      },
+                      "success": {
+                        "value": -1
+                      }
+                    },
+                    "children": [
+                      {
+                        "title": "nicemice_entityDistance",
+                        "type": "action",
+                        "name": "nicemice_entityDistance",
+                        "parameters": {
+                          "fromEntity": {
+                            "key": "self"
+                          },
+                          "toEntity": {
+                            "key": "altTarget"
+                          }
+                        },
+                        "output": {
+                          "vector": "altAimOffset"
+                        }
+                      },
+                      {
+                        "title": "setAimPosition",
+                        "type": "action",
+                        "name": "setAimPosition",
+                        "parameters": {
+                          "offset": {
+                            "key": "altAimOffset"
+                          },
+                          "position": {
+                            "key": "self"
+                          }
+                        }
+                      },
+                      {
+                        "title": "nicemice_clampAimPosition",
+                        "type": "action",
+                        "name": "nicemice_clampAimPosition",
+                        "parameters": {
+                          "range": {
+                            "key": "altCastRange"
+                          }
+                        }
+                      },
+                      {
+                        "title": "altFire",
+                        "type": "action",
+                        "name": "altFire",
+                        "parameters": {}
+                      },
+                      {
+                        "title": "timer",
+                        "type": "action",
+                        "name": "timer",
+                        "parameters": {
+                          "time": {
+                            "key": "<wizardryCooldown_alt>"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "title": "release -- stop firing so discharge happens, aim still valid",
+                    "type": "composite",
+                    "name": "parallel",
+                    "parameters": {
+                      "fail": {
+                        "value": 1
+                      },
+                      "success": {
+                        "value": -1
+                      }
+                    },
+                    "children": [
+                      {
+                        "title": "nicemice_entityDistance",
+                        "type": "action",
+                        "name": "nicemice_entityDistance",
+                        "parameters": {
+                          "fromEntity": {
+                            "key": "self"
+                          },
+                          "toEntity": {
+                            "key": "altTarget"
+                          }
+                        },
+                        "output": {
+                          "vector": "altAimOffset"
+                        }
+                      },
+                      {
+                        "title": "setAimPosition",
+                        "type": "action",
+                        "name": "setAimPosition",
+                        "parameters": {
+                          "offset": {
+                            "key": "altAimOffset"
+                          },
+                          "position": {
+                            "key": "self"
+                          }
+                        }
+                      },
+                      {
+                        "title": "nicemice_clampAimPosition",
+                        "type": "action",
+                        "name": "nicemice_clampAimPosition",
+                        "parameters": {
+                          "range": {
+                            "key": "altCastRange"
+                          }
+                        }
+                      },
+                      {
+                        "title": "timer",
+                        "type": "action",
+                        "name": "timer",
+                        "parameters": {
+                          "time": {
+                            "key": "<releaseHoldTime>"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "title": "steer -- aim the real target so the projectile follows it out",
+                    "type": "composite",
+                    "name": "parallel",
+                    "parameters": {
+                      "fail": {
+                        "value": 1
+                      },
+                      "success": {
+                        "value": -1
+                      }
+                    },
+                    "children": [
+                      {
+                        "title": "nicemice_entityDistance",
+                        "type": "action",
+                        "name": "nicemice_entityDistance",
+                        "parameters": {
+                          "fromEntity": {
+                            "key": "self"
+                          },
+                          "toEntity": {
+                            "key": "altTarget"
+                          }
+                        },
+                        "output": {
+                          "vector": "altAimOffset"
+                        }
+                      },
+                      {
+                        "title": "setAimPosition",
+                        "type": "action",
+                        "name": "setAimPosition",
+                        "parameters": {
+                          "offset": {
+                            "key": "altAimOffset"
+                          },
+                          "position": {
+                            "key": "self"
+                          }
+                        }
+                      },
+                      {
+                        "title": "timer",
+                        "type": "action",
+                        "name": "timer",
+                        "parameters": {
+                          "time": {
+                            "key": "<steerTime>"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "harmful on primary",
                 "type": "composite",
                 "name": "sequence",
                 "parameters": {},
@@ -531,6 +1436,9 @@
                       },
                       "fallbackRange": {
                         "key": "<castRangeFallback>"
+                      },
+                      "debug": {
+                        "key": "<debugTargeting>"
                       }
                     },
                     "output": {
@@ -562,22 +1470,264 @@
                     }
                   },
                   {
-                    "title": "entityPosition",
+                    "title": "entityInSight",
                     "type": "action",
-                    "name": "entityPosition",
+                    "name": "entityInSight",
                     "parameters": {
                       "entity": {
                         "key": "target"
                       }
-                    },
-                    "output": {
-                      "position": "targetPosition"
                     }
                   },
                   {
-                    "title": "faceEntity",
+                    "title": "nicemice_debugLog",
                     "type": "action",
-                    "name": "faceEntity",
+                    "name": "nicemice_debugLog",
+                    "parameters": {
+                      "text": {
+                        "value": "casting harmful on primary at"
+                      },
+                      "entity": {
+                        "key": "target"
+                      }
+                    }
+                  },
+                  {
+                    "title": "charge -- hold fire, aim clamped into range",
+                    "type": "composite",
+                    "name": "parallel",
+                    "parameters": {
+                      "fail": {
+                        "value": 1
+                      },
+                      "success": {
+                        "value": -1
+                      }
+                    },
+                    "children": [
+                      {
+                        "title": "nicemice_entityDistance",
+                        "type": "action",
+                        "name": "nicemice_entityDistance",
+                        "parameters": {
+                          "fromEntity": {
+                            "key": "self"
+                          },
+                          "toEntity": {
+                            "key": "target"
+                          }
+                        },
+                        "output": {
+                          "vector": "primaryAimOffset"
+                        }
+                      },
+                      {
+                        "title": "setAimPosition",
+                        "type": "action",
+                        "name": "setAimPosition",
+                        "parameters": {
+                          "offset": {
+                            "key": "primaryAimOffset"
+                          },
+                          "position": {
+                            "key": "self"
+                          }
+                        }
+                      },
+                      {
+                        "title": "nicemice_clampAimPosition",
+                        "type": "action",
+                        "name": "nicemice_clampAimPosition",
+                        "parameters": {
+                          "range": {
+                            "key": "primaryCastRange"
+                          }
+                        }
+                      },
+                      {
+                        "title": "primaryFire",
+                        "type": "action",
+                        "name": "primaryFire",
+                        "parameters": {}
+                      },
+                      {
+                        "title": "timer",
+                        "type": "action",
+                        "name": "timer",
+                        "parameters": {
+                          "time": {
+                            "key": "<wizardryCooldown_primary>"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "title": "release -- stop firing so discharge happens, aim still valid",
+                    "type": "composite",
+                    "name": "parallel",
+                    "parameters": {
+                      "fail": {
+                        "value": 1
+                      },
+                      "success": {
+                        "value": -1
+                      }
+                    },
+                    "children": [
+                      {
+                        "title": "nicemice_entityDistance",
+                        "type": "action",
+                        "name": "nicemice_entityDistance",
+                        "parameters": {
+                          "fromEntity": {
+                            "key": "self"
+                          },
+                          "toEntity": {
+                            "key": "target"
+                          }
+                        },
+                        "output": {
+                          "vector": "primaryAimOffset"
+                        }
+                      },
+                      {
+                        "title": "setAimPosition",
+                        "type": "action",
+                        "name": "setAimPosition",
+                        "parameters": {
+                          "offset": {
+                            "key": "primaryAimOffset"
+                          },
+                          "position": {
+                            "key": "self"
+                          }
+                        }
+                      },
+                      {
+                        "title": "nicemice_clampAimPosition",
+                        "type": "action",
+                        "name": "nicemice_clampAimPosition",
+                        "parameters": {
+                          "range": {
+                            "key": "primaryCastRange"
+                          }
+                        }
+                      },
+                      {
+                        "title": "timer",
+                        "type": "action",
+                        "name": "timer",
+                        "parameters": {
+                          "time": {
+                            "key": "<releaseHoldTime>"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "title": "steer -- aim the real target so the projectile follows it out",
+                    "type": "composite",
+                    "name": "parallel",
+                    "parameters": {
+                      "fail": {
+                        "value": 1
+                      },
+                      "success": {
+                        "value": -1
+                      }
+                    },
+                    "children": [
+                      {
+                        "title": "nicemice_entityDistance",
+                        "type": "action",
+                        "name": "nicemice_entityDistance",
+                        "parameters": {
+                          "fromEntity": {
+                            "key": "self"
+                          },
+                          "toEntity": {
+                            "key": "target"
+                          }
+                        },
+                        "output": {
+                          "vector": "primaryAimOffset"
+                        }
+                      },
+                      {
+                        "title": "setAimPosition",
+                        "type": "action",
+                        "name": "setAimPosition",
+                        "parameters": {
+                          "offset": {
+                            "key": "primaryAimOffset"
+                          },
+                          "position": {
+                            "key": "self"
+                          }
+                        }
+                      },
+                      {
+                        "title": "timer",
+                        "type": "action",
+                        "name": "timer",
+                        "parameters": {
+                          "time": {
+                            "key": "<steerTime>"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "harmful on alt",
+                "type": "composite",
+                "name": "sequence",
+                "parameters": {},
+                "children": [
+                  {
+                    "title": "nicemice_resolveAbilityIntent",
+                    "type": "action",
+                    "name": "nicemice_resolveAbilityIntent",
+                    "parameters": {
+                      "hand": {
+                        "value": "alt"
+                      },
+                      "margin": {
+                        "key": "<castRangeMargin>"
+                      },
+                      "fallbackRange": {
+                        "key": "<castRangeFallback>"
+                      },
+                      "debug": {
+                        "key": "<debugTargeting>"
+                      }
+                    },
+                    "output": {
+                      "intent": "altIntent",
+                      "range": "altCastRange"
+                    }
+                  },
+                  {
+                    "title": "nicemice_equals",
+                    "type": "action",
+                    "name": "nicemice_equals",
+                    "parameters": {
+                      "first": {
+                        "key": "altIntent"
+                      },
+                      "second": {
+                        "value": "harmful"
+                      }
+                    }
+                  },
+                  {
+                    "title": "isValidTarget",
+                    "type": "action",
+                    "name": "isValidTarget",
                     "parameters": {
                       "entity": {
                         "key": "target"
@@ -600,104 +1750,286 @@
                     "name": "nicemice_debugLog",
                     "parameters": {
                       "text": {
-                        "value": "casting attack at"
+                        "value": "casting harmful on alt at"
                       },
                       "entity": {
                         "key": "target"
-                      },
-                      "position": {
-                        "key": "targetPosition"
                       }
                     }
                   },
                   {
-                    "title": "setAimPosition",
-                    "type": "action",
-                    "name": "setAimPosition",
-                    "parameters": {
-                      "position": {
-                        "key": "targetPosition"
-                      }
-                    }
-                  },
-                  {
-                    "title": "cast then release",
+                    "title": "charge -- hold fire, aim clamped into range",
                     "type": "composite",
-                    "name": "selector",
-                    "parameters": {},
+                    "name": "parallel",
+                    "parameters": {
+                      "fail": {
+                        "value": 1
+                      },
+                      "success": {
+                        "value": -1
+                      }
+                    },
                     "children": [
                       {
-                        "title": "cooldown",
-                        "type": "decorator",
-                        "name": "cooldown",
+                        "title": "nicemice_entityDistance",
+                        "type": "action",
+                        "name": "nicemice_entityDistance",
                         "parameters": {
-                          "cooldown": {
-                            "key": "<wizardryCooldown_primary>"
+                          "fromEntity": {
+                            "key": "self"
                           },
-                          "onFail": {
-                            "value": false
-                          },
-                          "onSuccess": {
-                            "value": true
+                          "toEntity": {
+                            "key": "target"
                           }
                         },
-                        "child": {
-                          "title": "timer",
-                          "type": "action",
-                          "name": "timer",
-                          "parameters": {
-                            "time": {
-                              "value": 0.1
-                            }
+                        "output": {
+                          "vector": "altAimOffset"
+                        }
+                      },
+                      {
+                        "title": "setAimPosition",
+                        "type": "action",
+                        "name": "setAimPosition",
+                        "parameters": {
+                          "offset": {
+                            "key": "altAimOffset"
+                          },
+                          "position": {
+                            "key": "self"
                           }
                         }
                       },
                       {
-                        "title": "hold cast",
-                        "type": "composite",
-                        "name": "parallel",
+                        "title": "nicemice_clampAimPosition",
+                        "type": "action",
+                        "name": "nicemice_clampAimPosition",
                         "parameters": {
-                          "fail": {
-                            "value": 1
+                          "range": {
+                            "key": "altCastRange"
+                          }
+                        }
+                      },
+                      {
+                        "title": "altFire",
+                        "type": "action",
+                        "name": "altFire",
+                        "parameters": {}
+                      },
+                      {
+                        "title": "timer",
+                        "type": "action",
+                        "name": "timer",
+                        "parameters": {
+                          "time": {
+                            "key": "<wizardryCooldown_alt>"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "title": "release -- stop firing so discharge happens, aim still valid",
+                    "type": "composite",
+                    "name": "parallel",
+                    "parameters": {
+                      "fail": {
+                        "value": 1
+                      },
+                      "success": {
+                        "value": -1
+                      }
+                    },
+                    "children": [
+                      {
+                        "title": "nicemice_entityDistance",
+                        "type": "action",
+                        "name": "nicemice_entityDistance",
+                        "parameters": {
+                          "fromEntity": {
+                            "key": "self"
                           },
-                          "success": {
-                            "value": 2
+                          "toEntity": {
+                            "key": "target"
                           }
                         },
-                        "children": [
-                          {
-                            "title": "nicemice_clampAimPosition",
-                            "type": "action",
-                            "name": "nicemice_clampAimPosition",
-                            "parameters": {
-                              "range": {
-                                "key": "primaryCastRange"
-                              }
-                            }
+                        "output": {
+                          "vector": "altAimOffset"
+                        }
+                      },
+                      {
+                        "title": "setAimPosition",
+                        "type": "action",
+                        "name": "setAimPosition",
+                        "parameters": {
+                          "offset": {
+                            "key": "altAimOffset"
                           },
-                          {
-                            "title": "primaryFire",
-                            "type": "action",
-                            "name": "primaryFire",
-                            "parameters": {}
-                          },
-                          {
-                            "title": "timer",
-                            "type": "action",
-                            "name": "timer",
-                            "parameters": {
-                              "time": {
-                                "value": 4.5
-                              }
-                            }
+                          "position": {
+                            "key": "self"
                           }
-                        ]
+                        }
+                      },
+                      {
+                        "title": "nicemice_clampAimPosition",
+                        "type": "action",
+                        "name": "nicemice_clampAimPosition",
+                        "parameters": {
+                          "range": {
+                            "key": "altCastRange"
+                          }
+                        }
+                      },
+                      {
+                        "title": "timer",
+                        "type": "action",
+                        "name": "timer",
+                        "parameters": {
+                          "time": {
+                            "key": "<releaseHoldTime>"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "title": "steer -- aim the real target so the projectile follows it out",
+                    "type": "composite",
+                    "name": "parallel",
+                    "parameters": {
+                      "fail": {
+                        "value": 1
+                      },
+                      "success": {
+                        "value": -1
+                      }
+                    },
+                    "children": [
+                      {
+                        "title": "nicemice_entityDistance",
+                        "type": "action",
+                        "name": "nicemice_entityDistance",
+                        "parameters": {
+                          "fromEntity": {
+                            "key": "self"
+                          },
+                          "toEntity": {
+                            "key": "target"
+                          }
+                        },
+                        "output": {
+                          "vector": "altAimOffset"
+                        }
+                      },
+                      {
+                        "title": "setAimPosition",
+                        "type": "action",
+                        "name": "setAimPosition",
+                        "parameters": {
+                          "offset": {
+                            "key": "altAimOffset"
+                          },
+                          "position": {
+                            "key": "self"
+                          }
+                        }
+                      },
+                      {
+                        "title": "timer",
+                        "type": "action",
+                        "name": "timer",
+                        "parameters": {
+                          "time": {
+                            "key": "<steerTime>"
+                          }
+                        }
                       }
                     ]
                   }
                 ]
               }
             ]
+          },
+          {
+            "title": "meleecombat-approach",
+            "type": "module",
+            "name": "meleecombat-approach",
+            "parameters": {}
+          },
+          {
+            "title": "optional",
+            "type": "decorator",
+            "name": "optional",
+            "parameters": {
+              "shouldRun": {
+                "key": "<debugMovement>"
+              }
+            },
+            "child": {
+              "title": "what the melee coordinator assigned us",
+              "type": "composite",
+              "name": "sequence",
+              "parameters": {},
+              "children": [
+                {
+                  "title": "groupResource",
+                  "type": "action",
+                  "name": "groupResource",
+                  "parameters": {
+                    "groupId": {
+                      "value": "combat"
+                    },
+                    "name": {
+                      "value": "meleePosition"
+                    }
+                  },
+                  "output": {
+                    "position": "coordinatorSlot"
+                  }
+                },
+                {
+                  "title": "nicemice_debugLog",
+                  "type": "action",
+                  "name": "nicemice_debugLog",
+                  "parameters": {
+                    "text": {
+                      "value": "meleePosition"
+                    },
+                    "position": {
+                      "key": "coordinatorSlot"
+                    }
+                  }
+                },
+                {
+                  "title": "groupResource",
+                  "type": "action",
+                  "name": "groupResource",
+                  "parameters": {
+                    "groupId": {
+                      "value": "combat"
+                    },
+                    "name": {
+                      "value": "maxRange"
+                    }
+                  },
+                  "output": {
+                    "number": "coordinatorMaxRange"
+                  }
+                },
+                {
+                  "title": "nicemice_debugLog",
+                  "type": "action",
+                  "name": "nicemice_debugLog",
+                  "parameters": {
+                    "text": {
+                      "value": "maxRange"
+                    },
+                    "number": {
+                      "key": "coordinatorMaxRange"
+                    }
+                  }
+                }
+              ]
+            }
           },
           {
             "title": "runner",

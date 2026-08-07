@@ -354,18 +354,47 @@ function nicemice_chargedFire(args, board, nodeId, dt)
   return true
 end
 
+-- Pull the aim point to somewhere the ability will actually accept.
+--
+-- Every staff ability gates its discharge on the same targetValid():
+--     world.magnitude(focusPos, aimPos) <= maxCastRange
+--     and not world.lineTileCollision(mcontroller.position(), focusPos)
+--     and not world.lineTileCollision(focusPos, aimPos)
+-- Fail it and discharge falls straight through to cooldown -- the whole charge
+-- is spent for nothing, which is what a "failed cast" looks like from outside.
+--
+-- focusPos is the staff's focal point (mcontroller.position() plus the hand
+-- offset), which we cannot read from here; entity.position() is the closest
+-- stand-in and the caller's margin absorbs the difference.
+--
+-- This is only wanted while charging. controlprojectile steers its projectiles
+-- to activeItem.ownerAimPosition() every tick with NO range limit once they
+-- exist, so clamping after discharge is what stops projectiles reaching past
+-- the cast range.
+--
 -- param range
 function nicemice_clampAimPosition(args, board)
   if args.range == nil then return true end
 
-  local aimPosition = npc.aimPosition()
   local selfPosition = entity.position()
   -- world.distance is wrap-safe; plain subtraction is not, and staff casts
   -- happen at ranges where a world seam between caster and target matters.
-  local delta = world.distance(aimPosition, selfPosition)
-  if vec2.mag(delta) > args.range then
-    npc.setAimPosition(vec2.add(selfPosition, vec2.mul(vec2.norm(delta), args.range)))
+  local delta = world.distance(npc.aimPosition(), selfPosition)
+  local distance = vec2.mag(delta)
+  if distance == 0 then return true end
+
+  local heading = vec2.norm(delta)
+  distance = math.min(distance, args.range)
+
+  -- Walk the aim in until the line from us to it is clear. Without this an
+  -- otherwise in-range cast is still refused whenever terrain crosses the ray.
+  local aimPosition = vec2.add(selfPosition, vec2.mul(heading, distance))
+  local step = distance / 8
+  while distance > 1 and world.lineTileCollision(selfPosition, aimPosition) do
+    distance = distance - step
+    aimPosition = vec2.add(selfPosition, vec2.mul(heading, distance))
   end
 
+  npc.setAimPosition(aimPosition)
   return true
 end

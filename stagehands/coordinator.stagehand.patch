@@ -29,18 +29,9 @@
     "op": "add",
     "path": "/npcCombat/meleeWeaponRanges/nicemice_generatedweapon_techstaff",
     "value": {
-      "minRange" : 8,
-      "maxRange" : 40,
-      "forceMoveRange" : 30
-    }
-  },
-  {
-    "op": "add",
-    "path": "/npcCombat/rangedWeaponRanges/nicemice_generatedweapon_techstaff",
-    "value": {
-      "minRange" : 8,
-      "maxRange" : 40,
-      "forceMoveRange" : 30
+      "minRange" : 16,
+      "maxRange" : 20,
+      "forceMoveRange" : 20
     }
   }
 ]
