@@ -9,18 +9,10 @@
   },
   {
     "op": "add",
-    "path": "/npcCombat/meleeWeaponRanges/nicemice_gentlereminder_npc",
-    "value": {
-      "minRange": 8,
-      "maxRange": 11
-    }
-  },
-  {
-    "op": "add",
     "path": "/npcCombat/rangedWeaponRanges/nicemice_generatedweapon_plasmapistol",
     "value": {
-      "minRange" : 8,
-      "maxRange" : 15,
+      "minRange" : 1,
+      "maxRange" : 25,
       "forceMoveRange" : 20
     }
   },
