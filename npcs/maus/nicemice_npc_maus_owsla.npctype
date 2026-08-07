@@ -71,6 +71,10 @@
 						[
 							{ 
 								"name" : "nicemice_invisiblehead"							
+							},
+							{
+								"name" : "nicemicetier1head",
+								"parameters" : { "colorIndex" : 7 }
 							}
 						],
 						"back" : 

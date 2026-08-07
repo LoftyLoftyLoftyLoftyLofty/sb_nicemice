@@ -69,6 +69,14 @@
 						[
 							{ 
 								"name" : "nicemice_invisiblehead"							
+							},
+							{
+								"name" : "nicemicetier1head",
+								"parameters" : { "colorIndex" : [6, 11] }
+							},
+							{
+								"name" : "nicemice_gremlingoggles",
+								"parameters" : { "colorIndex" : [6, 11] }
 							}
 						],
 						"back" : 
@@ -128,6 +136,14 @@
 						[
 							{ 
 								"name" : "nicemice_invisiblehead"							
+							},
+							{
+								"name" : "nicemicetier1head",
+								"parameters" : { "colorIndex" : [6, 11] }
+							},
+							{
+								"name" : "nicemice_gremlingoggles",
+								"parameters" : { "colorIndex" : [6, 11] }
 							}
 						],
 						"back" : 
