@@ -118,9 +118,13 @@
 								"parameters" : { "colorIndex" : 5 }	 
 							}
 						],
+						//engineering is liable to whip out anything from a shotgun to a wizard stick
 						"sheathedprimary" : 
 						[ 
-							"npcshotgun" 
+							"npcshotgun", 
+							"npcrocketlauncher",
+							"npcassaultrifle",
+							"nicemice_generatedweapon_techstaff" 
 						]
 					},
 					{
