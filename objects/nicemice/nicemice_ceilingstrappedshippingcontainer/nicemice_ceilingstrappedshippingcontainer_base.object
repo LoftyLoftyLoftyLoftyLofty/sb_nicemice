@@ -1,0 +1,91 @@
+{
+  "objectName" : "nicemice_ceilingstrappedshippingcontainer_base",
+  "colonyTags" : ["nicemice","storage","maus"],
+  "rarity" : "Common",
+  
+  "category" : "decorative",
+  "description" : "A very large shipping container, strapped for space transit.",
+  "shortdescription" : "Shipping Container Gondola",
+  "race" : "nicemice",
+  "price" : 250,
+
+  "health" : 5,
+
+  "apexDescription" : "This large machine secures storage crates.",
+  "avianDescription" : "This looks like an unpleasant spot to sit.",
+  "floranDescription" : "Floran can't eat thisss.",
+  "glitchDescription" : "Shy. Do you think she's single?",
+  "humanDescription" : "Looks like some kind of combination magnet and tiedown kit, but for space.",
+  "hylotlDescription" : "The form of this machine is repugnant, but the function is invaluable.",
+  "novakidDescription" : "Some kinda' big crate mover.",
+  "nicemiceDescription" : "Ziz devize haz zeveral layerz of fallback zafety meazurez to enzure zafe tranzit of goodz.",
+
+  "inventoryIcon" : "nicemice_ceilingstrappedshippingcontainer_baseicon.png",
+  "lightColor" : [73, 179, 73],
+  
+  "orientations" : [
+    {
+      "image" : "nicemice_ceilingstrappedshippingcontainer_base.png:<color>",
+	  "direction" : "right",
+      "imagePosition" : [-72, -16],
+      "frames" : 1,
+      "animationCycle" : 0.4,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "top" ],
+	  
+	  "materialSpaces" : 
+	  [
+		[[-7, -2], "metamaterial:railreverse"],
+		[[-6, -2], "metamaterial:railreverse"],
+		[[-5, -2], "metamaterial:railreverse"],
+		[[-4, -2], "metamaterial:railreverse"],
+		[[-3, -2], "metamaterial:railreverse"],
+		[[-2, -2], "metamaterial:railreverse"],
+		[[-1, -2], "metamaterial:railreverse"],
+		[[ 0, -2], "metamaterial:railreverse"],
+		[[ 1, -2], "metamaterial:railreverse"],
+		[[ 2, -2], "metamaterial:railreverse"],
+		[[ 3, -2], "metamaterial:railreverse"],
+		[[ 4, -2], "metamaterial:railreverse"],
+		[[ 5, -2], "metamaterial:railreverse"],
+		[[ 6, -2], "metamaterial:railreverse"],
+		[[ 7, -2], "metamaterial:railreverse"]
+      ],
+	  
+	  "lightPosition" : [6, -1]
+    },
+	{
+      "image" : "nicemice_ceilingstrappedshippingcontainer_base.png:<color>",
+	  "flipImages" : true,
+	  "direction" : "left",
+      "imagePosition" : [-72, -16],
+      "frames" : 1,
+      "animationCycle" : 0.4,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "top" ],
+	  
+	  "materialSpaces" : 
+	  [
+		[[ -8, -2], "metamaterial:railreverse"],
+		[[-7, -2], "metamaterial:railreverse"],
+		[[-6, -2], "metamaterial:railreverse"],
+		[[-5, -2], "metamaterial:railreverse"],
+		[[-4, -2], "metamaterial:railreverse"],
+		[[-3, -2], "metamaterial:railreverse"],
+		[[-2, -2], "metamaterial:railreverse"],
+		[[-1, -2], "metamaterial:railreverse"],
+		[[ 0, -2], "metamaterial:railreverse"],
+		[[ 1, -2], "metamaterial:railreverse"],
+		[[ 2, -2], "metamaterial:railreverse"],
+		[[ 3, -2], "metamaterial:railreverse"],
+		[[ 4, -2], "metamaterial:railreverse"],
+		[[ 5, -2], "metamaterial:railreverse"],
+		[[ 6, -2], "metamaterial:railreverse"]
+      ],
+	  
+	  "lightPosition" : [-5, -1]
+    }
+  ]
+}
