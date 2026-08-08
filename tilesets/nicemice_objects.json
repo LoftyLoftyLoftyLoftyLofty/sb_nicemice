@@ -4,27 +4,27 @@
   "properties" : {
   },
   "spacing" : 0,
-  "tilecount" : 14,
+  "tilecount" : 17,
   "tileheight" : 80,
   "tileproperties" : {
     "0" : {
       "//description" : "Nicemice Boosterflame M",
-      "imagePositionX" : "-34",
-      "imagePositionY" : "-31",
+      "imagePositionX" : "-40",
+      "imagePositionY" : "-32",
       "object" : "nicemice_boosterflamemedium",
       "tilesetDirection" : "right"
     },
     "1" : {
       "//description" : "Nicemice Boosterflame L",
       "imagePositionX" : "-32",
-      "imagePositionY" : "-30",
+      "imagePositionY" : "-32",
       "object" : "nicemice_boosterflamelarge",
       "tilesetDirection" : "right"
     },
     "2" : {
       "//description" : "Nicemice Boosterflame S",
-      "imagePositionX" : "-14",
-      "imagePositionY" : "-14",
+      "imagePositionX" : "-16",
+      "imagePositionY" : "-16",
       "object" : "nicemice_boosterflamesmall",
       "tilesetDirection" : "right"
     },
@@ -44,7 +44,7 @@
     },
     "5" : {
       "//description" : "Nicemice Captains Chair",
-      "imagePositionX" : "-12",
+      "imagePositionX" : "-16",
       "imagePositionY" : "0",
       "object" : "nicemice_captainschair",
       "tilesetDirection" : "right"
@@ -86,7 +86,7 @@
     },
     "11" : {
       "//description" : "Nicemice Flag",
-      "imagePositionX" : "-17",
+      "imagePositionX" : "-24",
       "imagePositionY" : "0",
       "object" : "nicemice_flag",
       "tilesetDirection" : "right"
@@ -103,6 +103,27 @@
       "imagePositionX" : "-40",
       "imagePositionY" : "-24",
       "object" : "nicemice_pinup_laying",
+      "tilesetDirection" : "right"
+    },
+	"14" : {
+      "//description" : "Strap Gondola",
+      "imagePositionX" : "-72",
+      "imagePositionY" : "-16",
+      "object" : "nicemice_ceilingstrappedshippingcontainer_base",
+      "tilesetDirection" : "right"
+    },
+	"15" : {
+      "//description" : "Strapped Shipping Container",
+      "imagePositionX" : "-56",
+      "imagePositionY" : "8",
+      "object" : "nicemice_ceilingstrappedshippingcontainer_stackma",
+      "tilesetDirection" : "right"
+    },
+	"16" : {
+      "//description" : "Nicemice Shipping Container",
+      "imagePositionX" : "-56",
+      "imagePositionY" : "0",
+      "object" : "nicemice_shippingcontainer",
       "tilesetDirection" : "right"
     }
   },
@@ -148,7 +169,16 @@
     },
     "13" : {
       "image" : "../objects/nicemice/decorative/pinups/laying/nicemice_pinup_laying.png"
+    },
+	"14" : {
+      "image" : "../objects/nicemice/nicemice_ceilingstrappedshippingcontainer/tiledbase.png"
+    },
+	"15" : {
+      "image" : "../objects/nicemice/nicemice_ceilingstrappedshippingcontainer/tiledcrate.png"
+    },
+	"16" : {
+      "image" : "../objects/nicemice/nicemice_shippingcontainer/tiled.png"
     }
   },
-  "tilewidth" : 88
+  "tilewidth" : 8
 }
