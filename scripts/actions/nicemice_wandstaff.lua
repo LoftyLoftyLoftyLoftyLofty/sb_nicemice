@@ -3,7 +3,8 @@ require "/scripts/util.lua"
 
 -- Tracing helper, gated per-node so it costs nothing when debug is off.
 local function trace(enabled, text)
-  if enabled then sb.logInfo("[nicemice " .. tostring(entity.id()) .. "] " .. text) end
+  return
+  --if enabled then sb.logInfo("[nicemice " .. tostring(entity.id()) .. "] " .. text) end
 end
 
 -- root.itemConfig() re-runs the item's build script on every call, and ability
