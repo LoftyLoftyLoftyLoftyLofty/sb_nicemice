@@ -148,6 +148,20 @@
 		]
 	],
 	
+	//placing objects anchored to other objects that use metamaterials in Tiled is being weird
+	"nicemice_ceilingstrappedshippingcontainer_stackma_noanchor" : 
+	[
+		[
+			0,
+			{
+				"fill" : 
+				[
+					{ "item" : [ "nicemice_ceilingstrappedshippingcontainer_stackma_noanchor", 1] }
+				]
+			}
+		]
+	],
+	
 	//The M.A.U.S. cargo ship's locker is intended to be a loot pinata full of weird exotic M.A.U.S. gear
 	"nicemice_cargoship_shiplocker_treasure" : 
 	[
