@@ -1,5 +1,10 @@
 function init()
 
+	if config.getParameter("npcMode") then 
+		object.setInteractive(false)
+		return 
+	end
+	
 	message.setHandler("activateShip", function()
 		animator.playSound("shipUpgrade")
 		world.setProperty("nicemice_needsWakeUpDialog",true)
@@ -165,6 +170,12 @@ function sayNext()
 end
 
 function update(dt)
+	
+	if config.getParameter("npcMode") then 
+		object.setInteractive(false)
+		return 
+	end
+	
 	if world.getProperty("nicemice_needsWakeUpDialog") then
 		if self.talking == nil then
 			self.talking = true

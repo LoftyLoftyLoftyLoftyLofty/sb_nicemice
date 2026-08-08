@@ -1,10 +1,13 @@
 {
 	"objectName" : "nicemice_techstation",
-	"colonyTags" : ["nicemice"],
+	"colonyTags" : ["nicemice","maus"],
 	"printable" : false,
 	"rarity" : "Common",
 	
 	"vanillaInteractAction" : "OpenAiInterface",
+	
+	//if this is set to true (in Tiled via parameters) then the script won't do anything
+	"npcMode" : false,
 	
 	//custom SAIL integration
 		"interactAction" : "ScriptPane",

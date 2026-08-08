@@ -6,7 +6,7 @@
   "rarity" : "Legendary",
   "description" : "These whips are only issued to the most virtuous and merciful M.A.U.S. officers.",
   "shortdescription" : "Gentle Reminder",
-  "tooltipKind" : "sword",
+  "tooltipKind" : "base",
   "category" : "whip",
   "twoHanded" : true,
   "itemTags" : ["weapon", "melee", "whip"],
