@@ -4,7 +4,7 @@
   "properties" : {
   },
   "spacing" : 0,
-  "tilecount" : 17,
+  "tilecount" : 19,
   "tileheight" : 80,
   "tileproperties" : {
     "0" : {
@@ -125,6 +125,20 @@
       "imagePositionY" : "0",
       "object" : "nicemice_shippingcontainer",
       "tilesetDirection" : "right"
+    },
+	"17" : {
+      "//description" : "M.A.U.S. Insignia Plate",
+      "imagePositionX" : "-40",
+      "imagePositionY" : "-32",
+      "object" : "nicemice_maus_insigniaplate",
+      "tilesetDirection" : "right"
+    },
+	"18" : {
+      "//description" : "Nicemice Decorative Captains Chair",
+      "imagePositionX" : "-16",
+      "imagePositionY" : "0",
+      "object" : "nicemice_captainschair_decorative",
+      "tilesetDirection" : "right"
     }
   },
   "tiles" : {
@@ -178,6 +192,12 @@
     },
 	"16" : {
       "image" : "../objects/nicemice/nicemice_shippingcontainer/tiled.png"
+    },
+	"17" : {
+      "image" : "../objects/nicemice/decorative/nicemice_maus_insigniaplate/tiled.png"
+    },
+	"18" : {
+      "image" : "../objects/nicemice/ship/nicemice_captainschair/tiledred.png"
     }
   },
   "tilewidth" : 8
