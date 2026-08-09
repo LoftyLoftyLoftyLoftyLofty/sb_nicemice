@@ -1,0 +1,33 @@
+{
+  "objectName" : "nicemice_maus_insigniaplate",
+  "colonyTags" : ["nicemice","maus"],
+  "rarity" : "Rare",
+  "category" : "decorative",
+  "price" : 777,
+
+  "description" : "The M.A.U.S. insignia emblazoned on an armored plate.",
+  "shortdescription" : "M.A.U.S. Insignia Plate",
+  "race" : "nicemice",
+
+  "apexDescription" : "Organizational branding.",
+  "avianDescription" : "I wonder what it stands for?",
+  "floranDescription" : "Food sssymbol.",
+  "glitchDescription" : "Hesitant. Is this organization benevolent?",
+  "humanDescription" : "Everybody gets a cool logo these days.",
+  "hylotlDescription" : "This logo design is both intimidating and direct. I don't like it.",
+  "novakidDescription" : "Talkin' the talk's a whole lot easier than walkin' the walk, pardner.",
+  "nicemiceDescription" : "Ze M.A.U.S. insignia. Zalut!",
+
+  "inventoryIcon" : "nicemice_maus_insigniaplateicon.png",
+  "orientations" : [
+    {
+      "image" : "nicemice_maus_insigniaplate.png",
+      "imagePosition" : [-40, -32],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+    }
+  ]
+}
