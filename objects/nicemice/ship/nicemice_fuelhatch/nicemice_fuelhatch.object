@@ -41,7 +41,7 @@
 
   "itemTags" : [ "newfuelhatch" ],
 
-  "scripts" : ["/stagehands/radiomessage.lua"],
+  "scripts" : ["/objects/nicemice/ship/nicemice_fuelhatch/setworldfuel.lua"],
   "scriptDelta" : 30,
   "broadcastArea" : [-5, -5, 5, 5],
   "radioMessage" : "fuel"
