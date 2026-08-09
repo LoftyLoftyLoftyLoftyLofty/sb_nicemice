@@ -1,0 +1,7 @@
+{
+  "type" : "nicemice_apply_breathable_atmosphere",
+  "keepAlive" : true,
+
+  "scripts" : ["/stagehands/nicemice_apply_breathable_atmosphere.lua"],
+  "scriptDelta" : 10
+}

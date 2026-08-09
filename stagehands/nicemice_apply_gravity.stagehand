@@ -1,0 +1,7 @@
+{
+  "type" : "nicemice_apply_gravity",
+  "keepAlive" : true,
+
+  "scripts" : ["/stagehands/nicemice_apply_gravity.lua"],
+  "scriptDelta" : 10
+}
