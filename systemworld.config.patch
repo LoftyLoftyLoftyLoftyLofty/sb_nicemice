@@ -2,6 +2,6 @@
   {
     "op": "add",
     "path": "/objectSpawnPool/-",
-    "value": [0.025, "nicemice_cargoship"]
+    "value": [0.0375, "nicemice_cargoship"]
   }
 ]
