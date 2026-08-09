@@ -133,16 +133,6 @@
 					{ "pool" : "spaceWeapon" },
 					{ "pool" : "nicemice_cargoship_shippingcontainer_junk" },
 					{ "pool" : "spaceChestTreasure" }
-				],
-				"pool" : 
-				[
-					{ "weight" : 0.5, "pool" : "spaceChestTreasure" },
-					{ "weight" : 0.5, "pool" : "nicemice_cargoship_shippingcontainer_junk" }
-				],
-				"poolRounds" : 
-				[
-					[0.5, 1],
-					[0.5, 2]
 				]
 			}
 		]
