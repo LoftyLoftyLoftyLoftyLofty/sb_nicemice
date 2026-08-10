@@ -25,7 +25,7 @@
   "orientations" : [
     {
       "direction" : "right",
-	  "metaBoundBox" : [0, 0, 300, 150],
+	  "metaBoundBox" : [-200, -50, 400, 150],
 	  "renderLayer" : "BackgroundOverlay",
 	  "imageLayers" : 
 	  [ 
