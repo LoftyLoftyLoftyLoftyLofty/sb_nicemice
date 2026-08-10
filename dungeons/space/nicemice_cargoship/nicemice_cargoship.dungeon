@@ -24,7 +24,7 @@
       "markDungeonId" : false
     },
 
-    // COCKPIT
+    // PRIMARY STRUCTURE
     {
       "name" : "nicemice_cargoship_base",
       "rules" : [
@@ -32,6 +32,17 @@
       ],
       "def" : [ "tmx", "nicemice_cargoship_base.json" ],
       "chance" : 0
+    },
+	
+	// CARGO HOLD VARIATIONS
+    {
+      "name" : "nicemice_cargoship_cargohold_0",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+		[ "ignorePartMaximumRule" ]
+      ],
+      "def" : [ "tmx", "nicemice_cargoship_cargohold_0.json" ],
+      "chance" : 1
     }
   ]
 }
