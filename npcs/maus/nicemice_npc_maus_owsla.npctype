@@ -113,14 +113,14 @@
 						"chest" :
 						[
 							{ 
-								"name" : "nicemice_jumpsuitchest_dyeable",
+								"name" : "nicemicetier1chest",
 								"parameters" : { "colorIndex" : 7 }	 
 							}
 						],
 						"legs" :
 						[
 							{ 
-								"name" : "nicemice_jumpsuitlegs_dyeable",
+								"name" : "nicemicetier1legs",
 								"parameters" : { "colorIndex" : 7 }	 
 							}
 						],
