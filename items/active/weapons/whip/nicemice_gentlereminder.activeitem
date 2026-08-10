@@ -54,7 +54,7 @@
     "projectileType" : "nicemice_whipcrack"
   },
 
-  "altAbilityType" : "energyorb",
+  "altAbilityType" : "nicemice_redenergyorb",
 
   "builder" : "/items/buildscripts/buildwhip.lua"
 }

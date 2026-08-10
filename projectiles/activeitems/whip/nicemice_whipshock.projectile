@@ -1,0 +1,18 @@
+{
+  "projectileName" : "nicemice_whipshock",
+  "image" : "nicemice_whipshock.png",
+  "physics" : "gravitybomb",
+  "animationCycle" : 0.75,
+  "frameNumber" : 11,
+  "power" : 50,
+  "speed" : 50,
+  "knockback" : 40,
+  "knockbackDirectional" : true,
+  "timeToLive" : 0.75,
+  "bounces" : 5,
+  "damagePoly" : [ [-18, 0], [-12, -12], [0, -18], [12, -12], [18, 0], [12, 12], [0, 18], [-12, 12] ],
+  "piercing" : true,
+  "lightColor" : [255, 183, 183],
+  "emitters" : [ "nicemice_redswoosh" ],
+  "damageKind" : "plasma"
+}

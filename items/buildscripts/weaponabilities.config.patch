@@ -1,0 +1,7 @@
+[
+	{
+		"op" : "add",
+		"path" : "/nicemice_redenergyorb",
+		"value" : "/items/active/weapons/whip/abilities/nicemice_redenergyorb.weaponability"
+	}
+]

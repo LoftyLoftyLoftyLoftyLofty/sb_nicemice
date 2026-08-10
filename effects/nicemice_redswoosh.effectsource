@@ -1,0 +1,24 @@
+{
+  "kind" : "nicemice_redswoosh",
+  "location" : "mouth",
+  "definition" : {
+    "duration" : 0.01,
+    "loops" : true,
+    "start" : {
+      "particles" : [
+        [ "nicemice_redswoosh1" ], [ "nicemice_redswoosh2" ]
+      ],
+      "sounds" : [ [ ] ]
+    },
+    "particles" : [
+      [ "nicemice_redswoosh1" ], [ "nicemice_redswoosh1" ], [ "nicemice_redswoosh2" ], [ "nicemice_redswoosh2" ], [ "nicemice_redswoosh2" ]
+    ],
+    "sounds" : [ [ ] ],
+    "stop" : {
+      "particles" : [
+        [ "nicemice_redswoosh1" ], [ "nicemice_redswoosh2" ], [ "nicemice_redswoosh2" ]
+      ],
+      "sounds" : [ [ ] ]
+    }
+  }
+}
