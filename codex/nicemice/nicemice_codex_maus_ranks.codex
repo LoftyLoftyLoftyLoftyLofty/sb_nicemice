@@ -1,0 +1,65 @@
+{
+  "id" : "nicemice_codex_maus_ranks",
+  "title" : "M.A.U.S. Ranks and Roles",
+  "description" : "Documentation on the M.A.U.S. military ranks and organizational structure.",
+  "icon" : "nicemice_codex_maus_ranks.png",
+  
+  "contentPages" : [
+"^#ff8888;M.A.U.S. Ranks and Roles^reset;
+
+M.A.U.S. is organized explicitly around the idea of overlapping duties performed in parallel. Ranks are awarded on basis of field merit, and are not mutually exclusive.
+
+Higher-ranking personnel are expected to lead from the front, and M.A.U.S. is one of the few military organizations that proactively polices cowardice within its ranks.
+
+^#88CC88;>>",
+
+"^#ff8888;M.A.U.S. Ranks and Roles^reset;
+
+Although specific role titles may vary, M.A.U.S. fleet personnel generally fall into one of eight categories:
+- ^red;Staff^reset;
+- ^yellow;Cargo & Logistics^reset;
+- ^orange;Engineering^reset;
+- ^#884488;Mechanized Support^reset;
+- Medical
+- ^#776655;Quartermastery^reset;
+- ^green;Domestication^reset;
+- ^cyan;Fleet Captains^reset;
+
+^#88CC88;>>",
+
+"^#ff8888;M.A.U.S. Ranks and Roles^reset;
+
+Staff have generalist roles, and will typically perform maintenance tasks.
+
+Cargo & Logistics specialists handle shipping, loading, and unloading.
+
+Engineers maintain the ship's software-centric systems.
+
+Mechanics maintain the ship's hardware-centric systems.
+
+^#88CC88;>>",
+
+"^#ff8888;M.A.U.S. Ranks and Roles^reset;
+
+Medics specialize in keeping the crew healthy, in and out of combat.
+
+Quartermasters maintain the ship's manifest and inventory.
+
+Domestication staff specialize in neutralizing hostile threats.
+
+Fleet Captains function as negotiators, leaders, and liasons.
+
+^#88CC88;>>",
+
+"^#ff8888;M.A.U.S. Ranks and Roles^reset;
+
+Specializations are usually denoted by uniform color, but many roles are cross-disciplinary in nature.
+
+It's common, for example, for mechanics to have engineering experience and share engine or weapon system maintenance with their engineer peers."
+
+  ],
+    "itemConfig" : {
+    "rarity" : "Common",
+    "price" : 25
+  }
+}
