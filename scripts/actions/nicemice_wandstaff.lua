@@ -3,8 +3,7 @@ require "/scripts/util.lua"
 
 -- Tracing helper, gated per-node so it costs nothing when debug is off.
 local function trace(enabled, text)
-  return
-  --if enabled then sb.logInfo("[nicemice " .. tostring(entity.id()) .. "] " .. text) end
+  -- if enabled then sb.logInfo("[nicemice " .. tostring(entity.id()) .. "] " .. text) end
 end
 
 -- root.itemConfig() re-runs the item's build script on every call, and ability
@@ -57,12 +56,22 @@ end
 -- separate item when a one-handed primary leaves the alt slot free to hold one
 -- -- which is why reading world.entityHandItem(id, "alt") found nothing for our
 -- two-handed staves and every alt-hand branch failed.
-local function handItem(hand)
-  local primary = self.primary
+--
+-- sheathed reads the stowed pair of slots instead. Out of combat that is where
+-- the staff actually is: an NPC that has never drawn a weapon has its gear in
+-- sheathedprimary/sheathedalt and nothing in hand, so a support behavior that
+-- wants to decide whether drawing is worth it has to be able to look there.
+local function handItem(hand, sheathed)
+  local primary, alt
+  if sheathed then
+    primary, alt = self.sheathedPrimary, self.sheathedAlt
+  else
+    primary, alt = self.primary, self.alt
+  end
+
   if hand ~= "alt" then return primary end
 
   if not itemField(itemConfigFor(primary), "twoHanded") then
-    local alt = self.alt
     if alt ~= nil and alt.name ~= nil and alt.name ~= "" then return alt end
   end
   return primary
@@ -75,8 +84,8 @@ end
 -- energyUsageFactor) and fold them into config. Preferring parameters here
 -- returns that factor bag, which has no npcIntent, so every ability silently
 -- resolved as "harmful" and heal/buff staves fell through to the attack branch.
-local function handAbility(hand)
-  local itemConfig = itemConfigFor(handItem(hand))
+local function handAbility(hand, sheathed)
+  local itemConfig = itemConfigFor(handItem(hand, sheathed))
   if itemConfig == nil or itemConfig.config == nil then return nil end
   return itemConfig.config[(hand == "alt") and "altAbility" or "primaryAbility"]
 end
@@ -87,22 +96,24 @@ end
 -- param hand -- "primary" or "alt"
 -- param margin -- pulled off the ability's own cast range
 -- param fallbackRange -- used when an ability declares no cast range
+-- param sheathed -- read the stowed slots rather than what is in hand
 -- param debug
 -- output intent
 -- output range
 function nicemice_resolveAbilityIntent(args, board)
   if args.hand == nil then return false end
 
-  local item = handItem(args.hand)
-  local ability = handAbility(args.hand)
+  local where = args.sheathed and "sheathed " or ""
+  local item = handItem(args.hand, args.sheathed)
+  local ability = handAbility(args.hand, args.sheathed)
 
   if ability == nil then
-    trace(args.debug, args.hand .. " ability: none on "
+    trace(args.debug, where .. args.hand .. " ability: none on "
       .. tostring(item and item.name))
     return false
   end
   if ability.npcDoNotUse then
-    trace(args.debug, args.hand .. " ability on " .. tostring(item and item.name)
+    trace(args.debug, where .. args.hand .. " ability on " .. tostring(item and item.name)
       .. " is flagged npcDoNotUse")
     return false
   end
@@ -119,7 +130,7 @@ function nicemice_resolveAbilityIntent(args, board)
   -- An ability with no npcIntent is treated as harmful, which is how an
   -- unpatched .weaponability turns a healing staff into an attack. Say so.
   local intent = ability.npcIntent
-  trace(args.debug, args.hand .. " ability on " .. tostring(item and item.name)
+  trace(args.debug, where .. args.hand .. " ability on " .. tostring(item and item.name)
     .. ": npcIntent=" .. tostring(intent) .. (intent == nil and " (DEFAULTING TO harmful)" or "")
     .. " castRange=" .. tostring(declaredRange) .. " -> " .. tostring(range))
 
@@ -251,9 +262,55 @@ function nicemice_resolveHealTarget(args, board)
   return true, {entity = best, position = world.entityPosition(best)}
 end
 
+-- A buff effectzone is placed once and then lives on its own: the projectile
+-- sits where it landed for its whole timeToLive, buffing anyone standing in it.
+-- Recasting before then is not just wasted energy -- EffectZone:createProjectile
+-- kills the previous zone before spawning the new one, so a medic that re-picks
+-- the same nearest ally every cycle spends the fight tearing down and rebuilding
+-- one buff on one ally and never covers anybody else.
+--
+-- Keyed by entity id; the value is the world.time() that ally is worth casting
+-- on again. Pruned on every scan so ids of dead allies do not accumulate.
+local buffCooldowns = {}
+
+local function pruneBuffCooldowns()
+  local now = world.time()
+  for candidate, readyAt in pairs(buffCooldowns) do
+    if readyAt <= now or not world.entityExists(candidate) then
+      buffCooldowns[candidate] = nil
+    end
+  end
+end
+
+local function buffCooldownRemaining(candidate)
+  local readyAt = buffCooldowns[candidate]
+  if readyAt == nil then return 0 end
+  return math.max(readyAt - world.time(), 0)
+end
+
+-- How long the zone this hand casts will stand once it is placed. The ability
+-- names a projectileType and may override its timeToLive in projectileParameters.
+local function zoneLifetime(ability)
+  if ability == nil then return nil end
+
+  local overrides = ability.projectileParameters or {}
+  if overrides.timeToLive ~= nil then return overrides.timeToLive end
+  if ability.projectileType == nil then return nil end
+
+  -- An ability may name a projectile that does not exist; root throws rather
+  -- than returning nil, and a missing lifetime is not worth killing the tree.
+  local ok, projectileConfig = pcall(root.projectileConfig, ability.projectileType)
+  if not ok or projectileConfig == nil then return nil end
+  return projectileConfig.timeToLive
+end
+
 -- Combat-gated ally scan for buffs. Caller is responsible for gating
 -- this behind an active combat target so NPCs don't buff each other
 -- while idle.
+--
+-- Allies whose zone is still standing are skipped, so a second ally gets the
+-- next cast and a lone ally means no target at all until the zone runs out.
+-- nicemice_markBuffed is what puts an ally on that cooldown.
 --
 -- param range
 -- param requireSight
@@ -262,6 +319,8 @@ end
 -- output position
 function nicemice_resolveBuffTarget(args, board)
   if args.range == nil then return false end
+
+  pruneBuffCooldowns()
 
   local selfPosition, candidates = nicemice_allyCandidates(args.range)
   trace(args.debug, "buff scan range=" .. tostring(args.range)
@@ -274,14 +333,17 @@ function nicemice_resolveBuffTarget(args, board)
     local sight = nicemice_hasSightOf(candidate, args.requireSight)
     local candidatePosition = world.entityPosition(candidate)
     local distance = candidatePosition and world.magnitude(selfPosition, candidatePosition)
+    local cooling = buffCooldownRemaining(candidate)
 
     trace(args.debug, "  candidate=" .. tostring(candidate)
       .. " team=" .. describeTeam(teamOf(candidate))
       .. " ally=" .. tostring(ally)
       .. " sight=" .. tostring(sight)
-      .. " distance=" .. tostring(distance))
+      .. " distance=" .. tostring(distance)
+      .. " zoneStandingFor=" .. tostring(cooling))
 
-    if candidate ~= entity.id() and ally and sight and distance ~= nil and distance < bestDistance then
+    if candidate ~= entity.id() and ally and sight and cooling == 0
+        and distance ~= nil and distance < bestDistance then
       best, bestDistance = candidate, distance
     end
   end
@@ -292,6 +354,28 @@ function nicemice_resolveBuffTarget(args, board)
   end
   trace(args.debug, "  buff target=" .. tostring(best) .. " distance=" .. tostring(bestDistance))
   return true, {entity = best, position = world.entityPosition(best)}
+end
+
+-- Record that we have just dropped a buff zone on this ally, so
+-- nicemice_resolveBuffTarget passes over them until the zone expires.
+--
+-- Marked at cast time rather than on a successful discharge: we cannot see from
+-- here whether the discharge took, and skipping an ally we may have covered is
+-- cheaper than the recast loop this exists to stop -- a missed cast just comes
+-- back round one interval later.
+--
+-- param hand -- whose ability's zone lifetime sets the interval
+-- param entity
+-- param interval -- fallback when the ability names no zone we can measure
+-- param debug
+function nicemice_markBuffed(args, board)
+  if args.entity == nil then return false end
+
+  local lifetime = zoneLifetime(handAbility(args.hand)) or args.interval or 0
+  buffCooldowns[args.entity] = world.time() + lifetime
+  trace(args.debug, "buffed " .. tostring(args.entity)
+    .. ", skipping them for " .. tostring(lifetime) .. "s")
+  return true
 end
 
 -- Pass-through tracing node: drop it anywhere in a sequence to see that the
@@ -305,13 +389,13 @@ end
 -- param string
 -- param bool
 function nicemice_debugLog(args, board)
-  local parts = {"[nicemice " .. tostring(entity.id()) .. "] " .. tostring(args.text or "")}
-  for _, key in ipairs({"entity", "number", "position", "string", "bool"}) do
-    if args[key] ~= nil then
-      table.insert(parts, key .. "=" .. sb.printJson(args[key]))
-    end
-  end
-  sb.logInfo(table.concat(parts, " "))
+  -- local parts = {"[nicemice " .. tostring(entity.id()) .. "] " .. tostring(args.text or "")}
+  -- for _, key in ipairs({"entity", "number", "position", "string", "bool"}) do
+  --   if args[key] ~= nil then
+  --     table.insert(parts, key .. "=" .. sb.printJson(args[key]))
+  --   end
+  -- end
+  -- sb.logInfo(table.concat(parts, " "))
   return true
 end
 
@@ -373,27 +457,50 @@ end
 -- exist, so clamping after discharge is what stops projectiles reaching past
 -- the cast range.
 --
+-- minRange is the floor the walk-in is allowed to reach, and it is what stops a
+-- harmful zone being dropped on the caster. The walk-in above will happily
+-- collapse a 25-tile cast down to a tile away when terrain crosses the ray the
+-- whole distance -- and entityInSight can pass while it does, because sight is
+-- an eye-level check and lineTileCollision here runs from entity.position(), at
+-- the feet. For a healing zone landing on our own feet is merely useless. For a
+-- slow/push/forcecage zone it means the NPC standing in its own field, which is
+-- what "the guard keeps slowing itself" looks like.
+--
+-- So: when a caller sets minRange we refuse the cast outright rather than place
+-- it too close, returning false so the branch fails and nothing discharges.
+-- Callers that leave minRange unset (heal, buff) keep the old always-succeed
+-- behaviour -- landing a heal at your own feet is a legitimate self-heal.
+--
 -- param range
+-- param minRange -- nearest we will place a cast to ourselves; 0/unset to allow any
 function nicemice_clampAimPosition(args, board)
   if args.range == nil then return true end
 
+  local minRange = args.minRange or 0
   local selfPosition = entity.position()
   -- world.distance is wrap-safe; plain subtraction is not, and staff casts
   -- happen at ranges where a world seam between caster and target matters.
   local delta = world.distance(npc.aimPosition(), selfPosition)
   local distance = vec2.mag(delta)
-  if distance == 0 then return true end
+  if distance == 0 then return minRange == 0 end
 
   local heading = vec2.norm(delta)
   distance = math.min(distance, args.range)
 
   -- Walk the aim in until the line from us to it is clear. Without this an
   -- otherwise in-range cast is still refused whenever terrain crosses the ray.
+  local floor = math.max(minRange, 1)
   local aimPosition = vec2.add(selfPosition, vec2.mul(heading, distance))
   local step = distance / 8
-  while distance > 1 and world.lineTileCollision(selfPosition, aimPosition) do
+  while distance > floor and world.lineTileCollision(selfPosition, aimPosition) do
     distance = distance - step
     aimPosition = vec2.add(selfPosition, vec2.mul(heading, distance))
+  end
+
+  -- Ran out of room: every point on the ray we are allowed to use is walled off.
+  if minRange > 0 and (distance < minRange
+      or world.lineTileCollision(selfPosition, aimPosition)) then
+    return false
   end
 
   npc.setAimPosition(aimPosition)

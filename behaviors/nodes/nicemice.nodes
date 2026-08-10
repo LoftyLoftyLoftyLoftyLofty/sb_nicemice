@@ -148,6 +148,7 @@
 			"hand": {"type": "string", "value": "primary"},
 			"margin": {"type": "number", "value": 5},
 			"fallbackRange": {"type": "number", "value": 25},
+			"sheathed": {"type": "bool", "value": false},
 			"debug": {"type": "bool", "value": false}
 		},
 		"category": "nicemice",
@@ -241,6 +242,22 @@
 			"position": {"type": "position", "key": null}
 		}
 	},
+	"nicemice_markBuffed" :
+	{
+		"type": "action",
+		"name": "nicemice_markBuffed",
+		"title": "nicemice_markBuffed",
+		"properties":
+		{
+			"hand": {"type": "string", "value": "primary"},
+			"entity": {"type": "entity", "value": null},
+			"interval": {"type": "number", "value": 30},
+			"debug": {"type": "bool", "value": false}
+		},
+		"category": "nicemice",
+		"script": "/scripts/actions/nicemice_wandstaff.lua",
+		"output": {}
+	},
 	"nicemice_npccombat-wandstaff" :
 	{
 		"type": "module",
@@ -259,7 +276,9 @@
 			"kiteRunThreshold": {"type": "number", "value": 6},
 			"kiteStepTime": {"type": "number", "value": 0.25},
 			"wizardryCooldown_primary": {"type": "number", "value": 2.5},
-			"wizardryCooldown_alt": {"type": "number", "value": 2.5}
+			"wizardryCooldown_alt": {"type": "number", "value": 2.5},
+			"rebuffInterval": {"type": "number", "value": 30},
+			"harmfulCastStandoff": {"type": "number", "value": 8}
 		},
 		"category": "nicemice",
 		"behavior": "/behaviors/npc/combat/nicemice_npccombat-wandstaff.behavior",
@@ -358,7 +377,8 @@
 		"title": "nicemice_clampAimPosition",
 		"properties": 
 		{
-			"range": {"type": "number", "value" : 20}
+			"range": {"type": "number", "value" : 20},
+			"minRange": {"type": "number", "value" : 0}
 		},
 		"category": "nicemice",
 		"script": "/scripts/actions/nicemice_wandstaff.lua",
