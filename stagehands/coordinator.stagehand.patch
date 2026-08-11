@@ -1,3 +1,4 @@
+//if anyone cares the 'forceMoveRange' just determines whether or not they run to catch up vs walking
 [
   {
     "op": "add",
@@ -12,7 +13,7 @@
     "path": "/npcCombat/rangedWeaponRanges/nicemice_generatedweapon_plasmapistol",
     "value": {
       "minRange" : 12,
-      "maxRange" : 25,
+      "maxRange" : 35,
       "forceMoveRange" : 20
     }
   },
