@@ -1,7 +1,10 @@
 {
   "objectName" : "nicemice_captainschair_decorative",
   "colonyTags" : ["nicemice"],
-  "itemTags" : ["captainschair"],
+  
+  //Nicemice CREW npcs will attempt to walk away from the captain's chair so they aren't in your way
+  "itemTags" : ["captainschair", "avoidMe-goLeft"],
+  
   "printable" : false,
   "rarity" : "Common",
   "objectType" : "loungeable",
