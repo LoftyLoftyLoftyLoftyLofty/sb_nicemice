@@ -36,7 +36,7 @@
         "roleDescription" : {
           "default" : {
             "default" : [
-              "I'll keep your enginez in good zhape. Thruzt velozity iz up by twenty-five perzent!"
+              "I'll keep your enginez in good zhape. Thruzt velozity iz up by tventy-five perzent!"
             ]
           }
         }
@@ -51,7 +51,7 @@
             "chest" : [ { "name" : "nicemice_jumpsuitchest_dyeable" } ],
             "legs" : [ { "name" : "nicemice_jumpsuitlegs_dyeable" } ],
 			"back" : [ { "name" : "nicemice_tail_mouse" } ],
-            "sheathedprimary" : [ "npcmachinepistol" ]
+            "sheathedprimary" : [ "nicemice_generatedweapon_plasmapistol" ]
           }
         ] ]
     ]

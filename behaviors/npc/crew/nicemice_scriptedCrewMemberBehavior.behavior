@@ -6,7 +6,8 @@
     "/scripts/actions/time.lua",
     "/scripts/actions/movement.lua",
 	"/npcs/nicemice_npcHooks.lua",
-	"/npcs/crew/nicemice_scriptedCrewMemberBehavior.lua"
+	"/npcs/crew/nicemice_scriptedCrewMemberBehavior.lua",
+    "/scripts/actions/nicemice_resolveGuardBehavior.lua"
   ],
   "parameters": {
     "play": true
@@ -24,10 +25,22 @@
 		"parameters": {}
 	  },
 	  {
+	  	"title": "nicemice_resolveGuardBehavior",
+	  	"type": "action",
+	  	"name": "nicemice_resolveGuardBehavior",
+	  	"parameters": {
+	  		"baseBehavior": {"value": "nicemice_crewmember"},
+	  		"whipBehavior": {"value": "nicemice_crewmember-whip"},
+	  		"wandstaffBehavior": {"value": "nicemice_crewmember-wandstaff"},
+	  		"rangedBehavior": {"value": "nicemice_crewmember-ranged"}
+	  	},
+	  	"output": { "behavior": "resolvedCrewBehavior" }
+	  },
+	  {
 	    "title": "nicemice_scriptedCrewMemberBehavior",
 		"type": "action",
 		"name": "nicemice_scriptedCrewMemberBehavior",
-		"parameters": { "behavior" : { "value" : "nicemice_crewmember"} }
+		"parameters": { "behavior" : { "key" : "resolvedCrewBehavior"} }
 	  }
 	]
   }

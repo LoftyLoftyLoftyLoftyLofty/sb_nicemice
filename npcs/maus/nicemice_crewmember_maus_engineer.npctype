@@ -1,0 +1,94 @@
+{
+  "type" : "nicemice_crewmember_maus_engineer",
+  "baseType" : "nicemice_crewmemberengineer",
+
+  //  M.A.U.S. personnel graduate into this type when recruited -- see
+  //  questGenerator.graduation.nextNpcType in nicemice_npc_maus_personnel.npctype.
+  //  Everything not listed here is inherited from nicemice_crewmember, which
+  //  supplies behavior (nicemice_scriptedCrewMemberBehavior), recruitable,
+  //  ranks, uniformSlots, persistent and damageTeamType.
+
+  "levelVariance" : [6, 6],
+  "matchColorIndices" : true,
+
+  "scriptConfig" : {
+    "behaviorConfig" : {
+      //  M.A.U.S. is military; the generic villager greetings are civilian
+      "greetingChance" : 0.0,
+
+      //  hide weapon when not in use. The weapon resolver checks the sheathed
+      //  slot as well as the drawn one, so holstering does not cost the mouse
+      //  its weapon-specific combat behavior.
+      "emptyHands" : true
+    },
+
+    "crew" : {
+      "role" : {
+        "type" : "engineer",
+        "name" : "M.A.U.S. Engineer",
+        "field" : "Engineerink",
+
+        //  recruitable.dyeUniformItem() stamps this onto every uniform item's
+        //  colorIndex at init, overriding whatever the mouse wore before. With
+        //  one graduation npctype per uniform that is the intended behaviour:
+        //  this index and defaultUniform below together define the outfit.
+        "uniformColorIndex" : 5,
+		"benefits" : [
+          {
+            "type" : "ShipUpgradeBenefit",
+            "property" : "shipSpeed",
+            "value" : 3.75
+          }
+        ]
+      },
+
+      //  officer dress rather than the standard jumpsuit the base type uses
+      "defaultUniform" : {
+        "head" : "nicemice_invisiblehead",
+        "chest" : "nicemice_maus_officerchest",
+        "legs" : "nicemice_maus_officerlegs",
+        "back" : "nicemice_tail_mouse"
+      }
+    },
+
+    "dialog" : {
+      "crewmember" : {
+        "roleDescription" : {
+          "default" : {
+            "default" : [
+              "Ze ship iz in good pawz, Adjutant."
+            ]
+          }
+        }
+      }
+    }
+  },
+
+  "items" : {
+    "nicemice_npc" : [
+      [
+        0,
+        [
+          //  officer uniform
+          {
+            "head" : [ { "name" : "nicemice_invisiblehead" } ],
+            "back" : [ { "name" : "nicemice_tail_mouse" } ],
+            "chest" : [
+              {
+                "name" : "nicemice_maus_officerchest",
+                "parameters" : { "colorIndex" : 5 }
+              }
+            ],
+            "legs" : [
+              {
+                "name" : "nicemice_maus_officerlegs",
+                "parameters" : { "colorIndex" : 5 }
+              }
+            ],
+            "sheathedprimary" : [ "nicemice_generatedweapon_plasmapistol" ]
+          }
+        ]
+      ]
+    ]
+  }
+}

@@ -1,6 +1,6 @@
 {
-	"type" : "nicemice_npc_maus_engineer",
-	"baseType" : "nicemice_npc_maus_personnel",
+	"type" : "nicemice_npc_maus_personnel_recruitable",
+	"baseType" : "nicemice_villager",
 
 	"levelVariance" : [6, 6],
 	"persistent" : true,
@@ -27,7 +27,7 @@
 		},
 		"dialog" : 
 		{
-			"converse" : "/dialog/nicemice_maus_engineer.config:converse",
+			"converse" : "/dialog/nicemice_maus_personnel.config:converse",
 			
 			"accuse" : "/dialog/thief.config:accuse",
 			"alert" : "/dialog/thief.config:alert",
@@ -43,14 +43,14 @@
 		//M.A.U.S. Personnel are intended to stay with their ship, not join the player
 		"questGenerator" : 
 		{
-			"enableParticipation" : false,
+			"enableParticipation" : true,
 			
 			//The player can find M.A.U.S. spawners in space encounters though, and spawned M.A.U.S. npcs can be recruited
 			"graduation" : 
 			{
 				"nextNpcType" : 
 				[
-					[1, "nicemice_crewmember_maus_engineer"]
+					[1, "nicemice_crewmember_maus_personnel"]
 				]
 			}
 		}
@@ -64,6 +64,38 @@
 			[
 				0, 
 				[
+					// Ship Crew
+					//  Colors 0, 1
+					//  M.A.U.S. Red
+					//  Black
+					
+					// Medic
+					//  Colors 3
+					//  White
+					
+					// Engineering
+					//  Colors 5
+					
+					// Cargo Crew
+					//  Colors 6, 11
+					//  Yellow
+					//  Brown
+					
+					// Quartermaster
+					//  Colors 12
+					//  Copper
+					
+					// Mechanic
+					//  Colors 9, 13
+					//  Purple
+					//  Lilac
+					
+					// Officer
+					//  Colors 0, 1
+					//  MAUS Red
+					//  Black
+				
+					//ensign uniform
 					{
 						"head" : 
 						[
@@ -77,88 +109,24 @@
 								"name" : "nicemice_tail_mouse"							
 							}
 						],
-						
-						// Ship Crew
-						//  Colors 0, 1
-						//  M.A.U.S. Red
-						//  Black
-						
-						// Medic
-						//  Colors 3
-						//  White
-						
-						// Engineering
-						//  Colors 5
-						
-						// Cargo Crew
-						//  Colors 6, 11
-						//  Yellow
-						//  Brown
-						
-						// Quartermaster
-						//  Colors 12
-						//  Copper
-						
-						// Mechanic
-						//  Colors 9, 13
-						//  Purple
-						//  Lilac
-						
-						"chest" :
-						[
-							{ 
-								"name" : "nicemice_jumpsuitchest_dyeable",
-								"parameters" : { "colorIndex" : 5 }	 
-							}
-						],
-						"legs" :
-						[
-							{ 
-								"name" : "nicemice_jumpsuitlegs_dyeable",
-								"parameters" : { "colorIndex" : 5 }	 
-							}
-						],						
-						"sheathedprimary" : 
-						[ 
-							"nicemice_generatedweapon_plasmapistol"
-						]
-					},
-					{
-						"head" : 
-						[
-							{ 
-								"name" : "nicemice_invisiblehead"							
-							}
-						],
-						"back" : 
-						[
-							{ 
-								"name" : "nicemice_tail_mouse"							
-							}
-						],
-						
-						// Officer
-						//  Colors 5
-						//  Orange
 						
 						"chest" :
 						[
 							{ 
 								"name" : "nicemice_maus_officerchest",
-								"parameters" : { "colorIndex" : 5 }	 
+								"parameters" : { "colorIndex" : 1 }	 
 							}
 						],
 						"legs" :
 						[
 							{ 
 								"name" : "nicemice_maus_officerlegs",
-								"parameters" : { "colorIndex" : 5 }	 
+								"parameters" : { "colorIndex" : 1 }	 
 							}
 						],
-						
 						"sheathedprimary" : 
 						[ 
-							"nicemice_generatedweapon_plasmapistol"
+							"nicemice_generatedweapon_plasmapistol" 
 						]
 					}
 				] 

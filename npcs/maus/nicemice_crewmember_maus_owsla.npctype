@@ -1,0 +1,88 @@
+{
+  "type" : "nicemice_crewmember_maus_owsla",
+  "baseType" : "nicemice_crewmember",
+
+  //  M.A.U.S. personnel graduate into this type when recruited -- see
+  //  questGenerator.graduation.nextNpcType in nicemice_npc_maus_personnel.npctype.
+  //  Everything not listed here is inherited from nicemice_crewmember, which
+  //  supplies behavior (nicemice_scriptedCrewMemberBehavior), recruitable,
+  //  ranks, uniformSlots, persistent and damageTeamType.
+
+  "levelVariance" : [6, 6],
+  "matchColorIndices" : true,
+
+  "scriptConfig" : {
+    "behaviorConfig" : {
+      //  M.A.U.S. is military; the generic villager greetings are civilian
+      "greetingChance" : 0.0,
+
+      //  hide weapon when not in use. The weapon resolver checks the sheathed
+      //  slot as well as the drawn one, so holstering does not cost the mouse
+      //  its weapon-specific combat behavior.
+	  
+	  // DO NOT ENABLE THIS FOR CREW THAT ARE EXPECTED TO WIELD A CHARGE WEAPON / STAFF / WAND
+      "emptyHands" : false
+    },
+
+    "crew" : {
+      "role" : {
+        "type" : "soldier",
+        "name" : "M.A.U.S. Owsla",
+        "field" : "Zecurity",
+
+        //  recruitable.dyeUniformItem() stamps this onto every uniform item's
+        //  colorIndex at init, overriding whatever the mouse wore before. With
+        //  one graduation npctype per uniform that is the intended behaviour:
+        //  this index and defaultUniform below together define the outfit.
+        "uniformColorIndex" : 7
+      },
+
+      "defaultUniform" : {
+        "head" : "nicemicetier1head",
+        "chest" : "nicemicetier1chest",
+        "legs" : "nicemicetier1pants",
+        "back" : "nicemice_tail_mouse"
+      }
+    },
+
+    "dialog" : {
+      "crewmember" : {
+        "roleDescription" : {
+          "default" : {
+            "default" : [
+              "Ze ship iz in good pawz, Adjutant."
+            ]
+          }
+        }
+      }
+    }
+  },
+
+  "items" : {
+    "nicemice_npc" : [
+      [
+        0,
+        [
+          //  officer uniform
+          {
+            "head" : [ { "name" : "nicemicetier1head" } ],
+            "back" : [ { "name" : "nicemice_tail_mouse" } ],
+            "chest" : [
+              {
+                "name" : "nicemicetier1chest",
+                "parameters" : { "colorIndex" : 7 }
+              }
+            ],
+            "legs" : [
+              {
+                "name" : "nicemicetier1pants",
+                "parameters" : { "colorIndex" : 7 }
+              }
+            ],
+            "sheathedprimary" : [ "nicemice_generatedweapon_techstaff" ]
+          }
+        ]
+      ]
+    ]
+  }
+}

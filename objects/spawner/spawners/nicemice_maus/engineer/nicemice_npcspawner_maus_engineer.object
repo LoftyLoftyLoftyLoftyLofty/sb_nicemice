@@ -40,7 +40,7 @@
   "spawner" : {
     "searchRadius" : 32.0,
     "npcSpeciesOptions" : [ "nicemice_npc" ],
-    "npcTypeOptions" : [ "nicemice_npc_maus_engineer" ],
+    "npcTypeOptions" : [ "nicemice_npc_maus_engineer_recruitable" ],
     "npcParameterOptions" : [
       {
         "dropPools" : [ ],

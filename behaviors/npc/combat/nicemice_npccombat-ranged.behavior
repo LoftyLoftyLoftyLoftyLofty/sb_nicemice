@@ -1,5 +1,5 @@
 {
-  "name": "nicemice_npccombat-whip",
+  "name": "nicemice_npccombat-ranged",
   "description": "",
   "scripts": [
     "/scripts/actions/npc.lua",
@@ -14,7 +14,10 @@
     "title": "parallel",
     "type": "composite",
     "name": "parallel",
-    "parameters": { "fail": {"value": 1}, "success": {"value": -1} },
+    "parameters": {
+      "fail": {"value": 1},
+      "success": {"value": -1}
+    },
     "children": [
       {
         "title": "succeeder",
@@ -32,14 +35,24 @@
               "type": "decorator",
               "name": "inverter",
               "parameters": {},
-              "child": { "title": "hasMeleePrimary", "type": "action", "name": "hasMeleePrimary", "parameters": {} }
+              "child": {
+                "title": "hasMeleePrimary",
+                "type": "action",
+                "name": "hasMeleePrimary",
+                "parameters": {}
+              }
             },
             {
               "title": "inverter",
               "type": "decorator",
               "name": "inverter",
               "parameters": {},
-              "child": { "title": "hasRangedPrimary", "type": "action", "name": "hasRangedPrimary", "parameters": {} }
+              "child": {
+                "title": "hasRangedPrimary",
+                "type": "action",
+                "name": "hasRangedPrimary",
+                "parameters": {}
+              }
             },
             {
               "title": "selector",
@@ -47,11 +60,26 @@
               "name": "selector",
               "parameters": {},
               "children": [
-                { "title": "hasMeleeSheathed", "type": "action", "name": "hasMeleeSheathed", "parameters": {} },
-                { "title": "hasRangedSheathed", "type": "action", "name": "hasRangedSheathed", "parameters": {} }
+                {
+                  "title": "hasMeleeSheathed",
+                  "type": "action",
+                  "name": "hasMeleeSheathed",
+                  "parameters": {}
+                },
+                {
+                  "title": "hasRangedSheathed",
+                  "type": "action",
+                  "name": "hasRangedSheathed",
+                  "parameters": {}
+                }
               ]
             },
-            { "title": "swapItemSlots", "type": "action", "name": "swapItemSlots", "parameters": {} }
+            {
+              "title": "swapItemSlots",
+              "type": "action",
+              "name": "swapItemSlots",
+              "parameters": {}
+            }
           ]
         }
       },
@@ -59,7 +87,10 @@
         "title": "parallel",
         "type": "composite",
         "name": "parallel",
-        "parameters": { "fail": {"value": 1}, "success": {"value": -1} },
+        "parameters": {
+          "fail": {"value": 1},
+          "success": {"value": -1}
+        },
         "children": [
           {
             "title": "sequence",
@@ -84,33 +115,65 @@
                 "title": "isValidTarget",
                 "type": "action",
                 "name": "isValidTarget",
-                "parameters": { "entity": {"key": "target"} }
+                "parameters": {
+                  "entity": {"key": "target"}
+                }
               },
               {
                 "title": "controlEntity",
                 "type": "action",
                 "name": "controlEntity",
-                "parameters": { "entity": {"key": "target"} },
-                "output": { "entity": "combatTarget" }
+                "parameters": {
+                  "entity": {"key": "target"}
+                },
+                "output": {
+                  "entity": "combatTarget"
+                }
               },
-              { "title": "controlAggressive", "type": "action", "name": "controlAggressive", "parameters": {} }
+              {
+                "title": "controlAggressive",
+                "type": "action",
+                "name": "controlAggressive",
+                "parameters": {}
+              }
             ]
           },
           {
             "title": "parallel",
             "type": "composite",
             "name": "parallel",
-            "parameters": { "fail": {"value": -1}, "success": {"value": -1} },
+            "parameters": {
+              "fail": {"value": -1},
+              "success": {"value": -1}
+            },
             "children": [
               {
                 "title": "parallel",
                 "type": "composite",
                 "name": "parallel",
-                "parameters": { "fail": {"value": 1}, "success": {"value": -1} },
+                "parameters": {
+                  "fail": {"value": 1},
+                  "success": {"value": -1}
+                },
                 "children": [
-                  { "title": "hasShield", "type": "action", "name": "hasShield", "parameters": {} },
-                  { "title": "altFire", "type": "action", "name": "altFire", "parameters": {} },
-                  { "title": "runner", "type": "action", "name": "runner", "parameters": {} }
+                  {
+                    "title": "hasShield",
+                    "type": "action",
+                    "name": "hasShield",
+                    "parameters": {}
+                  },
+                  {
+                    "title": "altFire",
+                    "type": "action",
+                    "name": "altFire",
+                    "parameters": {}
+                  },
+                  {
+                    "title": "runner",
+                    "type": "action",
+                    "name": "runner",
+                    "parameters": {}
+                  }
                 ]
               },
               {
@@ -123,19 +186,34 @@
                     "title": "parallel",
                     "type": "composite",
                     "name": "parallel",
-                    "parameters": { "fail": {"value": 1}, "success": {"value": -1} },
+                    "parameters": {
+                      "fail": {"value": 1},
+                      "success": {"value": -1}
+                    },
                     "children": [
-                      { "title": "hasMeleePrimary", "type": "action", "name": "hasMeleePrimary", "parameters": {} },
+                      {
+                        "title": "hasMeleePrimary",
+                        "type": "action",
+                        "name": "hasMeleePrimary",
+                        "parameters": {}
+                      },
                       {
                         "title": "cooldown",
                         "type": "decorator",
                         "name": "cooldown",
-                        "parameters": { "cooldown": {"value": 2}, "onFail": {"value": true}, "onSuccess": {"value": false} },
+                        "parameters": {
+                          "cooldown": {"value": 2},
+                          "onFail": {"value": true},
+                          "onSuccess": {"value": false}
+                        },
                         "child": {
                           "title": "parallel",
                           "type": "composite",
                           "name": "parallel",
-                          "parameters": { "fail": {"value": 1}, "success": {"value": -1} },
+                          "parameters": {
+                            "fail": {"value": 1},
+                            "success": {"value": -1}
+                          },
                           "children": [
                             {
                               "title": "task",
@@ -149,9 +227,9 @@
                               }
                             },
                             {
-                              "title": "NPC Melee Whip",
+                              "title": "NPC Melee",
                               "type": "module",
-                              "name": "nicemice_melee-whip",
+                              "name": "meleecombat",
                               "parameters": {}
                             }
                           ]
@@ -163,9 +241,17 @@
                     "title": "parallel",
                     "type": "composite",
                     "name": "parallel",
-                    "parameters": { "fail": {"value": 1}, "success": {"value": -1} },
+                    "parameters": {
+                      "fail": {"value": 1},
+                      "success": {"value": -1}
+                    },
                     "children": [
-                      { "title": "hasRangedPrimary", "type": "action", "name": "hasRangedPrimary", "parameters": {} },
+                      {
+                        "title": "hasRangedPrimary",
+                        "type": "action",
+                        "name": "hasRangedPrimary",
+                        "parameters": {}
+                      },
                       {
                         "title": "task",
                         "type": "action",
@@ -177,21 +263,36 @@
                           "taskId": {"value": "ranged"}
                         }
                       },
-                      { "title": "NPC Ranged", "type": "module", "name": "nicemice_rangedcombat", "parameters": {} }
+                      {
+                        "title": "NPC Ranged",
+                        "type": "module",
+                        "name": "nicemice_rangedcombat",
+                        "parameters": {}
+                      }
                     ]
                   },
                   {
                     "title": "optional",
                     "type": "decorator",
                     "name": "optional",
-                    "parameters": { "shouldRun": {"key": "<meleeStandby>"} },
+                    "parameters": {
+                      "shouldRun": {"key": "<meleeStandby>"}
+                    },
                     "child": {
                       "title": "parallel",
                       "type": "composite",
                       "name": "parallel",
-                      "parameters": { "fail": {"value": 1}, "success": {"value": -1} },
+                      "parameters": {
+                        "fail": {"value": 1},
+                        "success": {"value": -1}
+                      },
                       "children": [
-                        { "title": "hasMeleePrimary", "type": "action", "name": "hasMeleePrimary", "parameters": {} },
+                        {
+                          "title": "hasMeleePrimary",
+                          "type": "action",
+                          "name": "hasMeleePrimary",
+                          "parameters": {}
+                        },
                         {
                           "title": "task",
                           "type": "action",
@@ -203,11 +304,21 @@
                             "taskId": {"value": "meleeStandby"}
                           }
                         },
-                        { "title": "NPC Melee Standby", "type": "module", "name": "meleestandby", "parameters": {} }
+                        {
+                          "title": "NPC Melee Standby",
+                          "type": "module",
+                          "name": "meleestandby",
+                          "parameters": {}
+                        }
                       ]
                     }
                   },
-                  { "title": "runner", "type": "action", "name": "runner", "parameters": {} }
+                  {
+                    "title": "runner",
+                    "type": "action",
+                    "name": "runner",
+                    "parameters": {}
+                  }
                 ]
               }
             ]

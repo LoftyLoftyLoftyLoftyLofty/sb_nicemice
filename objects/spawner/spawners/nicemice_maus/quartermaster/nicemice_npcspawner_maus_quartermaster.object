@@ -40,7 +40,7 @@
   "spawner" : {
     "searchRadius" : 32.0,
     "npcSpeciesOptions" : [ "nicemice_npc" ],
-    "npcTypeOptions" : [ "nicemice_npc_maus_quartermaster" ],
+    "npcTypeOptions" : [ "nicemice_npc_maus_quartermaster_recruitable" ],
     "npcParameterOptions" : [
       {
         "dropPools" : [ ],

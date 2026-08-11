@@ -1,5 +1,5 @@
 {
-	"type" : "nicemice_npc_maus_engineer",
+	"type" : "nicemice_npc_maus_mechanic_recruitable",
 	"baseType" : "nicemice_npc_maus_personnel",
 
 	"levelVariance" : [6, 6],
@@ -27,7 +27,7 @@
 		},
 		"dialog" : 
 		{
-			"converse" : "/dialog/nicemice_maus_engineer.config:converse",
+			"converse" : "/dialog/nicemice_maus_mechanic.config:converse",
 			
 			"accuse" : "/dialog/thief.config:accuse",
 			"alert" : "/dialog/thief.config:alert",
@@ -43,14 +43,14 @@
 		//M.A.U.S. Personnel are intended to stay with their ship, not join the player
 		"questGenerator" : 
 		{
-			"enableParticipation" : false,
+			"enableParticipation" : true,
 			
 			//The player can find M.A.U.S. spawners in space encounters though, and spawned M.A.U.S. npcs can be recruited
 			"graduation" : 
 			{
 				"nextNpcType" : 
 				[
-					[1, "nicemice_crewmember_maus_engineer"]
+					[1, "nicemice_crewmember_maus_mechanic"]
 				]
 			}
 		}
@@ -108,19 +108,23 @@
 						[
 							{ 
 								"name" : "nicemice_jumpsuitchest_dyeable",
-								"parameters" : { "colorIndex" : 5 }	 
+								"parameters" : { "colorIndex" : [9, 13] }	 
 							}
 						],
 						"legs" :
 						[
 							{ 
 								"name" : "nicemice_jumpsuitlegs_dyeable",
-								"parameters" : { "colorIndex" : 5 }	 
+								"parameters" : { "colorIndex" : [9, 13] }	 
 							}
-						],						
+						],
 						"sheathedprimary" : 
 						[ 
-							"nicemice_generatedweapon_plasmapistol"
+							"npcassaultrifle" 
+						],
+						"sheathedsecondary" : 
+						[
+							"npcwrench"
 						]
 					},
 					{
@@ -138,27 +142,31 @@
 						],
 						
 						// Officer
-						//  Colors 5
-						//  Orange
+						//  Colors 9, 13
+						//  Purple
+						//  Lilac
 						
 						"chest" :
 						[
 							{ 
 								"name" : "nicemice_maus_officerchest",
-								"parameters" : { "colorIndex" : 5 }	 
+								"parameters" : { "colorIndex" : [9, 13] }	 
 							}
 						],
 						"legs" :
 						[
 							{ 
 								"name" : "nicemice_maus_officerlegs",
-								"parameters" : { "colorIndex" : 5 }	 
+								"parameters" : { "colorIndex" : [9, 13] }	 
 							}
 						],
-						
 						"sheathedprimary" : 
 						[ 
-							"nicemice_generatedweapon_plasmapistol"
+							"npcassaultrifle" 
+						],
+						"sheathedsecondary" : 
+						[
+							"npcwrench"
 						]
 					}
 				] 

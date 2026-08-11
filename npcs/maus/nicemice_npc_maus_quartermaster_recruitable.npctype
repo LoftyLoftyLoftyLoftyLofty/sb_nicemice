@@ -1,5 +1,5 @@
 {
-	"type" : "nicemice_npc_maus_engineer",
+	"type" : "nicemice_npc_maus_quartermaster_recruitable",
 	"baseType" : "nicemice_npc_maus_personnel",
 
 	"levelVariance" : [6, 6],
@@ -9,7 +9,7 @@
 
 	"scriptConfig" : 
 	{
-		"behavior" : "nicemice_scriptedGuardBehavior",
+		"behavior" : "nicemice_quartermaster",
 		"behaviorConfig" : 
 		{
 			//we don't want generic greetings here because some of those lines 
@@ -27,7 +27,16 @@
 		},
 		"dialog" : 
 		{
-			"converse" : "/dialog/nicemice_maus_engineer.config:converse",
+			"converse" : "/dialog/nicemice_maus_quartermaster.config:converse",
+			
+			"merchant" : 
+			{
+				"start" : "/dialog/merchant.config:merchantStart",
+				"end" : "/dialog/merchant.config:merchantEnd",
+				"follow" : "/dialog/merchant.config:follow",
+				"welcome" : "/dialog/merchant.config:welcome",
+				"tout" : "/dialog/merchant.config:tout"
+			},
 			
 			"accuse" : "/dialog/thief.config:accuse",
 			"alert" : "/dialog/thief.config:alert",
@@ -43,15 +52,38 @@
 		//M.A.U.S. Personnel are intended to stay with their ship, not join the player
 		"questGenerator" : 
 		{
-			"enableParticipation" : false,
+			"enableParticipation" : true,
 			
 			//The player can find M.A.U.S. spawners in space encounters though, and spawned M.A.U.S. npcs can be recruited
 			"graduation" : 
 			{
 				"nextNpcType" : 
 				[
-					[1, "nicemice_crewmember_maus_engineer"]
+					[1, "nicemice_crewmember_maus_quartermaster"]
 				]
+			}
+		},
+		
+		"merchant" : 
+		{
+			"waitTime" : 10,
+			"storeRadius" : -1,
+			"categories" : 
+			{
+				"default" : ["basicmerchant"],
+				"override" : [ "nicemice_maus_quartermaster" ]
+			},
+			"buyFactorRange" : [ 0.7, 1.5 ],
+			"sellFactorRange" : [ 0.2, 0.2 ],
+			"numItems" : 5,
+			"paneLayoutOverride" : 
+			{
+				"windowtitle" : 
+				{
+					"title" : "  M.A.U.S. Quartermaster",
+					"subtitle" : "  Surplus goods available!",
+					"titleIcon": "/interface/ai/nicemice_ai_icon.png"
+				}
 			}
 		}
 	},
@@ -108,57 +140,19 @@
 						[
 							{ 
 								"name" : "nicemice_jumpsuitchest_dyeable",
-								"parameters" : { "colorIndex" : 5 }	 
+								"parameters" : { "colorIndex" : 12 }	 
 							}
 						],
 						"legs" :
 						[
 							{ 
 								"name" : "nicemice_jumpsuitlegs_dyeable",
-								"parameters" : { "colorIndex" : 5 }	 
+								"parameters" : { "colorIndex" : 12 }	 
 							}
-						],						
+						],
 						"sheathedprimary" : 
 						[ 
-							"nicemice_generatedweapon_plasmapistol"
-						]
-					},
-					{
-						"head" : 
-						[
-							{ 
-								"name" : "nicemice_invisiblehead"							
-							}
-						],
-						"back" : 
-						[
-							{ 
-								"name" : "nicemice_tail_mouse"							
-							}
-						],
-						
-						// Officer
-						//  Colors 5
-						//  Orange
-						
-						"chest" :
-						[
-							{ 
-								"name" : "nicemice_maus_officerchest",
-								"parameters" : { "colorIndex" : 5 }	 
-							}
-						],
-						"legs" :
-						[
-							{ 
-								"name" : "nicemice_maus_officerlegs",
-								"parameters" : { "colorIndex" : 5 }	 
-							}
-						],
-						
-						"sheathedprimary" : 
-						[ 
-							"nicemice_generatedweapon_plasmapistol"
+							"npcassaultrifle" 
 						]
 					}
 				] 

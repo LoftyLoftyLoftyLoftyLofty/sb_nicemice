@@ -100,7 +100,8 @@
 		{
 			"baseBehavior": {"type": "string", "value": "guard"},
 			"whipBehavior": {"type": "string", "value": "nicemice_guard-whip"},
-			"wandstaffBehavior": {"type": "string", "value": "nicemice_guard-wandstaff"}
+			"wandstaffBehavior": {"type": "string", "value": "nicemice_guard-wandstaff"},
+			"rangedBehavior": {"type": "string", "value": "nicemice_guard-ranged"}
 		},
 		"category": "nicemice",
 		"script": "/scripts/actions/nicemice_resolveGuardBehavior.lua",

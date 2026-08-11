@@ -29,7 +29,97 @@ function itemsReply(args)
 	end
 end
 
+-- WEAPON PRESERVATION ACROSS GRADUATION / RESPAWN
+--
+-- recruitable.generateRecruitInfo() hands the replacement NPC
+-- `storage = preservedStorage()`, and preservedStorage() carries exactly one
+-- item channel: storage.itemSlots. The only function that writes that table is
+-- setNpcItemSlot(), and the only thing routinely calling it is
+-- recruitable.setUniform() -- which is why clothing survives graduation and
+-- weapons do not. Items rolled from the npctype's `items` table are applied
+-- engine-side, and swapItemSlots() (drawing/holstering) calls npc.setItemSlot
+-- directly, bypassing storage entirely. So the replacement NPC re-rolls its
+-- weapon from its own npctype table and the original is lost.
+--
+-- Writing the weapon slots through setNpcItemSlot() once puts them in
+-- storage.itemSlots alongside the uniform, and restorePreservedStorage() then
+-- re-applies them to the new NPC.
+--
+-- TIMING MATTERS. For the first moments of an NPC's life npc.getItemSlot
+-- returns a descriptor whose `parameters` are still empty. Storing THAT would
+-- be worse than storing nothing: the replacement would inherit a seedless
+-- descriptor, root.itemConfig would re-roll its abilities, and
+-- descriptorIsResolvable() in nicemice_wandstaff.lua would (correctly) refuse
+-- to resolve intent from it -- so the mouse would quietly stop using its staff
+-- abilities altogether. Hence the retry: only record a slot once its
+-- descriptor actually carries the roll it was built with.
+local nicemice_weaponSlots = { "primary", "alt", "sheathedprimary", "sheathedalt" }
+
+local function nicemice_descriptorCarriesRoll(descriptor)
+	local parameters = descriptor and descriptor.parameters
+	if parameters == nil then return false end
+	return parameters.seed ~= nil
+		or parameters.primaryAbilityType ~= nil
+		or parameters.altAbilityType ~= nil
+end
+
+-- Returns true once every slot has been dealt with and there is no reason to
+-- look again.
+local function nicemice_preserveWeaponSlots()
+	local settled = true
+
+	for _, slot in ipairs(nicemice_weaponSlots) do
+		local descriptor = npc.getItemSlot(slot)
+
+		if descriptor == nil or descriptor.name == nil then
+			-- Genuinely empty slot. Nothing to preserve, nothing to wait for.
+		elseif nicemice_descriptorCarriesRoll(descriptor) then
+			local stored = (storage.itemSlots or {})[slot]
+			local storedSeed = stored and stored.parameters and stored.parameters.seed
+			if storedSeed ~= descriptor.parameters.seed then
+				-- Re-setting the slot with the descriptor it already holds is a
+				-- no-op for the NPC; the point is the storage write inside.
+				setNpcItemSlot(slot, descriptor)
+			end
+		else
+			-- Descriptor is still bare. Leave it alone and check again later.
+			settled = false
+		end
+	end
+
+	return settled
+end
+
+function nicemice_installWeaponPreservation()
+	if self.nicemice_weaponPreservationInstalled then return end
+	self.nicemice_weaponPreservationInstalled = true
+
+	local previousUpdate = update
+	local settled = false
+	local recheckTimer = 0
+	-- A stowed weapon's descriptor may stay bare for as long as it is stowed,
+	-- so "wait until every slot is resolvable" can never finish. Give up after
+	-- a while rather than polling for the entity's whole life; anything still
+	-- bare by then is a slot we cannot safely record anyway.
+	local giveUpTimer = 30.0
+
+	update = function(dt)
+		previousUpdate(dt)
+
+		if settled then return end
+
+		giveUpTimer = giveUpTimer - dt
+		recheckTimer = recheckTimer - dt
+		if recheckTimer > 0 then return end
+		recheckTimer = 1.0
+
+		settled = nicemice_preserveWeaponSlots() or giveUpTimer <= 0
+	end
+end
+
 function nicemice_initHooks(args, board)
+
+	nicemice_installWeaponPreservation()
 
 	message.setHandler
 	(

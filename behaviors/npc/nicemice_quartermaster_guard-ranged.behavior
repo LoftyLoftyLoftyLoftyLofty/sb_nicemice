@@ -1,0 +1,151 @@
+{
+  "name": "nicemice_quartermaster_guard-ranged",
+  "description": "",
+  "scripts": [
+    "/scripts/behavior.lua",
+	"/scripts/actions/animator.lua",
+    "/scripts/actions/dialog.lua",
+	"/scripts/actions/math.lua",
+    "/scripts/actions/merchant.lua",
+    "/scripts/actions/entity.lua",
+    "/scripts/actions/position.lua",
+	"/scripts/actions/movement.lua",
+	"/scripts/actions/world.lua",
+    "/scripts/actions/time.lua",
+    "/scripts/actions/query.lua",
+    "/npcs/nicemice_npcHooks.lua",
+	"/npcs/nicemice_scriptedVillagerBehavior.lua"
+  ],
+  "parameters": {
+    "play": true,
+    "hostileDamageTeam": {"type": "enemy", "team": 1}
+  },
+  "root": {
+    "title": "Villager",
+    "type": "composite",
+    "name": "dynamic",
+    "parameters": {},
+    "children": [
+      {
+        "title": "Tenant Baseline Behavior",
+        "type": "module",
+        "name": "Tenant Baseline Behavior",
+        "parameters": {}
+      },
+      {
+        "title": "attackthief",
+        "type": "module",
+        "name": "attackthief",
+        "parameters": {}
+      },
+      {
+        "title": "nicemice_friendlynpccombat-ranged",
+        "type": "module",
+        "name": "nicemice_friendlynpccombat-ranged",
+        "parameters": {
+          "hostileDamageTeam": {"key": "<hostileDamageTeam>"}
+        }
+      },
+      {
+        "title": "Merchant Interaction Intercept",
+        "type": "composite",
+        "name": "sequence",
+        "parameters": {},
+        "children": [
+		  {
+			"title": "enableTrading",
+			"type": "action",
+			"name": "enableTrading",
+			"parameters": {}
+		  },
+          {
+            "title": "wasInteracted",
+            "type": "action",
+            "name": "wasInteracted",
+            "parameters": {}
+          },
+          {
+            "title": "setEntity",
+            "type": "action",
+            "name": "setEntity",
+            "parameters": {
+              "entity": {"key": "interactionSource"}
+            },
+            "output": {
+              "entity": "customer"
+            }
+          },
+          {
+            "title": "faceEntity",
+            "type": "action",
+            "name": "faceEntity",
+            "parameters": {
+              "entity": {"key": "customer"}
+            }
+          },
+          {
+            "title": "sayToEntity",
+            "type": "action",
+            "name": "sayToEntity",
+            "parameters": {
+              "dialogType": {"value": "dialog.merchant.start"},
+              "entity": {"key": "customer"}
+            }
+          },
+          {
+            "title": "Keep Shop Open",
+            "type": "decorator",
+            "name": "succeeder",
+            "parameters": {},
+            "child": {
+              "title": "parallel",
+              "type": "composite",
+              "name": "parallel",
+              "parameters": {
+                "fail": {"value": 1},
+                "success": {"value": -1}
+              },
+              "children": [
+                {
+                  "title": "runner",
+                  "type": "action",
+                  "name": "runner",
+                  "parameters": {}
+                },
+                {
+                  "title": "enableTrading",
+                  "type": "action",
+                  "name": "enableTrading",
+                  "parameters": {}
+                }
+              ]
+            }
+          },
+          {
+            "title": "sayToEntity",
+            "type": "action",
+            "name": "sayToEntity",
+            "parameters": {
+              "dialogType": {"value": "dialog.merchant.end"},
+              "entity": {"key": "customer"}
+            }
+          }
+        ]
+      },
+      {
+        "title": null,
+        "type": "module",
+        "name": "converse",
+        "parameters": {}
+      },
+      {
+        "title": "NPC Idle",
+        "type": "module",
+        "name": "NPC Idle",
+        "parameters": {
+          "play": {"key": "<play>"}
+        }
+      }
+    ]
+  }
+}

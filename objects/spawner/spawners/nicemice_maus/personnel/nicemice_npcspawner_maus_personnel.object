@@ -40,17 +40,10 @@
   "spawner" : {
     "searchRadius" : 32.0,
     "npcSpeciesOptions" : [ "nicemice_npc" ],
-    "npcTypeOptions" : [ "nicemice_npc_maus_personnel" ],
+    "npcTypeOptions" : [ "nicemice_npc_maus_personnel_recruitable" ],
     "npcParameterOptions" : [
       {
-        "dropPools" : [ ],
-		"scriptConfig" : 
-		{
-			"questGenerator" : 
-			{
-				"enableParticipation" : true
-			}
-		}
+        "dropPools" : [ ]
       }
     ]
   }

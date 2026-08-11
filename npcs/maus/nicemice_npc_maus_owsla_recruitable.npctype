@@ -1,5 +1,5 @@
 {
-	"type" : "nicemice_npc_maus_engineer",
+	"type" : "nicemice_npc_maus_owsla_recruitable",
 	"baseType" : "nicemice_npc_maus_personnel",
 
 	"levelVariance" : [6, 6],
@@ -27,7 +27,7 @@
 		},
 		"dialog" : 
 		{
-			"converse" : "/dialog/nicemice_maus_engineer.config:converse",
+			"converse" : "/dialog/nicemice_maus_personnel.config:converse",
 			
 			"accuse" : "/dialog/thief.config:accuse",
 			"alert" : "/dialog/thief.config:alert",
@@ -37,20 +37,22 @@
 			"lostTarget" : "/dialog/combat.config:lostTarget",
 			"outOfSight" : "/dialog/combat.config:outOfSight",
 			"cheerOn" : "/dialog/combat.config:cheerOn",
-			"cantReach" : "/dialog/combat.config:cantReach"
+			"cantReach" : "/dialog/combat.config:cantReach",
+			
+			"debug" : "/dialog/nicemice_maus_captain.config:debug"
 		},
 		
 		//M.A.U.S. Personnel are intended to stay with their ship, not join the player
 		"questGenerator" : 
 		{
-			"enableParticipation" : false,
+			"enableParticipation" : true,
 			
 			//The player can find M.A.U.S. spawners in space encounters though, and spawned M.A.U.S. npcs can be recruited
 			"graduation" : 
 			{
 				"nextNpcType" : 
 				[
-					[1, "nicemice_crewmember_maus_engineer"]
+					[1, "nicemice_crewmember_maus_owsla"]
 				]
 			}
 		}
@@ -69,6 +71,10 @@
 						[
 							{ 
 								"name" : "nicemice_invisiblehead"							
+							},
+							{
+								"name" : "nicemicetier1head",
+								"parameters" : { "colorIndex" : 7 }
 							}
 						],
 						"back" : 
@@ -107,58 +113,20 @@
 						"chest" :
 						[
 							{ 
-								"name" : "nicemice_jumpsuitchest_dyeable",
-								"parameters" : { "colorIndex" : 5 }	 
+								"name" : "nicemicetier1chest",
+								"parameters" : { "colorIndex" : 7 }	 
 							}
 						],
 						"legs" :
 						[
 							{ 
-								"name" : "nicemice_jumpsuitlegs_dyeable",
-								"parameters" : { "colorIndex" : 5 }	 
+								"name" : "nicemicetier1pants",
+								"parameters" : { "colorIndex" : 7 }	 
 							}
-						],						
+						],
 						"sheathedprimary" : 
 						[ 
-							"nicemice_generatedweapon_plasmapistol"
-						]
-					},
-					{
-						"head" : 
-						[
-							{ 
-								"name" : "nicemice_invisiblehead"							
-							}
-						],
-						"back" : 
-						[
-							{ 
-								"name" : "nicemice_tail_mouse"							
-							}
-						],
-						
-						// Officer
-						//  Colors 5
-						//  Orange
-						
-						"chest" :
-						[
-							{ 
-								"name" : "nicemice_maus_officerchest",
-								"parameters" : { "colorIndex" : 5 }	 
-							}
-						],
-						"legs" :
-						[
-							{ 
-								"name" : "nicemice_maus_officerlegs",
-								"parameters" : { "colorIndex" : 5 }	 
-							}
-						],
-						
-						"sheathedprimary" : 
-						[ 
-							"nicemice_generatedweapon_plasmapistol"
+							"nicemice_generatedweapon_techstaff" 
 						]
 					}
 				] 

@@ -31,7 +31,8 @@
 	  	"parameters": {
 	  	"baseBehavior": {"value": "guard"},
 	  	"whipBehavior": {"value": "nicemice_guard-whip"},
-	  	"wandstaffBehavior": {"value": "nicemice_guard-wandstaff"}
+	  	"wandstaffBehavior": {"value": "nicemice_guard-wandstaff"},
+			"rangedBehavior": {"value": "nicemice_guard-ranged"}
 	  	},
 	  	"output": { "behavior": "resolvedGuardBehavior" }
 	  },

@@ -183,11 +183,24 @@ function nicemice_resolveAbilityIntent(args, board)
   local where = args.sheathed and "sheathed " or ""
   local item = handItem(args.hand, args.sheathed)
 
-  -- Refuse to guess. A bare descriptor makes root.itemConfig re-roll a random
-  -- ability, and acting on that phantom is what made staff NPCs drop harmful
-  -- zones on wounded allies. Declining costs an NPC the first moment or two of
-  -- its life; guessing costs friendly fire for the rest of it.
-  if not descriptorIsResolvable(item) then
+  -- Refuse to guess -- but only about the weapon actually in hand.
+  --
+  -- A bare descriptor makes root.itemConfig re-roll a random ability, and
+  -- acting on that phantom is what made staff NPCs drop harmful zones on
+  -- wounded allies. That risk is specific to CASTING, which only ever happens
+  -- with a drawn weapon.
+  --
+  -- The sheathed slot is different on both counts. Its descriptor appears to
+  -- stay bare for as long as the item is stowed -- the engine has no reason to
+  -- build an item nobody is holding -- so refusing here does not fail safe, it
+  -- fails permanently: nicemice_healsupport's draw block resolves the stowed
+  -- intent to decide whether a holstered healing staff is worth drawing, and a
+  -- medic that can never answer that question never heals at all.
+  --
+  -- And a wrong answer there is self-correcting. Drawing the wrong staff costs
+  -- one draw; the moment it is in hand its descriptor is real, the intent
+  -- resolves truthfully, and the cast branch fails on its own.
+  if not args.sheathed and not descriptorIsResolvable(item) then
     trace(args.debug, where .. args.hand .. " ability on " .. tostring(item and item.name)
       .. ": descriptor carries no seed or <slot>AbilityType, so the roll is"
       .. " unknowable -- declining rather than resolving a re-rolled phantom")
@@ -505,14 +518,21 @@ function nicemice_clearWandstaffTargeting(args, board)
   board:set("number", "primaryCastRange", nil)
   board:set("number", "altCastRange", nil)
 
-  if self.primaryFire then
-    self.primaryFire = false
-    npc.endPrimaryFire()
-  end
-  if self.altFire then
-    self.altFire = false
-    npc.endAltFire()
-  end
+  -- Release the fire controls unconditionally.
+  --
+  -- Do NOT gate this on self.primaryFire/self.altFire. bmain.update() sets both
+  -- to false at the TOP of every tick, before the behavior runs, and only sets
+  -- them back if a fire action runs during that tick. On the tick combat ends
+  -- nothing fires, so those flags are always false here and a gated release
+  -- never executes -- which is exactly how a staff aborted mid-charge keeps
+  -- holding its charge.
+  --
+  -- Calling end*Fire on a weapon that is not firing is harmless, so the
+  -- unconditional call is both correct and cheap.
+  self.primaryFire = false
+  self.altFire = false
+  npc.endPrimaryFire()
+  npc.endAltFire()
 
   local facing = mcontroller.facingDirection()
   npc.setAimPosition(vec2.add(entity.position(), {facing, 0}))
@@ -563,12 +583,40 @@ function nicemice_chargedFire(args, board, nodeId, dt)
 
   -- hold slightly past full charge, then release once
   local holdTime = chargeTime + 0.1
-  local elapsed = 0
+
+  -- Charge progress is kept on the board, not in a local.
+  --
+  -- This action is a coroutine, and the tree can tear it down mid-loop -- a
+  -- higher-priority sibling in the owning `dynamic` becoming runnable is enough.
+  -- With `elapsed` as a local, every teardown restarted the count from zero, so
+  -- a branch that gets interrupted even once per charge sets the fire control
+  -- true forever and NEVER reaches the release below. That is a staff that
+  -- charges and holds indefinitely.
+  --
+  -- It bites crew mice specifically because crewmember-catchup sits above both
+  -- combat and healsupport in the crewmember dynamic and flickers as the
+  -- recruiter moves; guards have no equivalent.
+  --
+  -- Same nodeId-keyed board state that behavior.lua's own cooldown and limiter
+  -- decorators use. The timestamp lets a genuinely new cast start from zero
+  -- instead of inheriting a half-charge from some earlier engagement.
+  local progressKey = "chargedFire-" .. nodeId
+  local stampKey = "chargedFireAt-" .. nodeId
+  local elapsed = board:getNumber(progressKey) or 0
+  local lastTick = board:getNumber(stampKey)
+  if lastTick == nil or (world.time() - lastTick) > 0.5 then
+    elapsed = 0
+  end
+
   while elapsed < holdTime do
     if isAlt then self.altFire = true else self.primaryFire = true end
     elapsed = elapsed + dt
+    board:setNumber(progressKey, elapsed)
+    board:setNumber(stampKey, world.time())
     dt = coroutine.yield(nil, {})
   end
+
+  board:setNumber(progressKey, 0)
 
   if isAlt then
     self.altFire = false

@@ -40,7 +40,7 @@
 				{ 
 					"behavior" : 
 					{ 
-						"value" : "crewmember"
+						"value" : "nicemice_scriptedCrewMemberBehavior"
 					} 
 				}
 			}
