@@ -120,7 +120,7 @@
 						"legs" :
 						[
 							{ 
-								"name" : "nicemicetier1legs",
+								"name" : "nicemicetier1pants",
 								"parameters" : { "colorIndex" : 7 }	 
 							}
 						],

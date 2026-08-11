@@ -20,8 +20,12 @@
     "type": "composite",
     "name": "parallel",
     "parameters": {
-      "fail": {"value": -1},
-      "success": {"value": -1}
+      "fail": {
+        "value": -1
+      },
+      "success": {
+        "value": -1
+      }
     },
     "children": [
       {
@@ -29,11 +33,69 @@
         "type": "action",
         "name": "groupResource",
         "parameters": {
-          "groupId": {"value": "combat"},
-          "name": {"value": "meleePosition"}
+          "groupId": {
+            "value": "combat"
+          },
+          "name": {
+            "value": "movePosition"
+          }
         },
         "output": {
-          "position": "meleePosition"
+          "position": "movePosition"
+        }
+      },
+      {
+        "title": "groupResource",
+        "type": "action",
+        "name": "groupResource",
+        "parameters": {
+          "groupId": {
+            "value": "combat"
+          },
+          "name": {
+            "value": "minRange"
+          }
+        },
+        "output": {
+          "number": "coordinatorMinRange"
+        }
+      },
+      {
+        "title": "groupResource",
+        "type": "action",
+        "name": "groupResource",
+        "parameters": {
+          "groupId": {
+            "value": "combat"
+          },
+          "name": {
+            "value": "maxRange"
+          }
+        },
+        "output": {
+          "number": "coordinatorMaxRange"
+        }
+      },
+      {
+        "title": "keep the standoff on the side of the target we're already on",
+        "type": "action",
+        "name": "nicemice_nearSidePosition",
+        "parameters": {
+          "entity": {
+            "key": "target"
+          },
+          "position": {
+            "key": "movePosition"
+          },
+          "minRange": {
+            "key": "coordinatorMinRange"
+          },
+          "maxRange": {
+            "key": "coordinatorMaxRange"
+          }
+        },
+        "output": {
+          "position": "approachPosition"
         }
       },
       {
@@ -47,9 +109,15 @@
             "type": "decorator",
             "name": "cooldown",
             "parameters": {
-              "cooldown": {"value": 1},
-              "onFail": {"value": true},
-              "onSuccess": {"value": true}
+              "cooldown": {
+                "value": 1
+              },
+              "onFail": {
+                "value": true
+              },
+              "onSuccess": {
+                "value": true
+              }
             },
             "child": {
               "title": "sequence",
@@ -68,7 +136,9 @@
                   "type": "action",
                   "name": "chance",
                   "parameters": {
-                    "chance": {"value": 0.15}
+                    "chance": {
+                      "value": 0.15
+                    }
                   }
                 },
                 {
@@ -76,7 +146,9 @@
                   "type": "action",
                   "name": "timer",
                   "parameters": {
-                    "time": {"value": 0.5}
+                    "time": {
+                      "value": 0.5
+                    }
                   }
                 }
               ]
@@ -87,13 +159,21 @@
             "type": "action",
             "name": "moveToPosition",
             "parameters": {
-              "avoidLiquid": {"key": "avoidLiquid"},
-              "groundPosition": {"value": false},
-              "position": {"key": "meleePosition"},
-              "run": {"key": "run"}
+              "avoidLiquid": {
+                "key": "avoidLiquid"
+              },
+              "groundPosition": {
+                "value": false
+              },
+              "position": {
+                "key": "approachPosition"
+              },
+              "run": {
+                "key": "run"
+              }
             },
             "output": {
-              "pathfinding": "meleePathing"
+              "pathfinding": "movePathing"
             }
           },
           {
@@ -107,7 +187,9 @@
                 "type": "action",
                 "name": "setFlag",
                 "parameters": {
-                  "name": {"value": "avoidLiquid"}
+                  "name": {
+                    "value": "avoidLiquid"
+                  }
                 }
               },
               {
@@ -115,7 +197,9 @@
                 "type": "action",
                 "name": "timer",
                 "parameters": {
-                  "time": {"value": "<liquidHesitationTime>"}
+                  "time": {
+                    "value": "<liquidHesitationTime>"
+                  }
                 }
               },
               {
@@ -123,7 +207,9 @@
                 "type": "action",
                 "name": "unsetFlag",
                 "parameters": {
-                  "name": {"value": "avoidLiquid"}
+                  "name": {
+                    "value": "avoidLiquid"
+                  }
                 }
               }
             ]
@@ -135,8 +221,12 @@
         "type": "composite",
         "name": "parallel",
         "parameters": {
-          "fail": {"value": 1},
-          "success": {"value": -1}
+          "fail": {
+            "value": 1
+          },
+          "success": {
+            "value": -1
+          }
         },
         "children": [
           {
@@ -144,7 +234,9 @@
             "type": "action",
             "name": "hasFlag",
             "parameters": {
-              "name": {"key": "meleePathing"}
+              "name": {
+                "key": "movePathing"
+              }
             }
           },
           {
@@ -152,7 +244,9 @@
             "type": "action",
             "name": "entityInSight",
             "parameters": {
-              "entity": {"key": "target"}
+              "entity": {
+                "key": "target"
+              }
             }
           },
           {
@@ -165,15 +259,21 @@
               "type": "decorator",
               "name": "optional",
               "parameters": {
-                "shouldRun": {"key": "<cantReachDialog>"}
+                "shouldRun": {
+                  "key": "<cantReachDialog>"
+                }
               },
               "child": {
                 "title": "cooldown",
                 "type": "decorator",
                 "name": "cooldown",
                 "parameters": {
-                  "cooldown": {"value": 10},
-                  "onFail": {"value": false}
+                  "cooldown": {
+                    "value": 10
+                  },
+                  "onFail": {
+                    "value": false
+                  }
                 },
                 "child": {
                   "title": "sequence",
@@ -186,7 +286,9 @@
                       "type": "action",
                       "name": "timer",
                       "parameters": {
-                        "time": {"value": 2}
+                        "time": {
+                          "value": 2
+                        }
                       }
                     },
                     {
@@ -200,7 +302,9 @@
                           "type": "action",
                           "name": "chance",
                           "parameters": {
-                            "chance": {"value": 0.75}
+                            "chance": {
+                              "value": 0.75
+                            }
                           }
                         },
                         {
@@ -208,9 +312,15 @@
                           "type": "action",
                           "name": "sayToEntity",
                           "parameters": {
-                            "dialogType": {"value": "dialog.cantReach"},
-                            "entity": {"key": "target"},
-                            "tags": {"value": {}}
+                            "dialogType": {
+                              "value": "dialog.cantReach"
+                            },
+                            "entity": {
+                              "key": "target"
+                            },
+                            "tags": {
+                              "value": {}
+                            }
                           }
                         }
                       ]
@@ -233,7 +343,9 @@
             "type": "action",
             "name": "timer",
             "parameters": {
-              "time": {"value": 1}
+              "time": {
+                "value": 1
+              }
             }
           },
           {
@@ -259,9 +371,15 @@
                         "type": "action",
                         "name": "entityInRange",
                         "parameters": {
-                          "entity": {"key": "target"},
-                          "position": {"key": "self"},
-                          "xRange": {"key": "<forceRunRange>"}
+                          "entity": {
+                            "key": "target"
+                          },
+                          "position": {
+                            "key": "self"
+                          },
+                          "xRange": {
+                            "key": "<forceRunRange>"
+                          }
                         }
                       },
                       {
@@ -269,7 +387,9 @@
                         "type": "action",
                         "name": "chance",
                         "parameters": {
-                          "chance": {"value": 0.4}
+                          "chance": {
+                            "value": 0.4
+                          }
                         }
                       }
                     ]
@@ -279,7 +399,9 @@
                     "type": "action",
                     "name": "setFlag",
                     "parameters": {
-                      "name": {"value": "run"}
+                      "name": {
+                        "value": "run"
+                      }
                     }
                   }
                 ]
@@ -289,7 +411,9 @@
                 "type": "action",
                 "name": "unsetFlag",
                 "parameters": {
-                  "name": {"value": "run"}
+                  "name": {
+                    "value": "run"
+                  }
                 }
               }
             ]

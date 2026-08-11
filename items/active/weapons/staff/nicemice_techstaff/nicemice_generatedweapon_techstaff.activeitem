@@ -60,7 +60,7 @@
     }
   },
 
-  "builder" : "/items/buildscripts/buildweapon.lua",
+  "builder" : "/items/buildscripts/buildnicemiceweapon.lua",
   "builderConfig" : [{
     "nameGenerator" : "nicemice_generatedweapon_techstaff_names.config:nameGen",
     "elementalType" : [

@@ -1,5 +1,6 @@
 require "/scripts/vec2.lua"
 require "/scripts/util.lua"
+require "/scripts/rect.lua"
 
 -- Tracing helper, gated per-node so it costs nothing when debug is off.
 local function trace(enabled, text)
@@ -61,20 +62,76 @@ end
 -- the staff actually is: an NPC that has never drawn a weapon has its gear in
 -- sheathedprimary/sheathedalt and nothing in hand, so a support behavior that
 -- wants to decide whether drawing is worth it has to be able to look there.
-local function handItem(hand, sheathed)
-  local primary, alt
-  if sheathed then
-    primary, alt = self.sheathedPrimary, self.sheathedAlt
-  else
-    primary, alt = self.primary, self.alt
+-- Where a slot's ItemDescriptor comes from.
+--
+-- self.primary / self.alt / self.sheathedPrimary / self.sheathedAlt come back
+-- with EMPTY parameters. That is fatal for ability resolution: with no seed and
+-- no <slot>AbilityType, root.itemConfig re-runs the build script, which rolls a
+-- fresh time-based seed and picks a DIFFERENT ability out of builderConfig. The
+-- config we then read describes a weapon the NPC is not holding, and
+-- abilityConfigCache freezes that phantom for the rest of the NPC's life.
+--
+-- npc.getItemSlot returns the engine's own descriptor for the slot, and unlike
+-- npc.setItemSlot it also recognizes "sheathedprimary" and "sheathedalt". If
+-- that descriptor carries the roll the item was actually built with, every read
+-- below becomes truthful. Falls back to the self.* fields when the call is
+-- unavailable, so this is never worse than the previous behavior.
+local slotFallback = {
+  primary = function() return self.primary end,
+  alt = function() return self.alt end,
+  sheathedprimary = function() return self.sheathedPrimary end,
+  sheathedalt = function() return self.sheathedAlt end,
+}
+
+-- Confirmed working: npc.getItemSlot IS bound in behavior-script context and
+-- returns the real descriptor. It reports nil for a genuinely empty slot (an
+-- NPC that has not drawn yet), which is why the self.* fallback stays.
+local function slotDescriptor(slot)
+  if npc ~= nil and npc.getItemSlot ~= nil then
+    local ok, result = pcall(npc.getItemSlot, slot)
+    if ok and result ~= nil then return result end
   end
 
-  if hand ~= "alt" then return primary end
+  local fallback = slotFallback[slot]
+  return fallback and fallback() or nil
+end
+
+-- Whether a descriptor actually tells us which abilities the item rolled.
+--
+-- For the first moment of an NPC's life the descriptor comes back bare
+-- (parameters == {}), before the engine has populated the roll. Resolving an
+-- ability from a bare descriptor is worse than useless: root.itemConfig re-runs
+-- the build script, which generates a FRESH time-based seed and picks a random
+-- ability out of builderConfig. The result describes a weapon the NPC is not
+-- holding -- which is how a staff rolling pushzone got vetted as a heal and
+-- then discharged at wounded allies.
+--
+-- getAbilitySource in /items/buildscripts/abilities.lua consults
+-- parameters.<slot>AbilityType before falling back to the random pick, so
+-- either that or a seed is enough to make the rebuild deterministic and
+-- truthful. With neither, the honest answer is "unknown", and the caller
+-- declines to act rather than guessing.
+local function descriptorIsResolvable(descriptor)
+  local parameters = descriptor and descriptor.parameters
+  if parameters == nil then return false end
+  return parameters.seed ~= nil
+    or parameters.primaryAbilityType ~= nil
+    or parameters.altAbilityType ~= nil
+end
+
+-- Returns the item, and whether that item is the alt hand's OWN item rather
+-- than the primary standing in for it. Callers need the second value because
+-- the two cases reach different abilities -- see handAbility.
+local function handItem(hand, sheathed)
+  local primary = slotDescriptor(sheathed and "sheathedprimary" or "primary")
+  local alt = slotDescriptor(sheathed and "sheathedalt" or "alt")
+
+  if hand ~= "alt" then return primary, false end
 
   if not itemField(itemConfigFor(primary), "twoHanded") then
-    if alt ~= nil and alt.name ~= nil and alt.name ~= "" then return alt end
+    if alt ~= nil and alt.name ~= nil and alt.name ~= "" then return alt, true end
   end
-  return primary
+  return primary, false
 end
 
 -- Ability config for a hand, e.g. config.primaryAbility / config.altAbility.
@@ -84,10 +141,30 @@ end
 -- energyUsageFactor) and fold them into config. Preferring parameters here
 -- returns that factor bag, which has no npcIntent, so every ability silently
 -- resolved as "harmful" and heal/buff staves fell through to the attack branch.
+-- "alt" reaches two different abilities depending on what is in the alt hand,
+-- and reading the wrong one means vetting an ability we will not fire:
+--
+--   two-handed primary, or an empty alt slot -> the engine routes alt fire to
+--   the PRIMARY item's altAbility. Read altAbility.
+--
+--   one-handed primary with its own item in the alt slot -> alt fire triggers
+--   that off-hand item's own primaryAbility, NOT its altAbility. Read
+--   primaryAbility.
+--
+-- Getting this wrong is not cosmetic. Reading altAbility off an off-hand item
+-- vets its SECONDARY ability while self.altFire discharges its PRIMARY one, so
+-- a staff whose secondary is a heal passes the healing gate in
+-- nicemice_healsupport.behavior and then fires its harmful primary at whichever
+-- injured ally nicemice_resolveHealTarget just picked.
 local function handAbility(hand, sheathed)
-  local itemConfig = itemConfigFor(handItem(hand, sheathed))
+  local item, ownsAltItem = handItem(hand, sheathed)
+  local itemConfig = itemConfigFor(item)
   if itemConfig == nil or itemConfig.config == nil then return nil end
-  return itemConfig.config[(hand == "alt") and "altAbility" or "primaryAbility"]
+
+  if hand == "alt" and not ownsAltItem then
+    return itemConfig.config.altAbility
+  end
+  return itemConfig.config.primaryAbility
 end
 
 -- Reads npcIntent/npcDoNotUse off whichever ability is actually equipped in the
@@ -105,6 +182,18 @@ function nicemice_resolveAbilityIntent(args, board)
 
   local where = args.sheathed and "sheathed " or ""
   local item = handItem(args.hand, args.sheathed)
+
+  -- Refuse to guess. A bare descriptor makes root.itemConfig re-roll a random
+  -- ability, and acting on that phantom is what made staff NPCs drop harmful
+  -- zones on wounded allies. Declining costs an NPC the first moment or two of
+  -- its life; guessing costs friendly fire for the rest of it.
+  if not descriptorIsResolvable(item) then
+    trace(args.debug, where .. args.hand .. " ability on " .. tostring(item and item.name)
+      .. ": descriptor carries no seed or <slot>AbilityType, so the roll is"
+      .. " unknowable -- declining rather than resolving a re-rolled phantom")
+    return false
+  end
+
   local ability = handAbility(args.hand, args.sheathed)
 
   if ability == nil then
@@ -142,15 +231,17 @@ end
 -- check, and swapItemSlots never fires. This fills that gap so our gear can
 -- use the same vanilla swapItemSlots action.
 function nicemice_hasWandStaffSheathed(args, board)
-  if self.sheathedPrimary == nil then return false end
-  return root.itemHasTag(self.sheathedPrimary.name, "staff")
-      or root.itemHasTag(self.sheathedPrimary.name, "wand")
+  local item = slotDescriptor("sheathedprimary")
+  if item == nil or item.name == nil then return false end
+  return root.itemHasTag(item.name, "staff")
+      or root.itemHasTag(item.name, "wand")
 end
 
 function nicemice_hasWandStaffPrimary(args, board)
-  if self.primary == nil then return false end
-  return root.itemHasTag(self.primary.name, "staff")
-      or root.itemHasTag(self.primary.name, "wand")
+  local item = slotDescriptor("primary")
+  if item == nil or item.name == nil then return false end
+  return root.itemHasTag(item.name, "staff")
+      or root.itemHasTag(item.name, "wand")
 end
 
 -- param first
@@ -378,6 +469,56 @@ function nicemice_markBuffed(args, board)
   return true
 end
 
+-- Runs on every tick the combat target is invalid, undoing the three pieces of
+-- state a cast leaves behind when a fight ends underneath it.
+--
+-- 1. THE DERIVED BOARD KEYS. The ordinary "output" mapping in a .nodes entry
+--    can only WRITE a value some other action computed; it cannot null one out,
+--    and a returned output table cannot either -- Lua does not distinguish
+--    {someKey = nil} from {}, so a nil-valued output is indistinguishable from
+--    "nothing to write" and the writer skips it, leaving the stale value.
+--    board:set takes the type the value is stored under; there is no
+--    type-agnostic setter (see behavior.lua's board:set/board:get, which always
+--    take a type first). Types below are the ones nicemice.nodes actually
+--    declares for each of these keys.
+--
+--    This matters because nicemice_healsupport.behavior writes the SAME key
+--    names (primaryAimOffset / altAimOffset / primaryTarget / ...) for ally
+--    heals. Without this, a harmful branch whose nicemice_entityDistance failed
+--    could hand setAimPosition a leftover near-self offset from a heal.
+--
+-- 2. THE FIRE LATCH. self.primaryFire/self.altFire latch true and stay true;
+--    they are only cleared by something setting them false. A phase aborted
+--    mid-charge by the dynamic watchdog never reaches a release, so the latch
+--    is dropped here the same way nicemice_chargedFire drops it.
+--
+-- 3. THE AIM. npc.setAimPosition is last-value-wins with no decay, so the arm
+--    stays frozen pointing at wherever the dead target was until something
+--    calls it again. Re-centres one tile ahead in the facing direction.
+function nicemice_clearWandstaffTargeting(args, board)
+  board:set("entity", "primaryTarget", nil)
+  board:set("entity", "altTarget", nil)
+  board:set("vec2", "primaryAimOffset", nil)
+  board:set("vec2", "altAimOffset", nil)
+  board:set("string", "primaryIntent", nil)
+  board:set("string", "altIntent", nil)
+  board:set("number", "primaryCastRange", nil)
+  board:set("number", "altCastRange", nil)
+
+  if self.primaryFire then
+    self.primaryFire = false
+    npc.endPrimaryFire()
+  end
+  if self.altFire then
+    self.altFire = false
+    npc.endAltFire()
+  end
+
+  local facing = mcontroller.facingDirection()
+  npc.setAimPosition(vec2.add(entity.position(), {facing, 0}))
+  return true
+end
+
 -- Pass-through tracing node: drop it anywhere in a sequence to see that the
 -- tree reached that point, and to dump whatever board values you route in.
 -- Always succeeds, so it never changes the shape of the branch it sits in.
@@ -505,4 +646,115 @@ function nicemice_clampAimPosition(args, board)
 
   npc.setAimPosition(aimPosition)
   return true
+end
+
+-----------------------------------------------------------
+-- STANDOFF POSITIONING
+-----------------------------------------------------------
+
+-- The coordinator hands every ranged attacker a movePosition, but it picks that
+-- position by straight-line distance from the NPC:
+--
+--   table.sort(rangedPositions, function(a,b)
+--     return world.magnitude(a, npcPosition) < world.magnitude(b, npcPosition)
+--   end)
+--
+-- Straight-line distance is measured THROUGH the target, so when the near-side
+-- candidates get eliminated -- no standable ground, no line of sight, or a
+-- squadmate already claimed the slot within 2 tiles -- the nearest surviving
+-- candidate is on the far side, and the NPC walks through a large monster to
+-- reach it.
+--
+-- Fixing this in the coordinator is unreliable: /scripts/behavior/bgroup.lua
+-- picks a coordinator by compareGoals alone (goalType and goal, never groupId
+-- or behavior), so a mod coordinator only runs when our NPC happens to spawn it
+-- first. Doing it NPC-side always runs.
+--
+-- Ports validAttackPosition/findGroundAttackPosition out of
+-- /stagehands/coordinator/npccombat.lua; every call they make is available in
+-- NPC context, with mcontroller.boundBox() standing in for self.npcBounds.
+local function standableAttackPosition(position, bounds)
+  local liquid = world.liquidAt(rect.translate(bounds, position))
+  if liquid and liquid[2] >= 0.1 then return false end
+
+  local groundRegion = {
+    position[1] + bounds[1], position[2] + bounds[2] - 1,
+    position[1] + bounds[3], position[2] + bounds[2]
+  }
+  return not world.rectTileCollision(rect.translate(bounds, position), {"Null", "Block"})
+     and world.rectTileCollision(groundRegion, {"Null", "Block", "Dynamic", "Platform"})
+end
+
+-- Searches a vertical column for standable ground with clear line of sight to
+-- the target, preferring higher ground first the way the vanilla helper does.
+local function groundPositionInColumn(x, targetPosition, searchHeight, bounds)
+  local baseY = math.ceil(targetPosition[2]) - (bounds[2] % 1)
+  for y = searchHeight, -searchHeight, -1 do
+    local candidate = {x, baseY + y}
+    if standableAttackPosition(candidate, bounds)
+       and not world.lineTileCollision(candidate, targetPosition) then
+      return candidate
+    end
+  end
+end
+
+-- Keeps a standoff position on the side of the target the NPC is already on.
+--
+-- Passes the coordinator's suggestion straight through when it is already on
+-- our side, so normal allocation (including its slot deduplication) is
+-- untouched. Only when the suggestion is across the target does this search our
+-- own side, preferring the standoff distance closest to where the NPC already
+-- is so it does not sprint the full width of the band. Falls back to the
+-- original suggestion when our side has nothing valid, so an NPC pinned against
+-- a wall still repositions rather than freezing in melee range.
+--
+-- param entity   -- the target
+-- param position -- the coordinator's suggested movePosition
+-- param minRange
+-- param maxRange
+-- output position
+function nicemice_nearSidePosition(args, board)
+  if args.entity == nil or not world.entityExists(args.entity) then return false end
+  local targetPosition = world.entityPosition(args.entity)
+  if targetPosition == nil then return false end
+
+  local selfPosition = mcontroller.position()
+  local toTarget = world.distance(selfPosition, targetPosition)
+  local side = util.toDirection(toTarget[1])
+  if side == 0 then side = 1 end
+
+  if args.position ~= nil then
+    local suggestedSide = util.toDirection(world.distance(args.position, targetPosition)[1])
+    if suggestedSide == 0 or suggestedSide == side then
+      return true, {position = args.position}
+    end
+  end
+
+  local minRange = args.minRange or 0
+  local maxRange = args.maxRange or 0
+  if maxRange <= minRange then return false end
+
+  -- Try standoff distances nearest our current one first.
+  local currentRange = math.abs(toTarget[1])
+  local ranges = {}
+  for range = math.floor(minRange), math.ceil(maxRange) do
+    table.insert(ranges, math.max(minRange, math.min(maxRange, range)))
+  end
+  table.sort(ranges, function(a, b)
+    return math.abs(a - currentRange) < math.abs(b - currentRange)
+  end)
+
+  local bounds = mcontroller.boundBox()
+  for _, range in ipairs(ranges) do
+    local candidate = groundPositionInColumn(targetPosition[1] + side * range,
+      targetPosition, range, bounds)
+    if candidate then
+      return true, {position = candidate}
+    end
+  end
+
+  if args.position ~= nil then
+    return true, {position = args.position}
+  end
+  return false
 end

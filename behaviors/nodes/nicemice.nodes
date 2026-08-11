@@ -383,5 +383,34 @@
 		"category": "nicemice",
 		"script": "/scripts/actions/nicemice_wandstaff.lua",
 		"output": {}
+  },
+	"nicemice_clearWandstaffTargeting": 
+	{
+		"type": "action",
+		"name": "nicemice_clearWandstaffTargeting",
+		"title": "nicemice_clearWandstaffTargeting",
+		"properties": {},
+		"category": "nicemice",
+		"script": "/scripts/actions/nicemice_wandstaff.lua",
+		"output": {}
+  },
+	"nicemice_nearSidePosition": 
+	{
+		"type": "action",
+		"name": "nicemice_nearSidePosition",
+		"title": "nicemice_nearSidePosition",
+		"properties": 
+		{
+			"entity": {"type": "entity"},
+			"position": {"type": "position"},
+			"minRange": {"type": "number", "value": 0},
+			"maxRange": {"type": "number", "value": 0}
+		},
+		"category": "nicemice",
+		"script": "/scripts/actions/nicemice_wandstaff.lua",
+		"output": 
+		{
+			"position": {"type": "position", "key": null}
+		}
   }
 }

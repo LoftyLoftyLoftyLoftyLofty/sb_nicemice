@@ -16,11 +16,19 @@
       "forceMoveRange" : 20
     }
   },
-  //melee weapon range for now until we can patch the combat positioning scripts too
   {
-    "op": "add",
-    "path": "/npcCombat/meleeWeaponRanges/nicemice_generatedweapon_techstaff",
-    "value": {
+    "op" : "add",
+    "path" : "/npcCombat/rangedWeaponRanges/nicemice_generatedweapon_techstaff",
+    "value" : {
+      "minRange" : 16,
+      "maxRange" : 20,
+      "forceMoveRange" : 20
+    }
+  },
+  {
+    "op" : "add",
+    "path" : "/npcCombat/rangedWeaponRanges/nicemice_generatedweapon_techstaff_medic",
+    "value" : {
       "minRange" : 16,
       "maxRange" : 20,
       "forceMoveRange" : 20
