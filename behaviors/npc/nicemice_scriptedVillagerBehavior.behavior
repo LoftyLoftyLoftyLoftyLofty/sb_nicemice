@@ -21,7 +21,7 @@
 	    "title": "nicemice_initHooks",
 		"type": "action",
 		"name": "nicemice_initHooks",
-		"parameters": {}
+		"parameters": { "returnBehavior": {"value": "nicemice_scriptedVillagerBehavior"} }
 	  },
 	  {
 	    "title": "nicemice_scriptedVillagerBehavior",

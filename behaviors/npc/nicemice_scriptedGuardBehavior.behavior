@@ -22,7 +22,7 @@
 	    "title": "nicemice_initHooks",
 		"type": "action",
 		"name": "nicemice_initHooks",
-		"parameters": {}
+		"parameters": { "returnBehavior": {"value": "nicemice_scriptedGuardBehavior"} }
 	  },
 	  {
 	  	"title": "nicemice_resolveGuardBehavior",

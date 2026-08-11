@@ -29,20 +29,13 @@
 					"direction": {"value": -1},
 					"run": {"key": "<alwaysRun>"},
 					"respectLedges": {"value" : true},
-					"timeout" : 3
-				}
+					"timeout": {"value": 5}}
 			},
 			{
-				"title": "nicemice_scriptedCrewMemberBehavior",
+				"title": "nicemice_returnFromAvoid",
 				"type": "action",
-				"name": "nicemice_scriptedCrewMemberBehavior",
-				"parameters": 
-				{ 
-					"behavior" : 
-					{ 
-						"value" : "nicemice_scriptedCrewMemberBehavior"
-					} 
-				}
+				"name": "nicemice_returnFromAvoid",
+				"parameters": {}
 			}
 		]
 	}

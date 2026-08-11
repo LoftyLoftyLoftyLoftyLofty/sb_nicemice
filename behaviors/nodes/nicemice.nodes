@@ -4,7 +4,10 @@
 		"type": "action",
 		"name": "nicemice_initHooks",
 		"title": "nicemice_initHooks",
-		"properties": {},
+		"properties": 
+		{
+			"returnBehavior": {"type": "string", "value": ""}
+		},
 		"category": "nicemice",
 		"script": "/npcs/nicemice_npcHooks.lua",
 		"output": {}
@@ -69,7 +72,8 @@
 			{
 				"type": "bool", 
 				"value": true
-			}
+			},
+			"timeout": {"type": "number", "value": 5}
 		},
 		"category": "nicemice",
 		"script": "/npcs/nicemice_npcHooks.lua",
@@ -413,5 +417,15 @@
 		{
 			"position": {"type": "position", "key": null}
 		}
+  },
+	"nicemice_returnFromAvoid": 
+	{
+		"type": "action",
+		"name": "nicemice_returnFromAvoid",
+		"title": "nicemice_returnFromAvoid",
+		"properties": {},
+		"category": "nicemice",
+		"script": "/npcs/nicemice_npcHooks.lua",
+		"output": {}
   }
 }
