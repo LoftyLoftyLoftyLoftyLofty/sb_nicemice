@@ -1129,7 +1129,7 @@
                  "type":"",
                  "visible":true,
                  "width":8,
-                 "x":224,
+                 "x":176,
                  "y":200
                 }, 
                 {
@@ -1167,7 +1167,45 @@
                  "type":"",
                  "visible":true,
                  "width":8,
-                 "x":128,
+                 "x":136,
+                 "y":200
+                }, 
+                {
+                 "gid":6242,
+                 "height":8,
+                 "id":2315,
+                 "name":"Mechanic 00",
+                 "properties":[
+                        {
+                         "name":"\/\/description",
+                         "type":"string",
+                         "value":"This NPC spawner is intended to be simple to integrate with."
+                        }, 
+                        {
+                         "name":"\/\/name",
+                         "type":"string",
+                         "value":"nicemice_configdrivenspawner"
+                        }, 
+                        {
+                         "name":"\/\/shortdescription",
+                         "type":"string",
+                         "value":"Config NPC Spawner"
+                        }, 
+                        {
+                         "name":"object",
+                         "type":"string",
+                         "value":"nicemice_configdrivenspawner"
+                        }, 
+                        {
+                         "name":"parameters",
+                         "type":"string",
+                         "value":"{ \"spawner\" : { \"variationSource\" : \"\/objects\/spawner\/spawners\/nicemice_cargoship_spawns.config\", \"variationSet\" : \"mechanic\" } }"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":8,
+                 "x":216,
                  "y":200
                 }],
          "opacity":1,
@@ -1323,7 +1361,7 @@
          "y":0
         }],
  "nextlayerid":32,
- "nextobjectid":2315,
+ "nextobjectid":2316,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.10.0",
