@@ -29,7 +29,7 @@
 					"direction": {"value": -1},
 					"run": {"key": "<alwaysRun>"},
 					"respectLedges": {"value" : true},
-					"timeout" : 5
+					"timeout" : 3
 				}
 			},
 			{
