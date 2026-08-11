@@ -1,0 +1,63 @@
+//SEE nicemice_configdrivenspawner.lua FOR DOCUMENTATION
+
+{
+  "objectName" : "nicemice_configdrivenspawner",
+  "colonyTags" : ["misc"],
+  "rarity" : "Common",
+  "description" : "This NPC spawner reads its spawn table from a .config file, so other mods can extend it without patching dungeon map data.",
+  "shortdescription" : "Mod-Friendly NPC Spawner V2",
+  "race" : "generic",
+  "printable" : false,
+  "category" : "spawner",
+  "price" : 100,
+
+  "inventoryIcon" : "defaulticon.png",
+  "orientations" : [
+    {
+      "image" : "nicemice_configdrivenspawner.png",
+      "imagePosition" : [-8, 0],
+      "direction" : "right",
+      "anchors" : [ ]
+    }
+  ],
+
+  //  Hotpatch scripts are unchanged from V1 and hook the same three functions.
+  //  Add yours here (or patch this list) exactly as before.
+  "scripts" :
+  [
+	"/objects/spawner/spawners/nicemice_configdrivenspawner/nicemice_configdrivenspawner.lua"
+  ],
+  "scriptDelta" : 1,
+  //6000,
+
+  "animation" : "/objects/spawner/spawners/nicemice_configdrivenspawner/nicemice_configdrivenspawner.animation",
+
+  "animationParts" : {
+    "switch" : "nicemice_configdrivenspawner.png"
+  },
+  "animationPosition" : [-8, 0],
+
+  "inputNodes" : [ ],
+  "outputNodes" : [ ],
+
+  "smashOnBreak" : true,
+  "offscreenOnly" : true,
+
+  "spawner" : {
+    "searchRadius" : 32.0,
+
+	//  V2 keeps NO variation table here. The Tiled object supplies these two
+	//  fields instead, and the table itself lives in the named .config:
+	//
+	//    { "spawner" : { "variationSource" : "/spawners/mydungeon_spawns.config",
+	//                    "variationSet" : "medic" } }
+	//
+	//  variationSource may also be a list of paths, in which case the named set
+	//  is read from each and the results are concatenated.
+	//
+	//  "possibleVariations" is still honoured if present, so a V1 spawner
+	//  pointed at this script behaves exactly as it did before.
+
+	"variationSet" : "default"
+  }
+}

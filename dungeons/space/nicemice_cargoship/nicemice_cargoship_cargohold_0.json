@@ -1108,7 +1108,7 @@
                         {
                          "name":"\/\/name",
                          "type":"string",
-                         "value":"nicemice_confignpcspawner"
+                         "value":"nicemice_configdrivenspawner"
                         }, 
                         {
                          "name":"\/\/shortdescription",
@@ -1118,12 +1118,12 @@
                         {
                          "name":"object",
                          "type":"string",
-                         "value":"nicemice_confignpcspawner"
+                         "value":"nicemice_configdrivenspawner"
                         }, 
                         {
                          "name":"parameters",
                          "type":"string",
-                         "value":"{ \"configID\" : \"nicemice_cargoship_cargohold_cargocrew_01\" }"
+                         "value":"{ \"spawner\" : { \"variationSource\" : \"\/objects\/spawner\/spawners\/nicemice_cargoship_spawns.config\", \"variationSet\" : \"cargo\" } }"
                         }],
                  "rotation":0,
                  "type":"",
@@ -1146,7 +1146,7 @@
                         {
                          "name":"\/\/name",
                          "type":"string",
-                         "value":"nicemice_confignpcspawner"
+                         "value":"nicemice_configdrivenspawner"
                         }, 
                         {
                          "name":"\/\/shortdescription",
@@ -1156,12 +1156,12 @@
                         {
                          "name":"object",
                          "type":"string",
-                         "value":"nicemice_confignpcspawner"
+                         "value":"nicemice_configdrivenspawner"
                         }, 
                         {
                          "name":"parameters",
                          "type":"string",
-                         "value":"{ \"configID\" : \"nicemice_cargoship_cargohold_cargocrew_00\" }"
+                         "value":"{ \"spawner\" : { \"variationSource\" : \"\/objects\/spawner\/spawners\/nicemice_cargoship_spawns.config\", \"variationSet\" : \"cargo\" } }"
                         }],
                  "rotation":0,
                  "type":"",
