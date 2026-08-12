@@ -1,0 +1,55 @@
+//  AVOIDANCE MARKER
+//
+//  A 1x1 invisible object that keeps nicemice NPCs from loitering somewhere.
+//  Drop one on an airlock beam, in front of the captain's chair, on a ledge --
+//  anywhere mice should not stand around.
+//
+//  The tag lives in itemTags below, as STATIC config. That is the whole point of
+//  the marker: the NPC scan reads world.getObjectParameter(id, "itemTags"), which
+//  resolves reliably against an object's own config. Tagging an arbitrary
+//  existing object through Tiled instance parameters does not reach that lookup.
+//
+//  Placeable in Tiled and by players in-world, so a ship author and a player
+//  redecorating their hold both use the same mechanism.
+//
+//  Direction is DECLARED, never inferred -- see nicemice_npcHooks.lua. Use the
+//  plain marker where either way out is fine, and the left/right variants where
+//  only one direction is safe.
+
+{
+  "objectName": "nicemice_avoidmarker_right",
+  "colonyTags": [],
+  "rarity": "Common",
+  "category": "wire",
+  "price": 0,
+  "printable": false,
+  "description": "NPCs standing here walk RIGHT. Use where only one direction is safe.",
+  "shortdescription": "Avoidance Marker (Right)",
+  "race": "generic",
+  "itemTags": [
+    "avoidMe-goRight"
+  ],
+  "inventoryIcon": "marker_right.png",
+  "orientations": [
+    {
+      "image": "marker.png",
+      "imagePosition": [
+        0,
+        0
+      ],
+      "direction": "left",
+      "spaces" : [ [ 0, 0 ] ],
+      "anchors": []
+    },
+    {
+      "image": "marker.png",
+      "imagePosition": [
+        0,
+        0
+      ],
+      "direction": "right",
+      "spaces" : [ [ 0, 0 ] ],
+      "anchors": []
+    }
+  ]
+}
