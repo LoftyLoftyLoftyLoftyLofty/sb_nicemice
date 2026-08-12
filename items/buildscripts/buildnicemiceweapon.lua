@@ -130,6 +130,28 @@ function build(directory, config, parameters, level, seed)
           config.animationParts[k] = config.animationParts[k] .. config.paletteSwaps
           config.fullbrightParts[k] = config.fullbrightParts[k] .. config.paletteSwaps
         end
+
+        -- Bind the fullbright image to its animation part here, not only in the
+        -- gunParts block below.
+        --
+        -- Weapons WITHOUT gunParts -- staves, wands -- never entered that block,
+        -- so their <part>fullbright entries in the .animation had no image
+        -- attached and rendered nothing in world. The inventory icon still
+        -- looked right because that loop reads config.fullbrightParts directly,
+        -- which was populated all along. Hence "icon correct, held item dark".
+        --
+        -- Gated on v.variants because that is exactly the set of parts that have
+        -- a fullbright sibling: variant parts (handle/crown on a staff,
+        -- butt/middle/barrel on a gun) get <variant>fullbright.png, while
+        -- single-image parts like the staff's stone and chargeEffect declare
+        -- fullbright directly in the .animation and have no separate part.
+        --
+        -- Parts that do have gunParts still go through the block below, which
+        -- additionally computes their offsets and registers the properties; this
+        -- assignment is the same value, so the overlap is harmless.
+        if v.variants then
+          config.animationParts[k .. "fullbright"] = config.fullbrightParts[k]
+        end
       else
         config.animationParts[k] = v
       end
