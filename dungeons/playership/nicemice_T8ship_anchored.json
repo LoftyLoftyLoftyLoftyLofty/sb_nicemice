@@ -922,7 +922,7 @@
                 },
             
                 {
-                 "height":40,
+                 "height":32,
                  "id":1859,
                  "name":"",
                  "properties":[
@@ -936,7 +936,7 @@
                  "visible":true,
                  "width":8,
                  "x":-264,
-                 "y":-96
+                 "y":-88
                 },
             
                 {
@@ -1639,6 +1639,42 @@
                  "width":8,
                  "x":-232,
                  "y":-72
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        },
+    
+        {
+         "color":"#ff557f",
+         "draworder":"topdown",
+         "id":38,
+         "name":"avoidance zone structure block",
+         "objects":[
+                {
+                 "height":8,
+                 "id":1965,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"back",
+                         "type":"string",
+                         "value":"metamaterial:structure"
+                        },
+                    
+                        {
+                         "name":"dungeonid",
+                         "type":"string",
+                         "value":"65525"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":8,
+                 "x":-264,
+                 "y":-96
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -6074,6 +6110,19 @@
                  "width":13,
                  "x":-1368,
                  "y":-528
+                },
+            
+                {
+                 "gid":9131,
+                 "height":8,
+                 "id":1963,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":8,
+                 "x":-264,
+                 "y":-88
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -6094,8 +6143,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":38,
- "nextobjectid":1963,
+ "nextlayerid":39,
+ "nextobjectid":1966,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.10.0",
@@ -6274,6 +6323,11 @@
         {
          "firstgid":8801,
          "source":"..\/..\/..\/..\/win32\/unpacked_assets\/tilesets\/packed\/objects-by-category\/breakable.json"
+        },
+    
+        {
+         "firstgid":9111,
+         "source":"..\/..\/tilesets\/nicemice_objects.json"
         }],
  "tilewidth":8,
  "type":"map",
