@@ -2,8 +2,7 @@
   "objectName" : "nicemice_captainschair_decorative",
   "colonyTags" : ["nicemice"],
   
-  //Nicemice npcs will attempt to walk away from the captain's chair so they aren't in your way
-  "itemTags" : ["captainschair", "avoidMe-goLeft"],
+  "itemTags" : [],
   
   "printable" : false,
   "rarity" : "Common",
