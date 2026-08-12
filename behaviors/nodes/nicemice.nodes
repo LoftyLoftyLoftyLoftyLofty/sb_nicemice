@@ -73,7 +73,8 @@
 				"type": "bool", 
 				"value": true
 			},
-			"timeout": {"type": "number", "value": 5}
+			"timeout": {"type": "number", "value": 5},
+			"ledgePatience": {"type": "number", "value": 1.0}
 		},
 		"category": "nicemice",
 		"script": "/npcs/nicemice_npcHooks.lua",

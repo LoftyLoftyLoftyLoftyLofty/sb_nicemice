@@ -89,8 +89,8 @@ local NICEMICE_AVOID_RIGHT = "avoidMe-goRight"
 local NICEMICE_RUN_LEFT = "nicemice_crew_avoidCaptainsChair_npcRunLeft"
 local NICEMICE_RUN_RIGHT = "nicemice_crew_avoidCaptainsChair_npcRunRight"
 
-local NICEMICE_AVOID_SCAN_INTERVAL = 6
-local NICEMICE_AVOID_SCAN_RADIUS = 7
+local NICEMICE_AVOID_SCAN_INTERVAL = 3
+local NICEMICE_AVOID_SCAN_RADIUS = 10
 
 --  Which way this object says to go, or nil if it is not an avoidance object.
 --  Returns "left", "right", or "away".
@@ -342,6 +342,13 @@ function nicemice_npc_move(args, board, nodeId, dt)
 	--  not available even in principle.
 	local elapsed = 0
 	local moved = false
+
+	--  Ledge respect is dropped if it keeps us pinned. See the blocked branch at
+	--  the bottom of the loop for why.
+	local respectLedges = args.respectLedges
+	local blockedTime = 0
+	local ledgePatience = args.ledgePatience or 1.0
+
 	while true do
 
 		--  exit movement if we hit our timeout
@@ -393,7 +400,7 @@ function nicemice_npc_move(args, board, nodeId, dt)
 			move = false
 		end
 
-		if args.respectLedges then
+		if respectLedges then
 			-- Check for ground for the entire length of the bound box
 			-- Makes it so the entity can stop before a ledge
 			if move then
@@ -417,6 +424,7 @@ function nicemice_npc_move(args, board, nodeId, dt)
 			end
 
 			if move then
+			blockedTime = 0
 			moved = true
 			mcontroller.controlMove(direction, run)
 			if not self.setFacingDirection then 
@@ -427,7 +435,31 @@ function nicemice_npc_move(args, board, nodeId, dt)
 				mcontroller.setXVelocity(0)
 				mcontroller.clearControls()
 			end
-			return true
+
+			blockedTime = blockedTime + dt
+
+			if blockedTime > ledgePatience then
+				if respectLedges then
+					--  Every ground test above is world.rectTileCollision, which
+					--  only sees TILES. An object with its own collision poly --
+					--  a diagonal docking field, say -- is invisible to it, so an
+					--  npc standing on one reads as having no ground beneath it
+					--  and refuses to take a single step. It then gives up, gets
+					--  re-triggered by the next avoidance scan, and repeats
+					--  forever while appearing to "try".
+					--
+					--  So being pinned is not accepted as final. After a moment
+					--  of getting nowhere, walk anyway. Stepping off an object
+					--  onto the deck below is the outcome we wanted; standing on
+					--  the thing forever is not.
+					respectLedges = false
+					blockedTime = 0
+				else
+					--  Blocked even without ledge respect: that is a real wall,
+					--  and no amount of patience gets through it.
+					return true
+				end
+			end
 		end
 		dt = coroutine.yield() or 0
 		elapsed = elapsed + dt

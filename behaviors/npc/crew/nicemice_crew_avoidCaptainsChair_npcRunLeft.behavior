@@ -29,7 +29,7 @@
 					"direction": {"value": -1},
 					"run": {"key": "<alwaysRun>"},
 					"respectLedges": {"value" : true},
-					"timeout": {"value": 5}}
+					"timeout": {"value": 5}, "ledgePatience": {"value": 1.0}}
 			},
 			{
 				"title": "nicemice_returnFromAvoid",
