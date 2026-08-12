@@ -91,7 +91,11 @@ broken in both is in that layer or below; anything broken in only one is above i
 `/scripts/actions/nicemice_resolveGuardBehavior.lua` — behavior dispatch (above).
 
 `/npcs/nicemice_npcHooks.lua` — `nicemice_initHooks`, `nicemice_npc_move`,
-message handlers, and the weapon-preservation update wrapper.
+`nicemice_returnFromAvoid`, message handlers, the weapon-preservation update
+wrapper, and the avoidance-zone scan.
+
+`/scripts/nicemice_util.lua` — `nicemice_setNPCBehavior` (the behavior swap),
+skin directive helpers.
 
 `/scripts/actions/nicemice_whipaim.lua` — `nicemice_entityCenterPosition`,
 `nicemice_signOf`, `nicemice_entityDistance`.
@@ -182,6 +186,110 @@ walked into stab range.
 Note the melee coordinator publishes only `maxRange`, no `minRange`. That's why
 `nicemice_whip-approach` takes `whipMinRange` as a parameter (default 3).
 
+### Avoidance zones
+
+Mice wander, which is a problem in front of the captain's chair — a mouse parked
+there blocks the interface that opens travel. NPCs prioritise interaction over
+furniture, so they will not step aside on their own, and this applies to
+following crew too: an unclickable chair is worse than a follower briefly
+stepping away.
+
+**Direction is declared by the object, never inferred.** Ship authors tag objects
+they want mice to keep clear of:
+
+| tag | effect |
+|---|---|
+| `avoidMe-goLeft` | always walk left from here |
+| `avoidMe-goRight` | always walk right from here |
+| `avoidMe` | walk away from the object (either direction is fine) |
+
+The original implementation keyed off the vanilla `captainschair` tag and worked
+out the direction by comparing positions. That is wrong on any ship whose layout
+we do not know — on the M.A.U.S. cargo ship it sent crew rightwards onto the
+windshield, where they got stuck. Declared tags mean a modded ship only needs a
+`.patch` adding a tag to its own objects, and we assume nothing about layout.
+
+Directional tags beat plain `avoidMe` on the same object; the nearest tagged
+object wins overall.
+
+Implementation lives in `nicemice_npcHooks.lua` because every entry behavior
+already loads it. **Opt-in**: pass `returnBehavior` to `nicemice_initHooks` and
+avoidance switches on, returning the mouse to that behavior afterwards. Omit it
+and nothing happens, so no npc class gains this by accident.
+
+The run-away behaviors (`nicemice_crew_avoidCaptainsChair_npcRun{Left,Right}` —
+name predates the generalisation) end in `nicemice_returnFromAvoid`, which reads
+the stored return behavior. They used to name
+`nicemice_scriptedCrewMemberBehavior` directly, which is exactly why avoidance
+was crew-only: a guard sent there would come back as a crew member.
+
+Tuned values live in `nicemice_npcHooks.lua`: `NICEMICE_AVOID_SCAN_INTERVAL` (6s)
+and `NICEMICE_AVOID_SCAN_RADIUS` (7 tiles), plus the `timeout` on
+`nicemice_npc_move` in the run behaviors (5s of walking). If mice oscillate —
+walk away, wander back, walk away — raise the move timeout rather than the
+radius; the timeout is what controls how far they actually get.
+
+**Tags are read from object config, not instance parameters.** The scan calls
+`world.getObjectParameter(id, "itemTags")`, which resolves against an object's
+own config. Tagging an arbitrary existing object through Tiled instance
+parameters does *not* reach that lookup — this was tried and does not work.
+
+So avoidance is placed with dedicated marker objects, which carry the tag
+statically:
+
+| object | tag |
+|---|---|
+| `nicemice_avoidmarker` | `avoidMe` |
+| `nicemice_avoidmarker_left` | `avoidMe-goLeft` |
+| `nicemice_avoidmarker_right` | `avoidMe-goRight` |
+
+1×1, invisible in world (transparent sprite), with visible inventory icons.
+Placeable in Tiled *and* by players in-world, which is why this was chosen over
+reading instance params or building an avoidance stagehand: same mechanism for
+ship authors and for a player redecorating their hold, and no script changes at
+all. Costs one tile per marker.
+
+### `root.itemHasTag` vs `root.itemConfig`
+
+Two different lookups, and the difference matters.
+
+- **`root.itemHasTag(name, tag)`** takes an item *name string*. Static lookup
+  against the base `.activeitem` config; no build script runs. Used by every tag
+  check — `nicemice_hasWandStaffPrimary`, the dispatch in
+  `nicemice_resolveGuardBehavior`.
+- **`root.itemConfig(descriptor)`** takes a descriptor and **re-runs the build
+  script**. Used only by `itemConfigFor()`, for ability resolution.
+
+This is why dispatch stayed correct throughout the phantom-descriptor bug while
+ability intent did not: a name is a name. It also means tag checks are cheap
+(no cache needed) but **per item type, not per instance** — every
+`nicemice_generatedweapon_techstaff` has identical tags regardless of what it
+rolled. Fine for dispatch; useless if you ever need to mark one specific
+generated weapon.
+
+### Fullbright layers and `gunParts`
+
+`buildnicemiceweapon.lua` populates `config.fullbrightParts[k]` for every
+animation part, but the assignment that actually binds a fullbright image to its
+animation part —
+
+```lua
+config.animationParts[part .. "fullbright"] = config.fullbrightParts[part]
+```
+
+— used to live **only inside the `if builderConfig.gunParts then` block**. Guns
+have `gunParts`; staves and wands do not. So a staff's `handlefullbright` /
+`crownfullbright` parts existed in the `.animation` with no image attached and
+rendered nothing in world, while the **inventory icon looked correct** because
+that loop reads `config.fullbrightParts` directly. Symptom: "icon right, held
+item dark."
+
+The assignment now happens in the shared `animationParts` loop, gated on
+`v.variants` — exactly the set of parts that have a fullbright sibling. Parts
+without variants (the staff's `stone`, `chargeEffect`) declare `fullbright: true`
+on themselves in the `.animation` and need no overlay part. Guns are unaffected;
+the `gunParts` block assigns the same value afterwards.
+
 ### Weapon preservation across graduation
 
 `recruitable.generateRecruitInfo()` hands the replacement NPC
@@ -204,11 +312,70 @@ where the forced colour index is the intended behaviour.
 
 ## 3. Traps
 
-**`.nodes` silently drops undeclared parameters.** A parameter passed from a
-behavior file that isn't in the action's `properties` block arrives as `nil` and
-hits whatever `or default` fallback the Lua has. Cost an hour when `rangedBehavior`
-was wired everywhere but never declared — pistol mice kept resolving to vanilla
-`guard` with no error anywhere. **If a parameter seems ignored, check `.nodes` first.**
+**`.nodes` silently drops undeclared parameters.** THE most reliable trap in this
+codebase — it has bitten three separate times. A parameter passed from a behavior
+file that isn't in the action's `properties` block arrives as `nil` and hits
+whatever `or default` fallback the Lua has. No error, anywhere.
+
+- `rangedBehavior` — wired everywhere but undeclared, so pistol mice kept
+  resolving to vanilla `guard`
+- `returnBehavior` — same, would have silently disabled avoidance
+- `timeout` on `nicemice_npc_move` — undeclared *and* passed as a bare scalar,
+  so mice walked until they hit a ledge
+
+**If a parameter seems ignored, check `.nodes` before anything else.** And note
+parameters need the value wrapper: `"timeout": {"value": 5}`, not `"timeout": 5`.
+
+**Anything time-based in a behavior action must accumulate the yielded `dt`.**
+Behavior actions are coroutines resumed once per tick, and `coroutine.yield()`
+returns the frame's `dt`. Two bugs came from ignoring that:
+
+- `nicemice_chargedFire` kept `elapsed` as a **local**, so every teardown reset it
+  to zero. An interrupted charge set the fire control true forever and never
+  reached its release. Progress now lives on the board under
+  `chargedFire-<nodeId>` (the pattern `behavior.lua`'s own `cooldown` and
+  `limiter` decorators use), with a 0.5s staleness check.
+- `nicemice_npc_move` used **`os.clock()`** — CPU time consumed by the process,
+  not wall time. It crawls forward far slower than real seconds, so a 5s timeout
+  effectively never expired. (`os` is also not guaranteed to exist in the
+  sandbox.) The loop additionally discarded the yield's return value, so `dt`
+  wasn't available even in principle.
+
+**Every collision test in `nicemice_npc_move` is tile-based.**
+`world.rectTileCollision` and `world.pointTileCollision` see TILES only. An
+object with its own collision poly — a diagonal docking field, say — is invisible
+to all of them, so a mouse standing on one reads as having no ground beneath it
+and refuses to take a single step. It then returned `true` immediately, got
+re-triggered by the next avoidance scan, and repeated forever while appearing to
+"try". Vanilla dodges this because its docking zones are vertical and nobody
+stands on them.
+
+Now handled by `ledgePatience` (default 1s): being pinned is not accepted as
+final. After a moment of getting nowhere the ledge requirement is dropped and the
+mouse walks anyway — stepping off an object onto the deck is the wanted outcome.
+Still blocked without ledge respect means a real wall, and it gives up.
+
+**Anything else that has NPCs reasoning about walkable ground will hit this same
+blindness.** It is a property of the collision API, not of that one object.
+
+**`nicemice_setNPCBehavior` destroys the blackboard.** It builds a fresh
+`behavior.behavior(...)` and a fresh board, so any board state a tree accumulates
+across ticks is gone after a swap and the tree restarts cold. `storage` and `self`
+survive; the board does not. Anything that must persist across a swap belongs in
+`storage`.
+
+It also used to read `config.getParameter("behaviorConfig", {})` directly, which
+threw away the personality layer `bmain.init` builds:
+
+```lua
+self.behaviorConfig = config.getParameter("behaviorConfig", {})
+if personality().behaviorConfig then
+  self.behaviorConfig = applyDefaults(personality().behaviorConfig, self.behaviorConfig)
+end
+```
+
+So every swap reset wander/idle timings to npctype defaults. Now reads
+`self.behaviorConfig` with the raw parameter as fallback.
 
 **Behavior action coroutines can be torn down mid-loop.** Locals do not survive.
 `nicemice_chargedFire` originally kept `elapsed` as a local; every teardown reset
@@ -285,6 +452,29 @@ The first shows whether a descriptor carries its roll (`seed`,
 `primaryAbilityType`, `altAbilityType`). The second shows what will survive
 graduation.
 
+Two traces were built and removed once they had served their purpose. Both are
+worth reconstructing rather than reasoning around if the same class of question
+comes up again:
+
+- **Behavior dispatch** — a one-shot `sb.logInfo` in
+  `nicemice_resolveGuardBehavior` printing the equipped weapon, its full tag
+  list, which branch matched, and the resolved behavior. Log `matched` and
+  `resolved` **separately**: a branch that matches but whose parameter was never
+  declared in `.nodes` falls back to `baseBehavior`, which is indistinguishable
+  from no branch matching at all if you only print the result. That distinction
+  is what finally located the `rangedBehavior` bug.
+- **Fire controls** — a change-triggered log of `self.primaryFire` /
+  `self.altFire` in the update wrapper in `nicemice_npcHooks.lua`, *not* as a
+  behavior node, because it has to see ticks after the tree has been torn down.
+  A staff stuck visibly charged means either a branch is still setting the flag
+  every tick, or nothing is and the item's own stance is stuck — opposite
+  problems, and this is the only thing that tells them apart.
+
+When a bug reproduces on one npc class but not another, the fastest split is
+guard vs crew: they share the `nicemice_npccombat-*` layer and everything below
+it, so a symptom in both is at that layer or lower, and a symptom in one is above
+it. That single question has resolved several bugs faster than any log did.
+
 ---
 
 ## 5. Config-driven NPC spawner
@@ -321,7 +511,8 @@ if that turns out to be unwanted, delete the block rather than restoring the typ
 **Working and tested in combat:** staff healing / buff / harmful trees; whip
 combat; ranged combat; near-side kiting for staff and pistol; weapon dispatch
 across guard, crew and quartermaster; crew combat chatter; crew medic combat
-benefit; config-driven spawner placing mice on the cargo ship.
+benefit; config-driven spawner placing mice on the cargo ship; avoidance zones
+across crew, guards, quartermasters and villagers, with follow state preserved.
 
 **Known and accepted:** large mobile monsters (adult poptop, the big bird) defeat
 fixed-standoff kiting. Deliberate — further avoidance work would trivialise
@@ -329,6 +520,11 @@ challenging encounters, and the staves are already extremely strong. Slot
 contention on uneven terrain (six mice, two or three near-side slots) causes
 occasional clustering; a per-NPC column offset seeded from `entity.id()` would fix
 it if it ever matters.
+
+**Verified:** avoidance zones on all four npc classes, via marker objects placed
+in Tiled; the walk-away timeout actually expiring; crew follow state surviving the
+round trip; mice leaving a diagonal docking field they used to be pinned on;
+staff fullbright layers rendering in world.
 
 **Untested:**
 - Wand combat — one-handed, single-ability. **The `handAbility` off-hand fix has
@@ -341,6 +537,17 @@ it if it ever matters.
   producing an empty band (the node fails when `maxRange <= minRange`).
 - Crew graduation for all 8 M.A.U.S. types.
 
+**Unresolved but not currently biting:** crew in follow mode used to come back
+from an avoidance walk wandering with weapons drawn. Two changes went in together
+and the symptom stopped: a snapshot/restore of `storage.behaviorFollowing` +
+`storage.followingOwner` around the swap, and the `behaviorConfig` fix in
+`nicemice_setNPCBehavior`. **We do not know which one fixed it.** The
+`behaviorConfig` bug is confirmed with a confirmed mechanism; the snapshot/restore
+guards against storage loss that `nicemice_util.lua` shows cannot actually happen,
+so it is probably a no-op. It is cheap and left in. If the symptom returns, the
+board layer is the place to look — most likely `crewmember-emptyhands` re-swapping
+the weapon off a fresh blackboard.
+
 **Open work:**
 - Three more graduation npctypes, once uniform assets are final (jumpsuit,
   officer jacket, black, red). Each needs its own `uniformColorIndex` +
@@ -352,10 +559,16 @@ it if it ever matters.
   and caused a real bug; see Traps.)
 - `nicemice_npccombat-wandstaff` doesn't dispatch — it assumes a staff. Only
   matters if mice can change weapon class mid-life.
-- Chair-avoidance behaviors return to `nicemice_scriptedCrewMemberBehavior` (the
-  resolver entry point) rather than a concrete behavior, so weapon dispatch
-  re-runs instead of being clobbered. Confirmed working; worth re-checking if
-  crew behavior degrades after a chair encounter.
+- Chair-avoidance behaviors return via `nicemice_returnFromAvoid`, which reads
+  the stored `returnBehavior`, so weapon dispatch re-runs instead of being
+  clobbered. Confirmed working.
+- The run-away behaviors are still named
+  `nicemice_crew_avoidCaptainsChair_npcRun{Left,Right}` although they are no
+  longer crew-specific and no longer about captain's chairs. Renaming means
+  touching both files plus the two constants in `nicemice_npcHooks.lua`.
+- Avoidance fires regardless of combat state, so a guard that wanders near a
+  tagged object mid-fight gets pulled out of its combat tree. Not observed
+  causing trouble; gating on `isValidTarget(target)` is the fix if it does.
 
 ---
 
@@ -363,10 +576,10 @@ it if it ever matters.
 
 **Lua**
 `nicemice_wandstaff.lua`, `nicemice_resolveGuardBehavior.lua`, `nicemice_npcHooks.lua`,
-`nicemice_whipaim.lua`
+`nicemice_whipaim.lua`, `nicemice_util.lua`, `nicemice_scriptedCrewMemberBehavior.lua`
 
 **Node registry**
-`nicemice.nodes` — 25 entries
+`nicemice.nodes` — 26 entries
 
 **Combat trees**
 `nicemice_npccombat-{wandstaff,whip,ranged}`, `nicemice_rangedcombat`,
@@ -380,11 +593,18 @@ it if it ever matters.
 `nicemice_crewmember-combat-{wandstaff,whip,ranged}`,
 `nicemice_quartermaster`, `nicemice_quartermaster_guard{,-wandstaff,-whip,-ranged}`
 
-**Entry points**
+**Entry points** (each passes its own name as `returnBehavior` to `nicemice_initHooks`)
 `nicemice_scriptedGuardBehavior`, `nicemice_scriptedCrewMemberBehavior`,
-`nicemice_scriptedVillagerBehavior`,
+`nicemice_scriptedVillagerBehavior`, `nicemice_quartermaster`,
 `nicemice_crew_avoidCaptainsChair_npcRun{Left,Right}`
+
+**Item build**
+`buildnicemiceweapon.lua`
+
+**Objects**
+`nicemice_avoidmarker{,_left,_right}.object` + sprites,
+`nicemice_configdrivenspawner.object` + `.lua`
 
 **Configs**
 `nicemice_crewmember_maus_personnel.npctype`, `coordinator.stagehand.patch`,
-`nicemice_configdrivenspawner.object` + `.lua`, `nicemice_cargoship_spawns.config`
+`nicemice_cargoship_spawns.config`
