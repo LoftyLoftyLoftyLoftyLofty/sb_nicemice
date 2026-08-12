@@ -4,7 +4,7 @@
   "properties" : {
   },
   "spacing" : 0,
-  "tilecount" : 22,
+  "tilecount" : 24,
   "tileheight" : 80,
   "tileproperties" : {
     "0" : {
@@ -160,6 +160,20 @@
       "imagePositionY" : "0",
       "object" : "nicemice_avoidmarker",
       "tilesetDirection" : "right"
+    },
+	"22" : {
+      "//description" : "Nicemice Tech Chest",
+      "imagePositionX" : "-8",
+      "imagePositionY" : "0",
+      "object" : "nicemice_redtechchest",
+      "tilesetDirection" : "right"
+    },
+	"23" : {
+      "//description" : "Big Red Industrial Canister",
+      "imagePositionX" : "-16",
+      "imagePositionY" : "0",
+      "object" : "nicemice_bigindustrialcanister_red",
+      "tilesetDirection" : "right"
     }
   },
   "tiles" : {
@@ -228,6 +242,12 @@
     },
 	"21" : {
       "image" : "../objects/nicemice/scripted_npc_stuff/marker_any.png"
+    },
+	"22" : {
+      "image" : "../objects/nicemice/nicemice_redtechchest/tiled.png"
+    },
+	"23" : {
+      "image" : "../objects/nicemice/nicemice_bigindustrialcanister/tiled_red.png"
     }
   },
   "tilewidth" : 8
