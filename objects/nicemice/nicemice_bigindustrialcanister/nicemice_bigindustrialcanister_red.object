@@ -1,0 +1,66 @@
+{
+  "objectName" : "nicemice_bigindustrialcanister_red",
+  "colonyTags" : ["storage","industrial","nicemice"],
+  "rarity" : "Common",
+  "objectType" : "container",
+  "tooltipKind" : "container",
+  "category" : "storage",
+  "price" : 85,
+  "description" : "A sealed metal canister, that might be used to store hazardous liquids.",
+  "shortdescription" : "Large Industrial Canister",
+  "race" : "nicemice",
+  "health" : 1.5,
+
+  "apexDescription" : "This canister seems ideal for transporting volatile substances in.",
+  "avianDescription" : "What a curious canister - I wonder what is inside?",
+  "floranDescription" : "Yellow tube. Might have ssstuff inside.",
+  "glitchDescription" : "Observant. A short analysis concludes that this canister is built to safely store valuable liquids.",
+  "humanDescription" : "The sound this canister makes when opened is quite satisfying.",
+  "hylotlDescription" : "What a curious looking storage container. Perhaps it is built to store fuel?",
+  "novakidDescription" : "Is this a big ol' oil barrel? Mighty odd lookin' barrel if I say so myself.",
+  "nicemiceDescription" : "Prezzurized ztorage for volatile compoundz.",
+
+  "inventoryIcon" : "nicemice_bigindustrialcanistericon_red.png",
+  "orientations" : [
+	{
+      "imageLayers" : 
+	  [
+		{
+			"image" : "nicemice_bigindustrialcanister_red.png:<color>.<key>",
+			"fullbright" : true
+		},
+		{
+			"image" : "nicemice_bigindustrialcanisterlit.png:<color>.<key>"
+		}
+	  ],
+	  "flipImages" : true,
+	  "imagePosition" : [-16, 0],
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+	  "direction" : "left"
+    },
+	{
+      "imageLayers" : 
+	  [
+		{
+			"image" : "nicemice_bigindustrialcanister_red.png:<color>.<key>",
+			"fullbright" : true
+		},
+		{
+			"image" : "nicemice_bigindustrialcanisterlit.png:<color>.<key>"
+		}
+	  ],
+      "imagePosition" : [-16, 0],
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+	  "direction" : "right"
+    }
+  ],
+
+  "openSounds" : [ "/sfx/objects/metaldoor_open.ogg" ],
+  "closeSounds" : [ "/sfx/objects/metaldoor_close.ogg" ],
+  "slotCount" : 32,
+  "uiConfig" : "/interface/chests/chest<slots>.config",
+  "frameCooldown" : 5,
+  "autoCloseCooldown" : 3600
+}
