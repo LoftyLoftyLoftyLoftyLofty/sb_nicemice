@@ -1129,8 +1129,8 @@
                  "type":"",
                  "visible":true,
                  "width":8,
-                 "x":176,
-                 "y":200
+                 "x":120,
+                 "y":152
                 }, 
                 {
                  "gid":6242,
@@ -1167,8 +1167,8 @@
                  "type":"",
                  "visible":true,
                  "width":8,
-                 "x":136,
-                 "y":200
+                 "x":80,
+                 "y":152
                 }, 
                 {
                  "gid":6242,
@@ -1205,8 +1205,46 @@
                  "type":"",
                  "visible":true,
                  "width":8,
-                 "x":216,
-                 "y":200
+                 "x":160,
+                 "y":152
+                }, 
+                {
+                 "gid":6242,
+                 "height":8,
+                 "id":2316,
+                 "name":"Mechanic 01",
+                 "properties":[
+                        {
+                         "name":"\/\/description",
+                         "type":"string",
+                         "value":"This NPC spawner is intended to be simple to integrate with."
+                        }, 
+                        {
+                         "name":"\/\/name",
+                         "type":"string",
+                         "value":"nicemice_configdrivenspawner"
+                        }, 
+                        {
+                         "name":"\/\/shortdescription",
+                         "type":"string",
+                         "value":"Config NPC Spawner"
+                        }, 
+                        {
+                         "name":"object",
+                         "type":"string",
+                         "value":"nicemice_configdrivenspawner"
+                        }, 
+                        {
+                         "name":"parameters",
+                         "type":"string",
+                         "value":"{ \"spawner\" : { \"variationSource\" : \"\/objects\/spawner\/spawners\/nicemice_cargoship_spawns.config\", \"variationSet\" : \"mechanic\" } }"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":8,
+                 "x":200,
+                 "y":152
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -1361,7 +1399,7 @@
          "y":0
         }],
  "nextlayerid":32,
- "nextobjectid":2316,
+ "nextobjectid":2317,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.10.0",

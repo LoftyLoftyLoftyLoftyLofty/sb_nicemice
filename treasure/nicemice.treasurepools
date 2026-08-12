@@ -164,7 +164,19 @@
 					{"item" : [ "nicemice_codex_maus_ranks-codex", 1 ] },
 					{"pool" : "nicemice_cargoship_shiplocker_treasure_subcategory_uniforms" },
 					{"pool" : "nicemice_cargoship_shiplocker_treasure_subcategory_npcspawners" },
-					{"pool" : "nicemice_cargoship_shiplocker_treasure_subcategory_treasureweapons" },
+					{"pool" : "nicemice_cargoship_shiplocker_treasure_subcategory_treasureweapons" }
+				]
+			}
+		]
+	],
+	
+	"nicemice_cargoship_enginechest_treasure" : 
+	[
+		[
+			0,
+			{
+				"fill" : 
+				[
 					{"item" : [ "nicemice_mechblueprint", 1 ] }
 				]
 			}

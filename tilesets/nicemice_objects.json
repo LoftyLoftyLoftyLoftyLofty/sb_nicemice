@@ -4,7 +4,7 @@
   "properties" : {
   },
   "spacing" : 0,
-  "tilecount" : 19,
+  "tilecount" : 22,
   "tileheight" : 80,
   "tileproperties" : {
     "0" : {
@@ -139,6 +139,27 @@
       "imagePositionY" : "0",
       "object" : "nicemice_captainschair_decorative",
       "tilesetDirection" : "right"
+    },
+	"19" : {
+      "//description" : "NPC Avoid Zone - Go Left",
+      "imagePositionX" : "-8",
+      "imagePositionY" : "0",
+      "object" : "nicemice_avoidmarker_left",
+      "tilesetDirection" : "right"
+    },
+	"20" : {
+      "//description" : "NPC Avoid Zone - Go Right",
+      "imagePositionX" : "-8",
+      "imagePositionY" : "0",
+      "object" : "nicemice_avoidmarker_right",
+      "tilesetDirection" : "right"
+    },
+	"21" : {
+      "//description" : "NPC Avoid Zone - Go Away",
+      "imagePositionX" : "-8",
+      "imagePositionY" : "0",
+      "object" : "nicemice_avoidmarker",
+      "tilesetDirection" : "right"
     }
   },
   "tiles" : {
@@ -198,6 +219,15 @@
     },
 	"18" : {
       "image" : "../objects/nicemice/ship/nicemice_captainschair/tiledred.png"
+    },
+	"19" : {
+      "image" : "../objects/nicemice/scripted_npc_stuff/marker_left.png"
+    },
+	"20" : {
+      "image" : "../objects/nicemice/scripted_npc_stuff/marker_right.png"
+    },
+	"21" : {
+      "image" : "../objects/nicemice/scripted_npc_stuff/marker_any.png"
     }
   },
   "tilewidth" : 8
