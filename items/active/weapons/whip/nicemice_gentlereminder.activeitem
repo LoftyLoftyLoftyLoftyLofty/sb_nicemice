@@ -21,7 +21,7 @@
     "lights" : { "glow" : {
       "active" : true,
       "position" : [0.75, 0.5],
-      "color" : [255, 183, 183]
+      "color" : [100, 71, 71]
     }},
     "particleEmitters" : { "crack" : { "particles" : [ ]}},
     "sounds" : {
