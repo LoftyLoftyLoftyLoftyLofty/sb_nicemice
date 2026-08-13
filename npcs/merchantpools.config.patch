@@ -7,12 +7,28 @@
 			[
 				0, 
 				[
+				
+				//FLAGS, INSIGNIAS, AND OTHER IDENTITY ITEMS
 					{ "item" : { "name" : "nicemice_flag" }, "rarity" : 1.0 },
+					{ "item" : { "name" : "nicemice_maus_insigniaplate" }, "rarity" : 1.0 },
 					
+				//WEAPONS AND ARMOR
 					{ "item" : { "name" : "nicemice_generatedweapon_plasmapistol" }, "rarity" : 1.0 },
 					{ "item" : { "name" : "nicemice_generatedweapon_techstaff" }, "rarity" : 1.0 },
+					{ "item" : { "name" : "nicemice_generatedweapon_techstaff_medic" }, "rarity" : 1.0 },
+					{ "item" : { "name" : "nicemice_gentlereminder" }, "rarity" : 1.0 },
 					
-					{ "item" : { "name" : "nicemice_maus_insigniaplate" }, "rarity" : 1.0 }
+				//CARGO SHIP DECORATIONS
+					{ "item" : { "name" : "nicemice_cargoshiplocker_3x3" }, "rarity" : 1.0 },
+					{ "item" : { "name" : "nicemice_cargoshipbunk" }, "rarity" : 1.0 },
+					{ "item" : { "name" : "nicemice_redtechchest" }, "rarity" : 1.0 },
+					{ "item" : { "name" : "nicemice_crystaltrap" }, "rarity" : 1.0 },
+					{ "item" : { "name" : "nicemice_bigindustrialcanister_red" }, "rarity" : 1.0 },
+					{ "item" : { "name" : "nicemice_ceilingstrappedshippingcontainer_base" }, "rarity" : 1.0 },
+					{ "item" : { "name" : "nicemice_ceilingstrappedshippingcontainer_stackma" }, "rarity" : 1.0 },
+					
+				//MISC NICEMICE DECORATIONS
+					{ "item" : { "name" : "nicemice_pinup_laying_jumpsuit" }, "rarity" : 1.0 }
 				]
 			]
 		]
