@@ -1,0 +1,69 @@
+{
+  "objectName" : "nicemice_cargoshiphologram",
+  "colonyTags" : ["nicemice","maus","pretty","expensive","cool","electronic","light"],
+  "rarity" : "Legendary",
+  "category" : "decorative",
+  "price" : 7777,
+
+  "description" : "Engineering can ship diagnostics with this display.",
+  "shortdescription" : "M.A.U.S. Cargo Ship Hologram",
+  "race" : "nicemice",
+
+  "apexDescription" : "A command and control display. Very thorough.",
+  "avianDescription" : "What an intricate display!",
+  "floranDescription" : "Funny lightsss make Floran'ss tongue numb.",
+  "glitchDescription" : "Smitten. I have never been more in love.",
+  "humanDescription" : "This display shows you everything - even which bathroom stalls are occupied, and who's in them.",
+  "hylotlDescription" : "I feel like I'm being watched- and there I am, right on the display. Terrifying.",
+  "novakidDescription" : "Ya buncha' showoffs, go examine yer ship in person.",
+  "nicemiceDescription" : "Engineerink's fanzy toyz are ze envy of ze rezt of ze crew.",
+
+  "inventoryIcon" : "nicemice_cargoshiphologramicon.png",
+  "health" : 3.5,
+  
+  "lightColor" : [64, 25, 25],
+  "orientations" : [
+    {
+      "imageLayers" : 
+	  [
+		{
+			"image" : "nicemice_cargoshiphologram.png:<color>.<frame>",
+			"fullbright" : true
+		},
+		{
+			"image" : "pedestal.png:<color>.<frame>"
+		}
+	  ],
+      "imagePosition" : [-72, -32],
+	  "lightPosition" : [0, 0],
+      "frames" : 8,
+      "animationCycle" : 0.75,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+	  "direction" : "right"
+    },
+	{
+      "imageLayers" : 
+	  [
+		{
+			"image" : "nicemice_cargoshiphologram.png:<color>.<frame>",
+			"fullbright" : true
+		},
+		{
+			"image" : "pedestal.png:<color>.<frame>"
+		}
+	  ],
+	  
+	  "flipImages" : true,
+      "imagePosition" : [-72, -32],
+	  "lightPosition" : [0, 0],
+      "frames" : 8,
+      "animationCycle" : 0.75,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+	  "direction" : "left"
+    }
+  ]
+}

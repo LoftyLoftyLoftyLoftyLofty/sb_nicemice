@@ -1,0 +1,34 @@
+{
+
+  "frameGrid" : {
+    "size" : [136, 64],
+    "dimensions" : [8, 2],
+    "names" : [
+	  [ null, null, null, null, null, null, null, null ],
+      [ "default.0", "default.1", "default.2", "default.3", "default.4", "default.5", "default.6", "default.7" ],
+      [ "shields.0", "shields.1", "shields.2", "shields.3", "shields.4", "shields.5", "shields.6", "shields.7" ],
+      [ "ears.0", "ears.1", "ears.2", "ears.3", "ears.4", "ears.5", "ears.6", "ears.7" ],
+      [ "comms.0", "comms.1", "comms.2", "comms.3", "comms.4", "comms.5", "comms.6", "comms.7" ],
+      [ "engine1.0", "engine1.1", "engine1.2", "engine1.3", "engine1.4", "engine1.5", "engine1.6", "engine1.7" ],
+      [ "tail.0", "tail.1", "tail.2", "tail.3", "tail.4", "tail.5", "tail.6", "tail.7" ],
+      [ "fuel.0", "fuel.1", "fuel.2", "fuel.3", "fuel.4", "fuel.5", "fuel.6", "fuel.7" ],
+      [ "crew.0", "crew.1", "crew.2", "crew.3", "crew.4", "crew.5", "crew.6", "crew.7" ],
+      [ "vents.0", "vents.1", "vents.2", "vents.3", "vents.4", "vents.5", "vents.6", "vents.7" ],
+      [ "torpedorack.0", "torpedorack.1", "torpedorack.2", "torpedorack.3", "torpedorack.4", "torpedorack.5", "torpedorack.6", "torpedorack.7" ],
+      [ "rackhall.0", "rackhall.1", "rackhall.2", "rackhall.3", "rackhall.4", "rackhall.5", "rackhall.6", "rackhall.7" ],
+      [ "cargoobservationdeck.0", "cargoobservationdeck.1", "cargoobservationdeck.2", "cargoobservationdeck.3", "cargoobservationdeck.4", "cargoobservationdeck.5", "cargoobservationdeck.6", "cargoobservationdeck.7" ],
+      [ "centerdeck.0", "centerdeck.1", "centerdeck.2", "centerdeck.3", "centerdeck.4", "centerdeck.5", "centerdeck.6", "centerdeck.7" ],
+      [ "elevator.0", "elevator.1", "elevator.2", "elevator.3", "elevator.4", "elevator.5", "elevator.6", "elevator.7" ],
+      [ "munitions.0", "munitions.1", "munitions.2", "munitions.3", "munitions.4", "munitions.5", "munitions.6", "munitions.7" ],
+      [ "entry.0", "entry.1", "entry.2", "entry.3", "entry.4", "entry.5", "entry.6", "entry.7" ],
+      [ "cargo.0", "cargo.1", "cargo.2", "cargo.3", "cargo.4", "cargo.5", "cargo.6", "cargo.7" ],
+      [ "decontamination.0", "decontamination.1", "decontamination.2", "decontamination.3", "decontamination.4", "decontamination.5", "decontamination.6", "decontamination.7" ],
+      [ "shiplocker.0", "shiplocker.1", "shiplocker.2", "shiplocker.3", "shiplocker.4", "shiplocker.5", "shiplocker.6", "shiplocker.7" ],
+      [ "flightdeck.0", "flightdeck.1", "flightdeck.2", "flightdeck.3", "flightdeck.4", "flightdeck.5", "flightdeck.6", "flightdeck.7" ],
+      [ "engineering.0", "engineering.1", "engineering.2", "engineering.3", "engineering.4", "engineering.5", "engineering.6", "engineering.7" ],
+      [ "tools.0", "tools.1", "tools.2", "tools.3", "tools.4", "tools.5", "tools.6", "tools.7" ],
+      [ "mechchest.0", "mechchest.1", "mechchest.2", "mechchest.3", "mechchest.4", "mechchest.5", "mechchest.6", "mechchest.7" ],
+      [ "engine2.0", "engine2.1", "engine2.2", "engine2.3", "engine2.4", "engine2.5", "engine2.6", "engine2.7" ]
+    ]
+  }
+}

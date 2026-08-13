@@ -4,7 +4,7 @@
   "properties" : {
   },
   "spacing" : 0,
-  "tilecount" : 27,
+  "tilecount" : 28,
   "tileheight" : 80,
   "tileproperties" : {
     "0" : {
@@ -195,6 +195,13 @@
       "imagePositionY" : "-16",
       "object" : "nicemice_poster_salute",
       "tilesetDirection" : "right"
+    },
+	"27" : {
+      "//description" : "Cargo Ship Hologram",
+      "imagePositionX" : "-72",
+      "imagePositionY" : "-32",
+      "object" : "nicemice_cargoshiphologram",
+      "tilesetDirection" : "right"
     }
   },
   "tiles" : {
@@ -278,6 +285,9 @@
     },
 	"26" : {
       "image" : "../objects/nicemice/decorative/posters/salute/nicemice_poster_salute.png"
+    },
+	"27" : {
+      "image" : "../objects/nicemice/nicemice_cargoshiphologram/tiled.png"
     }
   },
   "tilewidth" : 8
