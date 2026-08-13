@@ -11,6 +11,7 @@
 				//FLAGS, INSIGNIAS, AND OTHER IDENTITY ITEMS
 					{ "item" : { "name" : "nicemice_flag" }, "rarity" : 1.0 },
 					{ "item" : { "name" : "nicemice_maus_insigniaplate" }, "rarity" : 1.0 },
+					{ "item" : { "name" : "nicemice_poster_salute" }, "rarity" : 1.0 },
 					
 				//WEAPONS AND ARMOR
 					{ "item" : { "name" : "nicemice_generatedweapon_plasmapistol" }, "rarity" : 1.0 },
