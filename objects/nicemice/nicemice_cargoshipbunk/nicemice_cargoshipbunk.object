@@ -1,0 +1,69 @@
+{
+  "objectName" : "nicemice_cargoshipbunk",
+  "colonyTags" : ["nicemice","maus"],
+  "rarity" : "Common",
+  "description" : "These cosy beds can stack on top of each other.",
+  "shortdescription" : "M.A.U.S. Ship Bunk",
+  "race" : "nicemice",
+  "category" : "furniture",
+  "price" : 125,
+  "printable" : false,
+  "lightColor" : [33, 20, 20],
+
+  "apexDescription" : "A basic bunk bed.",
+  "avianDescription" : "This bunk bed looks rather basic.",
+  "floranDescription" : "Floran would like to sssleep in bunk bed.",
+  "glitchDescription" : "Sentimental. A bunk bed, not dissimilar from those at the Protectorate academy.",
+  "humanDescription" : "A bunk bed. Not terribly spacious, but surprisingly comfortable.",
+  "hylotlDescription" : "I have fond memories of sleeping in such a bed at the Protectorate academy.",
+  "novakidDescription" : "A regular bunk bed.",
+  "nicemiceDescription" : "A comfortable zpot to znooze.",
+
+  "objectType" : "loungeable",
+  "sitFlipDirection" : true,
+  
+  "sitOrientation" : "lay",
+  "sitAngle" : 90,
+  "sitCoverImage" : "/objects/nicemice/nicemice_cargoshipbunk/nicemice_cargoshipbunkcover.png",
+  "sitEmote" : "sleep",
+  "sitStatusEffects" : [
+    "bed1"
+  ],
+  "sitEffectEmitters" : [ "sleepbubbles" ],
+
+  "inventoryIcon" : "nicemice_cargoshipbunkicon.png",
+  "orientations" : [
+    {
+      "imageLayers" : [ { "image" : "nicemice_cargoshipbunk.png:<color>", "fullbright" : true }, { "image" : "nicemice_cargoshipbunklit.png:<color>" } ],
+      "flipImages" : true,
+      "imagePosition" : [-24, 0],
+      "frames" : 1,
+      "animationCycle" : 1.0,
+      
+      "lightPosition" : [0, 0],
+      
+      "sitPosition" : [-4, 14.3],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+      "direction" : "left",
+      "collision" : "platform"
+    },
+    {
+      "imageLayers" : [ { "image" : "nicemice_cargoshipbunk.png:<color>", "fullbright" : true }, { "image" : "nicemice_cargoshipbunklit.png:<color>"} ],
+      "imagePosition" : [-24, 0],
+      "frames" : 1,
+      "animationCycle" : 1.0,
+      
+      "lightPosition" : [0, 0],
+      
+      "sitPosition" : [-12, 14.3],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+      "direction" : "right",
+      "collision" : "platform"
+    }
+    
+  ]
+}
