@@ -4,7 +4,7 @@
   "properties" : {
   },
   "spacing" : 0,
-  "tilecount" : 26,
+  "tilecount" : 27,
   "tileheight" : 80,
   "tileproperties" : {
     "0" : {
@@ -188,6 +188,13 @@
       "imagePositionY" : "0",
       "object" : "nicemice_cargoshiplocker_3x3",
       "tilesetDirection" : "right"
+    },
+	"26" : {
+      "//description" : "M.A.U.S. Propaganda - Salute",
+      "imagePositionX" : "-16",
+      "imagePositionY" : "-16",
+      "object" : "nicemice_poster_salute",
+      "tilesetDirection" : "right"
     }
   },
   "tiles" : {
@@ -268,6 +275,9 @@
     },
 	"25" : {
       "image" : "../objects/nicemice/nicemice_cargoshiplocker_3x3/nicemice_cargoshiplocker_3x3.png"
+    },
+	"26" : {
+      "image" : "../objects/nicemice/decorative/posters/salute/nicemice_poster_salute.png"
     }
   },
   "tilewidth" : 8

@@ -1,0 +1,33 @@
+{
+  "objectName" : "nicemice_poster_salute",
+  "colonyTags" : ["nicemice","maus","pretty"],
+  "rarity" : "Uncommon",
+  "category" : "decorative",
+  "price" : 250,
+
+  "description" : "A propaganda poster of a M.A.U.S. ensign.",
+  "shortdescription" : "M.A.U.S. Propaganda - Salute",
+  "race" : "nicemice",
+
+  "apexDescription" : "Posters like these are common in areas under Miniknog control.",
+  "avianDescription" : "Posters like this make me wonder what it would be like to have a cause to fight for.",
+  "floranDescription" : "Can't eat possster. Worthlesss.",
+  "glitchDescription" : "Inspired. There is authentic commitment in her eyes.",
+  "humanDescription" : "Can't turn around without somebody's recruiter trying to convince me to go die for some politician.",
+  "hylotlDescription" : "Morality is the true battlefield.",
+  "novakidDescription" : "If MY taxes pay YOUR salary, YOU work for ME.",
+  "nicemiceDescription" : "I ztill have ze hat I graduated in. Zalut!",
+
+  "inventoryIcon" : "nicemice_poster_salute.png",
+  "orientations" : [
+    {
+      "dualImage" : "nicemice_poster_salute.png",
+      "imagePosition" : [-16, -16],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ ]
+    }
+  ]
+}
