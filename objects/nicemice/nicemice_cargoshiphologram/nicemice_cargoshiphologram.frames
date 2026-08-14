@@ -33,6 +33,8 @@
   },
   "aliases" : 
 	{
+		"default" : "default.0",
+		"default.default" : "default.0",
 		"default.8" : "default.0",
 		"shields.8" : "shields.0",
 		"ears.8" : "ears.0",

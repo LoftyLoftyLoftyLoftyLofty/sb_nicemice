@@ -6,7 +6,7 @@
   "price" : 7777,
   "printable" : false,
 
-  "description" : "Engineering can ship diagnostics with this display.",
+  "description" : "Engineering can view ship diagnostics with this display.",
   "shortdescription" : "M.A.U.S. Cargo Ship Hologram",
   "race" : "nicemice",
 
