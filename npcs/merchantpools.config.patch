@@ -27,6 +27,7 @@
 					{ "item" : { "name" : "nicemice_bigindustrialcanister_red" }, "rarity" : 1.0 },
 					{ "item" : { "name" : "nicemice_ceilingstrappedshippingcontainer_base" }, "rarity" : 1.0 },
 					{ "item" : { "name" : "nicemice_ceilingstrappedshippingcontainer_stackma" }, "rarity" : 1.0 },
+					{ "item" : { "name" : "nicemice_cargoshiphologram" }, "rarity" : 1.0 },
 					
 				//MISC NICEMICE DECORATIONS
 					{ "item" : { "name" : "nicemice_pinup_laying_jumpsuit" }, "rarity" : 1.0 }
