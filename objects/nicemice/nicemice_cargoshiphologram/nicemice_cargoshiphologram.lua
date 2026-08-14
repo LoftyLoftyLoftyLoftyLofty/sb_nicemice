@@ -1,36 +1,40 @@
---  SHIP DIAGNOSTIC DISPLAY
+--  M.A.U.S. CARGO SHIP HOLOGRAM
 --
---  Cycles through a list of animation states, one step per wire pulse. Wire a
---  button (or any pulsing output) into node 0; each press advances the display
---  to the next state and wraps around at the end.
+--  Cycles the hologram through one ship area per wire pulse. Wire a button (or
+--  any pulsing output) into node 0; each press advances to the next area and
+--  wraps around at the end.
+--
+--  The area names below are the row names in nicemice_cargoshiphologram.frames,
+--  and every one of them is also a state in the .animation. Editing this list
+--  means editing all three.
 
 --  The states to cycle through, in order. These must match state names declared
 --  under DISPLAY_STATE_TYPE in the object's .animation file.
 local DISPLAY_STATES = {
-  "bridge",
-  "cargohold0",
-  "cargohold1",
-  "cargohold2",
-  "engineering",
-  "reactor",
-  "lifesupport",
-  "galley",
-  "quarters0",
-  "quarters1",
-  "medbay",
-  "armory",
-  "hangar",
-  "airlockfore",
-  "airlockaft",
-  "dockingfield",
-  "sensors",
-  "comms",
+  "default",
   "shields",
-  "fueltanks",
-  "cryostorage",
-  "workshop",
-  "tramline",
-  "exterior"
+  "ears",
+  "comms",
+  "engine1",
+  "tail",
+  "fuel",
+  "crew",
+  "vents",
+  "torpedorack",
+  "rackhall",
+  "cargoobservationdeck",
+  "centerdeck",
+  "elevator",
+  "munitions",
+  "entry",
+  "cargo",
+  "decontamination",
+  "shiplocker",
+  "flightdeck",
+  "engineering",
+  "tools",
+  "mechchest",
+  "engine2"
 }
 
 --  The stateType these live under in the .animation file.
@@ -41,7 +45,7 @@ local DISPLAY_STATE_TYPE = "displayState"
 function init()
   --  Persisted so the display keeps its page across a reload rather than
   --  snapping back to the bridge every time the ship loads.
-  storage.displayIndex = storage.displayIndex or 1
+  storage.displayIndex = storage.displayIndex or config.getParameter("displayIndex", 1)
 
   --  Edge detection needs to know where the wire started. Reading the node here
   --  rather than assuming false means a display wired to a switch that is

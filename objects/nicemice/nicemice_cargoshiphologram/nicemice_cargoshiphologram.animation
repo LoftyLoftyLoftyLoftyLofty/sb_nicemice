@@ -1,0 +1,288 @@
+//  M.A.U.S. CARGO SHIP HOLOGRAM
+//
+//  One displayState per row in nicemice_cargoshiphologram.frames -- the
+//  names are taken straight from that file, and the script sets them by
+//  name, so the three must stay in agreement.
+//
+//  Each row is 8 frames at the 0.75s cycle the object used before, so a
+//  selected area keeps animating rather than freezing on one frame.
+//
+//  The pedestal is a single static 136x64 frame drawn ON TOP of the hologram --
+//  the object's imageLayers lists it after the hologram, and later layers win.
+//  It needs no state and no frame substitution. Only the hologram layer is
+//  fullbright, matching the original imageLayers setup.
+
+{
+  "animatedParts": {
+    "stateTypes": {
+      "displayState": {
+        "default": "default",
+        "states": {
+          "default": {
+            "frames": 8,
+            "cycle": 0.75,
+            "mode": "loop"
+          },
+          "shields": {
+            "frames": 8,
+            "cycle": 0.75,
+            "mode": "loop"
+          },
+          "ears": {
+            "frames": 8,
+            "cycle": 0.75,
+            "mode": "loop"
+          },
+          "comms": {
+            "frames": 8,
+            "cycle": 0.75,
+            "mode": "loop"
+          },
+          "engine1": {
+            "frames": 8,
+            "cycle": 0.75,
+            "mode": "loop"
+          },
+          "tail": {
+            "frames": 8,
+            "cycle": 0.75,
+            "mode": "loop"
+          },
+          "fuel": {
+            "frames": 8,
+            "cycle": 0.75,
+            "mode": "loop"
+          },
+          "crew": {
+            "frames": 8,
+            "cycle": 0.75,
+            "mode": "loop"
+          },
+          "vents": {
+            "frames": 8,
+            "cycle": 0.75,
+            "mode": "loop"
+          },
+          "torpedorack": {
+            "frames": 8,
+            "cycle": 0.75,
+            "mode": "loop"
+          },
+          "rackhall": {
+            "frames": 8,
+            "cycle": 0.75,
+            "mode": "loop"
+          },
+          "cargoobservationdeck": {
+            "frames": 8,
+            "cycle": 0.75,
+            "mode": "loop"
+          },
+          "centerdeck": {
+            "frames": 8,
+            "cycle": 0.75,
+            "mode": "loop"
+          },
+          "elevator": {
+            "frames": 8,
+            "cycle": 0.75,
+            "mode": "loop"
+          },
+          "munitions": {
+            "frames": 8,
+            "cycle": 0.75,
+            "mode": "loop"
+          },
+          "entry": {
+            "frames": 8,
+            "cycle": 0.75,
+            "mode": "loop"
+          },
+          "cargo": {
+            "frames": 8,
+            "cycle": 0.75,
+            "mode": "loop"
+          },
+          "decontamination": {
+            "frames": 8,
+            "cycle": 0.75,
+            "mode": "loop"
+          },
+          "shiplocker": {
+            "frames": 8,
+            "cycle": 0.75,
+            "mode": "loop"
+          },
+          "flightdeck": {
+            "frames": 8,
+            "cycle": 0.75,
+            "mode": "loop"
+          },
+          "engineering": {
+            "frames": 8,
+            "cycle": 0.75,
+            "mode": "loop"
+          },
+          "tools": {
+            "frames": 8,
+            "cycle": 0.75,
+            "mode": "loop"
+          },
+          "mechchest": {
+            "frames": 8,
+            "cycle": 0.75,
+            "mode": "loop"
+          },
+          "engine2": {
+            "frames": 8,
+            "cycle": 0.75,
+            "mode": "loop"
+          }
+        }
+      }
+    },
+    "parts": {
+      "hologram": {
+        "properties": {
+          "centered": false,
+          "fullbright": true,
+          "zLevel": 0
+        },
+        "partStates": {
+          "displayState": {
+            "default": {
+              "properties": {
+                "image": "<partImage>:default.<frame>"
+              }
+            },
+            "shields": {
+              "properties": {
+                "image": "<partImage>:shields.<frame>"
+              }
+            },
+            "ears": {
+              "properties": {
+                "image": "<partImage>:ears.<frame>"
+              }
+            },
+            "comms": {
+              "properties": {
+                "image": "<partImage>:comms.<frame>"
+              }
+            },
+            "engine1": {
+              "properties": {
+                "image": "<partImage>:engine1.<frame>"
+              }
+            },
+            "tail": {
+              "properties": {
+                "image": "<partImage>:tail.<frame>"
+              }
+            },
+            "fuel": {
+              "properties": {
+                "image": "<partImage>:fuel.<frame>"
+              }
+            },
+            "crew": {
+              "properties": {
+                "image": "<partImage>:crew.<frame>"
+              }
+            },
+            "vents": {
+              "properties": {
+                "image": "<partImage>:vents.<frame>"
+              }
+            },
+            "torpedorack": {
+              "properties": {
+                "image": "<partImage>:torpedorack.<frame>"
+              }
+            },
+            "rackhall": {
+              "properties": {
+                "image": "<partImage>:rackhall.<frame>"
+              }
+            },
+            "cargoobservationdeck": {
+              "properties": {
+                "image": "<partImage>:cargoobservationdeck.<frame>"
+              }
+            },
+            "centerdeck": {
+              "properties": {
+                "image": "<partImage>:centerdeck.<frame>"
+              }
+            },
+            "elevator": {
+              "properties": {
+                "image": "<partImage>:elevator.<frame>"
+              }
+            },
+            "munitions": {
+              "properties": {
+                "image": "<partImage>:munitions.<frame>"
+              }
+            },
+            "entry": {
+              "properties": {
+                "image": "<partImage>:entry.<frame>"
+              }
+            },
+            "cargo": {
+              "properties": {
+                "image": "<partImage>:cargo.<frame>"
+              }
+            },
+            "decontamination": {
+              "properties": {
+                "image": "<partImage>:decontamination.<frame>"
+              }
+            },
+            "shiplocker": {
+              "properties": {
+                "image": "<partImage>:shiplocker.<frame>"
+              }
+            },
+            "flightdeck": {
+              "properties": {
+                "image": "<partImage>:flightdeck.<frame>"
+              }
+            },
+            "engineering": {
+              "properties": {
+                "image": "<partImage>:engineering.<frame>"
+              }
+            },
+            "tools": {
+              "properties": {
+                "image": "<partImage>:tools.<frame>"
+              }
+            },
+            "mechchest": {
+              "properties": {
+                "image": "<partImage>:mechchest.<frame>"
+              }
+            },
+            "engine2": {
+              "properties": {
+                "image": "<partImage>:engine2.<frame>"
+              }
+            }
+          }
+        }
+      },
+      "pedestal": {
+        "properties": {
+          "centered": false,
+          "zLevel": 1,
+          "image": "<partImage>"
+        }
+      }
+    }
+  },
+  "sounds": {
+    "advance": []
+  }
+}

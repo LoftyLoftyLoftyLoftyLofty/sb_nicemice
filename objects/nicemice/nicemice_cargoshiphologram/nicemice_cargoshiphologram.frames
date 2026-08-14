@@ -2,7 +2,7 @@
 
   "frameGrid" : {
     "size" : [136, 64],
-    "dimensions" : [8, 2],
+    "dimensions" : [8, 25],
     "names" : [
 	  [ null, null, null, null, null, null, null, null ],
       [ "default.0", "default.1", "default.2", "default.3", "default.4", "default.5", "default.6", "default.7" ],
@@ -30,5 +30,32 @@
       [ "mechchest.0", "mechchest.1", "mechchest.2", "mechchest.3", "mechchest.4", "mechchest.5", "mechchest.6", "mechchest.7" ],
       [ "engine2.0", "engine2.1", "engine2.2", "engine2.3", "engine2.4", "engine2.5", "engine2.6", "engine2.7" ]
     ]
-  }
+  },
+  "aliases" : 
+	{
+		"default.8" : "default.0",
+		"shields.8" : "shields.0",
+		"ears.8" : "ears.0",
+		"comms.8" : "comms.0",
+		"engine1.8" : "engine1.0",
+		"tail.8" : "tail.0",
+		"fuel.8" : "fuel.0",
+		"crew.8" : "crew.0",
+		"vents.8" : "vents.0",
+		"torpedorack.8" : "torpedorack.0",
+		"rackhall.8" : "rackhall.0",
+		"cargoobservationdeck.8" : "cargoobservationdeck.0",
+		"centerdeck.8" : "centerdeck.0",
+		"elevator.8" : "elevator.0",
+		"munitions.8" : "munitions.0",
+		"entry.8" : "entry.0",
+		"cargo.8" : "cargo.0",
+		"decontamination.8" : "decontamination.0",
+		"shiplocker.8" : "shiplocker.0",
+		"flightdeck.8" : "flightdeck.0",
+		"engineering.8" : "engineering.0",
+		"tools.8" : "tools.0",
+		"mechchest.8" : "mechchest.0",
+		"engine2.8" : "engine2.0"
+	}
 }
