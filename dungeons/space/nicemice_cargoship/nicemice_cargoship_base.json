@@ -4646,6 +4646,24 @@
                  "width":136,
                  "x":1560,
                  "y":720
+                }, 
+                {
+                 "gid":7849,
+                 "height":8,
+                 "id":2721,
+                 "name":"NPC CAN PRESS THIS ONE",
+                 "properties":[
+                        {
+                         "name":"object",
+                         "type":"string",
+                         "value":"nicemice_npc_tinywallbutton"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":8,
+                 "x":1552,
+                 "y":704
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -6018,10 +6036,30 @@
                  "width":0,
                  "x":1008,
                  "y":424
+                }, 
+                {
+                 "height":0,
+                 "id":2722,
+                 "name":"",
+                 "polyline":[
+                        {
+                         "x":0,
+                         "y":0
+                        }, 
+                        {
+                         "x":80,
+                         "y":-16
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":1552,
+                 "y":696
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":false,
+         "visible":true,
          "x":0,
          "y":0
         }, 
@@ -6226,7 +6264,7 @@
                  "type":"",
                  "visible":true,
                  "width":8,
-                 "x":1936,
+                 "x":1648,
                  "y":528
                 }, 
                 {
@@ -6378,8 +6416,8 @@
                  "type":"",
                  "visible":true,
                  "width":8,
-                 "x":1656,
-                 "y":624
+                 "x":1800,
+                 "y":528
                 }, 
                 {
                  "gid":6242,
@@ -6620,7 +6658,7 @@
          "y":0
         }],
  "nextlayerid":33,
- "nextobjectid":2721,
+ "nextobjectid":2723,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.10.0",
