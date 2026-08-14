@@ -25,13 +25,13 @@
 	"lightColor" : [100, 71, 71],
 	"lightPosition" : [-1, 0],
 	
-	"apexDescription" : "I can talk to MAUS through this console.",
-	"avianDescription" : "I can use this station to talk to MAUS.",
-	"floranDescription" : "Floran use thisss magic panel to talk to MAUS!",
-	"glitchDescription" : "Happy. This station allows me to talk to MAUS.",
-	"humanDescription" : "This station allows me to communicate with MAUS.",
-	"hylotlDescription" : "This console allows me to communicate with MAUS.",
-	"novakidDescription" : "This here station lets me talk with MAUS.",
+	"apexDescription" : "I can talk to M.A.U.S. through this console.",
+	"avianDescription" : "I can use this station to talk to M.A.U.S.",
+	"floranDescription" : "Floran use thisss magic panel to talk to M.A.U.S.!",
+	"glitchDescription" : "Happy. This station allows me to talk to M.A.U.S.",
+	"humanDescription" : "This station allows me to communicate with M.A.U.S.",
+	"hylotlDescription" : "This console allows me to communicate with M.A.U.S.",
+	"novakidDescription" : "This here station lets me talk with M.A.U.S.",
 	"nicemiceDescription" : "Ziz zyztem iz uzed to rezeive orderz from command.",
 
 	"inventoryIcon" : "nicemice_techstationicon.png",
@@ -94,7 +94,7 @@
 				"/ai/portraits/nicemiceportrait.png:talk.0" 
 			],
 			[ 
-				"Ziz vezzel'z navigation zystemz were damaged in our ezcape. Our location iz currently unknown.", 
+				"Ziz vezzel'z navigation zystemz were damaged in our ezcape. Our locazion iz currently unknown.", 
 				"/ai/portraits/nicemiceportrait.png:talk.1" 
 			]
 		]
