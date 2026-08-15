@@ -1,0 +1,171 @@
+[
+  //  Status lines for the Nicemice personalities defined in
+  //  /npcs/nicemice_base.npctype. Keys here must match the "personality"
+  //  strings in that file exactly, or a mouse falls through to whatever the
+  //  picker does with an unknown personality.
+  //
+  //  "nicemice_generic" replaces the role vanilla's "generic" pool played
+  //  before the species gate: lines any mouse can say regardless of
+  //  personality. It is only drawn if the modified status generator merges it
+  //  the way vanilla merged "generic". Until then the key sits unused and
+  //  costs nothing.
+
+  {
+    "op" : "add",
+    "path" : "/statuses/nicemice_generic",
+    "value" : [
+      "Grooming zeir vhizkerz",
+      "Counting ze cargo cratez again",
+      "Zure zey heard zomething in ze vallz",
+      "Vondering vhat ze ztarz taste like",
+      "Cleaning ze duzt from zeir earz",
+      "Mizzing zeir old zhip",
+      "Trying to remember vhere zey left zeir helmet",
+      "Chewing on zomet'ing zey zhould not",
+      "Vatching ze airlock varilie",
+      "Zmoothing a vrinkle out of zeir uniform",
+      "Pretending to read ze manual",
+      "Compozing a complaint zey vill never zend",
+      "Zat on zeir own tail, bie akzident",
+      "Avare zat ze floor iz cold",
+      "Ztill t'inking about brekfazt",
+      "Adjuzting a boot zat doez not fit",
+      "Liztening to ze hull tick",
+      "Zecretlie proud of zeir pozture",
+      "Vaiting for ze kettle",
+      "Praktizing zeir zalute",
+	  "Unbozzered, moizturized, in zeir own lane",
+	  "Unamuzed vith ze ztate of t'ingz",
+	  "Amuzed vith ze ztate of t'ingz",
+	  "Juzt caught zemzelvez t'inkink about cheeze again"
+    ]
+  },
+  {
+    "op" : "add",
+    "path" : "/statuses/nicemice_haughty",
+    "value" : [
+      "Not imprezzed by ze zervice",
+      "Zertain zey dezerve a better pozting",
+      "Judging ze qualitie of your flooring",
+      "Vaiting for zomeone to notize zem",
+      "Zpeaking onlie vhen it improvez ze zilenze",
+      "Vould have done it differentlie, naturallement",
+      "Zure zey vere ze zenior officer here",
+      "Declining to explain zemzelvez",
+      "Holding zeir tail juzt zo",
+      "Unconvinzed bie your zhip'z decor"
+    ]
+  },
+  {
+    "op" : "add",
+    "path" : "/statuses/nicemice_fussy",
+    "value" : [
+      "Alphabetizing ze cargo manifezt",
+      "Dizguzted by a zingle crumb",
+      "Rearranging t'ingz zat vere alreadie fine",
+      "Zearchink for a clean cloth",
+      "Countink ze zpare boltz, tvize",
+      "Bozered bie a crooked panel",
+      "Polizhing zomething alreadie polizhed",
+      "Keeping a lizt of vho iz meszy",
+      "Vaiting for ze deck to drie",
+      "Refolding a perfectlie folded uniform"
+    ]
+  },
+  {
+    "op" : "add",
+    "path" : "/statuses/nicemice_dutiful",
+    "value" : [
+      "Avaiting orderz",
+      "Zecuring ze perimeter",
+      "Rezpectfullie declining to complain",
+      "On dutie, naturallement",
+      "Ztanding vatch over an emptie corridor",
+      "Checking ze zame door for ze zird time",
+      "Readie for anyzing, prezumablie",
+      "Reporting nozing unuzual",
+      "Keeping zeir veapon clean",
+      "Villing to take ze night vatch again"
+    ]
+  },
+  {
+    "op" : "add",
+    "path" : "/statuses/nicemice_gossip",
+    "value" : [
+      "Zure zomeone iz keeping a zecret",
+      "Vaiting to be azked vhat zey heard",
+      "Zpreading a rumour about ze engineerink deck",
+      "Nearlie burzting vith newz",
+      "Zaving ze bezt part for later",
+      "Vondering vhy ze quartermazter lookz zo pleazed",
+      "Collecting opinionz about ze new recruit",
+      "Praktizing how to look zurprized",
+      "Zertain zat zomeone iz in love",
+      "Repeating zomet'ing zey vere told not to"
+    ]
+  },
+  {
+    "op" : "add",
+    "path" : "/statuses/nicemice_timid",
+    "value" : [
+      "Hoping nobodie lookz over here",
+      "Praktizing a converzation in zeir head",
+      "Not zure zey belong on zis zhip",
+      "Zqueaking quietlie",
+      "Ztanding near ze exit, juzt in caze",
+      "Apologizing to a door",
+      "Countink ze zecondz until zeir zhift endz",
+      "Vorried zey zaid zomet'ing vrong",
+      "Ztaying vithin reach of a vall",
+      "Rehearzing an ekzcuse"
+    ]
+  },
+  {
+    "op" : "add",
+    "path" : "/statuses/nicemice_gourmand",
+    "value" : [
+      "T'inking about ze cheeze zituation",
+      "Rating ze zhip'z rationz, harzhlie",
+      "Zmelling zomething delizious",
+      "Planning a zecond dinner",
+      "Convinzed ze galley iz hiding zomet'ing good",
+      "Zavouring ze idea of zupper",
+      "Dizputing vhat countz az a znack",
+      "Hungrie again, unzurprizinglie",
+      "Compozing a menu for ze crew",
+      "Vondering if ze zhip pet eatz better zan zey do"
+    ]
+  },
+  {
+    "op" : "add",
+    "path" : "/statuses/nicemice_scoundrel",
+    "value" : [
+      "Nozing around zomeone elze'z lockerz",
+      "Blaming ze new recruit",
+      "Zure zey could do your job better",
+      "Pocketing zomet'ing zmall",
+      "Moving a tool zomevhere elze, for fun",
+      "Denying everyzing in advanze",
+      "Owed a favour bie zomeone unfortunate",
+      "Not vhere zey are zuppozed to be",
+      "Zmiling for no good reazon",
+      "Keeping a tallie of ot'er people'z miztakez"
+    ]
+  },
+  {
+    "op" : "add",
+    "path" : "/statuses/nicemice_dreamer",
+    "value" : [
+      "Ztaring into ze void, comfortablie",
+      "Avake at ze vrong hourz",
+      "Compozing a zong about ze ztarz",
+      "Vondering vhat iz out zere",
+      "Lozing track of ze zhift zchedule",
+      "Vatching duzt float in ze light",
+      "Zure zey dreamt zis ekzakt moment",
+      "Naming ze planetz zey vill never vizit",
+      "Avake, technicallie",
+      "T'inking about ze zize of everyzing"
+    ]
+  }
+]

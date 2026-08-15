@@ -1,0 +1,598 @@
+{
+  //  Shared root for every Nicemice npctype.
+  //
+  //  Exists for one reason: to replace scriptConfig.personalities wholesale.
+  //  Vanilla's list is a weighted array, and arrays are REPLACED rather than
+  //  merged during npctype inheritance, so declaring it here overrides all
+  //  fourteen vanilla entries for anything descended from this file.
+  //
+  //  Two problems solved at once:
+  //
+  //  1. EXPLOSIONS. "explode", "touchandexplode" and "burn" appear in exactly
+  //     one vanilla personality -- "clumsy" -- which is ~1 in 14 mice. None of
+  //     the personalities below reference them, and the machine-interaction
+  //     keys are declared explicitly (and NON-additively, so they replace
+  //     rather than extend the inherited pool) to keep it that way even if
+  //     another mod patches reactions into the shared default pools.
+  //
+  //  2. STATUS TEXT. The personality name is a dialog lookup key. Mods that
+  //     add lines do so under vanilla names ("cheerful", "jerk", "dumb"...),
+  //     so a mouse whose personality is "nicemice_haughty" never resolves any
+  //     of them and falls back to the "default" branch -- which is where all
+  //     Nicemice dialog is written. The nicemice_ prefix is load-bearing: a
+  //     name that collides with a vanilla one lets those lines back in.
+  //
+  //  Note that dialog referenced by PATH (/dialog/crewmember.config:converse,
+  //  /dialog/combat.config:*, grumble, arrivedhome, converse, thief, flee) is
+  //  still shared with every other mod regardless of personality name. Copying
+  //  those to /dialog/nicemice_*.config is the other half of the fix.
+
+  "type" : "nicemice_base",
+  "baseType" : "base",
+
+  "scriptConfig" : {
+    "personalities" : [
+      //  ---- nicemice_haughty --------------------------------------------
+      //  The house default. Unimpressed by everything, faintly pleased with
+      //  itself. Weighted heaviest because it is the mod's baseline voice.
+      [1.5, {
+        "personality" : "nicemice_haughty",
+        "additiveReactions" : [ "spontaneous" ],
+        "reactions" : {
+          "spontaneous" : [
+            [1.0, "smile"]
+          ],
+          "cheerful" : [
+            [1.0, "neutral"],
+            [1.0, "annoyed"]
+          ],
+          "cry" : [
+            [1.0, "oh"],
+            [1.0, "neutral"]
+          ],
+          "panic" : [
+            [1.0, "neutral"],
+            [1.0, "oh"]
+          ],
+          "schadenfreude" : [
+            [1.0, "annoyed"]
+          ],
+          "wink" : [
+            [1.0, "neutral"],
+            [0.5, "annoyed"]
+          ],
+
+          //  Machine interactions. Declared to displace anything explosive.
+          "wallbutton" : [
+            [1.0, "smile"]
+          ],
+          "wallswitch" : [
+            [1.0, "smile"]
+          ],
+          "console" : [
+            [1.0, "oh"],
+            [1.0, "smile"]
+          ],
+          "brokenConsole" : [
+            [1.0, "annoyed"]
+          ],
+          "teleporter" : [
+            [1.0, "oooh"]
+          ],
+          "turret" : [
+            [1.0, "neutral"]
+          ],
+          "handdryer" : [
+            [1.0, "warmhands"]
+          ],
+          "vendingmachineCollect" : [
+            [1.0, "smile"]
+          ],
+          "campfire" : [
+            [1.0, "warmhands"]
+          ],
+          "furnaceComplete" : [
+            [1.0, "oooh"]
+          ],
+          "videogameComplete" : [
+            [1.0, "smile"]
+          ],
+
+          "default" : [
+            [3.0, "smile"],
+            [2.0, "neutral"],
+            [2.0, "oh"],
+            [1.0, "annoyed"],
+            [1.0, "blankstare"],
+            [1.0, "quit"]
+          ]
+        }
+      }],
+
+      //  ---- nicemice_fussy ----------------------------------------------
+      //  Fastidious. Offended by mess, delighted by plumbing.
+      [1.0, {
+        "personality" : "nicemice_fussy",
+        "reactions" : {
+          "vomit" : [
+            [2.0, "annoyed"],
+            [1.0, "flee"]
+          ],
+          "nosebleed" : [
+            [1.0, "annoyed"],
+            [1.0, "comfort"]
+          ],
+          "cry" : [
+            [1.0, "comfort"],
+            [1.0, "annoyed"]
+          ],
+          "bored" : [
+            [1.0, "annoyed"]
+          ],
+
+          "sinkComplete" : [
+            [1.0, "smile"]
+          ],
+          "watercoolerComplete" : [
+            [1.0, "smile"]
+          ],
+          "handdryer" : [
+            [1.0, "warmhands"]
+          ],
+          "wallbutton" : [
+            [1.0, "neutral"]
+          ],
+          "wallswitch" : [
+            [1.0, "neutral"]
+          ],
+          "console" : [
+            [1.0, "neutral"]
+          ],
+          "brokenConsole" : [
+            [1.0, "annoyed"]
+          ],
+          "campfire" : [
+            [1.0, "annoyed"]
+          ],
+          "teleporter" : [
+            [1.0, "neutral"]
+          ],
+          "turret" : [
+            [1.0, "annoyed"]
+          ],
+          "vendingmachineCollect" : [
+            [1.0, "neutral"]
+          ],
+
+          "default" : [
+            [3.0, "annoyed"],
+            [2.0, "neutral"],
+            [2.0, "oh"],
+            [1.0, "smile"],
+            [1.0, "quit"]
+          ]
+        }
+      }],
+
+      //  ---- nicemice_dutiful --------------------------------------------
+      //  Military bearing. Says little, closes ranks when someone is upset.
+      //  The natural fit for M.A.U.S. personnel and guards.
+      [1.0, {
+        "personality" : "nicemice_dutiful",
+        "behaviorConfig" : {
+          "chatCooldown" : 20
+        },
+        "reactions" : {
+          "cry" : [
+            [1.0, "comfort"]
+          ],
+          "panic" : [
+            [1.0, "comfort"],
+            [1.0, "neutral"]
+          ],
+          "flee" : [
+            [1.0, "follow"],
+            [1.0, "neutral"]
+          ],
+          "schadenfreude" : [
+            [1.0, "annoyed"]
+          ],
+          "chase" : [
+            [1.0, "neutral"]
+          ],
+
+          "wallbutton" : [
+            [1.0, "neutral"]
+          ],
+          "wallswitch" : [
+            [1.0, "neutral"]
+          ],
+          "console" : [
+            [1.0, "neutral"]
+          ],
+          "brokenConsole" : [
+            [1.0, "annoyed"]
+          ],
+          "teleporter" : [
+            [1.0, "neutral"]
+          ],
+          "turret" : [
+            [1.0, "smile"]
+          ],
+          "handdryer" : [
+            [1.0, "warmhands"]
+          ],
+          "vendingmachineCollect" : [
+            [1.0, "neutral"]
+          ],
+          "campfire" : [
+            [1.0, "warmhands"]
+          ],
+          "furnaceComplete" : [
+            [1.0, "neutral"]
+          ],
+
+          "default" : [
+            [4.0, "neutral"],
+            [2.0, "smile"],
+            [1.0, "oh"],
+            [1.0, "wave"]
+          ]
+        }
+      }],
+
+      //  ---- nicemice_gossip ---------------------------------------------
+      //  Socialite analogue. Chats often, follows a conversation around.
+      [1.0, {
+        "personality" : "nicemice_gossip",
+        "behaviorConfig" : {
+          "chatCooldown" : 10
+        },
+        "additiveReactions" : [ "default" ],
+        "reactions" : {
+          "nearnpc" : [
+            [1.0, "wave"],
+            [1.0, "oooh"]
+          ],
+          "quit" : [
+            [1.0, "oooh"],
+            [0.5, "follow"]
+          ],
+          "schadenfreude" : [
+            [1.0, "laugh"],
+            [1.0, "oooh"]
+          ],
+          "cry" : [
+            [1.0, "comfort"],
+            [1.0, "oooh"]
+          ],
+          "wink" : [
+            [1.0, "oooh"],
+            [1.0, "laugh"]
+          ],
+
+          "wallbutton" : [
+            [1.0, "smile"]
+          ],
+          "wallswitch" : [
+            [1.0, "smile"]
+          ],
+          "console" : [
+            [1.0, "oooh"]
+          ],
+          "brokenConsole" : [
+            [1.0, "oh"]
+          ],
+          "teleporter" : [
+            [1.0, "oooh"]
+          ],
+          "turret" : [
+            [1.0, "oooh"]
+          ],
+          "handdryer" : [
+            [1.0, "warmhands"]
+          ],
+          "vendingmachineCollect" : [
+            [1.0, "smile"]
+          ],
+          "watercoolerComplete" : [
+            [1.0, "oooh"]
+          ],
+          "videogameComplete" : [
+            [1.0, "laugh"]
+          ],
+
+          "default" : [
+            [2.0, "laugh"],
+            [2.0, "oooh"],
+            [1.0, "smile"],
+            [1.0, "wave"],
+            [1.0, "follow"]
+          ]
+        }
+      }],
+
+      //  ---- nicemice_timid ----------------------------------------------
+      //  Anxious, but deliberately NOT vanilla "easilyspooked" -- that one
+      //  panics at almost everything, which reads as noise rather than
+      //  character. Retreats and stares instead.
+      [0.75, {
+        "personality" : "nicemice_timid",
+        "maxPlayTargetNpcs" : 1,
+        "additiveReactions" : [ "default" ],
+        "reactions" : {
+          "nearplayer" : [
+            [1.0, "neutral"],
+            [1.0, "quit"]
+          ],
+          "chase" : [
+            [1.0, "flee"]
+          ],
+          "creepyfollow" : [
+            [1.0, "flee"]
+          ],
+          "panic" : [
+            [1.0, "neutral"],
+            [0.5, "panic"]
+          ],
+          "cry" : [
+            [1.0, "comfort"],
+            [1.0, "blankstare"]
+          ],
+
+          "wallbutton" : [
+            [1.0, "neutral"]
+          ],
+          "wallswitch" : [
+            [1.0, "neutral"]
+          ],
+          "console" : [
+            [1.0, "blankstare"]
+          ],
+          "brokenConsole" : [
+            [1.0, "oh"]
+          ],
+          "teleporter" : [
+            [1.0, "neutral"]
+          ],
+          "turret" : [
+            [1.0, "flee"]
+          ],
+          "handdryer" : [
+            [1.0, "warmhands"]
+          ],
+          "vendingmachineCollect" : [
+            [1.0, "neutral"]
+          ],
+
+          "default" : [
+            [3.0, "neutral"],
+            [2.0, "blankstare"],
+            [2.0, "oh"],
+            [1.0, "gohome"]
+          ]
+        }
+      }],
+
+      //  ---- nicemice_gourmand -------------------------------------------
+      //  Rations, cheese, and the machines that dispense them.
+      [0.75, {
+        "personality" : "nicemice_gourmand",
+        "reactions" : {
+          "bored" : [
+            [1.0, "oooh"],
+            [1.0, "smile"]
+          ],
+          "cheerful" : [
+            [1.0, "smile"]
+          ],
+          "vomit" : [
+            [1.0, "comfort"],
+            [1.0, "oh"]
+          ],
+
+          "vendingmachineActivate" : [
+            [1.0, "jumpforjoy"]
+          ],
+          "vendingmachineCollect" : [
+            [1.0, "jumpforjoy"]
+          ],
+          "vendingmachineConsume" : [
+            [1.0, "smile"]
+          ],
+          "watercoolerCollect" : [
+            [1.0, "smile"]
+          ],
+          "watercoolerConsume" : [
+            [1.0, "smile"]
+          ],
+          "furnaceComplete" : [
+            [1.0, "oooh"]
+          ],
+          "campfire" : [
+            [1.0, "warmhands"]
+          ],
+          "handdryer" : [
+            [1.0, "warmhands"]
+          ],
+          "wallbutton" : [
+            [1.0, "smile"]
+          ],
+          "wallswitch" : [
+            [1.0, "smile"]
+          ],
+          "console" : [
+            [1.0, "oh"]
+          ],
+          "brokenConsole" : [
+            [1.0, "annoyed"]
+          ],
+          "teleporter" : [
+            [1.0, "oh"]
+          ],
+          "turret" : [
+            [1.0, "neutral"]
+          ],
+
+          "default" : [
+            [3.0, "smile"],
+            [2.0, "oooh"],
+            [1.0, "hop"],
+            [1.0, "laugh"],
+            [1.0, "oh"]
+          ]
+        }
+      }],
+
+      //  ---- nicemice_scoundrel ------------------------------------------
+      //  The jerk slot. Punches machinery, which is vanilla behaviour for
+      //  that archetype and harms nobody.
+      [0.75, {
+        "personality" : "nicemice_scoundrel",
+        "reactions" : {
+          "cheerful" : [
+            [1.0, "annoyed"]
+          ],
+          "comfort" : [
+            [1.0, "annoyed"]
+          ],
+          "cry" : [
+            [2.0, "schadenfreude"],
+            [1.0, "annoyed"]
+          ],
+          "vomit" : [
+            [2.0, "schadenfreude"],
+            [1.0, "annoyed"]
+          ],
+          "love" : [
+            [1.0, "annoyed"],
+            [1.0, "schadenfreude"]
+          ],
+          "wink" : [
+            [1.0, "annoyed"]
+          ],
+          "flee" : [
+            [1.0, "chase"]
+          ],
+          "quit" : [
+            [1.0, "chase"]
+          ],
+          "bored" : [
+            [1.0, "schadenfreude"],
+            [1.0, "annoyed"]
+          ],
+
+          "wallbutton" : [
+            [1.0, "punch"]
+          ],
+          "wallswitch" : [
+            [1.0, "punch"]
+          ],
+          "console" : [
+            [1.0, "punch"],
+            [1.0, "annoyed"]
+          ],
+          "brokenConsole" : [
+            [1.0, "punch"]
+          ],
+          "videogameComplete" : [
+            [1.0, "punch"]
+          ],
+          "teleporter" : [
+            [1.0, "neutral"]
+          ],
+          "turret" : [
+            [1.0, "smile"]
+          ],
+          "handdryer" : [
+            [1.0, "annoyed"]
+          ],
+          "vendingmachineCollect" : [
+            [1.0, "punch"]
+          ],
+          "campfire" : [
+            [1.0, "warmhands"]
+          ],
+
+          "default" : [
+            [3.0, "annoyed"],
+            [2.0, "schadenfreude"],
+            [1.0, "smile"],
+            [1.0, "punch"],
+            [1.0, "laugh"]
+          ]
+        }
+      }],
+
+      //  ---- nicemice_dreamer --------------------------------------------
+      //  Keeps odd hours, stares at things. Nocturnal/emo territory without
+      //  the theatrics.
+      [0.5, {
+        "personality" : "nicemice_dreamer",
+        "behaviorConfig" : {
+          "sleepUntil" : [0.9, 0.15],
+          "playCooldown" : 60
+        },
+        "reactions" : {
+          "cry" : [
+            [1.0, "comfort"],
+            [1.0, "blankstare"]
+          ],
+          "cheerful" : [
+            [1.0, "neutral"],
+            [1.0, "smile"]
+          ],
+          "bored" : [
+            [1.0, "blankstare"],
+            [1.0, "wander"]
+          ],
+          "music" : [
+            [1.0, "oooh"]
+          ],
+          "musicFinished" : [
+            [1.0, "smile"]
+          ],
+
+          "wallbutton" : [
+            [1.0, "blankstare"]
+          ],
+          "wallswitch" : [
+            [1.0, "blankstare"]
+          ],
+          "console" : [
+            [1.0, "oooh"]
+          ],
+          "brokenConsole" : [
+            [1.0, "oh"]
+          ],
+          "teleporter" : [
+            [1.0, "oooh"]
+          ],
+          "turret" : [
+            [1.0, "neutral"]
+          ],
+          "handdryer" : [
+            [1.0, "warmhands"]
+          ],
+          "vendingmachineCollect" : [
+            [1.0, "neutral"]
+          ],
+          "campfire" : [
+            [1.0, "warmhands"]
+          ],
+          "furnaceComplete" : [
+            [1.0, "oooh"]
+          ],
+
+          "default" : [
+            [3.0, "neutral"],
+            [2.0, "blankstare"],
+            [2.0, "oooh"],
+            [1.0, "oh"],
+            [1.0, "wander"]
+          ]
+        }
+      }]
+    ]
+  }
+}

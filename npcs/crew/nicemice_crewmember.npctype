@@ -1,6 +1,6 @@
 {
   "type" : "nicemice_crewmember",
-  "baseType" : "base",
+  "baseType" : "nicemice_base",
 
   "dropPools" : [],
 

@@ -13,5 +13,10 @@
 		"op" : "add",
 		"path" : "/scriptConfig/chatSounds/nicemice_npc/female",
 		"value" : ["/sfx/humanoid/nicemice_chatter_female1.ogg"]
+	},
+	{
+		"op" : "add",
+		"path" : "/scripts/-",
+		"value" : "/scripts/nicemice_npcStatusText.lua"
 	}
 ]

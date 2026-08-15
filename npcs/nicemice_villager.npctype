@@ -1,6 +1,6 @@
 {
 	"type" : "nicemice_villager",
-	"baseType" : "base",
+	"baseType" : "nicemice_base",
 	
 	"levelVariance" : [3, 3],
 	"persistent" : true,
