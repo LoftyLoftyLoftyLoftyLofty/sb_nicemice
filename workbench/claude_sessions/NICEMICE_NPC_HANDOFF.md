@@ -1,10 +1,17 @@
-# M.A.U.S. NPC Combat — Design Notes & Handoff
+# M.A.U.S. — Design Notes & Handoff
 
-Working notes for the nicemice Starbound mod: NPCs that can use wands, staves,
-and whips (features vanilla lacks), plus weapon-aware behavior dispatch across
-guard, crew, and quartermaster paths.
+Working notes for the nicemice Starbound mod. Started as NPC combat — wands,
+staves and whips, plus weapon-aware behavior dispatch across guard, crew and
+quartermaster paths — and has since grown to cover avoidance zones, ship pets,
+a config-driven spawner, and wired objects. The Traps section applies mod-wide,
+not just to NPCs.
 
 Written to be picked up cold. Read "Traps" before changing anything.
+
+**Where things stand:** everything in sections 1-6 is built, tested and shipped.
+Section 7 (ship pets) is the live work and none of it has been run. Section 3
+(Traps) is the most valuable part of this document — every entry cost a debugging
+cycle to find and none of it is inferable from reading the code.
 
 ---
 
@@ -358,6 +365,39 @@ Still blocked without ledge respect means a real wall, and it gives up.
 **Anything else that has NPCs reasoning about walkable ground will hit this same
 blindness.** It is a property of the collision API, not of that one object.
 
+**`<frame>` is 1-indexed in `.animation` files and 0-indexed in object
+`orientations`.** A state declared `"frames": 8` in an animation emits `<frame>`
+values **1 through 8**, while the same `"frames": 8` on an object orientation
+emits **0 through 7**. So a frames file named `name.0` ... `name.7` works from
+orientations and silently breaks from an animation, which asks for a `name.8`
+that does not exist.
+
+Fix it with ALIASES, not by renaming the rows:
+
+```json
+"aliases" : { "default.8" : "default.0", "shields.8" : "shields.0", ... }
+```
+
+Renaming rows to `1..8` would fix the animation path and break the orientations
+path, and an object commonly uses both (orientations for the placement preview,
+the animation for actual rendering). Aliases satisfy both at once.
+
+Also check `frameGrid.dimensions` against the real sheet size. The hologram sheet
+was 8 x 25 while `dimensions` said `[8, 2]`, which makes every row past the
+second unaddressable — the symptom is "only the first state ever renders."
+
+**An object reads its OWN Tiled instance parameters, but do not count on reading
+another object's.** `config.getParameter("thing", default)` inside an object's
+script picks up parameters set on that object in Tiled, which makes
+`storage.x = storage.x or config.getParameter("x", default)` a good pattern for
+anything a ship author should be able to preset per placement.
+
+Reading them from a DIFFERENT entity is another matter:
+`world.getObjectParameter(id, "itemTags")` did not see tags set through Tiled
+instance parameters, which is why avoidance uses dedicated marker objects
+carrying the tag in their own config instead. Treat cross-entity parameter reads
+as resolving against the object's base config until proven otherwise.
+
 **`nicemice_setNPCBehavior` destroys the blackboard.** It builds a fresh
 `behavior.behavior(...)` and a fresh board, so any board state a tree accumulates
 across ticks is gone after a swap and the tree restarts cold. `storage` and `self`
@@ -506,7 +546,173 @@ if that turns out to be unwanted, delete the block rather than restoring the typ
 
 ---
 
-## 6. Status
+## 6. Wired objects
+
+### Ship diagnostic hologram
+
+`nicemice_cargoshiphologram` cycles 24 ship areas, one per wire pulse from a
+button. State names are the row names in its `.frames`, and the same names appear
+in the `.animation` and in `DISPLAY_STATES` at the top of the `.lua` — **editing
+one means editing all three.**
+
+Advance on the RISING edge only. A pulse is the level going true then false, so
+acting on every `onInputNodeChange` steps twice per press. Comparing against a
+stored `lastLevel` also makes it behave sensibly when wired to a latching switch
+rather than a button. `init` reads the current node level rather than assuming
+false, and `onNodeConnectionChange` re-baselines it, so a display wired to an
+already-ON switch does not advance on load.
+
+`storage.displayIndex` falls back to `config.getParameter("displayIndex", 1)`,
+so a ship author can preset the starting area from Tiled.
+
+`nicemice_setDisplayState(name)` exists for jumping straight to a named area —
+useful if anything ever reports diagnostics, or for per-deck buttons.
+
+### NPC-exploding buttons
+
+`reaction-touchandexplode` spawns `regularexplosionuniversal` at the react
+target. It is NOT reachable by accident — the `"default"` fallback list in
+`default_reactions.config` does not include it, so something names it explicitly.
+
+It lives at the bottom of the inheritance chain in **`base.npctype`**, which
+means every NPC in the game inherits it. Convenient: overriding
+`scriptConfig.reactions` in the nicemice npctypes defuses buttons for our mice
+while leaving the joke intact for everyone else's NPCs. Patching
+`behaviorReactions.touchandexplode` globally would break it for every mod.
+
+## 7. Ship pets (IN PROGRESS — nothing here has been tested)
+
+The live project. Vanilla ship pets are widely disliked: they shadow the player,
+swallow clicks meant for objects behind them, and park in front of the things you
+need. The design goal is the opposite — small robotic units that find something
+useful to do, inspired by Axiom Verge's ambient drones and Factorio's logistics
+bots rather than by a squishy pet that wants attention.
+
+### Why not the vanilla pipeline
+
+`/scripts/companions/petspawner.lua` exists to serve CAPTURE PODS, and nearly all
+of its complexity is pod-shaped: pods holding several pets at once (a hemogoblin
+splits when it dies), collar merging, associate/disassociate handlers, and a JSON
+round-trip that keeps a pod item in sync so a pet can be carried between worlds.
+
+None of that applies to a dedicated item. One item is one pet, there are no
+collars, and the definition lives in the item's own parameters. Worth keeping
+from that file is only the spine: assembling spawn parameters with
+`initialStatus` / `initialStorage` (how a pet keeps learned state across a
+respawn), a status heartbeat, and collision-aware spawn placement.
+
+### The item IS the pet
+
+`nicemice_shippet.item` carries a `petData` block — `monsterType`, display
+fields, and the `status` / `storage` the station writes back as the pet lives. A
+found item ships with just the monster type; the rest accumulates.
+
+This also enforces the ship-pet/wild-monster boundary **structurally**. Wild
+monsters and ship pets use entirely different script stacks and are visually
+magnitudes apart, and that separation must hold. A wild monster has no
+`nicemice_shippet` item, so it can never be socketed — no runtime type check
+needed.
+
+### The station implements vanilla's anchor contract
+
+`groundPet.lua`'s `findAnchor` calls `status.setResource("health", 0)` — it KILLS
+the pet — if it cannot find an anchor object within 5 tiles of its last anchor
+position. So `nicemice_petstation.lua` implements the same `hasPet` / `setPet`
+contract `techstation.lua` does, and the monstertype's `anchorName` points at it.
+
+**`anchorName` must match the station's `objectName` exactly.** Rename the object
+and pets die on the next load.
+
+This is deliberate scaffolding: it lets vanilla's pet scripts run unmodified
+while the behavior work happens separately.
+
+### Vents: wires as links, not signals
+
+Every other wired object uses wires as a SIGNAL (`setOutputNodeLevel` /
+`getInputNodeLevel`). `nicemice_petvent.lua` uses them as a LINK — what matters
+is which object is on the far end, via `getOutputNodeIds` / `getInputNodeIds`.
+
+That buys a nice property: **one wire links a pair both ways.** Wire A's output
+to B's input and A finds B through its output while B finds A through its input.
+The player never thinks about direction and pulling the wire disconnects both
+ends.
+
+Teleporting between vents sidesteps pathfinding entirely, which is the point — a
+small ground pet has no good way to climb ladders or cross decks.
+
+UNVERIFIED: the return shape of `getOutputNodeIds`/`getInputNodeIds`.
+`collectIds` tolerates either a plain list or a map of id -> node index. If
+linking silently fails, log what they actually return before changing anything.
+
+Consequence worth knowing: those nodes cannot also carry an on/off level. A vent
+a switch can close would need a second input node declared for it.
+
+### Placement validation — occupancy, not interactivity
+
+`nicemice_petplacement.lua` answers "is this a polite place to stop?" Every
+resting action needs it.
+
+The obvious approach — "do not stand in front of interactable objects" — DOES NOT
+WORK. Interactivity is a RUNTIME property: `/objects/wired/light/light.lua` calls
+`object.setInteractive(config.getParameter("interactive", true))`, so a light
+switch is interactive by default with nothing in its config saying so. Any
+predicate built from config parameters has holes, and the holes look arbitrary to
+a player.
+
+So it checks OCCUPANCY: does the pet's footprint overlap the tiles an object
+occupies (`world.objectSpaces`)? Slightly over-broad — a pet also declines to nap
+in front of a decorative panel — which is a much better failure mode than napping
+in front of the one thing the player needed.
+
+**Allow-list, not deny-list.** Objects are off-limits unless tagged
+`nicemice_petPerch`. A deny-list would mean enumerating every object to avoid,
+which is unbounded and grows with every mod installed. An unknown object is
+treated as furniture to stay off, which fails safe. Tag the pet house and any
+deliberate perch.
+
+`sleepAction` is the acute case and it is not drift: it TELEPORTS the pet onto
+its target with `mcontroller.setPosition`. Use `nicemice_petSettleAt` instead —
+validation that only gates approach will miss it.
+
+UNVERIFIED: whether `world.objectSpaces` returns object-relative coordinates
+(assumed, matching how `pathutil.lua`'s `objectBounds` uses it), and whether
+trees surface through an `includedTypes = {"object"}` query. The tree case is
+"wait for a complaint" — the failure is a pet declining to nap under a tree.
+
+### Design decisions already made
+
+- **Follow is the LOWEST priority action, and should be a floor rather than a
+  score.** Any constant will occasionally beat a real task. Cleaner: follow only
+  enters when nothing else claimed the tick.
+- **Interact is a pat, not a dismissal.** "Get out of my way" as the primary
+  interaction would be a bandaid on the wrong pillar. Combine affection with a
+  politeness window: emote, then keep a wider distance from that player and do
+  not pick a resting spot near them for N seconds.
+- **Tasks come from objects, not appetites.** `petBehavior.scoreAction` is an
+  appetite model — every score is a resource level (hunger, curiosity, playful,
+  sleepy). Factorio bots are the inverse: work exists independently and bots
+  claim it. The seam already exists: `querySurroundings` sweeps objects and hands
+  each to `reactToObject`, which currently only checks for `pethouse`. Objects
+  can advertise work there via a scripted call, queued through the existing
+  `queueAction`, with appetite scores as the fallback layer beneath.
+- **Ambient traversal is nearly free characterisation.** A pet with no task that
+  picks a vent and travels LOOKS purposeful. That buys most of the Axiom Verge
+  feeling before a single real task exists.
+
+### Vanilla tuning notes
+
+`metaBoundBox` is the cursor hit-test box. `petbunny`'s is
+`[-1.625, -2.375, 1.75, 2.0]` — 3.4 x 4.4 tiles around a creature whose
+`collisionPoly` is about 1.5 x 1.5. That is why vanilla ship pets swallow clicks
+meant for whatever is behind them. Ours is sized to the body.
+
+Vanilla's follow loop: `curiosity` regenerates at 1/sec against a `minScore` of
+35, while `followAction` drains it at only 5/sec and its `boredTimer` does not
+start until the pet has ARRIVED. Net effect is a permanent 3-tile tail. The
+monstertype raises the bar and shortens the bore time, but that is TUNING, not a
+fix — the rewrite is the fix.
+
+## 8. Status
 
 **Working and tested in combat:** staff healing / buff / harmful trees; whip
 combat; ranged combat; near-side kiting for staff and pistol; weapon dispatch
@@ -525,6 +731,12 @@ it if it ever matters.
 in Tiled; the walk-away timeout actually expiring; crew follow state surviving the
 round trip; mice leaving a diagonal docking field they used to be pinned on;
 staff fullbright layers rendering in world.
+
+**Untested — the entire ship pet system.** Station, item, monstertype, vent, and
+placement validator are all written and none has been run. They also need
+sprites: the station PNG and icon, the vent PNG and icon, and a monsterpart plus
+`.frames` and `.animation` for the drone. Placeholder geometry is enough to test
+the pipeline.
 
 **Untested:**
 - Wand combat — one-handed, single-ability. **The `handAbility` off-hand fix has
@@ -549,6 +761,16 @@ board layer is the place to look — most likely `crewmember-emptyhands` re-swap
 the weapon off a fresh blackboard.
 
 **Open work:**
+- Ship pet behavior stack: the custom `groundPet.lua` replacement, a vent
+  traversal action (needs `nicemice_ventTeleport(position)` on the pet side), the
+  food bowl (one-slot container plus an action that reads `itemFoodLiking` and
+  sets a status light), and interact-as-pat with a politeness window.
+- Nothing calls `nicemice_petplacement.lua` yet. It is loaded and inert until
+  `sleepAction` and the idle states are switched over to it.
+- The pet station `uiConfig` points at vanilla `/interface/chests/pettether.config`
+  so the container works; it will say "Pet Tether" until a bespoke one exists.
+- `scriptConfig.reactions` override in the nicemice npctypes to stop
+  `touchandexplode` firing off wall buttons.
 - Three more graduation npctypes, once uniform assets are final (jumpsuit,
   officer jacket, black, red). Each needs its own `uniformColorIndex` +
   `defaultUniform`, paired with the matching `_recruitable` personnel type via
@@ -572,7 +794,7 @@ the weapon off a fresh blackboard.
 
 ---
 
-## 7. Files owned by this work
+## 9. Files owned by this work
 
 **Lua**
 `nicemice_wandstaff.lua`, `nicemice_resolveGuardBehavior.lua`, `nicemice_npcHooks.lua`,
@@ -603,7 +825,14 @@ the weapon off a fresh blackboard.
 
 **Objects**
 `nicemice_avoidmarker{,_left,_right}.object` + sprites,
-`nicemice_configdrivenspawner.object` + `.lua`
+`nicemice_configdrivenspawner.object` + `.lua`,
+`nicemice_cargoshiphologram.object` + `.lua` + `.animation`
+
+**Ship pets** (all untested)
+`nicemice_petstation.object` + `.lua` + `.animation`,
+`nicemice_petvent.object` + `.lua` + `.animation`,
+`nicemice_shippet.item`, `nicemice_shippet_drone.monstertype`,
+`nicemice_petplacement.lua`
 
 **Configs**
 `nicemice_crewmember_maus_personnel.npctype`, `coordinator.stagehand.patch`,
