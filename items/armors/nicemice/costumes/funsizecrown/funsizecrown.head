@@ -1,0 +1,52 @@
+{
+  "itemName" : "nicemice_funsizecrown",
+  "price" : 2500,
+  "inventoryIcon" : "icons.png:head",
+  "maxStack" : 1,
+  "rarity" : "Rare",
+  "category" : "headwear",
+  "description" : "Kings fly coach.",
+  "shortdescription" : "Fun-sized Crown",
+  "tooltipKind" : "armor",
+  
+  "nicemice_otherSpeciesConversion" : 
+  {
+	"default" : "glitchroyalhead",
+	"human" : "glitchroyalhead"
+  },
+
+  "maleFrames" : "head.png",
+  "femaleFrames" : "head.png",
+  "mask" : "mask.png",
+
+  "colorOptions" : [
+    // DEFAULT PINK RED
+    { "ffca8a" : "f4988c", "e0975c" : "d93a3a" },
+    // BLACK
+    { "ffca8a" : "838383", "e0975c" : "555555" },
+    // GREY
+    { "ffca8a" : "b5b5b5", "e0975c" : "808080" },
+    // WHITE
+    { "ffca8a" : "e6e6e6", "e0975c" : "b6b6b6" },
+    // RED
+    { "ffca8a" : "f4988c", "e0975c" : "d93a3a" },
+    // ORANGE
+    { "ffca8a" : "ffd495", "e0975c" : "ea9931" },
+    // YELLOW
+    { "ffca8a" : "ffffa7", "e0975c" : "e2c344" },
+    // GREEN
+    { "ffca8a" : "b2e89d", "e0975c" : "51bd3b" },
+    // BLUE
+    { "ffca8a" : "96cbe7", "e0975c" : "5588d4" },
+    // PURPLE
+    { "ffca8a" : "d29ce7", "e0975c" : "a451c4" },
+    // PINK
+    { "ffca8a" : "eab3db", "e0975c" : "d35eae" },
+    // BROWN
+    { "ffca8a" : "ccae7c", "e0975c" : "a47844" },
+	// COPPER
+	{ "ffca8a" : "976750", "e0975c" : "714f3c" },
+	// MAUS LILAC
+	{ "ffca8a" : "ba7de0", "e0975c" : "9c69bb" }
+  ]
+}
