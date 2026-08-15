@@ -161,7 +161,6 @@
 				"fill" : 
 				[
 					{"item" : [ "nicemice_flag", 1 ] },
-					{"item" : [ "nicemice_codex_maus_ranks-codex", 1 ] },
 					{"pool" : "nicemice_cargoship_shiplocker_treasure_subcategory_npcspawners" },
 					{"pool" : "nicemice_cargoship_shiplocker_treasure_subcategory_treasureweapons" }
 				]
@@ -304,5 +303,18 @@
 				]
 			}
 		]
-	]
+	],
+	
+	"nicemice_theMostImportantTreasure" : 
+	[
+		[
+			0, 
+			{
+				"fill" : 
+				[
+					{"item" : [ "cheese", 1 ]}
+				]
+			}
+		]
+	],
 }

@@ -4,20 +4,8 @@
  "infinite":false,
  "layers":[
         {
-         "id":28,
-         "image":"..\/..\/..\/workbench\/npcships\/cargoship.png",
-         "name":"shippu",
-         "offsetx":0,
-         "offsety":-120,
-         "opacity":1,
-         "type":"imagelayer",
-         "visible":true,
-         "x":0,
-         "y":0
-        }, 
-        {
          "compression":"zlib",
-         "data":"eJzt3e2RozYABmAmLaQBfuRPukkx18A1kDSyvh42M5lNCclcMwlzZlarlUB8Wcg8P565tZFkjOA98WF467ruDQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgOZ8T6g9TwAp8gpohbwCAAAAAAAAgLTUOXXn1oEzklc80u3+7x+\/fHx\/fH170HzQpivm1d93uekv\/+tXSNV72aHdR3iJ\/v62k7jd2\/39IZ++du+G19\/u0+M6tdcXzkNefTZsI19XGOr9FonzKp5+FsO8DZkxWPv9c8skbLc0r8I6tdcXzuOKeTXnyLzaKwf2Jq9owTPnVTiOyv2dctX9wTAj9twflFfsRV59Nm4vfZc3bk9zWs2rP3cir9jTM+fVWkfmVWm9R5NXtKC1vJobG+XKlo6vXneSO37VZ8TTpsqO+1njftsebdofpAXy6qMjzruNbU+Nr4ZpvwemysZ5tUebjrfTgtby6mg18+pLYK+8Km1TXsH+loyv1jh6f7AkL1Kv1+ZVaZv2B2F\/R+fVoGQbGbe9vvuxXfXdx2Pxffe+7YV1Wskrx9uhDeP2Mmw\/wxhp3KaGv8dtTV7JK5iTGl\/NnQdb87o0r8ay4TGreHo4n79mxNOmysZ5tUebR+4Php9RmldhndrrHKyVy6v4uPLW10vzKjwPN5VXufHNEqXjqyWW5kLpd5kaX8UZb3zFFaTO2299La\/ml\/nWvHoJvoe84hm1Pr7qM1LzkCsb59UebcbzGbf7LVHmS4GX6DNK8yo1X9CaXF7l\/k\/f8vqR46vcGG\/L+GpJm6m8Sn1myXcxvoK8s+dV6h5Tqe269vWi\/9xN5VVYRl7BtBbHV6V59XNgr7wqbVNewf5yebXkPH7Ja3klr+AIxlfyClpxxPgqd11lfO3j0ryaai\/Olj2uFy1tc01ezS2jeFkuySvXiwIlpvJqa9ue5wXs6ci8gtGwPvUnFe5L1F5OjxbuQ9XsgylhFpXkVSvfhfMqPQZag7w6f\/+E69Fe14vW\/i6c19nXIXlVvx\/kFWdx9nVIXtXvB3nFWZx9HZJX9ftBXnEWZ1+H5FX9fijpnz2vF5VX5Jx9HZJX9ftBXnEWZ1+H5FX9fpBXnMXZ1yF5Vb8f5BVnUfqbrhrkVTv9s+fvB2t9l9p9DjyG3+NwpHGdCp81Mtj7c\/q78TPn5imuQxvkFUfLZVbflf3eaiibG1+PxwTi8uE9VGKpOlfdHxwt+c1d6W\/14mmln5Gqt2R\/cMpY51Hl\/o3U7mfK5DKrZH9\/zJfUsUt5tY9hGfxUqPTazHha6XHwVL298uqRZFXbcpkVPpsyFmZS6nlM8mofqeU79RyssN5U7pQ+U2KuXmt5Jauew9Jx1rh+5sZX47S+k1dbjMuyhPGVrLqSXGZ97T5buz84NT6QV5\/ZH5RV5JVm1tq8Cu8NHpNX78JlsCSvwnp9xtXyKpdVV1yvnlFJZsmrY4XHCZfkVelzda6SV8ZV15DLrNTxq9Rx39zxK3lV5ui8usLxdll1LbnMGreH1y4\/vhqn9Z28WiPMnb6Q8ZWsurpcZo2ZlDt\/mMurqWu65NW7cBy75DdwJfXiaaWfkap3xrySVdeWy6zXiTqv93J9t\/y3NWvqUNdUXtWet8EV\/8+7slxm1Z4vPit5fujezxg9e15BzhH3K6n9nWopuUYhLnObKBuX+WuDpfuDS47FbVW732jL1LHcJe\/Jq\/nj4nGZW5cvG5d5dF6VHNffqnaf0abUOfDxPHjpe\/JKXskqHmVu+zK+mrYlr\/qMZ82r2n3Fc5BX6xlfySoeT16tI6\/Ks+rK6wn7k1fLySvjKuqRV8uUXrMelrnNlK2ZV3s+06Z233ANc2MEeTW97OJ7HMZlal4v2gdcL8qzkFfrl9sZ8+ot0U\/6jWcir+al7sEa51Vc5jYjvL4tdV\/+knvFz33GUWr3B9cmr6bFeZLKq6nngsRu3cdsSuXV0nYepXZfwEBe5a0ZX82Ni5aUP7qdUrX7AUKp7U5e\/VgG8T2o47xKPQ8k57ag7CPaKVG7DyDF+OqzI\/JqL7KKq3M\/mY\/iZwym8qr0+YStqb3sgeX6bv6eTv2Tqb3MAeBZfb+rPR8Ase8Tas8bQEhetSf3TK3a8wVHk1dtmXsOYO35gyPJq3aUPru09nzCUeTV9mVWe36eZV5hjrzavszWtvOI8ZE+5ZnIq+3LbG078gqWkVfbl1nt+XmWeYU58gpohbwCWiGvAADYylgSaIW8AlohrwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAICt\/gOy7vU0",
+         "data":"eJzt3d+RnDYAB2AmLaQBHvKSblKMG3ADSSO37sGZyTglJONmEsbHnE4ngWAF4s\/38E28hxAsgl+EYOFb13XfAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOJ3vCa3XCSBFXgFnIa8AAAAAAAAA4E3qOrpr60ArpZkkr9jT4\/W\/f\/zy\/u\/j58dO68GxyKu8v1\/lpr\/8r18hNd9LhXr38BL9+0slcb2P178P+fS5ezN8\/vI6PZ6n9f7C9uRVXklefV5hmO+3SJxX8fSjGNZtyIzB2u+f2yZhvaV5Fc7Ten9he\/JqvS3zqlYO1CavaEleve9H5f6dctfzwTAjap4PyivmyKvn8mo4Vvoubzye5pw1r\/6sRF5RQl6tt2Velc63N3lFS1fNq7m+Ua5saf\/qayW58as+I542VXY8zxrP22rU6XyQluTVurza4rrbWPdU\/2qY9ntgqmycVzXqNN7OEZ09r7bWMq8+BWrlVWmd8grqW9K\/WmPr88GSvEh9XptXpXU6H4T6ts6rQckxMh57fffjuOq792Pxffd27IXznCWvjLfDOYzHy3D8DH2k8Zga\/j0ea\/JKXsGcVP9q7jrYms+leTWWDces4unhev6aEU+bKhvnVY06tzwfDJdRmlfhPK33Oa7h552Ey8zlVTyu\/OznpXkVXoebyqtc\/2aJ0v7VEktzofS7TPWv4ozXv2JLLfIqJXXd\/tnP8mp+mz+bVy\/B95BXbK3fSbjMs\/evct8xtQ65snFe1agzXs+43i+JMp8KvETLKM2r1HrBM\/Z61km4zFxe5f6f\/sznPftXuT7eM\/2rJXWm8iq1zJLvon\/FEbXIq5Sj51XqGVOp47r1\/aL\/vJrKq7CMvOJM+p2Eyzxj\/6o0r8Ixu1p5VVqnvOLqjnR9cMl1\/JLP8kpecS3\/7GRuPfSv5BWcxRb9q9x9lfG9j0vzaqq+OFtq3C9aWueavJrbRvG2XJJX7hcFSkzl1bN1e58XUNOWeQWjYX\/qDyo8l2i9nfYWnkO1bIMpYRaV5NVZvgvHVToG2oK8On77hPtRrftFW38Xjuvo+5C8at8O8oqjOPo+JK\/at4O84iiOvg\/Jq\/btIK84iqPvQ\/KqfTuUtE\/N+0XlFTlH34fkVft2kFccxdH3IXnVvh3kFUdx9H1IXrVvB3nFUZT+pqsFeXWe9qn5+8FW36V1mwP78HsctjTuU+G7Rga1l9N3b8\/Pm6t\/nB7OwznIK7aWy6y+K\/u91VA2178exwTi8uEzVGKpee56Pjha8pu70t\/qxdNKl5Gab8n54JRxnr3K\/Rtp3c6UyWVWyfn+mC+psUt5VcewDX4qVHpvZjytdBw8NV+tvNqTrDq3XGZNvc8hzKTU+5jkVR2p7Tv1HqxwvqncKX2nxNx8Z8srWXUNS\/tZ4\/6Z61+N0\/pOXj1j3JYl9K9k1Z3kMutz99Ha88Gp\/oG8+sj5oKwirzSz1ubV1Dtt5NWbcBssyatwvj7jbnmVy6o77ldXVJJZ8mpb4Tjhkrwqfa\/OXfJKv+oecpmVGr9Kjfvmxq\/kVZmt8+oO4+2y6l5ymTUeD1+7fP9qnNZ38mqNMHf6QvpXsurucpk1ZlLu+mEur6bu6ZJXb8J+7JLfwJXMF08rXUZqviPmlay6t1xmfZ2Y5+trub5b\/tuaNfPQ1lRetV63wR3\/n3dnucxqvV58VPL+0NrvGD16XkHOFs8raf2dWim5RyEu85goG5f56wlLzweXjMU9q3W7cS5TY7lL\/iav5sfF4zKPLl82LrN3XpWM6z+rdZtxTqlr4ON18NK\/ySt5JavYy9zxpX817Zm86jOumlet24prkFfr6V\/JKvYnr9aRV+VZdef9hPrk1XLySr+KduTVMqX3rIdlHjNlW+ZVzXfatG4b7mGujyCvprdd\/IzDuEzL+0X7gPtFuQp5tX67HTGvviXaSbtxJfJqXuoZrHFexWUeM8L721LP5S95VvzcMrbSuj24N3k1Lc6TVF5NvRck9ujeZ1Mqr5bWs5fWbQEDeZW3pn811y9aUn7rekq1bgcIpY47efVjG8TPoI7zKvU+kJzHgrJ71FOidRtAiv7VR1vkVS2yirvzPJn34ncMpvKq9P2EZ9N62wPL9d38M536i2m9zQHgir4HWq8LwOB7odbrCdxDaSbJq\/PJvVOr9XrBWvLqmubeA9h6\/WANeXU9pe8ubb2esJS82m\/btl6fq6wr9yWv9tu2a+vZo3+kTTkDebXftl1bj7yCH+TVftu29fpcZV25L3kFnIW8Aq5CXgEAUIu+JHAW8go4C3kFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPOs\/jaeVEg==",
          "encoding":"base64",
          "height":150,
          "id":1,
@@ -31,7 +19,7 @@
         }, 
         {
          "compression":"zlib",
-         "data":"eJzt3T1u3EYYgOF1nSJ1gBQp0vg2vllO4VK6Q5qcIUYOk3ihMBkQ5HKGnOE3Qz4P8MGSvH\/kki8oabl6PICavmUMQJScRu1pl+YBtRzp1FZ\/avQO4Klmq+b9qXmMBtxbq1a1+r4SuKfoLmkWkCO6R5oF5IjukF4BOaIbpFlAruj+6BWQK7o\/mgXkiO6OXgG5orujV0Cu6O7oFZAjujl6BeSKbo5mAbmie6NXQK7o3ugVkCu6N3oFr0XvY73td9HLPup6g9ai968e973o5R5xnUFr0ftWr\/tf9DKPtr6gtej9qvd9MHqZR1tf0Er0\/jTCPhi9vCOtK2glel8aaT+MXt5R1hO0EL0fjbYvRi\/rKOsJaovef0wfA72L3kdMfwM9it4vTN8D0dugMaXDPUVvd8bsHe4nepsz5shwL9Hb29nzp+l6NItXovuhV0avyBXdj1aztnzTflFbq9ut6edP0Y9gnV6RI7orV+\/VD58+poevbfXq68rX3v6d3OvsoVfkiO7K2eP4at1ak6b\/e868T6+uU0KvyBHdj6OTLsfax3r14Uival5niV6RI7o3Ub16\/z6\/\/foxS6b\/y5n3lds9MunttLjNpeMlvaJ30b05e\/Tq\/17Nzb\/2tjJHG7dEr8gR3Y9X21\/pZdc+nveqli\/f5\/d\/\/x3h+8Gn0l5t0SvOFN0mvTrX1Kul3+vNfw+oV\/Qmuk1nj16tfw\/8NO9VOluXP0Kv7iO6AbWn5XLpVX6vjny9lF7dQ3RbWveq1XkfpT\/DXrL08\/beLS1P+prQnC7lXL6UXl1fdFfOGL2qa+v4ak2tLq3Rq2uL7kjLSZdxlA6M8jj39qrWeTdr9Oq6ontypV5N59nNZ+uyc7Vff5Xe36PSbabHgTWPQeevFVtbp+nMr6NX1xTdkrOnp+MWvcrrVc4606t7iO7HGZMu62jHVy0eW005j7Pmsmyt0\/l96tW1RLfkar0qcbRXz\/ON55NzfzVvc3qcr96DRq+oJbolZ88ox1d77yvn8jVv82x6dW\/R\/Thj0mUd5fiq5f2NTK\/uLbolV+vVmcdXex\/byPTq3qJbcvZM2\/GPnz7mLfn46Odbv\/da+\/mOXuXTq\/uKbkdkr+bvI37081zpfqZX5fTqnlqdl2LuOX8n85h9Hv3YSof+RG8T5lqTmr8GIvqxHVkW+uC5oYaSXvVulMd5R54batArzuC5oQa94gyeG2rQK87guaGGaTtKX2Mw9arF+YMtjfI478hzQytb50j3yj7RL88NregVtXluaEWvqM1zQyt6RW2eG1rRK2qLPufBORKvRa\/v0nH+IC1FbxO2odei1\/eR58f5g7TwVzL0Zdp3nu9X80vmvD362OdG+37wub68l8wYNKtPaa9+enz8jar3jY\/1qpxWjUez+jN1p+TvIH996FUJrRqXZvVlb3f2XC\/3PUdzLzdCr7RqfHuatbQNj\/6euz0YrVevzh\/sjVZdR2mz9Gp8dzq+0qrrKWmWXo3vLr3Squvy8yz26rFXWjW+Pzb+X7PYo7deadV91GzW5+\/z5cV8rnAfxOupV1p1L9HnRvTweqII0eu7dHo9f1Cr7id6X9Cr\/ifV0\/mDWnVPe\/7m+x07U8vI6y\/6+0HbH0+adZ6R111kr2x3pDTrHEvrbe31Tz283q2H17fb3liiWe2N1qtUxPGV7YxXNKstvcpn+yKHZrWjV3lsV5TQrDb0apvtiT00q76R19EZvbIdcYRm1bX2+sfpd27pRL4ec5qo17fDXppVz9r++Xyv9rRV7y8ue\/bMH\/er5dAqeqBZdUzrZen929Ne7fW2\/6r\/XT+drfeZ\/7pynZJtxPZCC5p13LROlrrSS6\/2Xm\/PtmE7oSXNOqa0V0vHL+nMPb\/2eWVylPzdnvn9ahU90qz90l7Nu1N6fLXWq63Z26Stx6JV9Eqz9llaDzV7dZal4z6tomeaVW5pHUzHO3t61ep4acve5952QKQa262530AUzTIlAyMq6dxVJroVkfPtAWOL7odmaRXkim6HWZ7azxdcQfR+acrbolXcVfS+afa1Rau4o+j9s7cB+hXdh54G6Ft0I3oZoH\/RnehhgDFEtyJ6gHFE90KrgFzRzdAqoER0O7QKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgF78A2Amfjg=",
+         "data":"eJzt3T1u3EYYgGG5TpE6QIoUaXQb3yyncCndIU3OkCCHSbyQGTMEZzlDzvCbIZ8H+GBZ3h+SS77gSrvrlxegpr8yBiBKTqP2tEvzgFqOdGqrPzV6B\/BQs1XL\/tQ8RwPurVWrWj2vBO4pukuaBeSI7pFmATmiO6RXQI7oBmkWkCu6P3oF5Iruj2YBOaK7o1dAruju6BWQK7o7egXkiG6OXgG5opujWUCu6N7oFZArujd6BeSK7o1ewXPRx1hvx130uo+63aC16OOrx2Mver1H3GbQWvSx1evxF73Oo20vaC36uOr9GIxe59G2F7QSfTyNcAxGr+9I2wpaiT6WRjoOo9d3lO0ELUQfR6Mdi9HrOsp2gtqijx\/Tx0Dvoo8R099Aj6KPC9P3cF3R+5YxrYZrid6fjGk9XEf0vmTMGcP4ovehnudP0\/Vo1j3lPp7R\/dAro1fcvVep9ZuOi9pa3W5NP3+KXoI0vbo3vVpfv7N79cOnj+nhe1u9+pL43tu3yb3OHnp1b3fvVWqcX6WlmjT922OWfXp2nRJ6dW936dV8PVJf69WHI72qeZ01enVverW+ftNx8f51fvv1Y9ZM\/5Yz74nbPTLz22lxm2vnS3pFlLv0qnT06nuvlpbfe0vM0cat0atr2tOh3Mv1MiXLNr9s6utlr2r5\/HV+\/\/bnCM8HH0p7tUWvSCl5nPRq\/Tb06mPWfq+3\/D2gXnFE7uMV3ZueR6\/Sz4Eflr2az9blj9Cr64k+1s+aluurV\/m9OvL9Unp1PdEdiehVq\/d9lP4Me83az9t7t7Y+89eE5nQp5\/Kl9Op6ojsSMXpV19b5VUqtLqXo1Thytnl0N86c+TqP0oFRlnNvr2q97yZFr8aQs92vdm6TmoheTe+zW87WZZdqv\/5qfn8vlW5zfh5Y8xx0+Vqx1Dadz\/I6d+pVrXWIPq\/obc48X0jtqz2dt+hVXq9yttkdexV9PF99ono1OaNXtc+vWixbTTnLWXNdtrbp8j71yuhVHUd79Xi\/8XJy7q\/mbU7L+ewzaPSqnRHXI7pDvfdquQwjnF\/tva+cy9e8zbPp1fiiO9R7ryYjnV+1vL+R6dX4ojukV9+deX61d9lGplfji+5QSa8iXs+wtgw\/fvqYt9nXR\/++9Xuv1M939CqfXo0tukGjzbQfLz9H\/Ojfc82PM70qp1fX0+O5jrn2\/DObl8Xfo5etdDhPr8\/NzLVnbvkaiOhlO7Iu1HX0eREcUdKr3o2ynCPTKyLpFaX0iih6xR56RQS9Yi+94mzTfjR\/jcHUqxbvH2xplOW8Er0i2tZ7pHvlmIihV0TSK47SK86iV9SgV5xBr6hFr2hNr6hl1Pfj3E309i4d7x+kFb3qX\/T2PvL4eP8gLfw9G\/oyHTuPz6v5JXPeXvo45kZ7PvjYXj5LZgya1ad5r356+fg\/qt43vtarclo1Hs3qz9Sdkv8H+cuLXpXQqnFpVl\/2dmfP9XI\/czT3ciP0SqvGt6dZa\/vw6J+524PRevXs\/YO90arrKG2WXo3vTudXWnU9Jc3Sq\/HdpVdadV1+nsVePfZKq8b3x8a\/axZ79NYrrbqPms16\/Tqfn8xrhfsgXk+90qp7iX5vRA+vJ4oQvb1Lp9f3D2rV\/UQfC3rV\/8z19P5BrbqnPZ8Nf8fO1DLy9ot+Pmj\/40GzzjPytovslf2OOc06x9p2S73+qYfXu\/Xw+nb7G2s0q73RejUXcX5lP+MZzWpLr\/LZv8ihWe3oVR77FSU0qw292mZ\/Yg\/Nqm\/kbXRGr+xHHKFZdaVe\/zj9zm0+ka\/HnCbq9e2wl2bVkzo+H5\/VPm\/V+5PLnj3L5X62HlpFDzSrjmm7rH1++7xXe73tv+p\/15\/P1ufMf0lcp2Qfsb\/QgmYdN22Tta700qu919uzb9hPaEmzjint1dr5y3yWHt97TUyOkv+3Z3m\/WkWPNGu\/ea+W3Sk9v0r1amv2NmlrWbSKXmnWPmvboWavzrJ23qdV9Eyzyq1tg+l8Z0+vWp0vbdn72NsPiFRjvzX3G4iiWaZkIFpur\/Zc50oT3YrIWT7+EC26ByNMdDe0Cv5vfnzmXs70M7UfL+iZXo07W7SKq9GrMSeXVnEletW2F0A9eqVVMAq90ioYhV5pFYxCr7QKRqFXWgUjie5BzwP0J7oLPQ4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAApPwLJ4bL\/Q==",
          "encoding":"base64",
          "height":150,
          "id":2,
@@ -2090,6 +2078,18 @@
          "y":0
         }, 
         {
+         "id":33,
+         "image":"..\/..\/..\/workbench\/npcships\/cargoship.png",
+         "name":"shippu",
+         "offsetx":0,
+         "offsety":-120,
+         "opacity":1,
+         "type":"imagelayer",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
          "color":"#ff0000",
          "draworder":"topdown",
          "id":4,
@@ -2339,54 +2339,6 @@
                  "width":8,
                  "x":824,
                  "y":568
-                }, 
-                {
-                 "gid":948,
-                 "height":16,
-                 "id":2154,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":24,
-                 "x":432,
-                 "y":800
-                }, 
-                {
-                 "gid":986,
-                 "height":24,
-                 "id":2155,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":24,
-                 "x":456,
-                 "y":800
-                }, 
-                {
-                 "gid":1284,
-                 "height":25,
-                 "id":2156,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":39,
-                 "x":400,
-                 "y":800
-                }, 
-                {
-                 "gid":8070,
-                 "height":16,
-                 "id":2157,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":24,
-                 "x":432,
-                 "y":784
                 }, 
                 {
                  "gid":9332,
@@ -4013,6 +3965,12 @@
                  "height":8,
                  "id":2633,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"parameters",
+                         "type":"string",
+                         "value":"{ \"smashDropPool\" : \"lofty_irisil_bastetdungeon_smashablepots\", \"breakDropPool\" : \"nicemice_theMostImportantTreasure\" }"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -4025,6 +3983,12 @@
                  "height":8,
                  "id":2634,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"parameters",
+                         "type":"string",
+                         "value":"{ \"smashDropPool\" : \"lofty_irisil_bastetdungeon_smashablepots\", \"breakDropPool\" : \"nicemice_theMostImportantTreasure\" }"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -4037,6 +4001,12 @@
                  "height":8,
                  "id":2635,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"parameters",
+                         "type":"string",
+                         "value":"{ \"smashDropPool\" : \"lofty_irisil_bastetdungeon_smashablepots\", \"breakDropPool\" : \"nicemice_theMostImportantTreasure\" }"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -4049,6 +4019,12 @@
                  "height":8,
                  "id":2636,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"parameters",
+                         "type":"string",
+                         "value":"{ \"smashDropPool\" : \"lofty_irisil_bastetdungeon_smashablepots\", \"breakDropPool\" : \"nicemice_theMostImportantTreasure\" }"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -4618,18 +4594,6 @@
                  "y":400
                 }, 
                 {
-                 "gid":2147493110,
-                 "height":16,
-                 "id":2717,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":24,
-                 "x":592,
-                 "y":576
-                }, 
-                {
                  "gid":9358,
                  "height":64,
                  "id":2719,
@@ -4664,6 +4628,96 @@
                  "width":8,
                  "x":1552,
                  "y":704
+                }, 
+                {
+                 "gid":6280,
+                 "height":8,
+                 "id":2727,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":16,
+                 "x":800,
+                 "y":400
+                }, 
+                {
+                 "gid":6280,
+                 "height":8,
+                 "id":2729,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":16,
+                 "x":864,
+                 "y":400
+                }, 
+                {
+                 "gid":6280,
+                 "height":8,
+                 "id":2730,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":16,
+                 "x":928,
+                 "y":400
+                }, 
+                {
+                 "gid":9332,
+                 "height":72,
+                 "id":2731,
+                 "name":"BackgroundOverlay-1",
+                 "properties":[
+                        {
+                         "name":"object",
+                         "type":"string",
+                         "value":"nicemice_boosterflamelarge_bg"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":40,
+                 "x":760,
+                 "y":888
+                }, 
+                {
+                 "gid":6242,
+                 "height":8,
+                 "id":2732,
+                 "name":"SHIP LMAO",
+                 "properties":[
+                        {
+                         "name":"object",
+                         "type":"string",
+                         "value":"nicemice_shiphull_cargoship_bg"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":8,
+                 "x":848,
+                 "y":808
+                }, 
+                {
+                 "gid":9332,
+                 "height":72,
+                 "id":2733,
+                 "name":"BackgroundOverlay-1",
+                 "properties":[
+                        {
+                         "name":"object",
+                         "type":"string",
+                         "value":"nicemice_boosterflamelarge_bg"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":40,
+                 "x":584,
+                 "y":336
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -6570,6 +6624,82 @@
                  "width":8,
                  "x":1480,
                  "y":704
+                }, 
+                {
+                 "gid":6242,
+                 "height":8,
+                 "id":2723,
+                 "name":"Mechanic 02",
+                 "properties":[
+                        {
+                         "name":"\/\/description",
+                         "type":"string",
+                         "value":"This NPC spawner is intended to be simple to integrate with."
+                        }, 
+                        {
+                         "name":"\/\/name",
+                         "type":"string",
+                         "value":"nicemice_configdrivenspawner"
+                        }, 
+                        {
+                         "name":"\/\/shortdescription",
+                         "type":"string",
+                         "value":"Config NPC Spawner"
+                        }, 
+                        {
+                         "name":"object",
+                         "type":"string",
+                         "value":"nicemice_configdrivenspawner"
+                        }, 
+                        {
+                         "name":"parameters",
+                         "type":"string",
+                         "value":"{ \"spawner\" : { \"variationSource\" : \"\/objects\/spawner\/spawners\/nicemice_cargoship_spawns.config\", \"variationSet\" : \"mechanic\" } }"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":8,
+                 "x":936,
+                 "y":416
+                }, 
+                {
+                 "gid":6242,
+                 "height":8,
+                 "id":2724,
+                 "name":"Crown 00",
+                 "properties":[
+                        {
+                         "name":"\/\/description",
+                         "type":"string",
+                         "value":"This NPC spawner is intended to be simple to integrate with."
+                        }, 
+                        {
+                         "name":"\/\/name",
+                         "type":"string",
+                         "value":"nicemice_configdrivenspawner"
+                        }, 
+                        {
+                         "name":"\/\/shortdescription",
+                         "type":"string",
+                         "value":"Config NPC Spawner"
+                        }, 
+                        {
+                         "name":"object",
+                         "type":"string",
+                         "value":"nicemice_configdrivenspawner"
+                        }, 
+                        {
+                         "name":"parameters",
+                         "type":"string",
+                         "value":"{ \"spawner\" : { \"variationSource\" : \"\/objects\/spawner\/spawners\/nicemice_cargoship_spawns.config\", \"variationSet\" : \"crown\" } }"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":8,
+                 "x":808,
+                 "y":416
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -6657,8 +6787,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":33,
- "nextobjectid":2723,
+ "nextlayerid":34,
+ "nextobjectid":2734,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.10.0",
