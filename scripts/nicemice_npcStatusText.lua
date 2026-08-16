@@ -1,6 +1,6 @@
 _nicemice_old_status_func = randomStatusText
 
-local NICEMICE_GENERIC_CHANCE = 0.25
+local NICEMICE_GENERIC_CHANCE = 0.33
 
 function randomStatusText(personality)
   if not (npc and npc.species and npc.species() == "nicemice_npc") then
