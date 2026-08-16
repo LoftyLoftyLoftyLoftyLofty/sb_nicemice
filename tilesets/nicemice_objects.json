@@ -4,7 +4,7 @@
   "properties" : {
   },
   "spacing" : 0,
-  "tilecount" : 28,
+  "tilecount" : 30,
   "tileheight" : 80,
   "tileproperties" : {
     "0" : {
@@ -202,6 +202,20 @@
       "imagePositionY" : "-32",
       "object" : "nicemice_cargoshiphologram",
       "tilesetDirection" : "right"
+    },
+	"28" : {
+      "//description" : "M.A.U.S. Console",
+      "imagePositionX" : "-8",
+      "imagePositionY" : "-0",
+      "object" : "nicemice_console",
+      "tilesetDirection" : "right"
+    },
+	"29" : {
+      "//description" : "M.A.U.S. Console (NPC Interactive)",
+      "imagePositionX" : "-8",
+      "imagePositionY" : "-0",
+      "object" : "nicemice_npc_console",
+      "tilesetDirection" : "right"
     }
   },
   "tiles" : {
@@ -288,6 +302,12 @@
     },
 	"27" : {
       "image" : "../objects/nicemice/nicemice_cargoshiphologram/tiled.png"
+    },
+	"28" : {
+      "image" : "../objects/nicemice/nicemice_console/tiled.png"
+    },
+	"29" : {
+      "image" : "../objects/nicemice/nicemice_console/tiled_npc.png"
     }
   },
   "tilewidth" : 8
