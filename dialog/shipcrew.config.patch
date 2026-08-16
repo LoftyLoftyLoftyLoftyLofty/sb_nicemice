@@ -1,0 +1,115 @@
+//  Generated ship-encounter crews reacting to a nicemice PLAYER.
+//  Vanilla gives each speaker a same-species bonus pool plus a generic one;
+//  this adds a mouse-facing pool so mice stop getting the generic text.
+//  <selfname> is filled in at runtime and must survive verbatim.
+
+[
+	{
+		"op" : "add",
+		"path" : "/converse/default/nicemice",
+		"value" : 
+		[
+			"A talking mouse. Okay. Sure. It's been that kind of decade.",
+			"Hey, a visitor! We don't get many visitors way out here.",
+			"Do you have your own ship? That's pretty cool!",
+			"You're welcome to stick around, just don't chew the wiring.",
+			"I'm not gonna lie, I had to look twice.",
+			"Careful in the hold, we've got traps set. For... smaller mice."
+		]
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/converse/apex/nicemice",
+		"value" : 
+		[
+			"Greetings. You are not what I expected to find this far out.",
+			"A rodent that speaks. The Miniknog would want you in a lab. Avoid them.",
+			"Life on a spacefaring vessel beats life under Big Ape.",
+			"You are small, but you carry yourself like a soldier.",
+			"I am trying to live quietly out here. I assume you understand."
+		]
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/converse/hylotl/nicemice",
+		"value" : 
+		[
+			"A creature of the land, and yet no land for lightyears.",
+			"Your fur must suffer in recycled air- I certainly do.",
+			"You move very quietly. That is a discipline, whether or not you intended it.",
+			"Small guest, vast night.\nThe hull hums its lullaby.\nWe are all adrift.",
+			"What do you think waits for us out there in the stars?"
+		]
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/converse/floran/nicemice",
+		"value" : 
+		[
+			"Meat! Sssmall meat! ...Floran being polite. Floran not eat guessst.",
+			"Floran never sssee mouse this big. Floran impresssed.",
+			"Floran hasss steady job on ship. Floran jussst has to not eat anyone.",
+			"Do moussse people hunt? Or only nibble?",
+			"Floran wantsss to pet you. Can Floran pet you?"
+		]
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/converse/glitch/nicemice",
+		"value" : 
+		[
+			"Startled. A rodent aboard the ship! ...My apologies. You are clearly a person.",
+			"Curious. Do you chew wires? I ask for maintenance reasons.",
+			"Pleased. The low-moisture atmosphere prevents rust. It must also suit fur.",
+			"Eager. We don't get visitors often! Are you staying long?",
+			"Apologetic. I have just recalled the traps in the hold. I shall remove them."
+		]
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/converse/avian/nicemice",
+		"value" : 
+		[
+			"Welcome to our humble spacefaring vessel, small one.",
+			"I have never met a mouse who could answer back. This is a good day.",
+			"My name is <selfname>. Are you visiting us for long?",
+			"A visitor? I hope you've been screened for space mites.",
+			"You might be the first passenger to fit comfortably in the crew bunk."
+		]
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/converse/novakid/nicemice",
+		"value" : 
+		[
+			"Well I'll be - a mouse in a spacesuit!",
+			"Howdy there, partner! The name's <selfname>.",
+			"You ever get the feelin' you were meant for somethin' bigger? ...No offense.",
+			"Welcome to our ol' rust bucket .",
+			"You here for a bit o' tradin', or just seein' what the fuss is about?",
+			"I ain't never seen ears like that. I mean that kindly, swear it."
+		]
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/converse/penguin/nicemice",
+		"value" : 
+		[
+			"Hey there, short stuff! Finally, someone I can look in the eye.",
+			"A mouse merc? Now I've seen everything.",
+			"You got that look like you're about to loot our crates. Don't worry pal, I won't snitch.",
+			"Don't bump your head on the- oh. Never mind. You're fine.",
+			"They call me <selfname>. The name runs in the family.",
+			"You lookin' for work? I know some folks who know some folks.",
+			"Can't chat long, this bird's gotta grease some axels.",
+			"Between you and me, half this cargo ain't strictly ours."
+		]
+	}
+]

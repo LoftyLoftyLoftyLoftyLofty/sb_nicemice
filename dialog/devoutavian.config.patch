@@ -1,0 +1,32 @@
+//  Devout Avians reacting to a nicemice PLAYER.
+//  Note: vanilla gives each listener species roughly 50 lines here. This
+//  pool is 18, so mice will hear repeats sooner than other races do --
+//  worth growing later if this NPC turns out to be common in play.
+
+[
+	{
+		"op" : "add",
+		"path" : "/converse/avian/nicemice",
+		"value" : 
+		[
+			"Kluex made the small as surely as the great.",
+			"Do you worship Kluex, little one?",
+			"I have never seen a rodent stand upright. Truly the universe is strange.",
+			"Would you like to hear of the Stargazers? You seem like a good listener.",
+			"Your ears must catch every whisper. Kluex favours the attentive.",
+			"The Avoscript says nothing at all about mice. I have checked. Twice.",
+			"You are welcome at our temple, though you may require a stool.",
+			"Do your people keep gods of their own?",
+			"I would pray for you, if you would permit it.",
+			"You wouldn't make much of a sacrifice. I mean that kindly.",
+			"Some Stargazers preach that only Avians may ascend. I am no longer certain.",
+			"Is it true your kind can hear the stars? No? A shame.",
+			"I am told mice are clever. Kluex values cleverness.",
+			"You move so quietly. I nearly walked straight into you.",
+			"May Kluex's light guide you, small traveller.",
+			"Might you be a messenger sent in humble form? Such things happen in scripture.",
+			"Please do not nest in the temple rafters. It happened once.",
+			"You are so small, and yet you came all this way. That is its own kind of faith."
+		]
+	}
+]

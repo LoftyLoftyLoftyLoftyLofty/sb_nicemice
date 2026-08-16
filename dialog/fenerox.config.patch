@@ -1,0 +1,20 @@
+//  Fenerox reacting to a nicemice PLAYER. Vanilla varies this pool by
+//  listener species already, so this slots into an existing pattern.
+
+[
+	{
+		"op" : "add",
+		"path" : "/converse/default/nicemice",
+		"value" : 
+		[
+			"New person. Big ears. Quite exciting!",
+			"Odd person. Hopefully nice. Feeling cautious!",
+			"Small stranger. Not Fenerox. Being polite!",
+			"Meeting stranger. Soft fur. Good sniffs!",
+			"Odd person. Saying hello. Not Fenerox?",
+			"Friendly stranger. Feeling awkward. Cautiously optimistic!",
+			"New stranger. Not confident. Saying hello!",
+			"Unknown person. Long tail. Very interesting!"
+		]
+	}
+]

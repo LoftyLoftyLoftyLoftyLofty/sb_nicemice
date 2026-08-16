@@ -1,0 +1,143 @@
+//  Nicemice combat barks. Keyed by speaker species (nicemice_npc), so
+//  these replace the vanilla default pool for mice only -- other species
+//  and other mods' species keys are untouched.
+
+[
+	{
+		"op" : "add",
+		"path" : "/attack/nicemice_npc",
+		"value" : {}
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/attack/nicemice_npc/default",
+		"value" : 
+		[
+			"Engaging hoztilez!",
+			"Hoztile zpotted!",
+			"Zey azked for ziz.",
+			"Hazaa!",
+			"Formazion! Now!",
+			"Ziz vill be quick.",
+			"You have made a grave miztake.",
+			"Zqueak! Attack!"
+		]
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/reattack/nicemice_npc",
+		"value" : {}
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/reattack/nicemice_npc/default",
+		"value" : 
+		[
+			"You again? Zut!",
+			"Back for more, I zee.",
+			"Zome people never learn.",
+			"Ze zecond attempt iz alvayz vorze.",
+			"Ve are not finizhed, you and I."
+		]
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/killedTarget/nicemice_npc",
+		"value" : {}
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/killedTarget/nicemice_npc/default",
+		"value" : 
+		[
+			"Ekzaktlie az planned.",
+			"Zreat neutralized.",
+			"Zat vaz embarrazzing. For you.",
+			"Naturallement.",
+			"Zomeone clean ziz up.",
+			"Vaz zere ever any doubt?",
+			"Pazetic."
+		]
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/lostTarget/nicemice_npc",
+		"value" : {}
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/lostTarget/nicemice_npc/default",
+		"value" : 
+		[
+			"Coward! Come back!",
+			"Running avay iz not a ztrategy.",
+			"Ve vill find you again.",
+			"Zut. Gone.",
+			"Ziz iz not over."
+		]
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/outOfSight/nicemice_npc",
+		"value" : {}
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/outOfSight/nicemice_npc/default",
+		"value" : 
+		[
+			"Vhere did zey go?",
+			"Zneaky. I do not like zneaky.",
+			"Come out. It vill be quicker.",
+			"I zaw you a moment ago!",
+			"Hidink iz undignified."
+		]
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/cantReach/nicemice_npc",
+		"value" : {}
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/cantReach/nicemice_npc/default",
+		"value" : 
+		[
+			"Get down here at onze!",
+			"I cannot reach you up zere!",
+			"Ziz iz cheatink.",
+			"Come clozer, coward.",
+			"Ztop ztanding vhere I am not."
+		]
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/cheerOn/nicemice_npc",
+		"value" : {}
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/cheerOn/nicemice_npc/default",
+		"value" : 
+		[
+			"Get zem!",
+			"Vhy iz it ztill alive?",
+			"Fazter! Ve haven't got all day.",
+			"Finizh it!",
+			"No queztion."
+		]
+	}
+]

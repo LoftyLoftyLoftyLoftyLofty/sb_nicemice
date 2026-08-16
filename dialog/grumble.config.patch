@@ -1,0 +1,95 @@
+//  Tenant complaints. Note that merchant.config carries its own copies of
+//  these same fragments -- nicemice tenants resolve through grumble.config,
+//  so those copies do not need patching.
+
+[
+	{
+		"op" : "add",
+		"path" : "/tagCriteria/nicemice_npc",
+		"value" : {}
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/tagCriteria/nicemice_npc/default",
+		"value" : 
+		[
+			"Zomeone haz been touching my t'ingz.",
+			"My home iz not az I left it.",
+			"Put it back. Ekzaktlie az it vaz.",
+			"I notize everyt'ing, you know."
+		]
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/enclosedArea/nicemice_npc",
+		"value" : {}
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/enclosedArea/nicemice_npc/default",
+		"value" : 
+		[
+			"Zere iz a hole in my vall.",
+			"I can zee ze ztarz from my bed. Ziz iz not a feature.",
+			"Repairz. Now, pleaze.",
+			"Ze draft iz ruining my fur."
+		]
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/otherDeed/nicemice_npc",
+		"value" : {}
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/otherDeed/nicemice_npc/default",
+		"value" : 
+		[
+			"I do not zhare. Ever.",
+			"Two deedz? In MY home?",
+			"Remove ze zecond deed at onze.",
+			"I am not living vith a ztranger."
+		]
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/severe/nicemice_npc",
+		"value" : {}
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/severe/nicemice_npc/default",
+		"value" : 
+		[
+			"Zeze conditionz are unaczeptable.",
+			"I have complained. Repeatedlie.",
+			"Ziz iz beneat' me.",
+			"Fikz it, or I go."
+		]
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/final/nicemice_npc",
+		"value" : {}
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/final/nicemice_npc/default",
+		"value" : 
+		[
+			"I am leaving. Do not follow.",
+			"Enough. I have ztandardz.",
+			"Ziz arrangement iz terminated.",
+			"Good luck vith ze hole in ze vall."
+		]
+	}
+]

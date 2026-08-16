@@ -1,0 +1,27 @@
+//  Crew chatter for player-recruited mice. Second level is the listener
+//  species; 'default' covers every captain. Add a /nicemice_npc/nicemice
+//  key later if mice should address a mouse captain differently.
+
+[
+	{
+		"op" : "add",
+		"path" : "/converse/nicemice_npc",
+		"value" : {}
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/converse/nicemice_npc/default",
+		"value" : 
+		[
+			"Ze zhip iz in acceptable condition, adjutant.",
+			"Ready vhen you are.",
+			"Vhat iz our nekzt objective?",
+			"I have filed my report. Have you read it?",
+			"Do not vorry. I am vatching ze zenzorz.",
+			"Ze rationz are adequate. Barelie.",
+			"Zpaze iz cold and I am zmall. Ztill, I remain.",
+			"Zqueak."
+		]
+	}
+]

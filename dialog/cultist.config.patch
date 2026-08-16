@@ -1,0 +1,24 @@
+//  Occasus cultists attacking a nicemice PLAYER. Vanilla already varies
+//  this bark pool by target species; this adds the mouse-facing set.
+
+[
+	{
+		"op" : "add",
+		"path" : "/attack/human/nicemice",
+		"value" : 
+		[
+			"A nonbeliever approaches!",
+			"We are the Occasus! You cannot stop us!",
+			"You picked a very bad time to come here.",
+			"If I kill you, Nox might promote me!",
+			"You shall not stop our plans!",
+			"You won't leave this place!",
+			"Vermin! The Occasus will see you exterminated!",
+			"Nox will not be troubled by a rodent!",
+			"You are too small to matter and too loud to ignore!",
+			"Don't think you can scurry away, nonbeliever!",
+			"If you aren't with us, then you're against us!",
+			"Something crawled in from the dark. Deal with it!"
+		]
+	}
+]

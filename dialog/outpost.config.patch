@@ -1,0 +1,66 @@
+//  Outpost NPCs reacting to a nicemice PLAYER. Listener key only -- these
+//  lines are spoken by the listed species, in their own voice.
+//  Adding /converse/<speaker>/nicemice removes the default fallback for
+//  mouse players, so each pool must stand on its own.
+
+[
+	{
+		"op" : "add",
+		"path" : "/converse/apex/nicemice",
+		"value" : 
+		[
+			"A rodent that walks upright. The Miniknog would want to study you. Don't let them.",
+			"You are small. In my experience that is an advantage."
+		]
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/converse/hylotl/nicemice",
+		"value" : 
+		[
+			"A creature of burrows, here among the stars. The universe is generous with surprises.",
+			"Please keep your tail clear of the walkways."
+		]
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/converse/avian/nicemice",
+		"value" : 
+		[
+			"Kluex made the small as surely as the great. Be welcome.",
+			"Mind the crowds, little one. Not everyone looks down."
+		]
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/converse/human/nicemice",
+		"value" : 
+		[
+			"Whoa. A giant mouse. That's either amazing or a health code violation.",
+			"Giant mouse. Yuck. Hot."
+		]
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/converse/floran/nicemice",
+		"value" : 
+		[
+			"Sssnack sized! ...Floran joking. Mossstly.",
+			"Fun sssize meat! Floran not eat guesssts. Usually."
+		]
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/converse/glitch/nicemice",
+		"value" : 
+		[
+			"Alarmed. A rodent of considerable size!",
+			"Curious. Do you chew cabling? Please answer honestly."
+		]
+	}
+]

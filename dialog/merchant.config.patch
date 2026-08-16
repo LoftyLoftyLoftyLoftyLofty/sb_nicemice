@@ -1,0 +1,94 @@
+//  Quartermaster shop dialog. Fragment names differ from the npctype keys:
+//  the npctype declares start/end, the file calls them merchantStart and
+//  merchantEnd.
+
+[
+	{
+		"op" : "add",
+		"path" : "/welcome/nicemice_npc",
+		"value" : {}
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/welcome/nicemice_npc/default",
+		"value" : 
+		[
+			"Velcome. Don't touch anyt'ing.",
+			"Browze. Carefullie.",
+			"Ah. A cuztomer.",
+			"Ze qualitie here iz not in queztion."
+		]
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/tout/nicemice_npc",
+		"value" : {}
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/tout/nicemice_npc/default",
+		"value" : 
+		[
+			"Everyt'ing here iz vort' ze prize.",
+			"Bezt goodz in ze zektor. Objektivelie.",
+			"I do not haggle.",
+			"Buy zomet'ing, pleaze."
+		]
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/follow/nicemice_npc",
+		"value" : {}
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/follow/nicemice_npc/default",
+		"value" : 
+		[
+			"Ziz vay.",
+			"Keep up, pleaze.",
+			"Don't vander off."
+		]
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/merchantStart/nicemice_npc",
+		"value" : {}
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/merchantStart/nicemice_npc/default",
+		"value" : 
+		[
+			"Let'z zee vhat you can afford.",
+			"Ze zhop iz open.",
+			"Zpend vizely."
+		]
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/merchantEnd/nicemice_npc",
+		"value" : {}
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/merchantEnd/nicemice_npc/default",
+		"value" : 
+		[
+			"A pleazure doing buzinezz.",
+			"Come back vhen you have more pikzelz.",
+			"Zank you. Now go.",
+			"Ekzellent choize.",
+			"Don't looze your rezeipt."
+		]
+	}
+]

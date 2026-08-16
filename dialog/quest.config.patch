@@ -1,0 +1,481 @@
+//  Quest dialog for Nicemice quest-givers. Unlike the other dialog files,
+//  mice are the SPEAKER here -- nicemice_villager, nicemice_generictenant and
+//  every maus type carry questGenerator, so without these keys generated
+//  quests come out in plain English.
+//  
+//  Structure is deeper than the other files: fragment / subfragment /
+//  speaker species / listener. Substitution tags (<questGiver>, <item>,
+//  <enemy>, <receivedItems>) must survive verbatim -- the quest system fills
+//  them in at runtime.
+
+[
+	{
+		"op" : "add",
+		"path" : "/share_secret/pleaseTakeReply/nicemice_npc",
+		"value" : {}
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/share_secret/pleaseTakeReply/nicemice_npc/default",
+		"value" : 
+		[
+			"Take ziz reply back to <questGiver>, pleaze.",
+			"Return ziz to <questGiver>. Do NOT read it."
+		]
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/intimidate/intimidated/nicemice_npc",
+		"value" : {}
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/intimidate/intimidated/nicemice_npc/default",
+		"value" : 
+		[
+			"Put ze <item> avay! I vill tell <questGiver> anyt'ing!",
+			"Zut! Not ze <item>! Fine, <questGiver> vinz!"
+		]
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/intimidate/notIntimidated/nicemice_npc",
+		"value" : {}
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/intimidate/notIntimidated/nicemice_npc/default",
+		"value" : 
+		[
+			"Vhy zhould I do vhat <questGiver> vantz?",
+			"<questGiver> haz no aut'ority over me."
+		]
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/bribe/giftAccepted/nicemice_npc",
+		"value" : {}
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/bribe/giftAccepted/nicemice_npc/default",
+		"value" : 
+		[
+			"A bribe? How vulgar. I accept. T'ank <questGiver> for me.",
+			"Ah. Ziz changez t'ingz. My regardz to <questGiver>."
+		]
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/bribe/giftAccepted2/nicemice_npc",
+		"value" : {}
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/bribe/giftAccepted2/nicemice_npc/default",
+		"value" : 
+		[
+			"Ztill, I vonder vhat <questGiver> vantz from me.",
+			"Nobodie givez giftz for not'ing. Vat iz <questGiver> after?"
+		]
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/bribe/requestAdditionToHouse/nicemice_npc",
+		"value" : {}
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/bribe/requestAdditionToHouse/nicemice_npc/default",
+		"value" : 
+		[
+			"Ziz vould zuit my home. Plaze it inzide for me?",
+			"Put it in my home. Carefullie."
+		]
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/gift/giftAccepted/nicemice_npc",
+		"value" : {}
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/gift/giftAccepted/nicemice_npc/default",
+		"value" : 
+		[
+			"Oh! T'ank <questGiver> for me, pleaze.",
+			"How unekzpectedlie t'oughtful. My t'anks to <questGiver>."
+		]
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/gift/giftAccepted2/nicemice_npc",
+		"value" : {}
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/gift/giftAccepted2/nicemice_npc/default",
+		"value" : 
+		[
+			"<questGiver> iz a friend after all.",
+			"I zhall remember ziz, and zo zhould <questGiver>."
+		]
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/gift/requestAdditionToHouse/nicemice_npc",
+		"value" : {}
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/gift/requestAdditionToHouse/nicemice_npc/default",
+		"value" : 
+		[
+			"Ziz belongz in my home. Vould you plaze it zere?",
+			"Inzide, pleaze. And ztraight."
+		]
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/return_stolen/objectTaken/nicemice_npc",
+		"value" : {}
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/return_stolen/objectTaken/nicemice_npc/default",
+		"value" : 
+		[
+			"I azzure you, ze <item> vaz acquired legallie.",
+			"Ze <item> iz mine. Prezumablie."
+		]
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/collect_fine/fineCollected/nicemice_npc",
+		"value" : {}
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/collect_fine/fineCollected/nicemice_npc/default",
+		"value" : 
+		[
+			"Fine, fine. I vill pay ze fine. Zut.",
+			"Here. Take ze pikzelz and go."
+		]
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/collect_gift/giftProvided/nicemice_npc",
+		"value" : {}
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/collect_gift/giftProvided/nicemice_npc/default",
+		"value" : 
+		[
+			"One <item>, for <questGiver>. Don't drop it.",
+			"Here iz ze <item>. <questGiver> owez me."
+		]
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/request_craft/giftProvided/nicemice_npc",
+		"value" : {}
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/request_craft/giftProvided/nicemice_npc/default",
+		"value" : 
+		[
+			"Here. I made it earlier, naturallement.",
+			"One <item>, crafted properlie. You're velcome."
+		]
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/borrow/giftProvided/nicemice_npc",
+		"value" : {}
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/borrow/giftProvided/nicemice_npc/default",
+		"value" : 
+		[
+			"Fine. <questGiver> may borrow my <item>.",
+			"<questGiver> returnz ze <item> to me. Intact."
+		]
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/extort/giftProvided/nicemice_npc",
+		"value" : {}
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/extort/giftProvided/nicemice_npc/default",
+		"value" : 
+		[
+			"T-take ze <item>! Juzt don't hurt me!",
+			"Here! Ze <item>! Pleaze go avay!"
+		]
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/hat/crafting/nicemice_npc",
+		"value" : {}
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/hat/crafting/nicemice_npc/default",
+		"value" : 
+		[
+			"You have ze materialz? One moment, pleaze.",
+			"Ah, ze itemz. Ztand zere. Don't touch anyt'ing."
+		]
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/hat/crafted/nicemice_npc",
+		"value" : {}
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/hat/crafted/nicemice_npc/default",
+		"value" : 
+		[
+			"Finizhed. Take ze parzel to <questGiver>.",
+			"Ekzellent vork, if I zay zo myzelf. To <questGiver> vith it."
+		]
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/helmet/crafting/nicemice_npc",
+		"value" : {}
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/helmet/crafting/nicemice_npc/default",
+		"value" : 
+		[
+			"Ze materialz. Good. Give me a moment.",
+			"Hold ztill. Ziz vill not take long."
+		]
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/helmet/crafted/nicemice_npc",
+		"value" : {}
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/helmet/crafted/nicemice_npc/default",
+		"value" : 
+		[
+			"Done. Carry ziz to <questGiver>, carefullie.",
+			"A fine pieze of vork. <questGiver> iz vaiting."
+		]
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/new_stock/trade/nicemice_npc",
+		"value" : {}
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/new_stock/trade/nicemice_npc/default",
+		"value" : 
+		[
+			"T'ank you for ze goodz. Here iz <questGiver>'z parzel.",
+			"Buzinezz concluded. Give <questGiver> my regardz."
+		]
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/kidnapping/kidnappersDead/nicemice_npc",
+		"value" : {}
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/kidnapping/kidnappersDead/nicemice_npc/default",
+		"value" : 
+		[
+			"You zaved me! I vill not forget ziz.",
+			"Iz it over? My vhizkerz are ztill zhaking.",
+			"Zqueak! I t'ought I vaz finizhed!"
+		]
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/kidnapping/followHome/nicemice_npc",
+		"value" : {}
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/kidnapping/followHome/nicemice_npc/default",
+		"value" : 
+		[
+			"I am ztill frightened. Take me home to <questGiver>.",
+			"Do not leave me here. <questGiver> vill be vorried."
+		]
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/escort/found/nicemice_npc",
+		"value" : {}
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/escort/found/nicemice_npc/default",
+		"value" : 
+		[
+			"I am hopelezzlie lozt. Take me to <questGiver>?",
+			"Ziz iz not vhere I intended to be. <questGiver>, pleaze.",
+			"I am not lozt. I am... miz-plazed. Take me to <questGiver>."
+		]
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/barter/trade/nicemice_npc",
+		"value" : {}
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/barter/trade/nicemice_npc/default",
+		"value" : 
+		[
+			"T'ank you for ze goodz. Here iz <questGiver>'z <receivedItems>.",
+			"Ze trade iz zettled. <receivedItems> for <questGiver>."
+		]
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/escort_trade/collectDelivery/nicemice_npc",
+		"value" : {}
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/escort_trade/collectDelivery/nicemice_npc/default",
+		"value" : 
+		[
+			"Do you have a deliverie for me?",
+			"Vell? Ze deliverie?"
+		]
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/escort_trade/provideDelivery/nicemice_npc",
+		"value" : {}
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/escort_trade/provideDelivery/nicemice_npc/default",
+		"value" : 
+		[
+			"Here are your goodz. Enjoy zem.",
+			"Ze goodz. Count zem if you muzt."
+		]
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/kill_npcs/assistantIntro/nicemice_npc",
+		"value" : {}
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/kill_npcs/assistantIntro/nicemice_npc/default",
+		"value" : 
+		[
+			"<questGiver> hired me to help you fight ze <enemy>.",
+			"I am here for ze <enemy>. <questGiver> arranged it."
+		]
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/kill_npc/surrender/nicemice_npc",
+		"value" : {}
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/kill_npc/surrender/nicemice_npc/default",
+		"value" : 
+		[
+			"I zurrender! Put ze veapon avay!",
+			"Enough! I know vhen I am beaten!",
+			"Zut! Ztop! I yield!"
+		]
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/kill_npc/betray/nicemice_npc",
+		"value" : {}
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/kill_npc/betray/nicemice_npc/default",
+		"value" : 
+		[
+			"You abzolute fool!",
+			"My veb of liez haz enznared you!",
+			"Haha! Foolizh!",
+			"I have ruzed you completelie.",
+			"Get cheezed, lozer!"
+		]
+	}
+]

@@ -1,0 +1,42 @@
+//  Unarmed mice fleeing. Keyed by speaker species.
+
+[
+	{
+		"op" : "add",
+		"path" : "/helpme/nicemice_npc",
+		"value" : {}
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/helpme/nicemice_npc/default",
+		"value" : 
+		[
+			"Help! I am unarmed!",
+			"Zomeone do zomet'ing!",
+			"Ziz iz not in my job dezcription!",
+			"Guardz! Immediatelie!",
+			"Eeek! Zut!",
+			"I am too zmall for ziz!"
+		]
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/safe/nicemice_npc",
+		"value" : {}
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/safe/nicemice_npc/default",
+		"value" : 
+		[
+			"Zat vaz undignified.",
+			"I am fine. Perfektlie fine.",
+			"Never zpeak of ziz.",
+			"My fur iz a dizazter now.",
+			"Zafe. For ze moment."
+		]
+	}
+]

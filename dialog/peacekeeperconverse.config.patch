@@ -1,0 +1,40 @@
+//  Nicemice Peacekeeper NPCs speaking to the player-Officer.
+//  
+//  Speaker-side key, added ahead of the NPCs themselves -- there are no
+//  nicemice peacekeeper npctypes yet, so this pool sits unused until one
+//  points here. Harmless in the meantime.
+//  
+//  The reactive half (other species' peacekeepers addressing a nicemice
+//  player) is separate: this file is listener-flat, so that would mean a
+//  fresh pool under each of the seven speaker species.
+//  
+//  <selfname> is the speaking NPC, <entityname> is the player. Both are
+//  filled in at runtime and must survive verbatim.
+
+[
+	{
+		"op" : "add",
+		"path" : "/converse/nicemice_npc",
+		"value" : {}
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/converse/nicemice_npc/default",
+		"value" : 
+		[
+			"Offizer <selfname>, reporting. Ze paperwork iz filed. Alphabeticallie.",
+			"Captain Noble zpeakz highlie of you, Offizer <entityname>. Loudlie, and often.",
+			"I am inveztigating a gang. Zeir hatz are ridiculouz.",
+			"Ze Letheia Corporation iz hiding zomet'ing. I can zmell it.",
+			"Crime doez not zleep. Neizer do I. Ziz iz a complaint, not a boazt.",
+			"My dezk iz immaculate. I vill not zpeak about ze ozer dezkz.",
+			"Offizer <entityname>! I have zree new cazez for you. Read zem in order, pleaze.",
+			"Zey call uz Peazekeeperz, but nobodie keepz ze peaze like a mouze vith a filing zyztem.",
+			"I joined for ze juztiz. And ze uniform. It iz vell cut.",
+			"Do not tell ze Captain, but my report iz late. It iz alzo perfekt.",
+			"Ze gangz in ziz zektor have no zenze of ztyle vhatzoever.",
+			"A mouze in law enforzement. Ze irony iz not lozt on me, Offizer <entityname>."
+		]
+	}
+]

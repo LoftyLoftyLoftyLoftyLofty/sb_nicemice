@@ -1,0 +1,40 @@
+//  Clue dialog for Nicemice NPCs.
+//  
+//  Unlike every other dialog file in this mod, clues.config has NO top-level
+//  'default' key -- the top level is the speaker species directly, and a
+//  species without an entry has nothing to fall back to. Vanilla omits
+//  novakid entirely for the same reason.
+//  
+//  Three levels deep: species / default / default.
+
+[
+	{
+		"op" : "add",
+		"path" : "/nicemice_npc",
+		"value" : {}
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/nicemice_npc/default",
+		"value" : {}
+	},
+	
+	{
+		"op" : "add",
+		"path" : "/nicemice_npc/default/default",
+		"value" : 
+		[
+			"Zere are ztoriez of artifaktz of great power, out zere in ze dark.",
+			"Old plazez are full of old t'ingz. Zome are valuable. Zome bite.",
+			"I have heard of vaultz zealed zo long ze doorz forgot how to open.",
+			"Mize find t'ingz ozerz valk pazt. Ve are clozer to ze ground.",
+			"Zere iz a ruin on zome moon vith a locked chamber. Nobodie rememberz vhich moon.",
+			"My grandmozer zaid ze bezt treazure iz alvayz behind ze vorzt door.",
+			"Ze fleet keepz rekordz of every ruin ve have zurveyed. Moztly.",
+			"Zomeone iz collekting anzient t'ingz. Zey pay vell and azk not'ing.",
+			"Ze quartermazter buyz relikz. Do not azk vhere zey go afterward.",
+			"If you find a zealed vault, do not open it alone. Zat iz advize, not zuperztition."
+		]
+	}
+]
