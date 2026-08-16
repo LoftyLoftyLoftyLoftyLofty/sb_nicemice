@@ -1,0 +1,38 @@
+{
+  "objectName" : "nicemice_consolechair",
+  "colonyTags" : ["nicemice","maus"],
+  "rarity" : "Common",
+  "category" : "furniture",
+  "price" : 70,
+  "description" : "A zpot to take a zeat.",
+  "shortdescription" : "M.A.U.S. Console Seat",
+  "race" : "nicemice",
+
+  "apexDescription" : "A small but comfortable chair.",
+  "avianDescription" : "Might as well sit cross-legged. At least it's soft.",
+  "floranDescription" : "Floran butt itch sssometimes.",
+  "glitchDescription" : "Haughty. I'm much too tall for that seat!",
+  "humanDescription" : "Not sure if this is for sitting or kneeling.",
+  "hylotlDescription" : "Some kind of pillow has been left unattended on the floor.",
+  "novakidDescription" : "Spot for your keister.",
+  "nicemiceDescription" : "Park your tail and get back to vork.",
+
+  "inventoryIcon" : "icon.png",
+  "orientations" : [
+    {
+      "dualImage" : "nicemice_consolechair.png:<color>",
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ],
+
+  "objectType" : "loungeable",
+  "sitFlipDirection" : false,
+  "sitPosition" : [2, 18]
+
+}
