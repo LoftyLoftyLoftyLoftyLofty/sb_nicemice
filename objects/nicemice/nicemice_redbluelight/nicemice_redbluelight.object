@@ -1,0 +1,160 @@
+{
+  "objectName" : "nicemice_redbluelight",
+  "colonyTags" : ["hylotl","hylotloceancity","light"],
+  "rarity" : "Common",
+  "category" : "light",
+  "price" : 50,
+  "lightColor" : [73, 73, 179],
+  "lightColorOff" : [200, 40, 40],
+
+  "shortdescription" : "Red Blue Light",
+  "description" : "A light that can switch between red and blue.",
+  "race" : "nicemice",
+
+  "apexDescription" : "Access denied by a lightbulb? This is a new low.",
+  "avianDescription" : "I like this lightbulb better when it's blue.",
+  "floranDescription" : "Red or blue makesss no difference. Floran will passs.",
+  "glitchDescription" : "Observant. This light can be red or blue.",
+  "humanDescription" : "It's red, then it's blue. What does it mean?",
+  "hylotlDescription" : "This simple light holds the power to deny or grant access.",
+  "novakidDescription" : "A colour changin' light. Is it tryin' to communicate somethin'?",
+  "nicemiceDescription" : "Ziz light can be red, or it can be blue, but it can't be purple. Zut!",
+
+  "inventoryIcon" : "icon.png",
+  "orientations" : [
+    {
+      "image" : "nicemice_redbluelightright.png:<color>.<frame>",
+      "imagePosition" : [0, 0],
+
+      "direction" : "left",
+
+      "animationParts" : {
+        "bg" : "nicemice_redbluelightleft.png",
+        "fg" : "nicemice_redbluelightleftlit.png"
+      },
+      "animationPosition" : [0, 0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "right" ]
+    },
+    {
+      "image" : "nicemice_redbluelightleft.png:<color>.<frame>",
+      "imagePosition" : [0, 0],
+
+      "direction" : "right",
+
+      "animationParts" : {
+        "bg" : "nicemice_redbluelightleft.png",
+        "fg" : "nicemice_redbluelightleftlit.png"
+
+      },
+      "animationPosition" : [0, 0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "left" ]
+    },
+    {
+      "image" : "nicemice_redbluelightceiling.png:<color>.<frame>",
+      "imagePosition" : [0, 0],
+
+      "direction" : "right",
+
+      "animationParts" : {
+        "bg" : "nicemice_redbluelightceiling.png",
+        "fg" : "nicemice_redbluelightceilinglit.png"
+      },
+      "animationPosition" : [0, 0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "top" ]
+    },
+    {
+      "image" : "nicemice_redbluelightground.png:<color>.<frame>",
+      "imagePosition" : [0, 0],
+
+      "direction" : "right",
+
+      "animationParts" : {
+        "bg" : "nicemice_redbluelightground.png",
+        "fg" : "nicemice_redbluelightgroundlit.png"
+      },
+      "animationPosition" : [0, 0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    },
+    {
+      "image" : "nicemice_redbluelightceiling.png:<color>.<frame>",
+      "imagePosition" : [0, 0],
+
+      "direction" : "left",
+      "flipImages" : true,
+
+      "animationParts" : {
+        "bg" : "nicemice_redbluelightceiling.png",
+        "fg" : "nicemice_redbluelightceilinglit.png"
+      },
+      "animationPosition" : [0, 0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "top" ]
+
+    },
+    {
+      "image" : "nicemice_redbluelightground.png:<color>.<frame>",
+      "imagePosition" : [0, 0],
+
+      "direction" : "left",
+      "flipImages" : true,
+
+      "animationParts" : {
+        "bg" : "nicemice_redbluelightground.png",
+        "fg" : "nicemice_redbluelightgroundlit.png"
+      },
+      "animationPosition" : [0, 0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    },
+    {
+      "image" : "nicemice_redbluelightceiling.png:<color>.<frame>",
+      "imagePosition" : [0, 0],
+
+      "direction" : "left",
+      "flipImages" : true,
+
+      "animationParts" : {
+        "bg" : "nicemice_redbluelightceiling.png",
+        "fg" : "nicemice_redbluelightceilinglit.png"
+      },
+      "animationPosition" : [0, 0],
+
+      "spaceScan" : 0.1,
+      "fgAnchors" : [ [0,0] ]
+    },
+    {
+      "image" : "nicemice_redbluelightceiling.png:<color>.<frame>",
+      "imagePosition" : [0, 0],
+
+      "direction" : "right",
+
+      "animationParts" : {
+        "bg" : "nicemice_redbluelightceiling.png",
+        "fg" : "nicemice_redbluelightceilinglit.png"
+      },
+      "animationPosition" : [0, 0],
+
+      "spaceScan" : 0.1,
+      "fgAnchors" : [ [0,0] ]
+    }
+  ],
+
+  "scripts" : [ "/objects/wired/light/light.lua" ],
+  "scriptDelta" : 60,
+  
+  "interactive" : false,
+
+  "animation" : "/objects/wired/light/lighttogglebgfullbright.animation",
+
+  "inputNodes" : [ [0, 0] ]
+}
