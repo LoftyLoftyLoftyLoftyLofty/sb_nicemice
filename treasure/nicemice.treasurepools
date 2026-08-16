@@ -212,7 +212,8 @@
 				"pool" :
 				[
 					{ "weight" : 0.25, "pool" : "nicemice_uniform_jumpsuit" },
-					{ "weight" : 0.25, "pool" : "nicemice_uniform_officer" }
+					{ "weight" : 0.25, "pool" : "nicemice_uniform_officer" },
+					{ "weight" : 0.25, "pool" : "nicemice_uniform_medic" }
 				],
 				"poolRounds" : 
 				[
@@ -245,6 +246,20 @@
 				[
 					{"item" : [ "nicemice_maus_officerchest", 1 ] },
 					{"item" : [ "nicemice_maus_officerlegs", 1 ] }
+				]
+			}
+		]
+	],
+	
+	"nicemice_uniform_medic" : 
+	[
+		[
+			0,
+			{
+				"fill" :
+				[
+					{"item" : [ "nicemice_maus_medicchest", 1 ] },
+					{"item" : [ "nicemice_maus_mediclegs", 1 ] }
 				]
 			}
 		]
@@ -316,5 +331,5 @@
 				]
 			}
 		]
-	],
+	]
 }
