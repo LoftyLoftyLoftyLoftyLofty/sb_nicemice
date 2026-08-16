@@ -109,6 +109,7 @@
 				"pool" : 
 				[
 					{ "weight" : 0.75, "pool" : "spaceTrash" },
+					{ "weight" : 0.75, "item" : [ "nicemice_slopedapexshipwall", 50 ] },
 					{ "weight" : 0.25, "pool" : "basicSpaceTreasure" }
 				],
 				"poolRounds" : 
