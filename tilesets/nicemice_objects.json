@@ -4,7 +4,7 @@
   "properties" : {
   },
   "spacing" : 0,
-  "tilecount" : 31,
+  "tilecount" : 38,
   "tileheight" : 80,
   "tileproperties" : {
     "0" : {
@@ -223,6 +223,61 @@
       "imagePositionY" : "-0",
       "object" : "nicemice_consolechair",
       "tilesetDirection" : "right"
+    },
+	"31" : {
+      "//description" : "Red Blue Light",	  
+      "imagePositionX" : "0",
+      "imagePositionY" : "0",
+      "object" : "nicemice_redbluelight",
+      "tilesetDirection" : "left"
+    },
+    "32" : {
+      "//description" : "Red Blue Light",
+	  "//name" : "nicemice_redbluelight_orientation2",
+      "imagePositionX" : "0",
+      "imagePositionY" : "0",
+      "object" : "nicemice_redbluelight",
+      "tilesetDirection" : "right"
+    },
+    "33" : {
+      "//description" : "Red Blue Light",
+	  "//name" : "nicemice_redbluelight_orientation3",
+      "imagePositionX" : "0",
+      "imagePositionY" : "0",
+      "object" : "nicemice_redbluelight",
+      "tilesetDirection" : "right"
+    },
+    "34" : {
+      "//description" : "Red Blue Light",
+	  "//name" : "nicemice_redbluelight_orientation4",
+      "imagePositionX" : "0",
+      "imagePositionY" : "0",
+      "object" : "nicemice_redbluelight",
+      "tilesetDirection" : "right"
+    },
+    "35" : {
+      "//description" : "Red Blue Light",
+	  "//name" : "nicemice_redbluelight_orientation5",
+      "imagePositionX" : "0",
+      "imagePositionY" : "0",
+      "object" : "nicemice_redbluelight",
+      "tilesetDirection" : "right"
+    },
+    "36" : {
+      "//description" : "Red Blue Light",
+	  "//name" : "nicemice_redbluelight_orientation6",
+      "imagePositionX" : "0",
+      "imagePositionY" : "0",
+      "object" : "nicemice_redbluelight",
+      "tilesetDirection" : "right"
+    },
+    "37" : {
+      "//description" : "Red Blue Light",
+	  "//name" : "nicemice_redbluelight_orientation7",
+      "imagePositionX" : "0",
+      "imagePositionY" : "0",
+      "object" : "nicemice_redbluelight",
+      "tilesetDirection" : "right"
     }
   },
   "tiles" : {
@@ -318,6 +373,27 @@
     },
 	"30" : {
       "image" : "../objects/nicemice/nicemice_consolechair/nicemice_consolechair.png"
+    },
+	"31" : {
+      "image" : "../objects/nicemice/nicemice_redbluelight/tiled_1.png"
+    },
+    "32" : {
+      "image" : "../objects/nicemice/nicemice_redbluelight/tiled_2.png"
+    },
+    "33" : {
+      "image" : "../objects/nicemice/nicemice_redbluelight/tiled_3.png"
+    },
+    "34" : {
+      "image" : "../objects/nicemice/nicemice_redbluelight/tiled_4.png"
+    },
+    "35" : {
+      "image" : "../objects/nicemice/nicemice_redbluelight/tiled_5.png"
+    },
+    "36" : {
+      "image" : "../objects/nicemice/nicemice_redbluelight/tiled_6.png"
+    },
+    "37" : {
+      "image" : "../objects/nicemice/nicemice_redbluelight/tiled_7.png"
     }
   },
   "tilewidth" : 8
