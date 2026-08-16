@@ -65,18 +65,18 @@
         [
           //  officer uniform
           {
-            "head" : [ { "name" : "nicemicetier1head" } ],
+            "head" : [ { "name" : "nicemicetier1head", "parameters" : { "colorIndex" : 4 } } ],
             "back" : [ { "name" : "nicemice_tail_mouse" } ],
             "chest" : [
               {
                 "name" : "nicemicetier1chest",
-                "parameters" : { "colorIndex" : 7 }
+                "parameters" : { "colorIndex" : 1 }
               }
             ],
             "legs" : [
               {
                 "name" : "nicemicetier1pants",
-                "parameters" : { "colorIndex" : 7 }
+                "parameters" : { "colorIndex" : 1 }
               }
             ],
             "sheathedprimary" : [ "nicemice_generatedweapon_techstaff" ]

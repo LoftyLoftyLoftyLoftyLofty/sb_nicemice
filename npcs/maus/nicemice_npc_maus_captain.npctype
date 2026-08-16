@@ -70,7 +70,8 @@
 						"head" : 
 						[
 							{ 
-								"name" : "nicemice_invisiblehead"							
+								"name" : "nicemice_maus_captainscap",
+								"parameters" : { "colorIndex" : [1, 3] }	 								
 							}
 						],
 						"back" : 
@@ -109,15 +110,15 @@
 						"chest" :
 						[
 							{ 
-								"name" : "nicemice_maus_officerchest",
-								"parameters" : { "colorIndex" : 8 }	 
+								"name" : "nicemice_maus_captainchest",
+								"parameters" : { "colorIndex" : [1, 3] }	 
 							}
 						],
 						"legs" :
 						[
 							{ 
-								"name" : "nicemice_maus_officerlegs",
-								"parameters" : { "colorIndex" : 8 }	 
+								"name" : "nicemice_maus_captainlegs",
+								"parameters" : { "colorIndex" : [1, 3] }	 
 							}
 						],
 						"sheathedprimary" : 

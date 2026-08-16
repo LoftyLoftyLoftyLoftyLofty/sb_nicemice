@@ -32,13 +32,13 @@
         //  colorIndex at init, overriding whatever the mouse wore before. With
         //  one graduation npctype per uniform that is the intended behaviour:
         //  this index and defaultUniform below together define the outfit.
-        "uniformColorIndex" : 8
+        "uniformColorIndex" : 3
       },
 
       "defaultUniform" : {
-        "head" : "nicemice_invisiblehead",
-        "chest" : "nicemice_maus_officerchest",
-        "legs" : "nicemice_maus_officerlegs",
+        "head" : "nicemice_maus_captainscap",
+        "chest" : "nicemice_maus_captainchest",
+        "legs" : "nicemice_maus_captainlegs",
         "back" : "nicemice_tail_mouse"
       }
     },
@@ -63,18 +63,18 @@
         [
           //  officer uniform
           {
-            "head" : [ { "name" : "nicemice_invisiblehead" } ],
+            "head" : [ { "name" : "nicemice_maus_captainscap" } ],
             "back" : [ { "name" : "nicemice_tail_mouse" } ],
             "chest" : [
               {
-                "name" : "nicemice_maus_officerchest",
-                "parameters" : { "colorIndex" : 8 }
+                "name" : "nicemice_maus_captainchest",
+                "parameters" : { "colorIndex" : 3 }
               }
             ],
             "legs" : [
               {
-                "name" : "nicemice_maus_officerlegs",
-                "parameters" : { "colorIndex" : 8 }
+                "name" : "nicemice_maus_captainlegs",
+                "parameters" : { "colorIndex" : 3 }
               }
             ],
             "sheathedprimary" : [ "nicemice_gentlereminder" ]

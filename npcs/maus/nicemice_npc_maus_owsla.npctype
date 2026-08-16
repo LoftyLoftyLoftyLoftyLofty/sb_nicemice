@@ -74,7 +74,7 @@
 							},
 							{
 								"name" : "nicemicetier1head",
-								"parameters" : { "colorIndex" : 7 }
+								"parameters" : { "colorIndex" : 4 }
 							}
 						],
 						"back" : 
@@ -114,14 +114,14 @@
 						[
 							{ 
 								"name" : "nicemicetier1chest",
-								"parameters" : { "colorIndex" : 7 }	 
+								"parameters" : { "colorIndex" : 1 }	 
 							}
 						],
 						"legs" :
 						[
 							{ 
 								"name" : "nicemicetier1pants",
-								"parameters" : { "colorIndex" : 7 }	 
+								"parameters" : { "colorIndex" : 1 }	 
 							}
 						],
 						"sheathedprimary" : 
