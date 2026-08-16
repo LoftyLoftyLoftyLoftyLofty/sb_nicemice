@@ -45,8 +45,8 @@
 
       "defaultUniform" : {
         "head" : "nicemice_invisiblehead",
-        "chest" : "nicemice_maus_officerchest",
-        "legs" : "nicemice_maus_officerlegs",
+        "chest" : "nicemice_maus_medicchest",
+        "legs" : "nicemice_maus_mediclegs",
         "back" : "nicemice_tail_mouse"
       }
     },
@@ -75,13 +75,13 @@
             "back" : [ { "name" : "nicemice_tail_mouse" } ],
             "chest" : [
               {
-                "name" : "nicemice_maus_officerchest",
+                "name" : "nicemice_maus_medicchest",
                 "parameters" : { "colorIndex" : 3 }
               }
             ],
             "legs" : [
               {
-                "name" : "nicemice_maus_officerlegs",
+                "name" : "nicemice_maus_mediclegs",
                 "parameters" : { "colorIndex" : 3 }
               }
             ],

@@ -78,65 +78,6 @@
 							}
 						],
 						
-						// Ship Crew
-						//  Colors 0, 1
-						//  M.A.U.S. Red
-						//  Black
-						
-						// Medic
-						//  Colors 3
-						//  White
-						
-						// Engineering
-						//  Colors 5
-						
-						// Cargo Crew
-						//  Colors 6, 11
-						//  Yellow
-						//  Brown
-						
-						// Quartermaster
-						//  Colors 12
-						//  Copper
-						
-						// Mechanic
-						//  Colors 9, 13
-						//  Purple
-						//  Lilac
-						
-						"chest" :
-						[
-							{ 
-								"name" : "nicemice_jumpsuitchest_dyeable",
-								"parameters" : { "colorIndex" : 3 }	 
-							}
-						],
-						"legs" :
-						[
-							{ 
-								"name" : "nicemice_jumpsuitlegs_dyeable",
-								"parameters" : { "colorIndex" : 3 }	 
-							}
-						],
-						"sheathedprimary" : 
-						[ 
-							"nicemice_generatedweapon_techstaff_medic" 
-						]
-					},
-					{
-						"head" : 
-						[
-							{ 
-								"name" : "nicemice_invisiblehead"							
-							}
-						],
-						"back" : 
-						[
-							{ 
-								"name" : "nicemice_tail_mouse"							
-							}
-						],
-						
 						// Officer
 						//  Colors 3
 						//  White
@@ -144,14 +85,14 @@
 						"chest" :
 						[
 							{ 
-								"name" : "nicemice_maus_officerchest",
+								"name" : "nicemice_maus_medicchest",
 								"parameters" : { "colorIndex" : 3 }	 
 							}
 						],
 						"legs" :
 						[
 							{ 
-								"name" : "nicemice_maus_officerlegs",
+								"name" : "nicemice_maus_mediclegs",
 								"parameters" : { "colorIndex" : 3 }	 
 							}
 						],
