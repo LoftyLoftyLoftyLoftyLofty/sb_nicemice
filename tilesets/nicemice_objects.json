@@ -4,7 +4,7 @@
   "properties" : {
   },
   "spacing" : 0,
-  "tilecount" : 30,
+  "tilecount" : 31,
   "tileheight" : 80,
   "tileproperties" : {
     "0" : {
@@ -216,6 +216,13 @@
       "imagePositionY" : "-0",
       "object" : "nicemice_npc_console",
       "tilesetDirection" : "right"
+    },
+	"30" : {
+      "//description" : "M.A.U.S. Console Seat",
+      "imagePositionX" : "-8",
+      "imagePositionY" : "-0",
+      "object" : "nicemice_consolechair",
+      "tilesetDirection" : "right"
     }
   },
   "tiles" : {
@@ -308,6 +315,9 @@
     },
 	"29" : {
       "image" : "../objects/nicemice/nicemice_console/tiled_npc.png"
+    },
+	"30" : {
+      "image" : "../objects/nicemice/nicemice_consolechair/nicemice_consolechair.png"
     }
   },
   "tilewidth" : 8
