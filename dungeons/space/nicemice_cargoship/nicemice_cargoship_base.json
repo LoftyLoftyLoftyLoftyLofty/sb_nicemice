@@ -2320,6 +2320,18 @@
          "y":0
         }, 
         {
+         "id":33,
+         "image":"..\/..\/..\/workbench\/npcships\/cargoship.png",
+         "name":"shippu",
+         "offsetx":0,
+         "offsety":-120,
+         "opacity":1,
+         "type":"imagelayer",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
          "color":"#ff0000",
          "draworder":"topdown",
          "id":4,
