@@ -9,6 +9,9 @@
   },
 
   "aliases" : {
+    "default" : "1",
+    "default.on" : "4",
+    "default.off" : "1",
     "default.default" : "1",
     "default.on.1" : "2",
 	"default.on.2" : "3", 
