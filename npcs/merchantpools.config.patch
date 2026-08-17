@@ -9,15 +9,18 @@
 				[
 				
 				//FLAGS, INSIGNIAS, AND OTHER IDENTITY ITEMS
-					{ "item" : { "name" : "nicemice_flag" }, "rarity" : 1.0 },
+					//try to always give the player a flag
+					{ "item" : { "name" : "nicemice_flag" }, "rarity" : 9999.0 },
 					{ "item" : { "name" : "nicemice_maus_insigniaplate" }, "rarity" : 1.0 },
 					{ "item" : { "name" : "nicemice_poster_salute" }, "rarity" : 1.0 },
 					
 				//WEAPONS AND ARMOR
-					{ "item" : { "name" : "nicemice_generatedweapon_plasmapistol" }, "rarity" : 1.0 },
-					{ "item" : { "name" : "nicemice_generatedweapon_techstaff" }, "rarity" : 1.0 },
-					{ "item" : { "name" : "nicemice_generatedweapon_techstaff_medic" }, "rarity" : 1.0 },
-					{ "item" : { "name" : "nicemice_gentlereminder" }, "rarity" : 1.0 },
+					
+					//large weights here to make sure they're available
+					{ "item" : { "name" : "nicemice_generatedweapon_plasmapistol" }, "rarity" : 9999.0 },
+					{ "item" : { "name" : "nicemice_generatedweapon_techstaff" }, "rarity" : 9999.0 },
+					{ "item" : { "name" : "nicemice_generatedweapon_techstaff_medic" }, "rarity" : 9999.0 },
+					{ "item" : { "name" : "nicemice_gentlereminder" }, "rarity" : 9999.0 },
 					
 				//CARGO SHIP DECORATIONS
 					{ "item" : { "name" : "nicemice_cargoshiplocker_3x3" }, "rarity" : 1.0 },
@@ -31,8 +34,8 @@
 					{ "item" : { "name" : "nicemice_ceilingstrappedshippingcontainer_base" }, "rarity" : 1.0 },
 					{ "item" : { "name" : "nicemice_ceilingstrappedshippingcontainer_stackma" }, "rarity" : 1.0 },
 					
-					// this is the coolest item on the ship so we set the weight to 100 so players reliably get it
-					{ "item" : { "name" : "nicemice_cargoshiphologram" }, "rarity" : 100.0 },
+					// this is the coolest item on the ship so we set the weight high so players reliably get it
+					{ "item" : { "name" : "nicemice_cargoshiphologram" }, "rarity" : 9999.0 },
 					
 					{ "item" : { "name" : "nicemice_console" }, "rarity" : 1.0 },
 					{ "item" : { "name" : "nicemice_npc_console" }, "rarity" : 1.0 },
@@ -45,8 +48,8 @@
 					{ "item" : { "name" : "nicemice_targetscreen_playership" }, "rarity" : 1.0 },
 					{ "item" : { "name" : "nicemice_targetscreen_station" }, "rarity" : 1.0 },
 					{ "item" : { "name" : "nicemice_targetscreen_anomaly" }, "rarity" : 1.0 },
-					// this is the second coolest item on the ship so we set the weight to 100 so players reliably get it
-					{ "item" : { "name" : "nicemice_targetscreen_readytofire" }, "rarity" : 100.0 },
+					// this is the second coolest item on the ship so we set the weight high so players reliably get it
+					{ "item" : { "name" : "nicemice_targetscreen_readytofire" }, "rarity" : 9999.0 },
 					{ "item" : { "name" : "nicemice_targetscreen_fan" }, "rarity" : 1.0 },
 					{ "item" : { "name" : "nicemice_targetscreen_thermostat" }, "rarity" : 1.0 },
 					
