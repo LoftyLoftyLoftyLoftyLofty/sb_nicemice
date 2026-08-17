@@ -14,6 +14,21 @@
 					{ "item" : { "name" : "nicemice_maus_insigniaplate" }, "rarity" : 1.0 },
 					{ "item" : { "name" : "nicemice_poster_salute" }, "rarity" : 1.0 },
 					
+				//CLOTHES
+					{ "item" : { "name" : "nicemice_jumpsuitchest_dyeable" }, "rarity" : 1.0 },
+					{ "item" : { "name" : "nicemice_jumpsuitlegs_dyeable" }, "rarity" : 1.0 },
+					{ "item" : { "name" : "nicemice_maus_officerchest" }, "rarity" : 1.0 },
+					{ "item" : { "name" : "nicemice_maus_officerlegs" }, "rarity" : 1.0 },
+					{ "item" : { "name" : "nicemice_maus_captainscap" }, "rarity" : 1.0 },
+					{ "item" : { "name" : "nicemice_maus_captainchest" }, "rarity" : 1.0 },
+					{ "item" : { "name" : "nicemice_maus_captainlegs" }, "rarity" : 1.0 },
+					{ "item" : { "name" : "nicemice_maus_medicchest" }, "rarity" : 1.0 },
+					{ "item" : { "name" : "nicemice_maus_mediclegs" }, "rarity" : 1.0 },
+					{ "item" : { "name" : "nicemice_hazmathead" }, "rarity" : 1.0 },
+					{ "item" : { "name" : "nicemice_hazmatchest" }, "rarity" : 1.0 },
+					{ "item" : { "name" : "nicemice_hazmatlegs" }, "rarity" : 1.0 },
+					{ "item" : { "name" : "nicemice_hazmatback" }, "rarity" : 1.0 },
+					
 				//WEAPONS AND ARMOR
 					
 					//large weights here to make sure they're available
