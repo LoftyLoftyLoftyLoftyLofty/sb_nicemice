@@ -13,6 +13,7 @@
 					{ "item" : { "name" : "nicemice_flag" }, "rarity" : 9999.0 },
 					{ "item" : { "name" : "nicemice_maus_insigniaplate" }, "rarity" : 1.0 },
 					{ "item" : { "name" : "nicemice_poster_salute" }, "rarity" : 1.0 },
+					{ "item" : { "name" : "nicemice_emblem_stencil_3x3" }, "rarity" : 1.0 },
 					
 				//CLOTHES
 					{ "item" : { "name" : "nicemice_jumpsuitchest_dyeable" }, "rarity" : 1.0 },
@@ -51,6 +52,7 @@
 					
 					// this is the coolest item on the ship so we set the weight high so players reliably get it
 					{ "item" : { "name" : "nicemice_cargoshiphologram" }, "rarity" : 9999.0 },
+					{ "item" : { "name" : "nicemice_rocketcart" }, "rarity" : 9999.0 },
 					
 					{ "item" : { "name" : "nicemice_console" }, "rarity" : 1.0 },
 					{ "item" : { "name" : "nicemice_npc_console" }, "rarity" : 1.0 },
@@ -69,6 +71,8 @@
 					{ "item" : { "name" : "nicemice_targetscreen_thermostat" }, "rarity" : 1.0 },
 					
 					{ "item" : { "name" : "nicemice_hangingcatwalk" }, "rarity" : 1.0 },
+					{ "item" : { "name" : "nicemice_freezercrate" }, "rarity" : 1.0 },
+					{ "item" : { "name" : "nicemice_heatercrate" }, "rarity" : 1.0 },
 					
 				//MISC NICEMICE DECORATIONS
 					{ "item" : { "name" : "nicemice_pinup_laying_jumpsuit" }, "rarity" : 1.0 }
