@@ -22,15 +22,31 @@
 				//CARGO SHIP DECORATIONS
 					{ "item" : { "name" : "nicemice_cargoshiplocker_3x3" }, "rarity" : 1.0 },
 					{ "item" : { "name" : "nicemice_cargoshipbunk" }, "rarity" : 1.0 },
+					
 					{ "item" : { "name" : "nicemice_redtechchest" }, "rarity" : 1.0 },
+					
 					{ "item" : { "name" : "nicemice_crystaltrap" }, "rarity" : 1.0 },
+					
 					{ "item" : { "name" : "nicemice_bigindustrialcanister_red" }, "rarity" : 1.0 },
 					{ "item" : { "name" : "nicemice_ceilingstrappedshippingcontainer_base" }, "rarity" : 1.0 },
 					{ "item" : { "name" : "nicemice_ceilingstrappedshippingcontainer_stackma" }, "rarity" : 1.0 },
+					
 					{ "item" : { "name" : "nicemice_cargoshiphologram" }, "rarity" : 1.0 },
+					
 					{ "item" : { "name" : "nicemice_console" }, "rarity" : 1.0 },
+					{ "item" : { "name" : "nicemice_npc_console" }, "rarity" : 1.0 },
 					{ "item" : { "name" : "nicemice_consolechair" }, "rarity" : 1.0 },
+					
 					{ "item" : { "name" : "nicemice_redbluelight" }, "rarity" : 1.0 },
+					
+					{ "item" : { "name" : "nicemice_targetscreen_gate" }, "rarity" : 1.0 },
+					{ "item" : { "name" : "nicemice_targetscreen_npcship" }, "rarity" : 1.0 },
+					{ "item" : { "name" : "nicemice_targetscreen_playership" }, "rarity" : 1.0 },
+					{ "item" : { "name" : "nicemice_targetscreen_station" }, "rarity" : 1.0 },
+					{ "item" : { "name" : "nicemice_targetscreen_anomaly" }, "rarity" : 1.0 },
+					{ "item" : { "name" : "nicemice_targetscreen_readytofire" }, "rarity" : 1.0 },
+					
+					{ "item" : { "name" : "nicemice_hangingcatwalk" }, "rarity" : 1.0 },
 					
 				//MISC NICEMICE DECORATIONS
 					{ "item" : { "name" : "nicemice_pinup_laying_jumpsuit" }, "rarity" : 1.0 }

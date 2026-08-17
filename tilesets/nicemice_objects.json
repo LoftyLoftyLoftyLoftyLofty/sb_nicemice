@@ -4,7 +4,7 @@
   "properties" : {
   },
   "spacing" : 0,
-  "tilecount" : 38,
+  "tilecount" : 45,
   "tileheight" : 80,
   "tileproperties" : {
     "0" : {
@@ -278,6 +278,55 @@
       "imagePositionY" : "0",
       "object" : "nicemice_redbluelight",
       "tilesetDirection" : "right"
+    },
+	"38" : {
+      "//description" : "Target Screen - NPC Ship",
+      "imagePositionX" : "-8",
+      "imagePositionY" : "0",
+      "object" : "nicemice_targetscreen_npcship",
+      "tilesetDirection" : "right"
+    },
+	"39" : {
+      "//description" : "Target Screen - Player Ship",
+      "imagePositionX" : "-8",
+      "imagePositionY" : "0",
+      "object" : "nicemice_targetscreen_playership",
+      "tilesetDirection" : "right"
+    },
+	"40" : {
+      "//description" : "Target Screen - Station",
+      "imagePositionX" : "-8",
+      "imagePositionY" : "0",
+      "object" : "nicemice_targetscreen_station",
+      "tilesetDirection" : "right"
+    },
+	"41" : {
+      "//description" : "Target Screen - Gate",
+      "imagePositionX" : "-8",
+      "imagePositionY" : "0",
+      "object" : "nicemice_targetscreen_gate",
+      "tilesetDirection" : "right"
+    },
+	"42" : {
+      "//description" : "Target Screen - Anomaly",
+      "imagePositionX" : "-8",
+      "imagePositionY" : "0",
+      "object" : "nicemice_targetscreen_anomaly",
+      "tilesetDirection" : "right"
+    },
+	"43" : {
+      "//description" : "Hanging Catwalk",
+      "imagePositionX" : "-24",
+      "imagePositionY" : "-24",
+      "object" : "nicemice_hangingcatwalk",
+      "tilesetDirection" : "right"
+    },
+	"44" : {
+      "//description" : "Target Screen - Ready To Fire",
+      "imagePositionX" : "-16",
+      "imagePositionY" : "-16",
+      "object" : "nicemice_targetscreen_readytofire",
+      "tilesetDirection" : "right"
     }
   },
   "tiles" : {
@@ -394,6 +443,27 @@
     },
     "37" : {
       "image" : "../objects/nicemice/nicemice_redbluelight/tiled_7.png"
+    },
+	"38" : {
+      "image" : "../objects/nicemice/nicemice_targetscreen_npcship/tiled.png"
+    },
+	"39" : {
+      "image" : "../objects/nicemice/nicemice_targetscreen_playership/tiled.png"
+    },
+	"40" : {
+      "image" : "../objects/nicemice/nicemice_targetscreen_station/tiled.png"
+    },
+	"41" : {
+      "image" : "../objects/nicemice/nicemice_targetscreen_gate/tiled.png"
+    },
+	"42" : {
+      "image" : "../objects/nicemice/nicemice_targetscreen_anomaly/tiled.png"
+    },
+	"43" : {
+      "image" : "../objects/nicemice/nicemice_hangingcatwalk/nicemice_hangingcatwalk.png"
+    },
+	"44" : {
+      "image" : "../objects/nicemice/nicemice_targetscreen_readytofire/tiled.png"
     }
   },
   "tilewidth" : 8

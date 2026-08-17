@@ -1,0 +1,68 @@
+{
+  "objectName" : "nicemice_targetscreen_readytofire",
+  "colonyTags" : ["nicemice","maus","electronic","wired","light"],
+  "rarity" : "Rare",
+  "description" : "A target lock has been acquired for a ship.",
+  "shortdescription" : "Target Screen - Ready To Fire",
+  "race" : "nicemice",
+  "category" : "light",
+  "price" : 1500,
+  "printable" : false,
+  "lightColor" : [38, 27, 27],
+  
+  "flickerPeriod" : 0.3,
+  "flickerMinIntensity" : 0.95,
+  "flickerMaxIntensity" : 1,
+  "flickerPeriodVariance" : 0.1,
+  "flickerIntensityVariance" : 0.0,
+
+  "apexDescription" : "It's ready to fire.",
+  "avianDescription" : "Might want to hang on to something.",
+  "floranDescription" : "Floran feelsss exissstentially threatened.",
+  "glitchDescription" : "Terrified. Brace for impact!",
+  "humanDescription" : "Here it comes!",
+  "hylotlDescription" : "War is bad! Someone do something!",
+  "novakidDescription" : "Golly, fireworks.",
+  "nicemiceDescription" : "Locked and loaded. Let'z make zome noize!",
+
+  "inventoryIcon" : "icon.png",
+  "orientations" : [
+    {
+      "image" : "nicemice_targetscreen_readytofire.png:<color>.on",
+      "flipImages" : true,
+      "direction" : "left",
+      "lightPosition" : [2, 2],
+
+      "imagePosition" : [-16, -16],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+    },
+    {
+      "image" : "nicemice_targetscreen_readytofire.png:<color>.on",
+      "direction" : "right",
+      "lightPosition" : [2, 2],
+
+      "imagePosition" : [-16, -16],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+    }
+  ],
+
+  "scripts" : [ "/objects/wired/light/light.lua" ],
+  "scriptDelta" : 5,
+
+  "animation" : "nicemice_targetscreen_readytofire.animation",
+  "animationParts" : {
+    "bg" : "nicemice_targetscreen_readytofire.png",
+    "fg" : "nicemice_targetscreen_readytofirelit.png"
+  },
+  "animationPosition" : [-16, -16],
+
+  "inputNodes" : [ [-2, 2] ]
+}
