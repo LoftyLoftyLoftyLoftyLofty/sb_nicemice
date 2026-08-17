@@ -1,0 +1,66 @@
+{
+  "objectName" : "nicemice_freezercrate",
+  "colonyTags" : ["nicemice","storage","commerce"],
+  "rarity" : "Common",
+  "objectType" : "container",
+  "tooltipKind" : "container",
+  "description" : "A pressurised cargo crate, designed to keep cargo cold.",
+  "shortdescription" : "Freezer Crate",
+  "race" : "nicemice",
+  "category" : "fridgeStorage",
+  "price" : 550,
+  "lightColor" : [20, 30, 50],
+  "health" : 1.5,
+  "printable" : false,
+  
+  "apexDescription" : "A sturdy looking crate, illuminated by a gently glowing coil. Cold to the touch.",
+  "avianDescription" : "This crate is freezing! Brr!",
+  "floranDescription" : "Cold box isss cold.",
+  "glitchDescription" : "Interested. The cooling system on this crate is completely silent.",
+  "humanDescription" : "It's not glorious, but a fridge is a fridge.",
+  "hylotlDescription" : "This crate keeps cold things cold.",
+  "novakidDescription" : "Fancy icebox.",
+  "nicemiceDescription" : "Contrarie to belief populaire, zome plazez in zpace are very hot.",
+
+  "inventoryIcon" : "icon.png",
+  "orientations" : [
+    {
+
+      "imageLayers" : [ { "image" : "nicemice_freezercrate.png:<color>", "fullbright" : true }, { "image" : "nicemice_freezercratelit.png:<color>" } ],
+      "flipImages" : true,
+      "direction" : "left",
+      "lightPosition" : [-1, 1],
+
+      "imagePosition" : [-16, 0],
+      "frames" : 1,
+      "animationCycle" : 1.0,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+      "collision" : "platform"
+    },
+    {
+
+      "imageLayers" : [ { "image" : "nicemice_freezercrate.png:<color>", "fullbright" : true }, { "image" : "nicemice_freezercratelit.png:<color>" } ],
+      "direction" : "right",
+      "lightPosition" : [0, 1],
+
+      "imagePosition" : [-16, 0],
+      "frames" : 1,
+      "animationCycle" : 1.0,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+      "collision" : "platform"
+    }
+  ],
+
+  "openSounds" : [ "/sfx/objects/metalbox_open.ogg" ],
+  "closeSounds" : [ "/sfx/objects/metalbox_close.ogg" ],
+  "slotCount" : 32,
+  "uiConfig" : "/interface/chests/chest<slots>.config",
+  "frameCooldown" : 5,
+  "autoCloseCooldown" : 3600,
+  
+  "itemAgeMultiplier" : 0.0
+}
