@@ -12,7 +12,7 @@
 	  "dungeonSurfaceHeight" : 150,
 	  "ambientLightLevel" : [32, 32, 32],
 	  "ambientNoises" : "/sfx/environmental/space_loop4.ogg",
-	  "musicTrack" : "/music/scorian-flow.ogg",
+	  "musicTrack" : "/music/inviolate-loop.ogg",
 	  "environmentStatusEffects" : ["biomeairless", "dontstarve"],
 	  "worldEdgeForceRegions" : "TopAndBottom",
 	  "biome" : "space"
