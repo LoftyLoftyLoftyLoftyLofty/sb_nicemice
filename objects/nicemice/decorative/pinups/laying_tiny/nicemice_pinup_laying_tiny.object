@@ -1,0 +1,33 @@
+{
+  "objectName" : "nicemice_pinup_laying_tiny",
+  "colonyTags" : ["nicemice","nsfw","pretty","expensive"],
+  "rarity" : "Legendary",
+  "category" : "decorative",
+  "price" : 7777,
+
+  "description" : "A flattering pinup of a Nicemice fleet engineer.",
+  "shortdescription" : "Nicemice Pinup - Laying",
+  "race" : "nicemice",
+
+  "apexDescription" : "This kind of content is especially common in places where the Miniknog has banned it.",
+  "avianDescription" : "Well then, this just ruffles my feathers.",
+  "floranDescription" : "Fatty partss make floran hungry.",
+  "glitchDescription" : "Nonplussed. The M.A.U.S fleet repair drones are much more attractive.",
+  "humanDescription" : "Yowza, what a distraction!",
+  "hylotlDescription" : "This uncouth depiction of the female figure doesn't even attempt to be modest.",
+  "novakidDescription" : "Varmint's a varmint, knockers or not.",
+  "nicemiceDescription" : "Ziz propaganda iz rat'er unrealiztic. Nizemize are zimply not tall like zat.",
+
+  "inventoryIcon" : "nicemice_pinup_laying_tinyicon.png",
+  "orientations" : [
+    {
+      "image" : "nicemice_pinup_laying_tiny.png",
+      "imagePosition" : [-16, -17],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "objectName" : "nicemice_pinup_laying_tiny_jumpsuit",
+  "colonyTags" : ["nicemice","pretty","expensive"],
+  "rarity" : "Legendary",
+  "category" : "decorative",
+  "price" : 7777,
+
+  "description" : "A flattering pinup of a Nicemice fleet engineer.",
+  "shortdescription" : "Nicemice Pinup - Laying",
+  "race" : "nicemice",
+
+  "apexDescription" : "Form-fitting jumpsuits are common in Apex ship bays, but our fur usually hides fine details under the fabric.",
+  "avianDescription" : "With a figure like that, I might be willing to put up with her attitude.",
+  "floranDescription" : "Floran too busssy thinking about meatss to care about thiss.",
+  "glitchDescription" : "Dismissive. Surely, that long zip clasp is uncomfortable.",
+  "humanDescription" : "You could make a religion out of this.",
+  "hylotlDescription" : "I've heard the dyes they use for those jumpsuits are made from Hylotl eyes. How terrifying!",
+  "novakidDescription" : "They're gettin' real creative with their target practice posters lately.",
+  "nicemiceDescription" : "Modelz like her are zo popular vith ot'er zpeciez zat fleet command treatz ze likenezzez az ztrategic azzetz.",
+
+  "inventoryIcon" : "nicemice_pinup_laying_jumpsuit_icon.png",
+  "orientations" : [
+    {
+      "image" : "nicemice_pinup_laying_tiny_jumpsuit.png",
+      "imagePosition" : [-16, -17],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+    }
+  ]
+}
