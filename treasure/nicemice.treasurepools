@@ -123,6 +123,64 @@
 		]
 	],
 	
+	"nicemice_cargoship_garbagebag" : 
+	[
+		[
+			0, 
+			{
+				"fill" : 
+				[
+					{"pool" : "augments"}
+				]
+			}
+		]
+	],
+	
+	"nicemice_cargoship_freezercrate" : 
+	[
+		[
+			0,
+			{
+				"fill" : 
+				[
+					{ "item" : [ "iceblock", 50 ] }
+				],
+				"pool" : 
+				[
+					{ "weight" : 1.0, "pool" : "food" },
+					{ "weight" : 0.5, "item" : [ "icefluffaloegg" ] }
+				],
+				"poolRounds" : 
+				[
+					[0.5, 1],
+					[0.375, 2]
+				]
+			}
+		]
+	],
+	
+	"nicemice_cargoship_heatercrate" : 
+	[
+		[
+			0,
+			{
+				"pool" : 
+				[
+					{ "weight" : 1.0, "item" : [ "mooshiegg" ] },
+					{ "weight" : 1.0, "item" : [ "fluffaloegg" ] },
+					{ "weight" : 1.0, "item" : [ "firefluffaloegg" ] },
+					{ "weight" : 1.0, "item" : [ "electricfluffaloegg" ] },
+					{ "weight" : 1.0, "item" : [ "poisonfluffaloegg" ] }
+				],
+				"poolRounds" : 
+				[
+					[0.5, 0],
+					[0.375, 1]
+				]
+			}
+		]
+	],
+	
 	"nicemice_cargoship_shippingcontainer_treasure" : 
 	[
 		[
