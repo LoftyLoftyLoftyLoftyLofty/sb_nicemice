@@ -31,7 +31,8 @@
 					{ "item" : { "name" : "nicemice_ceilingstrappedshippingcontainer_base" }, "rarity" : 1.0 },
 					{ "item" : { "name" : "nicemice_ceilingstrappedshippingcontainer_stackma" }, "rarity" : 1.0 },
 					
-					{ "item" : { "name" : "nicemice_cargoshiphologram" }, "rarity" : 1.0 },
+					// this is the coolest item on the ship so we set the weight to 100 so players reliably get it
+					{ "item" : { "name" : "nicemice_cargoshiphologram" }, "rarity" : 100.0 },
 					
 					{ "item" : { "name" : "nicemice_console" }, "rarity" : 1.0 },
 					{ "item" : { "name" : "nicemice_npc_console" }, "rarity" : 1.0 },
@@ -44,7 +45,10 @@
 					{ "item" : { "name" : "nicemice_targetscreen_playership" }, "rarity" : 1.0 },
 					{ "item" : { "name" : "nicemice_targetscreen_station" }, "rarity" : 1.0 },
 					{ "item" : { "name" : "nicemice_targetscreen_anomaly" }, "rarity" : 1.0 },
-					{ "item" : { "name" : "nicemice_targetscreen_readytofire" }, "rarity" : 1.0 },
+					// this is the second coolest item on the ship so we set the weight to 100 so players reliably get it
+					{ "item" : { "name" : "nicemice_targetscreen_readytofire" }, "rarity" : 100.0 },
+					{ "item" : { "name" : "nicemice_targetscreen_fan" }, "rarity" : 1.0 },
+					{ "item" : { "name" : "nicemice_targetscreen_thermostat" }, "rarity" : 1.0 },
 					
 					{ "item" : { "name" : "nicemice_hangingcatwalk" }, "rarity" : 1.0 },
 					

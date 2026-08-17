@@ -1,0 +1,68 @@
+{
+  "objectName" : "nicemice_targetscreen_thermostat",
+  "colonyTags" : ["nicemice","maus","electronic","wired","light"],
+  "rarity" : "Common",
+  "description" : "A fancy thermostat panel.",
+  "shortdescription" : "Target Screen - Thermostat",
+  "race" : "nicemice",
+  "category" : "light",
+  "price" : 85,
+  "printable" : true,
+  "lightColor" : [38, 27, 27],
+  
+  "flickerPeriod" : 0.3,
+  "flickerMinIntensity" : 0.95,
+  "flickerMaxIntensity" : 1,
+  "flickerPeriodVariance" : 0.1,
+  "flickerIntensityVariance" : 0.0,
+
+  "apexDescription" : "Touching a thermostat without authorization is rewarded with capital punishment back home.",
+  "avianDescription" : "Finally, I can turn the heat up!",
+  "floranDescription" : "Floran isss too hot! All the way down!",
+  "glitchDescription" : "Relieved. I can set this system to a temperature optimal for my circuitry.",
+  "humanDescription" : "A thermostat - sometimes I change the temperature to something everyone dislikes just to keep things interesting.",
+  "hylotlDescription" : "There is only one correct temperature, and this thermostat is not set to it.",
+  "novakidDescription" : "Feelin' a little warm in here... I'm sure nobody would mind if I adjusted this just a lil'.",
+  "nicemiceDescription" : "Ziz panel zhowz ze zhip'z current temperaturez, inzide and out. Only ze captain zhould adjuzt ziz.",
+
+  "inventoryIcon" : "icon.png",
+  "orientations" : [
+    {
+      "image" : "nicemice_targetscreen_thermostat.png:<color>.on",
+      "flipImages" : true,
+      "direction" : "left",
+      "lightPosition" : [0, 1],
+
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+    },
+    {
+      "image" : "nicemice_targetscreen_thermostat.png:<color>.on",
+      "direction" : "right",
+      "lightPosition" : [0, 1],
+
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+    }
+  ],
+
+  "scripts" : [ "/objects/wired/light/light.lua" ],
+  "scriptDelta" : 5,
+
+  "animation" : "nicemice_targetscreen_thermostat.animation",
+  "animationParts" : {
+    "bg" : "nicemice_targetscreen_thermostat.png",
+    "fg" : "nicemice_targetscreen_thermostatlit.png"
+  },
+  "animationPosition" : [-8, 0],
+
+  "inputNodes" : [ [-1, 1] ]
+}

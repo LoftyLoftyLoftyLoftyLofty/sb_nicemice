@@ -1,0 +1,68 @@
+{
+  "objectName" : "nicemice_targetscreen_fan",
+  "colonyTags" : ["nicemice","maus","electronic","wired","light"],
+  "rarity" : "Common",
+  "description" : "A target lock has been acquired for a ship.",
+  "shortdescription" : "Target Screen - Ventilation",
+  "race" : "nicemice",
+  "category" : "light",
+  "price" : 85,
+  "printable" : true,
+  "lightColor" : [38, 27, 27],
+  
+  "flickerPeriod" : 0.3,
+  "flickerMinIntensity" : 0.95,
+  "flickerMaxIntensity" : 1,
+  "flickerPeriodVariance" : 0.1,
+  "flickerIntensityVariance" : 0.0,
+
+  "apexDescription" : "This screen displays a ventilation system diagnostics.",
+  "avianDescription" : "Information about air ducts. Fascinating!",
+  "floranDescription" : "Ssscreen sspinsss...",
+  "glitchDescription" : "Impressed. I've never seen so much information about a fan in one place.",
+  "humanDescription" : "Air duct and ventilation diagnostics- I'm a fan.",
+  "hylotlDescription" : "These systems control air circulation in a ship.",
+  "novakidDescription" : "The air seems fine 'round here, so I guess the system's workin'.",
+  "nicemiceDescription" : "A detailed dizplay of ze zhip'z ventilazion zyztemz.",
+
+  "inventoryIcon" : "icon.png",
+  "orientations" : [
+    {
+      "image" : "nicemice_targetscreen_fan.png:<color>.on",
+      "flipImages" : true,
+      "direction" : "left",
+      "lightPosition" : [0, 1],
+
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+    },
+    {
+      "image" : "nicemice_targetscreen_fan.png:<color>.on",
+      "direction" : "right",
+      "lightPosition" : [0, 1],
+
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+    }
+  ],
+
+  "scripts" : [ "/objects/wired/light/light.lua" ],
+  "scriptDelta" : 5,
+
+  "animation" : "nicemice_targetscreen_fan.animation",
+  "animationParts" : {
+    "bg" : "nicemice_targetscreen_fan.png",
+    "fg" : "nicemice_targetscreen_fanlit.png"
+  },
+  "animationPosition" : [-8, 0],
+
+  "inputNodes" : [ [-1, 1] ]
+}

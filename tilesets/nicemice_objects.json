@@ -4,7 +4,7 @@
   "properties" : {
   },
   "spacing" : 0,
-  "tilecount" : 45,
+  "tilecount" : 47,
   "tileheight" : 80,
   "tileproperties" : {
     "0" : {
@@ -327,6 +327,20 @@
       "imagePositionY" : "-16",
       "object" : "nicemice_targetscreen_readytofire",
       "tilesetDirection" : "right"
+    },
+	"45" : {
+      "//description" : "Target Screen - Fan",
+      "imagePositionX" : "-8",
+      "imagePositionY" : "0",
+      "object" : "nicemice_targetscreen_fan",
+      "tilesetDirection" : "right"
+    },
+	"46" : {
+      "//description" : "Target Screen - Thermostat",
+      "imagePositionX" : "-8",
+      "imagePositionY" : "0",
+      "object" : "nicemice_targetscreen_thermostat",
+      "tilesetDirection" : "right"
     }
   },
   "tiles" : {
@@ -464,6 +478,12 @@
     },
 	"44" : {
       "image" : "../objects/nicemice/nicemice_targetscreen_readytofire/tiled.png"
+    },
+	"45" : {
+      "image" : "../objects/nicemice/nicemice_targetscreen_fan/tiled.png"
+    },
+	"46" : {
+      "image" : "../objects/nicemice/nicemice_targetscreen_thermostat/tiled.png"
     }
   },
   "tilewidth" : 8
