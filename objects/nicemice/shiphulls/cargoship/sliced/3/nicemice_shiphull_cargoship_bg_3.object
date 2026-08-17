@@ -1,0 +1,40 @@
+{
+  "objectName" : "nicemice_shiphull_cargoship_bg_3",
+  "colonyTags" : ["nicemice","shiphull"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 0,
+
+  "description" : "A decorative hull layer for a Nicemice NPC ship.",
+  "shortdescription" : "Nicemice Ship Hull - Cargo Ship BG 3",
+  "race" : "nicemice",
+  
+  "scannable" : false,
+  "printable" : false,
+
+  "apexDescription" : "awa.",
+  "avianDescription" : "awa.",
+  "floranDescription" : "awa.",
+  "glitchDescription" : "Incredulous. awa.",
+  "humanDescription" : "awa.",
+  "hylotlDescription" : "awa.",
+  "novakidDescription" : "awa.",
+  "nicemiceDescription" : "awa.",
+
+  "inventoryIcon" : "nicemice_shiphull_cargoshipicon.png",
+  "orientations" : [
+    {
+      "direction" : "right",
+	  "metaBoundBox" : [0, 0, 60, 120],
+	  "renderLayer" : "BackgroundOverlay-1",
+	  "imageLayers" : 
+	  [ 
+		{ "image" : "nicemice_shiphull_cargoship_bg_3.png:<color>", "centered" : false }
+	  ],
+      "imagePosition" : [0, -272],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+      "anchors" : [ ]
+    }
+  ]
+}

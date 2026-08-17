@@ -1,0 +1,43 @@
+{
+  "objectName" : "nicemice_shiphull_cargoship_fg_0",
+  "colonyTags" : ["nicemice","shiphull"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 0,
+
+  "description" : "A decorative hull layer for a Nicemice NPC ship.",
+  "shortdescription" : "Nicemice Ship Hull - Cargo Ship FG 0",
+  "race" : "nicemice",
+  
+  "scannable" : false,
+  "printable" : false,
+
+  "apexDescription" : "awa.",
+  "avianDescription" : "awa.",
+  "floranDescription" : "awa.",
+  "glitchDescription" : "Incredulous. awa.",
+  "humanDescription" : "awa.",
+  "hylotlDescription" : "awa.",
+  "novakidDescription" : "awa.",
+  "nicemiceDescription" : "awa.",
+
+  "inventoryIcon" : "nicemice_shiphull_cargoshipicon.png",
+  "orientations" : [
+    {
+      "direction" : "right",
+	  "metaBoundBox" : [0, 0, 60, 120],
+	  "renderLayer" : "ForegroundOverlay",
+	  "imageLayers" : 
+	  [ 
+		{ "image" : "nicemice_shiphull_cargoship_exterior_0.png:<color>", "centered" : false },
+		{ "image" : "nicemice_shiphull_cargoship_fullbright_0.png:<color>", "fullbright" : true, "centered" : false },
+		{ "image" : "nicemice_shiphull_cargoship_0.png:<color>", "centered" : false } 
+	  ],
+	  //image position is moved 8px right here so we place this one 1 tile left
+      "imagePosition" : [-8, -272],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+      "anchors" : [ ]
+    }
+  ]
+}
