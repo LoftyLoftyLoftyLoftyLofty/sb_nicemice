@@ -1,0 +1,43 @@
+{
+  "objectName" : "nicemice_rocketcart",
+  "colonyTags" : ["nicemice","maus","dangerous","light","evil","combat"],
+  "rarity" : "Rare",
+  "category" : "decorative",
+  "price" : 1500,
+
+  "description" : "M.A.U.S. \"Whiskertail\" Rocket, mounted on a cart for transit.",
+  "shortdescription" : "M.A.U.S. Rocket Cart",
+  "race" : "nicemice",
+  
+  "scannable" : true,
+  "printable" : false,
+
+  "apexDescription" : "It terrifies me to think about what the Miniknog would do to get their hands on these. They've killed so many over so much less.",
+  "avianDescription" : "Just looking at that rocket makes me nervous.",
+  "floranDescription" : "Floran not impressssed. Rocket makesss food too messsy.",
+  "glitchDescription" : "Awestruck. The machining work on this armament is unparalleled.",
+  "humanDescription" : "I wonder if Earth would still be around if we hadn't disarmed all of our rockets?",
+  "hylotlDescription" : "This doesn't strike me as a self-defense tool.",
+  "novakidDescription" : "Fer when thoughts 'n prayers ain't doin' it.",
+  "nicemiceDescription" : "Vhizkertail rocketz are zome of ze naztiezt veaponz in ze M.A.U.S. arzenal.",
+
+  "inventoryIcon" : "nicemice_rocketcarticon.png",
+  
+  "lightColor" : [88, 64, 64],
+  "orientations" : [
+    {
+      "direction" : "right",
+	  "imageLayers" : 
+	  [ 		
+		{ "image" : "nicemice_rocketcart.png:<color>", "fullbright" : true },
+		{ "image" : "nicemice_rocketcartlit.png:<color>" }
+	  ],
+      "imagePosition" : [ -48, -24 ],
+	  "lightPosition" : [ 5, 1 ],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+	  "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ]
+}
