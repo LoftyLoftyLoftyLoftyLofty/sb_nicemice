@@ -1,0 +1,203 @@
+{
+  "animatedParts" : {
+    "stateTypes" : {
+      "cake" : {
+        "default" : "on",
+        "states" : {
+          "on" : {
+            "frames" : 4,
+            "cycle" : 0.5,
+            "mode" : "loop",
+            "properties" : {
+              "particleEmittersOn" : [ ]
+            }
+          }
+        }
+      }
+    },
+
+    "parts" : {
+      "bg" : {
+        "properties" : {
+          "centered" : false
+        },
+
+        "partStates" : {
+          "cake" : {
+            "on" : {
+              "properties" : {
+                "image" : "<partImage>:<color>",
+                "fullbright" : true
+              }
+            }
+          }
+        }
+      },
+      "fg" : {
+        "properties" : {
+          "centered" : false,
+          "zLevel" : 1
+        },
+
+        "partStates" : {
+          "cake" : {
+            "on" : {
+              "properties" : {
+                "image" : "<partImage>:<color>"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+
+  "particleEmitters" : {
+    "torch1" : {
+      "emissionRate" : 0.22,
+	  "emissionVariance" : 0.11,
+      "emissionRateVariance" : 0.11,
+      "active" : true,
+
+      "particles" : [
+        {
+          "particle" : {
+            "type" : "ember",
+			"destructionAction" : "shrink",
+			"destructionTime" : 0.5,
+			"fullbright" : true,
+            "position" : [0.5, 1.75],
+            "size" : 1.0,
+            "color" : [234, 179, 219, 255],
+            "light" : [70, 20, 70],
+            "fade" : 0.9,
+            "initialVelocity" : [0.0, 5.0],
+            "finalVelocity" : [0.0, -50.0],
+            "approach" : [0, 20],
+            "timeToLive" : 0.6,
+            "layer" : "middle",
+            "variance" : {
+              "initialVelocity" : [1.5, 2.0]
+            }
+          }
+        }]
+	},
+	"torch2" : 
+	{
+		"emissionRate" : 0.22,
+	  "emissionVariance" : 0.11,
+      "emissionRateVariance" : 0.11,
+      "active" : true,
+	  "particles" : [
+		{
+          "particle" : {
+            "type" : "ember",
+			"destructionAction" : "shrink",
+			"destructionTime" : 0.5,
+			"fullbright" : true,
+            "position" : [0.75, 1.75],
+            "size" : 1.0,
+            "color" : [178, 232, 157, 255],
+            "light" : [10, 80, 20],
+            "fade" : 0.9,
+            "initialVelocity" : [0.0, 5.0],
+            "finalVelocity" : [0.0, -50.0],
+            "approach" : [0, 20],
+            "timeToLive" : 0.6,
+            "layer" : "middle",
+            "variance" : {
+              "initialVelocity" : [1.5, 2.0]
+            }
+          }
+        }]
+	},
+	"torch3" : 
+	{
+		"emissionRate" : 0.22,
+	  "emissionVariance" : 0.11,
+      "emissionRateVariance" : 0.11,
+      "active" : true,
+	  "particles" : [
+		{
+          "particle" : {
+            "type" : "ember",
+			"destructionAction" : "shrink",
+			"destructionTime" : 0.5,
+			"fullbright" : true,
+            "position" : [1.0, 1.75],
+            "size" : 1.0,
+            "color" : [244, 152, 140, 255],
+            "light" : [80, 20, 10],
+            "fade" : 0.9,
+            "initialVelocity" : [0.0, 5.0],
+            "finalVelocity" : [0.0, -50.0],
+            "approach" : [0, 20],
+            "timeToLive" : 0.6,
+            "layer" : "middle",
+            "variance" : {
+              "initialVelocity" : [1.5, 2.0]
+            }
+          }
+        }]
+	},
+	"torch4" : 
+	{
+	"emissionRate" : 0.22,
+	  "emissionVariance" : 0.11,
+      "emissionRateVariance" : 0.11,
+      "active" : true,
+	  "particles" : [
+		{
+          "particle" : {
+            "type" : "ember",
+			"destructionAction" : "shrink",
+			"destructionTime" : 0.5,
+			"fullbright" : true,
+            "position" : [1.25, 1.75],
+            "size" : 1.0,
+            "color" : [150, 203, 231, 255],
+            "light" : [10, 20, 80],
+            "fade" : 0.9,
+            "initialVelocity" : [0.0, 5.0],
+            "finalVelocity" : [0.0, -50.0],
+            "approach" : [0, 20],
+            "timeToLive" : 0.6,
+            "layer" : "middle",
+            "variance" : {
+              "initialVelocity" : [1.5, 2.0]
+            }
+          }
+        }]
+	},
+	"torch5" : 
+	{
+	"emissionRate" : 0.22,
+	  "emissionVariance" : 0.11,
+      "emissionRateVariance" : 0.11,
+      "active" : true,
+	  "particles" : [
+		{
+          "particle" : {
+            "type" : "ember",
+			"destructionAction" : "shrink",
+			"destructionTime" : 0.5,
+			"fullbright" : true,
+            "position" : [1.5, 1.75],
+            "size" : 1.0,
+            "color" : [226, 195, 69, 255],
+            "light" : [70, 70, 20],
+            "fade" : 0.9,
+            "initialVelocity" : [0.0, 5.0],
+            "finalVelocity" : [0.0, -50.0],
+            "approach" : [0, 20],
+            "timeToLive" : 0.6,
+            "layer" : "middle",
+            "variance" : {
+              "initialVelocity" : [1.5, 2.0]
+            }
+          }
+        }
+      ]
+    }
+  }
+}

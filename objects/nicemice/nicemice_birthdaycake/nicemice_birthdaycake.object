@@ -1,0 +1,73 @@
+{
+  "objectName" : "nicemice_birthdaycake",
+  "colonyTags" : ["nicemice","cooking"],
+  "rarity" : "Legendary",
+  "category" : "decorative",
+  "price" : 5555,
+
+  "description" : "Happy birthday!",
+  "shortdescription" : "Birthday Cake",
+  "race" : "nicemice",
+  
+  "scannable" : true,
+  "printable" : false,
+
+  "apexDescription" : "I am grateful for surviving another year. To freedom!",
+  "avianDescription" : "I love birthdays! Whose birthday is it?",
+  "floranDescription" : "Floran doesssn't get it.",
+  "glitchDescription" : "Jovial. Happy birthday to you!",
+  "humanDescription" : "Another trip around the sun... which sun?",
+  "hylotlDescription" : "A birthday is always worth celebrating. Cheers to you!",
+  "novakidDescription" : "Yeehaw, happy birthday!",
+  "nicemiceDescription" : "Happie birthday to you! Now get out of my vay- zat cake iz mine.",
+
+  "inventoryIcon" : "nicemice_birthdaycakeicon.png",
+  
+  "lightColor" : [72, 60, 40],
+  "flickerPeriod" : 0.3,
+  "flickerMinIntensity" : 0.95,
+  "flickerMaxIntensity" : 1,
+  "flickerPeriodVariance" : 0.075,
+  "flickerIntensityVariance" : 0.025,
+  
+  "scripts" : [ "cake.lua" ],
+  
+  "orientations" : [
+    {
+      "direction" : "right",
+	  "imageLayers" : 
+	  [ 		
+		{ "image" : "nicemice_birthdaycake.png:<color>", "fullbright" : true },
+		{ "image" : "nicemice_birthdaycakelit.png:<color>" }
+	  ],
+      "imagePosition" : [ -8, 0 ],
+	  "lightPosition" : [ 0, 0 ],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+	  "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    },
+	{
+      "direction" : "left",
+	  "flipImages" : true,
+	  "imageLayers" : 
+	  [ 		
+		{ "image" : "nicemice_birthdaycake.png:<color>", "fullbright" : true },
+		{ "image" : "nicemice_birthdaycakelit.png:<color>" }
+	  ],
+      "imagePosition" : [ -8, 0 ],
+	  "lightPosition" : [ 0, 0 ],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+	  "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ],
+  
+  "animationPosition" : [-8, 0],
+  "animation" : "nicemice_birthdaycake.animation",
+  "animationParts" : {
+    "bg" : "nicemice_birthdaycake.png",
+    "fg" : "nicemice_birthdaycakelit.png"
+  }
+}

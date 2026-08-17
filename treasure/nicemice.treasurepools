@@ -181,6 +181,20 @@
 		]
 	],
 	
+	"nicemice_cargoship_happybirthday" : 
+	[
+		[
+			0,
+			{
+				"fill" : 
+				[
+					{ "item" : [ "nicemice_cargoshiphologram" ] },
+					{ "item" : [ "nicemice_birthdaycake" ] }
+				]
+			}
+		]
+	],
+	
 	"nicemice_cargoship_shippingcontainer_treasure" : 
 	[
 		[
