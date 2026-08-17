@@ -5,7 +5,7 @@
  "layers":[
         {
          "compression":"zlib",
-         "data":"eJztlzEOgCAQBHkKhY2\/4TG+wZ\/Y8UgbLCSEQk7uwk2xISHEMNmLu+QQQnSiXKR9j9m8uxM9vKms5\/bWSnupwXtUWmmvxWvJjxn+Wrof88w8f\/VXOydm51F0Iq+82nNGvyKPyCP6Fbzw8r+y4cef\/mr3APoz\/VmSV3vO6M\/kEXlEv4IXXnht3A9eeOGFt8drqf\/RJ+X8HXljXdXaOzPyDan34A1UbYlV",
+         "data":"eJztlzEKwCAQBH2KRZr8xsfkS4EUPjKNKSJiES\/e4U2xCCLBYY\/smkMI0YlykfY9ZvPuTvTwprJe21sr7aUG71Fppb0WryU\/Zvhr6X7MM\/P81V\/tnJidR9GJvPJqzxn9ijwij+hX8MLL\/8qGH3\/6q90D6M\/0Z0le7TmjP5NH5BH9Cl544bVxP3jhhRfeHq+l\/keflPN35I11VmvvzMg3pN6DN9lhCfQ=",
          "encoding":"base64",
          "height":40,
          "id":1,
@@ -19,7 +19,7 @@
         }, 
         {
          "compression":"zlib",
-         "data":"eJzt0bEJACAQBME3tg1rtW4DMzEV5JiBTz5brqpqjn2pzj69WdL7AACA93rL+HH300b2BQAAAIA8C61JCOk=",
+         "data":"eJzt0jEKwDAIBVAzd+glcvges0O24hpi5T34i4Pw0YiIZ6509e2nby\/d+wEAVHGPldM7YIcr+cs\/zshVupH7AgAAAEA\/L4J1CsE=",
          "encoding":"base64",
          "height":40,
          "id":2,
@@ -475,6 +475,50 @@
                  "width":8,
                  "x":416,
                  "y":144
+                }, 
+                {
+                 "height":8,
+                 "id":2317,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"colorVariant",
+                         "type":"string",
+                         "value":"7"
+                        }, 
+                        {
+                         "name":"front",
+                         "type":"string",
+                         "value":"lunarbaseplatform"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":16,
+                 "x":160,
+                 "y":104
+                }, 
+                {
+                 "height":8,
+                 "id":2318,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"colorVariant",
+                         "type":"string",
+                         "value":"7"
+                        }, 
+                        {
+                         "name":"front",
+                         "type":"string",
+                         "value":"lunarbaseplatform"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":16,
+                 "x":24,
+                 "y":104
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -1399,7 +1443,7 @@
          "y":0
         }],
  "nextlayerid":32,
- "nextobjectid":2317,
+ "nextobjectid":2319,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.10.0",
@@ -1570,7 +1614,7 @@
          "source":"..\/..\/..\/tilesets\/nicemice_objects.json"
         }, 
         {
-         "firstgid":9350,
+         "firstgid":9384,
          "source":"..\/..\/..\/tilesets\/nicemice_tiles.json"
         }],
  "tilewidth":8,
