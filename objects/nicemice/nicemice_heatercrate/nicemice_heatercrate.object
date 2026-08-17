@@ -1,0 +1,66 @@
+{
+  "objectName" : "nicemice_heatercrate",
+  "colonyTags" : ["nicemice","storage","commerce"],
+  "rarity" : "Common",
+  "objectType" : "container",
+  "tooltipKind" : "container",
+  "description" : "A pressurised cargo crate, designed to keep cargo hot.",
+  "shortdescription" : "Heater Crate",
+  "race" : "nicemice",
+  "category" : "nicemice_heatedStorage",
+  "price" : 550,
+  "lightColor" : [50, 30, 20],
+  "health" : 1.5,
+  "printable" : false,
+  
+  "apexDescription" : "A sturdy looking crate, illuminated by a gently glowing coil. Hot to the touch.",
+  "avianDescription" : "This crate is too hot! Yowch!",
+  "floranDescription" : "Hot box isss hot.",
+  "glitchDescription" : "Disappointed. The heating system on this crate is very inefficient.",
+  "humanDescription" : "Heated crates like this are great for transporting hot soup, probably.",
+  "hylotlDescription" : "This crate keeps hot things hot.",
+  "novakidDescription" : "I guess cookin' food with sunrays is too fancy for these interstellar stuckups.",
+  "nicemiceDescription" : "Ze heat ezcapink from bokzez like ziz iz pleazant.",
+
+  "inventoryIcon" : "icon.png",
+  "orientations" : [
+    {
+
+      "imageLayers" : [ { "image" : "nicemice_heatercrate.png:<color>", "fullbright" : true }, { "image" : "nicemice_heatercratelit.png:<color>" } ],
+      "flipImages" : true,
+      "direction" : "left",
+      "lightPosition" : [-1, 1],
+
+      "imagePosition" : [-16, 0],
+      "frames" : 1,
+      "animationCycle" : 1.0,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+      "collision" : "platform"
+    },
+    {
+
+      "imageLayers" : [ { "image" : "nicemice_heatercrate.png:<color>", "fullbright" : true }, { "image" : "nicemice_heatercratelit.png:<color>" } ],
+      "direction" : "right",
+      "lightPosition" : [0, 1],
+
+      "imagePosition" : [-16, 0],
+      "frames" : 1,
+      "animationCycle" : 1.0,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+      "collision" : "platform"
+    }
+  ],
+
+  "openSounds" : [ "/sfx/objects/metalbox_open.ogg" ],
+  "closeSounds" : [ "/sfx/objects/metalbox_close.ogg" ],
+  "slotCount" : 32,
+  "uiConfig" : "/interface/chests/chest<slots>.config",
+  "frameCooldown" : 5,
+  "autoCloseCooldown" : 3600,
+  
+  "itemAgeMultiplier" : 2.0
+}
