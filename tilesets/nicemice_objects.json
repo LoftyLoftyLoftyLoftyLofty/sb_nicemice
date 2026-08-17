@@ -4,7 +4,7 @@
   "properties" : {
   },
   "spacing" : 0,
-  "tilecount" : 53,
+  "tilecount" : 54,
   "tileheight" : 80,
   "tileproperties" : {
     "0" : {
@@ -383,6 +383,13 @@
       "imagePositionY" : "0",
       "object" : "nicemice_heatercrate",
       "tilesetDirection" : "right"
+    },
+	"53" : {
+      "//description" : "Birthday Cake",
+      "imagePositionX" : "-8",
+      "imagePositionY" : "0",
+      "object" : "nicemice_birthdaycake",
+      "tilesetDirection" : "right"
     }
   },
   "tiles" : {
@@ -544,6 +551,9 @@
     },
 	"52" : {
       "image" : "../objects/nicemice/nicemice_heatercrate/nicemice_heatercrate.png"
+    },
+	"53" : {
+      "image" : "../objects/nicemice/nicemice_birthdaycake/nicemice_birthdaycake.png"
     }
   },
   "tilewidth" : 8
