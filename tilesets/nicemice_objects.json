@@ -4,7 +4,7 @@
   "properties" : {
   },
   "spacing" : 0,
-  "tilecount" : 47,
+  "tilecount" : 53,
   "tileheight" : 80,
   "tileproperties" : {
     "0" : {
@@ -341,6 +341,48 @@
       "imagePositionY" : "0",
       "object" : "nicemice_targetscreen_thermostat",
       "tilesetDirection" : "right"
+    },
+	"47" : {
+      "//description" : "M.A.U.S. Rocket Cart",
+      "imagePositionX" : "-48",
+      "imagePositionY" : "-24",
+      "object" : "nicemice_rocketcart",
+      "tilesetDirection" : "right"
+    },
+	"48" : {
+      "//description" : "Nicemice Wall Stencil",
+      "imagePositionX" : "-16",
+      "imagePositionY" : "-16",
+      "object" : "nicemice_emblem_stencil_3x3",
+      "tilesetDirection" : "right"
+    },
+	"49" : {
+      "//description" : "Nicemice Pinup - Laying (Tiny, Jumpsuit)",
+      "imagePositionX" : "-16",
+      "imagePositionY" : "-16",
+      "object" : "nicemice_pinup_laying_tiny_jumpsuit",
+      "tilesetDirection" : "right"
+    },
+	"50" : {
+      "//description" : "Nicemice Pinup - Laying (Tiny)",
+      "imagePositionX" : "-16",
+      "imagePositionY" : "-16",
+      "object" : "nicemice_pinup_laying_tiny",
+      "tilesetDirection" : "right"
+    },
+	"51" : {
+      "//description" : "Nicemice Freezer Crate",
+      "imagePositionX" : "-16",
+      "imagePositionY" : "0",
+      "object" : "nicemice_freezercrate",
+      "tilesetDirection" : "right"
+    },
+	"52" : {
+      "//description" : "Nicemice Heater Crate",
+      "imagePositionX" : "-16",
+      "imagePositionY" : "0",
+      "object" : "nicemice_heatercrate",
+      "tilesetDirection" : "right"
     }
   },
   "tiles" : {
@@ -484,6 +526,24 @@
     },
 	"46" : {
       "image" : "../objects/nicemice/nicemice_targetscreen_thermostat/tiled.png"
+    },
+	"47" : {
+      "image" : "../objects/nicemice/nicemice_rocketcart/nicemice_rocketcart.png"
+    },
+	"48" : {
+      "image" : "../objects/nicemice/nicemice_emblem_stencil_3x3/nicemice_emblem_stencil_3x3.png"
+    },
+	"49" : {
+      "image" : "../objects/nicemice/decorative/pinups/laying_tiny/tiled_jumpsuit.png"
+    },
+    "50" : {
+      "image" : "../objects/nicemice/decorative/pinups/laying_tiny/tiled.png"
+    },
+	"51" : {
+      "image" : "../objects/nicemice/nicemice_freezercrate/nicemice_freezercrate.png"
+    },
+	"52" : {
+      "image" : "../objects/nicemice/nicemice_heatercrate/nicemice_heatercrate.png"
     }
   },
   "tilewidth" : 8
