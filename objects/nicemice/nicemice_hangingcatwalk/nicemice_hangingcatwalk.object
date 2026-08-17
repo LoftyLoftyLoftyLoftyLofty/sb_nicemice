@@ -1,0 +1,43 @@
+{
+  "objectName" : "nicemice_hangingcatwalk",
+  "colonyTags" : ["nicemice"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "description" : "A catwalk suspended from the ceiling.",
+  "shortdescription" : "Hanging Catwalk",
+  "race" : "nicemice",
+  "price" : 300,
+
+  "health" : 4,
+
+  "apexDescription" : "An elevated catwalk for maintenance access.",
+  "avianDescription" : "Safer than flight, maybe.",
+  "floranDescription" : "Floran can see prey from here.",
+  "glitchDescription" : "Woozy. Heights are not my strong suit.",
+  "humanDescription" : "A hanging catwalk. Questionably safe.",
+  "hylotlDescription" : "From up here, everyone will be able to hear my poetry.",
+  "novakidDescription" : "Hangin' platform. Nifty.",
+  "nicemiceDescription" : "Adjuztable cablink length makez platformz like ziz uzeful for maintenanze crewz.",
+
+  "inventoryIcon" : "nicemice_hangingcatwalkicon.png",
+  "orientations" : [
+    {
+	  "renderLayer" : "ForegroundOverlay",
+      "dualImage" : "nicemice_hangingcatwalk.png:<color>",
+      "imagePosition" : [-24, -24],
+      "frames" : 1,
+      "animationCycle" : 0.4,
+
+      "spaces" : [
+		[ -3, 3], [3, 3],
+		[-3, -3], [-2, -3], [-1, -3], [0, -3], [1, -3], [2, -3], [3, 3]
+	  ],
+	  "collisionSpaces" : [
+		[ -3, 3], [3, 3],
+		[-3, -3], [-2, -3], [-1, -3], [0, -3], [1, -3], [2, -3], [3, 3]
+	  ],
+      "anchors" : [ "top" ],
+      "collision" : "platform"
+    }
+  ]
+}
