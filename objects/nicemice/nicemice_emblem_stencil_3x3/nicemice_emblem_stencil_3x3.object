@@ -1,0 +1,53 @@
+{
+  "objectName" : "nicemice_emblem_stencil_3x3",
+  "colonyTags" : ["nicemice"],
+  "rarity" : "Uncommon",
+  "category" : "decorative",
+  "price" : 640,
+
+  "description" : "The Nicemice emblem, stenciled on the wall.",
+  "shortdescription" : "Nicemice Wall Stencil",
+  "race" : "nicemice",
+  
+  "scannable" : true,
+  "printable" : true,
+
+  "apexDescription" : "The Nicemice emblem - is it a symbol of freedom, or slavery?",
+  "avianDescription" : "I saw this in a dream once. All of the parts were blinking at me.",
+  "floranDescription" : "Floran hunt animalss with trackss like that.",
+  "glitchDescription" : "Intimidated. This design says everything it needs to with just a handful of simple shapes.",
+  "humanDescription" : "Emblems like this can only mean one thing - hot uniforms.",
+  "hylotlDescription" : "A symbol of colonization and conquerors. It disgusts me.",
+  "novakidDescription" : "Mine's on my face, and it's bigger'n yours, critter.",
+  "nicemiceDescription" : "Home! Zalut!",
+
+  "inventoryIcon" : "nicemice_emblem_stencil_3x3.png",
+  
+  "orientations" : [
+    {
+      "direction" : "right",
+	  "imageLayers" : 
+	  [ 
+		{ "image" : "nicemice_emblem_stencil_3x3.png:<color>" }
+	  ],
+      "imagePosition" : [ -16, -16 ],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+	  "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+    },
+	{
+	  "flipImages" : true,
+      "direction" : "left",
+	  "imageLayers" : 
+	  [ 
+		{ "image" : "nicemice_emblem_stencil_3x3.png:<color>" }
+	  ],
+      "imagePosition" : [ -16, -16 ],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+	  "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+    }
+  ]
+}
