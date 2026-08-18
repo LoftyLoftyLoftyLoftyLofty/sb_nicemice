@@ -893,3 +893,19 @@ Buckets:
 Task:
 When the player upgrades their ship to higher tiers, it would be cool if the upgrade came with a pre-spawned M.A.U.S. personnel npc in the new section of the ship.
 These aren't the same as "reruitable crew members", just flavor NPCs that show up in a place they normally wouldn't
+
+----
+
+⭐ Configure color palettes for all Nicemice cosmetics to support additional M.A.U.S. uniform colors
+
+Buckets:
+1. Low prio
+2. No
+3. Sort of
+4. Most players don't care
+5. Flavor, Cosmetics
+6. None
+7. 3
+
+Task:
+Verify all cosmetics have the maus jumpsuit colors etc and then verify the npctypes use those correctly
