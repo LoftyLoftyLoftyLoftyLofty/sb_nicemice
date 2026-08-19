@@ -1,0 +1,28 @@
+{
+  "animatedParts" : {
+    "stateTypes" : {
+      "stationState" : {
+        "default" : "off",
+        "states" : {
+          "off" : { "frames" : 1 },
+          "on" : {
+            "frames" : 4,
+            "cycle" : 1.0,
+            "mode" : "loop"
+          }
+        }
+      }
+    },
+    "parts" : {
+      "station" : {
+        "properties" : { "centered" : false },
+        "partStates" : {
+          "stationState" : {
+            "off" : { "properties" : { "image" : "<partImage>:off" } },
+            "on"  : { "properties" : { "image" : "<partImage>:on.<frame>" } }
+          }
+        }
+      }
+    }
+  }
+}

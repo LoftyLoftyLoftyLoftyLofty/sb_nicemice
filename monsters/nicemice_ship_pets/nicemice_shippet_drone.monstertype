@@ -1,0 +1,149 @@
+//  M.A.U.S. UTILITY UNIT
+//
+//  Deliberately built on vanilla's ship-pet script stack (groundPet.lua and its
+//  action states) so the spawn pipeline can be tested before the behavior work
+//  starts. The scripts list is where the nicemice replacements will go.
+//
+//  TWO DEPARTURES FROM VANILLA WORTH KNOWING ABOUT:
+//
+//  metaBoundBox is the box the cursor hit-tests against. petbunny's is
+//  [-1.625, -2.375, 1.75, 2.0] -- 3.4 x 4.4 tiles around a creature whose
+//  collisionPoly is about 1.5 x 1.5. That is why vanilla ship pets swallow
+//  clicks meant for whatever is behind them. Ours is sized to the body.
+//
+//  anchorName points at the pet station rather than the SAIL console.
+//  groundPet.lua kills the pet outright if it cannot find an anchor object of
+//  this name within 5 tiles of its last anchor position, so this must match the
+//  station's objectName exactly.
+
+{
+  "type" : "nicemice_shippet_drone",
+  "categories" : [ "nicemice_shippet" ],
+  "parts" : [ "body" ],
+
+  "animation" : "nicemice_shippet_drone.animation",
+
+  "dropPools" : [],
+
+  "baseParameters" : {
+    "persistent" : true,
+    "damageTeamType" : "ghostly",
+
+    "scripts" : [
+      "/monsters/pets/groundPet.lua",
+      "/scripts/pathing.lua",
+      "/scripts/stateMachine.lua",
+      "/scripts/util.lua",
+      "/scripts/vec2.lua",
+      "/monsters/pets/idleState.lua",
+      "/monsters/pets/wanderState.lua",
+      "/monsters/pets/petBehavior.lua",
+      "/monsters/pets/actions/followAction.lua",
+      "/monsters/pets/actions/inspectAction.lua",
+      "/monsters/pets/actions/eatAction.lua",
+      "/monsters/pets/actions/sleepAction.lua",
+      "/monsters/pets/actions/begAction.lua",
+      "/monsters/pets/actions/pounceAction.lua"
+    ],
+
+    "petBehavior" : "petBehavior",
+
+    //  must match nicemice_petstation's objectName
+    "anchorName" : "nicemice_petstation",
+
+    "petResources" : {
+      "sleepy" : 10,
+      "hunger" : 60,
+      "playful" : 10,
+      "curiosity" : 60
+    },
+    "petResourceDeltas" : {
+      "sleepy" : 1,
+      "hunger" : 0.5,
+      "playful" : 1,
+      "curiosity" : 1
+    },
+
+    "actionParams" : {
+      "hungerStarvingLevel" : 80,
+      "beg" : { "minScore" : 50, "cooldown" : 5, "distance" : 3, "emoteCooldown" : 2 },
+
+      //  Vanilla's follow is the source of the shadowing complaint: curiosity
+      //  regenerates at 1/sec against a minScore of 35, while followAction only
+      //  drains it at 5/sec and its boredTimer does not start until the pet has
+      //  arrived. Net effect is a permanent 3-tile tail. Raised the bar, made it
+      //  bore quickly, and pushed stopDistance out of the player's footprint.
+      //  This is tuning, not a fix -- the behavior rewrite comes later.
+      "follow" : {
+        "minScore" : 70,
+        "cooldown" : 30,
+        "curiosityDelta" : -25,
+        "boredTime" : 1.5,
+        "startDistance" : 10,
+        "stopDistance" : 5,
+        "runDistance" : 20
+      },
+
+      "inspect" : { "minScore" : 20, "cooldown" : 8 },
+      "eat" : { "minScore" : 0, "minHunger" : 40, "cooldown" : 0, "distance" : 2 },
+      "play" : { "minScore" : 20, "cooldown" : 2 },
+      "sleep" : { "minScore" : 50, "minSleepy" : 75, "cooldown" : 10 },
+      "starving" : { "minScore" : 60, "cooldown" : 3 }
+    },
+
+    "pathing" : { "canOpenDoors" : false },
+
+    //  Sized to the body, not to vanilla's oversized click target.
+    "metaBoundBox" : [-0.9, -0.9, 0.9, 0.9],
+
+    "scale" : 1.0,
+    "querySurroundingsCooldown" : 1,
+
+    "wander" : {
+      "wanderTime" : [5, 10],
+      "changeDirectionTime" : [5, 10],
+      "changeDirectionWait" : [1, 3]
+    },
+    "idle" : { "idleTime" : [4, 8], "standTime" : 2 },
+    "pounce" : { "maxRange" : 10, "minRange" : 5 },
+
+    "movementSettings" : {
+      "collisionPoly" : [ [-0.5, -0.5], [-0.3, -0.75], [0.3, -0.75], [0.5, -0.5],
+                          [0.5, 0.35], [0.3, 0.6], [-0.3, 0.6], [-0.5, 0.35] ],
+      "mass" : 1.0,
+      "walkSpeed" : 4,
+      "runSpeed" : 12,
+      "flySpeed" : 15,
+      "airForce" : 50.0
+    },
+
+    "bodyMaterialKind" : "robotic",
+    "touchDamage" : { "poly" : [], "damage" : 0, "teamType" : "ghostly", "damageSourceKind" : "default" },
+
+    "statusSettings" : {
+      "statusProperties" : { "targetMaterialKind" : "robotic" },
+      "appliesEnvironmentStatusEffects" : false,
+      "appliesWeatherStatusEffects" : false,
+      "minimumLiquidStatusEffectPercentage" : 0.1,
+      "primaryScriptSources" : [ "/stats/monster_primary.lua" ],
+      "primaryScriptDelta" : 5,
+      "stats" : {
+        "knockbackStunTime" : { "baseValue" : 0.25 },
+        "knockbackThreshold" : { "baseValue" : 9 },
+        "maxHealth" : { "baseValue" : 72 },
+        "protection" : { "baseValue" : 1.0 },
+        "healthRegen" : { "baseValue" : 0.0 }
+      },
+      "resources" : {
+        "health" : { "maxStat" : "maxHealth", "deltaStat" : "healthRegen", "initialPercentage" : 1 },
+        "sleepy" : { "maxValue" : 100, "initialValue" : 10 },
+        "hunger" : { "maxValue" : 100, "initialValue" : 60 },
+        "playful" : { "maxValue" : 100, "initialValue" : 10 },
+        "curiosity" : { "maxValue" : 100, "initialValue" : 60 }
+      }
+    },
+
+    "mouthOffset" : [0, 0],
+    "feetOffset" : [0, -8]
+  }
+}

@@ -1,0 +1,58 @@
+//  M.A.U.S. PET STATION
+//
+//  One-slot container. Socket a nicemice_shippet item to wake the unit inside.
+//  See nicemice_petstation.lua.
+
+{
+  "objectName" : "nicemice_petstation",
+  "colonyTags" : ["nicemice"],
+  "rarity" : "Uncommon",
+  "objectType" : "container",
+  "category" : "storage",
+  "price" : 250,
+  "printable" : false,
+  "description" : "A docking cradle for M.A.U.S. utility units. Socket a dormant unit to bring it online.",
+  "shortdescription" : "Pet Station",
+  "race" : "generic",
+
+  "damageTeam" : { "type" : "friendly", "team" : 0 },
+
+  //  One pet, one slot.
+  "slotCount" : 1,
+
+  //  Custom panel. Modelled on the pet tether's; replace the path once the
+  //  bespoke interface config exists.
+  "uiConfig" : "/interface/chests/pettether.config",
+
+  //  Container must not auto-close while the player is fiddling with options.
+  "autoCloseCooldown" : 3600,
+
+  //  Where the unit wakes up, relative to the station.
+  "petSpawnOffset" : [0, 2],
+
+  "inventoryIcon" : "nicemice_petstation_icon.png",
+  "orientations" : [
+    {
+      "image" : "nicemice_petstation.png:<color>.<key>",
+      "imagePosition" : [-8, 0],
+      "direction" : "left",
+      "flipImages" : true,
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    },
+    {
+      "image" : "nicemice_petstation.png:<color>.<key>",
+      "imagePosition" : [-8, 0],
+      "direction" : "right",
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ],
+
+  "scripts" : [ "nicemice_petstation.lua" ],
+  "scriptDelta" : 5,
+
+  "animation" : "nicemice_petstation.animation",
+  "animationParts" : { "station" : "nicemice_petstation.png" },
+  "animationPosition" : [-8, 0]
+}

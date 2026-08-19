@@ -1,0 +1,37 @@
+{
+  "itemName" : "nicemice_shippet",
+  "price" : 0,
+  "rarity" : "Rare",
+  "category" : "Ship Pet",
+  "inventoryIcon" : "nicemice_shippet.png",
+  "description" : "A dormant M.A.U.S. utility unit. Socket it into a Pet Station to wake it up.",
+  "shortdescription" : "Utility Unit",
+  "itemTags" : [ "nicemice", "nicemice_shippet" ],
+
+  //  Not stackable: each unit carries its own saved state in parameters below.
+  "maxStack" : 1,
+
+  //  PET DEFINITION
+  //
+  //  Everything the station needs in order to spawn this specific pet. A found
+  //  item ships with just `monsterType` and whatever flavour fields the loot
+  //  entry sets; the rest is written back by the station as the pet lives.
+  //
+  //  The item IS the pet. There is no capture pod, no pod uuid, no collar --
+  //  which also means the ship-pet/wild-monster boundary is enforced by the
+  //  item schema rather than by a runtime type check: a wild monster has no
+  //  nicemice_shippet item, so it can never be socketed.
+  "petData" : {
+    "monsterType" : "nicemice_shippet_drone",
+
+    //  Display fields, shown in the station UI
+    "petName" : "Unit",
+
+    //  Written back by the station. Left empty on a freshly found item.
+    //  status  -- health and other resources, so a pet resumes where it left off
+    //  storage -- the monster's own storage table: knownPlayers, foodLikings,
+    //             petResources, and anything else its scripts persist
+    "status" : {},
+    "storage" : {}
+  }
+}

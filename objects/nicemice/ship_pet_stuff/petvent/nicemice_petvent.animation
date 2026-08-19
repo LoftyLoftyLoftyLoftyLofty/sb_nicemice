@@ -1,0 +1,40 @@
+{
+  "animatedParts" : {
+    "stateTypes" : {
+      "ventState" : {
+        "default" : "idle",
+        "states" : {
+          "idle" : { "frames" : 1 },
+          "linked" : { "frames" : 2, "cycle" : 0.8, "mode" : "loop" }
+        }
+      }
+    },
+    "parts" : {
+      "vent" : {
+        "properties" : { "centered" : false },
+        "partStates" : {
+          "ventState" : {
+            "idle"   : { "properties" : { "image" : "<partImage>:idle" } },
+            "linked" : { "properties" : { "image" : "<partImage>:linked.<frame>" } }
+          }
+        }
+      }
+    }
+  },
+
+  "particleEmitters" : {
+    "vent" : {
+      "active" : false,
+      "emissionRate" : 0,
+      "burstCount" : 6,
+      "offsetRegion" : [-0.4, 0.2, 0.4, 0.6],
+      "particles" : [
+        { "particle" : { "type" : "ember", "size" : 0.6, "color" : [180, 220, 255, 200],
+                         "initialVelocity" : [0, 3], "finalVelocity" : [0, 0],
+                         "approach" : [0, 8], "timeToLive" : 0.4, "layer" : "middle" } }
+      ]
+    }
+  },
+
+  "sounds" : { "vent" : [ ] }
+}
