@@ -1,0 +1,179 @@
+[
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/goalText"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/goalText/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/goalText/nicemice_npc",
+			"value": [
+				"^cyan;An outlaw haz ezcaped to our planet. How ekzcitink. How dreadful.",
+				"^cyan;I have learned zere iz a dangerouz outlaw nearby..."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"value": [
+				"An outlaw iz on ze looze. Rumour haz it ^orange;<enemy.name> ze <enemy>^white; iz at ze ^orange;<spawnPoint>^white;<spawnPoint.direction>. Apparentlie <enemy.pronoun.copulativePast> been on ze run ever zinze <nicemicecrime>. ^green;Vould you go and <nicemicerequest>^white; and make t'ingz zafer here?",
+				"Ve have a zituation. Have you heard of ze outlaw ^orange;<enemy.name> ze <enemy>^white;? I hear <enemy.pronoun.copulative> layink low nearby after <nicemicecrime>. Ve do not vant zat zort of trouble here - ^green;go to ze ^orange;<spawnPoint>^green;<spawnPoint.direction> and <nicemicerequest>^white;?"
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"value": [
+				"Did you put a ztop to <enemy.name>'z crime zpree? <nicemiceappreciation>",
+				"You managed to defeat <enemy.name>? <nicemiceappreciation>"
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/title/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/title/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/title/nicemice_npc",
+			"value": [
+				"A <enemy> to be dealt vith",
+				"Ze notoriouz <enemy.name>"
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/fluff"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/fluff/11",
+			"value": [
+				"nicemicecrime",
+				[
+					"<enemy.pronoun.subject> robbed a zupplie freighter",
+					"<enemy.pronoun.subject> made off vith zomeone elze'z ztock",
+					"<enemy.pronoun.subject> ztole a zhipment of zomet'ing valuable",
+					"<enemy.pronoun.subject> zvindled an honezt merchant",
+					"<enemy.pronoun.subject> did zomet'ing I vould razer not zay aloud"
+				]
+			],
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/fluff/-",
+			"value": [
+				"nicemicecrime",
+				[
+					"<enemy.pronoun.subject> robbed a zupplie freighter",
+					"<enemy.pronoun.subject> made off vith zomeone elze'z ztock",
+					"<enemy.pronoun.subject> ztole a zhipment of zomet'ing valuable",
+					"<enemy.pronoun.subject> zvindled an honezt merchant",
+					"<enemy.pronoun.subject> did zomet'ing I vould razer not zay aloud"
+				]
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/fluff"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/fluff/12",
+			"value": [
+				"nicemicerequest",
+				[
+					"deal vith <enemy.pronoun.object>",
+					"zort <enemy.pronoun.object> out",
+					"remove <enemy.pronoun.object> from ze area",
+					"have a firm vord vith <enemy.pronoun.object>"
+				]
+			],
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/fluff/-",
+			"value": [
+				"nicemicerequest",
+				[
+					"deal vith <enemy.pronoun.object>",
+					"zort <enemy.pronoun.object> out",
+					"remove <enemy.pronoun.object> from ze area",
+					"have a firm vord vith <enemy.pronoun.object>"
+				]
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/fluff"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/fluff/13",
+			"value": [
+				"nicemiceappreciation",
+				[
+					"T'ank you. Ve do not need more trouble here.",
+					"Zplendid. Who needz guardz vith you about?",
+					"Ekzellent vork. Take ziz, and zay nozing of it.",
+					"I zhall know vhere to go about dangerouz outlawz in future."
+				]
+			],
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/fluff/-",
+			"value": [
+				"nicemiceappreciation",
+				[
+					"T'ank you. Ve do not need more trouble here.",
+					"Zplendid. Who needz guardz vith you about?",
+					"Ekzellent vork. Take ziz, and zay nozing of it.",
+					"I zhall know vhere to go about dangerouz outlawz in future."
+				]
+			]
+		}
+	]
+]

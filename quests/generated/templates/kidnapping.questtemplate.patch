@@ -1,0 +1,184 @@
+[
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/goalText"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/goalText/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/goalText/nicemice_npc",
+			"value": [
+				"^cyan;I am vorried about my <nicemicefriend> <victimNpcType>.",
+				"^cyan;My <nicemicefriend> haz gone mizzink. Ziz iz mozt irregular."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"value": [
+				"My <nicemicefriend> ^orange;<victimNpcType>^white; vaz to vizit zo ve could <nicemiceactivity>, and haz not appeared. Zoze ^orange;<enemy>^white; I zaw near ze ^orange;<spawnPoint>^white;<spawnPoint.direction> are involved - I am certain of it. ^green;Pleaze zave <victimNpcType>^white;.",
+				"I vaz out vith my <nicemicefriend> ^orange;<victimNpcType>^white; vhen ve became zeparated. Zere vere ^orange;<enemy>^white; zneakink about, and I fear <victimNpcType> haz been carried off. I lazt zaw <victimNpcType.pronoun.object> near ze ^orange;<spawnPoint>^white;<spawnPoint.direction>. ^green;Go and find <victimNpcType.pronoun.object>^white;?"
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"value": [
+				"T'ank you for retrievink <victimNpcType> from zoze <enemy>. <nicemiceappreciation>",
+				"You rezcued <victimNpcType>? <nicemiceappreciation>"
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/title/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/title/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/title/nicemice_npc",
+			"value": [
+				"Rezcue mizzion",
+				"Hoztage zituation",
+				"Zavink <questGiver>'z <nicemicefriend>"
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/fluff"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/fluff/15",
+			"value": [
+				"nicemicefriend",
+				[
+					"colleague",
+					"couzin",
+					"zecond couzin",
+					"azzoziate",
+					"littermate",
+					"acquaintanze"
+				]
+			],
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/fluff/-",
+			"value": [
+				"nicemicefriend",
+				[
+					"colleague",
+					"couzin",
+					"zecond couzin",
+					"azzoziate",
+					"littermate",
+					"acquaintanze"
+				]
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/fluff"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/fluff/16",
+			"value": [
+				"nicemiceactivity",
+				[
+					"dizcuzz a matter of zome delicazie",
+					"compare notez on ze neighbourz",
+					"argue about cheeze, civillie",
+					"take tea and be ztiff vith one anozer",
+					"zettle an old dizagreement politelie"
+				]
+			],
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/fluff/-",
+			"value": [
+				"nicemiceactivity",
+				[
+					"dizcuzz a matter of zome delicazie",
+					"compare notez on ze neighbourz",
+					"argue about cheeze, civillie",
+					"take tea and be ztiff vith one anozer",
+					"zettle an old dizagreement politelie"
+				]
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/fluff"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/fluff/17",
+			"value": [
+				"nicemiceappreciation",
+				[
+					"I am in your debt, vhich iz not a t'ing I zay often.",
+					"Take ziz az a token of my ezteem. Do not zpend it foolizhlie.",
+					"Ve are bozz mozt grateful, zough ve zhall not gozh about it.",
+					"You have my t'anks. Truelie."
+				]
+			],
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/fluff/-",
+			"value": [
+				"nicemiceappreciation",
+				[
+					"I am in your debt, vhich iz not a t'ing I zay often.",
+					"Take ziz az a token of my ezteem. Do not zpend it foolizhlie.",
+					"Ve are bozz mozt grateful, zough ve zhall not gozh about it.",
+					"You have my t'anks. Truelie."
+				]
+			]
+		}
+	]
+]

@@ -1,0 +1,78 @@
+[
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/first"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/first/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/first/nicemice_npc",
+			"value": [
+				"I require a certain item, and I happen to know ^orange;<victim>^white; keepz one in <victim.pronoun.possessiveDet> home. ^green;Zlip in and remove <victim.pronoun.possessiveDet> ^orange;<objectItem> ^white;vhile <victim.pronoun.subject> iz not lookink.",
+				"Firzt, a little pettie t'ieverie. ^green;Obtain ^orange;<victim>'s <objectItem>. ^green;Take it from <victim.pronoun.possessiveDet> houze^white;, and be zure nobodie zeez you. I vaz never here."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"value": [
+				"How do you feel about burglarie? I vould like you to ^green;acquire ze ^orange;<objectItem>^green; in ^orange;<victim>'s^green; home for me.",
+				"Ziz nekzt part requirez zomet'ing zat iz not ourz to uze. Ve need ze ^orange;<objectItem> ^green;in ^orange;<victim>'s^green; home. Go and zteal it. I zhall be lookink ze ozer vay."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/first"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/first/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/first/nicemice_npc",
+			"value": [
+				"Nize vork - you made zat look effortlezz. Hold on to zat <objectItem> for now, and do not loze it.",
+				"Yez, zat iz ze <objectItem> I vanted. Nobodie zaw you take it, I trust?"
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"value": [
+				"I zuzpect you vould take anyt'ing zat vaz not nailed down. I have no vizh to be caught vhen <victim> comez lookink, zo you keep it for now.",
+				"Do not vave zat <objectItem> about near me. Ve do not vant <victim> comink to azk quezzionz."
+			]
+		}
+	]
+]

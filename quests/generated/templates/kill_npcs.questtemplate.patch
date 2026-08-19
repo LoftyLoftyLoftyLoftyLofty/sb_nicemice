@@ -1,0 +1,210 @@
+[
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/goalText"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/goalText/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/goalText/nicemice_npc",
+			"value": [
+				"^cyan;I had an encounter vith zome <enemy> earlier, and I am ztill cross about it.",
+				"^cyan;I overheard zome <enemy> earlier. Zey vere not vhizpering vell enough."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"value": [
+				"I vent out for zome air earlier vhen ^orange;<enemy>^white; <nicemicecrime>. I am quite humiliated, and I <nicemicejustice>. It happened near ze ^orange;<spawnPoint>^white;<spawnPoint.direction>. ^green;Vould you <nicemicerequest>^white;?",
+				"I overheard zome ^orange;<enemy>^white; near ze ^orange;<spawnPoint>^white; earlier. I may be miztaken, but zey vere dizcuzzink zomet'ing zey zhould not. ^green;Vould you go and inveztigate^white;?"
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"value": [
+				"You dealt vith ze <enemy>? <nicemiceappreciation>",
+				"Did you dizcover vhat ze <enemy> vere about? <nicemiceappreciation>"
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/title/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/title/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/title/nicemice_npc",
+			"value": [
+				"Zome <enemy> to be dealt vith",
+				"Zome <enemy> vorth inveztigatink"
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/fluff"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/fluff/19",
+			"value": [
+				"nicemicecrime",
+				[
+					"ambuzhed me and took my pack",
+					"came from novhere and relieved me of my pursze",
+					"made me hand over my provizionz",
+					"knocked me flat and laughed about it"
+				]
+			],
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/fluff/-",
+			"value": [
+				"nicemicecrime",
+				[
+					"ambuzhed me and took my pack",
+					"came from novhere and relieved me of my pursze",
+					"made me hand over my provizionz",
+					"knocked me flat and laughed about it"
+				]
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/fluff"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/fluff/20",
+			"value": [
+				"nicemicejustice",
+				[
+					"demand juztize",
+					"require zatizfaction",
+					"vant payback, franklie",
+					"vill not let ze matter rezt"
+				]
+			],
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/fluff/-",
+			"value": [
+				"nicemicejustice",
+				[
+					"demand juztize",
+					"require zatizfaction",
+					"vant payback, franklie",
+					"vill not let ze matter rezt"
+				]
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/fluff"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/fluff/21",
+			"value": [
+				"nicemicerequest",
+				[
+					"make zem pay",
+					"zort zem out",
+					"remove zem from ze area",
+					"imprezz upon zem zat ziz iz not done"
+				]
+			],
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/fluff/-",
+			"value": [
+				"nicemicerequest",
+				[
+					"make zem pay",
+					"zort zem out",
+					"remove zem from ze area",
+					"imprezz upon zem zat ziz iz not done"
+				]
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/fluff"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/fluff/22",
+			"value": [
+				"nicemiceappreciation",
+				[
+					"I am imprezzed. T'ank you mozt zinzerelie.",
+					"I feel a great deal zafer. Take ziz for your trouble.",
+					"You have made ziz planet a little lezz tirezome.",
+					"Ekzellent. Ve zhall zay no more about it."
+				]
+			],
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/fluff/-",
+			"value": [
+				"nicemiceappreciation",
+				[
+					"I am imprezzed. T'ank you mozt zinzerelie.",
+					"I feel a great deal zafer. Take ziz for your trouble.",
+					"You have made ziz planet a little lezz tirezome.",
+					"Ekzellent. Ve zhall zay no more about it."
+				]
+			]
+		}
+	]
+]

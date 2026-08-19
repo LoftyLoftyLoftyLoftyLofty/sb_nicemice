@@ -1,0 +1,216 @@
+[
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/goalText"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/goalText/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/goalText/nicemice_npc",
+			"value": [
+				"^cyan;I zaw <victim> lookink for <victim.pronoun.possessiveDet> ztolen <item>, and I happen to know vhere it iz. <victim.pronoun.capitalSubject> vould be mozt t'ankful if ve returned it.",
+				"^cyan;<victim> vaz azkink vhezer I knew anyone who could help find <victim.pronoun.possessiveDet> <item>. I know vhere it iz, but I need your help."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/first"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/first/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/first/nicemice_npc",
+			"value": [
+				"Zo. I know for a fact zat ^orange;<thief>^white; haz ztolen ^orange;<victim>'z <item>^white;. I zhall keep vatch vhile you ^green;take it back.^white; Onze you have it, ^green;plaze it back in ^orange;<victim>'z^green; houze.",
+				"Ze firzt t'ing ve muzt do involvez a little t'ieverie. Ze good zort, naturallement. Ze ^orange;<item>^white; ve muzt take back zitz in ^orange;<thief>'z home. ^green;Fetch it, zen plaze it back in ^orange;<victim>'z^green; home."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/next"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/next/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/next/nicemice_npc",
+			"value": [
+				"Now ve come to zome houzebreakink. ^green;Take ze ztolen ^orange;<item>^green; from ^orange;<thief>'z^green; home, and ^green;plaze it back in ^orange;<victim>'z^green; houze.^white; I zhall vatch for onlookerz.",
+				"A little breakink and enterink never harmed anyone. Verie nearlie never. ^green;Zteal back ze ^orange;<item> ^green;in ^orange;<thief>'z ^green;home. Zen put it back in ^orange;<victim>'z ^green;home."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/last"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/last/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/last/nicemice_npc",
+			"value": [
+				"Finallie, zome vigilante juztize. ^green;Remove ze ztolen ^orange;<item>^green; from ^orange;<thief>'z^green; home, and ^green;plaze it back in ^orange;<victim>'z^green; houze.^white; I zhall be ze lookout.",
+				"Everyt'ing elze iz in plaze. It iz time for burglarie of ze rightful zort. I zhall vatch vhile you^green; take ze ztolen ^orange;<item>^green; from ^orange;<thief>'z^green; plaze. Zen zlip it back into ^orange;<victim>'z^green; home."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"value": [
+				"Zo. I zhall keep a lookout vhile you ^green;take ze ztolen ^orange;<item>^green; from ^orange;<thief>'z^green; home.^white; Onze zat iz done, ^green;plaze it back in ^orange;<victim>'z^green; houze.",
+				"Ze ^orange;<item>^white; I have been zeekink vaz ztolen by ^orange;<thief>.^white; It zitz in <thief.pronoun.possessiveDet> home az ve zpeak. ^green;Go and zteal it back,^white; zen ^green;plaze it back in ^orange;<victim>'z^green; houze^white; vhere it belongz. I zhall vatch for trouble."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/first"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/first/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/first/nicemice_npc",
+			"value": [
+				"You did zat verie vell. I cannot vait to zee <thief>'z faze vhen <thief.pronoun.subject> realizez <thief.pronoun.subject> haz had a taste of <thief.pronoun.possessiveDet> own medizine.",
+				"Zat vaz eazier zan I ekzpected. You are rather good at ziz, are you not? <victim> vill be delighted to zee <victim.pronoun.possessiveDet> propertie vhere it belongz."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/next"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/next/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/next/nicemice_npc",
+			"value": [
+				"Mozt imprezzive. I alzo approve of ze vay you left no printz - zat iz zenzible t'inkink. Vait until <victim> hearz of ziz.",
+				"Vell done. <victim> vill be pleazed vith me onze <victim.pronoun.subject> zeez <victim.pronoun.possessiveDet> <item> back in itz rightful plaze."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/last"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/last/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/last/nicemice_npc",
+			"value": [
+				"<player> and <questGiver>, purveyorz of vigilante juztize. It haz a certain ring to it. You vere like a ghozt in zere - <thief> vill not know vhat to t'ink.",
+				"You have a real talent for ziz zort of vork, and you brought your own toolz bezidez. <victim> vill be pleazed to zee <victim.pronoun.possessiveDet> propertie returned."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"value": [
+				"You made zat look effortlezz. <victim> vill be pleazed ve recovered <victim.pronoun.possessiveDet> <item>. Have you done ziz before? Zere iz no danger of printz vith a zpezialized tool like zat...",
+				"Nize vork. <victim> vill be quite t'ankful zat I helped recover <victim.pronoun.possessiveDet> <item>. Ve are a darink vigilante duo now."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/title/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/title/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/title/nicemice_npc",
+			"value": [
+				"<questGiver> ze vigilante",
+				"Help out <victim>"
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/title",
+			"value": [
+				"<questGiver> the vigilante",
+				"Help out <victim>"
+			]
+		},
+		{
+			"op": "replace",
+			"path": "/scriptConfig/generatedText/title",
+			"value": {
+				"default": [
+					"<questGiver> the vigilante",
+					"Help out <victim>"
+				],
+				"nicemice_npc": [
+					"<questGiver> ze vigilante",
+					"Help out <victim>"
+				]
+			}
+		}
+	]
+]

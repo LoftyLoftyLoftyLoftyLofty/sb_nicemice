@@ -1,0 +1,140 @@
+[
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/goalText"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/goalText/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/goalText/nicemice_npc",
+			"value": [
+				"^cyan;I am tryink to imprezz a friend. I have zomet'ing in mind alreadie, but I need your help.",
+				"^cyan;I vizh to make a good imprezzion. Help me do zomet'ing zat vill quite undo <target>."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/next"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/next/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/next/nicemice_npc",
+			"value": [
+				"I t'ink ziz ^orange;<gift> iz ze perfect prezent. ^green;Vould you deliver it to ^orange;<target>^white;? Do enzure <target.pronoun.subject> knowz it iz from me.",
+				"Who vould not love a new ^orange;<gift>?^white; I hope ^orange;<target>^white; apprezhiatez all ze vork I had you do for it. ^green;Deliver it to <target.pronoun.object>?"
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"value": [
+				"Ze onlie t'ing remainink iz to ^green;deliver ze ^orange;<gift>^white;. Vould you give it to <target> for me?",
+				"Now ve need onlie ^green;drop zat ^orange;<gift>^green; off to ^orange;<target>.^white; Vould you take it to <target.pronoun.object>? I do hope <target.pronoun.subject> doez not alreadie have one."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/next"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/next/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/next/nicemice_npc",
+			"value": [
+				"It zeemz <target> loved ze <gift>. I am a zplendid giver of giftz. Vith zome azzistanze, admittedlie.",
+				"Ekzellent. Now <target> and I zhall be ze bezt of friendz. Now to determine vhat <target.pronoun.subject> zhould receive nekzt..."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"value": [
+				"Apparentlie <target> haz vanted a new <gift> for zome time. <target.pronoun.capitalSubject> loved it and cannot t'ank me enough. T'ank you for your help.",
+				"<target> liked ze gift? I require nozing in return. It feelz agreeable zimplie to give a friend zomet'ing to enjoy."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/title/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/title/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/title/nicemice_npc",
+			"value": [
+				"<questGiver> ze Gift Giver",
+				"Help <questGiver> deliver a gift"
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/title",
+			"value": [
+				"<questGiver> the Gift Giver",
+				"Help <questGiver> deliver a gift"
+			]
+		},
+		{
+			"op": "replace",
+			"path": "/scriptConfig/generatedText/title",
+			"value": {
+				"default": [
+					"<questGiver> the Gift Giver",
+					"Help <questGiver> deliver a gift"
+				],
+				"nicemice_npc": [
+					"<questGiver> ze Gift Giver",
+					"Help <questGiver> deliver a gift"
+				]
+			}
+		}
+	]
+]

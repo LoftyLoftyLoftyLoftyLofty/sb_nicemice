@@ -1,0 +1,78 @@
+[
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/goalText"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/goalText/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/goalText/nicemice_npc",
+			"value": [
+				"^cyan;A guard zhould ztand out! Vill you help me find zomet'ing zat makez me look <adjective>?",
+				"^cyan;Guardz az capable az myzelf ought to be nozized. Can you help me look <adjective>?"
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"value": [
+				"Nekzt, run over and have ^orange;<friend>^white; azzemble uz zome ^orange;cuztom gear.^white; ^green;Mention my name, and give <friend.pronoun.object> our ^orange;<clothingIngredients>^white;.",
+				"Finallie, ^green;deliver our ^orange;<clothingIngredients>^green; to ^orange;<friend>^white; and ^green;azk <friend.pronoun.object> to make me zome cuztom gear. <friend.pronoun.capitalSubject> haz ze zkill, I am zure of it."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"value": [
+				"Vell? Doez lookink <adjective> make me ztand out az I zhould?",
+				"T'ank you. Nobodie vill trifle vith me now zat I look <adjective>."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/title/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/title/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/title/nicemice_npc",
+			"value": [
+				"<questGiver>'z need to ztand out",
+				"<questGiver>, ze <adjective> guard"
+			]
+		}
+	]
+]

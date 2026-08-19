@@ -1,0 +1,79 @@
+[
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/goalText"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/goalText/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/goalText/nicemice_npc",
+			"value": [
+				"^cyan;I vizh to vear zomet'ing zat makez me look <adjective>. Vill you help me?",
+				"^cyan;I intend to look <adjective>, and I have a plan to bring it about."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"value": [
+				"Finallie, run over and have ^orange;<friend>^white; azzemble uz zome cuztom ^orange;headvear.^white; ^green;Mention my name, and give <friend.pronoun.object> our ^orange;<clothingIngredients>^white;.",
+				"All zat remainz iz to azk ^orange;<friend>^white; to make my cuztom headvear. ^green;Give <friend.pronoun.object> our ^orange;<clothingIngredients>^white; and <friend.pronoun.subject> vill craft it for me."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"value": [
+				"T'ank you. Vell? Do I not look <adjective> now?",
+				"T'ank you. How do I look? Zuitablie <adjective>, I zhould t'ink."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/title/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/title/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/title/nicemice_npc",
+			"value": [
+				"<questGiver>'z new headvear",
+				"<questGiver> vizhez to look <adjective>",
+				"Help <questGiver> look <adjective>"
+			]
+		}
+	]
+]

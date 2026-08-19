@@ -1,0 +1,78 @@
+[
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/goalText"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/goalText/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/goalText/nicemice_npc",
+			"value": [
+				"^cyan;My ztore iz becomink popular. Ziz iz ze moment to ztock zomet'ing of real qualitie...",
+				"^cyan;New ztock zerved my ztore vell lazt time. Vould you help me do it again?"
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"value": [
+				"Juzt in time. Ze travellink merchant <target> arrived at ze ^orange;<spawnPoint>^white;<spawnPoint.direction> a zhort time ago. <target.pronoun.capitalSubject> haz agreed to provide ze new ztock I require in ekzchange for my ^orange;<tradedItems>^white;. ^green;Take ze goodz to ^orange;<target>^white;?",
+				"Now to finizh ze buzinezz. <target>, a travellink merchant, haz arrived at ze ^orange;<spawnPoint>^white;<spawnPoint.direction> to trade. ^green;Find ^orange;<target>^green; and give <target.pronoun.object> our ^orange;<tradedItems>^green; for ze goodz ve need?"
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"value": [
+				"Zuczezz. If you require a brand new <newItem>, my ztore iz ze plaze to come from now on. T'ank you.",
+				"T'ankz to your deliverie I may now zell ziz new <newItem>. If you vant one, you know vhere to find me."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/title/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/title/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/title/nicemice_npc",
+			"value": [
+				"<questGiver>'z zecond trade",
+				"<questGiver>'z boomink buzinezz"
+			]
+		}
+	]
+]

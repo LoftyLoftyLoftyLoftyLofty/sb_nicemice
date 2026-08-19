@@ -1,0 +1,216 @@
+[
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/goalText"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/goalText/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/goalText/nicemice_npc",
+			"value": [
+				"^cyan;You look az zough you can handle yourzelf. Vill you help me bring <target> to juztize?",
+				"^cyan;<target> haz been a nuizanze around here of late. It iz time zomeone zet <target.pronoun.object> ztraight."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/first"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/first/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/first/nicemice_npc",
+			"value": [
+				"I have ample evidenze zat ^orange;<target>^white; haz been up to no good. ^green;Deliver ziz ^orange;fine notize^green; to <target.pronoun.object>.^white; <target.pronoun.capitalSubject> haz alreadie agreed to zurrender <target.pronoun.possessiveDet> ^orange;<item>^white; az payment.",
+				"Ze firzt item on our agenda concernz ^orange;<target>^white;. Certain evidenze haz come to light zat <target.pronoun.subject> iz a zhady individual. ^green;Deliver ziz ^orange;fine notize^green; and collect <target.pronoun.possessiveDet> ^orange;<item>^white; az payment."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/next"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/next/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/next/nicemice_npc",
+			"value": [
+				"Now, ^orange;<target>^white; owez a fine for breakink ze law. ^green;Vill you deliver ziz ^orange;fine notize?^white; <target.pronoun.capitalSubject> haz agreed to give up <target.pronoun.possessiveDet> ^orange;<item>^white; in damagez.",
+				"Nekzt on ze lizt iz ^orange;<target>. ^white;<target.pronoun.capitalSubject> haz proven <target.pronoun.reflexive> quite ze lawbreaker. ^green;Deliver ziz ^orange;notize^green; of damagez to <target.pronoun.object>,^white; <target.pronoun.subject> haz agreed to zurrender <target.pronoun.possessiveDet> ^orange;<item> az compenzation."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/last"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/last/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/last/nicemice_npc",
+			"value": [
+				"Laztlie, ^orange;<target>^white; owez a fine. ^green;Deliver ziz ^orange;notize^white; and ^green;collect <target.pronoun.possessiveDet> ^orange;<item>^white; in payment of damagez.",
+				"Finallie, ve require ^orange;<target>^white; to pay for <target.pronoun.possessiveDet> zhady practizez. ^green;Deliver ziz ^orange;notize^green; to <target.pronoun.object>,^white; it iz a rezeipt for criminal damagez. ^green;Collect <target.pronoun.possessiveDet> ^orange;<item>^white; az compenzation."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"value": [
+				"^green;Take ziz ^orange;fine notize^white; to ^orange;<target>^white;. <target.pronoun.capitalSubject> haz alreadie agreed to zurrender <target.pronoun.possessiveDet> ^orange;<item>^white; in payment of damagez.",
+				"^green;Deliver ziz ^orange;crime notize^green; to ^orange;<target>^white;. <target.pronoun.capitalSubject> haz agreed to give <target.pronoun.possessiveDet> ^orange;<item>^white; az compenzation for <target.pronoun.possessiveDet> behaviour."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/first"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/first/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/first/nicemice_npc",
+			"value": [
+				"Vell done collectink ze fine from <target>. Ziz <item> vill do nizelie. Might I trouble you for zomet'ing elze?",
+				"<target> haz no doubt learned <target.pronoun.possessiveDet> lezzon. Ze <item> vill prove uzeful too."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/next"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/next/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/next/nicemice_npc",
+			"value": [
+				"T'ank you for collectink <target>'z fine. I vaz not confident <target.pronoun.subject> vould pay if I vent myzelf. Fortunatelie you look like zomeone <target> vould razer not trifle vith.",
+				"T'ank you for teachink <target> zat actionz have conzequenzez. I zee zeveral uzez for ziz <item> alreadie."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/last"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/last/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/last/nicemice_npc",
+			"value": [
+				"Nize vork collectink ze fine from <target>. I vaz a trifle vorried <target.pronoun.subject> vould vriggle out of it. Keep ze <item> az payment.",
+				"T'ank you for teachink <target> a lezzon. I hope <target.pronoun.subject> realizez zat nobodie iz above ze law. Ze <item> iz yourz. You have earned it."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"value": [
+				"You did vell. Keep ze <item> az payment for your zervizez. I merelie vizhed to zhow <target> zat nobodie iz above ze law.",
+				"T'ank you for your help. <target> zhould underztand zat ve follow ze rulez here. You may keep ze <item>, if you like."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/title/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/title/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/title/nicemice_npc",
+			"value": [
+				"Collect damagez from <target>",
+				"Bring <target> to Juztize"
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/title",
+			"value": [
+				"Collect damages from <target>",
+				"Bring <target> to Justice"
+			]
+		},
+		{
+			"op": "replace",
+			"path": "/scriptConfig/generatedText/title",
+			"value": {
+				"default": [
+					"Collect damages from <target>",
+					"Bring <target> to Justice"
+				],
+				"nicemice_npc": [
+					"Collect damagez from <target>",
+					"Bring <target> to Juztize"
+				]
+			}
+		}
+	]
+]

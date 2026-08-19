@@ -1,0 +1,78 @@
+[
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/first"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/first/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/first/nicemice_npc",
+			"value": [
+				"Ze firzt t'ing I require iz one ^orange;<item>.^white; ^orange;<target>^white; haz a zpare, and owes me a favour. ^green;Run over to <target.pronoun.object> and collect it.",
+				"To begin, ve need one ^orange;<item>.^white; I know ^orange;<target>^white; acquired a new one recentlie - ^green;azk vhezer ve may uze it."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"value": [
+				"Nekzt, ^green;retrieve my ^orange;<item>^white;. I loaned it to ^orange;<target>^white; lazt veek. ^green;Azk for it back^white; - ve zhall need it for ze nekzt phaze.",
+				"Now fetch me one ^orange;<item>. <target>^white; haz ze largezt collection in ze area; ^green;azk politelie^white; and <target.pronoun.subject> vill not begrudge uz a zingle one."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/last"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/last/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/last/nicemice_npc",
+			"value": [
+				"You got ze <item> from <target>. Ekzellent vork - ze nekzt ztep vould have been tirezome vizout it.",
+				"Perfect. I muzt t'ank <target> at zome point. Ziz iz ekzaktlie vhat ve need."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"value": [
+				"T'ank you for prizing zat out of <target>. Now ve may proceed.",
+				"Zat iz a handzome <item>. T'ank you for collectink it."
+			]
+		}
+	]
+]

@@ -1,0 +1,102 @@
+[
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/goalText"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/goalText/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/goalText/nicemice_npc",
+			"value": [
+				"^cyan;Ziz plaze ztill doez not feel like home. Zomet'ing iz mizzing. Vould you help me?",
+				"^cyan;I have a plan to zpruze up my houze, but I cannot manage it alone. Lend me a paw?"
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"value": [
+				"Zere. I t'ink ziz ^orange;<object>^white; iz prezizelie vhat ze room vantz. ^green;Find a zpaze for it in my home?",
+				"Ziz ^orange;<object>^white; vill do ze trick, I am certain of it. All zat remainz iz to ^green;plaze it zomevhere flatterink."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"value": [
+				"Zat iz it. It lookz perfect juzt zere. T'ank you mozt zinzerelie for all your help.",
+				"Much better. It lookz ekzaktlie az I imagined. Manie t'anks - do ztop by and admire your handivork."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/title/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/title/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/title/nicemice_npc",
+			"value": [
+				"<questGiver>'z Home Improvementz",
+				"Redecoratink for <questGiver>"
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/title",
+			"value": [
+				"<questGiver>'s Home Makeover",
+				"Redecorating for <questGiver>"
+			]
+		},
+		{
+			"op": "replace",
+			"path": "/scriptConfig/generatedText/title",
+			"value": {
+				"default": [
+					"<questGiver>'s Home Makeover",
+					"Redecorating for <questGiver>"
+				],
+				"nicemice_npc": [
+					"<questGiver>'z Home Improvementz",
+					"Redecoratink for <questGiver>"
+				]
+			}
+		}
+	]
+]

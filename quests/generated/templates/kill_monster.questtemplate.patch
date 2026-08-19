@@ -1,0 +1,78 @@
+[
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/first"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/first/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/first/nicemice_npc",
+			"value": [
+				"Ze firzt ztep iz ^green;findink ze ^orange;<monster>^white; zat haz been troublink me. It made off vith ^orange;<items>,^white; tovard ze ^orange;<spawnPoint>^white;<spawnPoint.direction>. ^green;You vould not mind huntink it down?",
+				"Ze firzt t'ing ve require iz ^orange;<items>.^white; Unfortunatelie an overzized <monster> ate my zuppliez. It zhould be lurkink near ze ^orange;<spawnPoint>^white;<spawnPoint.direction>. ^green;Kill zat ^orange;<monster>^green; and bring zem back?"
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"value": [
+				"Nekzt, ^green;hunt down ze ^orange;<monster>^white; zat zvallowed my ^orange;<items>^white; and fled ze ozer day - I vant my propertie returned. Ze ^orange;<monster>^white; zhould be near ze ^orange;<spawnPoint>^white;<spawnPoint.direction>.",
+				"Nekzt you muzt hunt down a ^orange;<monster>.^white; I vaz valkink by ze ^orange;<spawnPoint>^white;<spawnPoint.direction> earlier vhen it ambuzhed me and took my ^orange;<items>. ^green;Locate ze creature and return vhat it haz taken?"
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/first"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/first/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/first/nicemice_npc",
+			"value": [
+				"Ekzellent vork. Zat <monster> vill trouble nobodie again, and ve have everyt'ing ve need for phaze two.",
+				"Ugh - vaz ziz inzide zat <monster>? I zuppoze I cannot complain. T'ank you for doink ze dirtie vork."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"value": [
+				"Zat <monster> iz finallie gone? T'ank you. Vith <items> in paw ve may move forvard.",
+				"T'ank you. Zat <monster> zhould have t'ought tvize before runnink off vith t'ingz zat vere not itz own."
+			]
+		}
+	]
+]

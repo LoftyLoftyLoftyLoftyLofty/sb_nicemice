@@ -1,0 +1,214 @@
+[
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/goalText"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/goalText/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/goalText/nicemice_npc",
+			"value": [
+				"^cyan;I require azzistanze vith a monztrouz problem."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"value": [
+				"Zere haz been talk of a <nicemicegiant> ^orange;<monster>^white; over near ze ^orange;<spawnPoint>^white;<spawnPoint.direction>. Zome zay it <nicemicerumour>. Vould you <nicemicerequest>, zo I may feel zafe again?",
+				"I vaz out valkink near ze ^orange;<spawnPoint>^white;<spawnPoint.direction> vhen a <nicemicegiant> ^orange;<monster>^white; appeared and zcreamed rudelie in my faze. It vaz undignified. Vould you <nicemicerequest>, to teach it mannerz?"
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"value": [
+				"<nicemiceappreciation>"
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/title/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/title/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/title/nicemice_npc",
+			"value": [
+				"Ze <nicemicegiant> <monster>",
+				"<monster> Hunter"
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/fluff"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/fluff/14",
+			"value": [
+				"nicemicegiant",
+				[
+					"ferocious",
+					"monztrouz",
+					"ekzezzivelie large",
+					"deadlie",
+					"zcarie",
+					"overzized"
+				]
+			],
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/fluff/-",
+			"value": [
+				"nicemicegiant",
+				[
+					"ferocious",
+					"monztrouz",
+					"ekzezzivelie large",
+					"deadlie",
+					"zcarie",
+					"overzized"
+				]
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/fluff"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/fluff/15",
+			"value": [
+				"nicemicerumour",
+				[
+					"zmellz fear",
+					"haz lived a hundred yearz",
+					"eatz zilverware",
+					"cannot be reazoned vith",
+					"iz larger zan a zhip pet, vhich iz zayink zomet'ing"
+				]
+			],
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/fluff/-",
+			"value": [
+				"nicemicerumour",
+				[
+					"zmellz fear",
+					"haz lived a hundred yearz",
+					"eatz zilverware",
+					"cannot be reazoned vith",
+					"iz larger zan a zhip pet, vhich iz zayink zomet'ing"
+				]
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/fluff"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/fluff/16",
+			"value": [
+				"nicemicerequest",
+				[
+					"deal vith it",
+					"zort it out",
+					"zlay ze beazt",
+					"remove it from ze area"
+				]
+			],
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/fluff/-",
+			"value": [
+				"nicemicerequest",
+				[
+					"deal vith it",
+					"zort it out",
+					"zlay ze beazt",
+					"remove it from ze area"
+				]
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/fluff"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/fluff/17",
+			"value": [
+				"nicemiceappreciation",
+				[
+					"You defeated it? Ekzellent. Take ziz for your trouble.",
+					"Zplendid. I zhall valk ze long vay round no longer.",
+					"T'ank you. You are a mozt effective perzon to know.",
+					"Vell done. I am imprezzed, and I do not imprezz eazilie."
+				]
+			],
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/fluff/-",
+			"value": [
+				"nicemiceappreciation",
+				[
+					"You defeated it? Ekzellent. Take ziz for your trouble.",
+					"Zplendid. I zhall valk ze long vay round no longer.",
+					"T'ank you. You are a mozt effective perzon to know.",
+					"Vell done. I am imprezzed, and I do not imprezz eazilie."
+				]
+			]
+		}
+	]
+]

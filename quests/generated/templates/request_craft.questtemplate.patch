@@ -1,0 +1,78 @@
+[
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/first"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/first/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/first/nicemice_npc",
+			"value": [
+				"Firzt, fetch me zomet'ing. ^orange;<target>^white; makez ze finezt ^orange;<item>^white; in ze ztar zyztem - ^green;go over and azk for one.^white; Ve zhall need it later.",
+				"Ze firzt t'ing I require iz one ^orange;<item>. <target>^white; iz zkilled at makink zem, zo ve zhall ^green;azk <target.pronoun.object> to make one^white; zpezificallie for uz."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"value": [
+				"Ze nekzt t'ing I need iz one ^orange;<item>. <target>^white; can azzemble juzt about anyt'ing - ^green;azk <target.pronoun.object> to put it togezer.",
+				"Nekzt, run over and have ^orange;<target>^white; azzemble uz a cuztom ^orange;<item>.^white; ^green;Mention my name; <target> knowz prezizelie how I like zem made."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/last"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/last/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/last/nicemice_npc",
+			"value": [
+				"Nize vork. I knew <target> vould deliver. Zat iz one t'ing off ze lizt...",
+				"I have never zeen anyone make any <item> az fine az <target> doez. Ziz vill be perfect for vhat I have planned."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"value": [
+				"T'ank you. <target> makez zem juzt right - I could not uze zome ordinary <item> for vhat I have in mind.",
+				"Nobodie makez zem like <target>. Zat iz one more t'ing zorted. T'ank you."
+			]
+		}
+	]
+]

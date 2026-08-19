@@ -1,0 +1,216 @@
+[
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/goalText"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/goalText/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/goalText/nicemice_npc",
+			"value": [
+				"^cyan;I vould like to befriend <target>. If onlie <target.pronoun.possessiveDet> friend <other> vere not in ze vay...",
+				"^cyan;I vould like <target> to be my friend inztead of <other>'z. I have a plan to bring it about..."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/first"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/first/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/first/nicemice_npc",
+			"value": [
+				"I t'ink <target> and I vould make ekzellent friendz, but <target.pronoun.subject> iz forever in ze companie of horrible ^orange;<other>^white;. Let uz put a ztop to it. ^green;Here iz a ^orange;note^green; I vould like delivered to ^orange;<target>^white; zat vill put <target.pronoun.object> off zeeink <target.pronoun.possessiveDet> dreadful friend again.",
+				"Let uz begin by befriendink <target>. Firzt ve muzt make <target.pronoun.object> ztop zeeink <target.pronoun.possessiveDet> tirezome friend. ^green;I have prepared ziz ^orange;note^green; for ^orange;<target>^white; outlinink ze vorzer pointz of zat borink perzon. Do deliver it for me."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/next"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/next/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/next/nicemice_npc",
+			"value": [
+				"I have zeen ^orange;<target>^white; in ze companie of zat zilly <other> a great deal latelie. I vould razer <target.pronoun.subject> zpent ze time vith me. ^green;Deliver ziz ^orange;note^green; to <target.pronoun.object>^white; and <target.pronoun.subject> vill zee vhat a vazte of time <other> iz.",
+				"I vould like <target> to ztop beink friendlie vith ^orange;<other>^white; and befriend me inztead. Here iz a ^orange;note^white; I have vritten vith ze truth about <other> in it. ^green;Do deliver it to ^orange;<target>^white; for me."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/last"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/last/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/last/nicemice_npc",
+			"value": [
+				"Finallie, let uz make ^orange;<target> ^white;realize zat I am better friend material zan ^orange;<other>. ^green;Zhow <target.pronoun.object> ziz ^orange;note^green; I have vritten^white; about <other> and <target.pronoun.subject> vill zee ze light.",
+				"Here iz a ^orange;note^white; I have vritten about ^orange;<other>^white;. Everyone knowz <other.pronoun.subject> iz terrible, and ztill ^orange;<target>^white; keepz companie vith <other.pronoun.object> dailie. It iz my turn to be ^green;<target>'z friend. ^green;Deliver ziz note to <target.pronoun.object>."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"value": [
+				"I do vizh ^orange;<target>^white; vould become my friend inztead of ^orange;<other>'z^white;. I have prepared ziz ^orange;note^white; for <target.pronoun.object> ekzplainink ze truth about <other>. It vill make <target.pronoun.object> realize zat I am far better friend material. ^green;Do deliver it to <target.pronoun.object> for me.",
+				"I have vanted to be <target>'z friend for agez, but <target.pronoun.subject> keepz companie onlie vith ^orange;<other>^white;. ^green;I have prepared ziz ^orange;note^green; for you to deliver to ^orange;<target>^white;. It vill tell <target.pronoun.object> ze truth about <other>."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/first"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/first/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/first/nicemice_npc",
+			"value": [
+				"Vonderful newz. <other> iz out and I am in. Ziz vill be zplendid.",
+				"You did it. Friendz are valuable azzetz, and I am zure <target> vill prove uzeful to me in future."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/next"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/next/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/next/nicemice_npc",
+			"value": [
+				"<target> abandoned <other> and accepted my friendzhip. A new friend vill certainlie come in handie.",
+				"T'ank you for deliverink ze note. <target> and I are now offiziallie friendz."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/last"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/last/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/last/nicemice_npc",
+			"value": [
+				"I am quite ekzited about my new friend. Everyone knowz <other> iz poor companie anyvay. T'ank you for ze hard vork.",
+				"<other> iz out of ze picture, and now <target> and I are friendz. Ziz friendzhip vill undoubtedlie prove uzeful - t'ank you for makink it happen."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"value": [
+				"<target.pronoun.capitalSubject> accepted my friendzhip. And who vould not? T'ank you for your help.",
+				"Ze plan vorked. <target> iz my friend now, and <other> iz out of ze picture. T'ank you for makink it happen."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/title/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/title/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/title/nicemice_npc",
+			"value": [
+				"Help <questGiver> zpread rumourz",
+				"<questGiver>'z rumour mill"
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/title",
+			"value": [
+				"Help <questGiver> spread rumours",
+				"<questGiver>'s rumour mill"
+			]
+		},
+		{
+			"op": "replace",
+			"path": "/scriptConfig/generatedText/title",
+			"value": {
+				"default": [
+					"Help <questGiver> spread rumours",
+					"<questGiver>'s rumour mill"
+				],
+				"nicemice_npc": [
+					"Help <questGiver> zpread rumourz",
+					"<questGiver>'z rumour mill"
+				]
+			}
+		}
+	]
+]

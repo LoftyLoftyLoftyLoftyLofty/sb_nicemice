@@ -1,0 +1,102 @@
+[
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/goalText"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/goalText/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/goalText/nicemice_npc",
+			"value": [
+				"^cyan;Vould it not be pleazant to meet zome new people? I have an idea...",
+				"^cyan;Ve vould benefit from new neighbourz, I t'ink. I have a plan."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"value": [
+				"^green;Build a home^white;, and inzide ^green;plaze ^orange;3^green; <tag>.^white; Do not forget to ^green;include a ^orange;Colony Deed^green; and a ^orange;light!",
+				"Vould you build a home^white;, and inzide ^green;plaze ^orange;3^green; <tag>.^white; Do not forget to ^green;include a ^orange;Colony Deed^green; and a ^orange;light!^white; I am quite ekzited."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"value": [
+				"T'ank you. Ve have a new lokal rezident. Iz zat not ekzitink?",
+				"Zuczezz. I hope our new neighbour enjoyz ze plaze. T'ank you for your help."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/title/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/title/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/title/nicemice_npc",
+			"value": [
+				"<questGiver>'z plan for ekzpansion",
+				"<questGiver> vantz new neighbourz"
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/title",
+			"value": [
+				"<questGiver>'s plan for expansion",
+				"<questGiver> wants new friends"
+			]
+		},
+		{
+			"op": "replace",
+			"path": "/scriptConfig/generatedText/title",
+			"value": {
+				"default": [
+					"<questGiver>'s plan for expansion",
+					"<questGiver> wants new friends"
+				],
+				"nicemice_npc": [
+					"<questGiver>'z plan for ekzpansion",
+					"<questGiver> vantz new neighbourz"
+				]
+			}
+		}
+	]
+]

@@ -1,0 +1,78 @@
+[
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/first"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/first/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/first/nicemice_npc",
+			"value": [
+				"Ve vill need a decent ^orange;<item>^white; to begin. I recall zeeing ^orange;<target> ^white;vith one quite recentlie. ^green;Go and azk if ve may borrow it for a vhile. ^white;Ve can tell <target.pronoun.object> it vaz lozt, later, if <target.pronoun.subject> azkz.",
+				"I believe ^orange;<target>^white; ownz a perfectlie good ^orange;<item>^white;. ^green;Go and azk <target.pronoun.object> vhezer ve may borrow it indefinitelie.^white; On zecond t'ought, omit ze vord 'indefinitelie'."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"value": [
+				"Now ve muzt zecure one ^orange;<item>. ^white;^green;Azk ^orange;<target>^green; if ve may borrow <target.pronoun.possessive>. ^white;Zere iz no need to mention zat it vill not be returned.",
+				"Ve could make ekzellent uze of a ^orange;<item>^white; juzt now. ^orange;<target> ^white;certainlie haz one in <target.pronoun.possessiveDet> pozzession. ^green;Go and borrow it from <target.pronoun.object>."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/first"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/first/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/first/nicemice_npc",
+			"value": [
+				"Zat iz a pazzable <item>. Let uz hope <target> doez not mizz it.",
+				"Ekzellent. <target> iz a mozt generouz neighbour, and a truztink one."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"value": [
+				"Zmoothlie done. Let uz hope <target> doez not azk for it back.",
+				"Vell done. Ve vill certainlie not be returnink ziz <item> to <target>, but <target.pronoun.subject> vill not mizz zuch a duztie old t'ing."
+			]
+		}
+	]
+]

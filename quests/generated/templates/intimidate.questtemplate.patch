@@ -1,0 +1,216 @@
+[
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/goalText"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/goalText/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/goalText/nicemice_npc",
+			"value": [
+				"^cyan;I have dezided it vould be quite pleazant to have <target> obey me, zhould I ever require <target.pronoun.object>. I have juzt ze plan...",
+				"^cyan;I vant <target>'z rezpect, but friendzhip takez far too long. I have a better idea..."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/first"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/first/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/first/nicemice_npc",
+			"value": [
+				"Firzt, I require ^orange;<target>'z^white; obedienze. If you vould ^green;go and point a large ^orange;<item> ^green;at <target.pronoun.object> and ztrike up a converzation, ^white;I am zure <target.pronoun.subject> vill take ze point.",
+				"Firzt, I require ^orange;<target>^white; to bend to my every vhim. Ziz meanz <target.pronoun.subject> muzt fear me, naturallement. ^green;Zpeak vith <target.pronoun.object> vhile pointink a fine ^orange;<item>^green; at <target.pronoun.possessiveDet> faze ^white;and <target.pronoun.subject> vill know to do az I zay in future."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/next"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/next/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/next/nicemice_npc",
+			"value": [
+				"Ze nekzt part of my plan requirez ^orange;<target>'z^white; obedienze. Zere iz no better vay to obtain it zan to zreaten <target.pronoun.possessiveDet> life. ^green;Hold a large ^orange;<item> ^green;and go zpeak vith <target.pronoun.object>^white;. <target.pronoun.capitalSubject> vill take ze point.",
+				"Nekzt, I zhall need ^orange;<target>^white; to do vhatever I zay. Zat iz eazie enough if <target.pronoun.subject> fearz me. ^green;Go and point a fine ^orange;<item> ^green;at <target.pronoun.object> and begin a converzation on my behalf?^white; Zat zhould do it."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/last"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/last/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/last/nicemice_npc",
+			"value": [
+				"At lazt, ze plan comez togezer. Did you know ^orange;<target>^white; iz afraid of ^orange;<item>z?^white; ^green;Point one at <target.pronoun.object> and ztrike up a converzation ^white;- <target.pronoun.capitalSubject> vill be zo frightened zat <target.pronoun.subject> vill do anyt'ing I zay. A perfect plan.",
+				"My plan iz nearlie complete, but I ztill require ^orange;<target>'z^white; utter obedienze. If <target.pronoun.subject> fearz me, <target.pronoun.subject> vill azzizt me vith anyt'ing in future. ^green;Point a fine ^orange;<item> ^green;at <target.pronoun.object> and ztrike up a converzation? ^white;<target.pronoun.capitalSubject> vill know I zent you."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"value": [
+				"^orange;<target>,^white; az it turnz out, iz particularlie afraid of ^orange;<item>z. ^white;Ziz iz perfect. ^green;Go and point one at <target.pronoun.object> and begin a converzation ^white;- <target.pronoun.subject> vill know I zent you. <target.pronoun.capitalSubject> vill be zo frightened, <target.pronoun.subject> vill do anyt'ing I zay hereafter.",
+				"I am informed zat ^orange;<target> ^white;iz afraid of ^orange;<item>z. ^green;Vould you go and zreaten <target.pronoun.object> vith one for me?^white; <target.pronoun.capitalSubject> vill zvear obedienze vith a large <item> pointed at <target.pronoun.object>."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/first"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/first/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/first/nicemice_npc",
+			"value": [
+				"It vorked. <target> utterlie fearz me now, and vill do vhatever I azk. Manipulatink ozerz iz remarkablie eazie...",
+				"Ze intimidation vorked. <target> iz villink to do vhatever I azk. Ziz vill prove uzeful. T'ank you."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/next"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/next/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/next/nicemice_npc",
+			"value": [
+				"Now <target> vill do anyt'ing I zay. Intimidation iz eazier zan one ekzpectz. Ziz vill come in handie zoon enough...",
+				"Now zat <target> fearz for <target.pronoun.possessiveDet> life, <target.pronoun.subject> vill do az I zay. I ought to intimidate people more often."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/last"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/last/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/last/nicemice_npc",
+			"value": [
+				"It vorked. Now <target> vill do vhatever I zay. Ziz vill be uzeful one day. T'ank you for your... azzistanze.",
+				"Vhy be liked vhen one can be feared inztead? T'ank you. <target> vill prove uzeful to me eventuallie..."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"value": [
+				"T'ank you for your azzistanze. Now <target> vill do anyt'ing I zay. Zat iz goink to be uzeful...",
+				"Zozial manipulation iz eazie. <target> iz loyal to me now, zrough fear. T'ank you for makink it happen."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/title/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/title/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/title/nicemice_npc",
+			"value": [
+				"Intimidate <target>",
+				"Zreaten zomeone for <questGiver>"
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/title",
+			"value": [
+				"Intimidate <target>",
+				"Threaten someone for <questGiver>"
+			]
+		},
+		{
+			"op": "replace",
+			"path": "/scriptConfig/generatedText/title",
+			"value": {
+				"default": [
+					"Intimidate <target>",
+					"Threaten someone for <questGiver>"
+				],
+				"nicemice_npc": [
+					"Intimidate <target>",
+					"Zreaten zomeone for <questGiver>"
+				]
+			}
+		}
+	]
+]

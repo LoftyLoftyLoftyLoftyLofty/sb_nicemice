@@ -1,0 +1,178 @@
+[
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/goalText"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/goalText/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/goalText/nicemice_npc",
+			"value": [
+				"^cyan;I hear <target> may be in trouble. If I help <target.pronoun.object>, <target.pronoun.subject> might truzt me more.",
+				"^cyan;I have received vord zat <target> iz at rizk. If I help <target.pronoun.object>, <target.pronoun.subject> might t'ink better of me."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/first"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/first/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/first/nicemice_npc",
+			"value": [
+				"Firztlie, ve muzt deal vith ze ^orange;<threat>^white; on zeir vay here from ze ^orange;<spawnPoint>^white;<spawnPoint.direction>. I hear zey are after ^orange;<target>! ^green;Do vhatever you can to fend zem off.^white; <target.pronoun.capitalSubject> needz our protection.",
+				"Ze firzt tazk iz zimple. Head to ze ^orange;<spawnPoint>^white;<spawnPoint.direction> and enzure zoze ^orange;<threat>^white; do not zuczeed in zeir attack upon ^orange;<target>! ^green;Protect <target.pronoun.object>^green; at all costz."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/next"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/next/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/next/nicemice_npc",
+			"value": [
+				"Nekzt ^green;ve muzt defend againzt incomink ^orange;<threat>^white; from ze ^orange;<spawnPoint>^white;<spawnPoint.direction>. I hear zeir target iz ^orange;<target>^white;. If ve zhow ourzelvez villink to rizk life and limb to ^green;protect <target>, zen <target.pronoun.subject> vill know <target.pronoun.subject> can truzt uz.",
+				"Nekzt, ve muzt protect ^orange;<target>^white;. Zere iz a group of ^orange;<threat>^white; comink zrough ze ^orange;<spawnPoint>^white;<spawnPoint.direction> to attack <target.pronoun.object>. ^green;Do vhatever you can to keep <target.pronoun.object> zafe."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"value": [
+				"Vord iz zat ^orange;<threat>^white; are on zeir vay to zeize ^orange;<target>^white; and drag <target.pronoun.object> back to ze ^orange;<spawnPoint>^white;<spawnPoint.direction>. Ziz cannot be permitted. ^green;Help protect <target.pronoun.object>^white; however you can.",
+				"<target> iz in danger. Zere iz a gang of ^orange;<threat>^white; on zeir vay from ze ^orange;<spawnPoint>^white;<spawnPoint.direction> vith hoztile intentionz. ^green;Zee zat zey do not harm ^orange;<target>^white;. Do vhatever it takez."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/first"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/first/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/first/nicemice_npc",
+			"value": [
+				"T'ankz to you <target> vaz not harmed. <target.pronoun.capitalSubject> muzt be ekztremelie grateful to uz. I know I vould be.",
+				"You kept <target> zafe. <target.pronoun.capitalSubject> vill never forget zat ve zaved <target.pronoun.possessiveDet> life. A bond haz been formed, I t'ink."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/next"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/next/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/next/nicemice_npc",
+			"value": [
+				"You made zhort vork of zoze <threat>. Ve have alzo earned ze truzt of <target>, vhich vill prove uzeful.",
+				"Vell done. Zoze <threat> met zeir match. I ztronglie zuzpect <target> t'inkz better of me now."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"value": [
+				"Ha! <threat> are no match for uz... zat iz, for you. I believe ziz haz earned uz <target>'z truzt.",
+				"I am imprezzed. Ze <threat> never ztood a chanze. Ve have earned <target>'z friendzhip az vell."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/title/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/title/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/title/nicemice_npc",
+			"value": [
+				"Protect <target> from <threat>",
+				"Zave <target> from <threat>"
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/title",
+			"value": [
+				"Protect <target> from <threat>",
+				"Save <target> from <threat>"
+			]
+		},
+		{
+			"op": "replace",
+			"path": "/scriptConfig/generatedText/title",
+			"value": {
+				"default": [
+					"Protect <target> from <threat>",
+					"Save <target> from <threat>"
+				],
+				"nicemice_npc": [
+					"Protect <target> from <threat>",
+					"Zave <target> from <threat>"
+				]
+			}
+		}
+	]
+]

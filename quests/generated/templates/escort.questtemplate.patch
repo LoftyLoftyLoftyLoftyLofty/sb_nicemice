@@ -1,0 +1,180 @@
+[
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/goalText"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/goalText/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/goalText/nicemice_npc",
+			"value": [
+				"^cyan;My <nicemicefriend> <targetNpcType> haz not arrived, and I am beginnink to look zillie ztandink here."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"value": [
+				"My <nicemicefriend> ^orange;<targetNpcType>^white; vaz to meet me zo ve could <nicemiceactivity>, and haz not appeared. <targetNpcType.pronoun.capitalSubject> iz lozt, no doubt - ze lazt I zaw of <targetNpcType.pronoun.object> vaz ze ^orange;<spawnPoint>^white;<spawnPoint.direction>. ^green;Go zere and bring <targetNpcType.pronoun.object> back to me^white;?"
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"value": [
+				"T'ank you for returnink <targetNpcType> to me. <nicemiceappreciation>"
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/title/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/title/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/title/nicemice_npc",
+			"value": [
+				"<targetNpcType>'z ezcort",
+				"Ezcort <targetNpcType>"
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/fluff"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/fluff/8",
+			"value": [
+				"nicemicefriend",
+				[
+					"colleague",
+					"couzin",
+					"zecond couzin",
+					"azzoziate",
+					"buzinezz partner",
+					"acquaintanze"
+				]
+			],
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/fluff/-",
+			"value": [
+				"nicemicefriend",
+				[
+					"colleague",
+					"couzin",
+					"zecond couzin",
+					"azzoziate",
+					"buzinezz partner",
+					"acquaintanze"
+				]
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/fluff"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/fluff/9",
+			"value": [
+				"nicemiceactivity",
+				[
+					"dizcuzz a matter of zome delicazie",
+					"compare notez on ze neighbourz",
+					"argue about cheeze, civillie",
+					"review ze zettlement accountz",
+					"zettle an old dizagreement politelie"
+				]
+			],
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/fluff/-",
+			"value": [
+				"nicemiceactivity",
+				[
+					"dizcuzz a matter of zome delicazie",
+					"compare notez on ze neighbourz",
+					"argue about cheeze, civillie",
+					"review ze zettlement accountz",
+					"zettle an old dizagreement politelie"
+				]
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/fluff"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/fluff/10",
+			"value": [
+				"nicemiceappreciation",
+				[
+					"<targetNpcType.pronoun.capitalSubject> and I are mozt grateful.",
+					"Take ziz az a token of my ezteem.",
+					"I am in your debt, vhich iz not a t'ing I zay often.",
+					"Ze zettlement iz better off vith you in it."
+				]
+			],
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/fluff/-",
+			"value": [
+				"nicemiceappreciation",
+				[
+					"<targetNpcType.pronoun.capitalSubject> and I are mozt grateful.",
+					"Take ziz az a token of my ezteem.",
+					"I am in your debt, vhich iz not a t'ing I zay often.",
+					"Ze zettlement iz better off vith you in it."
+				]
+			]
+		}
+	]
+]

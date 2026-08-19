@@ -1,0 +1,40 @@
+[
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"value": [
+				"Now comez ze delicate part - cookink. You zhould be able to ^green;azzemble ^orange;<ingredients>^white; into ^orange;<cookedItems>^white;. Ze rezipe lookz zimple, yet my own attemptz alvayz end in dizazter.",
+				"Ze ^orange;<ingredients>^white; require preparink. You zhould be able to ^green;vhip up ^orange;<cookedItems>^white;. I have every confidenze in you, vhich iz more zan I have in myzelf."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"value": [
+				"Zat lookz delizious. I vould eat it ziz inztant, but ve require it for vhat comez nekzt...",
+				"You had no trouble at all vith zat. T'ank you - it iz prezizelie vhat ze plan demandz."
+			]
+		}
+	]
+]

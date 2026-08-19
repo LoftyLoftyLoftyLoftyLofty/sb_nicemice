@@ -1,0 +1,78 @@
+[
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/first"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/first/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/first/nicemice_npc",
+			"value": [
+				"To begin, ^green;I zhall need ^orange;<fetchedItems>^white;. Vould you lend a paw?",
+				"Initiallie, ^green;ve muzt gazer ^orange;<fetchedItems>^white;. Can you manage zat?"
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"value": [
+				"Nekzt, ^green;ve vill need ^orange;<fetchedItems>^white;. You can handle zat, yez?",
+				"^green;Ze nekzt t'ing I require iz ^orange;<fetchedItems>^white;. It iz important to ze plan, zo do not dawdle."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/first"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/first/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/first/nicemice_npc",
+			"value": [
+				"Ekzellent. Now ve may put zeze to uze.",
+				"Vell done, <player>. I never doubted you for a moment. Vell - barelie a moment."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"value": [
+				"T'ank you. Ziz iz ekzaktlie vhat ze nekzt ztage of my plan requirez...",
+				"Perfect. Ziz vill vork nizelie. T'ank you."
+			]
+		}
+	]
+]

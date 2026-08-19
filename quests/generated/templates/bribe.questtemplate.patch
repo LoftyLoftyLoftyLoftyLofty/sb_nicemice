@@ -1,0 +1,144 @@
+[
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/goalText"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/goalText/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/goalText/nicemice_npc",
+			"value": [
+				"^cyan;I intend to vin <target>'z favour, and I know prezizelie how to bring it about...",
+				"^cyan;I vould like <target> to owe me a favour. I have a plan..."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/next"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/next/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/next/nicemice_npc",
+			"value": [
+				"Nekzt ^green;I muzt vin over ^orange;<target>^white;, and it zo happenz zat ^green;<target.pronoun.subject> vould dearlie love your ^orange;<gift>^white;. Iz zat briberie? Perhapz. <target.pronoun.capitalSubject> vill not mind.",
+				"How do you feel about briberie? If you vere to ^green;gift zat ^orange;<gift>^green; to ^orange;<target>^white; on my behalf, <target.pronoun.subject> vould owe me a favour. ^green;Go and give it to <target.pronoun.object> for me?"
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"value": [
+				"At lazt, ze plan comez togezer. ^green;Take zat ^orange;<gift>^green; and generouzlie prezent it to ^orange;<target>^green; on my behalf^white;. <target.pronoun.capitalSubject> vill be indebted to me for my kind act of briberie.",
+				"All zat remainz iz to ^green;bribe ^orange;<target>^green; vith zat ^orange;<gift>^white; I know <target.pronoun.subject> vantz. It iz entirelie ethicallement. Truzt me."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/next"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/next/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/next/nicemice_npc",
+			"value": [
+				"<target> took ze bribe? Ekzellent. Ziz vill be mozt uzeful.",
+				"Briberie iz remarkablie eazie. <target> owink me a favour vill zerve me vell."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"value": [
+				"My plan vorked. Briberie iz eazier zan anyone admitz. Now I may call upon <target> vhenever I require <target.pronoun.object>. T'ank you.",
+				"Now <target> owez me a favour. Zat vaz eazier zan I ekzpected. T'ank you for azzizting vith my geniuz plan."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/title/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/title/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/title/nicemice_npc",
+			"value": [
+				"Bribe <target>",
+				"<questGiver> attemptz a bribe",
+				"<questGiver>'z Agenda"
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/title",
+			"value": [
+				"Bribe <target>",
+				"<questGiver> attempts a bribe",
+				"<questGiver>'s Agenda"
+			]
+		},
+		{
+			"op": "replace",
+			"path": "/scriptConfig/generatedText/title",
+			"value": {
+				"default": [
+					"Bribe <target>",
+					"<questGiver> attempts a bribe",
+					"<questGiver>'s Agenda"
+				],
+				"nicemice_npc": [
+					"Bribe <target>",
+					"<questGiver> attemptz a bribe",
+					"<questGiver>'z Agenda"
+				]
+			}
+		}
+	]
+]

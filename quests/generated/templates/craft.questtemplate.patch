@@ -1,0 +1,40 @@
+[
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"value": [
+				"Nekzt you muzt ^green;azzemble ^orange;<craftedItems>^white;. Ze ^orange;<ingredients>^white; you gazered earlier zhould zuffize.",
+				"Ze nekzt ztep requirez ^green;puttink togezer ^orange;<craftedItems>^white;. I vould do it myzelf, but my craftink iz franklie embarrazzink. You have everyt'ing you need."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"value": [
+				"Vell conztructed. T'ank you - ziz vill zerve ze plan nizelie.",
+				"You made zat look effortlezz. Zomeone haz been practizink. Now ve may finallie move forvard."
+			]
+		}
+	]
+]

@@ -1,0 +1,102 @@
+[
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/goalText"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/goalText/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/goalText/nicemice_npc",
+			"value": [
+				"^cyan;I do love to make friendz. Help me zet up a home zat vill entize a new neighbour!",
+				"^cyan;I am lonelie, and I could uze zomeone new to talk at. Vould you help me find ze friend I'm after?"
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"value": [
+				"Ve have gazered all ze furnizhingz, but ve ztill vant ze houze itzelf. ^green;Build a home and put ^orange;<furnitureSet>^green; inzide.^white; Do not forget ze ^orange;Colony Deed^white;.",
+				"Finallie, ^green;plaze ^orange;<furnitureSet>^green; in a houze.^white; I truzt you can handle ze conztruction. Remember to ^green;plaze a ^orange;Colony Deed^white; vhen you are done."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"value": [
+				"Vacanzie filled, and quicklie too. T'ank you for ekzpandink my zozial zircle.",
+				"Zuczezz. I have a new neighbour at lazt. Ziz plaze getz lonelie - it'z pleazant to have zomeone to talk at."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/title/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/title/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/title/nicemice_npc",
+			"value": [
+				"A new neighbour for <questGiver>",
+				"<questGiver> vantz companie"
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/title",
+			"value": [
+				"A new friend for <questGiver>",
+				"<questGiver>'s new friend"
+			]
+		},
+		{
+			"op": "replace",
+			"path": "/scriptConfig/generatedText/title",
+			"value": {
+				"default": [
+					"A new friend for <questGiver>",
+					"<questGiver>'s new friend"
+				],
+				"nicemice_npc": [
+					"A new neighbour for <questGiver>",
+					"<questGiver> vantz companie"
+				]
+			}
+		}
+	]
+]

@@ -1,0 +1,145 @@
+[
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/goalText"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/goalText/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/goalText/nicemice_npc",
+			"value": [
+				"^cyan;I dezire a <monster> to keep me companie. Ze houze iz far too quiet.",
+				"^cyan;Vith a <monster> of my own I zhould be quite content, and razer zmug about it."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"value": [
+				"Zomeone prezzed a <tradedMonster> upon me, vhich iz not vhat I azked for. I vould much prefer a ^orange;<monster>^white;. ^green;Catch me one vith ziz ^orange;Capture Pod^white;?\nZere vere zeveral near ze ^orange;<spawnPoint>^white;<spawnPoint.direction>, if you require directionz.",
+				"I attempted to capture a ^orange;<monster>^white; myzelf and returned vith ziz <tradedMonster>. Humiliatink. ^green;Take ziz ^orange;Capture Pod^green; and catch me a proper <monster>^white; - ze <tradedMonster> iz yourz in ekzchange. Vith a real one I could <nicemicedreams>.\nTry ze ^orange;<spawnPoint>^white;<spawnPoint.direction>."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"value": [
+				"You brought me a <monster>? <nicemiceappreciation>"
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/title/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/title/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/title/nicemice_npc",
+			"value": [
+				"A <monster> of my own",
+				"<questGiver> vantz a <monster>"
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/fluff"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/fluff/9",
+			"value": [
+				"nicemicedreams",
+				[
+					"train it properlie",
+					"teach it zome dizzipline",
+					"finallie have zomet'ing zat obeyz me",
+					"put it to honezt vork",
+					"keep zomet'ing zhorter zan myzelf about ze plaze"
+				]
+			],
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/fluff/-",
+			"value": [
+				"nicemicedreams",
+				[
+					"train it properlie",
+					"teach it zome dizzipline",
+					"finallie have zomet'ing zat obeyz me",
+					"put it to honezt vork",
+					"keep zomet'ing zhorter zan myzelf about ze plaze"
+				]
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/fluff"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/fluff/10",
+			"value": [
+				"nicemiceappreciation",
+				[
+					"Ze creature iz adequate. T'ank you.",
+					"It vill do nizelie. You have my t'anks, and my rezpect.",
+					"Zplendid. I zhall give it a dignified name.",
+					"At lazt. Ve zhall get along famouzlie, I t'ink."
+				]
+			],
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/fluff/-",
+			"value": [
+				"nicemiceappreciation",
+				[
+					"Ze creature iz adequate. T'ank you.",
+					"It vill do nizelie. You have my t'anks, and my rezpect.",
+					"Zplendid. I zhall give it a dignified name.",
+					"At lazt. Ve zhall get along famouzlie, I t'ink."
+				]
+			]
+		}
+	]
+]

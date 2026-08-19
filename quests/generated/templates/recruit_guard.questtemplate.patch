@@ -1,0 +1,102 @@
+[
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/goalText"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/goalText/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/goalText/nicemice_npc",
+			"value": [
+				"^cyan;I vould feel a great deal zafer vith zome protection about ze plaze. Can you help me recruit a guard?",
+				"^cyan;Ve could do vith more protection around here. I have a plan..."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"value": [
+				"Finallie, ^green;build a new houze vith your ^orange;<guardObject>^white; in it, ^green;add 3 pieze of furniture a ^orange;<tag>^white; vould like, and ^green;put ziz ^orange;Colony Deed^green; in it^white;. Do not forget ze^orange; light zourze^white;.",
+				"All zat remainz iz to ^green;build a new houze vith your ^orange;<guardObject>^white; in it, ^green;add 3 pieze of furniture a ^orange;<tag>^white; vould like, and ^green;put ziz ^orange;Colony Deed^green; up az vell^white;. A ^orange;light zourze^white; iz not optional."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"value": [
+				"Vacanzie filled, and quicklie too. T'ank you for enzurink my zafetie.",
+				"Ve have a new guard. I feel zafer alreadie. T'ank you for your help."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/title/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/title/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/title/nicemice_npc",
+			"value": [
+				"Zecuritie for <questGiver>",
+				"<questGiver> vantz protection"
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/title",
+			"value": [
+				"Security for <questGiver>",
+				"<questGiver> wants security"
+			]
+		},
+		{
+			"op": "replace",
+			"path": "/scriptConfig/generatedText/title",
+			"value": {
+				"default": [
+					"Security for <questGiver>",
+					"<questGiver> wants security"
+				],
+				"nicemice_npc": [
+					"Zecuritie for <questGiver>",
+					"<questGiver> vantz protection"
+				]
+			}
+		}
+	]
+]

@@ -1,0 +1,181 @@
+[
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/goalText"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/goalText/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/goalText/nicemice_npc",
+			"value": [
+				"^cyan;I require azzistanze vith a monztrouz problem."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"value": [
+				"I am ekztremelie put out. A pack of vild ^orange;<monster>^white; ambuzhed me vhile I vaz out valkink and deztroyed <nicemicebelonging>. Ziz occurred at ze ^orange;<spawnPoint>^white;<spawnPoint.direction> - ^green;vould you go and <nicemicerevenge>^white;?",
+				"I am far too zenzible to leave after vhat I have heard about a pack of vild ^orange;<monster>^white; loiterink about ze plaze. Zey vere lazt zeen at ze ^orange;<spawnPoint>^white;<spawnPoint.direction>. ^green;Vould you <nicemicerevenge> for me^white;?"
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"value": [
+				"Zoze <monster> are dealt vith? <nicemiceappreciation>"
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/title/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/title/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/title/nicemice_npc",
+			"value": [
+				"Zortink out zome <monster>",
+				"Dealink vith zome <monster>"
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/fluff"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/fluff/19",
+			"value": [
+				"nicemicebelonging",
+				[
+					"my lunch",
+					"my correzpondenze",
+					"my unfinizhed memoirz",
+					"my good hat",
+					"a vheel of zomet'ing ekzpenzive",
+					"my zeed collection"
+				]
+			],
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/fluff/-",
+			"value": [
+				"nicemicebelonging",
+				[
+					"my lunch",
+					"my correzpondenze",
+					"my unfinizhed memoirz",
+					"my good hat",
+					"a vheel of zomet'ing ekzpenzive",
+					"my zeed collection"
+				]
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/fluff"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/fluff/20",
+			"value": [
+				"nicemicerevenge",
+				[
+					"avenge me",
+					"put a ztop to zem",
+					"teach zem zome mannerz",
+					"dizperze zem, permanentlie",
+					"remove zem quietlie and vizout fuzz"
+				]
+			],
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/fluff/-",
+			"value": [
+				"nicemicerevenge",
+				[
+					"avenge me",
+					"put a ztop to zem",
+					"teach zem zome mannerz",
+					"dizperze zem, permanentlie",
+					"remove zem quietlie and vizout fuzz"
+				]
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/fluff"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/fluff/21",
+			"value": [
+				"nicemiceappreciation",
+				[
+					"Ekzellent. Take ziz - you have earned it.",
+					"Zplendid vork. I zhall zleep vithout one ear open tonight.",
+					"T'ank you. Ze neighbourhood iz improved.",
+					"Vell done. I never doubted you for verie long."
+				]
+			],
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/fluff/-",
+			"value": [
+				"nicemiceappreciation",
+				[
+					"Ekzellent. Take ziz - you have earned it.",
+					"Zplendid vork. I zhall zleep vithout one ear open tonight.",
+					"T'ank you. Ze neighbourhood iz improved.",
+					"Vell done. I never doubted you for verie long."
+				]
+			]
+		}
+	]
+]

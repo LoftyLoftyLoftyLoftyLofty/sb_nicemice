@@ -1,0 +1,78 @@
+[
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/first"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/first/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/first/nicemice_npc",
+			"value": [
+				"Firztlie, ^green;plant ^orange;<seedList>.^white; Vater zem regularlie - zat part iz not optional - and vhen zey are ready, ^green;gazer ze ^orange;<cropList>^green; and bring ze harvezt to me.",
+				"Firzt, I require <cropList>, and zey are out of zeazon. You garden, I azzume? Here iz ^orange;<seedList>^green; for plantink;^white; vhen you have ^green;harvezted ^orange;<cropList>^green;, bring zem to me."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"value": [
+				"Now ^green;plant ^orange;<seedList>^white;. Care for zem until zey are ready, zen ^green;harvezt ze ^orange;<cropList>^green; for me.",
+				"Nekzt, ve require produze. I have ^orange;<seedList>,^white; but nowhere fit to grow anyt'ing. ^green;Grow zem and bring me ^orange;<cropList>^white;?"
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/first"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/first/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/first/nicemice_npc",
+			"value": [
+				"Ah, beautifullie ripe. You have a real talent for ziz, vhich zurprizez me.",
+				"Zere may be a future in farmink for you. <cropList>, frezh from ze ground. Ziz vill zerve admirablie."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"value": [
+				"T'ank you. Zey are a trifle zmall, but zat iz vhat one getz for goink organic.",
+				"<cropList>, ekzaktlie az requezted. Nize vork. Time to put ziz produze to proper uze."
+			]
+		}
+	]
+]

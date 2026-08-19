@@ -1,0 +1,40 @@
+[
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"value": [
+				"Nekzt: ze travelling merchant ^orange;<target>^white; arrived at ze ^orange;<spawnPoint>^white;<spawnPoint.direction> a zhort time ago. <target.pronoun.capitalSubject> haz agreed to part vith ze <receivedItems> ve require, in ekzchange for ze ^orange;<givenItems>^white;. ^green;Carry ze goodz to <target>^white;.",
+				"A merchant, ^orange;<target>^white;, iz loitering at ze ^orange;<spawnPoint>^white;<spawnPoint.direction>. <target.pronoun.capitalSubject> vill trade uz ze <receivedItems> for ze ^orange;<givenItems>^white;. ^green;Deliver zem^white;, and do not embarrazz me by haggling badlie."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"value": [
+				"T'ank you. Ze <receivedItems> vill be uzeful for ze nekzt part of my plan...",
+				"Ekzellent. Zeze <receivedItems> are prezizelie vhat ze plan requirez."
+			]
+		}
+	]
+]

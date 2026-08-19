@@ -1,0 +1,78 @@
+[
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/first"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/first/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/first/nicemice_npc",
+			"value": [
+				"To begin, ve require a good ^orange;<item>. ^white;I happen to know zat ^orange;<target> ^white;haz one, zo you may ^green;collect it directlie from <target.pronoun.object>.^white; <target.pronoun.capitalSubject> knowz <target.pronoun.possessiveDet> plaze and vould not dare dizobey me.",
+				"Ve muzt get our pawz on one ^orange;<item>.^white; Fortunatelie ^orange;<target>^white;, who livez nearby, ^green;zhould have one.^white; Better ztill, <target.pronoun.subject> alreadie knowz who iz in charge here, zo ^green;<target.pronoun.subject> vill oblige you^white;."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"value": [
+				"Ve muzt collect one ^orange;<item>^white; from zomevhere. I believe ^orange;<target>^white; haz one, and <target.pronoun.subject> juzt zo happenz to owe me a favour. ^green;Collect ze ^orange;<item>^green; from <target.pronoun.object>?",
+				"A good ^orange;<item> ^white;iz nezzezary for our plan. ^orange;<target>^white; haz one, zo ^green;go and collect it. ^white;Do not vorry, <target.pronoun.subject> vould not dare dizobey..."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/first"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/first/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/first/nicemice_npc",
+			"value": [
+				"Vell done. Ziz <item> vill prove uzeful zooner zan you t'ink.",
+				"Ziz <item> iz perfect. You have done vell."
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"value": [
+				"Perfect. I knew <target> vould not dare make a fuzz.",
+				"Good vork collectink our <item>. I knew <target> vould be vorz keepink around..."
+			]
+		}
+	]
+]

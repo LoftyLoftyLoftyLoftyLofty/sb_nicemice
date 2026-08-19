@@ -1,0 +1,89 @@
+[
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/first"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/first/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/first/nicemice_npc",
+			"value": [
+				"Firzt, ve require ^orange;<items>^white;. Zey vere to be delivered by ze travellink merchant ^orange;<target>^white;, but I zuzpect <target.pronoun.subject> haz got lozt around ze ^orange;<spawnPoint>^white;<spawnPoint.direction>. ^green;Take me zere^white; zo ve may find <target> and ^green;retrieve ze goodz^white;?"
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
+			"value": [
+				"Nekzt, ve require ^orange;<items>^white;. Zey vere to be delivered by ze travellink merchant ^orange;<target>^white;, but <target.pronoun.subject> haz managed to get lozt around ze ^orange;<spawnPoint>^white;<spawnPoint.direction>. ^green;Take me zere^white; zo ve may find <target> and ^green;retrieve ze goodz^white;?"
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
+			"value": [
+				"<nicemiceappreciation> Vould you hold on to zeze <items> for ze nekzt part of my plan?"
+			]
+		}
+	],
+	[
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/fluff"
+		},
+		{
+			"op": "test",
+			"path": "/scriptConfig/generatedText/fluff/2",
+			"value": [
+				"nicemiceappreciation",
+				[
+					"T'ank you for accompanyink me.",
+					"You have been mozt uzeful, and reazonablie quiet about it.",
+					"T'ank you for ze ezcort. I vaz never in ze zlightezt danger, naturallement.",
+					"Zat vent better vith companie. T'ank you."
+				]
+			],
+			"inverse": true
+		},
+		{
+			"op": "add",
+			"path": "/scriptConfig/generatedText/fluff/-",
+			"value": [
+				"nicemiceappreciation",
+				[
+					"T'ank you for accompanyink me.",
+					"You have been mozt uzeful, and reazonablie quiet about it.",
+					"T'ank you for ze ezcort. I vaz never in ze zlightezt danger, naturallement.",
+					"Zat vent better vith companie. T'ank you."
+				]
+			]
+		}
+	]
+]
