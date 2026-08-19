@@ -14,7 +14,7 @@
 			"path": "/scriptConfig/generatedText/goalText/nicemice_npc",
 			"value": [
 				"^cyan;A guard zhould ztand out! Vill you help me find zomet'ing zat makez me look <adjective>?",
-				"^cyan;Guardz az capable az myzelf ought to be nozized. Can you help me look <adjective>?"
+				"^cyan;Guardz az capable az myzelf ought to be notized. Can you help me look <adjective>?"
 			]
 		}
 	],

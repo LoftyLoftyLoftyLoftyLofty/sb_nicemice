@@ -33,7 +33,7 @@
 			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
 			"value": [
 				"Nekzt, ^green;ve vill need ^orange;<fetchedItems>^white;. You can handle zat, yez?",
-				"^green;Ze nekzt t'ing I require iz ^orange;<fetchedItems>^white;. It iz important to ze plan, zo do not dawdle."
+				"^green;Ze nekzt t'ing I require iz ^orange;<fetchedItems>^white;. It iz important to ze plan- do not delay!"
 			]
 		}
 	],
@@ -52,7 +52,7 @@
 			"path": "/scriptConfig/generatedText/completionText/first/nicemice_npc",
 			"value": [
 				"Ekzellent. Now ve may put zeze to uze.",
-				"Vell done, <player>. I never doubted you for a moment. Vell - barelie a moment."
+				"Vell done, <player>. I never doubted you for a moment. Vell - maybe a couple momentz..."
 			]
 		}
 	],

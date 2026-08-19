@@ -33,7 +33,7 @@
 			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
 			"value": [
 				"An outlaw iz on ze looze. Rumour haz it ^orange;<enemy.name> ze <enemy>^white; iz at ze ^orange;<spawnPoint>^white;<spawnPoint.direction>. Apparentlie <enemy.pronoun.copulativePast> been on ze run ever zinze <nicemicecrime>. ^green;Vould you go and <nicemicerequest>^white; and make t'ingz zafer here?",
-				"Ve have a zituation. Have you heard of ze outlaw ^orange;<enemy.name> ze <enemy>^white;? I hear <enemy.pronoun.copulative> layink low nearby after <nicemicecrime>. Ve do not vant zat zort of trouble here - ^green;go to ze ^orange;<spawnPoint>^green;<spawnPoint.direction> and <nicemicerequest>^white;?"
+				"Ve have a zituation. Have you heard of ze outlaw ^orange;<enemy.name> ze <enemy>^white;? I hear <enemy.pronoun.copulative> layink low nearby after <nicemicecrime>. Ve don't vant zat zort of trouble here - ^green;go to ze ^orange;<spawnPoint>^green;<spawnPoint.direction> and <nicemicerequest>^white;?"
 			]
 		}
 	],
@@ -157,7 +157,7 @@
 					"T'ank you. Ve do not need more trouble here.",
 					"Zplendid. Who needz guardz vith you about?",
 					"Ekzellent vork. Take ziz, and zay nozing of it.",
-					"I zhall know vhere to go about dangerouz outlawz in future."
+					"I know vhere to go zolutionz regardink dangerouz outlawz in future."
 				]
 			],
 			"inverse": true
@@ -171,7 +171,7 @@
 					"T'ank you. Ve do not need more trouble here.",
 					"Zplendid. Who needz guardz vith you about?",
 					"Ekzellent vork. Take ziz, and zay nozing of it.",
-					"I zhall know vhere to go about dangerouz outlawz in future."
+					"I know vhere to go zolutionz regardink dangerouz outlawz in future."
 				]
 			]
 		}

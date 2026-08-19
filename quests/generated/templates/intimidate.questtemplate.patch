@@ -146,7 +146,7 @@
 			"op": "add",
 			"path": "/scriptConfig/generatedText/completionText/last/nicemice_npc",
 			"value": [
-				"It vorked. Now <target> vill do vhatever I zay. Ziz vill be uzeful one day. T'ank you for your... azzistanze.",
+				"It vorked. Now <target> vill do vhatever I zay. Ziz vill be uzeful one day. T'ank you for your... azziztanze.",
 				"Vhy be liked vhen one can be feared inztead? T'ank you. <target> vill prove uzeful to me eventuallie..."
 			]
 		}
@@ -165,7 +165,7 @@
 			"op": "add",
 			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
 			"value": [
-				"T'ank you for your azzistanze. Now <target> vill do anyt'ing I zay. Zat iz goink to be uzeful...",
+				"T'ank you for your azziztanze. Now <target> vill do anyt'ing I zay. Zat iz goink to be uzeful...",
 				"Zozial manipulation iz eazie. <target> iz loyal to me now, zrough fear. T'ank you for makink it happen."
 			]
 		}

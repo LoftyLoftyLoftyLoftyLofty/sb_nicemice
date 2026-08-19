@@ -14,7 +14,7 @@
 			"path": "/scriptConfig/generatedText/goalText/nicemice_npc",
 			"value": [
 				"^cyan;I am tryink to imprezz a friend. I have zomet'ing in mind alreadie, but I need your help.",
-				"^cyan;I vizh to make a good imprezzion. Help me do zomet'ing zat vill quite undo <target>."
+				"^cyan;I vizh to make a good imprezzion. Help me do zomet'ing zat vill imprezz <target>."
 			]
 		}
 	],
@@ -33,7 +33,7 @@
 			"path": "/scriptConfig/generatedText/text/next/nicemice_npc",
 			"value": [
 				"I t'ink ziz ^orange;<gift> iz ze perfect prezent. ^green;Vould you deliver it to ^orange;<target>^white;? Do enzure <target.pronoun.subject> knowz it iz from me.",
-				"Who vould not love a new ^orange;<gift>?^white; I hope ^orange;<target>^white; apprezhiatez all ze vork I had you do for it. ^green;Deliver it to <target.pronoun.object>?"
+				"Who vouldn't love a new ^orange;<gift>?^white; I hope ^orange;<target>^white; apprezhiatez all ze vork I had you do for it. ^green;Deliver it to <target.pronoun.object>?"
 			]
 		}
 	],
@@ -90,7 +90,7 @@
 			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
 			"value": [
 				"Apparentlie <target> haz vanted a new <gift> for zome time. <target.pronoun.capitalSubject> loved it and cannot t'ank me enough. T'ank you for your help.",
-				"<target> liked ze gift? I require nozing in return. It feelz agreeable zimplie to give a friend zomet'ing to enjoy."
+				"<target> liked ze gift? Ziz iz vonderful newz!"
 			]
 		}
 	],

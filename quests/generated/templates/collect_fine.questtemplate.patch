@@ -127,7 +127,7 @@
 			"op": "add",
 			"path": "/scriptConfig/generatedText/completionText/next/nicemice_npc",
 			"value": [
-				"T'ank you for collectink <target>'z fine. I vaz not confident <target.pronoun.subject> vould pay if I vent myzelf. Fortunatelie you look like zomeone <target> vould razer not trifle vith.",
+				"T'ank you for collectink <target>'z fine. I vaz not confident <target.pronoun.subject> vould pay if I vent myzelf. Fortunatelie you look like zomeone <target> vould razer not mezz vith.",
 				"T'ank you for teachink <target> zat actionz have conzequenzez. I zee zeveral uzez for ziz <item> alreadie."
 			]
 		}
@@ -146,8 +146,8 @@
 			"op": "add",
 			"path": "/scriptConfig/generatedText/completionText/last/nicemice_npc",
 			"value": [
-				"Nize vork collectink ze fine from <target>. I vaz a trifle vorried <target.pronoun.subject> vould vriggle out of it. Keep ze <item> az payment.",
-				"T'ank you for teachink <target> a lezzon. I hope <target.pronoun.subject> realizez zat nobodie iz above ze law. Ze <item> iz yourz. You have earned it."
+				"Nize vork collectink ze fine from <target>. I vaz vorried <target.pronoun.subject> vould zlink out of it. Keep ze <item> az payment.",
+				"T'ank you for teachink <target> a lezzon. I hope <target.pronoun.subject> realizez zat nobodie iz above ze law. Ze <item> iz yourz. You've earned it."
 			]
 		}
 	],

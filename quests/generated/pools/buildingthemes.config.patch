@@ -1,0 +1,11 @@
+[
+	{
+		"op" : "add",
+		"path" : "/0/1/-",
+		"value" : 
+		{
+			"tag" : "nicemice", 
+			"name" : "pieces of ^orange;Nicemice furniture"
+		}
+	}
+]

@@ -32,7 +32,7 @@
 			"op": "add",
 			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
 			"value": [
-				"My <nicemicefriend> ^orange;<victimNpcType>^white; vaz to vizit zo ve could <nicemiceactivity>, and haz not appeared. Zoze ^orange;<enemy>^white; I zaw near ze ^orange;<spawnPoint>^white;<spawnPoint.direction> are involved - I am certain of it. ^green;Pleaze zave <victimNpcType>^white;.",
+				"My <nicemicefriend> ^orange;<victimNpcType>^white; vaz to vizit zo ve could <nicemiceactivity>, and haz not appeared. Zoze ^orange;<enemy>^white; I zaw near ze ^orange;<spawnPoint>^white;<spawnPoint.direction> are involved - I am zertain of it. ^green;Pleaze zave <victimNpcType>^white;.",
 				"I vaz out vith my <nicemicefriend> ^orange;<victimNpcType>^white; vhen ve became zeparated. Zere vere ^orange;<enemy>^white; zneakink about, and I fear <victimNpcType> haz been carried off. I lazt zaw <victimNpcType.pronoun.object> near ze ^orange;<spawnPoint>^white;<spawnPoint.direction>. ^green;Go and find <victimNpcType.pronoun.object>^white;?"
 			]
 		}
@@ -91,7 +91,7 @@
 					"couzin",
 					"zecond couzin",
 					"azzoziate",
-					"littermate",
+					"ziblink",
 					"acquaintanze"
 				]
 			],
@@ -107,7 +107,7 @@
 					"couzin",
 					"zecond couzin",
 					"azzoziate",
-					"littermate",
+					"ziblink",
 					"acquaintanze"
 				]
 			]

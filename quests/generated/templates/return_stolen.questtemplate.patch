@@ -51,7 +51,7 @@
 			"op": "add",
 			"path": "/scriptConfig/generatedText/text/next/nicemice_npc",
 			"value": [
-				"Now ve come to zome houzebreakink. ^green;Take ze ztolen ^orange;<item>^green; from ^orange;<thief>'z^green; home, and ^green;plaze it back in ^orange;<victim>'z^green; houze.^white; I zhall vatch for onlookerz.",
+				"Now it'z time for zome breakink and enterink. ^green;Take ze ztolen ^orange;<item>^green; from ^orange;<thief>'z^green; home, and ^green;plaze it back in ^orange;<victim>'z^green; houze.^white; I zhall vatch for onlookerz.",
 				"A little breakink and enterink never harmed anyone. Verie nearlie never. ^green;Zteal back ze ^orange;<item> ^green;in ^orange;<thief>'z ^green;home. Zen put it back in ^orange;<victim>'z ^green;home."
 			]
 		}
@@ -70,8 +70,8 @@
 			"op": "add",
 			"path": "/scriptConfig/generatedText/text/last/nicemice_npc",
 			"value": [
-				"Finallie, zome vigilante juztize. ^green;Remove ze ztolen ^orange;<item>^green; from ^orange;<thief>'z^green; home, and ^green;plaze it back in ^orange;<victim>'z^green; houze.^white; I zhall be ze lookout.",
-				"Everyt'ing elze iz in plaze. It iz time for burglarie of ze rightful zort. I zhall vatch vhile you^green; take ze ztolen ^orange;<item>^green; from ^orange;<thief>'z^green; plaze. Zen zlip it back into ^orange;<victim>'z^green; home."
+				"Finallie, zome vigilantie juztize. ^green;Remove ze ztolen ^orange;<item>^green; from ^orange;<thief>'z^green; home, and ^green;plaze it back in ^orange;<victim>'z^green; houze.^white; I zhall be ze lookout.",
+				"Everyt'ing elze iz in plaze. It iz time for burglarie of ze righteouz zort. I zhall vatch vhile you^green; take ze ztolen ^orange;<item>^green; from ^orange;<thief>'z^green; plaze. Zen zlip it back into ^orange;<victim>'z^green; home."
 			]
 		}
 	],
@@ -109,7 +109,7 @@
 			"path": "/scriptConfig/generatedText/completionText/first/nicemice_npc",
 			"value": [
 				"You did zat verie vell. I cannot vait to zee <thief>'z faze vhen <thief.pronoun.subject> realizez <thief.pronoun.subject> haz had a taste of <thief.pronoun.possessiveDet> own medizine.",
-				"Zat vaz eazier zan I ekzpected. You are rather good at ziz, are you not? <victim> vill be delighted to zee <victim.pronoun.possessiveDet> propertie vhere it belongz."
+				"Zat vaz eazier zan I ekzpected. You're rat'er good at ziz, are you not? <victim> vill be delighted to zee <victim.pronoun.possessiveDet> propertie vhere it belongz."
 			]
 		}
 	],
@@ -146,8 +146,8 @@
 			"op": "add",
 			"path": "/scriptConfig/generatedText/completionText/last/nicemice_npc",
 			"value": [
-				"<player> and <questGiver>, purveyorz of vigilante juztize. It haz a certain ring to it. You vere like a ghozt in zere - <thief> vill not know vhat to t'ink.",
-				"You have a real talent for ziz zort of vork, and you brought your own toolz bezidez. <victim> vill be pleazed to zee <victim.pronoun.possessiveDet> propertie returned."
+				"<player> and <questGiver>, purveyorz of vigilantie juztize. It haz a zertain ring to it. You vere like a ghozt in zere - <thief> vill not know vhat to t'ink.",
+				"You have a real talent for ziz zort of vork, and you brought your own toolz, too! <victim> vill be pleazed to zee <victim.pronoun.possessiveDet> propertie returned."
 			]
 		}
 	],
@@ -166,7 +166,7 @@
 			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
 			"value": [
 				"You made zat look effortlezz. <victim> vill be pleazed ve recovered <victim.pronoun.possessiveDet> <item>. Have you done ziz before? Zere iz no danger of printz vith a zpezialized tool like zat...",
-				"Nize vork. <victim> vill be quite t'ankful zat I helped recover <victim.pronoun.possessiveDet> <item>. Ve are a darink vigilante duo now."
+				"Nize vork. <victim> vill be quite t'ankful zat I helped recover <victim.pronoun.possessiveDet> <item>. Ve are a darink vigilantie duo now."
 			]
 		}
 	],
@@ -184,7 +184,7 @@
 			"op": "add",
 			"path": "/scriptConfig/generatedText/title/nicemice_npc",
 			"value": [
-				"<questGiver> ze vigilante",
+				"<questGiver> ze vigilantie",
 				"Help out <victim>"
 			]
 		}
@@ -207,7 +207,7 @@
 					"Help out <victim>"
 				],
 				"nicemice_npc": [
-					"<questGiver> ze vigilante",
+					"<questGiver> ze vigilantie",
 					"Help out <victim>"
 				]
 			}

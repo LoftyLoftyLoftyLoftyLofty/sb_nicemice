@@ -33,7 +33,7 @@
 			"path": "/scriptConfig/generatedText/text/first/nicemice_npc",
 			"value": [
 				"I t'ink <target> and I vould make ekzellent friendz, but <target.pronoun.subject> iz forever in ze companie of horrible ^orange;<other>^white;. Let uz put a ztop to it. ^green;Here iz a ^orange;note^green; I vould like delivered to ^orange;<target>^white; zat vill put <target.pronoun.object> off zeeink <target.pronoun.possessiveDet> dreadful friend again.",
-				"Let uz begin by befriendink <target>. Firzt ve muzt make <target.pronoun.object> ztop zeeink <target.pronoun.possessiveDet> tirezome friend. ^green;I have prepared ziz ^orange;note^green; for ^orange;<target>^white; outlinink ze vorzer pointz of zat borink perzon. Do deliver it for me."
+				"Let uz begin by befriendink <target>. Firzt ve muzt make <target.pronoun.object> ztop zeeink <target.pronoun.possessiveDet> tirezome friend. ^green;I have prepared ziz ^orange;note^green; for ^orange;<target>^white; outlinink ze vorzer pointz of zat borink perzon. Deliver it for me."
 			]
 		}
 	],
@@ -109,7 +109,7 @@
 			"path": "/scriptConfig/generatedText/completionText/first/nicemice_npc",
 			"value": [
 				"Vonderful newz. <other> iz out and I am in. Ziz vill be zplendid.",
-				"You did it. Friendz are valuable azzetz, and I am zure <target> vill prove uzeful to me in future."
+				"You did it. Friendz are valuable azzetz, and I am zure <target> vill prove uzeful to me in ze future."
 			]
 		}
 	],
@@ -128,7 +128,7 @@
 			"path": "/scriptConfig/generatedText/completionText/next/nicemice_npc",
 			"value": [
 				"<target> abandoned <other> and accepted my friendzhip. A new friend vill certainlie come in handie.",
-				"T'ank you for deliverink ze note. <target> and I are now offiziallie friendz."
+				"T'ank you for deliverink ze note. <target> and I are now friendz offiziallement."
 			]
 		}
 	],

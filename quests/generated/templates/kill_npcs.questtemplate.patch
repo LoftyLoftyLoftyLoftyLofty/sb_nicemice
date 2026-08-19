@@ -52,7 +52,7 @@
 			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
 			"value": [
 				"You dealt vith ze <enemy>? <nicemiceappreciation>",
-				"Did you dizcover vhat ze <enemy> vere about? <nicemiceappreciation>"
+				"Did you dizcover vhat ze <enemy> vere zchemink about? <nicemiceappreciation>"
 			]
 		}
 	],
@@ -89,7 +89,8 @@
 					"ambuzhed me and took my pack",
 					"came from novhere and relieved me of my pursze",
 					"made me hand over my provizionz",
-					"knocked me flat and laughed about it"
+					"knocked me flat and laughed about it",
+					"called me zhorty zhort-zhortz"
 				]
 			],
 			"inverse": true
@@ -103,7 +104,8 @@
 					"ambuzhed me and took my pack",
 					"came from novhere and relieved me of my pursze",
 					"made me hand over my provizionz",
-					"knocked me flat and laughed about it"
+					"knocked me flat and laughed about it",
+					"called me zhorty zhort-zhortz"
 				]
 			]
 		}

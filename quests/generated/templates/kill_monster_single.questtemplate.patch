@@ -32,7 +32,7 @@
 			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
 			"value": [
 				"Zere haz been talk of a <nicemicegiant> ^orange;<monster>^white; over near ze ^orange;<spawnPoint>^white;<spawnPoint.direction>. Zome zay it <nicemicerumour>. Vould you <nicemicerequest>, zo I may feel zafe again?",
-				"I vaz out valkink near ze ^orange;<spawnPoint>^white;<spawnPoint.direction> vhen a <nicemicegiant> ^orange;<monster>^white; appeared and zcreamed rudelie in my faze. It vaz undignified. Vould you <nicemicerequest>, to teach it mannerz?"
+				"I vaz out valkink near ze ^orange;<spawnPoint>^white;<spawnPoint.direction> vhen a <nicemicegiant> ^orange;<monster>^white; appeared and zcreamed rudelie in my faze. It vaz undignified. Vould you <nicemicerequest>, to teach it zome mannerz?"
 			]
 		}
 	],
@@ -84,7 +84,7 @@
 			"value": [
 				"nicemicegiant",
 				[
-					"ferocious",
+					"ferociouz",
 					"monztrouz",
 					"ekzezzivelie large",
 					"deadlie",
@@ -100,7 +100,7 @@
 			"value": [
 				"nicemicegiant",
 				[
-					"ferocious",
+					"ferociouz",
 					"monztrouz",
 					"ekzezzivelie large",
 					"deadlie",
@@ -190,7 +190,7 @@
 				"nicemiceappreciation",
 				[
 					"You defeated it? Ekzellent. Take ziz for your trouble.",
-					"Zplendid. I zhall valk ze long vay round no longer.",
+					"Zplendid. I zhall valk ze long vay around no longer.",
 					"T'ank you. You are a mozt effective perzon to know.",
 					"Vell done. I am imprezzed, and I do not imprezz eazilie."
 				]
@@ -204,7 +204,7 @@
 				"nicemiceappreciation",
 				[
 					"You defeated it? Ekzellent. Take ziz for your trouble.",
-					"Zplendid. I zhall valk ze long vay round no longer.",
+					"Zplendid. I zhall valk ze long vay around no longer.",
 					"T'ank you. You are a mozt effective perzon to know.",
 					"Vell done. I am imprezzed, and I do not imprezz eazilie."
 				]

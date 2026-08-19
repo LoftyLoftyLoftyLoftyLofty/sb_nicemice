@@ -33,7 +33,7 @@
 			"path": "/scriptConfig/generatedText/text/default/nicemice_npc",
 			"value": [
 				"Nekzt, ^green;retrieve my ^orange;<item>^white;. I loaned it to ^orange;<target>^white; lazt veek. ^green;Azk for it back^white; - ve zhall need it for ze nekzt phaze.",
-				"Now fetch me one ^orange;<item>. <target>^white; haz ze largezt collection in ze area; ^green;azk politelie^white; and <target.pronoun.subject> vill not begrudge uz a zingle one."
+				"Now fetch me one ^orange;<item>. <target>^white; haz ze largezt collection in ze area; ^green;azk politelie^white; and <target.pronoun.subject> vill azzizt uz... Or elze."
 			]
 		}
 	],
@@ -70,7 +70,7 @@
 			"op": "add",
 			"path": "/scriptConfig/generatedText/completionText/default/nicemice_npc",
 			"value": [
-				"T'ank you for prizing zat out of <target>. Now ve may proceed.",
+				"T'ank you for retrievink zat from <target>. Now ve may proceed.",
 				"Zat iz a handzome <item>. T'ank you for collectink it."
 			]
 		}

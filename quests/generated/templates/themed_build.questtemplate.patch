@@ -70,7 +70,7 @@
 			"op": "add",
 			"path": "/scriptConfig/generatedText/title/nicemice_npc",
 			"value": [
-				"<questGiver>'z plan for ekzpansion",
+				"<questGiver>'z plan for ekzpanzion",
 				"<questGiver> vantz new neighbourz"
 			]
 		}
@@ -93,7 +93,7 @@
 					"<questGiver> wants new friends"
 				],
 				"nicemice_npc": [
-					"<questGiver>'z plan for ekzpansion",
+					"<questGiver>'z plan for ekzpanzion",
 					"<questGiver> vantz new neighbourz"
 				]
 			}
