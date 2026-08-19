@@ -24,7 +24,9 @@ function update(dt)
 			player.giveItem("nicemice_tail_mouse")
 			player.setProperty("nicemice_starterTail", true)
 		end
-		status.setPersistentEffects("nicemice_recolorable_tail", {"nicemice_recolorable_tail"})
+		
+		-- 2026 Aug 19 / this status effect is deprecated in favor of properly applying item directives
+		-- status.setPersistentEffects("nicemice_recolorable_tail", {"nicemice_recolorable_tail"})
 	end
 end
 

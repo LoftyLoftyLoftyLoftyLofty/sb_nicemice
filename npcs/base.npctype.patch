@@ -18,5 +18,10 @@
 		"op" : "add",
 		"path" : "/scripts/-",
 		"value" : "/scripts/nicemice_npcStatusText.lua"
+	},
+	{
+		"op" : "add",
+		"path" : "/scripts/-",
+		"value" : "/scripts/nicemice_npc_tail_manager.lua"
 	}
 ]
