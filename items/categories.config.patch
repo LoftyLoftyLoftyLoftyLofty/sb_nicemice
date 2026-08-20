@@ -3,11 +3,5 @@
 		"op" : "add",
 		"path" : "/labels/nicemice_heatedStorage",
 		"value" : "Incubated Storage"
-	},
-	
-	{
-		"op" : "add",
-		"path" : "/labels/nicemice_ship_pet",
-		"value" : "Petport Pet"
 	}
 ]
