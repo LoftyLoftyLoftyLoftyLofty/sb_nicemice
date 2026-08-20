@@ -1,0 +1,279 @@
+//  M.A.U.S. UTILITY UNIT -- PLACEHOLDER ANIMATION
+//
+//  State names and emitters are petbunny's, verified rather than guessed. Every
+//  state points at the pteropod's fly.<frame> strip because that is the
+//  placeholder art -- this exists to prove the spawn pipeline, not to look like
+//  anything.
+//
+//  WHY "movement" AND NOT "body"
+//
+//  groundPet.lua calls animator.setAnimationState("movement", ...) directly out
+//  of setMovementState, setIdleState and setJumpState. Behavior-tree monsters
+//  use a state type named "body" driven from behaviorConfig instead. Setting a
+//  state type that does not exist raises, and the movement path runs on the
+//  update tick, so a body-typed animation kills the pet script immediately.
+//
+//  STATE INVENTORY
+//
+//  idle, stand, walk, run, swim, jumping, falling  -- required by groundPet.lua
+//  eat, eatloop, inspect, sleep, sound, blink,
+//  invisible                                       -- driven by the action states
+//
+//  All fourteen are petbunny's. Do not prune them before the behavior rewrite:
+//  an action state setting a name that is not here fails silently and leaves the
+//  unit frozen mid-animation, which is miserable to diagnose.
+//
+//  PLACEHOLDER CAVEAT: "invisible" is mapped to a visible frame, so anything
+//  that expects the unit to disappear (vent travel, sleeping out of sight) will
+//  show it instead. Give it a genuinely empty frame once real art exists.
+//
+//  EMOTES
+//
+//  groundPet.emote() does animator.burstParticleEmitter("emote" .. emoteType),
+//  and interact() fires "emotehappy" on the first click. Bursting an emitter
+//  that is not defined raises. petbunny defines exactly four -- happy, sad,
+//  confused, sleepy -- so those are the four the action states use.
+
+{
+  "animatedParts" : {
+    "stateTypes" : {
+      "movement" : {
+        "priority" : 0,
+        "default" : "idle",
+        "states" : {
+          //  --- required by groundPet.lua ---
+          "idle"      : { "frames" : 8, "cycle" : 0.75, "mode" : "loop" },
+          "stand"     : { "frames" : 8, "cycle" : 0.75, "mode" : "loop" },
+          "walk"      : { "frames" : 8, "cycle" : 0.55, "mode" : "loop" },
+          "run"       : { "frames" : 8, "cycle" : 0.35, "mode" : "loop" },
+          "swim"      : { "frames" : 8, "cycle" : 0.75, "mode" : "loop" },
+          "jumping"   : { "frames" : 8, "cycle" : 0.75, "mode" : "loop" },
+          "falling"   : { "frames" : 8, "cycle" : 0.75, "mode" : "loop" },
+
+          //  --- driven by the action states ---
+          "eat"       : { "frames" : 8, "cycle" : 0.55, "mode" : "transition", "transition" : "eatloop" },
+          "eatloop"   : { "frames" : 8, "cycle" : 0.55, "mode" : "loop" },
+          "inspect"   : { "frames" : 8, "cycle" : 0.75 },
+          "sleep"     : { "frames" : 8, "cycle" : 1.60, "mode" : "loop" },
+          "sound"     : { "frames" : 8, "cycle" : 0.75, "mode" : "transition", "transition" : "stand" },
+          "blink"     : { "frames" : 8, "cycle" : 0.75, "mode" : "loop" },
+          "invisible" : { "frames" : 8, "cycle" : 0.75, "mode" : "loop" }
+        }
+      }
+    },
+
+    "parts" : {
+      //  Base layer -- responds to world lighting. <partImage> resolves to the
+      //  "body" entry of whichever .monsterpart the engine selected for this
+      //  instance. This is the anchor part; the glow layer hangs off it.
+      "body" : {
+        "properties" : {
+          "zLevel" : 2,
+          "centered" : true,
+          "offset" : [0, 0]
+        },
+        "partStates" : {
+          "movement" : {
+            "idle"      : { "properties" : { "image" : "<partImage>:fly.<frame>" } },
+            "stand"     : { "properties" : { "image" : "<partImage>:fly.<frame>" } },
+            "walk"      : { "properties" : { "image" : "<partImage>:fly.<frame>" } },
+            "run"       : { "properties" : { "image" : "<partImage>:fly.<frame>" } },
+            "swim"      : { "properties" : { "image" : "<partImage>:fly.<frame>" } },
+            "jumping"   : { "properties" : { "image" : "<partImage>:fly.<frame>" } },
+            "falling"   : { "properties" : { "image" : "<partImage>:fly.<frame>" } },
+            "eat"       : { "properties" : { "image" : "<partImage>:fly.<frame>" } },
+            "eatloop"   : { "properties" : { "image" : "<partImage>:fly.<frame>" } },
+            "inspect"   : { "properties" : { "image" : "<partImage>:fly.<frame>" } },
+            "sleep"     : { "properties" : { "image" : "<partImage>:fly.<frame>" } },
+            "sound"     : { "properties" : { "image" : "<partImage>:fly.<frame>" } },
+            "blink"     : { "properties" : { "image" : "<partImage>:fly.<frame>" } },
+            "invisible" : { "properties" : { "image" : "<partImage>:fly.<frame>" } }
+          }
+        }
+      },
+
+      //  Glow layer, drawn over the base. Anything that should stay lit
+      //  regardless of ambient light -- optics, status strips, thruster glow --
+      //  lives in this png and nothing else does. Resolves to the
+      //  "bodyfullbright" entry of the SAME monsterpart the base layer came
+      //  from, so a chassis variant always keeps its own glow.
+      //
+      //  NOTE: this inverts pteropod's layer order, which draws its non-glowing
+      //  layer on top. Irrelevant while both layers point at the same
+      //  placeholder png; revisit if real art has them overlapping.
+      "bodyfullbright" : {
+        "properties" : {
+          "zLevel" : 1,
+          "centered" : true,
+          "anchorPart" : "body",
+          "fullbright" : true
+        },
+        "partStates" : {
+          "movement" : {
+            "idle"      : { "properties" : { "image" : "<partImage>:fly.<frame>" } },
+            "stand"     : { "properties" : { "image" : "<partImage>:fly.<frame>" } },
+            "walk"      : { "properties" : { "image" : "<partImage>:fly.<frame>" } },
+            "run"       : { "properties" : { "image" : "<partImage>:fly.<frame>" } },
+            "swim"      : { "properties" : { "image" : "<partImage>:fly.<frame>" } },
+            "jumping"   : { "properties" : { "image" : "<partImage>:fly.<frame>" } },
+            "falling"   : { "properties" : { "image" : "<partImage>:fly.<frame>" } },
+            "eat"       : { "properties" : { "image" : "<partImage>:fly.<frame>" } },
+            "eatloop"   : { "properties" : { "image" : "<partImage>:fly.<frame>" } },
+            "inspect"   : { "properties" : { "image" : "<partImage>:fly.<frame>" } },
+            "sleep"     : { "properties" : { "image" : "<partImage>:fly.<frame>" } },
+            "sound"     : { "properties" : { "image" : "<partImage>:fly.<frame>" } },
+            "blink"     : { "properties" : { "image" : "<partImage>:fly.<frame>" } },
+            "invisible" : { "properties" : { "image" : "<partImage>:fly.<frame>" } }
+          }
+        }
+      }
+    }
+  },
+
+  "effects" : {
+    //  Referenced by knockoutEffect in the monstertype.
+    "blink" : {
+      "type" : "flash",
+      "time" : 0.25,
+      "directives" : "fade=ffffff;0.5"
+    }
+  },
+
+  "particleEmitters" : {
+    "damage" : {
+      "emissionRate" : 0.7,
+      "particles" : [ ]
+    },
+
+    //  Referenced by deathParticles in the monstertype.
+    "deathPoof" : {
+      "particles" : [
+        {
+          "particle" : {
+            "type" : "animated",
+            "animation" : "/animations/puff2c/puff2c.animation",
+            "size" : 1,
+            "angularVelocity" : 35,
+            "fade" : 1,
+            "destructionTime" : 1,
+            "position" : [0, 0],
+            "initialVelocity" : [0, 0],
+            "finalVelocity" : [0, 0],
+            "approach" : [1, 1],
+            "timeToLive" : 0.4,
+            "layer" : "middle"
+          }
+        }
+      ]
+    },
+
+    //  --- the four petbunny defines; groundPet.emote() bursts these by name ---
+    "emotehappy" : {
+      "emissionRate" : 1,
+      "particles" : [
+        {
+          "particle" : {
+            "type" : "animated",
+            "animation" : "/animations/emotes/happy.animation",
+            "position" : [0.5, 2],
+            "initialVelocity" : [0, 0],
+            "finalVelocity" : [0, 0],
+            "destructionTime" : 0.2,
+            "destructionAction" : "shrink",
+            "layer" : "front",
+            "timeToLive" : 0.8,
+            "flippable" : false
+          }
+        }
+      ]
+    },
+
+    "emotesad" : {
+      "emissionRate" : 1,
+      "particles" : [
+        {
+          "particle" : {
+            "type" : "animated",
+            "animation" : "/animations/emotes/sad.animation",
+            "position" : [0.5, 2],
+            "initialVelocity" : [0, 0],
+            "finalVelocity" : [0, 0],
+            "destructionTime" : 0.2,
+            "destructionAction" : "shrink",
+            "layer" : "front",
+            "timeToLive" : 0.8,
+            "flippable" : false
+          }
+        }
+      ]
+    },
+
+    "emoteconfused" : {
+      "emissionRate" : 1,
+      "particles" : [
+        {
+          "particle" : {
+            "type" : "animated",
+            "animation" : "/animations/emotes/confused.animation",
+            "position" : [0.5, 2],
+            "initialVelocity" : [0, 0],
+            "finalVelocity" : [0, 0],
+            "destructionTime" : 0.2,
+            "destructionAction" : "shrink",
+            "layer" : "front",
+            "timeToLive" : 0.8,
+            "flippable" : false
+          }
+        }
+      ]
+    },
+
+    "emotesleepy" : {
+      "emissionRate" : 1,
+      "particles" : [
+        {
+          "particle" : {
+            "type" : "animated",
+            "animation" : "/animations/emotes/sleepy.animation",
+            "position" : [0.5, 2],
+            "initialVelocity" : [0, 0],
+            "finalVelocity" : [0, 0],
+            "destructionTime" : 0.2,
+            "destructionAction" : "shrink",
+            "layer" : "front",
+            "timeToLive" : 0.8,
+            "flippable" : false
+          }
+        }
+      ]
+    },
+
+    //  Ambient Zs while asleep -- separate from the emotesleepy burst.
+    "sleep" : {
+      "emissionRate" : 2,
+      "particles" : [
+        {
+          "particle" : {
+            "type" : "animated",
+            "animation" : "/animations/statuseffects/sleep/sleep.animation",
+            "position" : [0, 0],
+            "initialVelocity" : [0, 3],
+            "finalVelocity" : [10, 1],
+            "approach" : [2, 50],
+            "size" : 1,
+            "layer" : "middle",
+            "timeToLive" : 9,
+            "flippable" : false,
+            "variance" : { "size" : 0.3 }
+          }
+        }
+      ]
+    }
+  },
+
+  "sounds" : {
+    "turnHostile" : [ ],
+    "deathPuff" : [ "/sfx/npc/enemydeathpuff.ogg" ],
+    "petsound" : [ ]
+  }
+}

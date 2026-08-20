@@ -1,0 +1,72 @@
+//  M.A.U.S. PETPORT
+//
+//  HOW THIS FILE IS WIRED
+//
+//  "stateTypes" are independent tracks. Each has its own current state and they
+//  all run at once, so a script can drive stationState without disturbing
+//  anything else. nicemice_petport.lua calls
+//  animator.setAnimationState("stationState", "off" | "on").
+//
+//  "parts" are image layers. Every part name here MUST have a matching entry in
+//  the object's "animationParts" map -- that map is what <partImage> resolves
+//  to. A part with no entry there has no image and silently draws nothing.
+//
+//    base_lit        -> nicemice_petportlit.png   (responds to world lighting)
+//    base_fullbright -> nicemice_petport.png      (glow, ignores world lighting)
+//
+//  Naming follows the drone: "lit" means world-lit, "fullbright" means
+//  self-lit. Same split, same layer order -- glow drawn over base.
+//
+//  PLACEHOLDER STATE
+//
+//  default.frames declares exactly one frame, named "default", so both off and
+//  on point at it. Keeping BOTH states declared matters: the Lua sets them by
+//  name every tick, and removing a state type a script addresses raises. An
+//  unknown state NAME within an existing type is harmless, but an unknown TYPE
+//  is not.
+//
+//  When real art lands, give "on" its own frames (on.1, on.2, ... -- objects
+//  with an .animation file are 1-indexed) and only this file changes.
+
+{
+  "animatedParts" : {
+    "stateTypes" : {
+      "stationState" : {
+        "default" : "off",
+        "states" : {
+          "off" : { "frames" : 1 },
+          "on"  : { "frames" : 1 }
+        }
+      }
+    },
+
+    "parts" : {
+      "base_lit" : {
+        "properties" : {
+          "centered" : false,
+          "zLevel" : 2
+        },
+        "partStates" : {
+          "stationState" : {
+            "off" : { "properties" : { "image" : "<partImage>:default" } },
+            "on"  : { "properties" : { "image" : "<partImage>:default" } }
+          }
+        }
+      },
+
+      "base_fullbright" : {
+        "properties" : {
+          "centered" : false,
+          "zLevel" : 1,
+          "fullbright" : true
+        },
+        "partStates" : {
+          "stationState" : {
+            "off" : { "properties" : { "image" : "<partImage>:default" } },
+            "on"  : { "properties" : { "image" : "<partImage>:default" } }
+          }
+        }
+      }
+    }
+  }
+}

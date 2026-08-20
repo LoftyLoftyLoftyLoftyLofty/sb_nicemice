@@ -1,0 +1,43 @@
+{
+  "itemName" : "nicemice_ship_pet_test",
+  "price" : 0,
+  "rarity" : "Rare",
+  "category" : "nicemice_ship_pet",
+  "inventoryIcon" : "nicemice_ship_pet_test.png",
+  "description" : "A dormant M.A.U.S. utility unit. Socket it into a Petport to bring it online.",
+  "shortdescription" : "Utility Unit",
+  "itemTags" : [ "nicemice", "nicemice_ship_pet" ],
+
+  //  Not stackable: each unit carries its own saved state in parameters below.
+  "maxStack" : 1,
+
+  //  PET DEFINITION
+  //
+  //  Everything the petport needs in order to spawn this specific unit. A found
+  //  item ships with just `monsterType` and whatever flavour fields the loot
+  //  entry sets; the rest is written back by the petport as the unit lives.
+  //
+  //  The item IS the unit. There is no capture pod, no pod uuid, no collar --
+  //  which also means the ship-pet/wild-monster boundary is enforced by the
+  //  item schema rather than by a runtime type check: a wild monster has no
+  //  nicemice_ship_pet item, so it can never be socketed.
+  //
+  //  nicemice_petport.lua reads this through root.itemConfig(item).config.petData
+  //  and merges item.parameters.petData over the top, so anything here is a
+  //  DEFAULT that a lived-in item overrides.
+  "petData" : {
+    //  MUST match the monstertype's "type" exactly. A mismatch makes spawnPet
+    //  return nil and the petport looks fine while doing nothing.
+    "monsterType" : "nicemice_ship_pet_drone",
+
+    //  Display fields, shown in the petport UI
+    "petName" : "Unit",
+
+    //  Written back by the petport. Left empty on a freshly found item.
+    //  status  -- health and other resources, so a unit resumes where it left off
+    //  storage -- the monster's own storage table: knownPlayers, foodLikings,
+    //             petResources, and anything else its scripts persist
+    "status" : {},
+    "storage" : {}
+  }
+}

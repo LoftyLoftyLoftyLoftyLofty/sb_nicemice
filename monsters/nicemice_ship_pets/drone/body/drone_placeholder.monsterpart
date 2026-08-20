@@ -1,0 +1,55 @@
+//  M.A.U.S. UTILITY UNIT -- PLACEHOLDER BODY VARIANT
+//
+//  Without a monsterpart matching this monstertype's category and part slot,
+//  <partImage> in the animation resolves to nothing and the unit spawns with no
+//  art. This file is what makes the drone visible.
+//
+//  WHERE THIS FILE LIVES
+//
+//  Monsterparts sit in a subfolder of the monstertype's directory named after
+//  the part TYPE. With the monstertype at /monsters/nicemice_ship_pets/ and a
+//  part slot called "body", this belongs in:
+//
+//    /monsters/nicemice_ship_pets/body/
+//
+//  Monsters with several slots get one folder each -- penguin soldiers keep
+//  arms, bodies, hats and weapons in parallel directories. The png named in
+//  "frames" resolves relative to THIS file, so it lives in the same folder.
+//
+//  HOW THE BINDING WORKS
+//
+//    "category" -> must match an entry in the monstertype's "categories"
+//    "type"     -> must match an entry in the monstertype's "parts"
+//    "frames"   -> maps animation part NAME to a png in this directory
+//
+//  The engine collects every monsterpart matching category + type and picks one
+//  at random when the unit is instantiated, which is how petbunny gets its black
+//  / blackwhite variants. Adding more chassis later means dropping more
+//  .monsterpart files in beside this one -- no changes to the monstertype.
+//
+//  NAME THE PNGS AFTER THE VARIANT, NOT THE SLOT. Every unit type sharing this
+//  parent directory shares this body/ folder, separated only by "category". A
+//  generic body.png would be claimed by whichever type got there first, so
+//  petbunny's convention -- black.png, blackwhite.png -- is load-bearing rather
+//  than stylistic.
+//
+//  Both keys in "frames" correspond to parts declared in the animation:
+//  "body" is the world-lit base layer, "bodyfullbright" the glow layer drawn
+//  over it. Point both at the same placeholder png for now; split them when
+//  real art exists.
+//
+//  NOTE ON VARIANT PERSISTENCE: which monsterpart gets chosen follows from the
+//  monster's seed. groundPet.lua hands that seed to its anchor via setPet, but
+//  the station currently discards it -- so a unit may change appearance when it
+//  respawns. Worth resolving before more than one variant exists.
+
+{
+  "name" : "drone_placeholder",
+  "category" : "nicemice_ship_pet_drone",
+  "type" : "body",
+
+  "frames" : {
+    "body" : "body_0_lit.png",
+    "bodyfullbright" : "body_0_fullbright.png"
+  }
+}
