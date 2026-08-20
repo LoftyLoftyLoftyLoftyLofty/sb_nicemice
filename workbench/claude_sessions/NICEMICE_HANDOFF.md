@@ -507,6 +507,93 @@ Adding `"frames"` and `"animationCycle"` to the orientations did NOT fix this,
 though they are still required wherever `imageLayers` use `<frame>` — the
 orientation's `frames` count is what that substitution resolves against.
 
+**`initialStorage` and `initialStatus` do NOT seed a monster's `storage`.**
+`petspawner.lua` appears to nest them under `scriptConfig`; it does not —
+`Pet:_scriptConfig(parameters)` returns `parameters` unchanged, so the two names
+are the same table and those fields land at the TOP LEVEL of what reaches
+`world.spawnMonster`. But flattening them there still did not work: a unit
+spawned with a fully populated `initialStorage` came up with config-default
+`petResources` and an empty `knownPlayers`.
+
+**What does work is spawn parameters as config parameters.** `groundPet.lua`
+reads
+
+    storage.petResources = storage.petResources or config.getParameter("petResources")
+    storage.knownPlayers = storage.knownPlayers or config.getParameter("knownPlayers", {})
+    storage.foodLikings  = storage.foodLikings  or config.getParameter("foodLikings", {})
+
+and a fresh monster's storage is empty, so passing saved values as SPAWN
+PARAMETERS under those exact names lands them through the fallback branch. Same
+path `level`, `persistent` and `anchorName` already arrive by. Omit a key and the
+monstertype's default applies, so a brand new unit is unaffected.
+
+`storage.anchorPosition` has no config fallback and cannot be restored this way —
+the petport's direct `setAnchor` call is what establishes it.
+
+**A missing SCRIPT FILE fails loudly; a missing FUNCTION fails silently.** A bad
+path in a monstertype's `scripts` list throws `AssetException` and refuses to
+spawn the monster at all, logging once per attempt — with `RESPAWN_GRACE` that is
+once a second forever, which at least gets noticed. A bare
+`world.callScriptedEntity` naming a function the target does not define returns
+nil and logs nothing.
+
+**The first `setPet` after a spawn is an echo, not news.** `spawnPet` calls
+`setAnchor` immediately and `groundPet.lua` answers by pushing back state it
+initialized microseconds earlier. Accepting it means a restore that silently
+failed also DESTROYS the values it failed to restore — observed as config
+defaults written into the item 23ms after spawn. Ignore that first callback;
+`seed` is stable and safe to take from it.
+
+**`groundPet.lua` re-calls `setAnchor` every second** via `updateAnchor`, so
+`setPet` runs once per second for the life of the unit. An anchor that marks
+itself dirty on every callback performs a container swap per second, forever,
+replicated to every client. Compare durable fields (`knownPlayers`,
+`foodLikings`, `seed`) and write on change; let resource drift ride a slow timer.
+
+**Action state names are matched by a letters-only pattern, and petBehavior
+hardcodes vanilla's.** `groundPet.lua` builds its action list with
+`stateMachine.scanScripts(config.getParameter("scripts"), "(%a+Action)%.lua")`
+and looks the captured name up in `_ENV`, so the global must match the capture.
+`%a` is letters only: `nicemice_sleepAction.lua` captures `sleepAction` and
+shadows vanilla's global name. Camel case — `nicemiceSleepAction.lua` — keeps
+the capture whole.
+
+But `petBehavior.actionStates` hardcodes `["sleep"] = "sleepAction"`, and
+`petBehavior.run` compares `stateDesc()` against that string to decide whether
+the action is already running. A replacement state must therefore expose
+`description()` returning vanilla's name — `stateDesc()` prefers `description()`
+when present. Without it the behaviour layer thinks sleep is not running and
+re-picks it.
+
+**Vanilla `sleepAction` reads a config path that does not exist.**
+`config.getParameter("actions.sleep.minSleepy", 65)` — but the monstertype
+defines `actionParams.sleep.minSleepy`. There is no top-level `actions` key, so
+the lookup always misses and the hardcoded 65 is used. Any tuning of that value
+has never taken effect in vanilla or in any mod that inherited the file.
+
+**A resting footprint is centred on the position, so candidates must be snapped
+to tile centres.** A unit's `mcontroller.boundBox()` is about a tile wide and
+centred, so a candidate at integer x spans `[x-0.5, x+0.5]` and straddles TWO
+tile columns — the search then only succeeds where two adjacent tiles are clear.
+Candidate x values are inherited from wherever the unit happened to be standing,
+so the alignment is arbitrary. Observed as a unit refusing to step out of a
+doorway unless it had two tiles of room. `math.floor(x) + 0.5` fixes it, and
+offset 0 is worth searching for the same reason: the exact position can fail
+where the centre of that same tile passes.
+
+**Declining to rest is not the same as moving away.** Placement validation gates
+RESTING only — the idle and wander states are still vanilla and will park a unit
+anywhere. A unit that declines to sleep just stands where it was, which looks
+identical to sleeping there unless you watch for the emitter.
+
+**`writeBackToItem` cannot run on unsocket.** It needs the item still in the
+slot, and by the time `update` notices the removal it is already in the player's
+inventory. The final save is a permanent no-op; whatever the item holds is
+whatever the last IN-SLOT write put there. So a periodic flush is not a safety
+net, it is the persistence granularity — the interval is exactly how much drift
+an unsocket discards. World unload is fine: `uninit` runs while the item is
+still socketed.
+
 **Frame indexing is 1-based for anything with an `.animation` file, 0-based for
 objects without one.** A state declaring `"frames" : 8` and pointing at
 `<partImage>:fly.<frame>` resolves `fly.1` through `fly.8`. Vanilla's own frames
@@ -789,6 +876,70 @@ which unit is which.
 
 The petport itself stays generic. The unit item carries the type; the port just
 holds one.
+
+#### Separability — this may become its own mod
+
+UNDECIDED, but the option is being kept open: the petport system is plausibly a
+strong standalone mod, and whether Nicemice keeps exclusivity is an open
+question. Everything below exists so that decision stays cheap.
+
+**The split that probably wants making is mechanism free, content exclusive.**
+The machinery — petport, vent, placement validation, the contract, the behaviour
+replacements — works for anybody. What makes it worth installing Nicemice is
+where unit ITEMS come from: encounters, quests and settlements, which is already
+the stated payoff loop. A standalone base mod does not weaken that, because the
+base mod ships an empty ecosystem and Nicemice fills it. Unit types, chassis
+variants and M.A.U.S. flavour stay on this side of the line.
+
+**The time-critical part is naming, and it expires at public release.**
+`objectName`, a monstertype's `type`, `itemName` and a monsterpart `category`
+are all save-game identity. Once players have them in worlds they cannot be
+renamed without breaking those worlds. So if a standalone mod would want a
+neutral prefix — `petport_` rather than `nicemice_` — that rename has to happen
+BEFORE any of this ships, not after. Deciding late is not the same cost as
+deciding early.
+
+**Current couplings to Nicemice**, all of them shallow:
+
+- `nicemice_` naming prefix throughout (the load-bearing one, see above)
+- `colonyTags : ["nicemice"]` and `race : "nicemice"` on the petport and vent
+- `itemTags : ["nicemice", ...]` on unit items
+- the `nicemice_ship_pet` item category, added via `categories.config.patch`
+- the `nicemice_petPerch` and `nicemice_perchOffset` parameter names
+- avoidance markers (`avoidMe`, `avoidMe-goLeft`, `avoidMe-goRight`) shared with
+  the NPC avoidance system
+
+Only the last is a genuine shared dependency, and it degrades safely: the
+placement module reads those tags off whatever objects it finds, so in a world
+with no Nicemice marker objects it simply never matches. A standalone mod would
+carry the marker objects itself or do without them.
+
+Nothing in the pet system reaches into Nicemice NPC, dialog, ship or species
+code. The dependency runs one way, which is why this stays cheap.
+
+**Files owned by this work** — the inventory to section off:
+
+    /objects/nicemice/ship_pet_stuff/petport/
+      nicemice_petport.object / .lua / .animation
+      nicemice_petport.png, nicemice_petportlit.png, nicemice_petporticon.png
+      default.frames
+    /objects/nicemice/ship_pet_stuff/petvent/
+      nicemice_petvent.object / .lua / .animation
+      (art pending)
+    /monsters/nicemice_ship_pets/
+      nicemice_ship_pet_drone.monstertype / .animation
+      nicemice_ship_pet_contract.lua
+      nicemice_petplacement.lua
+      nicemiceSleepAction.lua
+      body/  drone_placeholder.monsterpart, art, default.frames
+    /items/nicemice_ship_pets/
+      nicemice_ship_pet_test.item (+ icon)
+    categories.config.patch  -- SHARED; only the nicemice_ship_pet entry belongs
+                                to this work
+
+Keep this list current as files are added. A patch file shared with other
+Nicemice work is the awkward case in a split — the entry moves, the file does
+not.
 
 #### Engine constraint: work only happens where a player is
 
@@ -1133,37 +1284,64 @@ discovery path. Proximity to a petport makes no difference. Only the petport can
 spawn a viable unit, because `spawnPet` calls `setAnchor`, and that call is what
 writes `storage.anchorPosition` in the first place.
 
-**Untested — the rest of the lifecycle.** Unsocketing, world reload recovery,
-vents, and the placement validator have all never been run. Still needed: the
-vent PNG and icon. Drone art is placeholder (pteropod's, chosen for its
-fullbright layer, not its locomotion — the drone is a GROUND unit); petport art
-is borrowed from the Nicemice Rocket Cart.
+**Verified (full petport lifecycle, Aug 19):** socket spawns a unit; unsocket
+despawns it; loading into a world with the item socketed spawns it. State
+round-trips through the item — `petResources`, `knownPlayers` and `seed` all
+survive a socket cycle and resume at the right values. The socket-cycle unit
+leak is closed. `nicemice_ship_pet_contract.lua` supplies the monster side of
+the contract.
 
-**Blocking the next full-stack run — two known bugs, both in
-`nicemice_petstation.lua`:**
+Known and accepted: an unsocket discards up to `WRITE_INTERVAL` seconds of
+resource drift, and that window can swallow a whole action's effect rather than
+just linear drift — `sleepAction` drained sleepy by 35 points inside one
+interval during testing. The unit resumes sleepier than it was and goes back to
+sleep. Cosmetic.
 
-- `spawnPet` nests `initialStatus` / `initialStorage` / `stationUniqueId` /
-  `petName` inside a `scriptConfig` key. Vanilla's `petspawner.lua` only appears
-  to do this: `Pet:_scriptConfig(parameters)` returns `parameters` unchanged, so
-  the two names are the same table and those fields land at the TOP LEVEL of the
-  spawn parameters. Nested, all four are unreachable. Flatten them.
-- **Socket-cycle unit leak (observed).** `saveAndDespawn` calls
-  `nicemice_petDespawn` on the pet, and the monster side never defined it. A
-  bare `world.callScriptedEntity` naming a function the target does not define
-  returns nil rather than raising — it does not error, log, or crash. So the
-  petport runs to completion and clears `self.petId` while the unit carries on
-  living, still anchored. Re-socketing spawns a SECOND unit alongside the
-  orphan, and every cycle adds one. Fixed by adding
-  `nicemice_ship_pet_contract.lua` to the monstertype's `scripts` list.
+Deferred: `status` round-tripping. The contract returns only `storage`, so
+health resets on respawn — harmless for a unit that cannot be damaged, and the
+loose end if that ever changes.
 
-  (An earlier note in this doc claimed the missing function would raise and take
-  the object's script down. It does not — the petport survived and kept working,
-  which is what made the leak invisible.)
+**Verified (placement validation, Aug 19).** `nicemice_petplacement.lua` is now
+in the monstertype's scripts list and both sleep paths route through it, via
+`nicemiceSleepAction.lua` replacing vanilla's `sleepAction.lua`. A unit that gets
+sleepy in a doorway walks clear of it and sleeps beside it, centred in a
+single-tile gap. Confirmed against the debug collision grid.
 
-Also unresolved: `groundPet.lua`'s `setAnchor` hands the anchor a `seed`
-alongside `foodLikings` / `knownPlayers` / `petResources`, and `setPet` discards
-it. Seed selects the monsterpart, so a unit may change chassis across a respawn.
-Harmless with one variant; visible the moment there are two.
+Perch objects may declare `nicemice_perchOffset` alongside the
+`nicemice_petPerch` tag; `nicemice_petPerchPosition` applies it so a unit
+approaches and settles at the same spot. The perch path itself is UNTESTED — it
+needs a tagged object to test against.
+
+**Untested — vents.** Never run. Still needed: the vent PNG and icon. Drone art is placeholder (pteropod's, chosen for
+its fullbright layer, not its locomotion — the drone is a GROUND unit); petport
+art is borrowed from the Nicemice Rocket Cart.
+
+**Known bug, deliberately left in.** The petport detects a newly socketed item
+only on the nil -> item transition, so swapping unit item A directly for unit
+item B leaves it running A and stamping A's state onto B. Needs a per-item uuid
+stamped into `petData` on first spawn, since two found items are otherwise
+indistinguishable. Left unfixed to keep the state-persistence testing to one
+variable.
+
+**Both blocking bugs are fixed.** For the record, since both failed in ways
+that pointed elsewhere:
+
+- `spawnPet` nested `initialStatus` / `initialStorage` / `stationUniqueId` /
+  `petName` inside a `scriptConfig` key. `petspawner.lua` only appears to do
+  this — `Pet:_scriptConfig(parameters)` returns `parameters` unchanged, so the
+  two names are one table and those fields land at the top level. Flattening
+  made `stationUniqueId` and `petName` reachable; `initialStorage` turned out
+  not to work at all (see §3).
+- Socket-cycle unit leak: `saveAndDespawn` called `nicemice_petDespawn`, which
+  the monster side never defined, and a bare `world.callScriptedEntity` to a
+  missing function returns nil silently. The petport ran to completion and
+  cleared `self.petId` while the unit carried on living. Every socket cycle
+  added one orphan. Fixed by `nicemice_ship_pet_contract.lua`.
+
+`seed` is now captured in `setPet` and passed back at spawn. Whether
+`world.spawnMonster` honours a seed parameter is UNVERIFIED — harmless if not,
+but the monsterpart variant is unpinned until it is confirmed, which only shows
+once a second chassis exists.
 
 **Untested:**
 - Wand combat — one-handed, single-ability. **The `handAbility` off-hand fix has

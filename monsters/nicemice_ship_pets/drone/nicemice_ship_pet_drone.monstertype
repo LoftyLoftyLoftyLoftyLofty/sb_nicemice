@@ -74,9 +74,11 @@
       "/monsters/pets/actions/followAction.lua",
       "/monsters/pets/actions/inspectAction.lua",
       "/monsters/pets/actions/eatAction.lua",
-      "/monsters/pets/actions/sleepAction.lua",
+      "/monsters/nicemice_ship_pets/nicemiceSleepAction.lua",
       "/monsters/pets/actions/begAction.lua",
-      "/monsters/pets/actions/pounceAction.lua"
+      "/monsters/pets/actions/pounceAction.lua",
+	  
+      "/monsters/nicemice_ship_pets/nicemice_petplacement.lua"
     ],
 
     "petBehavior" : "petBehavior",

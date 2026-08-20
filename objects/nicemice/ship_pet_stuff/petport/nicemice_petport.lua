@@ -64,7 +64,7 @@ local WRITE_INTERVAL = 10.0
 
 --  Instrumentation, dormant by default (see handoff §4). Flip to true to trace
 --  the item <-> pet state round trip in starbound.log.
-local DEBUG = true
+local DEBUG = false
 
 local function trace(label, value)
   if not DEBUG then return end
@@ -179,6 +179,14 @@ local function socketedItem()
   return item
 end
 
+--  Just the seed off a socketed item, without the full merge. Called every
+--  tick by the swap check, so it must not do root.itemConfig work (or trace).
+local function itemSeed(item)
+  if item == nil or item.parameters == nil then return nil end
+  if item.parameters.petData == nil then return nil end
+  return item.parameters.petData.seed
+end
+
 --  Pet definition from the item, merging the item's own instance parameters
 --  over the base config. A found item may carry only monsterType; a lived-in
 --  one carries status and storage too.
@@ -290,7 +298,12 @@ function spawnPet()
   end
 end
 
-function saveAndDespawn()
+--  skipWrite: set when the unit is being put away because a DIFFERENT item is
+--  now in the slot. Writing back then would stamp the outgoing unit's state
+--  onto the incoming item -- the exact corruption the swap check exists to
+--  prevent. The outgoing item is already in the player's inventory and out of
+--  reach either way.
+function saveAndDespawn(skipWrite)
   if self.petId and world.entityExists(self.petId) then
     --  Ask for final state before removing it. Best effort: if the pet is
     --  already gone the item simply keeps the last state we heard about.
@@ -311,7 +324,9 @@ function saveAndDespawn()
   --  No-op when the unit is being put away because the ITEM was removed -- it
   --  has already left the container. Still worth calling: this path also runs
   --  from uninit on world unload, where the item is present.
-  writeBackToItem()
+  if not skipWrite then
+    writeBackToItem()
+  end
 
   self.petId = nil
   self.spawning = false
@@ -362,13 +377,23 @@ function update(dt)
     return
   end
 
-  --  Newly socketed.
+  --  Newly socketed, or a different unit swapped in.
   --
-  --  KNOWN GAP: this only detects the nil -> item transition. Swapping unit
-  --  item A directly for unit item B leaves petData non-nil, so the petport
-  --  keeps running unit A and stamps A's state onto item B. Fixing it needs a
-  --  per-item identity to compare against -- a uuid stamped into petData on
-  --  first spawn, since two found items are otherwise indistinguishable.
+  --  Swap detection uses `seed` as the identity token. groundPet.lua volunteers
+  --  monster.seed() through setPet, and it is captured OUTSIDE the echo guard,
+  --  so petData.seed is populated within the same tick a unit is socketed.
+  --  Distinct units therefore have distinct seeds, and a used item never
+  --  matches a pristine one (which has no seed at all).
+  --
+  --  The one gap left is two never-spawned items exchanged inside a single
+  --  tick, which is about as narrow as it gets and self-corrects on the next
+  --  socket.
+  if self.petData ~= nil and itemSeed(item) ~= self.petData.seed then
+    trace("item swapped, outgoing seed", self.petData.seed)
+    saveAndDespawn(true)
+    self.petData = nil
+  end
+
   if self.petData == nil then
     self.petData = petDataFrom(item)
     if self.petData == nil then
