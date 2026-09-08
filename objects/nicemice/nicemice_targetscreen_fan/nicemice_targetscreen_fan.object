@@ -2,7 +2,7 @@
   "objectName" : "nicemice_targetscreen_fan",
   "colonyTags" : ["nicemice","maus","electronic","wired","light"],
   "rarity" : "Common",
-  "description" : "A target lock has been acquired for a ship.",
+  "description" : "A diagnostic readout of a ventilation system.",
   "shortdescription" : "Target Screen - Ventilation",
   "race" : "nicemice",
   "category" : "light",
