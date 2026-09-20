@@ -70,8 +70,10 @@
 						"head" : 
 						[
 							{ 
-								"name" : "nicemice_maus_captainscap",
-								"parameters" : { "colorIndex" : 3 }
+								"name" : "nicemice_maus_captainscap"
+							},
+							{
+								"name" : "nicemice_maus_captainscap_visor"
 							}
 						],
 						"back" : 
@@ -110,15 +112,13 @@
 						"chest" :
 						[
 							{ 
-								"name" : "nicemice_maus_captainchest",
-								"parameters" : { "colorIndex" : 3 }	 
+								"name" : "nicemice_maus_captainchest" 
 							}
 						],
 						"legs" :
 						[
 							{ 
-								"name" : "nicemice_maus_captainlegs",
-								"parameters" : { "colorIndex" : 3 }	 
+								"name" : "nicemice_maus_captainlegs"	 
 							}
 						],
 						"sheathedprimary" : 

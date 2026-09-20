@@ -72,6 +72,10 @@
 							{ 
 								"name" : "nicemice_maus_captainscap",
 								"parameters" : { "colorIndex" : [1, 3] }	 								
+							},
+							{
+								"name" : "nicemice_maus_captainscap_visor",
+								"parameters" : { "colorIndex" : [1, 3] }
 							}
 						],
 						"back" : 

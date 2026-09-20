@@ -63,7 +63,11 @@
         [
           //  officer uniform
           {
-            "head" : [ { "name" : "nicemice_maus_captainscap" } ],
+            "head" : 
+			[ 
+				{ "name" : "nicemice_maus_captainscap" },
+				{ "name" : "nicemice_maus_captainscap_visor" }
+			],
             "back" : [ { "name" : "nicemice_tail_mouse" } ],
             "chest" : [
               {

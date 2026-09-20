@@ -332,9 +332,17 @@
 			{
 				"fill" :
 				[
-					{"item" : [ "nicemice_maus_captainscap", 1 ] },
 					{"item" : [ "nicemice_maus_captainchest", 1 ] },
 					{"item" : [ "nicemice_maus_captainlegs", 1 ] }
+				],
+				"pool" : 
+				[
+					{"weight" : 0.5, "item" : [ "nicemice_maus_captainscap", 1 ] },
+					{"weight" : 0.5, "item" : [ "nicemice_maus_captainscap_visor", 1 ] }
+				],
+				"poolRounds" : 
+				[
+					[1, 1]
 				]
 			}
 		]
