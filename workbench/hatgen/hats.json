@@ -1,0 +1,14 @@
+[
+	{
+		"dir" : "items/armors/nicemice/costumes/maus_captain_visor",
+		"head" : "nicemice_maus_captainscap_visor.head",
+		"mode" : "ears",
+		"locked" : []
+	},
+	{
+		"dir" : "items/armors/nicemice/tieredarmor/nicemice-tier2",
+		"head" : "nicemicetier2.head",
+		"mode" : "ears",
+		"locked" : []
+	}
+]
