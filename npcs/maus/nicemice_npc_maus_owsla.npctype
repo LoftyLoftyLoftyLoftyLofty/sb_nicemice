@@ -58,7 +58,7 @@
 		}
 	},
 
-	"matchColorIndices" : true,
+	"matchColorIndices" : false,
 	"items" : 
 	{
 		"nicemice_npc" : 
@@ -74,7 +74,15 @@
 							},
 							{
 								"name" : "nicemicetier1head",
-								"parameters" : { "colorIndex" : 4 }
+								"parameters" : { "colorIndex" : 0 }
+							},
+							{
+								"name" : "nicemicetier2head",
+								"parameters" : { "colorIndex" : 0 }
+							},
+							{
+								"name" : "nicemicetier3head",
+								"parameters" : { "colorIndex" : 0 }
 							}
 						],
 						"back" : 
