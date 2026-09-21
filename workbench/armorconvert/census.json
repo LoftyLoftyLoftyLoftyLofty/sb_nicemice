@@ -1,0 +1,5476 @@
+[
+	{
+		"path": "items/armors/apex/apex-tier1/apextier1.chest",
+		"itemName": "apextier1chest",
+		"slot": "chest",
+		"level": 1,
+		"target": "nicemicetier1chest"
+	},
+	{
+		"path": "items/armors/apex/apex-tier1/apextier1.head",
+		"itemName": "apextier1head",
+		"slot": "head",
+		"level": 1,
+		"target": "nicemicetier1head"
+	},
+	{
+		"path": "items/armors/apex/apex-tier1/apextier1.legs",
+		"itemName": "apextier1pants",
+		"slot": "pants",
+		"level": 1,
+		"target": "nicemicetier1pants"
+	},
+	{
+		"path": "items/armors/apex/apex-tier2/apextier2.chest",
+		"itemName": "apextier2chest",
+		"slot": "chest",
+		"level": 2,
+		"target": "nicemicetier2chest"
+	},
+	{
+		"path": "items/armors/apex/apex-tier2/apextier2.head",
+		"itemName": "apextier2head",
+		"slot": "head",
+		"level": 2,
+		"target": "nicemicetier2head"
+	},
+	{
+		"path": "items/armors/apex/apex-tier2/apextier2.legs",
+		"itemName": "apextier2pants",
+		"slot": "pants",
+		"level": 2,
+		"target": "nicemicetier2pants"
+	},
+	{
+		"path": "items/armors/apex/apex-tier3/apextier3.chest",
+		"itemName": "apextier3chest",
+		"slot": "chest",
+		"level": 3,
+		"target": "nicemicetier3chest"
+	},
+	{
+		"path": "items/armors/apex/apex-tier3/apextier3.head",
+		"itemName": "apextier3head",
+		"slot": "head",
+		"level": 3,
+		"target": "nicemicetier3head"
+	},
+	{
+		"path": "items/armors/apex/apex-tier3/apextier3.legs",
+		"itemName": "apextier3pants",
+		"slot": "pants",
+		"level": 3,
+		"target": "nicemicetier3pants"
+	},
+	{
+		"path": "items/armors/apex/apex-tier4/apextier4.chest",
+		"itemName": "apextier4chest",
+		"slot": "chest",
+		"level": 4,
+		"target": "nicemicetier4chest"
+	},
+	{
+		"path": "items/armors/apex/apex-tier4/apextier4.head",
+		"itemName": "apextier4head",
+		"slot": "head",
+		"level": 4,
+		"target": "nicemicetier4head"
+	},
+	{
+		"path": "items/armors/apex/apex-tier4/apextier4.legs",
+		"itemName": "apextier4pants",
+		"slot": "pants",
+		"level": 4,
+		"target": "nicemicetier4pants"
+	},
+	{
+		"path": "items/armors/apex/apex-tier5accelerator/apextier5accelerator.chest",
+		"itemName": "apextier5achest",
+		"slot": "chest",
+		"level": 5,
+		"target": "nicemicetier5achest"
+	},
+	{
+		"path": "items/armors/apex/apex-tier5accelerator/apextier5accelerator.head",
+		"itemName": "apextier5ahead",
+		"slot": "head",
+		"level": 5,
+		"target": "nicemicetier5ahead"
+	},
+	{
+		"path": "items/armors/apex/apex-tier5accelerator/apextier5accelerator.legs",
+		"itemName": "apextier5apants",
+		"slot": "pants",
+		"level": 5,
+		"target": "nicemicetier5apants"
+	},
+	{
+		"path": "items/armors/apex/apex-tier5manipulator/apextier5manipulator.chest",
+		"itemName": "apextier5mchest",
+		"slot": "chest",
+		"level": 5,
+		"target": "nicemicetier5mchest"
+	},
+	{
+		"path": "items/armors/apex/apex-tier5manipulator/apextier5manipulator.head",
+		"itemName": "apextier5mhead",
+		"slot": "head",
+		"level": 5,
+		"target": "nicemicetier5mhead"
+	},
+	{
+		"path": "items/armors/apex/apex-tier5manipulator/apextier5manipulator.legs",
+		"itemName": "apextier5mpants",
+		"slot": "pants",
+		"level": 5,
+		"target": "nicemicetier5mpants"
+	},
+	{
+		"path": "items/armors/apex/apex-tier5separator/apextier5separator.chest",
+		"itemName": "apextier5schest",
+		"slot": "chest",
+		"level": 5,
+		"target": "nicemicetier5schest"
+	},
+	{
+		"path": "items/armors/apex/apex-tier5separator/apextier5separator.head",
+		"itemName": "apextier5shead",
+		"slot": "head",
+		"level": 5,
+		"target": "nicemicetier5shead"
+	},
+	{
+		"path": "items/armors/apex/apex-tier5separator/apextier5separator.legs",
+		"itemName": "apextier5spants",
+		"slot": "pants",
+		"level": 5,
+		"target": "nicemicetier5spants"
+	},
+	{
+		"path": "items/armors/apex/apex-tier6accelerator/apextier6accelerator.chest",
+		"itemName": "apextier6achest",
+		"slot": "chest",
+		"level": 6,
+		"target": "nicemicetier6achest"
+	},
+	{
+		"path": "items/armors/apex/apex-tier6accelerator/apextier6accelerator.head",
+		"itemName": "apextier6ahead",
+		"slot": "head",
+		"level": 6,
+		"target": "nicemicetier6ahead"
+	},
+	{
+		"path": "items/armors/apex/apex-tier6accelerator/apextier6accelerator.legs",
+		"itemName": "apextier6apants",
+		"slot": "pants",
+		"level": 6,
+		"target": "nicemicetier6apants"
+	},
+	{
+		"path": "items/armors/apex/apex-tier6manipulator/apextier6manipulator.chest",
+		"itemName": "apextier6mchest",
+		"slot": "chest",
+		"level": 6,
+		"target": "nicemicetier6mchest"
+	},
+	{
+		"path": "items/armors/apex/apex-tier6manipulator/apextier6manipulator.head",
+		"itemName": "apextier6mhead",
+		"slot": "head",
+		"level": 6,
+		"target": "nicemicetier6mhead"
+	},
+	{
+		"path": "items/armors/apex/apex-tier6manipulator/apextier6manipulator.legs",
+		"itemName": "apextier6mpants",
+		"slot": "pants",
+		"level": 6,
+		"target": "nicemicetier6mpants"
+	},
+	{
+		"path": "items/armors/apex/apex-tier6separator/apextier6separator.chest",
+		"itemName": "apextier6schest",
+		"slot": "chest",
+		"level": 6,
+		"target": "nicemicetier6schest"
+	},
+	{
+		"path": "items/armors/apex/apex-tier6separator/apextier6separator.head",
+		"itemName": "apextier6shead",
+		"slot": "head",
+		"level": 6,
+		"target": "nicemicetier6shead"
+	},
+	{
+		"path": "items/armors/apex/apex-tier6separator/apextier6separator.legs",
+		"itemName": "apextier6spants",
+		"slot": "pants",
+		"level": 6,
+		"target": "nicemicetier6spants"
+	},
+	{
+		"path": "items/armors/apex/apexcommander/apexcommander.chest",
+		"itemName": "apexcommanderjacket",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/apex/apexcommander/apexcommander.legs",
+		"itemName": "apexcommanderpants",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/apex/apexnavy/apexnavy.chest",
+		"itemName": "apexnavyjacket",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/apex/apexnavy/apexnavy.legs",
+		"itemName": "apexnavypants",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/apex/apexofficer/apexofficer.chest",
+		"itemName": "apexofficerjacket",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/apex/apexofficer/apexofficer.legs",
+		"itemName": "apexofficerpants",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/apex/apexspecialist/apexspecialist.chest",
+		"itemName": "apexspecialistjacket",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/apex/apexspecialist/apexspecialist.legs",
+		"itemName": "apexspecialistpants",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/avian/avian-adventurer/avianadventurer.chest",
+		"itemName": "avianadventurershirt",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/avian/avian-adventurer/avianadventurer.legs",
+		"itemName": "avianadventurerpants",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/avian/avian-commoner/aviancommoner.chest",
+		"itemName": "aviancommonershirt",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/avian/avian-commoner/aviancommoner.legs",
+		"itemName": "aviancommonerlegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/avian/avian-fancy/avianfancy.chest",
+		"itemName": "avianfancyshirt",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/avian/avian-fancy/avianfancy.legs",
+		"itemName": "avianfancyskirt",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/avian/avian-tier1/aviantier1.chest",
+		"itemName": "aviantier1chest",
+		"slot": "chest",
+		"level": 1,
+		"target": "nicemicetier1chest"
+	},
+	{
+		"path": "items/armors/avian/avian-tier1/aviantier1.head",
+		"itemName": "aviantier1head",
+		"slot": "head",
+		"level": 1,
+		"target": "nicemicetier1head"
+	},
+	{
+		"path": "items/armors/avian/avian-tier1/aviantier1.legs",
+		"itemName": "aviantier1pants",
+		"slot": "pants",
+		"level": 1,
+		"target": "nicemicetier1pants"
+	},
+	{
+		"path": "items/armors/avian/avian-tier2/aviantier2.chest",
+		"itemName": "aviantier2chest",
+		"slot": "chest",
+		"level": 2,
+		"target": "nicemicetier2chest"
+	},
+	{
+		"path": "items/armors/avian/avian-tier2/aviantier2.head",
+		"itemName": "aviantier2head",
+		"slot": "head",
+		"level": 2,
+		"target": "nicemicetier2head"
+	},
+	{
+		"path": "items/armors/avian/avian-tier2/aviantier2.legs",
+		"itemName": "aviantier2pants",
+		"slot": "pants",
+		"level": 2,
+		"target": "nicemicetier2pants"
+	},
+	{
+		"path": "items/armors/avian/avian-tier3/aviantier3.chest",
+		"itemName": "aviantier3chest",
+		"slot": "chest",
+		"level": 3,
+		"target": "nicemicetier3chest"
+	},
+	{
+		"path": "items/armors/avian/avian-tier3/aviantier3.head",
+		"itemName": "aviantier3head",
+		"slot": "head",
+		"level": 3,
+		"target": "nicemicetier3head"
+	},
+	{
+		"path": "items/armors/avian/avian-tier3/aviantier3.legs",
+		"itemName": "aviantier3pants",
+		"slot": "pants",
+		"level": 3,
+		"target": "nicemicetier3pants"
+	},
+	{
+		"path": "items/armors/avian/avian-tier4/aviantier4.chest",
+		"itemName": "aviantier4chest",
+		"slot": "chest",
+		"level": 4,
+		"target": "nicemicetier4chest"
+	},
+	{
+		"path": "items/armors/avian/avian-tier4/aviantier4.head",
+		"itemName": "aviantier4head",
+		"slot": "head",
+		"level": 4,
+		"target": "nicemicetier4head"
+	},
+	{
+		"path": "items/armors/avian/avian-tier4/aviantier4.legs",
+		"itemName": "aviantier4pants",
+		"slot": "pants",
+		"level": 4,
+		"target": "nicemicetier4pants"
+	},
+	{
+		"path": "items/armors/avian/avian-tier5accelerator/aviantier5accelerator.chest",
+		"itemName": "aviantier5achest",
+		"slot": "chest",
+		"level": 5,
+		"target": "nicemicetier5achest"
+	},
+	{
+		"path": "items/armors/avian/avian-tier5accelerator/aviantier5accelerator.head",
+		"itemName": "aviantier5ahead",
+		"slot": "head",
+		"level": 5,
+		"target": "nicemicetier5ahead"
+	},
+	{
+		"path": "items/armors/avian/avian-tier5accelerator/aviantier5accelerator.legs",
+		"itemName": "aviantier5apants",
+		"slot": "pants",
+		"level": 5,
+		"target": "nicemicetier5apants"
+	},
+	{
+		"path": "items/armors/avian/avian-tier5manipulator/aviantier5manipulator.chest",
+		"itemName": "aviantier5mchest",
+		"slot": "chest",
+		"level": 5,
+		"target": "nicemicetier5mchest"
+	},
+	{
+		"path": "items/armors/avian/avian-tier5manipulator/aviantier5manipulator.head",
+		"itemName": "aviantier5mhead",
+		"slot": "head",
+		"level": 5,
+		"target": "nicemicetier5mhead"
+	},
+	{
+		"path": "items/armors/avian/avian-tier5manipulator/aviantier5manipulator.legs",
+		"itemName": "aviantier5mpants",
+		"slot": "pants",
+		"level": 5,
+		"target": "nicemicetier5mpants"
+	},
+	{
+		"path": "items/armors/avian/avian-tier5separator/aviantier5separator.chest",
+		"itemName": "aviantier5schest",
+		"slot": "chest",
+		"level": 5,
+		"target": "nicemicetier5schest"
+	},
+	{
+		"path": "items/armors/avian/avian-tier5separator/aviantier5separator.head",
+		"itemName": "aviantier5shead",
+		"slot": "head",
+		"level": 5,
+		"target": "nicemicetier5shead"
+	},
+	{
+		"path": "items/armors/avian/avian-tier5separator/aviantier5separator.legs",
+		"itemName": "aviantier5spants",
+		"slot": "pants",
+		"level": 5,
+		"target": "nicemicetier5spants"
+	},
+	{
+		"path": "items/armors/avian/avian-tier6accelerator/aviantier6accelerator.chest",
+		"itemName": "aviantier6achest",
+		"slot": "chest",
+		"level": 6,
+		"target": "nicemicetier6achest"
+	},
+	{
+		"path": "items/armors/avian/avian-tier6accelerator/aviantier6accelerator.head",
+		"itemName": "aviantier6ahead",
+		"slot": "head",
+		"level": 6,
+		"target": "nicemicetier6ahead"
+	},
+	{
+		"path": "items/armors/avian/avian-tier6accelerator/aviantier6accelerator.legs",
+		"itemName": "aviantier6apants",
+		"slot": "pants",
+		"level": 6,
+		"target": "nicemicetier6apants"
+	},
+	{
+		"path": "items/armors/avian/avian-tier6manipulator/aviantier6manipulator.chest",
+		"itemName": "aviantier6mchest",
+		"slot": "chest",
+		"level": 6,
+		"target": "nicemicetier6mchest"
+	},
+	{
+		"path": "items/armors/avian/avian-tier6manipulator/aviantier6manipulator.head",
+		"itemName": "aviantier6mhead",
+		"slot": "head",
+		"level": 6,
+		"target": "nicemicetier6mhead"
+	},
+	{
+		"path": "items/armors/avian/avian-tier6manipulator/aviantier6manipulator.legs",
+		"itemName": "aviantier6mpants",
+		"slot": "pants",
+		"level": 6,
+		"target": "nicemicetier6mpants"
+	},
+	{
+		"path": "items/armors/avian/avian-tier6separator/aviantier6separator.chest",
+		"itemName": "aviantier6schest",
+		"slot": "chest",
+		"level": 6,
+		"target": "nicemicetier6schest"
+	},
+	{
+		"path": "items/armors/avian/avian-tier6separator/aviantier6separator.head",
+		"itemName": "aviantier6shead",
+		"slot": "head",
+		"level": 6,
+		"target": "nicemicetier6shead"
+	},
+	{
+		"path": "items/armors/avian/avian-tier6separator/aviantier6separator.legs",
+		"itemName": "aviantier6spants",
+		"slot": "pants",
+		"level": 6,
+		"target": "nicemicetier6spants"
+	},
+	{
+		"path": "items/armors/avian/avian-worker/avianworker.chest",
+		"itemName": "avianworkershirt",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/avian/avian-worker/avianworker.legs",
+		"itemName": "avianworkerpants",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/backerhats/afrowig/afrowig.head",
+		"itemName": "afrowighead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/backerhats/coolshades/coolshades.head",
+		"itemName": "coolshadeshead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/backerhats/demonhorns/demonhorns.head",
+		"itemName": "demonhornshead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/backerhats/doghat/doghat.head",
+		"itemName": "doghathead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/backerhats/dreadfulskull/dreadfulskull.head",
+		"itemName": "dreadfulskullhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/backerhats/electroniumhat/electroniumhat.head",
+		"itemName": "electroniumhat",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/backerhats/fancap/fancap.head",
+		"itemName": "fancaphead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/backerhats/giantbow/giantbow.head",
+		"itemName": "giantbowhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/backerhats/glitchplague/plaguemaster.head",
+		"itemName": "plaguemasterhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/backerhats/hothat/hothat.head",
+		"itemName": "hottophathead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/backerhats/meercap/meercap.head",
+		"itemName": "meercaphead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/backerhats/monitorhead/monitorhead.head",
+		"itemName": "monitorhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/backerhats/mughat/mughat.head",
+		"itemName": "mughathead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/backerhats/multicamhat/multicamhat.head",
+		"itemName": "multicamhat",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/backerhats/phoenixhat/phoenixhat.head",
+		"itemName": "phoenixhat",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/backerhats/plumeknight/plumeknight.head",
+		"itemName": "plumeknighthead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/backerhats/rustyskul/rustyskul.head",
+		"itemName": "rustyskul",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/backerhats/soulguise/soulguise.head",
+		"itemName": "soulguise",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/backerhats/stargazer/stargazer.head",
+		"itemName": "stargazer",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/backerhats/thehrodgard/thehrodgard.head",
+		"itemName": "thehrodgardhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/backerhats/tricornhat/tricornhat.head",
+		"itemName": "tricornhat",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/backerhats/uncathat/uncathat.head",
+		"itemName": "uncathat",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/backerhats/valkyriehelm/valkyriehelm.head",
+		"itemName": "valkyriehelm",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/backitems/aviangodwings/aviangodwings.back",
+		"itemName": "aviangodwingsback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/backitems/baroncape/baroncape.back",
+		"itemName": "baroncapeback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/backitems/batterypackAA/batterypackAA.back",
+		"itemName": "batterypackAAback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/backitems/batwings/batwings.back",
+		"itemName": "batwingsback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/backitems/bladedwings/bladedwings.back",
+		"itemName": "bladedwingsback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/backitems/boiler/boiler.back",
+		"itemName": "boilerback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/backitems/bonewings/bonewings.back",
+		"itemName": "bonewingsback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/backitems/breathprotection/breathprotection.back",
+		"itemName": "breathprotectionback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/backitems/coldprotection/coldprotection.back",
+		"itemName": "coldprotectionback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/backitems/crystalpack/crystalpack.back",
+		"itemName": "crystalbackpackback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/backitems/dangerbarrel/dangerbarrel.back",
+		"itemName": "dangerbarrelback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/backitems/demonwings/demonwings.back",
+		"itemName": "demonwingsback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/backitems/eye/eye.back",
+		"itemName": "eyeback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/backitems/falconwings/falconwings.back",
+		"itemName": "falconwingsback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/backitems/guardwings/guardwings.png.back",
+		"itemName": "guardwingsback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/backitems/halogenpack/halogenpack.back",
+		"itemName": "halogenpack",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/backitems/heatprotection/heatprotection.back",
+		"itemName": "heatprotectionback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/backitems/lanternstick/lanternstick.back",
+		"itemName": "lanternstickback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/backitems/oxygentank/oxygentank.back",
+		"itemName": "oxygentank",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/backitems/paperwings/paperwings.back",
+		"itemName": "paperwingsback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/backitems/parachutepack/parachutepack.back",
+		"itemName": "parachutepackback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/backitems/radiationprotection/radiationprotection.back",
+		"itemName": "radiationprotectionback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/backitems/rainbowcape/rainbowcape.back",
+		"itemName": "rainbowcapeback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/backitems/shortcape/shortcape.back",
+		"itemName": "shortcapeback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/backitems/simplecape/simplecape.back",
+		"itemName": "simplecapeback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/backitems/tigertail/tigertail.back",
+		"itemName": "tigertailback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/backitems/toxicflower/toxicflower.back",
+		"itemName": "toxicflowerback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/backitems/toxicwaste/toxicwaste.back",
+		"itemName": "toxicwasteback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/backitems/tribalfeathers/tribalfeathers.back",
+		"itemName": "tribalfeathersback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/backitems/tribalwings/tribalwings.back",
+		"itemName": "tribalwingsback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/backitems/turtleshell/turtleshell.back",
+		"itemName": "turtleshellback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/backitems/xenonpack/xenonpack.back",
+		"itemName": "xenonpack",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/Bioluminescence/biolumin/biolumin.chest",
+		"itemName": "bioluminchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/Bioluminescence/biolumin/biolumin.head",
+		"itemName": "bioluminhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/Bioluminescence/biolumin/biolumin.legs",
+		"itemName": "bioluminlegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/Bioluminescence/frostcrown/frostcrown.head",
+		"itemName": "frostcrownhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/Bioluminescence/lighthelm/lighthelm.head",
+		"itemName": "lighthelmhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/alpine/alpaca/alpaca.chest",
+		"itemName": "alpacachest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/alpine/alpaca/alpaca.head",
+		"itemName": "alpacahead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/alpine/alpaca/alpaca.legs",
+		"itemName": "alpacalegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/alpine/alpaca/alpacaguard/alpacaguard.chest",
+		"itemName": "alpacaguardchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/alpine/alpaca/alpacaguard/alpacaguard.head",
+		"itemName": "alpacaguardhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/alpine/alpaca/alpacaguard/alpacaguard.legs",
+		"itemName": "alpacaguardlegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/alpine/alpaca/alpacavillager/alpacavillager.chest",
+		"itemName": "alpacavillagerchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/alpine/alpaca/alpacavillager/alpacavillager.head",
+		"itemName": "alpacavillagerhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/alpine/alpaca/alpacavillager/alpacavillager.legs",
+		"itemName": "alpacavillagerlegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/bone/jeff/jeff.back",
+		"itemName": "jeffback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/bone/skullapex/skullapex.head",
+		"itemName": "apexskullhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/bone/skullavian/skullavian.head",
+		"itemName": "avianskullhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/bone/skullfloran/skullfloran.head",
+		"itemName": "floranskullhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/bone/skullglitch/skullglitch.head",
+		"itemName": "glitchskullhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/bone/skullhuman/skullhuman.head",
+		"itemName": "humanskullhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/bone/skullhylotl/skullhylotl.head",
+		"itemName": "hylotlskullhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/colorful/crayonblueback/crayonblueback.back",
+		"itemName": "crayonblueback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/colorful/crayongreenback/crayongreen.back",
+		"itemName": "crayongreenback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/colorful/crayonorangeback/crayonorange.back",
+		"itemName": "crayonorangeback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/colorful/crayonpurpleback/crayonpurpleback.back",
+		"itemName": "crayonpurpleback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/colorful/crayonredback/crayonredback.back",
+		"itemName": "crayonredback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/colorful/crayonyellowback/crayonyellowback.back",
+		"itemName": "crayonyellowback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/copperarmor/copperarmor.chest",
+		"itemName": "copperarmorchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/copperarmor/copperarmor.head",
+		"itemName": "copperarmorhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/copperarmor/copperarmor.legs",
+		"itemName": "copperarmorpants",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/eyepatch/eyeball/eyeball.back",
+		"itemName": "eyeballback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/eyepatch/eyeball/eyeball.chest",
+		"itemName": "eyeballchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/eyepatch/eyeball/eyeball.head",
+		"itemName": "eyeballhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/eyepatch/eyeball/eyeball.legs",
+		"itemName": "eyeballlegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/flesh/anatomyapex/anatomyapex.head",
+		"itemName": "anatomyapexhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/flesh/anatomyavian/anatomyavian.head",
+		"itemName": "anatomyavianhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/flesh/anatomyavian/anatomyavian.legs",
+		"itemName": "anatomyavianlegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/flesh/anatomyhuman/anatomy.chest",
+		"itemName": "anatomychest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/flesh/anatomyhuman/anatomy.head",
+		"itemName": "anatomyhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/flesh/anatomyhuman/anatomy.legs",
+		"itemName": "anatomylegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/flesh/anatomyhylotl/anatomyhylotl.head",
+		"itemName": "anatomyhylotlhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/foundry/foundryback/foundryback.back",
+		"itemName": "foundryback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/foundry/foundrychest/foundrychest.chest",
+		"itemName": "foundrychest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/foundry/foundryforeman/foundryforeman.back",
+		"itemName": "foundryforemanback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/foundry/foundrygoggles/foundrygoggles.head",
+		"itemName": "foundrygoggleshead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/foundry/foundryguardchest/foundryguardchest.chest",
+		"itemName": "foundryguardchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/foundry/foundryhardhat/foundryhardhat.head",
+		"itemName": "foundryhardhathead",
+		"slot": "head",
+		"level": 2,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/foundry/foundrylegs/foundrylegs.legs",
+		"itemName": "foundrylegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/foundry/weldershelmet/weldershelmet.head",
+		"itemName": "weldershelmethead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/garden/quiver/quiver.back",
+		"itemName": "quiverback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/geode/geode/geode.chest",
+		"itemName": "geodechest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/geode/geode/geode.head",
+		"itemName": "geodehead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/geode/geode/geode.legs",
+		"itemName": "geodelegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/giantflowers/butterflywings/butterflywings.back",
+		"itemName": "butterflywingsback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/giantflowers/buzzy/buzzy.back",
+		"itemName": "buzzyback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/giantflowers/buzzy/buzzy.chest",
+		"itemName": "buzzychest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/giantflowers/buzzy/buzzy.head",
+		"itemName": "buzzyhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/giantflowers/buzzy/buzzy.legs",
+		"itemName": "buzzylegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/gnomevillage/buildinghat/buildinghat.head",
+		"itemName": "buildinghathead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/gnomevillage/gnome/gnome.head",
+		"itemName": "gnomehead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/gnomevillage/gnomecap/gnomecap.head",
+		"itemName": "gnomecaphead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/gnomevillage/househat/househat.head",
+		"itemName": "househathead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/hive/larva.chest",
+		"itemName": "larvachest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/hive/larva.head",
+		"itemName": "larvahead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/hive/larva.legs",
+		"itemName": "larvalegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/hive/larvanpc/larva.chest",
+		"itemName": "larvanpcchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/hive/larvanpc/larva.head",
+		"itemName": "larvanpchead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/hive/larvanpc/larva.legs",
+		"itemName": "larvanpclegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/ice/cyclopsyeti/cyclopsyeti.chest",
+		"itemName": "cyclopsyetichest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/ice/cyclopsyeti/cyclopsyeti.head",
+		"itemName": "cyclopsyetihead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/ice/cyclopsyeti/cyclopsyeti.legs",
+		"itemName": "cyclopsyetilegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/ice/survivalgear/survivalgear.back",
+		"itemName": "survivalgearback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/icecaves/icearmor/icearmor.chest",
+		"itemName": "icearmorchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/icecaves/icearmor/icearmor.head",
+		"itemName": "icearmorhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/icecaves/icearmor/icearmor.legs",
+		"itemName": "icearmorlegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/icecaves/icecubehat/icecubehead.head",
+		"itemName": "icecubehead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/jungle/tough/headband.head",
+		"itemName": "headbandhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/jungle/tough/tough.chest",
+		"itemName": "toughchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/jungle/tough/tough.legs",
+		"itemName": "toughlegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/midnight/dark/dark.head",
+		"itemName": "darkhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/midnight/dark/dark.legs",
+		"itemName": "darklegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/midnight/dark/darkchest.chest",
+		"itemName": "darkchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/midnight/darkcape/darkcape.back",
+		"itemName": "darkcapeback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/midnight/darkdisguise/darkdisguise.chest",
+		"itemName": "darkdisguisechest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/midnight/darkdisguise/darkdisguise.head",
+		"itemName": "darkdisguisehead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/midnight/darkdisguise/darkdisguise.legs",
+		"itemName": "darkdisguiselegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/mushroom/evilmushroom/evilmushroom.head",
+		"itemName": "evilmushroomhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/mushroom/mushroom/mushroom.head",
+		"itemName": "mushroomhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/mushroom/raggedcape/raggedcape.back",
+		"itemName": "raggedcapeback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/ocean/beachcreeper/beachcreeper.chest",
+		"itemName": "beachcreeperchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/ocean/beachcreeper/beachcreeper.head",
+		"itemName": "beachcreeperhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/ocean/beachcreeper/beachcreeper.legs",
+		"itemName": "beachcreeperlegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/ocean/deepdiver/deepdiver.head",
+		"itemName": "deepdiverhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/ocean/snorkel/snorkel.head",
+		"itemName": "snorkelhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/prism/prism.chest",
+		"itemName": "prismchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/prism/prism.head",
+		"itemName": "prismhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/prism/prism.legs",
+		"itemName": "prismlegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/scorchedcity/deadbeatbruiserleather/deadbeatbruiserleather.chest",
+		"itemName": "deadbeatbruiserleatherchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/scorchedcity/deadbeatbruisermask/deadbeatbruisermask.head",
+		"itemName": "deadbeatbruisermaskhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/scorchedcity/deadbeatbruisernerd/deadbeatbruisernerd.head",
+		"itemName": "deadbeatbruisernerdhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/scorchedcity/deadbeathelm/deadbeathelm.head",
+		"itemName": "deadbeathelmhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/scorchedcity/deadbeathornhelmhead/deadbeathornhelm.head",
+		"itemName": "deadbeathornhelmhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/scorchedcity/deadbeathornmask/deadbeathorns.head",
+		"itemName": "deadbeathornmaskhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/scorchedcity/deadbeathorns/deadbeathorns.head",
+		"itemName": "deadbeathornshead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/scorchedcity/deadbeatleather/deadbeatleather.chest",
+		"itemName": "deadbeatleatherchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/scorchedcity/deadbeatleather/deadbeatleather.legs",
+		"itemName": "deadbeatleatherlegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/scorchedcity/deadbeatmask/deadbeatmask.head",
+		"itemName": "deadbeatmaskhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/scorchedcity/deadbeatnerd/deadbeatnerd.head",
+		"itemName": "deadbeatnerdhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/scorchedcity/deadbeatscroungerhornmask/deadbeatscroungerhornmask.head",
+		"itemName": "deadbeatscroungerhornmaskhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/scorchedcity/deadbeatscroungerhorns/deadbeatscroungerhorns.head",
+		"itemName": "deadbeatscroungerhornshead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/scorchedcity/deadbeatscroungerstraps/deadbeatscroungerstraps.chest",
+		"itemName": "deadbeatscroungerstrapschest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/scorchedcity/deadbeatscroungerstraps/deadbeatscroungerstraps.legs",
+		"itemName": "deadbeatscroungerstrapslegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/scorchedcity/deadbeatspandex/deadbeatspandex.chest",
+		"itemName": "deadbeatspandexchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/scorchedcity/deadbeatspandex/deadbeatspandex.legs",
+		"itemName": "deadbeatspandexlegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/scorchedcity/deadbeatstraps/deadbeatstraps.chest",
+		"itemName": "deadbeatstrapschest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/scorchedcity/deadbeatstraps/deadbeatstraps.legs",
+		"itemName": "deadbeatstrapslegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/scorchedcity/deadbeatthugspandex/deadbeatthugspandex.chest",
+		"itemName": "deadbeatthugspandexchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/slime/slime/slime.chest",
+		"itemName": "slimechest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/slime/slime/slime.head",
+		"itemName": "slimehead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/slime/slime/slime.legs",
+		"itemName": "slimelegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/spring/flowery/flowery.back",
+		"itemName": "floweryback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/spring/flowery/flowery.chest",
+		"itemName": "flowerychest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/spring/flowery/flowery.head",
+		"itemName": "floweryhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/spring/flowery/flowery.legs",
+		"itemName": "flowerylegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/steamspring/neckruffle/neckruffle.chest",
+		"itemName": "neckruffle",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/steamspring/neckruffle/steamgrey.legs",
+		"itemName": "steamgreylegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/steamspring/pipehat/pipehat.head",
+		"itemName": "pipehat",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/swamp/froggmerchant/froggmerchant.chest",
+		"itemName": "froggmerchantchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/swamp/froggmerchant/froggmerchant.head",
+		"itemName": "froggmerchanthead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/swamp/froggmerchant/froggmerchant.legs",
+		"itemName": "froggmerchantlegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/swamp/froggsuit/frogg.chest",
+		"itemName": "froggchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/swamp/froggsuit/frogg.head",
+		"itemName": "frogghead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/swamp/froggsuit/frogg.legs",
+		"itemName": "frogglegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/swamp/lagoonsuit/lagoon.chest",
+		"itemName": "lagoonchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/swamp/lagoonsuit/lagoon.head",
+		"itemName": "lagoonhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/swamp/lagoonsuit/lagoon.legs",
+		"itemName": "lagoonpants",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/tar/sabertoothhelm/sabertoothhelm.head",
+		"itemName": "sabertoothhelm",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/tar/spearback/spearback.back",
+		"itemName": "spearback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/tar/tar/tar.chest",
+		"itemName": "tarchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/tar/tar/tar.head",
+		"itemName": "tarhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/tar/tar/tar.legs",
+		"itemName": "tarlegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/tar/tarblob/tarblob.head",
+		"itemName": "tarblob",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/tar/woolly/woolly.back",
+		"itemName": "woollyback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/tar/woolly/woolly.chest",
+		"itemName": "woollychest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/tar/woolly/woolly.legs",
+		"itemName": "woollylegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/toxic/mutant.back",
+		"itemName": "mutantback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/toxic/mutant.chest",
+		"itemName": "mutantchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/toxic/mutant.head",
+		"itemName": "mutanthead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/toxic/mutant.legs",
+		"itemName": "mutantpants",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/volcanic/firelord/firelord.back",
+		"itemName": "firelordback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/volcanic/firelord/firelord.chest",
+		"itemName": "firelordchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/volcanic/firelord/firelord.head",
+		"itemName": "firelordhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/biome/volcanic/firelord/firelord.legs",
+		"itemName": "firelordlegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/contest/boxman1/boxmanhat.head",
+		"itemName": "boxmanhathead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/contest/carrothat/carrothat.head",
+		"itemName": "carrothathead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/contest/causticstag/causticstag.head",
+		"itemName": "causticstaghead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/contest/corobockle/corobockle.head",
+		"itemName": "corobocklehead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/contest/faceleech/faceleech.head",
+		"itemName": "faceleechhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/contest/pinkeyeparasite/pinkeyeparasite.head",
+		"itemName": "pinkeyeparasitehead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/contest/scalpion/scalpion.head",
+		"itemName": "scalpionhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/contest/sensorysquidhat/sensorysquidhat.head",
+		"itemName": "sensorysquidhathead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/contest/steampunk/steampunk.head",
+		"itemName": "steampunkhead",
+		"slot": "head",
+		"level": 5,
+		"target": null
+	},
+	{
+		"path": "items/armors/contest/thinkingcap/thinkingcap.head",
+		"itemName": "thinkingcaphead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/clothes/dress1/dress1.chest",
+		"itemName": "dress1chest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/clothes/dress1/dress1.legs",
+		"itemName": "dress1legs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/clothes/hoodie/hoodie.chest",
+		"itemName": "hoodiechest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/clothes/hoodie2/hoodie2.chest",
+		"itemName": "hoodiechest2",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/clothes/jeans1/jeans1.legs",
+		"itemName": "jeans1legs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/clothes/jeans2/jeans2.legs",
+		"itemName": "jeans2legs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/clothes/jeans3/jeans3.legs",
+		"itemName": "jeans3legs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/clothes/scarf/winterscarf.head",
+		"itemName": "winterscarfhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/clothes/tshirt/tshirt.chest",
+		"itemName": "tshirtchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/adventurerobot/adventurerobot.chest",
+		"itemName": "adventurerobotchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/adventurerobot/adventurerobot.head",
+		"itemName": "adventurerobothead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/adventurerobot/adventurerobot.legs",
+		"itemName": "adventurerobotpants",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/barrel/barrel.chest",
+		"itemName": "barrelchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/barrel/barrel.head",
+		"itemName": "barrelhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/betty/betty.chest",
+		"itemName": "bettychest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/betty/betty.head",
+		"itemName": "bettyhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/betty/betty.legs",
+		"itemName": "bettylegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/buccaneer/buccaneer.chest",
+		"itemName": "buccaneerchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/buccaneer/buccaneer.head",
+		"itemName": "buccaneerhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/buccaneer/buccaneer.legs",
+		"itemName": "buccaneerlegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/cardboard/cardboard.chest",
+		"itemName": "cardboardboxarmor",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/chef/chef.chest",
+		"itemName": "chefchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/chef/chef.head",
+		"itemName": "chefhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/chef/chef.legs",
+		"itemName": "cheflegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/cowboy/cowboy.chest",
+		"itemName": "cowboychest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/cowboy/cowboy.head",
+		"itemName": "cowboyhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/cowboy/cowboy.legs",
+		"itemName": "cowboylegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/cupids/cupids.back",
+		"itemName": "cupidsback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/cupids/cupids.chest",
+		"itemName": "cupidschest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/cupids/cupids.head",
+		"itemName": "cupidshead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/cupids/cupids.legs",
+		"itemName": "cupidslegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/executioner/executionerschest.chest",
+		"itemName": "executionerschest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/executioner/executionershead.head",
+		"itemName": "executionershead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/fairy/fairy.back",
+		"itemName": "fairyback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/fairy/fairy.chest",
+		"itemName": "fairychest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/fairy/fairy.head",
+		"itemName": "fairyhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/fairy/fairy.legs",
+		"itemName": "fairylegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/hawaiian/hawaiian.chest",
+		"itemName": "hawaiianchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/hawaiian/hawaiian.legs",
+		"itemName": "hawaiianlegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/hiker/hiker.back",
+		"itemName": "hikerback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/hiker/hiker.chest",
+		"itemName": "hikerchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/hiker/hiker.legs",
+		"itemName": "hikerlegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/hotholiday/hotholiday.chest",
+		"itemName": "hotholidaychest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/hotholiday/hotholiday.head",
+		"itemName": "hotholidayhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/hotholiday/hotholiday.legs",
+		"itemName": "hotholidaypants",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/hunter/hunter.back",
+		"itemName": "hunterback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/hunter/hunter.chest",
+		"itemName": "hunterchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/hunter/hunter.legs",
+		"itemName": "hunterlegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/jumpsuit/jumpsuit.chest",
+		"itemName": "jumpsuitchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/jumpsuit/jumpsuit.legs",
+		"itemName": "jumpsuitlegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/miner/miner.chest",
+		"itemName": "minerchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/miner/miner.head",
+		"itemName": "minerhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/moneybags/moneybags.back",
+		"itemName": "moneybagsback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/moneybags/moneybags.chest",
+		"itemName": "moneybagschest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/moneybags/moneybags.head",
+		"itemName": "moneybagshead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/moneybags/moneybags.legs",
+		"itemName": "moneybagspants",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/mrclaus/mrclaus.back",
+		"itemName": "mrclausback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/mrclaus/mrclaus.chest",
+		"itemName": "mrclauschest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/mrclaus/mrclaus.head",
+		"itemName": "mrclaushead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/mrclaus/mrclaus.legs",
+		"itemName": "mrclauspants",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/mutantminer/mutantminer.chest",
+		"itemName": "mutantminerchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/mutantminer/mutantminer.head",
+		"itemName": "mutantminerhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/penguin/penguin.chest",
+		"itemName": "penguinchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/penguin/penguin.head",
+		"itemName": "penguinhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/penguin/penguin.legs",
+		"itemName": "penguinlegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/pilot/pilot.back",
+		"itemName": "pilotback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/pilot/pilot.chest",
+		"itemName": "pilotchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/pilot/pilot.head",
+		"itemName": "pilothead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/pilot/pilot.legs",
+		"itemName": "pilotlegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/pirate/pirate.back",
+		"itemName": "pirateback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/pirate/pirate.chest",
+		"itemName": "piratechest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/pirate/pirate.head",
+		"itemName": "piratehead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/pirate/pirate.legs",
+		"itemName": "piratelegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/pixelhero/pixelhero.chest",
+		"itemName": "pixelherodemochest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/pixelhero/pixelhero.legs",
+		"itemName": "pixelherodemolegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/predatory/predatory.back",
+		"itemName": "predatoryback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/predatory/predatory.chest",
+		"itemName": "predatorychest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/predatory/predatory.head",
+		"itemName": "predatoryhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/predatory/predatory.legs",
+		"itemName": "predatorypants",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/premier/premier.chest",
+		"itemName": "premierchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/premier/premier.head",
+		"itemName": "premierhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/premier/premier.legs",
+		"itemName": "premierpants",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/rainbowood/rainbowwood.chest",
+		"itemName": "rainbowwoodchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/rainbowood/rainbowwood.head",
+		"itemName": "rainbowwoodhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/rainbowood/rainbowwood.legs",
+		"itemName": "rainbowwoodlegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/rock/rock.chest",
+		"itemName": "rockchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/rock/rock.head",
+		"itemName": "rockhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/rock/rock.legs",
+		"itemName": "rocklegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/scientist/scientist.chest",
+		"itemName": "scientistchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/scientist/scientist.head",
+		"itemName": "scientisthead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/scientist/scientist.legs",
+		"itemName": "scientistlegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/shirt/shirt.chest",
+		"itemName": "shirtchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/smart/smart.chest",
+		"itemName": "smartchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/smart/smart.legs",
+		"itemName": "smartpants",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/startrack/startrack.chest",
+		"itemName": "startrackchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/startrack/startrack.legs",
+		"itemName": "startracklegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/strap/strap.chest",
+		"itemName": "strapchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/strap/strap.legs",
+		"itemName": "straplegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/summer/summer.chest",
+		"itemName": "summerchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/summer/summer.legs",
+		"itemName": "summerpants",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/wedding1/wedding1.chest",
+		"itemName": "wedding1chest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/wedding1/wedding1.legs",
+		"itemName": "wedding1legs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/wedding2/wedding2.chest",
+		"itemName": "wedding2chest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/wedding2/wedding2.head",
+		"itemName": "wedding2head",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/wedding2/wedding2.legs",
+		"itemName": "wedding2legs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/wizard/wizard.back",
+		"itemName": "wizardback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/wizard/wizard.chest",
+		"itemName": "wizardchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/wizard/wizard.head",
+		"itemName": "wizardhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/costumes/wizard/wizard.legs",
+		"itemName": "wizardlegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/alienskull/alienskull.head",
+		"itemName": "alienskullhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/arenachampion/arenachampion.head",
+		"itemName": "arenachampionhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/banana/banana.head",
+		"itemName": "bananahead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/bandithat1/bandithat1.head",
+		"itemName": "bandithat1",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/bandithat2/bandithat2.head",
+		"itemName": "bandithat2",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/bear/bear.head",
+		"itemName": "bearhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/beehive/beehive.head",
+		"itemName": "beehivehead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/beret/beret.head",
+		"itemName": "berethead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/berry/berry.head",
+		"itemName": "berryhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/bev/bev.head",
+		"itemName": "bevhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/bunny/bunny.head",
+		"itemName": "bunnyhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/cap/cap.head",
+		"itemName": "caphead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/captainscap/captainscap.head",
+		"itemName": "captainshead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/cardboard/cardboard.head",
+		"itemName": "cardboardhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/clocktophat/clocktophat.head",
+		"itemName": "clocktophathead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/coolfez/coolfez.head",
+		"itemName": "coolfezhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/dev/dev.head",
+		"itemName": "devhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/dinosaur/dinosaur.head",
+		"itemName": "dinosaurhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/divingmask/divingmask.head",
+		"itemName": "divingmaskhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/ethnicmask/ethnichead.head",
+		"itemName": "ethnichead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/eye/eye.head",
+		"itemName": "eyehead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/eyehead/eyehead.head",
+		"itemName": "eyehead2",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/eyepatch/eyepatch.head",
+		"itemName": "eyepatchhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/fancy/fancy.head",
+		"itemName": "fancyhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/feather/feather.head",
+		"itemName": "featherhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/fedora/fedora.head",
+		"itemName": "fedorahead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/floppyhat/floppyhat.head",
+		"itemName": "floppyhathead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/fullbunny/fullbunny.head",
+		"itemName": "fullbunnyhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/gagnose/gagnose.head",
+		"itemName": "gagnosehead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/gasmask/gasmask.head",
+		"itemName": "gasmaskhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/georgedev/georgedev.head",
+		"itemName": "georgedevhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/gladiator/gladiator.head",
+		"itemName": "gladiatorhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/glasses1/glasses1.head",
+		"itemName": "glasses1head",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/glasses2/glasses2.head",
+		"itemName": "glasses2head",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/glasses3eyes/glasses3eyes.head",
+		"itemName": "glasses3eyes",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/glasses4/glasses4.head",
+		"itemName": "glasses4head",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/glasses5/glasses5.head",
+		"itemName": "glasses5head",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/goat/goat.head",
+		"itemName": "goathead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/greenfinger/greenfinger.head",
+		"itemName": "greenfingerhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/groucho/groucho.head",
+		"itemName": "grouchohead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/hawaiian/hawaiian.head",
+		"itemName": "hawaiianhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/herocap/herocap.head",
+		"itemName": "herocaphead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/hobo/hobo.head",
+		"itemName": "hobohead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/horse/horse.head",
+		"itemName": "horsehead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/industrialcrew/industrialcrew.head",
+		"itemName": "industrialcrewhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/insidious/insidious.head",
+		"itemName": "insidioushead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/ironavianhelmet/ironavianhelmet.head",
+		"itemName": "ironavianhelmethead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/jester/jester.head",
+		"itemName": "jesterhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/kathood/kathood.head",
+		"itemName": "kathoodhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/kitty/kitty.head",
+		"itemName": "kittyhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/knight/knight.head",
+		"itemName": "knighthead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/ladyhat/ladyhathead.head",
+		"itemName": "ladyhathead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/luchador/luchador.head",
+		"itemName": "luchadorhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/m1helmet/m1helmet.head",
+		"itemName": "m1helmethead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/m1helmetmedic/m1helmet.head",
+		"itemName": "m1helmetmedichead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/mechpilot/mechpilot.head",
+		"itemName": "mechpilothead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/mininghat/mininghat.head",
+		"itemName": "mininghathead",
+		"slot": "head",
+		"level": 1,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/pharaoh/pharaoh.head",
+		"itemName": "pharaohhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/phrygiancap/phrygiancap.head",
+		"itemName": "phrygiancaphead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/plaguedoctor/plaguedoctor.head",
+		"itemName": "plaguedoctorhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/plainhood/plainhood.head",
+		"itemName": "plainhoodhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/protectorateflower/protectorateflower.head",
+		"itemName": "protectorateflowerhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/pyramid/pyramid.head",
+		"itemName": "pyramidhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/rainbowhood/rainbowhood.head",
+		"itemName": "rainbowhoodhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/reed/reed.head",
+		"itemName": "reedhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/rock/rockhat.head",
+		"itemName": "rockhat",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/safetyhelmet/safetyhelmet.head",
+		"itemName": "safetyhelmethead",
+		"slot": "head",
+		"level": 2,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/shark/shark.head",
+		"itemName": "sharkhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/sheep/sheep.head",
+		"itemName": "sheephead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/shroomdisguise/shroomdisguise.head",
+		"itemName": "shroomdisguisehead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/shroomhead/shroom.head",
+		"itemName": "shroomhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/shroomhead2/shroom.head",
+		"itemName": "shroomhead2",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/shroomhead3/shroom.head",
+		"itemName": "shroomhead3",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/shroomhead4/shroom.head",
+		"itemName": "shroomhead4",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/skullmask/skullmask.head",
+		"itemName": "skullmaskhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/sombrero/sombrero.head",
+		"itemName": "sombrerohead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/spacebird/spacebird.head",
+		"itemName": "spacebirdhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/strawberry/strawberry.head",
+		"itemName": "strawberryhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/sunglasses1/sunglasses1.head",
+		"itemName": "sunglasses1head",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/swamphat/swamphat.head",
+		"itemName": "swamphat",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/symbiote/symbiote.head",
+		"itemName": "symbiotehead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/teddy/teddy.head",
+		"itemName": "teddyhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/tiger/tiger.head",
+		"itemName": "tigerhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/tophat/tophathead.head",
+		"itemName": "tophathead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/toptophat/toptophathead.head",
+		"itemName": "toptophathead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/tvhelmet/tvhelmet.head",
+		"itemName": "tvhelmethead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/unicorn/unicorn.head",
+		"itemName": "unicornhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/ushanka/ushanka.head",
+		"itemName": "ushankahead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/venetianmask/ventetianmask.head",
+		"itemName": "venetianmaskhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/vicious/vicious.head",
+		"itemName": "vicioushead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/vikinghelmet/vikinghelmet.head",
+		"itemName": "vikinghead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/visor/visor.head",
+		"itemName": "visorhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/decorative/hats/wig/wig.head",
+		"itemName": "wighead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/floran/floran-furnivour/floranfurnivor.chest",
+		"itemName": "floranfurnivourchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/floran/floran-furnivour/floranfurnivor.legs",
+		"itemName": "floranfurnivourlegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/floran/floran-hunter/floranhunter.chest",
+		"itemName": "floranhunterchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/floran/floran-hunter/floranhunter.legs",
+		"itemName": "floranhunterlegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/floran/floran-leaf/floranleaf.chest",
+		"itemName": "floranleafchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/floran/floran-leaf/floranleaf.legs",
+		"itemName": "floranleaflegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/floran/floran-pelt/floranpelt.chest",
+		"itemName": "floranpeltchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/floran/floran-pelt/floranpelt.legs",
+		"itemName": "floranpeltlegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/floran/floran-survivalist/floransurvivalist.chest",
+		"itemName": "floransurvivalistchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/floran/floran-survivalist/floransurvivalist.legs",
+		"itemName": "floransurvivalistlegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/floran/floran-tier1/florantier1.chest",
+		"itemName": "florantier1chest",
+		"slot": "chest",
+		"level": 1,
+		"target": "nicemicetier1chest"
+	},
+	{
+		"path": "items/armors/floran/floran-tier1/florantier1.head",
+		"itemName": "florantier1head",
+		"slot": "head",
+		"level": 1,
+		"target": "nicemicetier1head"
+	},
+	{
+		"path": "items/armors/floran/floran-tier1/florantier1.legs",
+		"itemName": "florantier1pants",
+		"slot": "pants",
+		"level": 1,
+		"target": "nicemicetier1pants"
+	},
+	{
+		"path": "items/armors/floran/floran-tier2/florantier2.chest",
+		"itemName": "florantier2chest",
+		"slot": "chest",
+		"level": 2,
+		"target": "nicemicetier2chest"
+	},
+	{
+		"path": "items/armors/floran/floran-tier2/florantier2.head",
+		"itemName": "florantier2head",
+		"slot": "head",
+		"level": 2,
+		"target": "nicemicetier2head"
+	},
+	{
+		"path": "items/armors/floran/floran-tier2/florantier2.legs",
+		"itemName": "florantier2pants",
+		"slot": "pants",
+		"level": 2,
+		"target": "nicemicetier2pants"
+	},
+	{
+		"path": "items/armors/floran/floran-tier3/florantier3.chest",
+		"itemName": "florantier3chest",
+		"slot": "chest",
+		"level": 3,
+		"target": "nicemicetier3chest"
+	},
+	{
+		"path": "items/armors/floran/floran-tier3/florantier3.head",
+		"itemName": "florantier3head",
+		"slot": "head",
+		"level": 3,
+		"target": "nicemicetier3head"
+	},
+	{
+		"path": "items/armors/floran/floran-tier3/florantier3.legs",
+		"itemName": "florantier3pants",
+		"slot": "pants",
+		"level": 3,
+		"target": "nicemicetier3pants"
+	},
+	{
+		"path": "items/armors/floran/floran-tier4/florantier4.chest",
+		"itemName": "florantier4chest",
+		"slot": "chest",
+		"level": 4,
+		"target": "nicemicetier4chest"
+	},
+	{
+		"path": "items/armors/floran/floran-tier4/florantier4.head",
+		"itemName": "florantier4head",
+		"slot": "head",
+		"level": 4,
+		"target": "nicemicetier4head"
+	},
+	{
+		"path": "items/armors/floran/floran-tier4/florantier4.legs",
+		"itemName": "florantier4pants",
+		"slot": "pants",
+		"level": 4,
+		"target": "nicemicetier4pants"
+	},
+	{
+		"path": "items/armors/floran/floran-tier5accelerator/florantier5accelerator.chest",
+		"itemName": "florantier5achest",
+		"slot": "chest",
+		"level": 5,
+		"target": "nicemicetier5achest"
+	},
+	{
+		"path": "items/armors/floran/floran-tier5accelerator/florantier5accelerator.head",
+		"itemName": "florantier5ahead",
+		"slot": "head",
+		"level": 5,
+		"target": "nicemicetier5ahead"
+	},
+	{
+		"path": "items/armors/floran/floran-tier5accelerator/florantier5accelerator.legs",
+		"itemName": "florantier5apants",
+		"slot": "pants",
+		"level": 5,
+		"target": "nicemicetier5apants"
+	},
+	{
+		"path": "items/armors/floran/floran-tier5manipulator/florantier5manipulator.chest",
+		"itemName": "florantier5mchest",
+		"slot": "chest",
+		"level": 5,
+		"target": "nicemicetier5mchest"
+	},
+	{
+		"path": "items/armors/floran/floran-tier5manipulator/florantier5manipulator.head",
+		"itemName": "florantier5mhead",
+		"slot": "head",
+		"level": 5,
+		"target": "nicemicetier5mhead"
+	},
+	{
+		"path": "items/armors/floran/floran-tier5manipulator/florantier5manipulator.legs",
+		"itemName": "florantier5mpants",
+		"slot": "pants",
+		"level": 5,
+		"target": "nicemicetier5mpants"
+	},
+	{
+		"path": "items/armors/floran/floran-tier5separator/florantier5separator.chest",
+		"itemName": "florantier5schest",
+		"slot": "chest",
+		"level": 5,
+		"target": "nicemicetier5schest"
+	},
+	{
+		"path": "items/armors/floran/floran-tier5separator/florantier5separator.head",
+		"itemName": "florantier5shead",
+		"slot": "head",
+		"level": 5,
+		"target": "nicemicetier5shead"
+	},
+	{
+		"path": "items/armors/floran/floran-tier5separator/florantier5separator.legs",
+		"itemName": "florantier5spants",
+		"slot": "pants",
+		"level": 5,
+		"target": "nicemicetier5spants"
+	},
+	{
+		"path": "items/armors/floran/floran-tier6accelerator/florantier6accelerator.chest",
+		"itemName": "florantier6achest",
+		"slot": "chest",
+		"level": 6,
+		"target": "nicemicetier6achest"
+	},
+	{
+		"path": "items/armors/floran/floran-tier6accelerator/florantier6accelerator.head",
+		"itemName": "florantier6ahead",
+		"slot": "head",
+		"level": 6,
+		"target": "nicemicetier6ahead"
+	},
+	{
+		"path": "items/armors/floran/floran-tier6accelerator/florantier6accelerator.legs",
+		"itemName": "florantier6apants",
+		"slot": "pants",
+		"level": 6,
+		"target": "nicemicetier6apants"
+	},
+	{
+		"path": "items/armors/floran/floran-tier6manipulator/florantier6manipulator.chest",
+		"itemName": "florantier6mchest",
+		"slot": "chest",
+		"level": 6,
+		"target": "nicemicetier6mchest"
+	},
+	{
+		"path": "items/armors/floran/floran-tier6manipulator/florantier6manipulator.head",
+		"itemName": "florantier6mhead",
+		"slot": "head",
+		"level": 6,
+		"target": "nicemicetier6mhead"
+	},
+	{
+		"path": "items/armors/floran/floran-tier6manipulator/florantier6manipulator.legs",
+		"itemName": "florantier6mpants",
+		"slot": "pants",
+		"level": 6,
+		"target": "nicemicetier6mpants"
+	},
+	{
+		"path": "items/armors/floran/floran-tier6separator/florantier6separator.chest",
+		"itemName": "florantier6schest",
+		"slot": "chest",
+		"level": 6,
+		"target": "nicemicetier6schest"
+	},
+	{
+		"path": "items/armors/floran/floran-tier6separator/florantier6separator.head",
+		"itemName": "florantier6shead",
+		"slot": "head",
+		"level": 6,
+		"target": "nicemicetier6shead"
+	},
+	{
+		"path": "items/armors/floran/floran-tier6separator/florantier6separator.legs",
+		"itemName": "florantier6spants",
+		"slot": "pants",
+		"level": 6,
+		"target": "nicemicetier6spants"
+	},
+	{
+		"path": "items/armors/glitch/glitch-craftsmen/craftsmen.chest",
+		"itemName": "craftsmenchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/glitch/glitch-craftsmen/craftsmen.legs",
+		"itemName": "craftsmenlegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/glitch/glitch-merchant/merchant.chest",
+		"itemName": "merchantchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/glitch/glitch-merchant/merchant.legs",
+		"itemName": "merchantlegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/glitch/glitch-noble/noble.chest",
+		"itemName": "noblechest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/glitch/glitch-noble/noble.legs",
+		"itemName": "noblelegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/glitch/glitch-peasant/peasant.chest",
+		"itemName": "peasantchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/glitch/glitch-peasant/peasant.legs",
+		"itemName": "peasantlegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/glitch/glitch-royal/glitchroyal.head",
+		"itemName": "glitchroyalhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/glitch/glitch-tier1/glitchtier1.chest",
+		"itemName": "glitchtier1chest",
+		"slot": "chest",
+		"level": 1,
+		"target": "nicemicetier1chest"
+	},
+	{
+		"path": "items/armors/glitch/glitch-tier1/glitchtier1.head",
+		"itemName": "glitchtier1head",
+		"slot": "head",
+		"level": 1,
+		"target": "nicemicetier1head"
+	},
+	{
+		"path": "items/armors/glitch/glitch-tier1/glitchtier1.legs",
+		"itemName": "glitchtier1pants",
+		"slot": "pants",
+		"level": 1,
+		"target": "nicemicetier1pants"
+	},
+	{
+		"path": "items/armors/glitch/glitch-tier2/glitchtier2.chest",
+		"itemName": "glitchtier2chest",
+		"slot": "chest",
+		"level": 2,
+		"target": "nicemicetier2chest"
+	},
+	{
+		"path": "items/armors/glitch/glitch-tier2/glitchtier2.head",
+		"itemName": "glitchtier2head",
+		"slot": "head",
+		"level": 2,
+		"target": "nicemicetier2head"
+	},
+	{
+		"path": "items/armors/glitch/glitch-tier2/glitchtier2.legs",
+		"itemName": "glitchtier2pants",
+		"slot": "pants",
+		"level": 2,
+		"target": "nicemicetier2pants"
+	},
+	{
+		"path": "items/armors/glitch/glitch-tier3/glitchtier3.chest",
+		"itemName": "glitchtier3chest",
+		"slot": "chest",
+		"level": 3,
+		"target": "nicemicetier3chest"
+	},
+	{
+		"path": "items/armors/glitch/glitch-tier3/glitchtier3.head",
+		"itemName": "glitchtier3head",
+		"slot": "head",
+		"level": 3,
+		"target": "nicemicetier3head"
+	},
+	{
+		"path": "items/armors/glitch/glitch-tier3/glitchtier3.legs",
+		"itemName": "glitchtier3pants",
+		"slot": "pants",
+		"level": 3,
+		"target": "nicemicetier3pants"
+	},
+	{
+		"path": "items/armors/glitch/glitch-tier4/glitchtier4.chest",
+		"itemName": "glitchtier4chest",
+		"slot": "chest",
+		"level": 4,
+		"target": "nicemicetier4chest"
+	},
+	{
+		"path": "items/armors/glitch/glitch-tier4/glitchtier4.head",
+		"itemName": "glitchtier4head",
+		"slot": "head",
+		"level": 4,
+		"target": "nicemicetier4head"
+	},
+	{
+		"path": "items/armors/glitch/glitch-tier4/glitchtier4.legs",
+		"itemName": "glitchtier4pants",
+		"slot": "pants",
+		"level": 4,
+		"target": "nicemicetier4pants"
+	},
+	{
+		"path": "items/armors/glitch/glitch-tier5accelerator/glitchtier5accelerator.chest",
+		"itemName": "glitchtier5achest",
+		"slot": "chest",
+		"level": 5,
+		"target": "nicemicetier5achest"
+	},
+	{
+		"path": "items/armors/glitch/glitch-tier5accelerator/glitchtier5accelerator.head",
+		"itemName": "glitchtier5ahead",
+		"slot": "head",
+		"level": 5,
+		"target": "nicemicetier5ahead"
+	},
+	{
+		"path": "items/armors/glitch/glitch-tier5accelerator/glitchtier5accelerator.legs",
+		"itemName": "glitchtier5apants",
+		"slot": "pants",
+		"level": 5,
+		"target": "nicemicetier5apants"
+	},
+	{
+		"path": "items/armors/glitch/glitch-tier5manipulator/glitchtier5manipulator.chest",
+		"itemName": "glitchtier5mchest",
+		"slot": "chest",
+		"level": 5,
+		"target": "nicemicetier5mchest"
+	},
+	{
+		"path": "items/armors/glitch/glitch-tier5manipulator/glitchtier5manipulator.head",
+		"itemName": "glitchtier5mhead",
+		"slot": "head",
+		"level": 5,
+		"target": "nicemicetier5mhead"
+	},
+	{
+		"path": "items/armors/glitch/glitch-tier5manipulator/glitchtier5manipulator.legs",
+		"itemName": "glitchtier5mpants",
+		"slot": "pants",
+		"level": 5,
+		"target": "nicemicetier5mpants"
+	},
+	{
+		"path": "items/armors/glitch/glitch-tier5separator/glitchtier5separator.chest",
+		"itemName": "glitchtier5schest",
+		"slot": "chest",
+		"level": 5,
+		"target": "nicemicetier5schest"
+	},
+	{
+		"path": "items/armors/glitch/glitch-tier5separator/glitchtier5separator.head",
+		"itemName": "glitchtier5shead",
+		"slot": "head",
+		"level": 5,
+		"target": "nicemicetier5shead"
+	},
+	{
+		"path": "items/armors/glitch/glitch-tier5separator/glitchtier5separator.legs",
+		"itemName": "glitchtier5spants",
+		"slot": "pants",
+		"level": 5,
+		"target": "nicemicetier5spants"
+	},
+	{
+		"path": "items/armors/glitch/glitch-tier6accelerator/glitchtier6accelerator.chest",
+		"itemName": "glitchtier6achest",
+		"slot": "chest",
+		"level": 6,
+		"target": "nicemicetier6achest"
+	},
+	{
+		"path": "items/armors/glitch/glitch-tier6accelerator/glitchtier6accelerator.head",
+		"itemName": "glitchtier6ahead",
+		"slot": "head",
+		"level": 6,
+		"target": "nicemicetier6ahead"
+	},
+	{
+		"path": "items/armors/glitch/glitch-tier6accelerator/glitchtier6accelerator.legs",
+		"itemName": "glitchtier6apants",
+		"slot": "pants",
+		"level": 6,
+		"target": "nicemicetier6apants"
+	},
+	{
+		"path": "items/armors/glitch/glitch-tier6manipulator/glitchtier6manipulator.chest",
+		"itemName": "glitchtier6mchest",
+		"slot": "chest",
+		"level": 6,
+		"target": "nicemicetier6mchest"
+	},
+	{
+		"path": "items/armors/glitch/glitch-tier6manipulator/glitchtier6manipulator.head",
+		"itemName": "glitchtier6mhead",
+		"slot": "head",
+		"level": 6,
+		"target": "nicemicetier6mhead"
+	},
+	{
+		"path": "items/armors/glitch/glitch-tier6manipulator/glitchtier6manipulator.legs",
+		"itemName": "glitchtier6mpants",
+		"slot": "pants",
+		"level": 6,
+		"target": "nicemicetier6mpants"
+	},
+	{
+		"path": "items/armors/glitch/glitch-tier6separator/glitchtier6separator.chest",
+		"itemName": "glitchtier6schest",
+		"slot": "chest",
+		"level": 6,
+		"target": "nicemicetier6schest"
+	},
+	{
+		"path": "items/armors/glitch/glitch-tier6separator/glitchtier6separator.head",
+		"itemName": "glitchtier6shead",
+		"slot": "head",
+		"level": 6,
+		"target": "nicemicetier6shead"
+	},
+	{
+		"path": "items/armors/glitch/glitch-tier6separator/glitchtier6separator.legs",
+		"itemName": "glitchtier6spants",
+		"slot": "pants",
+		"level": 6,
+		"target": "nicemicetier6spants"
+	},
+	{
+		"path": "items/armors/human/human-concept/concept.chest",
+		"itemName": "conceptchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/human/human-concept/concept.legs",
+		"itemName": "conceptlegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/human/human-cool/cool.chest",
+		"itemName": "coolchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/human/human-cool/cool.legs",
+		"itemName": "coollegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/human/human-sweatervest/sweatervest.chest",
+		"itemName": "sweatervestchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/human/human-sweatervest/sweatervest.legs",
+		"itemName": "sweatervestlegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/human/human-tier1/humantier1.chest",
+		"itemName": "humantier1chest",
+		"slot": "chest",
+		"level": 1,
+		"target": "nicemicetier1chest"
+	},
+	{
+		"path": "items/armors/human/human-tier1/humantier1.head",
+		"itemName": "humantier1head",
+		"slot": "head",
+		"level": 1,
+		"target": "nicemicetier1head"
+	},
+	{
+		"path": "items/armors/human/human-tier1/humantier1.legs",
+		"itemName": "humantier1pants",
+		"slot": "pants",
+		"level": 1,
+		"target": "nicemicetier1pants"
+	},
+	{
+		"path": "items/armors/human/human-tier2/humantier2.chest",
+		"itemName": "humantier2chest",
+		"slot": "chest",
+		"level": 2,
+		"target": "nicemicetier2chest"
+	},
+	{
+		"path": "items/armors/human/human-tier2/humantier2.head",
+		"itemName": "humantier2head",
+		"slot": "head",
+		"level": 2,
+		"target": "nicemicetier2head"
+	},
+	{
+		"path": "items/armors/human/human-tier2/humantier2.legs",
+		"itemName": "humantier2pants",
+		"slot": "pants",
+		"level": 2,
+		"target": "nicemicetier2pants"
+	},
+	{
+		"path": "items/armors/human/human-tier3/humantier3.chest",
+		"itemName": "humantier3chest",
+		"slot": "chest",
+		"level": 3,
+		"target": "nicemicetier3chest"
+	},
+	{
+		"path": "items/armors/human/human-tier3/humantier3.head",
+		"itemName": "humantier3head",
+		"slot": "head",
+		"level": 3,
+		"target": "nicemicetier3head"
+	},
+	{
+		"path": "items/armors/human/human-tier3/humantier3.legs",
+		"itemName": "humantier3pants",
+		"slot": "pants",
+		"level": 3,
+		"target": "nicemicetier3pants"
+	},
+	{
+		"path": "items/armors/human/human-tier4/humantier4.chest",
+		"itemName": "humantier4chest",
+		"slot": "chest",
+		"level": 4,
+		"target": "nicemicetier4chest"
+	},
+	{
+		"path": "items/armors/human/human-tier4/humantier4.head",
+		"itemName": "humantier4head",
+		"slot": "head",
+		"level": 4,
+		"target": "nicemicetier4head"
+	},
+	{
+		"path": "items/armors/human/human-tier4/humantier4.legs",
+		"itemName": "humantier4pants",
+		"slot": "pants",
+		"level": 4,
+		"target": "nicemicetier4pants"
+	},
+	{
+		"path": "items/armors/human/human-tier5accelerator/humantier5accelerator.chest",
+		"itemName": "humantier5achest",
+		"slot": "chest",
+		"level": 5,
+		"target": "nicemicetier5achest"
+	},
+	{
+		"path": "items/armors/human/human-tier5accelerator/humantier5accelerator.head",
+		"itemName": "humantier5ahead",
+		"slot": "head",
+		"level": 5,
+		"target": "nicemicetier5ahead"
+	},
+	{
+		"path": "items/armors/human/human-tier5accelerator/humantier5accelerator.legs",
+		"itemName": "humantier5apants",
+		"slot": "pants",
+		"level": 5,
+		"target": "nicemicetier5apants"
+	},
+	{
+		"path": "items/armors/human/human-tier5manipulator/humantier5manipulator.chest",
+		"itemName": "humantier5mchest",
+		"slot": "chest",
+		"level": 5,
+		"target": "nicemicetier5mchest"
+	},
+	{
+		"path": "items/armors/human/human-tier5manipulator/humantier5manipulator.head",
+		"itemName": "humantier5mhead",
+		"slot": "head",
+		"level": 5,
+		"target": "nicemicetier5mhead"
+	},
+	{
+		"path": "items/armors/human/human-tier5manipulator/humantier5manipulator.legs",
+		"itemName": "humantier5mpants",
+		"slot": "pants",
+		"level": 5,
+		"target": "nicemicetier5mpants"
+	},
+	{
+		"path": "items/armors/human/human-tier5separator/humantier5separator.chest",
+		"itemName": "humantier5schest",
+		"slot": "chest",
+		"level": 5,
+		"target": "nicemicetier5schest"
+	},
+	{
+		"path": "items/armors/human/human-tier5separator/humantier5separator.head",
+		"itemName": "humantier5shead",
+		"slot": "head",
+		"level": 5,
+		"target": "nicemicetier5shead"
+	},
+	{
+		"path": "items/armors/human/human-tier5separator/humantier5separator.legs",
+		"itemName": "humantier5spants",
+		"slot": "pants",
+		"level": 5,
+		"target": "nicemicetier5spants"
+	},
+	{
+		"path": "items/armors/human/human-tier6accelerator/humantier6accelerator.chest",
+		"itemName": "humantier6achest",
+		"slot": "chest",
+		"level": 6,
+		"target": "nicemicetier6achest"
+	},
+	{
+		"path": "items/armors/human/human-tier6accelerator/humantier6accelerator.head",
+		"itemName": "humantier6ahead",
+		"slot": "head",
+		"level": 6,
+		"target": "nicemicetier6ahead"
+	},
+	{
+		"path": "items/armors/human/human-tier6accelerator/humantier6accelerator.legs",
+		"itemName": "humantier6apants",
+		"slot": "pants",
+		"level": 6,
+		"target": "nicemicetier6apants"
+	},
+	{
+		"path": "items/armors/human/human-tier6manipulator/humantier6manipulator.chest",
+		"itemName": "humantier6mchest",
+		"slot": "chest",
+		"level": 6,
+		"target": "nicemicetier6mchest"
+	},
+	{
+		"path": "items/armors/human/human-tier6manipulator/humantier6manipulator.head",
+		"itemName": "humantier6mhead",
+		"slot": "head",
+		"level": 6,
+		"target": "nicemicetier6mhead"
+	},
+	{
+		"path": "items/armors/human/human-tier6manipulator/humantier6manipulator.legs",
+		"itemName": "humantier6mpants",
+		"slot": "pants",
+		"level": 6,
+		"target": "nicemicetier6mpants"
+	},
+	{
+		"path": "items/armors/human/human-tier6separator/humantier6separator.chest",
+		"itemName": "humantier6schest",
+		"slot": "chest",
+		"level": 6,
+		"target": "nicemicetier6schest"
+	},
+	{
+		"path": "items/armors/human/human-tier6separator/humantier6separator.head",
+		"itemName": "humantier6shead",
+		"slot": "head",
+		"level": 6,
+		"target": "nicemicetier6shead"
+	},
+	{
+		"path": "items/armors/human/human-tier6separator/humantier6separator.legs",
+		"itemName": "humantier6spants",
+		"slot": "pants",
+		"level": 6,
+		"target": "nicemicetier6spants"
+	},
+	{
+		"path": "items/armors/human/human-workout/workout.chest",
+		"itemName": "workoutchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/human/human-workout/workout.legs",
+		"itemName": "workoutlegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/hylotl/hylotl-kimono/kimono.chest",
+		"itemName": "kimonochest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/hylotl/hylotl-kimono/kimono.legs",
+		"itemName": "kimonolegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/hylotl/hylotl-monk/monk.chest",
+		"itemName": "monkchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/hylotl/hylotl-monk/monk.legs",
+		"itemName": "monklegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/hylotl/hylotl-tier1/hylotltier1.chest",
+		"itemName": "hylotltier1chest",
+		"slot": "chest",
+		"level": 1,
+		"target": "nicemicetier1chest"
+	},
+	{
+		"path": "items/armors/hylotl/hylotl-tier1/hylotltier1.head",
+		"itemName": "hylotltier1head",
+		"slot": "head",
+		"level": 1,
+		"target": "nicemicetier1head"
+	},
+	{
+		"path": "items/armors/hylotl/hylotl-tier1/hylotltier1.legs",
+		"itemName": "hylotltier1pants",
+		"slot": "pants",
+		"level": 1,
+		"target": "nicemicetier1pants"
+	},
+	{
+		"path": "items/armors/hylotl/hylotl-tier2/hylotltier2.chest",
+		"itemName": "hylotltier2chest",
+		"slot": "chest",
+		"level": 2,
+		"target": "nicemicetier2chest"
+	},
+	{
+		"path": "items/armors/hylotl/hylotl-tier2/hylotltier2.head",
+		"itemName": "hylotltier2head",
+		"slot": "head",
+		"level": 2,
+		"target": "nicemicetier2head"
+	},
+	{
+		"path": "items/armors/hylotl/hylotl-tier2/hylotltier2.legs",
+		"itemName": "hylotltier2pants",
+		"slot": "pants",
+		"level": 2,
+		"target": "nicemicetier2pants"
+	},
+	{
+		"path": "items/armors/hylotl/hylotl-tier3/hylotltier3.chest",
+		"itemName": "hylotltier3chest",
+		"slot": "chest",
+		"level": 3,
+		"target": "nicemicetier3chest"
+	},
+	{
+		"path": "items/armors/hylotl/hylotl-tier3/hylotltier3.head",
+		"itemName": "hylotltier3head",
+		"slot": "head",
+		"level": 3,
+		"target": "nicemicetier3head"
+	},
+	{
+		"path": "items/armors/hylotl/hylotl-tier3/hylotltier3.legs",
+		"itemName": "hylotltier3pants",
+		"slot": "pants",
+		"level": 3,
+		"target": "nicemicetier3pants"
+	},
+	{
+		"path": "items/armors/hylotl/hylotl-tier4/hylotltier4.chest",
+		"itemName": "hylotltier4chest",
+		"slot": "chest",
+		"level": 4,
+		"target": "nicemicetier4chest"
+	},
+	{
+		"path": "items/armors/hylotl/hylotl-tier4/hylotltier4.head",
+		"itemName": "hylotltier4head",
+		"slot": "head",
+		"level": 4,
+		"target": "nicemicetier4head"
+	},
+	{
+		"path": "items/armors/hylotl/hylotl-tier4/hylotltier4.legs",
+		"itemName": "hylotltier4pants",
+		"slot": "pants",
+		"level": 4,
+		"target": "nicemicetier4pants"
+	},
+	{
+		"path": "items/armors/hylotl/hylotl-tier5accelerator/hylotltier5accelerator.chest",
+		"itemName": "hylotltier5achest",
+		"slot": "chest",
+		"level": 5,
+		"target": "nicemicetier5achest"
+	},
+	{
+		"path": "items/armors/hylotl/hylotl-tier5accelerator/hylotltier5accelerator.head",
+		"itemName": "hylotltier5ahead",
+		"slot": "head",
+		"level": 5,
+		"target": "nicemicetier5ahead"
+	},
+	{
+		"path": "items/armors/hylotl/hylotl-tier5accelerator/hylotltier5accelerator.legs",
+		"itemName": "hylotltier5apants",
+		"slot": "pants",
+		"level": 5,
+		"target": "nicemicetier5apants"
+	},
+	{
+		"path": "items/armors/hylotl/hylotl-tier5manipulator/hylotltier5manipulator.chest",
+		"itemName": "hylotltier5mchest",
+		"slot": "chest",
+		"level": 5,
+		"target": "nicemicetier5mchest"
+	},
+	{
+		"path": "items/armors/hylotl/hylotl-tier5manipulator/hylotltier5manipulator.head",
+		"itemName": "hylotltier5mhead",
+		"slot": "head",
+		"level": 5,
+		"target": "nicemicetier5mhead"
+	},
+	{
+		"path": "items/armors/hylotl/hylotl-tier5manipulator/hylotltier5manipulator.legs",
+		"itemName": "hylotltier5mpants",
+		"slot": "pants",
+		"level": 5,
+		"target": "nicemicetier5mpants"
+	},
+	{
+		"path": "items/armors/hylotl/hylotl-tier5separator/hylotltier5separator.chest",
+		"itemName": "hylotltier5schest",
+		"slot": "chest",
+		"level": 5,
+		"target": "nicemicetier5schest"
+	},
+	{
+		"path": "items/armors/hylotl/hylotl-tier5separator/hylotltier5separator.head",
+		"itemName": "hylotltier5shead",
+		"slot": "head",
+		"level": 5,
+		"target": "nicemicetier5shead"
+	},
+	{
+		"path": "items/armors/hylotl/hylotl-tier5separator/hylotltier5separator.legs",
+		"itemName": "hylotltier5spants",
+		"slot": "pants",
+		"level": 5,
+		"target": "nicemicetier5spants"
+	},
+	{
+		"path": "items/armors/hylotl/hylotl-tier6accelerator/hylotltier6accelerator.chest",
+		"itemName": "hylotltier6achest",
+		"slot": "chest",
+		"level": 6,
+		"target": "nicemicetier6achest"
+	},
+	{
+		"path": "items/armors/hylotl/hylotl-tier6accelerator/hylotltier6accelerator.head",
+		"itemName": "hylotltier6ahead",
+		"slot": "head",
+		"level": 6,
+		"target": "nicemicetier6ahead"
+	},
+	{
+		"path": "items/armors/hylotl/hylotl-tier6accelerator/hylotltier6accelerator.legs",
+		"itemName": "hylotltier6apants",
+		"slot": "pants",
+		"level": 6,
+		"target": "nicemicetier6apants"
+	},
+	{
+		"path": "items/armors/hylotl/hylotl-tier6manipulator/hylotltier6manipulator.chest",
+		"itemName": "hylotltier6mchest",
+		"slot": "chest",
+		"level": 6,
+		"target": "nicemicetier6mchest"
+	},
+	{
+		"path": "items/armors/hylotl/hylotl-tier6manipulator/hylotltier6manipulator.head",
+		"itemName": "hylotltier6mhead",
+		"slot": "head",
+		"level": 6,
+		"target": "nicemicetier6mhead"
+	},
+	{
+		"path": "items/armors/hylotl/hylotl-tier6manipulator/hylotltier6manipulator.legs",
+		"itemName": "hylotltier6mpants",
+		"slot": "pants",
+		"level": 6,
+		"target": "nicemicetier6mpants"
+	},
+	{
+		"path": "items/armors/hylotl/hylotl-tier6separator/hylotltier6separator.chest",
+		"itemName": "hylotltier6schest",
+		"slot": "chest",
+		"level": 6,
+		"target": "nicemicetier6schest"
+	},
+	{
+		"path": "items/armors/hylotl/hylotl-tier6separator/hylotltier6separator.head",
+		"itemName": "hylotltier6shead",
+		"slot": "head",
+		"level": 6,
+		"target": "nicemicetier6shead"
+	},
+	{
+		"path": "items/armors/hylotl/hylotl-tier6separator/hylotltier6separator.legs",
+		"itemName": "hylotltier6spants",
+		"slot": "pants",
+		"level": 6,
+		"target": "nicemicetier6spants"
+	},
+	{
+		"path": "items/armors/hylotl/hylotl-traditional/traditional.chest",
+		"itemName": "traditionalchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/hylotl/hylotl-traditional/traditional.legs",
+		"itemName": "traditionallegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/hylotl/hylotl-trainee/trainee.chest",
+		"itemName": "traineechest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/hylotl/hylotl-trainee/trainee.legs",
+		"itemName": "traineelegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/novakid/nova-tier1/novatier1.chest",
+		"itemName": "novatier1chest",
+		"slot": "chest",
+		"level": 1,
+		"target": "nicemicetier1chest"
+	},
+	{
+		"path": "items/armors/novakid/nova-tier1/novatier1.head",
+		"itemName": "novatier1head",
+		"slot": "head",
+		"level": 1,
+		"target": "nicemicetier1head"
+	},
+	{
+		"path": "items/armors/novakid/nova-tier1/novatier1.legs",
+		"itemName": "novatier1pants",
+		"slot": "pants",
+		"level": 1,
+		"target": "nicemicetier1pants"
+	},
+	{
+		"path": "items/armors/novakid/nova-tier2/novatier2.chest",
+		"itemName": "novatier2chest",
+		"slot": "chest",
+		"level": 2,
+		"target": "nicemicetier2chest"
+	},
+	{
+		"path": "items/armors/novakid/nova-tier2/novatier2.head",
+		"itemName": "novatier2head",
+		"slot": "head",
+		"level": 2,
+		"target": "nicemicetier2head"
+	},
+	{
+		"path": "items/armors/novakid/nova-tier2/novatier2.legs",
+		"itemName": "novatier2pants",
+		"slot": "pants",
+		"level": 2,
+		"target": "nicemicetier2pants"
+	},
+	{
+		"path": "items/armors/novakid/nova-tier3/novatier3.chest",
+		"itemName": "novatier3chest",
+		"slot": "chest",
+		"level": 3,
+		"target": "nicemicetier3chest"
+	},
+	{
+		"path": "items/armors/novakid/nova-tier3/novatier3.head",
+		"itemName": "novatier3head",
+		"slot": "head",
+		"level": 3,
+		"target": "nicemicetier3head"
+	},
+	{
+		"path": "items/armors/novakid/nova-tier3/novatier3.legs",
+		"itemName": "novatier3pants",
+		"slot": "pants",
+		"level": 3,
+		"target": "nicemicetier3pants"
+	},
+	{
+		"path": "items/armors/novakid/nova-tier4/novatier4.chest",
+		"itemName": "novatier4chest",
+		"slot": "chest",
+		"level": 4,
+		"target": "nicemicetier4chest"
+	},
+	{
+		"path": "items/armors/novakid/nova-tier4/novatier4.head",
+		"itemName": "novatier4head",
+		"slot": "head",
+		"level": 4,
+		"target": "nicemicetier4head"
+	},
+	{
+		"path": "items/armors/novakid/nova-tier4/novatier4.legs",
+		"itemName": "novatier4pants",
+		"slot": "pants",
+		"level": 4,
+		"target": "nicemicetier4pants"
+	},
+	{
+		"path": "items/armors/novakid/nova-tier5accelerator/novatier5accelerator.chest",
+		"itemName": "novatier5achest",
+		"slot": "chest",
+		"level": 5,
+		"target": "nicemicetier5achest"
+	},
+	{
+		"path": "items/armors/novakid/nova-tier5accelerator/novatier5accelerator.head",
+		"itemName": "novatier5ahead",
+		"slot": "head",
+		"level": 5,
+		"target": "nicemicetier5ahead"
+	},
+	{
+		"path": "items/armors/novakid/nova-tier5accelerator/novatier5accelerator.legs",
+		"itemName": "novatier5apants",
+		"slot": "pants",
+		"level": 5,
+		"target": "nicemicetier5apants"
+	},
+	{
+		"path": "items/armors/novakid/nova-tier5manipulator/novatier5manipulator.chest",
+		"itemName": "novatier5mchest",
+		"slot": "chest",
+		"level": 5,
+		"target": "nicemicetier5mchest"
+	},
+	{
+		"path": "items/armors/novakid/nova-tier5manipulator/novatier5manipulator.head",
+		"itemName": "novatier5mhead",
+		"slot": "head",
+		"level": 5,
+		"target": "nicemicetier5mhead"
+	},
+	{
+		"path": "items/armors/novakid/nova-tier5manipulator/novatier5manipulator.legs",
+		"itemName": "novatier5mpants",
+		"slot": "pants",
+		"level": 5,
+		"target": "nicemicetier5mpants"
+	},
+	{
+		"path": "items/armors/novakid/nova-tier5separator/novatier5separator.chest",
+		"itemName": "novatier5schest",
+		"slot": "chest",
+		"level": 5,
+		"target": "nicemicetier5schest"
+	},
+	{
+		"path": "items/armors/novakid/nova-tier5separator/novatier5separator.head",
+		"itemName": "novatier5shead",
+		"slot": "head",
+		"level": 5,
+		"target": "nicemicetier5shead"
+	},
+	{
+		"path": "items/armors/novakid/nova-tier5separator/novatier5separator.legs",
+		"itemName": "novatier5spants",
+		"slot": "pants",
+		"level": 5,
+		"target": "nicemicetier5spants"
+	},
+	{
+		"path": "items/armors/novakid/nova-tier6accelerator/novatier6accelerator.chest",
+		"itemName": "novatier6achest",
+		"slot": "chest",
+		"level": 6,
+		"target": "nicemicetier6achest"
+	},
+	{
+		"path": "items/armors/novakid/nova-tier6accelerator/novatier6accelerator.head",
+		"itemName": "novatier6ahead",
+		"slot": "head",
+		"level": 6,
+		"target": "nicemicetier6ahead"
+	},
+	{
+		"path": "items/armors/novakid/nova-tier6accelerator/novatier6accelerator.legs",
+		"itemName": "novatier6apants",
+		"slot": "pants",
+		"level": 6,
+		"target": "nicemicetier6apants"
+	},
+	{
+		"path": "items/armors/novakid/nova-tier6manipulator/novatier6manipulator.chest",
+		"itemName": "novatier6mchest",
+		"slot": "chest",
+		"level": 6,
+		"target": "nicemicetier6mchest"
+	},
+	{
+		"path": "items/armors/novakid/nova-tier6manipulator/novatier6manipulator.head",
+		"itemName": "novatier6mhead",
+		"slot": "head",
+		"level": 6,
+		"target": "nicemicetier6mhead"
+	},
+	{
+		"path": "items/armors/novakid/nova-tier6manipulator/novatier6manipulator.legs",
+		"itemName": "novatier6mpants",
+		"slot": "pants",
+		"level": 6,
+		"target": "nicemicetier6mpants"
+	},
+	{
+		"path": "items/armors/novakid/nova-tier6separator/novatier6separator.chest",
+		"itemName": "novatier6schest",
+		"slot": "chest",
+		"level": 6,
+		"target": "nicemicetier6schest"
+	},
+	{
+		"path": "items/armors/novakid/nova-tier6separator/novatier6separator.head",
+		"itemName": "novatier6shead",
+		"slot": "head",
+		"level": 6,
+		"target": "nicemicetier6shead"
+	},
+	{
+		"path": "items/armors/novakid/nova-tier6separator/novatier6separator.legs",
+		"itemName": "novatier6spants",
+		"slot": "pants",
+		"level": 6,
+		"target": "nicemicetier6spants"
+	},
+	{
+		"path": "items/armors/novakid/novakidfancy/novakidfancy.chest",
+		"itemName": "novakidfancychest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/novakid/novakidfancy/novakidfancy.legs",
+		"itemName": "novakidfancypants",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/novakid/novakidjacket/novakidjacket.chest",
+		"itemName": "novakidjacket",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/novakid/novakidjacket/novakidjacket.legs",
+		"itemName": "novakidjacketpants",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/novakid/novakidsuspenders/novakidsuspenders.chest",
+		"itemName": "novakidsuspenders",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/novakid/novakidsuspenders/novakidsuspenders.legs",
+		"itemName": "novakidsuspenderspants",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/novakid/novakidwaistcoat/novakidwaistcoat.chest",
+		"itemName": "novakidwaistcoat",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/novakid/novakidwaistcoat/novakidwaistcoat.legs",
+		"itemName": "novakidblackpants",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/arenabruiser/arenabruiser.chest",
+		"itemName": "arenabruiserchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/armoredcultist/armoredcultist.back",
+		"itemName": "armoredcultistback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/armoredcultist/armoredcultist.chest",
+		"itemName": "armoredcultistchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/armoredcultist/armoredcultist.head",
+		"itemName": "armoredcultisthead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/armoredcultist/armoredcultist.legs",
+		"itemName": "armoredcultistlegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/bedouin/bedouin.chest",
+		"itemName": "bedouinchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/bedouin/bedouin.head",
+		"itemName": "bedouinhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/bedouin/bedouin.legs",
+		"itemName": "bedouinlegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/bonusarmor/bonusarmor.chest",
+		"itemName": "bonusarmorchest",
+		"slot": "chest",
+		"level": 6,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/bonusarmor/bonusarmor.head",
+		"itemName": "bonusarmorhead",
+		"slot": "head",
+		"level": 6,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/bonusarmor/bonusarmor.legs",
+		"itemName": "bonusarmorlegs",
+		"slot": "pants",
+		"level": 6,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/camo/camo.chest",
+		"itemName": "camochest",
+		"slot": "chest",
+		"level": 5,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/camo/camo.head",
+		"itemName": "camohead",
+		"slot": "head",
+		"level": 5,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/camo/camo.legs",
+		"itemName": "camolegs",
+		"slot": "pants",
+		"level": 5,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/captainnoble/captainnoble.head",
+		"itemName": "captainnoblehead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/caretaker/caretaker.chest",
+		"itemName": "caretakerchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/caretaker/caretaker.head",
+		"itemName": "caretakerhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/caretaker/caretaker.legs",
+		"itemName": "caretakerlegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/cultist/cultist.chest",
+		"itemName": "cultistchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/cultist/cultist.head",
+		"itemName": "cultisthead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/cultist/cultist.legs",
+		"itemName": "cultistlegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/explorer/explorer.chest",
+		"itemName": "explorerchest",
+		"slot": "chest",
+		"level": 4,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/explorer/explorer.legs",
+		"itemName": "explorerlegs",
+		"slot": "pants",
+		"level": 4,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/goldarmor/goldarmor.chest",
+		"itemName": "goldarmorchest",
+		"slot": "chest",
+		"level": 3,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/goldarmor/goldarmor.head",
+		"itemName": "goldarmorhead",
+		"slot": "head",
+		"level": 3,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/goldarmor/goldarmor.legs",
+		"itemName": "goldarmorlegs",
+		"slot": "pants",
+		"level": 3,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/hazmat/hazmat.back",
+		"itemName": "hazmatback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/hazmat/hazmat.chest",
+		"itemName": "hazmatchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/hazmat/hazmat.head",
+		"itemName": "hazmathead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/hazmat/hazmat.legs",
+		"itemName": "hazmatlegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/invisible/invisible.back",
+		"itemName": "invisibleback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/medic/medic.back",
+		"itemName": "medicback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/medic/medic.chest",
+		"itemName": "medicchest",
+		"slot": "chest",
+		"level": 2,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/medic/medic.head",
+		"itemName": "medichead",
+		"slot": "head",
+		"level": 2,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/medic/medic.legs",
+		"itemName": "mediclegs",
+		"slot": "pants",
+		"level": 2,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/mercenary/mercenary.chest",
+		"itemName": "mercenarychest",
+		"slot": "chest",
+		"level": 1,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/mercenary/mercenary.head",
+		"itemName": "mercenaryhead",
+		"slot": "head",
+		"level": 1,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/mercenary/mercenary.legs",
+		"itemName": "mercenarylegs",
+		"slot": "pants",
+		"level": 1,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/miniknog/miniknog.chest",
+		"itemName": "miniknogchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/miniknog/miniknog.head",
+		"itemName": "miniknoghead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/miniknog/miniknog.legs",
+		"itemName": "miniknogpants",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/neo/neo.back",
+		"itemName": "neoback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/neo/neo.chest",
+		"itemName": "neochest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/neo/neo.head",
+		"itemName": "neohead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/neo/neo.legs",
+		"itemName": "neolegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/pathfinder/pathfinder.chest",
+		"itemName": "pathfinderchest",
+		"slot": "chest",
+		"level": 4,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/pathfinder/pathfinder.head",
+		"itemName": "pathfinderhead",
+		"slot": "head",
+		"level": 4,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/pathfinder/pathfinder.legs",
+		"itemName": "pathfinderlegs",
+		"slot": "pants",
+		"level": 4,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/peacekeeper/peacekeeper.chest",
+		"itemName": "peacekeeperchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/peacekeeper/peacekeeper.head",
+		"itemName": "peacekeeperhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/peacekeeper/peacekeeper.legs",
+		"itemName": "peacekeeperpants",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/perfect/perfect.chest",
+		"itemName": "perfectchest",
+		"slot": "chest",
+		"level": 6,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/perfect/perfect.head",
+		"itemName": "perfecthead",
+		"slot": "head",
+		"level": 6,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/perfect/perfect.legs",
+		"itemName": "perfectpants",
+		"slot": "pants",
+		"level": 6,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/silverarmor/silverarmor.chest",
+		"itemName": "silverarmorchest",
+		"slot": "chest",
+		"level": 2,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/silverarmor/silverarmor.head",
+		"itemName": "silverarmorhead",
+		"slot": "head",
+		"level": 2,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/silverarmor/silverarmor.legs",
+		"itemName": "silverarmorlegs",
+		"slot": "pants",
+		"level": 2,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/snowinfantry/snowinfantry.chest",
+		"itemName": "snowinfantrychest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/snowinfantry/snowinfantry.head",
+		"itemName": "snowinfantryhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/snowinfantry/snowinfantry.legs",
+		"itemName": "snowinfantrypants",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/soldier/soldier.chest",
+		"itemName": "soldierchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/soldier/soldier.head",
+		"itemName": "soldierhead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/soldier/soldier.legs",
+		"itemName": "soldierpants",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/spacesuit/spacesuit.back",
+		"itemName": "spacesuitback",
+		"slot": "back",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/spacesuit/spacesuit.chest",
+		"itemName": "spacesuitchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/spacesuit/spacesuit.head",
+		"itemName": "spacesuithead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/spacesuit/spacesuit.legs",
+		"itemName": "spacesuitlegs",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/t2helm1/t2helm1.head",
+		"itemName": "t2helm1",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/t2helm2/t2helm2.head",
+		"itemName": "t2helm2",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/tracker/tracker.chest",
+		"itemName": "trackerchest",
+		"slot": "chest",
+		"level": 2,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/tracker/tracker.head",
+		"itemName": "trackerhead",
+		"slot": "head",
+		"level": 2,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/tracker/tracker.legs",
+		"itemName": "trackerlegs",
+		"slot": "pants",
+		"level": 2,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/valorous/valorous.chest",
+		"itemName": "valorouschest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/valorous/valorous.head",
+		"itemName": "valoroushead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/valorous/valorous.legs",
+		"itemName": "valorouspants",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/voyager/voyager.chest",
+		"itemName": "voyagerchest",
+		"slot": "chest",
+		"level": 3,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/voyager/voyager.head",
+		"itemName": "voyagerhead",
+		"slot": "head",
+		"level": 3,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/voyager/voyager.legs",
+		"itemName": "voyagerlegs",
+		"slot": "pants",
+		"level": 3,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/wildfungus/wildfungus.chest",
+		"itemName": "wildfunguschest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/wildfungus/wildfungus.head",
+		"itemName": "wildfungushead",
+		"slot": "head",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/other/wildfungus/wildfungus.legs",
+		"itemName": "wildfunguspants",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/penguin/penguinbandana/penguinbandana.legs",
+		"itemName": "penguinbandana",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/penguin/penguinberet/penguinberet.legs",
+		"itemName": "penguinberet",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/penguin/penguincowboy/penguincowboy.legs",
+		"itemName": "penguincowboy",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/penguin/penguinglasses/penguinglasses.legs",
+		"itemName": "penguinglasses",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/penguin/penguinhelmet/penguinhelmet.legs",
+		"itemName": "penguinhelmet",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/penguin/penguinscanner/penguinscanner.legs",
+		"itemName": "penguinscanner",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/penguin/penguinvikinghat/penguinvikinghat.legs",
+		"itemName": "penguinvikinghat",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/protectorate/protectorateshirt/protectorateshirt.chest",
+		"itemName": "protectorateshirtchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/protectorate/protectorateuniform/protectorate.chest",
+		"itemName": "protectoratechest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/protectorate/protectorateuniform/protectorate.legs",
+		"itemName": "protectoratepants",
+		"slot": "pants",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/protectorate/protectoratevest/protectoratevest.chest",
+		"itemName": "protectoratevestchest",
+		"slot": "chest",
+		"level": null,
+		"target": null
+	},
+	{
+		"path": "items/armors/protectorate/raggedprotectoratecape/raggedprotectoratecape.back",
+		"itemName": "raggedprotectoratecape",
+		"slot": "back",
+		"level": null,
+		"target": null
+	}
+]
