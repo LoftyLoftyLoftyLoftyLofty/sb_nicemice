@@ -67,9 +67,15 @@
 					{
 						"head" : 
 						[
-							{ 
-								"name" : "nicemice_invisiblehead"							
-							}
+							{ "name" : "nicemice_invisiblehead" },
+							{ "name" : "nicemice_invisiblehead" },
+							{ "name" : "nicemice_invisiblehead" },
+							{ "name" : "nicemice_invisiblehead" },
+							
+							{ "name" : "nicemicetier1head", "parameters" : { "colorIndex" : 5 } },
+							{ "name" : "nicemicetier2head", "parameters" : { "colorIndex" : 5 } },
+							{ "name" : "nicemicetier3head", "parameters" : { "colorIndex" : 5 } },
+							{ "name" : "nicemicetier4head", "parameters" : { "colorIndex" : 5 } }
 						],
 						"back" : 
 						[
@@ -126,9 +132,15 @@
 					{
 						"head" : 
 						[
-							{ 
-								"name" : "nicemice_invisiblehead"							
-							}
+							{ "name" : "nicemice_invisiblehead" },
+							{ "name" : "nicemice_invisiblehead" },
+							{ "name" : "nicemice_invisiblehead" },
+							{ "name" : "nicemice_invisiblehead" },
+							
+							{ "name" : "nicemicetier1head", "parameters" : { "colorIndex" : 5 } },
+							{ "name" : "nicemicetier2head", "parameters" : { "colorIndex" : 5 } },
+							{ "name" : "nicemicetier3head", "parameters" : { "colorIndex" : 5 } },
+							{ "name" : "nicemicetier4head", "parameters" : { "colorIndex" : 5 } }
 						],
 						"back" : 
 						[

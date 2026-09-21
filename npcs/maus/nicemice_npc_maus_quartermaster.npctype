@@ -88,7 +88,7 @@
 		}
 	},
 
-	"matchColorIndices" : true,
+	"matchColorIndices" : false,
 	"items" : 
 	{
 		"nicemice_npc" : 
@@ -99,9 +99,15 @@
 					{
 						"head" : 
 						[
-							{ 
-								"name" : "nicemice_invisiblehead"							
-							}
+							{ "name" : "nicemice_invisiblehead" },
+							{ "name" : "nicemice_invisiblehead" },
+							{ "name" : "nicemice_invisiblehead" },
+							{ "name" : "nicemice_invisiblehead" },
+							
+							{ "name" : "nicemicetier1head" },
+							{ "name" : "nicemicetier2head" },
+							{ "name" : "nicemicetier3head" },
+							{ "name" : "nicemicetier4head" }
 						],
 						"back" : 
 						[

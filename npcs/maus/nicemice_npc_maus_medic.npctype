@@ -56,7 +56,7 @@
 		}
 	},
 
-	"matchColorIndices" : true,
+	"matchColorIndices" : false,
 	"items" : 
 	{
 		"nicemice_npc" : 
@@ -67,9 +67,16 @@
 					{
 						"head" : 
 						[
-							{ 
-								"name" : "nicemice_invisiblehead"							
-							}
+							{ "name" : "nicemice_invisiblehead" },
+							{ "name" : "nicemice_invisiblehead" },
+							{ "name" : "nicemice_invisiblehead" },
+							{ "name" : "nicemice_invisiblehead" },
+							
+							//green, red, or blue visors for medics
+							{ "name" : "nicemicetier1head", "parameters" : { "colorIndex" : [0, 4, 8] } },
+							{ "name" : "nicemicetier2head", "parameters" : { "colorIndex" : [0, 4, 8] } },
+							{ "name" : "nicemicetier3head", "parameters" : { "colorIndex" : [0, 4, 8] } },
+							{ "name" : "nicemicetier4head", "parameters" : { "colorIndex" : [0, 4, 8] } }
 						],
 						"back" : 
 						[

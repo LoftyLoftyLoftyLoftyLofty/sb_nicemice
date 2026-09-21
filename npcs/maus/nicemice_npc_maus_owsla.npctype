@@ -69,9 +69,7 @@
 					{
 						"head" : 
 						[
-							{ 
-								"name" : "nicemice_invisiblehead"							
-							},
+							{ "name" : "nicemice_invisiblehead" },
 							{
 								"name" : "nicemicetier1head",
 								"parameters" : { "colorIndex" : 0 }
@@ -82,6 +80,10 @@
 							},
 							{
 								"name" : "nicemicetier3head",
+								"parameters" : { "colorIndex" : 0 }
+							},
+							{
+								"name" : "nicemicetier4head",
 								"parameters" : { "colorIndex" : 0 }
 							}
 						],
