@@ -15,12 +15,14 @@
 require "/scripts/nicemice_util.lua"
 
 local TAIL_SLOTS = {"back", "backCosmetic"}
+local HAT_SLOTS = {"head", "headCosmetic"}
 local TAIL_CHECK_INTERVAL = 1.0
 
 -- Each NPC entity gets its own script context, so file-scope locals are
 -- per-mouse state, not shared across the world.
 local nicemiceTailDirectives = nil
 local nicemiceTailTimer = 0
+local nicemiceEarsAndHair = nil
 
 originalInit = init
 originalUpdate = update
@@ -62,6 +64,15 @@ function update(dt)
   nicemice_applyTailDirectives(
     nicemiceTailDirectives,
     TAIL_SLOTS,
+    npc.getItemSlot,
+    npc.setItemSlot
+  )
+
+  nicemiceEarsAndHair = nicemiceEarsAndHair or nicemice_getEntityEarsAndHair(entity.id())
+  nicemice_applyHatVariant(
+    nicemiceEarsAndHair,
+    nicemiceTailDirectives,
+    HAT_SLOTS,
     npc.getItemSlot,
     npc.setItemSlot
   )

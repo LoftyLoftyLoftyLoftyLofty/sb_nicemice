@@ -1,7 +1,19 @@
 [
 	{
+		"dir" : "items/armors/nicemice/costumes/maus_captain",
+		"head" : "nicemice_maus_captainscap.head",
+		"mode" : "ears",
+		"locked" : []
+	},
+	{
 		"dir" : "items/armors/nicemice/costumes/maus_captain_visor",
 		"head" : "nicemice_maus_captainscap_visor.head",
+		"mode" : "ears",
+		"locked" : []
+	},
+	{
+		"dir" : "items/armors/nicemice/tieredarmor/nicemice-tier1",
+		"head" : "nicemicetier1.head",
 		"mode" : "ears",
 		"locked" : []
 	},
@@ -9,6 +21,30 @@
 		"dir" : "items/armors/nicemice/tieredarmor/nicemice-tier2",
 		"head" : "nicemicetier2.head",
 		"mode" : "ears",
+		"locked" : []
+	},
+	{
+		"dir" : "items/armors/nicemice/tieredarmor/nicemice-tier3",
+		"head" : "nicemicetier3.head",
+		"mode" : "ears",
+		"locked" : []
+	},
+	{
+		"dir" : "items/armors/nicemice/tieredarmor/nicemice-tier4",
+		"head" : "nicemicetier4.head",
+		"mode" : "ears",
+		"locked" : []
+	},
+	{
+		"dir" : "items/armors/nicemice/tieredarmor/nicemice-tier5manipulator",
+		"head" : "nicemicetier5manipulator.head",
+		"mode" : "sealed",
+		"locked" : []
+	},
+	{
+		"dir" : "items/armors/nicemice/tieredarmor/nicemice-tier6manipulator",
+		"head" : "nicemicetier6manipulator.head",
+		"mode" : "sealed",
 		"locked" : []
 	}
 ]

@@ -21,6 +21,21 @@ function nicemice_getEntitySkinDirectives(id)
 	return nil
 end
 
+-- Returns { ears, hair } as png base names; either entry is nil if that layer isn't in the portrait.
+function nicemice_getEntityEarsAndHair(id)
+	local portrait = world.entityPortrait(id, "full")
+	if not portrait then return nil end
+	local ears, hair
+	for _, drawable in pairs(portrait) do
+		if drawable.image then
+			local path = string.match(drawable.image, "^[^:?]+")
+			ears = ears or string.match(path, "/ears/([^/]+)%.png$")
+			hair = hair or string.match(path, "/hair/([^/]+)%.png$")
+		end
+	end
+	return { ears, hair }
+end
+
 -- Checks an ItemDescriptor for a tag, preferring the instance's own itemTags
 -- and only paying for root.itemConfig when the instance doesn't answer.
 function nicemice_itemHasTag(item, tag)
@@ -88,6 +103,76 @@ function nicemice_applyTailDirectives(directives, slots, getSlot, setSlot)
 				-- player.setEquippedItem returns nil. Treat only false as failure.
 				if setSlot(slotName, item) ~= false then
 					applied = true
+				end
+			end
+		end
+	end
+
+	return applied
+end
+
+local NICEMICE_HAT_VARIANTS = "/scripts/nicemice_hat_variants.config"
+
+-- Lookup order: [ears][hair], [ears].any, .any[hair], base hat.
+function nicemice_findHatVariant(baseName, ears, hair)
+	local variants = root.assetJson(NICEMICE_HAT_VARIANTS)[baseName]
+	if not variants then return nil end
+	local forEars = ears and variants[ears]
+	if forEars and hair and forEars[hair] then return forEars[hair] end
+	if forEars and forEars.any then return forEars.any end
+	if variants.any and hair and variants.any[hair] then return variants.any[hair] end
+	return baseName
+end
+
+-- An item's directives parameter replaces its colorOptions recolor, so the color option has to be rebuilt in front of the skin directives.
+function nicemice_buildHatDirectives(config, colorIndex, skinDirectives)
+	local result = ""
+	local options = config.colorOptions
+	if options and #options > 0 then
+		result = "?replace"
+		for from, to in pairs(options[(colorIndex % #options) + 1]) do
+			result = result .. ";" .. from .. "=" .. to
+		end
+	end
+	return result .. "?" .. skinDirectives
+end
+
+-- Swaps hats in the given slots for the variant built for this ears/hair pair and recolors the variant's baked-in skin pixels.
+-- earsAndHair is the { ears, hair } list from nicemice_getEntityEarsAndHair; getSlot/setSlot as in nicemice_applyTailDirectives.
+function nicemice_applyHatVariant(earsAndHair, skinDirectives, slots, getSlot, setSlot)
+	if not earsAndHair or not skinDirectives then return false end
+
+	local applied = false
+
+	for _, slotName in ipairs(slots) do
+		local item = getSlot(slotName)
+		local itemConfig = item and root.itemConfig(item)
+
+		if itemConfig then
+			local config = itemConfig.config
+			local baseName = config.nicemice_hatVariantOf or item.name
+			local targetName = nicemice_findHatVariant(baseName, earsAndHair[1], earsAndHair[2])
+
+			if targetName then
+				item.parameters = item.parameters or {}
+				local colorIndex = item.parameters.colorIndex or 0
+				local stamp = nil
+				if targetName ~= baseName then
+					stamp = colorIndex .. "|" .. skinDirectives
+				end
+
+				if item.name ~= targetName or item.parameters.nicemiceHatDirectives ~= stamp then
+					item.name = targetName
+					item.parameters.nicemiceHatDirectives = stamp
+					if stamp then
+						item.parameters.directives = nicemice_buildHatDirectives(config, colorIndex, skinDirectives)
+					else
+						item.parameters.directives = nil
+					end
+
+					if setSlot(slotName, item) ~= false then
+						applied = true
+					end
 				end
 			end
 		end

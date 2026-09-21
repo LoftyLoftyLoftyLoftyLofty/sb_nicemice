@@ -10,6 +10,7 @@
 require "/scripts/nicemice_util.lua"
 
 local TAIL_SLOTS = {"back", "backCosmetic"}
+local HAT_SLOTS = {"head", "headCosmetic"}
 
 originalInit = init
 originalUpdate = update
@@ -38,6 +39,14 @@ function update(dt)
   nicemice_applyTailDirectives(
     nicemice_getPlayerSkinDirectives(),
     TAIL_SLOTS,
+    player.equippedItem,
+    player.setEquippedItem
+  )
+
+  nicemice_applyHatVariant(
+    nicemice_getEntityEarsAndHair(entity.id()),
+    nicemice_getPlayerSkinDirectives(),
+    HAT_SLOTS,
     player.equippedItem,
     player.setEquippedItem
   )

@@ -78,14 +78,13 @@ def apply_mask(layer, mask):
 
 # ear pixels the mask would hide, drawn underneath the hat's own pixels
 def patch_hat(hat, mask, ears):
-	under = Image.new("RGBA", (43, 43))
-	up, ep, mp = under.load(), ears.load(), mask.load()
+	out = hat.copy()
+	op, ep, mp = out.load(), ears.load(), mask.load()
 	for y in range(43):
 		for x in range(43):
-			if ep[x, y][3] and mp[x, y][3] < 128:
-				up[x, y] = ep[x, y]
-	under.alpha_composite(hat)
-	return under
+			if not op[x, y][3] and ep[x, y][3] and mp[x, y][3] < 128:
+				op[x, y] = ep[x, y]
+	return out
 
 
 # layer pixels inside the region, drawn on top of the hat
@@ -108,13 +107,13 @@ def same_image(a, b):
 	return True
 
 
-def variant_head_text(base_text, asset_dir, base_name, variant_name, key):
+def variant_head_text(base_text, asset_dir, base_name, variant_name, key, mask_name):
 	text = base_text
 	text = re.sub(r'("itemName"\s*:\s*)"[^"]*"', r'\1"%s"' % variant_name, text, count=1)
 	text = re.sub(r'("maleFrames"\s*:\s*)"[^"]*"', r'\1"%s.png"' % key, text, count=1)
 	text = re.sub(r'("femaleFrames"\s*:\s*)"[^"]*"', r'\1"%s.png"' % key, text, count=1)
-	for field in ("mask", "inventoryIcon"):
-		text = re.sub(r'("%s"\s*:\s*)"([^/"][^"]*)"' % field, r'\1"%s/\2"' % asset_dir, text, count=1)
+	text = re.sub(r'("mask"\s*:\s*)"[^"]*"', r'\1"%s/%s"' % (asset_dir, mask_name), text, count=1)
+	text = re.sub(r'("inventoryIcon"\s*:\s*)"([^/"][^"]*)"', r'\1"%s/\2"' % asset_dir, text, count=1)
 	text = re.sub(r'("itemName"[^\n]*\n)', r'\1  "nicemice_hatVariantOf" : "%s",\n' % base_name, text, count=1)
 	return text
 
@@ -126,12 +125,26 @@ def build_hat(hat, ear_names, hair_names, args):
 	base_text = open(os.path.join(hat_dir, hat["head"]), encoding="utf-8", newline="").read()
 	base_name = re.search(r'"itemName"\s*:\s*"([^"]*)"', base_text).group(1)
 	base_png = os.path.join(hat_dir, re.search(r'"maleFrames"\s*:\s*"([^"]*)"', base_text).group(1))
-	mask_png = os.path.join(hat_dir, re.search(r'"mask"\s*:\s*"([^"]*)"', base_text).group(1))
+	base_mask_name = re.search(r'"mask"\s*:\s*"([^"]*)"', base_text).group(1)
 	locked = set(hat.get("locked", []))
 
 	base_sheet = Image.open(base_png).convert("RGBA")
 	base_frame = base_sheet.crop(FRAME)
-	mask = Image.open(mask_png).convert("RGBA")
+
+	# most specific file wins: mask_<ear>_<hair>.png, then mask_<hair>.png, then the base hat's mask
+	def mask_name_for(ear=None, hair=None):
+		names = []
+		if ear and hair:
+			names.append("mask_%s_%s.png" % (ear, hair))
+		if hair:
+			names.append("mask_%s.png" % hair)
+		for name in names:
+			if os.path.exists(os.path.join(hat_dir, name)):
+				return name
+		return base_mask_name
+
+	def mask_image(name):
+		return Image.open(os.path.join(hat_dir, name)).convert("RGBA")
 
 	# most specific file wins: <kind>_<ear>_<hair>.png, then <kind>_<ear>.png (earover) or <kind>_<hair>.png (hairover), then <kind>.png
 	def region(kind, ear=None, hair=None):
@@ -154,7 +167,7 @@ def build_hat(hat, ear_names, hair_names, args):
 	hat_png_for = {}
 
 	# key is "<ear>" or "<ear>_<hair>"; returns the png the sheet should use, or None when the variant isn't needed
-	def emit(key, frame_image, fallback_frame):
+	def emit(key, frame_image, fallback_frame, mask_name, fallback_mask_name):
 		variant_name = "%s_%s" % (base_name, key)
 		png_path = os.path.join(var_dir, key + ".png")
 		head_path = os.path.join(var_dir, variant_name + ".head")
@@ -162,7 +175,7 @@ def build_hat(hat, ear_names, hair_names, args):
 			if not os.path.exists(png_path):
 				sys.exit("locked variant has no png: " + png_path)
 			print("  locked   ", key)
-		elif same_image(frame_image, fallback_frame):
+		elif same_image(frame_image, fallback_frame) and mask_name == fallback_mask_name:
 			return None
 		else:
 			sheet = base_sheet.copy()
@@ -170,7 +183,7 @@ def build_hat(hat, ear_names, hair_names, args):
 			sheet.save(png_path)
 			print("  generated", key)
 		with open(head_path, "w", encoding="utf-8", newline="") as f:
-			f.write(variant_head_text(base_text, asset_dir, base_name, variant_name, key))
+			f.write(variant_head_text(base_text, asset_dir, base_name, variant_name, key, mask_name))
 		wanted.update((png_path, head_path))
 		return png_path
 
@@ -180,8 +193,8 @@ def build_hat(hat, ear_names, hair_names, args):
 	def hair_layer(name):
 		return frame(os.path.join(HUMANOID, "hair", name + ".png"))
 
-	def under(ear):
-		return patch_hat(base_frame, mask, ear_layer(ear)) if hat["mode"] == "ears" else base_frame
+	def under(ear, mask_name):
+		return patch_hat(base_frame, mask_image(mask_name), ear_layer(ear)) if hat["mode"] == "ears" else base_frame
 
 	# the file's own pixels, drawn last
 	def stamp_top(image, ear=None, hair=None):
@@ -192,54 +205,62 @@ def build_hat(hat, ear_names, hair_names, args):
 	any_frame = {}
 	any_png = {}
 	any_entries = {}
+	any_mask = {}
+	mask_for = {}
 	for hair in hair_names:
+		any_mask[hair] = mask_name_for(hair=hair)
 		any_frame[hair] = stamp_over(base_frame, region("hairover", hair=hair), hair_layer(hair))
 		any_frame[hair] = stamp_top(any_frame[hair], hair=hair)
-		any_png[hair] = emit("any_" + hair, any_frame[hair], base_frame)
+		any_png[hair] = emit("any_" + hair, any_frame[hair], base_frame, any_mask[hair], base_mask_name)
 		if any_png[hair]:
 			any_entries[hair] = "%s_any_%s" % (base_name, hair)
 	if any_entries:
 		table["any"] = any_entries
 
 	for ear in ear_names:
-		ear_frame = stamp_over(under(ear), region("earover", ear=ear), ear_layer(ear))
+		ear_frame = stamp_over(under(ear, base_mask_name), region("earover", ear=ear), ear_layer(ear))
 		ear_frame = stamp_top(ear_frame, ear=ear)
-		ear_png = emit(ear, ear_frame, base_frame)
+		ear_png = emit(ear, ear_frame, base_frame, base_mask_name, base_mask_name)
 		entries = {}
 		if ear_png:
 			entries["any"] = "%s_%s" % (base_name, ear)
 		for hair in hair_names:
-			pair_frame = stamp_over(under(ear), region("earover", ear, hair), ear_layer(ear))
+			pair_mask = mask_name_for(ear, hair)
+			pair_frame = stamp_over(under(ear, pair_mask), region("earover", ear, hair), ear_layer(ear))
 			pair_frame = stamp_over(pair_frame, region("hairover", ear, hair), hair_layer(hair))
 			pair_frame = stamp_top(pair_frame, ear, hair)
 			if ear_png:
-				fallback_frame, fallback_png = ear_frame, ear_png
+				fallback_frame, fallback_png, fallback_mask = ear_frame, ear_png, base_mask_name
 			else:
-				fallback_frame, fallback_png = any_frame[hair], any_png[hair] or base_png
-			pair_png = emit("%s_%s" % (ear, hair), pair_frame, fallback_frame)
+				fallback_frame, fallback_png, fallback_mask = any_frame[hair], any_png[hair] or base_png, any_mask[hair]
+			pair_png = emit("%s_%s" % (ear, hair), pair_frame, fallback_frame, pair_mask, fallback_mask)
 			if pair_png:
 				entries[hair] = "%s_%s_%s" % (base_name, ear, hair)
 			hat_png_for[(ear, hair)] = pair_png or fallback_png
+			mask_for[(ear, hair)] = mask_image(pair_mask if pair_png else fallback_mask)
 		if entries:
 			table[ear] = entries
 
-	frames_path = os.path.join(var_dir, "default.frames")
-	with open(frames_path, "w", encoding="utf-8") as f:
-		f.write(FRAMES_TEXT)
-	wanted.add(frames_path)
+	if wanted:
+		frames_path = os.path.join(var_dir, "default.frames")
+		with open(frames_path, "w", encoding="utf-8") as f:
+			f.write(FRAMES_TEXT)
+		wanted.add(frames_path)
 
 	for name in os.listdir(var_dir):
 		path = os.path.join(var_dir, name)
 		if path not in wanted:
 			os.remove(path)
 			print("  removed stale", name)
+	if not os.listdir(var_dir):
+		os.rmdir(var_dir)
 
 	for gender in ("male", "female"):
-		render_sheet(base_name, gender, ear_names, hair_names, hat_png_for, mask, locked, args, palette_list(base_text, "colorOptions"))
+		render_sheet(base_name, gender, ear_names, hair_names, hat_png_for, mask_for, locked, args, palette_list(base_text, "colorOptions"))
 	return base_name, table
 
 
-def render_sheet(base_name, gender, ear_names, hair_names, hat_png_for, mask, locked, args, hat_palettes):
+def render_sheet(base_name, gender, ear_names, hair_names, hat_png_for, mask_for, locked, args, hat_palettes):
 	cell = 43 * SCALE
 	sheet = Image.new("RGBA", (LABEL_W + cell * len(hair_names), LABEL_H + cell * len(ear_names)), (70, 70, 85, 255))
 	draw = ImageDraw.Draw(sheet)
@@ -256,9 +277,10 @@ def render_sheet(base_name, gender, ear_names, hair_names, hat_png_for, mask, lo
 		draw.text((4, LABEL_H + row * cell + 4), ear, fill=(255, 255, 255, 255))
 		if ear in locked:
 			draw.text((4, LABEL_H + row * cell + 16), "LOCKED", fill=(255, 90, 90, 255))
-		ears = apply_mask(frame(os.path.join(HUMANOID, "ears", ear + ".png")), mask)
 		for col, hair_name in enumerate(hair_names):
 			hat = frame(hat_png_for[(ear, hair_name)])
+			mask = mask_for[(ear, hair_name)]
+			ears = apply_mask(frame(os.path.join(HUMANOID, "ears", ear + ".png")), mask)
 			hair = apply_mask(frame(os.path.join(HUMANOID, "hair", hair_name + ".png")), mask)
 			skin = pick(body_palettes, args.bodypalette)
 			c = Image.new("RGBA", (43, 43))
