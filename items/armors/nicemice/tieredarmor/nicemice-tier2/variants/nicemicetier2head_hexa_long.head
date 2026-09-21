@@ -9,6 +9,18 @@
   "description" : "Designed to protect your eyes in harsh environments.",
   "shortdescription" : "Nicemice T2 Helmet",
   "tooltipKind" : "armor",
+  
+  "nicemice_otherSpeciesConversion" : 
+  {
+	"default" : "humantier2head",
+	"human" : 	"humantier2head",
+	"avian" : 	"aviantier2head",
+	"floran" : 	"florantier2head",
+	"glitch" : 	"glitchtier2head",
+	"apex" : 	"apextier2head",
+	"novakid" : "novakidtier2head",
+	"hylotl" : 	"hylotltier2head"
+  },
 
   "maleFrames" : "hexa_long.png",
   "femaleFrames" : "hexa_long.png",
