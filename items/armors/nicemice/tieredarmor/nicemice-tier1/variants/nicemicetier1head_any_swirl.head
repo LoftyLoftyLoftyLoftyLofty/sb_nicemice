@@ -1,7 +1,8 @@
 {
-  "itemName" : "nicemicetier1head",
+  "itemName" : "nicemicetier1head_any_swirl",
+  "nicemice_hatVariantOf" : "nicemicetier1head",
   "price" : 480,
-  "inventoryIcon" : "icons.png:head",
+  "inventoryIcon" : "/items/armors/nicemice/tieredarmor/nicemice-tier1/icons.png:head",
   "maxStack" : 1,
   "rarity" : "Common",
   "category" : "headarmour",
@@ -21,9 +22,9 @@
 	"hylotl" : 	"hylotltier1head"
   },
 
-  "maleFrames" : "head.png",
-  "femaleFrames" : "head.png",
-  "mask" : "mask.png",
+  "maleFrames" : "any_swirl.png",
+  "femaleFrames" : "any_swirl.png",
+  "mask" : "/items/armors/nicemice/tieredarmor/nicemice-tier1/mask.png",
 
   "level" : 1,
   "leveledStatusEffects" : [
