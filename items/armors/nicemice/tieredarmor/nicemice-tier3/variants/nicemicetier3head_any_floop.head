@@ -1,7 +1,8 @@
 {
-  "itemName" : "nicemicetier3head",
+  "itemName" : "nicemicetier3head_any_floop",
+  "nicemice_hatVariantOf" : "nicemicetier3head",
   "price" : 1920,
-  "inventoryIcon" : "icons.png:head",
+  "inventoryIcon" : "/items/armors/nicemice/tieredarmor/nicemice-tier3/icons.png:head",
   "maxStack" : 1,
   "rarity" : "Uncommon",
   "category" : "headarmour",
@@ -21,9 +22,9 @@
 	"hylotl" : 	"hylotltier3head"
   },
 
-  "maleFrames" : "head.png",
-  "femaleFrames" : "head.png",
-  "mask" : "mask.png",
+  "maleFrames" : "any_floop.png",
+  "femaleFrames" : "any_floop.png",
+  "mask" : "/items/armors/nicemice/tieredarmor/nicemice-tier3/mask.png",
 
   "level" : 3,
   "leveledStatusEffects" : [
