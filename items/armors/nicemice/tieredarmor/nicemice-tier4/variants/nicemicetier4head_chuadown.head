@@ -1,7 +1,8 @@
 {
-  "itemName" : "nicemicetier4head",
+  "itemName" : "nicemicetier4head_chuadown",
+  "nicemice_hatVariantOf" : "nicemicetier4head",
   "price" : 2400,
-  "inventoryIcon" : "icons.png:head",
+  "inventoryIcon" : "/items/armors/nicemice/tieredarmor/nicemice-tier4/icons.png:head",
   "maxStack" : 1,
   "rarity" : "Uncommon",
   "category" : "headarmour",
@@ -21,9 +22,9 @@
 	"hylotl" : 	"hylotltier4head"
   },
 
-  "maleFrames" : "head.png",
-  "femaleFrames" : "head.png",
-  "mask" : "mask.png",
+  "maleFrames" : "chuadown.png",
+  "femaleFrames" : "chuadown.png",
+  "mask" : "/items/armors/nicemice/tieredarmor/nicemice-tier4/mask.png",
 
   "level" : 4,
   "leveledStatusEffects" : [
