@@ -9,6 +9,18 @@
   "shortdescription" : "Nicemice T5 Chest (M)",
   "tooltipKind" : "armor",
 
+	"nicemice_otherSpeciesConversion" :
+	{
+		"default" : "humantier5mchest",
+		"apex" : "apextier5mchest",
+		"avian" : "aviantier5mchest",
+		"floran" : "florantier5mchest",
+		"glitch" : "glitchtier5mchest",
+		"human" : "humantier5mchest",
+		"hylotl" : "hylotltier5mchest",
+		"nova" : "novatier5mchest"
+	},
+
   "maleFrames" : {
     "body" : "nicemice_chestm.png",
     "backSleeve" : "bsleeve.png",

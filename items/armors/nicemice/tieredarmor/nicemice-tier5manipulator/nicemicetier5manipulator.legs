@@ -9,6 +9,18 @@
   "shortdescription" : "Nicemice T5 Pants (M)",
   "tooltipKind" : "armor",
 
+	"nicemice_otherSpeciesConversion" :
+	{
+		"default" : "humantier5mpants",
+		"apex" : "apextier5mpants",
+		"avian" : "aviantier5mpants",
+		"floran" : "florantier5mpants",
+		"glitch" : "glitchtier5mpants",
+		"human" : "humantier5mpants",
+		"hylotl" : "hylotltier5mpants",
+		"nova" : "novatier5mpants"
+	},
+
   "maleFrames" : "pants.png",
   "femaleFrames" : "pants.png",
 

@@ -9,6 +9,18 @@
   "shortdescription" : "Nicemice T3 Chest",
   "tooltipKind" : "armor",
 
+	"nicemice_otherSpeciesConversion" :
+	{
+		"default" : "humantier3chest",
+		"apex" : "apextier3chest",
+		"avian" : "aviantier3chest",
+		"floran" : "florantier3chest",
+		"glitch" : "glitchtier3chest",
+		"human" : "humantier3chest",
+		"hylotl" : "hylotltier3chest",
+		"nova" : "novatier3chest"
+	},
+
   "maleFrames" : {
     "body" : "nicemice_chestm.png",
     "backSleeve" : "bsleeve.png",

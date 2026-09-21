@@ -9,6 +9,18 @@
   "shortdescription" : "Nicemice T6 Chest (M)",
   "tooltipKind" : "armor",
 
+	"nicemice_otherSpeciesConversion" :
+	{
+		"default" : "humantier6mchest",
+		"apex" : "apextier6mchest",
+		"avian" : "aviantier6mchest",
+		"floran" : "florantier6mchest",
+		"glitch" : "glitchtier6mchest",
+		"human" : "humantier6mchest",
+		"hylotl" : "hylotltier6mchest",
+		"nova" : "novatier6mchest"
+	},
+
   "maleFrames" : {
     "body" : "nicemice_chestm.png",
     "backSleeve" : "bsleeve.png",

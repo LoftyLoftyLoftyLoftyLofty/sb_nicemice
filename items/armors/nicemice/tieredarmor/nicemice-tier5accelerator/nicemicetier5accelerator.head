@@ -9,6 +9,18 @@
   "shortdescription" : "Nicemice T5 Helmet (A)",
   "tooltipKind" : "armor",
 
+	"nicemice_otherSpeciesConversion" :
+	{
+		"default" : "humantier5ahead",
+		"apex" : "apextier5ahead",
+		"avian" : "aviantier5ahead",
+		"floran" : "florantier5ahead",
+		"glitch" : "glitchtier5ahead",
+		"human" : "humantier5ahead",
+		"hylotl" : "hylotltier5ahead",
+		"nova" : "novatier5ahead"
+	},
+
   "maleFrames" : "head.png",
   "femaleFrames" : "head.png",
   "mask" : "mask.png",

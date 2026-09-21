@@ -9,6 +9,18 @@
   "shortdescription" : "Nicemice T1 Pants",
   "tooltipKind" : "armor",
 
+	"nicemice_otherSpeciesConversion" :
+	{
+		"default" : "humantier1pants",
+		"apex" : "apextier1pants",
+		"avian" : "aviantier1pants",
+		"floran" : "florantier1pants",
+		"glitch" : "glitchtier1pants",
+		"human" : "humantier1pants",
+		"hylotl" : "hylotltier1pants",
+		"nova" : "novatier1pants"
+	},
+
   "maleFrames" : "pants.png",
   "femaleFrames" : "pants.png",
 

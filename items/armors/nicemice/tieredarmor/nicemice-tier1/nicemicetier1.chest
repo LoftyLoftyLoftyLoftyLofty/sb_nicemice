@@ -9,6 +9,18 @@
   "shortdescription" : "Nicemice T1 Chest",
   "tooltipKind" : "armor",
 
+	"nicemice_otherSpeciesConversion" :
+	{
+		"default" : "humantier1chest",
+		"apex" : "apextier1chest",
+		"avian" : "aviantier1chest",
+		"floran" : "florantier1chest",
+		"glitch" : "glitchtier1chest",
+		"human" : "humantier1chest",
+		"hylotl" : "hylotltier1chest",
+		"nova" : "novatier1chest"
+	},
+
   "maleFrames" : {
     "body" : "nicemice_chestm.png",
     "backSleeve" : "bsleeve.png",

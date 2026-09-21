@@ -9,6 +9,18 @@
   "shortdescription" : "Nicemice T6 Helmet (S)",
   "tooltipKind" : "armor",
 
+	"nicemice_otherSpeciesConversion" :
+	{
+		"default" : "humantier6shead",
+		"apex" : "apextier6shead",
+		"avian" : "aviantier6shead",
+		"floran" : "florantier6shead",
+		"glitch" : "glitchtier6shead",
+		"human" : "humantier6shead",
+		"hylotl" : "hylotltier6shead",
+		"nova" : "novatier6shead"
+	},
+
   "maleFrames" : "head.png",
   "femaleFrames" : "head.png",
   "mask" : "mask.png",

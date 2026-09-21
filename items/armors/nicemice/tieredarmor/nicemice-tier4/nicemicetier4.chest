@@ -9,6 +9,18 @@
   "shortdescription" : "Nicemice T4 Chest",
   "tooltipKind" : "armor",
 
+	"nicemice_otherSpeciesConversion" :
+	{
+		"default" : "humantier4chest",
+		"apex" : "apextier4chest",
+		"avian" : "aviantier4chest",
+		"floran" : "florantier4chest",
+		"glitch" : "glitchtier4chest",
+		"human" : "humantier4chest",
+		"hylotl" : "hylotltier4chest",
+		"nova" : "novatier4chest"
+	},
+
   "maleFrames" : {
     "body" : "nicemice_chestm.png",
     "backSleeve" : "bsleeve.png",

@@ -9,6 +9,18 @@
   "shortdescription" : "Nicemice T6 Pants (A)",
   "tooltipKind" : "armor",
 
+	"nicemice_otherSpeciesConversion" :
+	{
+		"default" : "humantier6apants",
+		"apex" : "apextier6apants",
+		"avian" : "aviantier6apants",
+		"floran" : "florantier6apants",
+		"glitch" : "glitchtier6apants",
+		"human" : "humantier6apants",
+		"hylotl" : "hylotltier6apants",
+		"nova" : "novatier6apants"
+	},
+
   "maleFrames" : "pants.png",
   "femaleFrames" : "pants.png",
 
