@@ -9,5 +9,12 @@
 				"species" : [ "nicemice_npc" ]
 			}
 		}
+	],
+	[
+		{
+			"op" : "add",
+			"path" : "/nicemiceDescription",
+			"value" : "A teleporter ztore. Teleztorter. Heh."
+		}
 	]
 ]

@@ -7,5 +7,10 @@
 		"op" : "replace",
 		"path" : "/detectArea",
 		"value" : [ [ -1, -2 ], [ 1, 1 ] ]
+	},
+	{
+		"op" : "add",
+		"path" : "/nicemiceDescription",
+		"value" : "A vall-mounted prokzimitie zenzor. Check moi out!"
 	}
 ]
