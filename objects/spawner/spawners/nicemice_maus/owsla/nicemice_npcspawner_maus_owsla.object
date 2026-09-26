@@ -1,8 +1,8 @@
 {
   "objectName" : "nicemice_npcspawner_maus_owsla",
   "rarity" : "Uncommon",
-  "description" : "This beacon will summon a M.A.U.S. Owsla elite bodyguard.",
-  "shortdescription" : "M.A.U.S. Spawner - Owsla",
+  "description" : "This beacon will summon a M.A.U.S. Mowsla elite bodyguard.",
+  "shortdescription" : "M.A.U.S. Spawner - Mowsla",
   "race" : "nicemice",
   "printable" : false,
   "category" : "spawner",
