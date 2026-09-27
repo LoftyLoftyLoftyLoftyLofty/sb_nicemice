@@ -18,7 +18,7 @@
 		"glitch" : "glitchtier2pants",
 		"human" : "humantier2pants",
 		"hylotl" : "hylotltier2pants",
-		"nova" : "novatier2pants"
+		"novakid" : "novatier2pants"
 	},
 
   "maleFrames" : "pants.png",

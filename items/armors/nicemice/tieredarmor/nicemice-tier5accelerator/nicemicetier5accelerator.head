@@ -18,7 +18,7 @@
 		"glitch" : "glitchtier5ahead",
 		"human" : "humantier5ahead",
 		"hylotl" : "hylotltier5ahead",
-		"nova" : "novatier5ahead"
+		"novakid" : "novatier5ahead"
 	},
 
   "maleFrames" : "head.png",

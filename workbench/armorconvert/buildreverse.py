@@ -8,6 +8,8 @@ from census import load_json, CENSUS
 HERE = os.path.dirname(os.path.abspath(__file__))
 MOD = os.path.abspath(os.path.join(HERE, "..", ".."))
 KEY = "nicemice_otherSpeciesConversion"
+# vanilla item prefixes that aren't the species name player.species() returns
+SPECIES = {"nova": "novakid"}
 ANCHOR = re.compile(r'^[ \t]*"tooltipKind"\s*:\s*"[^"]*",[ \t]*\r?\n', re.M)
 
 
@@ -28,6 +30,7 @@ def conversion_for(sources, errors, target):
 	table = []
 	for name in sources:
 		race = name[:name.index("tier")]
+		race = SPECIES.get(race, race)
 		if not race or race in [k for k, v in table]:
 			errors.append("%s: can't key %s by race" % (target, name))
 			return None

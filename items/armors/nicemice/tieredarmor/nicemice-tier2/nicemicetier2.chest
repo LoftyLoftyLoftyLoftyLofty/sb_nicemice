@@ -18,7 +18,7 @@
 		"glitch" : "glitchtier2chest",
 		"human" : "humantier2chest",
 		"hylotl" : "hylotltier2chest",
-		"nova" : "novatier2chest"
+		"novakid" : "novatier2chest"
 	},
 
   "maleFrames" : {
